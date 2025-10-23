@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Courses - Rohil NextGen</title>
+    <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Add EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --primary-red: #d40404;
+            --dark-red: #a80303;
+            --light-red: #ffeded;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar Styles */
+        .top-bar {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 15px 0;
+            font-size: 15px;
+            height: 60px;
+        }
+
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 25px;
+            transition: opacity 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--light-gray);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100px;
+            width: 120px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-black);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            padding: 10px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-red);
+        }
+
+        .dropdown {
+            position: absolute;
+            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--text-grey);
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--light-grey);
+            color: var(--primary-red);
+            padding-left: 25px;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Gallery Section Styles */
+        .gallery-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h1 {
+            font-size: 36px;
+            color: var(--dark-red);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Gallery Filter */
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-red);
+            color: white;
+            border-color: var(--primary-red);
+        }
+
+        /* Advanced Grid Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-img-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .gallery-description {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .gallery-category {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Masonry Layout for some items */
+      
+        .gallery-item.wide {
+            grid-column: span 2;
+        }
+
+        /* Lightbox Modal */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 5px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--primary-red);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            transition: color 0.3s;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-nav:hover {
+            color: var(--primary-red);
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        
+        /* Newsletter Subscription Styles */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            padding: 40px 0;
+            margin-top: 40px;
+            color: white;
+        }
+
+        .newsletter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-content {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 30px;
+        }
+
+        .newsletter-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .newsletter-content p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 0;
+            color: white;
+
+        }
+
+        .newsletter-form {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            gap: 10px;
+            position: relative;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background: white;
+            color: var(--primary-red);
+            border: none;
+            border-radius: 5px;
+            padding: 12px 25px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .newsletter-btn:hover:not(:disabled) {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .newsletter-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .newsletter-message {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .newsletter-success {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: white;
+            border: 1px solid #2ecc71;
+        }
+
+        .newsletter-error {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #ffcccb;
+            border: 1px solid #e74c3c;
+        }
+
+        /* Enhanced Footer */
+        .tech-footer {
+            background: linear-gradient(rgba(97, 97, 97, 0.95), rgba(128, 112, 112, 0.98)),
+                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-red);
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+            transform: translateX(5px);
+        }
+
+        .footer-links i {
+            font-size: 0.8rem;
+            color: var(--primary-red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 20px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-red);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--dark-red);
+        }
+
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-menu {
+                gap: 20px;
+            }
+
+            .gallery-item.wide {
+                grid-column: span 1;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-item {
+                position: relative;
+                margin: 15px 0;
+                margin-left: 30px;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                display: none;
+                background-color: var(--light-grey);
+                margin-top: 10px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .dropdown.active {
+                display: block;
+                max-height: 3100px;
+            }
+
+            .dropdown-item {
+                padding: 12px 20px;
+                border-bottom: 1px solid #eee;
+                display: block;
+            }
+
+            .nav-link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav-link i {
+                transition: transform 0.3s ease;
+            }
+
+            .nav-link.active i {
+                transform: rotate(180deg);
+            }
+
+              
+            .newsletter-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .newsletter-content {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .top-bar-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .top-bar {
+                height: 180px;
+            }
+
+            .contact-info {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-filter {
+                gap: 10px;
+            }
+
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="contact-info">
+                <div><i class="fas fa-map-marker-alt"></i>Viruthunagar</div>
+                <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
+                <div><i class="fas fa-phone"></i>+91 97518 67879</div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61574571321905"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@rohiltechdigitalteam?si=ziFJIu4UCkfetVE1"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo" style="display: flex; align-items: center;">
+                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo">
+                </div>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="classic.html" class="dropdown-item">Classic</a>
+                        <a href="professional.html" class="dropdown-item">Professional</a>
+                        <a href="expert.html" class="dropdown-item">Expert</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="placement.html" class="dropdown-item">Placement Training</a>
+                        <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+                        <a href="placement-success.html" class="dropdown-item">Placement Success</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h1>Our Gallery</h1>
+                <p>Explore moments from our training sessions, events, and student achievements at Rohil NextGen</p>
+            </div>
+
+            <!-- Gallery Filter -->
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="training">Training Sessions</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="placement">Placements</button>
+                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Training Session Images -->
+                <div class="gallery-item" data-category="training">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image1" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Java Full Stack Training</h3>
+                            <p class="gallery-description">Students learning Java Full Stack Development with hands-on
+                                coding sessions.</p>
+                            <span class="gallery-category">Training</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="training">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image2" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Python Data Science Class</h3>
+                            <p class="gallery-description">Interactive session on Python libraries for data analysis and
+                                visualization.</p>
+                            <span class="gallery-category">Training</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="training">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image3" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Web Development Workshop</h3>
+                            <p class="gallery-description">Students building responsive websites using HTML, CSS, and
+                                JavaScript.</p>
+                            <span class="gallery-category">Training</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events Images -->
+                <div class="gallery-item wide" data-category="events">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image4" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Annual Tech Fest 2024</h3>
+                            <p class="gallery-description">Students showcasing their innovative projects at our annual
+                                tech festival.</p>
+                            <span class="gallery-category">Events</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image5" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Industry Expert Session</h3>
+                            <p class="gallery-description">Guest lecture from industry professionals sharing real-world
+                                insights.</p>
+                            <span class="gallery-category">Events</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placement Images -->
+                <div class="gallery-item" data-category="placement">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image6" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Campus Placement Drive</h3>
+                            <p class="gallery-description">Our students participating in campus recruitment with top
+                                companies.</p>
+                            <span class="gallery-category">Placements</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item tall" data-category="placement">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image7" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Mock Interview Sessions</h3>
+                            <p class="gallery-description">Students practicing for placements with simulated interview
+                                rounds.</p>
+                            <span class="gallery-category">Placements</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="placement">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image8" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Placement Success Stories</h3>
+                            <p class="gallery-description">Our successful students celebrating their job offers with the
+                                team.</p>
+                            <span class="gallery-category">Placements</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="placement">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image9" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Placement Success Stories</h3>
+                            <p class="gallery-description">Our successful students celebrating their job offers with the
+                                team.</p>
+                            <span class="gallery-category">Placements</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Infrastructure Images -->
+                <div class="gallery-item" data-category="infrastructure">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image10" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Modern Computer Lab</h3>
+                            <p class="gallery-description">Our fully-equipped computer lab with high-speed internet and
+                                latest software.</p>
+                            <span class="gallery-category">Infrastructure</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Infrastructure Images -->
+                <div class="gallery-item" data-category="infrastructure">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image11" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Modern Computer Lab</h3>
+                            <p class="gallery-description">Our fully-equipped computer lab with high-speed internet and
+                                latest software.</p>
+                            <span class="gallery-category">Infrastructure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item wide" data-category="infrastructure">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image12" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Interactive Classroom</h3>
+                            <p class="gallery-description">Spacious classrooms with digital boards and comfortable
+                                seating.</p>
+                            <span class="gallery-category">Infrastructure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="infrastructure">
+                    <div class="gallery-img-container">
+                        <img src="" alt="image13" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Digital Library</h3>
+                            <p class="gallery-description">Well-stocked library with technical books and online
+                                resources.</p>
+                            <span class="gallery-category">Infrastructure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="lightboxClose">&times;</span>
+            <img src="" alt="" class="lightbox-img" id="lightboxImg">
+            <div class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="lightbox-nav lightbox-next" id="lightboxNext">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h3>Stay Updated with Rohil NextGen</h3>
+                <p>Subscribe to our newsletter for the latest course updates, tech insights, and placement
+                    opportunities.</p>
+            </div>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email address"
+                    required>
+                <button type="submit" class="newsletter-btn" id="newsletterBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span id="btnText">Subscribe</span>
+                </button>
+            </form>
+            <div id="newsletterMessage" class="newsletter-message"></div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="tech-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Rohil NextGen</h3>
+                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses
+                    in software development, data science, cybersecurity, and more.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                    <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
+                    <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
+                    <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a>
+                    </li>
+                    <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil
+                            Nadu</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
+            </div>
+            <div class="footer-bottom-links">
+                <p>Designed By Rohil Technologies</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', (e) => {
+            // Only close menu if it's not a dropdown trigger
+            if (!e.target.closest('.nav-item').querySelector('.dropdown')) {
+                navMenu.classList.remove('active');
+            }
+        }));
+
+        // Mobile Dropdown Functionality
+        document.querySelectorAll('.nav-item').forEach(item => {
+            const dropdown = item.querySelector('.dropdown');
+            const navLink = item.querySelector('.nav-link');
+
+            if (dropdown) {
+                // Add click event for mobile dropdowns
+                navLink.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+
+                        // Close other open dropdowns
+                        document.querySelectorAll('.dropdown.active').forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove('active');
+                                otherDropdown.previousElementSibling.classList.remove('active');
+                            }
+                        });
+
+                        // Toggle current dropdown
+                        dropdown.classList.toggle('active');
+                        navLink.classList.toggle('active');
+                    }
+                });
+            }
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!e.target.closest('.nav-item') && !e.target.closest('.hamburger')) {
+                    document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                        dropdown.previousElementSibling.classList.remove('active');
+                    });
+                }
+            }
+        });
+        // Gallery Filter Functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox Functionality
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        const galleryImages = document.querySelectorAll('.gallery-img');
+
+        let currentImageIndex = 0;
+
+        // Open lightbox with clicked image
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                lightboxImg.src = img.src;
+                lightboxModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+        });
+
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightboxModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        });
+
+        // Close lightbox when clicking outside the image
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) {
+                lightboxModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Navigate to previous image
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentImageIndex].src;
+        });
+
+        // Navigate to next image
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentImageIndex].src;
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightboxModal.style.display === 'flex') {
+                if (e.key === 'Escape') {
+                    lightboxModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                } else if (e.key === 'ArrowLeft') {
+                    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+                    lightboxImg.src = galleryImages[currentImageIndex].src;
+                } else if (e.key === 'ArrowRight') {
+                    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                    lightboxImg.src = galleryImages[currentImageIndex].src;
+                }
+            }
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+         // EmailJS Newsletter form submission
+        document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletterEmail').value;
+            const messageDiv = document.getElementById('newsletterMessage');
+            const submitBtn = document.getElementById('newsletterBtn');
+
+            // Simple email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                messageDiv.textContent = "Please enter a valid email address.";
+                messageDiv.className = "newsletter-message newsletter-error";
+                messageDiv.style.display = 'block';
+                return;
+            }
+
+            // Show loading state
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "Subscribing...";
+            submitBtn.disabled = true;
+
+            // Send email using EmailJS with proper template parameters
+            emailjs.send("service_45iohnc", "template_hjk6fxj", {
+                to_email: "rohiltechtrainee@gmail.com",
+                from_email: email,
+                subject: "New Newsletter Subscription - Rohil NextGen",
+                message: `A new user has subscribed to the Rohil NextGen newsletter.\n\nEmail: ${email}\n\nDate: ${new Date().toLocaleString()}`,
+                reply_to: email
+            })
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    // Show success message
+                    messageDiv.textContent = `Thank you for subscribing with ${email}! You will receive updates from Rohil NextGen.`;
+                    messageDiv.className = "newsletter-message newsletter-success";
+                    messageDiv.style.display = 'block';
+
+                    // Reset form
+                    document.getElementById('newsletterForm').reset();
+
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+
+                    // Hide message after 5 seconds
+                    setTimeout(function () {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                }, function (error) {
+
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+
+
+        // Initialize EmailJS with your public key
+        (function () {
+            // Initialize EmailJS with your public key
+            emailjs.init("zImWs-QBwGe-B-JT3");
+        })();
+
+    </script>
+</body>
+
+</html>
