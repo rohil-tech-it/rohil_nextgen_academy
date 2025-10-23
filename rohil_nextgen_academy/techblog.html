@@ -1,0 +1,2419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog - Rohil NextGen</title>
+    <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Add EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --primary-red: #d40404;
+            --dark-red: #a80303;
+            --light-red: #ffeded;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar Styles */
+        .top-bar {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 15px 0;
+            font-size: 15px;
+            height: 60px;
+        }
+
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 25px;
+            transition: opacity 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--light-gray);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100px;
+            width: 120px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            padding: 10px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-red);
+        }
+
+        .dropdown {
+            position: absolute;
+            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--medium-gray);
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--light-gray);
+            color: var(--primary-red);
+            padding-left: 25px;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-image: linear-gradient(rgba(102, 100, 100, 0.7), rgba(29, 29, 29, 0.7)), url("./images/tech-blog.webp");
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .blog-post {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-post:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-meta i {
+            color: var(--primary-red);
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+            color: var(--medium-gray);
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--primary-red);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .read-more:hover {
+            color: var(--dark-red);
+            transform: translateX(5px);
+        }
+
+        /* Related Content Styles */
+        .related-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            margin-top: 0;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 0 20px;
+        }
+
+        .related-content.active {
+            max-height: 500px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .related-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+            border-bottom: 2px solid var(--primary-red);
+            padding-bottom: 8px;
+        }
+
+        .related-content p {
+            margin-bottom: 15px;
+            color: var(--medium-gray);
+        }
+
+        .related-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .related-content li {
+            margin-bottom: 8px;
+            color: var(--medium-gray);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .widget-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-red);
+        }
+
+        .categories-list {
+            list-style: none;
+        }
+
+        .categories-list li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .categories-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .categories-list a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .categories-list a:hover {
+            color: var(--primary-red);
+        }
+
+        .categories-list span {
+            background-color: var(--light-red);
+            color: var(--primary-red);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .recent-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .recent-post {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .recent-post-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .recent-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .recent-post-content h4 {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .recent-post-content span {
+            font-size: 0.8rem;
+            color: var(--medium-gray);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: var(--light-gray);
+            color: var(--medium-gray);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-red);
+            color: var(--white);
+        }
+
+        /* WhatsApp Newsletter Styles */
+        .whatsapp-newsletter {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .whatsapp-newsletter .widget-title {
+            color: var(--dark-gray);
+        }
+
+        .whatsapp-newsletter .widget-title::after {
+            background-color: var(--primary-red);
+        }
+
+        .whatsapp-newsletter p {
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        .whatsapp-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .whatsapp-form input,
+        .whatsapp-form select {
+            padding: 12px 15px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            background-color: var(--white);
+        }
+
+        .whatsapp-form input:focus,
+        .whatsapp-form select:focus {
+            outline: none;
+            border-color: var(--dark-gray);
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+            background-color: var(--white);
+        }
+
+        .whatsapp-btn i {
+            font-size: 1.2rem;
+        }
+
+        .whatsapp-btn {
+            background-color: var(--white);
+            color: var(--primary-red);
+            border-color: var(--white);
+            border: 2px solid var(--primary-red);
+            padding: 12px 15px;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-btn:disabled {
+            background-color: var(--light-gray);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Success/Error Messages */
+        .message {
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(37, 211, 102, 0.3);
+            border-radius: 50%;
+            border-top-color: #25D366;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+      
+        /* Newsletter Subscription Styles */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            padding: 40px 0;
+            margin-top: 40px;
+            color: white;
+        }
+
+        .newsletter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-content {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 30px;
+        }
+
+        .newsletter-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .newsletter-content p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 0;
+            color: white;
+
+        }
+
+        .newsletter-form {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            gap: 10px;
+            position: relative;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background: white;
+            color: var(--primary-red);
+            border: none;
+            border-radius: 5px;
+            padding: 12px 25px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .newsletter-btn:hover:not(:disabled) {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .newsletter-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .newsletter-message {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .newsletter-success {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: white;
+            border: 1px solid #2ecc71;
+        }
+
+        .newsletter-error {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #ffcccb;
+            border: 1px solid #e74c3c;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .modal h3 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+
+        .modal p {
+            margin-bottom: 20px;
+            color: var(--medium-gray);
+        }
+
+        .modal button {
+            background-color: var(--primary-red);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .modal button:hover {
+            background-color: var(--dark-red);
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .pagination a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--white);
+            color: var(--dark-gray);
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .pagination a.active,
+        .pagination a:hover {
+            background-color: var(--primary-red);
+            color: var(--white);
+        }
+
+        .pagination a.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination a.disabled:hover {
+            background-color: var(--white);
+            color: var(--dark-gray);
+        }
+
+        /* Chat Widget Styles - LEFT SIDE */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .chat-toggle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 24px;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .chat-container {
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .chat-status {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #2ecc71;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message-content {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .user .message-content {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .bot .message-content {
+            background: white;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-input-container {
+            padding: 15px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            background: white;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+
+        .chat-input:focus {
+            border-color: var(--primary-red);
+        }
+
+        .send-button {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .send-button:hover {
+            transform: scale(1.05);
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 10px 15px;
+            font-style: italic;
+            color: #777;
+            font-size: 12px;
+        }
+
+        .typing-dots {
+            display: inline-block;
+        }
+
+        .typing-dots span {
+            animation: typing 1.4s infinite;
+            opacity: 0.6;
+        }
+
+        .typing-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+
+            0%,
+            60%,
+            100% {
+                opacity: 0.6;
+            }
+
+            30% {
+                opacity: 1;
+            }
+        }
+
+        /* Course List Styles */
+        .course-list {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .course-item {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 3px solid var(--primary-red);
+        }
+
+        .course-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-title {
+            font-weight: 600;
+            color: var(--dark-red);
+            margin-bottom: 5px;
+        }
+
+        .course-duration {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .course-details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .course-details.active {
+            display: block;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .quick-action-btn {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 5px 10px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .quick-action-btn:hover {
+            background: var(--dark-red);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .chat-container {
+                width: 300px;
+                height: 450px;
+            }
+
+            .newsletter-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .newsletter-content {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .newsletter-form {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chat-container {
+                width: 280px;
+                left: 10px;
+            }
+        }
+
+        /* Enhanced Footer */
+        .tech-footer {
+            background: linear-gradient(rgba(97, 97, 97, 0.95), rgba(128, 112, 112, 0.98)),
+                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-red);
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+            transform: translateX(5px);
+        }
+
+        .footer-links i {
+            font-size: 0.8rem;
+            color: var(--primary-red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 20px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-red);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--dark-red);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-item {
+                position: relative;
+                margin: 15px 0;
+                margin-left: 30px;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                display: none;
+                background-color: var(--light-gray);
+                margin-top: 10px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .dropdown.active {
+                display: block;
+                max-height: 300px;
+            }
+
+            .dropdown-item {
+                padding: 12px 20px;
+                border-bottom: 1px solid #eee;
+                display: block;
+            }
+
+            .nav-link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav-link i {
+                transition: transform 0.3s ease;
+            }
+
+            .nav-link.active i {
+                transform: rotate(180deg);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .top-bar-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .top-bar {
+                height: 200px;
+            }
+
+            .contact-info {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="contact-info">
+                <div><i class="fas fa-map-marker-alt"></i>Viruthunagar</div>
+                <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
+                <div><i class="fas fa-phone"></i>+91 97518 67879</div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61574571321905"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@rohiltechdigitalteam?si=ziFJIu4UCkfetVE1"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo">
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="classic.html" class="dropdown-item">Classic</a>
+                        <a href="professional.html" class="dropdown-item">Professional</a>
+                        <a href="expert.html" class="dropdown-item">Expert</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="placement.html" class="dropdown-item">Placement Training</a>
+                        <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+                        <a href="placement-success.html" class="dropdown-item">Placements Success</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Tech Blog</h1>
+            <p class="hero-subtitle">Stay updated with the latest technology trends, tutorials, and industry insights
+            </p>
+            <a href="#featured" class="cta-button">Explore Articles</a>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="featured">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest Tech Articles</h2>
+                <p>Insights, tutorials, and updates from the world of technology</p>
+            </div>
+
+            <div class="blog-container">
+                <div class="blog-posts" id="blogPostsContainer">
+                    <!-- Blog posts will be loaded here by JavaScript -->
+                </div>
+
+                <div class="sidebar">
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Categories</h3>
+                        <ul class="categories-list">
+                            <li><a href="#">Web Development <span>12</span></a></li>
+                            <li><a href="#">Data Science <span>8</span></a></li>
+                            <li><a href="#">Artificial Intelligence <span>15</span></a></li>
+                            <li><a href="#">Cybersecurity <span>7</span></a></li>
+                            <li><a href="#">Mobile Development <span>9</span></a></li>
+                            <li><a href="#">Cloud Computing <span>11</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Recent Posts Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Recent Posts</h3>
+                        <div class="recent-posts">
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="./images/python.jpg" alt="Python Programming">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4>Python for Data Analysis: Complete Guide</h4>
+                                    <span>September 12, 2025</span>
+                                </div>
+                            </div>
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="./images/react.png" alt="React JS">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4>React JS Best Practices for 2025</h4>
+                                    <span>October 8, 2025</span>
+                                </div>
+                            </div>
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="./images/dev-ops.jpg" alt="DevOps">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4>DevOps Tools Every Developer Should Know</h4>
+                                    <span>August 3, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tags Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Popular Tags</h3>
+                        <div class="tags">
+                            <a href="./frontend.html" class="tag">JavaScript</a>
+                            <a href="./python-code.html" class="tag">Python</a>
+                            <a href="./react.html" class="tag">React</a>
+                            <a href="./ml.html" class="tag">Machine Learning</a>
+                            <a href="./cloudcompute.html" class="tag">Cloud</a>
+                            <a href="./aws.html" class="tag">AWS</a>
+                            <a href="./ai-ml.html" class="tag">Artificial Intelligence</a>
+                            <a href="./chatgpt.html" class="tag">ChatGPT & Prompt Engineering</a>
+                            <a href="./cloud-devops.html" class="tag">DevOps</a>
+                            <a href="./uxui.html" class="tag">UI/UX Design</a>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Newsletter Widget -->
+                    <div class="whatsapp-newsletter">
+                        <h3 class="widget-title">WhatsApp Updates</h3>
+                        <p>Get the latest tech updates and tutorials directly on WhatsApp</p>
+                        <form class="whatsapp-form" id="whatsappForm">
+                            <input type="text" id="nameInput" placeholder="Your Name" required>
+                            <input type="tel" id="phoneInput" placeholder="Your WhatsApp Number" required>
+                            <select id="interestSelect">
+                                <option value="">Select your interest</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="data-science">Data Science</option>
+                                <option value="ai-ml">AI & Machine Learning</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="mobile-dev">Mobile Development</option>
+                                <option value="cloud-computing">Cloud Computing</option>
+                                <option value="all">All Updates</option>
+                            </select>
+                            <button type="submit" class="whatsapp-btn" id="whatsappSubscribeBtn">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Subscribe via WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="paginationContainer">
+                <!-- Pagination will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Widget - LEFT SIDE -->
+    <div class="chat-widget">
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <div>
+                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Chatbot" class="chatbot-image"
+                        style="width: 50px; height: 50px;">
+                    <h3>Course Information</h3>
+                    <div class="chat-status">
+                        <div class="status-indicator"></div>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Welcome to Rohil NextGen! I'm here to help you explore our courses. Type "courses" to see all
+                        available programs.
+                    </div>
+                </div>
+                <div class="message bot">
+                    <div class="message-content">
+                        You can also ask about specific courses like Java, Python, Web Development, etc.
+                    </div>
+                </div>
+
+                <!-- Course List (initially hidden) -->
+                <div class="course-list" id="courseList">
+                    <div class="course-item" data-course="java">
+                        <div class="course-title">Java Full Stack Development</div>
+                        <div class="course-duration">Duration: 3 months</div>
+                        <div class="course-details" id="java-details">
+                            <p><strong>Core Java:</strong> OOPs, Collections, Multithreading</p>
+                            <p><strong>Advanced Java:</strong> JDBC, Servlets, JSP</p>
+                            <p><strong>Frameworks:</strong> Spring, Hibernate</p>
+                            <p><strong>Frontend:</strong> HTML, CSS, JavaScript, React</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Java')">Enroll Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Java')">Get Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-course="python">
+                        <div class="course-title">Python with Data Science</div>
+                        <div class="course-duration">Duration: 4 months</div>
+                        <div class="course-details" id="python-details">
+                            <p><strong>Python Fundamentals:</strong> Core Python, OOPs</p>
+                            <p><strong>Data Analysis:</strong> Pandas, NumPy, Matplotlib</p>
+                            <p><strong>Machine Learning:</strong> Scikit-learn, TensorFlow</p>
+                            <p><strong>Web Framework:</strong> Django/Flask</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Python')">Enroll Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Python')">Get
+                                    Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-course="web">
+                        <div class="course-title">Web Development</div>
+                        <div class="course-duration">Duration: 3 months</div>
+                        <div class="course-details" id="web-details">
+                            <p><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React</p>
+                            <p><strong>Backend:</strong> Node.js, Express.js</p>
+                            <p><strong>Database:</strong> MongoDB, MySQL</p>
+                            <p><strong>Tools:</strong> Git, REST APIs, Deployment</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Web Development')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Web Development')">Get
+                                    Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-course="mobile">
+                        <div class="course-title">Mobile App Development</div>
+                        <div class="course-duration">Duration: 3 months</div>
+                        <div class="course-details" id="mobile-details">
+                            <p><strong>Android:</strong> Java/Kotlin, Android Studio</p>
+                            <p><strong>iOS:</strong> Swift, Xcode</p>
+                            <p><strong>Cross-platform:</strong> React Native/Flutter</p>
+                            <p><strong>Backend Integration:</strong> Firebase, APIs</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Mobile App Development')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Mobile App Development')">Get
+                                    Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-course="data">
+                        <div class="course-title">Data Science & Analytics</div>
+                        <div class="course-duration">Duration: 4 months</div>
+                        <div class="course-details" id="data-details">
+                            <p><strong>Statistics:</strong> Probability, Hypothesis Testing</p>
+                            <p><strong>Python Libraries:</strong> Pandas, NumPy, Scikit-learn</p>
+                            <p><strong>Visualization:</strong> Matplotlib, Seaborn, Tableau</p>
+                            <p><strong>ML Algorithms:</strong> Regression, Classification, Clustering</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Data Science')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Data Science')">Get
+                                    Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-course="cloud">
+                        <div class="course-title">Cloud Computing</div>
+                        <div class="course-duration">Duration: 3 months</div>
+                        <div class="course-details" id="cloud-details">
+                            <p><strong>AWS:</strong> EC2, S3, Lambda, RDS</p>
+                            <p><strong>Azure:</strong> Virtual Machines, App Services</p>
+                            <p><strong>Google Cloud:</strong> Compute Engine, Cloud Storage</p>
+                            <p><strong>DevOps:</strong> Docker, Kubernetes, CI/CD</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Cloud Computing')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Cloud Computing')">Get
+                                    Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typing-indicator" id="typingIndicator">
+                    <span class="typing-dots">
+                        Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
+                    </span>
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Ask about courses...">
+                <button class="send-button" id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <div class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+    </div>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h3>Stay Updated with Rohil NextGen</h3>
+                <p>Subscribe to our newsletter for the latest course updates, tech insights, and placement
+                    opportunities.</p>
+            </div>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email address"
+                    required>
+                <button type="submit" class="newsletter-btn" id="newsletterBtn">
+                    <span id="btnText">Subscribe</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+                <div id="newsletterMessage" class="newsletter-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="tech-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Rohil NextGen</h3>
+                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in
+                    software development, data science, cybersecurity, and more.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61574571321905"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                    <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
+                    <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
+                    <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a>
+                    </li>
+                    <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
+            </div>
+            <div class="footer-bottom-links">
+                <p>Designed By Rohil Technologies</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <h3>Confirm Your Subscription</h3>
+            <p>We've opened WhatsApp for you. Please send the pre-filled message to complete your subscription.</p>
+            <button id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize EmailJS
+        (function () {
+            emailjs.init("zImWs-QBwGe-B-JT3"); // Replace with your actual EmailJS public key
+        })();
+
+        // Blog Data
+        const blogPosts = [
+            {
+                id: 1,
+                title: "The Future of AI and Machine Learning in 2025",
+                excerpt: "Explore how artificial intelligence and machine learning are transforming industries and creating new career opportunities. Learn about the latest trends and how to prepare for the AI-driven future.",
+                image: "./images/ai1.jpg",
+                date: "May 15, 2025",
+                category: "Artificial Intelligence",
+                author: "Rohil Groups",
+                relatedContent: `
+                    <h4>Key AI Trends for 2025</h4>
+                    <p>Artificial Intelligence continues to evolve at a rapid pace. Here are the key trends to watch:</p>
+                    <ul>
+                        <li>Generative AI and its applications in content creation</li>
+                        <li>AI-powered cybersecurity solutions</li>
+                        <li>Edge AI for real-time processing</li>
+                        <li>Explainable AI for transparency</li>
+                        <li>AI in healthcare diagnostics</li>
+                    </ul>
+                    <p>These developments are creating new opportunities for developers and data scientists. Understanding these trends will help you stay ahead in the competitive tech landscape.</p>
+                `
+            },
+
+
+            {
+                id: 2,
+                title: "Data Science Career Path: From Beginner to Expert",
+                excerpt: "Learn how to build a successful career in data science. This comprehensive guide covers essential skills, tools, and learning paths for aspiring data scientists at every level.",
+                image: "./images/datascience.jpg",
+                date: "May 5, 2025",
+                category: "Data Science",
+                author: "Rohil Groups",
+                relatedContent: `
+                    <h4>Essential Data Science Skills</h4>
+                    <p>To succeed in data science, you need a combination of technical and soft skills:</p>
+                    <ul>
+                        <li>Programming languages: Python, R, SQL</li>
+                        <li>Statistical analysis and mathematics</li>
+                        <li>Machine learning algorithms</li>
+                        <li>Data visualization tools</li>
+                        <li>Communication and storytelling</li>
+                    </ul>
+                    <p>Start with Python and SQL, then gradually build your expertise in machine learning and data visualization. Practical projects are key to developing these skills.</p>
+                `
+            },
+            {
+                id: 3,
+                title: "Essential Cybersecurity Practices for Developers",
+                excerpt: "Protect your applications and data with these essential cybersecurity practices. Learn about common vulnerabilities and how to implement security measures in your development workflow.",
+                image: "./images/cyber-awarness.jpg",
+                date: "April 28, 2025",
+                category: "Cybersecurity",
+                author: "Rohil Groups",
+                relatedContent: `
+                    <h4>Top Security Practices for Developers</h4>
+                    <p>Security should be integrated into every stage of development:</p>
+                    <ul>
+                        <li>Input validation and sanitization</li>
+                        <li>Secure authentication and authorization</li>
+                        <li>Regular dependency updates</li>
+                        <li>Encryption of sensitive data</li>
+                        <li>Security testing and code reviews</li>
+                    </ul>
+                    <p>Implementing these practices from the beginning can prevent common vulnerabilities like SQL injection, XSS, and CSRF attacks.</p>
+                `
+            },
+            {
+                id: 4,
+                title: "Python for Data Analysis: Complete Guide",
+                excerpt: "Master data analysis with Python. This guide covers everything from basic data manipulation with Pandas to advanced visualization techniques.",
+                image: "./images/python.webp",
+                date: "May 12, 2025",
+                category: "Data Science",
+                author: "Rohil Groups",
+                relatedContent: `
+                    <h4>Python Libraries for Data Analysis</h4>
+                    <p>Python offers a rich ecosystem of libraries for data analysis:</p>
+                    <ul>
+                        <li><strong>Pandas:</strong> Data manipulation and analysis</li>
+                        <li><strong>NumPy:</strong> Numerical computing</li>
+                        <li><strong>Matplotlib:</strong> Basic plotting and visualization</li>
+                        <li><strong>Seaborn:</strong> Statistical data visualization</li>
+                        <li><strong>Scikit-learn:</strong> Machine learning algorithms</li>
+                    </ul>
+                    <p>Start with Pandas for data manipulation, then explore visualization libraries to create insightful charts and graphs from your data.</p>
+                `
+            },
+            {
+                id: 5,
+                title: "React JS Best Practices for 2025",
+                excerpt: "Learn the latest React JS best practices to build scalable and maintainable applications. Discover performance optimization techniques and modern development patterns.",
+                image: "./images/react.avif",
+                date: "May 8, 2025",
+                category: "Web Development",
+                author: "Rohil Groups",
+                relatedContent: `
+                    <h4>React Development Best Practices</h4>
+                    <p>Follow these practices to write better React code:</p>
+                    <ul>
+                        <li>Use functional components with hooks</li>
+                        <li>Implement proper state management</li>
+                        <li>Optimize performance with memoization</li>
+                        <li>Follow component composition patterns</li>
+                        <li>Write comprehensive tests</li>
+                    </ul>
+                    <p>These practices will help you build applications that are easier to maintain, test, and scale as your project grows.</p>
+                `
+            },
+            {
+                id: 6,
+                title: "DevOps Tools Every Developer Should Know",
+                excerpt: "Explore essential DevOps tools that streamline development workflows. From containerization with Docker to CI/CD pipelines, learn the tools that matter.",
+                image: "./images/devops.jpg",
+                date: "May 3, 2025",
+                category: "DevOps",
+                author: "Rohil Groups",
+                relatedContent: `
+                    <h4>Essential DevOps Tools</h4>
+                    <p>Modern development relies on these DevOps tools:</p>
+                    <ul>
+                        <li><strong>Docker:</strong> Containerization platform</li>
+                        <li><strong>Kubernetes:</strong> Container orchestration</li>
+                        <li><strong>Jenkins:</strong> Continuous integration</li>
+                        <li><strong>Git:</strong> Version control system</li>
+                        <li><strong>Terraform:</strong> Infrastructure as code</li>
+                    </ul>
+                    <p>Understanding these tools will help you automate development workflows, improve collaboration, and deploy applications more reliably.</p>
+                `
+            },
+            {
+                id: 7,
+                title: "Cloud Computing: AWS vs Azure vs Google Cloud",
+                excerpt: "Compare the top cloud platforms and understand their strengths. Make informed decisions about which cloud provider best suits your project requirements.",
+                image: "./images/cloud.jpg",
+                date: "April 25, 2025",
+                category: "Cloud Computing",
+                author: "Rohil Groups",
+                relatedContent: `
+                    <h4>Cloud Platform Comparison</h4>
+                    <p>Each cloud platform has its strengths:</p>
+                    <ul>
+                        <li><strong>AWS:</strong> Market leader with the most services</li>
+                        <li><strong>Azure:</strong> Excellent integration with Microsoft products</li>
+                        <li><strong>Google Cloud:</strong> Strong in data analytics and AI/ML</li>
+                    </ul>
+                    <p>Consider factors like existing technology stack, specific service requirements, and pricing when choosing a cloud provider. Many organizations use multiple clouds to leverage the strengths of each platform.</p>
+                `
+            },
+
+            {
+                id: 9,
+                title: "ChatGPT & Prompt Engineering Mastery",
+                excerpt: "Master the art of prompt engineering with ChatGPT. Learn techniques to get better responses and leverage AI for various development tasks.",
+                image: "./images/chatgpt.jpg",
+                date: "April 15, 2025",
+                category: "Artificial Intelligence",
+                author: "Rohil Groups",
+                relatedContent: `
+                    <h4>Effective Prompt Engineering</h4>
+                    <p>Improve your interactions with AI models:</p>
+                    <ul>
+                        <li>Be specific and detailed in your prompts</li>
+                        <li>Provide context and examples</li>
+                        <li>Use step-by-step instructions for complex tasks</li>
+                        <li>Specify the desired format for responses</li>
+                        <li>Iterate and refine your prompts</li>
+                    </ul>
+                    <p>Mastering prompt engineering can significantly improve the quality of AI-generated content and code, making you more productive in development tasks.</p>
+                `
+            },
+            {
+                id: 10,
+                title: "Mobile App Development Trends 2025",
+                excerpt: "Stay ahead with the latest mobile app development trends. From cross-platform frameworks to native development, explore what's shaping mobile technology.",
+                image: "./images/mobile.jpg",
+                date: "April 10, 2025",
+                category: "Mobile Development",
+                author: "Rohil Groups",
+                relatedContent: `
+                    <h4>Mobile Development Trends</h4>
+                    <p>The mobile landscape continues to evolve:</p>
+                    <ul>
+                        <li>Cross-platform frameworks (React Native, Flutter)</li>
+                        <li>5G-enabled applications</li>
+                        <li>Augmented Reality experiences</li>
+                        <li>Progressive Web Apps (PWAs)</li>
+                        <li>AI-powered mobile features</li>
+                    </ul>
+                    <p>Understanding these trends will help you choose the right approach for your mobile projects and create apps that leverage the latest technologies.</p>
+                `
+            },
+
+        ];
+
+        // Pagination Configuration
+        const postsPerPage = 3;
+        let currentPage = 1;
+
+        // DOM Elements
+        const blogPostsContainer = document.getElementById('blogPostsContainer');
+        const paginationContainer = document.getElementById('paginationContainer');
+        const whatsappForm = document.getElementById('whatsappForm');
+        const nameInput = document.getElementById('nameInput');
+        const phoneInput = document.getElementById('phoneInput');
+        const interestSelect = document.getElementById('interestSelect');
+        const whatsappSubscribeBtn = document.getElementById('whatsappSubscribeBtn');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const closeModal = document.getElementById('closeModal');
+
+        // Initialize the blog
+        document.addEventListener('DOMContentLoaded', function () {
+            displayBlogPosts();
+            setupPagination();
+            setupWhatsAppNewsletter();
+            setupNavigation();
+            initNewsletter();
+        });
+
+        // Display blog posts for current page
+        function displayBlogPosts() {
+            const startIndex = (currentPage - 1) * postsPerPage;
+            const endIndex = startIndex + postsPerPage;
+            const postsToShow = blogPosts.slice(startIndex, endIndex);
+
+            blogPostsContainer.innerHTML = '';
+
+            postsToShow.forEach(post => {
+                const postElement = document.createElement('article');
+                postElement.className = 'blog-post';
+                postElement.innerHTML = `
+                    <div class="blog-image">
+                        <img src="${post.image}" alt="${post.title}">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> ${post.date}</span>
+                            <span><i class="far fa-user"></i> ${post.author}</span>
+                            <span><i class="far fa-folder"></i> ${post.category}</span>
+                        </div>
+                        <h3>${post.title}</h3>
+                        <p>${post.excerpt}</p>
+                        <a class="read-more" data-post-id="${post.id}">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="related-content" id="related-${post.id}">
+                            ${post.relatedContent}
+                        </div>
+                    </div>
+                `;
+                blogPostsContainer.appendChild(postElement);
+            });
+
+            // Add event listeners to read more buttons
+            document.querySelectorAll('.read-more').forEach(button => {
+                button.addEventListener('click', function () {
+                    const postId = this.getAttribute('data-post-id');
+                    const relatedContent = document.getElementById(`related-${postId}`);
+
+                    // Toggle active class to show/hide related content
+                    relatedContent.classList.toggle('active');
+
+                    // Update button text
+                    if (relatedContent.classList.contains('active')) {
+                        this.innerHTML = 'Show Less <i class="fas fa-arrow-up"></i>';
+                    } else {
+                        this.innerHTML = 'Read More <i class="fas fa-arrow-right"></i>';
+                    }
+                });
+            });
+        }
+
+        // Setup pagination
+        function setupPagination() {
+            const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+
+            paginationContainer.innerHTML = '';
+
+            // Previous button
+            const prevButton = document.createElement('a');
+            prevButton.href = '#';
+            prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            if (currentPage === 1) {
+                prevButton.classList.add('disabled');
+            }
+            prevButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayBlogPosts();
+                    setupPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            paginationContainer.appendChild(prevButton);
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.href = '#';
+                pageLink.textContent = i;
+                if (i === currentPage) {
+                    pageLink.classList.add('active');
+                }
+                pageLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    displayBlogPosts();
+                    setupPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                paginationContainer.appendChild(pageLink);
+            }
+
+            // Next button
+            const nextButton = document.createElement('a');
+            nextButton.href = '#';
+            nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            if (currentPage === totalPages) {
+                nextButton.classList.add('disabled');
+            }
+            nextButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayBlogPosts();
+                    setupPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            paginationContainer.appendChild(nextButton);
+        }
+
+        // Setup WhatsApp newsletter functionality
+        function setupWhatsAppNewsletter() {
+            whatsappForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                handleWhatsAppSubscription();
+            });
+
+            closeModal.addEventListener('click', function () {
+                confirmationModal.style.display = 'none';
+                resetForm();
+            });
+        }
+
+        // Handle WhatsApp subscription
+        function handleWhatsAppSubscription() {
+            const name = nameInput.value.trim();
+            const phone = phoneInput.value.trim();
+            const interest = interestSelect.value;
+
+            if (!name || !phone || !interest) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            if (!isValidPhone(phone)) {
+                alert('Please enter a valid phone number');
+                return;
+            }
+
+            // Show loading state
+            whatsappSubscribeBtn.disabled = true;
+            whatsappSubscribeBtn.innerHTML = '<div class="loading"></div> Subscribing...';
+
+            // Simulate API call
+            setTimeout(() => {
+                subscribeViaWhatsApp(name, phone, interest);
+            }, 2000);
+        }
+
+        // Subscribe via WhatsApp
+        function subscribeViaWhatsApp(name, phone, interest) {
+            // Format phone number (remove any non-digit characters)
+            const formattedPhone = phone.replace(/\D/g, '');
+
+            // Create WhatsApp message
+            const message = encodeURIComponent(
+                `Hello ${name}! Thank you for subscribing to Rohil NextGen WhatsApp updates. ` +
+                `You'll receive updates about ${getInterestDisplayName(interest)}. ` +
+                `Stay tuned for the latest tech insights and tutorials!`
+            );
+
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/919751867879?text=${message}`;
+
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+
+            // Show confirmation modal
+            confirmationModal.style.display = 'flex';
+
+            // Reset form
+            resetForm();
+        }
+
+        // Get display name for interest
+        function getInterestDisplayName(interest) {
+            const interests = {
+                'web-development': 'Web Development',
+                'data-science': 'Data Science',
+                'ai-ml': 'AI & Machine Learning',
+                'cybersecurity': 'Cybersecurity',
+                'mobile-dev': 'Mobile Development',
+                'cloud-computing': 'Cloud Computing',
+                'all': 'all technology topics'
+            };
+            return interests[interest] || interest;
+        }
+
+        // Reset form
+        function resetForm() {
+            whatsappForm.reset();
+            whatsappSubscribeBtn.disabled = false;
+            whatsappSubscribeBtn.innerHTML = '<i class="fab fa-whatsapp"></i><span>Subscribe via WhatsApp</span>';
+        }
+
+        // Phone validation (basic Indian format)
+        function isValidPhone(phone) {
+            const phoneRegex = /^[6-9]\d{9}$/;
+            return phoneRegex.test(phone.replace(/\D/g, ''));
+        }
+
+        // Setup navigation functionality
+        function setupNavigation() {
+            // Mobile Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', (e) => {
+                // Only close menu if it's not a dropdown trigger
+                if (!e.target.closest('.nav-item').querySelector('.dropdown')) {
+                    navMenu.classList.remove('active');
+                }
+            }));
+
+            // Mobile Dropdown Functionality
+            document.querySelectorAll('.nav-item').forEach(item => {
+                const dropdown = item.querySelector('.dropdown');
+                const navLink = item.querySelector('.nav-link');
+
+                if (dropdown) {
+                    // Add click event for mobile dropdowns
+                    navLink.addEventListener('click', (e) => {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+
+                            // Close other open dropdowns
+                            document.querySelectorAll('.dropdown.active').forEach(otherDropdown => {
+                                if (otherDropdown !== dropdown) {
+                                    otherDropdown.classList.remove('active');
+                                    otherDropdown.previousElementSibling.classList.remove('active');
+                                }
+                            });
+
+                            // Toggle current dropdown
+                            dropdown.classList.toggle('active');
+                            navLink.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    if (!e.target.closest('.nav-item') && !e.target.closest('.hamburger')) {
+                        document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                            dropdown.previousElementSibling.classList.remove('active');
+                        });
+                    }
+                }
+            });
+
+            // Back to Top Button
+            const backToTopButton = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('active');
+                } else {
+                    backToTopButton.classList.remove('active');
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Close mobile menu on resize if window becomes larger
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navMenu.classList.remove('active');
+                    document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                        dropdown.previousElementSibling.classList.remove('active');
+                    });
+                }
+            });
+        }
+
+        // Newsletter Functionality
+        function initNewsletter() {
+            const newsletterForm = document.getElementById('newsletterForm');
+            const newsletterEmail = document.getElementById('newsletterEmail');
+            const newsletterBtn = document.getElementById('newsletterBtn');
+            const btnText = document.getElementById('btnText');
+            const messageDiv = document.getElementById('newsletterMessage');
+
+            newsletterForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const email = newsletterEmail.value.trim();
+
+                // Validate email
+                if (!validateEmail(email)) {
+                    showMessage('Please enter a valid email address.', 'error');
+                    return;
+                }
+
+                // Show loading state
+                setButtonState('loading');
+
+                // Send email using EmailJS
+                emailjs.send("service_45iohnc", "template_hjk6fxj", {
+                    to_email: "rohiltechtrainee@gmail.com",
+                    user_email: email,
+                    subject: "New Newsletter Subscription - Rohil NextGen",
+                    message: `New newsletter subscription from Rohil NextGen website:\n\nEmail: ${email}\nDate: ${new Date().toLocaleString()}`,
+                    reply_to: email
+                })
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        showMessage('Thank you for subscribing! You will receive updates from Rohil NextGen.', 'success');
+                        newsletterForm.reset();
+                        setButtonState('success');
+
+                        // Reset button after 2 seconds
+                        setTimeout(() => {
+                            setButtonState('default');
+                        }, 2000);
+                    })
+                    .catch(function (error) {
+                        console.error('FAILED...', error);
+                        showMessage('Sorry, there was an error. Please try again later or contact us directly.', 'error');
+                        setButtonState('error');
+
+                        // Reset button after 3 seconds
+                        setTimeout(() => {
+                            setButtonState('default');
+                        }, 3000);
+                    });
+            });
+
+            // Email validation function
+            function validateEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Show message function
+            function showMessage(message, type) {
+                messageDiv.textContent = message;
+                messageDiv.className = `newsletter-message newsletter-${type}`;
+                messageDiv.style.display = 'block';
+
+                // Auto-hide success messages after 5 seconds
+                if (type === 'success') {
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                }
+            }
+
+            // Set button state
+            function setButtonState(state) {
+                switch (state) {
+                    case 'loading':
+                        btnText.textContent = 'Subscribing...';
+                        newsletterBtn.disabled = true;
+                        break;
+                    case 'success':
+                        btnText.textContent = 'Subscribed!';
+                        newsletterBtn.disabled = true;
+                        break;
+                    case 'error':
+                        btnText.textContent = 'Failed!';
+                        newsletterBtn.disabled = true;
+                        break;
+                    default:
+                        btnText.textContent = 'Subscribe';
+                        newsletterBtn.disabled = false;
+                }
+            }
+
+            // Hide message when user starts typing again
+            newsletterEmail.addEventListener('input', function () {
+                if (messageDiv.style.display === 'block') {
+                    messageDiv.style.display = 'none';
+                }
+            });
+        }
+
+        // Chat Widget Functionality (keep your existing chat functionality)
+        // ... (your existing chat widget code remains the same)
+    </script>
+</body>
+
+</html>

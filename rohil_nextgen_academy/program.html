@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohil NextGen</title>
+    <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+    :root {
+        --primary-red: #d40404;
+        --dark-red: #a80303;
+        --light-red: #ffeded;
+        --white: #ffffff;
+        --light-gray: #f5f5f5;
+        --dark-gray: #333333;
+        --medium-gray: #666666;
+        --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: var(--dark-gray);
+        background-color: var(--white);
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Top Bar Styles */
+    .top-bar {
+        background-color: var(--primary-red);
+        color: var(--white);
+        padding: 15px 0;
+        font-size: 15px;
+        height: 60px;
+    }
+
+    .top-bar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .contact-info {
+        display: flex;
+        gap: 20px;
+    }
+
+    .contact-info div {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 18px;
+    }
+
+    .social-icons a {
+        color: var(--white);
+        font-size: 25px;
+        transition: opacity 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: var(--text-grey);
+        transform: translateY(-3px) scale(1.1);
+    }
+
+    /* Navigation Styles */
+    .navbar {
+        background-color: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        height: 80px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 100px;
+        width: 120px;
+    }
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+    }
+
+    .nav-item {
+        position: relative;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: var(--text-black);
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s;
+        padding: 10px 0;
+    }
+
+    .nav-link:hover {
+        color: var(--primary-red);
+    }
+
+    .dropdown {
+        position: absolute;
+        background-color: var(--white);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s;
+        z-index: 100;
+    }
+
+    .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-item {
+        display: block;
+        padding: 12px 20px;
+        text-decoration: none;
+        color: var(--text-grey);
+        border-bottom: 1px solid #eee;
+        transition: all 0.3s;
+    }
+
+    .dropdown-item:hover {
+        background-color: var(--light-grey);
+        color: var(--primary-red);
+        padding-left: 25px;
+    }
+
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        font-size: 24px;
+    }
+
+    /* Main Carousel Section (Below Navbar) */
+    .main-carousel-section {
+        padding: 0;
+        background-image: url('./images/code.jpg');
+    }
+
+    .main-carousel-container {
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        height: 500px;
+    }
+
+    .main-carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        height: 100%;
+    }
+
+    .main-slide {
+        min-width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .main-slide-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .slide-text {
+        max-width: 600px;
+        padding: 0 30px;
+        color: var(--white);
+    }
+
+    .slide-text h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--white);
+    }
+
+    .slide-text p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+    }
+
+    .slide-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .language-highlight {
+        color: var(--primary-red);
+        font-weight: 700;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background: var(--primary-red);
+        color: var(--white);
+        padding: 15px 35px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        border: 2px solid var(--primary-red);
+    }
+
+    .cta-button:hover {
+        background: transparent;
+        color: var(--primary-red);
+        transform: translateY(-2px);
+    }
+
+    /* Main Carousel Controls */
+    .main-carousel-controls {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 15px;
+        z-index: 10;
+    }
+
+    .main-carousel-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .main-carousel-dot.active {
+        background: var(--primary-red);
+        transform: scale(1.3);
+    }
+
+    .main-carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        color: var(--white);
+        border: none;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.5rem;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(10px);
+        z-index: 10;
+    }
+
+    .main-carousel-btn:hover {
+        background: var(--primary-red);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .main-prev-btn {
+        left: 30px;
+    }
+
+    .main-next-btn {
+        right: 30px;
+    }
+
+
+    /* Courses Section */
+    .courses-section {
+        padding: 80px 0;
+        background: var(--white);
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary-red);
+        margin-bottom: 15px;
+    }
+
+    .section-title p {
+        font-size: 1.2rem;
+        color: var(--text-grey);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .course-card {
+        background: var(--light-grey);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border-top: 4px solid var(--primary-red);
+    }
+
+    .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .course-image {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .course-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .course-card:hover .course-image img {
+        transform: scale(1.05);
+    }
+
+    .course-content {
+        padding: 25px;
+    }
+
+    .course-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--text-black);
+    }
+
+    .course-content p {
+        color: var(--text-grey);
+        margin-bottom: 20px;
+    }
+
+    .know-more-btn {
+        display: inline-block;
+        background: var(--primary-red);
+        color: var(--white);
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+        border: 2px solid var(--primary-red);
+        cursor: pointer;
+    }
+
+    .know-more-btn:hover {
+        background: transparent;
+        color: var(--primary-red);
+    }
+
+    /* Footer */
+    .tech-footer {
+        background-color: var(--dark-gray);
+        color: var(--white);
+        padding: 60px 0 20px;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        color: var(--white);
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .footer-column h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--primary-red);
+    }
+
+    .footer-column p {
+        margin-bottom: 20px;
+        color: #ccc;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: var(--white);
+        transition: var(--transition);
+    }
+
+    .social-links a:hover {
+        background-color: var(--primary-red);
+        transform: translateY(-3px);
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+
+    .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-links a:hover {
+        color: var(--primary-red);
+    }
+
+    .footer-links i {
+        font-size: 0.8rem;
+        color: var(--primary-red);
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .footer-bottom p {
+        color: #999;
+        margin: 0;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-red);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+    }
+
+    .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        background-color: var(--dark-red);
+    }
+
+    /* Responsive Styles */
+    /* Mobile Dropdown Fix */
+    @media (max-width: 768px) {
+        .nav-item {
+            position: relative;
+            margin: 15px 0;
+            margin-left: 30px;
+        }
+
+        .dropdown {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            box-shadow: none;
+            display: none;
+            background-color: var(--light-grey);
+            margin-top: 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .dropdown.active {
+            display: block;
+            max-height: 300px;
+        }
+
+        .dropdown-item {
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+            display: block;
+        }
+
+        .nav-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link.active i {
+            transform: rotate(180deg);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            flex-direction: column;
+            background-color: var(--white);
+            width: 100%;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            gap: 0;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .top-bar-container {
+            flex-direction: column;
+            gap: 10px;
+
+        }
+
+        .top-bar {
+            height: 200px;
+        }
+
+        .contact-info {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .course-card{
+          background-position: center;  
+          margin-right: 50px;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="contact-info">
+                <div><i class="fas fa-map-marker-alt"></i>Viruthunagar</div>
+                <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
+                <div><i class="fas fa-phone"></i>+91 97518 67879</div>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo" style="display: flex; align-items: center;">
+                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo">
+                </div>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="classic.html" class="dropdown-item">Classic</a>
+                        <a href="professional.html" class="dropdown-item">Professional</a>
+                        <a href="expert.html" class="dropdown-item">Expert</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="placement.html" class="dropdown-item">Placement Training</a>
+                        <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+                        <a href="placement-success.html" class="dropdown-item">Placement Success</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Carousel (Below Navbar) -->
+    <section class="main-carousel-section">
+        <div class="main-carousel-container">
+            <div class="main-carousel-track">
+                <!-- Slide 1: C Programming -->
+                <div class="main-slide">
+                    <img src="./gif/c-programming.gif" alt="C Programming" class="slide-image">
+                    <div class="main-slide-content">
+                        <div class="slide-text">
+                            <h2>Master <span class="language-highlight">C Programming</span></h2>
+                            <p>Learn the foundation of programming with C. Build strong fundamentals in algorithms, data
+                                structures, and memory management.</p>
+                            <a href="c-c++.html" class="cta-button">Start Learning C</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: C++ Programming -->
+                <div class="main-slide">
+                    <img src="./gif/cpp-programming.gif" alt="C++ Programming" class="slide-image">
+                    <div class="main-slide-content">
+                        <div class="slide-text">
+                            <h2>Advanced <span class="language-highlight">C++ Development</span></h2>
+                            <p>Master object-oriented programming, STL, and modern C++ features. Build high-performance
+                                applications.</p>
+                            <a href="c-c++.html" class="cta-button">Explore C++</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Java Programming -->
+                <div class="main-slide">
+                    <img src="./gif/java-programming.gif" alt="Java Programming" class="slide-image">
+                    <div class="main-slide-content">
+                        <div class="slide-text">
+                            <h2>Enterprise <span class="language-highlight">Java Development</span></h2>
+                            <p>Become a Java expert with comprehensive training in Spring Boot, Hibernate, and
+                                enterprise application development.</p>
+                            <a href="java.html" class="cta-button">Learn Java</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Python Programming -->
+                <div class="main-slide">
+                    <img src="./gif/python-programming.gif" alt="Python Programming" class="slide-image">
+                    <div class="main-slide-content">
+                        <div class="slide-text">
+                            <h2>Python for <span class="language-highlight">Everything</span></h2>
+                            <p>From web development to data science and AI. Python is the most versatile programming
+                                language today.</p>
+                            <a href="python.html" class="cta-button">Discover Python</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Navigation Buttons -->
+            <button class="main-carousel-btn main-prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="main-carousel-btn main-next-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Dot Indicators -->
+            <div class="main-carousel-controls">
+                <div class="main-carousel-dot active" data-slide="0"></div>
+                <div class="main-carousel-dot" data-slide="1"></div>
+                <div class="main-carousel-dot" data-slide="2"></div>
+                <div class="main-carousel-dot" data-slide="3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section" id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Classic Courses</h2>
+                <p>Choose from our wide range of industry-relevant courses</p>
+            </div>
+            <div class="courses-grid">
+                <!-- Python Programming -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/python.jpg" alt="Technical Programming">
+                    </div>
+                    <div class="course-content">
+                        <h3>Python Programming</h3>
+                        <a href="./python.html" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+
+                <!-- Full Stack -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/fullstack.jpg" alt="Cybersecurity and Network">
+                    </div>
+                    <div class="course-content">
+                        <h3>Full Stack Web Development</h3>
+                        <a href="./fullstack-web.html" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+
+                <!-- Java Programming -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/java.png" alt="Cloud, DevOps & Systems">
+                    </div>
+                    <div class="course-content">
+                        <h3>Java Programming</h3>
+                        <a href="./java.html" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+
+                <!-- C / C++ -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/c-cpp.webp" alt="Design & Creative Tech">
+                    </div>
+                    <div class="course-content">
+                        <h3>C/C++ Programming</h3>
+                        <a href="./c-c++.html" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <!-- Footer -->
+            <footer class="tech-footer">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>About Rohil NextGen</h3>
+                        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses
+                            in software development, data science, cybersecurity, and more.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=61574571321905"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/@rohilnextgen"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                            <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
+                            <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
+                            <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li>
+                            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Our Courses</h3>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil
+                                    Nadu</a></li>
+                            <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
+                            <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+                            <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <p>Designed By Rohil Technologies</p>
+                    </div>
+                </div>
+            </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    </section>
+
+    <script>
+        // Main Carousel functionality
+        class MainCarousel {
+            constructor() {
+                this.track = document.querySelector('.main-carousel-track');
+                this.slides = document.querySelectorAll('.main-slide');
+                this.dots = document.querySelectorAll('.main-carousel-dot');
+                this.prevBtn = document.querySelector('.main-prev-btn');
+                this.nextBtn = document.querySelector('.main-next-btn');
+                this.currentSlide = 0;
+                this.slideCount = this.slides.length;
+                this.autoPlayInterval = null;
+                this.autoPlayDelay = 2000; // 2 seconds
+
+                this.init();
+            }
+
+            init() {
+                // Event listeners
+                this.prevBtn.addEventListener('click', () => this.prevSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+
+                // Dot click events
+                this.dots.forEach(dot => {
+                    dot.addEventListener('click', (e) => {
+                        const slideIndex = parseInt(e.target.getAttribute('data-slide'));
+                        this.goToSlide(slideIndex);
+                    });
+                });
+
+                // Start auto-play
+                this.startAutoPlay();
+
+                // Pause auto-play on hover
+                this.track.addEventListener('mouseenter', () => this.stopAutoPlay());
+                this.track.addEventListener('mouseleave', () => this.startAutoPlay());
+
+                // Touch events for mobile
+                this.addTouchEvents();
+            }
+
+            updateCarousel() {
+                // Move track
+                this.track.style.transform = `translateX(-${this.currentSlide * 100}%)`;
+
+                // Update dots
+                this.dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+            }
+
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.slideCount;
+                this.updateCarousel();
+                this.restartAutoPlay();
+            }
+
+            prevSlide() {
+                this.currentSlide = (this.currentSlide - 1 + this.slideCount) % this.slideCount;
+                this.updateCarousel();
+                this.restartAutoPlay();
+            }
+
+            goToSlide(index) {
+                this.currentSlide = index;
+                this.updateCarousel();
+                this.restartAutoPlay();
+            }
+
+            startAutoPlay() {
+                this.autoPlayInterval = setInterval(() => {
+                    this.nextSlide();
+                }, this.autoPlayDelay);
+            }
+
+            stopAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                    this.autoPlayInterval = null;
+                }
+            }
+
+            restartAutoPlay() {
+                this.stopAutoPlay();
+                this.startAutoPlay();
+            }
+
+            addTouchEvents() {
+                let startX = 0;
+                let endX = 0;
+
+                this.track.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    this.stopAutoPlay();
+                });
+
+                this.track.addEventListener('touchmove', (e) => {
+                    endX = e.touches[0].clientX;
+                });
+
+                this.track.addEventListener('touchend', () => {
+                    const diff = startX - endX;
+                    const swipeThreshold = 50;
+
+                    if (Math.abs(diff) > swipeThreshold) {
+                        if (diff > 0) {
+                            this.nextSlide();
+                        } else {
+                            this.prevSlide();
+                        }
+                    }
+                    this.startAutoPlay();
+                });
+            }
+        }
+
+        // Initialize main carousel when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new MainCarousel();
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', (e) => {
+            // Only close menu if it's not a dropdown trigger
+            if (!e.target.closest('.nav-item').querySelector('.dropdown')) {
+                navMenu.classList.remove('active');
+            }
+        }));
+
+        // Mobile Dropdown Functionality
+        document.querySelectorAll('.nav-item').forEach(item => {
+            const dropdown = item.querySelector('.dropdown');
+            const navLink = item.querySelector('.nav-link');
+
+            if (dropdown) {
+                // Add click event for mobile dropdowns
+                navLink.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+
+                        // Close other open dropdowns
+                        document.querySelectorAll('.dropdown.active').forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove('active');
+                                otherDropdown.previousElementSibling.classList.remove('active');
+                            }
+                        });
+
+                        // Toggle current dropdown
+                        dropdown.classList.toggle('active');
+                        navLink.classList.toggle('active');
+                    }
+                });
+            }
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!e.target.closest('.nav-item') && !e.target.closest('.hamburger')) {
+                    document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                        dropdown.previousElementSibling.classList.remove('active');
+                    });
+                }
+            }
+        });
+
+        // Carousel Functionality
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const carouselDots = document.querySelectorAll('.carousel-dot');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            // Hide all slides
+            carouselItems.forEach(item => item.classList.remove('active'));
+            carouselDots.forEach(dot => dot.classList.remove('active'));
+
+            // Show the selected slide
+            carouselItems[index].classList.add('active');
+            carouselDots[index].classList.add('active');
+            currentIndex = index;
+        }
+
+        // Add click event to dots
+        carouselDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // Auto slide change
+        let carouselInterval = setInterval(() => {
+            let nextIndex = (currentIndex + 1) % carouselItems.length;
+            showSlide(nextIndex);
+        }, 5000);
+
+        // Pause carousel on hover
+        carouselItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                clearInterval(carouselInterval);
+            });
+
+            item.addEventListener('mouseleave', () => {
+                carouselInterval = setInterval(() => {
+                    let nextIndex = (currentIndex + 1) % carouselItems.length;
+                    showSlide(nextIndex);
+                }, 5000);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Close mobile menu on resize if window becomes larger
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active');
+                document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                    dropdown.previousElementSibling.classList.remove('active');
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>

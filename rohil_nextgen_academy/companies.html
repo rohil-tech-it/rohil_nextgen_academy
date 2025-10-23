@@ -1,0 +1,2394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tie-up Companies - Rohil NextGen</title>
+    <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --primary-red: #d40404;
+            --dark-red: #a80303;
+            --light-red: #ffeded;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar Styles */
+        .top-bar {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 15px 0;
+            font-size: 15px;
+            height: 60px;
+        }
+
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 25px;
+            transition: opacity 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--light-gray);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100px;
+            width: 120px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            padding: 10px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-red);
+        }
+
+        .dropdown {
+            position: absolute;
+            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--medium-gray);
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--light-gray);
+            color: var(--primary-red);
+            padding-left: 25px;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-image: linear-gradient(rgba(102, 100, 100, 0.7), rgba(29, 29, 29, 0.7)), url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Companies Section */
+        .companies-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+        }
+
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .company-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 220px;
+        }
+
+        .company-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .company-logo {
+            height: 80px;
+            width: auto;
+            max-width: 200px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+
+        .company-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-top: 10px;
+        }
+
+        .company-group {
+            margin-bottom: 60px;
+        }
+
+        .group-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .group-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+
+        /* Partnership Info */
+        .partnership-info {
+            background-color: var(--light-gray);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card i {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        .info-card p {
+            color: var(--medium-gray);
+        }
+
+
+        /* Chat Widget Styles - LEFT SIDE */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .chat-toggle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 24px;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .chat-container {
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .chatbot-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .chat-logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 110px;
+            left: 20px;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .chat-status {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #2ecc71;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message-content {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .user .message-content {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .bot .message-content {
+            background: white;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-input-container {
+            padding: 15px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            background: white;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+
+        .chat-input:focus {
+            border-color: var(--primary-red);
+        }
+
+        .send-button {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .send-button:hover {
+            transform: scale(1.05);
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 10px 15px;
+            font-style: italic;
+            color: #777;
+            font-size: 12px;
+        }
+
+        .typing-dots {
+            display: inline-block;
+        }
+
+        .typing-dots span {
+            animation: typing 1.4s infinite;
+            opacity: 0.6;
+        }
+
+        .typing-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+
+            0%,
+            60%,
+            100% {
+                opacity: 0.6;
+            }
+
+            30% {
+                opacity: 1;
+            }
+        }
+
+        /* Course List Styles */
+        .course-list {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .course-item {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 3px solid var(--primary-red);
+        }
+
+        .course-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-title {
+            font-weight: 600;
+            color: var(--dark-red);
+            margin-bottom: 5px;
+        }
+
+        .course-duration {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .course-details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .course-details.active {
+            display: block;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .quick-action-btn {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 5px 10px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .quick-action-btn:hover {
+            background: var(--dark-red);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+
+            .chat-container {
+                width: 300px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+
+            .chat-container {
+                width: 280px;
+                left: 10px;
+            }
+        }
+
+        /* Enhanced Footer */
+        .tech-footer {
+            background: linear-gradient(rgba(97, 97, 97, 0.95), rgba(128, 112, 112, 0.98)),
+                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-red);
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+            transform: translateX(5px);
+        }
+
+        .footer-links i {
+            font-size: 0.8rem;
+            color: var(--primary-red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 20px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-red);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--dark-red);
+        }
+
+
+        /* Newsletter Subscription Styles */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            padding: 40px 0;
+            margin-top: 40px;
+            color: white;
+        }
+
+        .newsletter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-content {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 30px;
+        }
+
+        .newsletter-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .newsletter-content p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 0;
+            color: white;
+
+        }
+
+        .newsletter-form {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            gap: 10px;
+            position: relative;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background: white;
+            color: var(--primary-red);
+            border: none;
+            border-radius: 5px;
+            padding: 12px 25px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .newsletter-btn:hover:not(:disabled) {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .newsletter-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .newsletter-message {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .newsletter-success {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: white;
+            border: 1px solid #2ecc71;
+        }
+
+        .newsletter-error {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #ffcccb;
+            border: 1px solid #e74c3c;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .companies-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .companies-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-item {
+                position: relative;
+                margin: 15px 0;
+                margin-left: 30px;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                display: none;
+                background-color: var(--light-grey);
+                margin-top: 10px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .dropdown.active {
+                display: block;
+                max-height: 300px;
+            }
+
+            .dropdown-item {
+                padding: 12px 20px;
+                border-bottom: 1px solid #eee;
+                display: block;
+            }
+
+            .nav-link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav-link i {
+                transition: transform 0.3s ease;
+            }
+
+            .nav-link.active i {
+                transform: rotate(180deg);
+            }
+        }
+
+        @media (max-width: 992px) {
+
+            .carousel-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .top-bar-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .top-bar {
+                height: 200px;
+            }
+
+            .contact-info {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .companies-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .newsletter-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .newsletter-content {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .companies-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .company-card {
+                height: 200px;
+                padding: 20px 15px;
+            }
+
+            .company-name {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="contact-info">
+                <div><i class="fas fa-map-marker-alt"></i>Viruthunagar</div>
+                <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
+                <div><i class="fas fa-phone"></i>+91 97518 67879</div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61574571321905"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@rohiltechdigitalteam?si=ziFJIu4UCkfetVE1"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo">
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="classic.html" class="dropdown-item">Classic</a>
+                        <a href="professional.html" class="dropdown-item">Professional</a>
+                        <a href="expert.html" class="dropdown-item">Expert</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="placement.html" class="dropdown-item">Placement Training</a>
+                        <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+                        <a href="placement-success.html" class="dropdown-item">Placement Success</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Our Tie-up Companies</h1>
+            <p class="hero-subtitle">Connecting talent with leading technology companies for successful career
+                placements</p>
+            <a href="#companies" class="cta-button">Explore Companies</a>
+        </div>
+    </section>
+
+    <!-- Companies Section -->
+    <section class="companies-section" id="companies">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Partner Companies</h2>
+                <p>We collaborate with industry leaders to provide excellent placement opportunities for our students
+                </p>
+            </div>
+
+            <!-- Group 1 -->
+            <div class="company-group">
+                <h3 class="group-title">Global Technology Leaders</h3>
+                <div class="companies-grid">
+                    <div class="company-card">
+                        <img src="./logos/logo (2).png" alt="ROHIL TECHNOLOGIES" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/finforz.png" alt="ROHIL TECHNOLOGIES" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/codingmart.jfif" alt="ROHIL TECHNOLOGIES" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (36).jpeg" alt="ROHIL TECHNOLOGIES" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/accenture.png" alt="ROHIL TECHNOLOGIES" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/google.png" alt="ROHIL TECHNOLOGIES" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/great innovus.png" alt="ROHIL TECHNOLOGIES" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/acl digital.png" alt="aquaconnect®" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/adobe.png" alt="virtusa" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/apple.png" alt="tcs" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/aqua.jpg" alt="mahindra" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/arm.jfif" alt="infor" class="company-logo">
+
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/asg-tech.png" alt="ICS" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/atos.png" alt="HOLTech" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/bosch.png" alt="idea's 2IT" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/capgemini.png" alt="Digital" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/capita.png" alt="PALM BY THE NEWPORT" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/cat.jpg" alt="CIRCLE" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/chetu.png" alt="actrenalin M&Y" class="company-logo">
+
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/cisco.png" alt="New Port of SES" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/cloustech.png" alt="salesforce" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/cog.jpg" alt="newgen" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/csc.png" alt="Myphasis" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/dci.png" alt="Kissflow" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/dell.png" alt="inspirisys" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/dxc tech.png" alt="Institute of Science" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/egrove.jfif" alt="xariant" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/elroi.jfif" alt="Roche" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/epam.png" alt="KONE" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/esales.jfif" alt="softcrylic" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/exceltento.jfif" alt="Chetu" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/fis.png" alt="KBR" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/hcl.png" alt="newage" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/hexaware.png" alt="ABB" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/hpe.png" alt="Finforz" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/ideas.jfif" alt="Atos" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/hcltech.jfif" alt="intellect" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img2.png" alt="ERICSSON" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img22.avif" alt="incedo" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img3.webp" alt="anow.com" class="company-logo">
+                        <div class="company-name">anow.com</div>
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img32.png" alt="carelon" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img33.png" alt="INFIN" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img36.jpg" alt="SAP" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img4.jpg" alt="Microsoft" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img5.png" alt="Jio" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img6.png" alt="iPod" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img7.png" alt="HALEON" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img8.png" alt="exela" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/img9.png" alt="SAINT-GOBAIN" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/infosys.png" alt="Hewlett Packard Enterprise" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/infin.jfif" alt="L&T Technology Services" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/itellect.png" alt="3i Infotech" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/kamaraj.jfif" alt="KPI T'" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/kissflow.png" alt="INDIUM" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/kone.png" alt="SIEMENS" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/kpit.jfif" alt="Bytesompass" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (1).avif" alt="Bytesompass" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/carelon.png" alt="Bytesompass" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/jio.png" alt="Bytesompass" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/trinomix.png" alt="Bytesompass" class="company-logo">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Group 2 -->
+            <div class="company-group">
+                <div class="companies-grid">
+                    <div class="company-card">
+                        <img src="./logos/logo (1).png" alt="Bytesompass" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (102).png" alt="BLUE PEAR" class="company-logo">
+
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (105).png" alt="TRONIEX" class="company-logo">
+
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (106).jpeg" alt="SaaSForest" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (112).jpeg" alt="SystemaNX" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (113).jpeg" alt="VELANCE" class="company-logo">
+
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (114).jpeg" alt="Coazidel Consultancy Services" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (197).png" alt="Fogrove Systems" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (116).png" alt="Futurik Technolo" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (117).jpeg" alt="EiBS" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (118).jpeg" alt="INFOTECH" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (119).jpeg" alt="GOFRUGAL" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (120).jpeg" alt="AstraByte" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (121).jpeg" alt="Elysium Corp." class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (122).jpeg" alt="Aportivo" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (123).jpeg" alt="XL Dynamics" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (124).jpeg" alt="Straive" class="company-logo">
+                        <div class="company-name">Straive</div>
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (125).jpeg" alt="Infodge" class="company-logo">
+                        <div class="company-name">Infodge</div>
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (126).png" alt="Capita" class="company-logo">
+                        <div class="company-name">Capita</div>
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (127).jpeg" alt="Lavish" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (128).jpeg" alt="CONNECT" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (129).png" alt="DATERPILLAR" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (130).png" alt="DATERPILLAR" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/logo (131).png" alt="DATERPILLAR" class="company-logo">
+                    </div>
+                    <div class="company-card">
+                        <img src="./logos/banibro.png" alt="DATERPILLAR" class="company-logo">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="companies-grid">
+                <div class="company-card">
+                    <img src="./logos/logo (132).png" alt="STRIDES" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (133).jpeg" alt="VYOG" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (134).jpeg" alt="ROFTR" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (135).jpeg" alt="KYRAN" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (136).png" alt="SMS" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (137).jpeg" alt="ITPARK" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (138).png" alt="Tartlabs" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (139).png" alt="ACURUS BE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (140).png" alt="MASSIVE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (141).png" alt="VeeServ Technologies" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (142).png" alt="Balt" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (143).png" alt="MATICZ" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (144).jpeg" alt="BONDING TOGETHER" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (145).png" alt="Testleaf" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (146).png" alt="Vaagai" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (147).png" alt="JEEVAN" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (148).jpeg" alt="ADHOC" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (149).jpeg" alt="CORPORATE TEA" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (150).jpeg" alt="SPORT FOR TEA" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (151).png" alt="BOTRE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (152).png" alt="CleusTech" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (153).jpeg" alt="VAS" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (154).jpeg" alt="ELYSIAN" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (155).png" alt="COME" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (156).png" alt="COPY" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (157).png" alt="ELROI" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (158).png" alt="Elisabeth" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (159).png" alt="LAMBA Tech Softics" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (160).png" alt="Tamizha Software Solution" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (161).png" alt="TAMIZHA" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (162).png" alt="BSE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (163).png" alt="QUALITY THROUGH RESEARCH" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (164).png" alt="TEC" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (165).png" alt="CAP DIGISOFT" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (166).png" alt="ZAIGO Infotech" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (167).jpeg" alt="BANNARI AMMAI" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (168).png" alt="KAMARAI" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (169).png" alt="Excelanto" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (170).png" alt="OMghradius" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (171) (1).png" alt="CONNECT" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (172) (1).png" alt="EBX" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (173).png" alt="solaris" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (174).png" alt="SAIC" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (175).jpeg" alt="J. Innervex" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (176).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (177).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (178).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (179).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (180).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (181).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo(182).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (183).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (184).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (185).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (186).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (4).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (187).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+
+                <div class="company-card">
+                    <img src="./logos/logo (188).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (193).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (194).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (195).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (189).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (190).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (191).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (6).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (196).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (23).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (25).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (26).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (30).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (36).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (200).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (201).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/hi-tech.jfif" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (203).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (204).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (205).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (206).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (207).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (208).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (209).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/lt.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/ness.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/newgen.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/payoda.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/pramati.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/pws.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/r system.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/salesforce.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/sap.webp" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/solartis.jfif" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/tata.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/tcs.jfif" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (191).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/tesark.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/udmy.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/walmart.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/wipro.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/virtusa.jfif" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/zaigo.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/zensar.png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/zoho.jpg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logosss (1).jfif" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logosss (1).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (41).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (125).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logo (134).jpeg" alt="TRIOANGLE" class="company-logo">
+                </div>
+                <div class="company-card">
+                    <img src="./logos/logosss (2).png" alt="TRIOANGLE" class="company-logo">
+                </div>
+            </div>
+    </section>
+
+    <!-- Partnership Info -->
+    <section class="partnership-info">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Partnership Benefits</h2>
+                <p>We provide comprehensive support to ensure successful placements</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Industry Connections</h3>
+                    <p>Direct access to hiring managers and HR teams at top technology companies</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Placement Training</h3>
+                    <p>Comprehensive training programs including resume building, interview preparation, and soft skills
+                        development</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Career Guidance</h3>
+                    <p>Personalized career counseling and mentorship to help students choose the right career path</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Widget - LEFT SIDE -->
+    <div class="chat-widget">
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <div>
+                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Chatbot" class="chatbot-image"
+                        style="width: 50px; height: 50px;">
+                    <h3>Course Information</h3>
+                    <div class="chat-status">
+                        <div class="status-indicator"></div>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Welcome to Rohil NextGen! I'm here to help you explore our courses. Type "courses" to
+                        see all available programs.
+                    </div>
+                </div>
+                <div class="message bot">
+                    <div class="message-content">
+                        You can also ask about specific courses like Java, Python, Web Development, etc.
+                    </div>
+                </div>
+
+                <!-- Course List (initially hidden) -->
+                <div class="course-list" id="courseList">
+                    <div class="course-item" data-course="java">
+                        <div class="course-title">Java Full Stack Development</div>
+                        <div class="course-duration">Duration: 3 months</div>
+                        <div class="course-details" id="java-details">
+                            <p><strong>Core Java:</strong> OOPs, Collections, Multithreading</p>
+                            <p><strong>Advanced Java:</strong> JDBC, Servlets, JSP</p>
+                            <p><strong>Frameworks:</strong> Spring, Hibernate</p>
+                            <p><strong>Frontend:</strong> HTML, CSS, JavaScript, React</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Java')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Java')">Get
+                                    Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-course="python">
+                        <div class="course-title">Python with Data Science</div>
+                        <div class="course-duration">Duration: 4 months</div>
+                        <div class="course-details" id="python-details">
+                            <p><strong>Python Fundamentals:</strong> Core Python, OOPs</p>
+                            <p><strong>Data Analysis:</strong> Pandas, NumPy, Matplotlib</p>
+                            <p><strong>Machine Learning:</strong> Scikit-learn, TensorFlow</p>
+                            <p><strong>Web Framework:</strong> Django/Flask</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Python')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Python')">Get
+                                    Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-course="web">
+                        <div class="course-title">Web Development</div>
+                        <div class="course-duration">Duration: 3 months</div>
+                        <div class="course-details" id="web-details">
+                            <p><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React</p>
+                            <p><strong>Backend:</strong> Node.js, Express.js</p>
+                            <p><strong>Database:</strong> MongoDB, MySQL</p>
+                            <p><strong>Tools:</strong> Git, REST APIs, Deployment</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Web Development')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Web Development')">Get
+                                    Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-course="mobile">
+                        <div class="course-title">Mobile App Development</div>
+                        <div class="course-duration">Duration: 3 months</div>
+                        <div class="course-details" id="mobile-details">
+                            <p><strong>Android:</strong> Java/Kotlin, Android Studio</p>
+                            <p><strong>iOS:</strong> Swift, Xcode</p>
+                            <p><strong>Cross-platform:</strong> React Native/Flutter</p>
+                            <p><strong>Backend Integration:</strong> Firebase, APIs</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Mobile App Development')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Mobile App Development')">Get
+                                    Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-course="data">
+                        <div class="course-title">Data Science & Analytics</div>
+                        <div class="course-duration">Duration: 4 months</div>
+                        <div class="course-details" id="data-details">
+                            <p><strong>Statistics:</strong> Probability, Hypothesis Testing</p>
+                            <p><strong>Python Libraries:</strong> Pandas, NumPy, Scikit-learn</p>
+                            <p><strong>Visualization:</strong> Matplotlib, Seaborn, Tableau</p>
+                            <p><strong>ML Algorithms:</strong> Regression, Classification, Clustering</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Data Science')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Data Science')">Get
+                                    Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-course="cloud">
+                        <div class="course-title">Cloud Computing</div>
+                        <div class="course-duration">Duration: 3 months</div>
+                        <div class="course-details" id="cloud-details">
+                            <p><strong>AWS:</strong> EC2, S3, Lambda, RDS</p>
+                            <p><strong>Azure:</strong> Virtual Machines, App Services</p>
+                            <p><strong>Google Cloud:</strong> Compute Engine, Cloud Storage</p>
+                            <p><strong>DevOps:</strong> Docker, Kubernetes, CI/CD</p>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="enrollCourse('Cloud Computing')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Cloud Computing')">Get
+                                    Syllabus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typing-indicator" id="typingIndicator">
+                    <span class="typing-dots">
+                        Rohil Groups is typing <span>.</span><span>.</span><span>.</span>
+                    </span>
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Ask about courses...">
+                <button class="send-button" id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <div class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+    </div>
+
+
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h3>Stay Updated with Rohil NextGen</h3>
+                <p>Subscribe to our newsletter for the latest course updates, tech insights, and placement
+                    opportunities.</p>
+            </div>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email address"
+                    required>
+                <button type="submit" class="newsletter-btn" id="newsletterBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span id="btnText">Subscribe</span>
+                </button>
+            </form>
+            <div id="newsletterMessage" class="newsletter-message"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="tech-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Rohil NextGen</h3>
+                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses
+                    in software development, data science, cybersecurity, and more.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                    <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
+                    <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
+                    <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a>
+                    </li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Our Courses</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil
+                            Nadu</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
+            </div>
+            <div class="footer-bottom-links">
+                <p>Designed By Rohil Technologies</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Initialize EmailJS with your Public Key
+        (function () {
+            emailjs.init("zImWs-QBwGe-B-JT3");
+        })();
+
+        // Newsletter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsletterForm = document.getElementById('newsletterForm');
+            const newsletterEmail = document.getElementById('newsletterEmail');
+            const newsletterBtn = document.getElementById('newsletterBtn');
+            const btnText = document.getElementById('btnText');
+            const messageDiv = document.getElementById('newsletterMessage');
+
+            newsletterForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const email = newsletterEmail.value.trim();
+
+                // Validate email
+                if (!validateEmail(email)) {
+                    showMessage('Please enter a valid email address.', 'error');
+                    return;
+                }
+
+                // Show loading state
+                setButtonState('loading');
+
+                // Send email using EmailJS
+                emailjs.send("service_45iohnc", "template_hjk6fxj", {
+                    to_email: "rohiltechtrainee@gmail.com",
+                    user_email: email,
+                    subject: "New Newsletter Subscription - Rohil NextGen",
+                    message: `New newsletter subscription from Rohil NextGen website:\n\nEmail: ${email}\nDate: ${new Date().toLocaleString()}`,
+                    reply_to: email
+                })
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        showMessage('Thank you for subscribing! You will receive updates from Rohil NextGen.', 'success');
+                        newsletterForm.reset();
+                        setButtonState('success');
+
+                        // Reset button after 2 seconds
+                        setTimeout(() => {
+                            setButtonState('default');
+                        }, 2000);
+                    })
+                    .catch(function (error) {
+                        console.error('FAILED...', error);
+                        showMessage('Sorry, there was an error. Please try again later or contact us directly.', 'error');
+                        setButtonState('error');
+
+                        // Reset button after 3 seconds
+                        setTimeout(() => {
+                            setButtonState('default');
+                        }, 3000);
+                    });
+            });
+
+            // Email validation function
+            function validateEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Show message function
+            function showMessage(message, type) {
+                messageDiv.textContent = message;
+                messageDiv.className = `newsletter-message newsletter-${type}`;
+                messageDiv.style.display = 'block';
+
+                // Auto-hide success messages after 5 seconds
+                if (type === 'success') {
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                }
+            }
+
+            // Set button state
+            function setButtonState(state) {
+                const icon = newsletterBtn.querySelector('i');
+                switch (state) {
+                    case 'loading':
+                        btnText.textContent = 'Subscribing...';
+                        newsletterBtn.disabled = true;
+                        icon.className = 'fas fa-spinner fa-spin';
+                        break;
+                    case 'success':
+                        btnText.textContent = 'Subscribed!';
+                        newsletterBtn.disabled = true;
+                        icon.className = 'fas fa-check';
+                        break;
+                    case 'error':
+                        btnText.textContent = 'Failed!';
+                        newsletterBtn.disabled = true;
+                        icon.className = 'fas fa-exclamation-triangle';
+                        break;
+                    default:
+                        btnText.textContent = 'Subscribe';
+                        newsletterBtn.disabled = false;
+                        icon.className = 'fas fa-paper-plane';
+                }
+            }
+
+            // Hide message when user starts typing again
+            newsletterEmail.addEventListener('input', function () {
+                if (messageDiv.style.display === 'block') {
+                    messageDiv.style.display = 'none';
+                }
+            });
+        });
+
+        // Chat Widget Functionality
+        const chatToggle = document.getElementById('chatToggle');
+        const chatContainer = document.getElementById('chatContainer');
+        const chatClose = document.getElementById('chatClose');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendButton = document.getElementById('sendButton');
+        const typingIndicator = document.getElementById('typingIndicator');
+        const courseList = document.getElementById('courseList');
+
+        // Toggle chat visibility
+        chatToggle.addEventListener('click', function () {
+            chatContainer.style.display = chatContainer.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Close chat
+        chatClose.addEventListener('click', function () {
+            chatContainer.style.display = 'none';
+        });
+
+        // Course item click handlers
+        document.querySelectorAll('.course-item').forEach(item => {
+            item.addEventListener('click', function () {
+                const course = this.getAttribute('data-course');
+                const details = document.getElementById(`${course}-details`);
+
+                // Toggle course details
+                document.querySelectorAll('.course-details').forEach(d => {
+                    if (d !== details) d.classList.remove('active');
+                });
+
+                details.classList.toggle('active');
+                scrollToBottom();
+            });
+        });
+
+        // Send message function
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message === '') return;
+
+            // Add user message
+            addMessage(message, 'user');
+            chatInput.value = '';
+
+            // Show typing indicator
+            typingIndicator.style.display = 'block';
+            scrollToBottom();
+
+            // Simulate bot response after a delay
+            setTimeout(function () {
+                typingIndicator.style.display = 'none';
+                let botResponse = getBotResponse(message);
+
+                if (message.toLowerCase().includes('courses') || message.toLowerCase().includes('all courses')) {
+                    courseList.style.display = 'flex';
+                    addMessage(botResponse, 'bot');
+                } else {
+                    courseList.style.display = 'none';
+                    addMessage(botResponse, 'bot');
+                }
+            }, 1500);
+        }
+
+        // Add message to chat
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+
+            const messageContent = document.createElement('div');
+            messageContent.className = 'message-content';
+            messageContent.textContent = text;
+
+            messageDiv.appendChild(messageContent);
+            chatMessages.appendChild(messageDiv);
+
+            scrollToBottom();
+        }
+
+        // Scroll to bottom of chat
+        function scrollToBottom() {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Get bot response based on user input
+        function getBotResponse(message) {
+            const lowerMessage = message.toLowerCase();
+
+            if (lowerMessage.includes('courses') || lowerMessage.includes('all courses')) {
+                return "Here are all our trending courses: Java Full Stack, Python Data Science, Web Development, Mobile App Development, Cloud Computing, Artificial Intelligence, Machine Learning, Cybersecurity, DevOps, and UI/UX Design. Click on any course above to see details.";
+
+            } else if (lowerMessage.includes('java')) {
+                return "💻 Java Full Stack Development covers Core Java, Advanced Java, Spring Framework, Hibernate, and Frontend technologies like HTML, CSS, and React. Click on the Java course above for details.";
+
+            } else if (lowerMessage.includes('python')) {
+                return "🐍 Python with Data Science includes Python basics, data analysis with Pandas, visualization, machine learning, and web frameworks like Flask and Django. Click on the Python course above for details.";
+
+            } else if (lowerMessage.includes('web development') || lowerMessage.includes('web')) {
+                return "🌐 Web Development covers frontend (HTML, CSS, JavaScript, React) and backend (Node.js, Express, and databases). Click on the Web Development course above for details.";
+
+            } else if (lowerMessage.includes('mobile') || lowerMessage.includes('app')) {
+                return "📱 Mobile App Development covers Android, iOS, and cross-platform app development with Flutter and React Native. Click on the Mobile App Development course above for details.";
+
+            } else if (lowerMessage.includes('data science') || lowerMessage.includes('analytics')) {
+                return "📊 Data Science & Analytics covers Python, statistics, Pandas, visualization tools (Matplotlib, Power BI), and machine learning. Click on the Data Science course above for details.";
+
+            } else if (lowerMessage.includes('cloud')) {
+                return "☁️ Cloud Computing includes AWS, Azure, Google Cloud, and DevOps integration for scalable deployment. Click on the Cloud Computing course above for details.";
+
+            } else if (lowerMessage.includes('ai') || lowerMessage.includes('artificial intelligence')) {
+                return "🤖 Artificial Intelligence covers neural networks, deep learning, NLP (Natural Language Processing), and Generative AI tools like ChatGPT. Click on the AI course above for details.";
+
+            } else if (lowerMessage.includes('ml') || lowerMessage.includes('machine learning')) {
+                return "🧠 Machine Learning course includes supervised and unsupervised learning, regression, classification, and model deployment techniques. Click on the ML course above for more info.";
+
+            } else if (lowerMessage.includes('cyber security') || lowerMessage.includes('cybersecurity') || lowerMessage.includes('hacking')) {
+                return "🔐 Cybersecurity covers ethical hacking, network security, penetration testing, and protecting against real-world cyber threats. Click on the Cybersecurity course above for details.";
+
+            } else if (lowerMessage.includes('devops')) {
+                return "⚙️ DevOps training includes CI/CD, Docker, Kubernetes, Jenkins, and version control with Git & GitHub. Click on the DevOps course above for details.";
+
+            } else if (lowerMessage.includes('ui') || lowerMessage.includes('ux') || lowerMessage.includes('design')) {
+                return "🎨 UI/UX Design covers design principles, Figma, Adobe XD, wireframing, and prototyping for modern digital interfaces. Click on the UI/UX course above for details.";
+
+            } else if (lowerMessage.includes('placement') || lowerMessage.includes('job')) {
+                return "🎯 We provide 100% placement assistance with mock interviews, resume building, and connections to our hiring partners. Would you like to know more about our placement training?";
+
+            } else if (lowerMessage.includes('support') || lowerMessage.includes('help')) {
+                return "💬 Our support team is currently away. Please leave your message and we'll get back to you as soon as possible.";
+
+            } else if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('phone')) {
+                return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+
+            } else {
+                return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
+            }
+        }
+
+        // Course enrollment function
+        window.enrollCourse = function (courseName) {
+            addMessage(`I'm interested in enrolling in ${courseName}`, 'user');
+
+            typingIndicator.style.display = 'block';
+            scrollToBottom();
+
+            setTimeout(function () {
+                typingIndicator.style.display = 'none';
+                addMessage(`Great! I've noted your interest in ${courseName}. Our admission team will contact you shortly with enrollment details.`, 'bot');
+            }, 1500);
+        };
+
+        // Syllabus request function
+        window.requestSyllabus = function (courseName) {
+            addMessage(`Can I get the syllabus for ${courseName}?`, 'user');
+
+            typingIndicator.style.display = 'block';
+            scrollToBottom();
+
+            setTimeout(function () {
+                typingIndicator.style.display = 'none';
+                addMessage(`I've sent the ${courseName} syllabus to your email. Please check your inbox. If you don't receive it, contact us at admin@rohiltechnologies.com`, 'bot');
+            }, 1500);
+        };
+
+        // Send message on button click
+        sendButton.addEventListener('click', sendMessage);
+
+        // Send message on Enter key
+        chatInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Auto-open chat after 10 seconds
+        setTimeout(function () {
+            if (chatContainer.style.display !== 'flex') {
+                chatContainer.style.display = 'flex';
+            }
+        }, 10000);
+
+        // Back to Top Button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', (e) => {
+            // Only close menu if it's not a dropdown trigger
+            if (!e.target.closest('.nav-item').querySelector('.dropdown')) {
+                navMenu.classList.remove('active');
+            }
+        }));
+
+        // Mobile Dropdown Functionality
+        document.querySelectorAll('.nav-item').forEach(item => {
+            const dropdown = item.querySelector('.dropdown');
+            const navLink = item.querySelector('.nav-link');
+
+            if (dropdown) {
+                // Add click event for mobile dropdowns
+                navLink.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+
+                        // Close other open dropdowns
+                        document.querySelectorAll('.dropdown.active').forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove('active');
+                                otherDropdown.previousElementSibling.classList.remove('active');
+                            }
+                        });
+
+                        // Toggle current dropdown
+                        dropdown.classList.toggle('active');
+                        navLink.classList.toggle('active');
+                    }
+                });
+            }
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!e.target.closest('.nav-item') && !e.target.closest('.hamburger')) {
+                    document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                        dropdown.previousElementSibling.classList.remove('active');
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

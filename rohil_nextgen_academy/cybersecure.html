@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohil NextGen - Cyber Security Course</title>
+    <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #d40404;
+            --dark-red: #a80303;
+            --light-red: #ffeded;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar Styles */
+        .top-bar {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 15px 0;
+            font-size: 15px;
+            height: 60px;
+        }
+
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 25px;
+            transition: opacity 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--text-grey);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100px;
+            width: 120px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-black);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            padding: 10px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-red);
+        }
+
+        .dropdown {
+            position: absolute;
+            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--text-grey);
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--light-grey);
+            color: var(--primary-red);
+            padding-left: 25px;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Enhanced Banner Section */
+        .banner {
+            background-image: url("./images/cyber.webp");
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+        .banner-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Overview Section */
+        .overview-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            margin-bottom: 30px;
+        }
+
+        .section-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+        }
+
+        .highlight-box {
+            background-color: var(--light-gray);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary-red);
+
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .highlight-box p strong {
+            color: var(--primary-red);
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .rating-badge {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* Enhanced Course Overview Section */
+        .course-overview {
+            padding: 40px 0 60px;
+        }
+
+        .course-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 25px 15px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        /* Enhanced Certification Section */
+        .certification-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .certification-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 40px;
+        }
+
+        .certification-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .course-goals h3 {
+            color: var(--primary-red);
+        }
+
+        .future-scope h3 {
+            color: var(--primary-red);
+
+        }
+
+        .certification-info-box {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 30px 20px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certification-info-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .certification-icon {
+            font-size: 48px;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .certification-subtitle {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 10px;
+        }
+
+        .certification-description {
+            font-size: 1rem;
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+        }
+
+        .certification-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+        }
+
+        /* Course Details Section */
+        .course-details-section {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .course-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .course-header h2 {
+            font-size: 2.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+
+        .course-subtitle {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            font-style: italic;
+        }
+
+        .course-description,
+        .course-goals,
+        .future-scope {
+            margin-bottom: 40px;
+        }
+
+        .course-description h3,
+        .course-goals h3,
+        .future-scope h3 {
+            font-size: 1.5rem;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .course-description h3::after,
+        .course-goals h3::after,
+        .future-scope h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+
+        .course-description p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--medium-gray);
+        }
+
+        .course-goals ul,
+        .future-scope ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .course-goals li,
+        .future-scope li {
+            padding: 10px 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .course-goals i,
+        .future-scope i {
+            color: var(--primary-red);
+            margin-top: 5px;
+        }
+
+        /* Enhanced Syllabus Section */
+        .syllabus-container {
+            padding: 80px 20px;
+            background: linear-gradient(to right, #f7f7f7, #eaeaea);
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .syllabus-title {
+            font-size: 2.5rem;
+            color: var(--dark-gray);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .syllabus-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-red);
+        }
+
+        .syllabus-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .week-container {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .week-container:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .week-header {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .week-header:hover {
+            background-color: var(--dark-red);
+        }
+
+        .week-header h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .week-icon {
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .week-content {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .week-container.active .week-content {
+            max-height: 1000px;
+            padding: 25px;
+        }
+
+        .week-container.active .week-icon {
+            transform: rotate(180deg);
+        }
+
+        .week-theory,
+        .week-practical {
+            margin-bottom: 25px;
+        }
+
+        .week-theory h4,
+        .week-practical h4 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .week-theory ul,
+        .week-practical ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .week-theory li,
+        .week-practical li {
+            padding: 8px 0;
+            font-size: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .week-theory i,
+        .week-practical i {
+            color: var(--primary-red);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Enhanced FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .faq-content {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: var(--light-red);
+        }
+
+        .faq-question h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin: 0;
+        }
+
+        .faq-icon {
+            color: var(--primary-red);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            background-color: var(--light-red);
+        }
+
+        .faq-answer p {
+            padding: 20px 0;
+            color: var(--medium-gray);
+            margin: 0;
+        }
+
+        .faq-item.active .faq-question {
+            background-color: var(--light-red);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 25px;
+        }
+
+        /* Enhanced Footer */
+        .tech-footer {
+            background-color: #656566;
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-red);
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+            transform: translateX(5px);
+        }
+
+        .footer-links i {
+            font-size: 0.8rem;
+            color: var(--primary-red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 20px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-red);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--dark-red);
+        }
+
+        /* Enrollment CTA Section */
+        .enrollment-cta {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .enrollment-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .enrollment-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .enrollment-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .enrollment-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-red);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .enrollment-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-item {
+                position: relative;
+                margin: 15px 0;
+                margin-left: 30px;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                display: none;
+                background-color: var(--light-grey);
+                margin-top: 10px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .dropdown.active {
+                display: block;
+                max-height: 300px;
+            }
+
+            .dropdown-item {
+                padding: 12px 20px;
+                border-bottom: 1px solid #eee;
+                display: block;
+            }
+
+            .nav-link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav-link i {
+                transition: transform 0.3s ease;
+            }
+
+            .nav-link.active i {
+                transform: rotate(180deg);
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .top-bar-container {
+                flex-direction: column;
+                gap: 10px;
+
+            }
+
+            .top-bar {
+
+                height: 120px;
+            }
+
+            .contact-info {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .syllabus-content {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .section-title h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner {
+                padding: 80px 0;
+                min-height: 400px;
+                background-size: cover;
+            }
+
+            .section-title h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title p {
+                font-size: 1.1rem;
+            }
+
+            .course-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .syllabus-container {
+                padding: 60px 15px;
+            }
+
+            .syllabus-title {
+                font-size: 2.2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .course-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-value {
+                font-size: 2rem;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .syllabus-container {
+                padding: 50px 10px;
+            }
+
+            .syllabus-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo">
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="classic.html" class="dropdown-item">Classic</a>
+                        <a href="professional.html" class="dropdown-item">Professional</a>
+                        <a href="expert.html" class="dropdown-item">Expert</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="placement.html" class="dropdown-item">Placement Training</a>
+                        <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+                        <a href="placement-success.html" class="dropdown-item">Placement Success</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Enhanced Hero Section -->
+    <section class="banner">
+        <div class="banner-content">
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section" id="overview">
+        <div class="container">
+            <div class="overview-container">
+                <div class="overview-content">
+                    <div class="section-title">
+                        <h1 style="text-align: center; font-weight: bold;">Cyber Security Course Overview</h1>
+                        <p style="text-align: center; font-weight: bold;">Become a Cyber Security Expert — Learn Ethical
+                            Hacking, Network Defense, and Threat
+                            Intelligence in One Complete Program!</p>
+                    </div>
+                    <div class="highlight-box">
+                        <p><strong>Rohil NextGen</strong> offers a comprehensive Cyber Security training covering
+                            Network Security, Vulnerability Assessment, Penetration Testing, and Real-World Incident
+                            Response using industry tools and platforms. </p>
+                    </div>
+                    <!--Rating-->
+                    <div class="rating">
+                        <span class="rating-badge">TOP RATED 4.9</span>
+                        <span>4.9 Ratings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview Section -->
+    <section class="course-overview">
+        <div class="container">
+            <div class="course-content">
+                <div class="course-text">
+                    <div class="course-stats">
+                        <div class="stat">
+                            <div class="stat-value">90 Days</div>
+                            <div class="stat-label">Course Duration</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">14 Weeks</div>
+                            <div class="stat-label">Structured Program</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">120</div>
+                            <div class="stat-label">Theory Hours</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">70</div>
+                            <div class="stat-label">Practical Hours</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section class="certification-section">
+        <div class="container">
+            <h2 class="certification-title">Why Choose Cyber Security Certification Training?</h2>
+            <div class="certification-content">
+                <div class="certification-info-box">
+                    <i class="fas fa-user-shield certification-icon"></i>
+                    <h4 class="certification-subtitle">Annual Income</h4>
+                    <p class="certification-description">Estimated Salary</p>
+                    <h3 class="certification-number">₹ 18 L</h3>
+                </div>
+                <div class="certification-info-box">
+                    <i class="fas fa-bug certification-icon"></i>
+                    <h4 class="certification-subtitle">Threat Landscape</h4>
+                    <p class="certification-description"> Yearly Rise in Attacks</p>
+                    <h3 class="certification-number">70%</h3>
+                </div>
+                <div class="certification-info-box">
+                    <i class="fas fa-lock certification-icon"></i>
+                    <h4 class="certification-subtitle">Cyber Experts Needed</h4>
+                    <p class="certification-description">Projected by 2026</p>
+                    <h3 class="certification-number">3 L</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Details Section -->
+    <section class="course-details-section">
+        <div class="container">
+            <div class="course-header">
+                <h2>Become a Cyber Security Specialist</h2>
+                <p class="course-subtitle">
+                    <span style="font-size: 30px; color: #e2062c; font-weight: bold;">❝</span>
+                    Learn Ethical Hacking, Defense Strategies, and Threat Intelligence <span
+                        style="font-size: 30px; color: #e2062c; font-weight: bold;">❞</span>
+                </p>
+            </div>
+
+            <div class="course-description">
+                <h3>Course Overview</h3>
+                <p>This Cyber Security course equips you with the skills to protect systems, detect threats, and respond
+                    to cyber incidents. You will learn hands-on with tools used in Ethical Hacking, SIEM, Firewall
+                    Configuration, and Malware Analysis.</p>
+            </div>
+
+            <div class="course-goals">
+                <h3>Key Learning Outcomes</h3>
+                <ul>
+                    <li><i class="fas fa-user-secret"></i> Learn Ethical Hacking and Penetration Testing Techniques.
+                    </li>
+                    <li><i class="fas fa-network-wired"></i> Master Network Security and Firewall Configurations.</li>
+                    <li><i class="fas fa-user-shield-alt"></i> Conduct Risk Assessment and Compliance Checks.</li>
+                    <li><i class="fas fa-clipboard-check"></i> Analyze Threat Intelligence and Secure Systems.</li>
+                    <li><i class="fas fa-user-shield-alt"></i> Work with SIEM, IDS/IPS, and Cyber Forensics Tools.</li>
+                </ul>
+            </div>
+            <div class="future-scope">
+                <h3>Career Prospects with This Course</h3>
+                <ul>
+                    <li><i class="fas fa-user-shield"></i>Work as a Cyber Security Analyst or Consultant.</li>
+                    <li><i class="fas fa-search"></i> Join as a Threat Intelligence Specialist.</li>
+                    <li><i class="fas fa-hat-cowboy"></i> Become an Ethical Hacker or Pen Tester.</li>
+                    <li><i class="fas fa-lock"></i> Take roles as Security Operations Center (SOC) Analyst.</li>
+                    <li><i class="fas fa-rocket"></i> Lead Security Audits & Compliance Projects.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Syllabus Section -->
+    <section class="syllabus-container">
+        <div class="container">
+            <h2 class="syllabus-title">Course Syllabus</h2>
+            <div class="syllabus-content">
+                <!-- Week 1-2 -->
+                <div class="week-container">
+                    <div class="week-header">
+                        <h3>Week 1-2: Introduction to Cyber Security</h3>
+                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="week-content">
+                        <div class="week-theory">
+                            <h4><i class="fas fa-book"></i> Theory</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> What is Cyber Security?</li>
+                                <li><i class="fas fa-check-circle"></i> Goals of Cyber Security: CIA Triad
+                                    (Confidentiality, Integrity, Availability)</li>
+                                <li><i class="fas fa-check-circle"></i> Types of cyber attacks (phishing, malware,
+                                    ransomware, DoS/DDoS)</li>
+                                <li><i class="fas fa-check-circle"></i> Roles in cyber security: SOC analyst, pen
+                                    tester, blue/red teams</li>
+                            </ul>
+                        </div>
+                        <div class="week-practical">
+                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Case study analysis: Analyze a real-world cyber
+                                    breach</li>
+                                <li><i class="fas fa-check-circle"></i> Create a mind map of different types of attacks
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 3-4 -->
+                <div class="week-container">
+                    <div class="week-header">
+                        <h3>Week 3-4: Computer & Networking Fundamentals</h3>
+                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="week-content">
+                        <div class="week-theory">
+                            <h4><i class="fas fa-book"></i> Theory</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Basics of computer systems (OS, memory,
+                                    processes)</li>
+                                <li><i class="fas fa-check-circle"></i> Networking basics: OSI model, TCP/IP, IP
+                                    addressing</li>
+                                <li><i class="fas fa-check-circle"></i> DNS, DHCP, Ports & Protocols (HTTP, FTP, SSH,
+                                    HTTPS)</li>
+                            </ul>
+                        </div>
+                        <div class="week-practical">
+                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Use ipconfig / ifconfig, netstat, ping, and
+                                    traceroute</li>
+                                <li><i class="fas fa-check-circle"></i> Set up a basic local area network (LAN) in a
+                                    virtual lab</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 5-6 -->
+                <div class="week-container">
+                    <div class="week-header">
+                        <h3>Week 5-6: Introduction to Linux & Command Line</h3>
+                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="week-content">
+                        <div class="week-theory">
+                            <h4><i class="fas fa-book"></i> Theory</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Why Linux for cyber security?</li>
+                                <li><i class="fas fa-check-circle"></i> Linux file system structure & permissions</li>
+                                <li><i class="fas fa-check-circle"></i> Essential commands: ls, cd, mkdir, cp, mv,
+                                    chmod, grep, ps</li>
+                            </ul>
+                        </div>
+                        <div class="week-practical">
+                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Install and use Kali Linux in a VM</li>
+                                <li><i class="fas fa-check-circle"></i> Perform basic file operations and user
+                                    management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 7-8 -->
+                <div class="week-container">
+                    <div class="week-header">
+                        <h3>Week 7-8: Network Security & Firewalls</h3>
+                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="week-content">
+                        <div class="week-theory">
+                            <h4><i class="fas fa-book"></i> Theory</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Network security concepts: VLANs, VPNs, IDS/IPS
+                                </li>
+                                <li><i class="fas fa-check-circle"></i> Firewalls: types (stateful, stateless), rules,
+                                    ACLs</li>
+                                <li><i class="fas fa-check-circle"></i> Network scanning & monitoring basics</li>
+                            </ul>
+                        </div>
+                        <div class="week-practical">
+                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Use Wireshark to capture and analyze packets
+                                </li>
+                                <li><i class="fas fa-check-circle"></i> Configure a basic firewall using iptables</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 9-10 -->
+                <div class="week-container">
+                    <div class="week-header">
+                        <h3>Week 9-10: Web Application Security</h3>
+                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="week-content">
+                        <div class="week-theory">
+                            <h4><i class="fas fa-book"></i> Theory</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> How web applications work (HTTP, cookies,
+                                    sessions)</li>
+                                <li><i class="fas fa-check-circle"></i> OWASP Top 10 vulnerabilities (SQL injection,
+                                    XSS, CSRF)</li>
+                                <li><i class="fas fa-check-circle"></i> Secure coding practices</li>
+                            </ul>
+                        </div>
+                        <div class="week-practical">
+                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Use Burp Suite to test for SQL injection and XSS
+                                </li>
+                                <li><i class="fas fa-check-circle"></i> Exploit a vulnerable web app (DVWA)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 11-12 -->
+                <div class="week-container">
+                    <div class="week-header">
+                        <h3>Week 11-12: Ethical Hacking & Penetration Testing</h3>
+                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="week-content">
+                        <div class="week-theory">
+                            <h4><i class="fas fa-book"></i> Theory</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Phases of ethical hacking: Reconnaissance,
+                                    Scanning, Gaining Access, Maintaining Access, Covering Tracks</li>
+                                <li><i class="fas fa-check-circle"></i> Vulnerability assessment vs penetration testing
+                                </li>
+                                <li><i class="fas fa-check-circle"></i> Legal and ethical considerations</li>
+                            </ul>
+                        </div>
+                        <div class="week-practical">
+                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Use Nmap for network scanning</li>
+                                <li><i class="fas fa-check-circle"></i> Perform a basic penetration test on a test
+                                    network</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 13-14 -->
+                <div class="week-container">
+                    <div class="week-header">
+                        <h3>Week 13-14: Final Project & Career Preparation</h3>
+                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="week-content">
+                        <div class="week-theory">
+                            <h4><i class="fas fa-book"></i> Theory</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Resume building for cyber security roles</li>
+                                <li><i class="fas fa-check-circle"></i> Interview preparation & common questions</li>
+                                <li><i class="fas fa-check-circle"></i> Certifications: CEH, Security+, CISSP overview
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="week-practical">
+                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Complete a capstone project: Full security
+                                    assessment of a mock company</li>
+                                <li><i class="fas fa-check-circle"></i> Present findings and write a professional report
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="text-align: center;">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-content">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3> What is Cyber Awareness?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p> Cyber Awareness helps individuals understand online safety, identify threats like phishing,
+                            and protect their personal and organizational data from cyberattacks.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Why is Cyber Awareness important?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p> It teaches safe online habits, prevents data loss, and reduces the risk of becoming a victim
+                            of fraud, scams, or hacking.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will I receive a certificate after completing the Cyber Security course?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, upon successful completion of the course and final project, you will receive a
+                            certificate from Rohil NextGen.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3> . Who can attend the Cyber Awareness program?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p> Anyone who uses the internet — students, employees, or business professionals — can benefit
+                            from this training.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I need any technical background to learn Cyber Awareness?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No technical knowledge is required. The course is designed in simple language that anyone can
+                            understand.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How will this training help me?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p> It improves your online safety skills, boosts confidence in digital platforms, and helps
+                            prevent cyber incidents at work or home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="tech-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Rohil NextGen</h3>
+                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses
+                    in software development, data science, cybersecurity, and more.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61574571321905"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                    <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
+                    <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
+                    <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Our Courses</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil
+                            Nadu</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
+            </div>
+            <div class="footer-bottom-links">
+                <p>Designed By Rohil Technologies</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', (e) => {
+            // Only close menu if it's not a dropdown trigger
+            if (!e.target.closest('.nav-item').querySelector('.dropdown')) {
+                navMenu.classList.remove('active');
+            }
+        }));
+
+        // Mobile Dropdown Functionality
+        document.querySelectorAll('.nav-item').forEach(item => {
+            const dropdown = item.querySelector('.dropdown');
+            const navLink = item.querySelector('.nav-link');
+
+            if (dropdown) {
+                // Add click event for mobile dropdowns
+                navLink.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+
+                        // Close other open dropdowns
+                        document.querySelectorAll('.dropdown.active').forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove('active');
+                                otherDropdown.previousElementSibling.classList.remove('active');
+                            }
+                        });
+
+                        // Toggle current dropdown
+                        dropdown.classList.toggle('active');
+                        navLink.classList.toggle('active');
+                    }
+                });
+            }
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!e.target.closest('.nav-item') && !e.target.closest('.hamburger')) {
+                    document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                        dropdown.previousElementSibling.classList.remove('active');
+                    });
+                }
+            }
+        });
+
+        // Week Accordion Functionality
+        document.querySelectorAll('.week-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const weekContainer = header.parentElement;
+                weekContainer.classList.toggle('active');
+            });
+        });
+
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+
+                // Toggle current FAQ item
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Close mobile menu on resize if window becomes larger
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active');
+                document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                    dropdown.previousElementSibling.classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
