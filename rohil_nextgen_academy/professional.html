@@ -301,7 +301,7 @@
     @media (max-width: 768px) {
 
         .chat-container {
-            width: 300px;
+            width: 290px;
             height: 450px;
         }
     }
@@ -310,12 +310,12 @@
 
 
         .chat-container {
-            width: 280px;
+            width: 300px;
             left: 10px;
         }
     }
 
-    
+
     /* Newsletter Subscription Styles */
     .newsletter-section {
         background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
@@ -543,70 +543,16 @@
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     }
 
-    /* Footer Newsletter Styles */
-    .footer-newsletter {
-        margin-top: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 20px;
-        border-radius: 8px;
-    }
-
-    .footer-newsletter h4 {
-        font-size: 18px;
-        margin-bottom: 15px;
-        color: white;
-    }
-
-    .footer-newsletter-form {
-        display: flex;
-        gap: 10px;
-    }
-
-    .footer-newsletter-input {
-        flex: 1;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 5px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        outline: none;
-    }
-
-    .footer-newsletter-btn {
-        background: var(--primary-red);
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .footer-newsletter-btn:hover {
-        background: var(--dark-red);
-    }
-
-    .footer-newsletter-message {
-        display: none;
-        margin-top: 10px;
-        padding: 8px;
-        border-radius: 5px;
-        text-align: center;
-        font-size: 14px;
-    }
-
     /* Footer Styles */
     .tech-footer {
-       background: linear-gradient(rgba(97, 97, 97, 0.95), rgba(128, 112, 112, 0.98)),
-                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 60px 0 30px;
-            position: relative;
-            overflow: hidden;
+        background: linear-gradient(rgba(97, 97, 97, 0.95), rgba(128, 112, 112, 0.98)),
+            url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+        padding: 60px 0 30px;
+        position: relative;
+        overflow: hidden;
     }
 
     .footer-content {
@@ -710,11 +656,34 @@
         margin: 0;
     }
 
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .chat-container {
+            width: 300px;
+            height: 450px;
+        }
+
+        .newsletter-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            flex-direction: column;
+        }
+    }
+
     /* Responsive Design */
     @media (max-width: 992px) {
         .top-bar {
             height: 200px;
         }
+
         .courses-grid {
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
@@ -728,9 +697,16 @@
         .section-title h2 {
             font-size: 2rem;
         }
-        
-        .footer-newsletter-form {
-            flex-direction: column;
+    }
+
+     @media (max-width: 480px) {
+        .top-bar {
+            height: 200px;
+        }
+
+        .chat-container {
+            width: 330px;
+            left: 10px;
         }
     }
 </style>
@@ -1158,7 +1134,7 @@
 
                 <div class="typing-indicator" id="typingIndicator">
                     <span class="typing-dots">
-                     Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
+                        Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
                     </span>
                 </div>
             </div>
@@ -1174,7 +1150,7 @@
         </div>
     </div>
 
-    
+
     <!-- Newsletter Subscription Section -->
     <section class="newsletter-section">
         <div class="newsletter-container">
@@ -1229,19 +1205,6 @@
                     <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
                     <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
                 </ul>
-                
-                <!-- Newsletter Subscription in Footer -->
-                <div class="footer-newsletter">
-                    <h4>Stay Updated</h4>
-                    <form class="footer-newsletter-form" id="footerNewsletterForm">
-                        <input type="email" class="footer-newsletter-input" id="footerNewsletterEmail" 
-                               placeholder="Your email address" required>
-                        <button type="submit" class="footer-newsletter-btn" id="footerNewsletterBtn">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                    <div id="footerNewsletterMessage" class="footer-newsletter-message"></div>
-                </div>
             </div>
 
         </div>
@@ -1526,7 +1489,7 @@
             }
         }, 10000);
 
-        
+
         // EmailJS Newsletter form submission
         document.getElementById('newsletterForm').addEventListener('submit', function (e) {
             e.preventDefault();

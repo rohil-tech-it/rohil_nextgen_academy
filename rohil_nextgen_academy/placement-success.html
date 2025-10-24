@@ -267,38 +267,6 @@
             color: var(--medium-gray);
         }
 
-        /* Filter Section */
-        .filter-section {
-            background-color: var(--light-gray);
-            padding: 40px 0;
-        }
-
-        .filter-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .filter-btn {
-            background-color: var(--white);
-            border: 1px solid #ddd;
-            padding: 10px 25px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background-color: var(--primary-red);
-            color: var(--white);
-            border-color: var(--primary-red);
-        }
-
         /* Students Section */
         .students-section {
             padding: 80px 0;
@@ -784,7 +752,7 @@
             }
 
             .top-bar {
-                height: 150px;
+                height: 200px;
             }
 
             .contact-info {
@@ -1039,14 +1007,18 @@
         }
 
         @keyframes typing {
-            0%, 60%, 100% {
+
+            0%,
+            60%,
+            100% {
                 opacity: 0.6;
             }
+
             30% {
                 opacity: 1;
             }
         }
-        
+
         /* Newsletter Subscription Styles */
         .newsletter-section {
             background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
@@ -1147,6 +1119,7 @@
             color: #ffcccb;
             border: 1px solid #e74c3c;
         }
+
         /* Course List Styles */
         .course-list {
             display: none;
@@ -1218,31 +1191,35 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .chat-container {
-                width: 300px;
+                width: 290px;
                 height: 450px;
             }
-            
+
             .newsletter-container {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .newsletter-content {
                 margin-right: 0;
                 margin-bottom: 20px;
             }
-            
+
             .newsletter-form {
-                width: 100%;
+                flex-direction: column;
             }
         }
 
-        @media (max-width: 480px) {
-            .chat-container {
-                width: 280px;
-                left: 10px;
-            }
+       @media (max-width: 480px) {
+        .top-bar {
+            height: 200px;
         }
+
+        .chat-container {
+            width: 330px;
+            left: 10px;
+        }
+    }
     </style>
 </head>
 
@@ -1258,7 +1235,8 @@
             <div class="social-icons">
                 <a href="https://www.facebook.com/profile.php?id=61574571321905"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/@rohiltechdigitalteam?si=ziFJIu4UCkfetVE1"><i class="fab fa-youtube"></i></a>
+                <a href="https://youtube.com/@rohiltechdigitalteam?si=ziFJIu4UCkfetVE1"><i
+                        class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
@@ -1304,7 +1282,8 @@
     <section class="hero-section">
         <div class="hero-content">
             <h1 class="hero-title">Placement Success Stories</h1>
-            <p class="hero-subtitle">Celebrating the achievements of our students who have secured positions in top companies</p>
+            <p class="hero-subtitle">Celebrating the achievements of our students who have secured positions in top
+                companies</p>
             <a href="#students" class="cta-button">View Success Stories</a>
         </div>
     </section>
@@ -1333,20 +1312,7 @@
         </div>
     </section>
 
-    <!-- Filter Section -->
-    <section class="filter-section">
-        <div class="container">
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">All Students</button>
-                <button class="filter-btn" data-filter="software">Full Stack Development</button>
-                <button class="filter-btn" data-filter="data">Mobile App Development</button>
-                <button class="filter-btn" data-filter="cloud">React Development</button>
-                <button class="filter-btn" data-filter="cyber">2025 Batch</button>
-                <button class="filter-btn" data-filter="2024">2024 Batch</button>
-                <button class="filter-btn" data-filter="2023">2023 Batch</button>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Students Section -->
     <section class="students-section" id="students">
@@ -1380,21 +1346,24 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3 class="story-title">Career Transformation</h3>
-                    <p class="story-description">Many of our students have successfully transitioned from non-technical backgrounds to high-paying IT roles through our comprehensive training programs.</p>
+                    <p class="story-description">Many of our students have successfully transitioned from non-technical
+                        backgrounds to high-paying IT roles through our comprehensive training programs.</p>
                 </div>
                 <div class="story-card">
                     <div class="story-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <h3 class="story-title">Industry Ready Skills</h3>
-                    <p class="story-description">Our curriculum is designed in collaboration with industry experts to ensure students acquire the most relevant and in-demand skills.</p>
+                    <p class="story-description">Our curriculum is designed in collaboration with industry experts to
+                        ensure students acquire the most relevant and in-demand skills.</p>
                 </div>
                 <div class="story-card">
                     <div class="story-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3 class="story-title">Placement Support</h3>
-                    <p class="story-description">We provide end-to-end placement assistance including resume building, interview preparation, and direct company referrals.</p>
+                    <p class="story-description">We provide end-to-end placement assistance including resume building,
+                        interview preparation, and direct company referrals.</p>
                 </div>
             </div>
         </div>
@@ -1405,7 +1374,8 @@
         <div class="chat-container" id="chatContainer">
             <div class="chat-header">
                 <div>
-                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Chatbot" class="chatbot-image" style="width: 50px; height: 50px;">
+                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Chatbot" class="chatbot-image"
+                        style="width: 50px; height: 50px;">
                     <h3>Course Information</h3>
                     <div class="chat-status">
                         <div class="status-indicator"></div>
@@ -1419,7 +1389,8 @@
             <div class="chat-messages" id="chatMessages">
                 <div class="message bot">
                     <div class="message-content">
-                        Welcome to Rohil NextGen! I'm here to help you explore our courses. Type "courses" to see all available programs.
+                        Welcome to Rohil NextGen! I'm here to help you explore our courses. Type "courses" to see all
+                        available programs.
                     </div>
                 </div>
                 <div class="message bot">
@@ -1455,7 +1426,8 @@
                             <p><strong>Web Framework:</strong> Django/Flask</p>
                             <div class="quick-actions">
                                 <button class="quick-action-btn" onclick="enrollCourse('Python')">Enroll Now</button>
-                                <button class="quick-action-btn" onclick="requestSyllabus('Python')">Get Syllabus</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Python')">Get
+                                    Syllabus</button>
                             </div>
                         </div>
                     </div>
@@ -1469,8 +1441,10 @@
                             <p><strong>Database:</strong> MongoDB, MySQL</p>
                             <p><strong>Tools:</strong> Git, REST APIs, Deployment</p>
                             <div class="quick-actions">
-                                <button class="quick-action-btn" onclick="enrollCourse('Web Development')">Enroll Now</button>
-                                <button class="quick-action-btn" onclick="requestSyllabus('Web Development')">Get Syllabus</button>
+                                <button class="quick-action-btn" onclick="enrollCourse('Web Development')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Web Development')">Get
+                                    Syllabus</button>
                             </div>
                         </div>
                     </div>
@@ -1484,8 +1458,10 @@
                             <p><strong>Cross-platform:</strong> React Native/Flutter</p>
                             <p><strong>Backend Integration:</strong> Firebase, APIs</p>
                             <div class="quick-actions">
-                                <button class="quick-action-btn" onclick="enrollCourse('Mobile App Development')">Enroll Now</button>
-                                <button class="quick-action-btn" onclick="requestSyllabus('Mobile App Development')">Get Syllabus</button>
+                                <button class="quick-action-btn" onclick="enrollCourse('Mobile App Development')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Mobile App Development')">Get
+                                    Syllabus</button>
                             </div>
                         </div>
                     </div>
@@ -1499,8 +1475,10 @@
                             <p><strong>Visualization:</strong> Matplotlib, Seaborn, Tableau</p>
                             <p><strong>ML Algorithms:</strong> Regression, Classification, Clustering</p>
                             <div class="quick-actions">
-                                <button class="quick-action-btn" onclick="enrollCourse('Data Science')">Enroll Now</button>
-                                <button class="quick-action-btn" onclick="requestSyllabus('Data Science')">Get Syllabus</button>
+                                <button class="quick-action-btn" onclick="enrollCourse('Data Science')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Data Science')">Get
+                                    Syllabus</button>
                             </div>
                         </div>
                     </div>
@@ -1514,8 +1492,10 @@
                             <p><strong>Google Cloud:</strong> Compute Engine, Cloud Storage</p>
                             <p><strong>DevOps:</strong> Docker, Kubernetes, CI/CD</p>
                             <div class="quick-actions">
-                                <button class="quick-action-btn" onclick="enrollCourse('Cloud Computing')">Enroll Now</button>
-                                <button class="quick-action-btn" onclick="requestSyllabus('Cloud Computing')">Get Syllabus</button>
+                                <button class="quick-action-btn" onclick="enrollCourse('Cloud Computing')">Enroll
+                                    Now</button>
+                                <button class="quick-action-btn" onclick="requestSyllabus('Cloud Computing')">Get
+                                    Syllabus</button>
                             </div>
                         </div>
                     </div>
@@ -1544,10 +1524,12 @@
         <div class="newsletter-container">
             <div class="newsletter-content">
                 <h3>Stay Updated with Rohil NextGen</h3>
-                <p>Subscribe to our newsletter for the latest course updates, tech insights, and placement opportunities.</p>
+                <p>Subscribe to our newsletter for the latest course updates, tech insights, and placement
+                    opportunities.</p>
             </div>
             <form class="newsletter-form" id="newsletterForm">
-                <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email address" required>
+                <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email address"
+                    required>
                 <button type="submit" class="newsletter-btn" id="newsletterBtn">
                     <span id="btnText">Subscribe</span>
                     <i class="fas fa-paper-plane"></i>
@@ -1562,9 +1544,11 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h3>About Rohil NextGen</h3>
-                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and more.</p>
+                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in
+                    software development, data science, cybersecurity, and more.</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61574571321905"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61574571321905"><i
+                            class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a>
                 </div>
@@ -1585,7 +1569,8 @@
             <div class="footer-column">
                 <h3>Contact Info</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a>
+                    </li>
                     <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
                     <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
                     <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
@@ -1609,29 +1594,247 @@
     </div>
 
     <script>
-       // Initialize EmailJS with your Public Key
+        // Initialize EmailJS with your Public Key
         (function () {
             // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
             emailjs.init("zImWs-QBwGe-B-JT3");
         })();
 
-
         // Student Data - Placed students information
         const students = [
             {
                 id: 1,
-                name: "Name",
-                position: "Role",
-                company: "Company",
-                companyLogo: "Com-image",
-                salary: "Salary",
-                avatar: "Placed Std Img",
-                testimonial: "Rohil NextGen's Full Stack Development course transformed my career. The hands-on projects and industry-relevant curriculum helped me secure this position.",
-                course: "Course ",
+                name: "Rohil",
+                position: "Flutter Developer",
+                company: "Rohil Technologies",
+                companyLogo: "",
+                salary: "₹5.5 LPA",
+                avatar: "./images",
+                testimonial: "The Android course helped me create impactful Apps. I'm grateful for the placement assistance.",
+                course: "Android",
                 batch: "2024",
-                specialization: "software"
+                specialization: "data"
             },
-            // ... (rest of your student data remains the same)
+            {
+                id: 2,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 3,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 4,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 5,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 6,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 7,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 8,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 9,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 10,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 11,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 12,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 13,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            }, {
+                id: 14,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            }, {
+                id: 15,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 16,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 17,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+            {
+                id: 18,
+                name: "",
+                position: "",
+                company: "",
+                companyLogo: "",
+                salary: "",
+                avatar: "",
+                testimonial: "",
+                course: " ",
+                batch: "",
+                specialization: ""
+            },
+
         ];
 
         // DOM Elements
@@ -1735,7 +1938,7 @@
                     currentPage--;
                     displayStudents();
                     setupPagination();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    window.scrollTo({ top: studentsGrid.offsetTop - 100, behavior: 'smooth' });
                 }
             });
             pagination.appendChild(prevButton);
@@ -1749,7 +1952,7 @@
                     currentPage = i;
                     displayStudents();
                     setupPagination();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    window.scrollTo({ top: studentsGrid.offsetTop - 100, behavior: 'smooth' });
                 });
                 pagination.appendChild(pageButton);
             }
@@ -1763,7 +1966,7 @@
                     currentPage++;
                     displayStudents();
                     setupPagination();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    window.scrollTo({ top: studentsGrid.offsetTop - 100, behavior: 'smooth' });
                 }
             });
             pagination.appendChild(nextButton);
@@ -1882,7 +2085,7 @@
             // Start animations
             animateNumber(placedCount, 50);
             animateNumber(companiesCount, 200);
-            animateNumber(highestPackage, 5);
+            animateNumber(highestPackage, 9);
             animateNumber(successRate, 95);
         }
 
@@ -2078,11 +2281,11 @@
             const btnText = document.getElementById('btnText');
             const messageDiv = document.getElementById('newsletterMessage');
 
-            newsletterForm.addEventListener('submit', function(e) {
+            newsletterForm.addEventListener('submit', function (e) {
                 e.preventDefault();
-                
+
                 const email = newsletterEmail.value.trim();
-                
+
                 // Validate email
                 if (!validateEmail(email)) {
                     showMessage('Please enter a valid email address.', 'error');
@@ -2100,27 +2303,27 @@
                     message: `New newsletter subscription from Rohil NextGen website:\n\nEmail: ${email}\nDate: ${new Date().toLocaleString()}`,
                     reply_to: email
                 })
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    showMessage('Thank you for subscribing! You will receive updates from Rohil NextGen.', 'success');
-                    newsletterForm.reset();
-                    setButtonState('success');
-                    
-                    // Reset button after 2 seconds
-                    setTimeout(() => {
-                        setButtonState('default');
-                    }, 2000);
-                })
-                .catch(function(error) {
-                    console.error('FAILED...', error);
-                    showMessage('Sorry, there was an error. Please try again later or contact us directly.', 'error');
-                    setButtonState('error');
-                    
-                    // Reset button after 3 seconds
-                    setTimeout(() => {
-                        setButtonState('default');
-                    }, 3000);
-                });
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        showMessage('Thank you for subscribing! You will receive updates from Rohil NextGen.', 'success');
+                        newsletterForm.reset();
+                        setButtonState('success');
+
+                        // Reset button after 2 seconds
+                        setTimeout(() => {
+                            setButtonState('default');
+                        }, 2000);
+                    })
+                    .catch(function (error) {
+                        console.error('FAILED...', error);
+                        showMessage('Sorry, there was an error. Please try again later or contact us directly.', 'error');
+                        setButtonState('error');
+
+                        // Reset button after 3 seconds
+                        setTimeout(() => {
+                            setButtonState('default');
+                        }, 3000);
+                    });
             });
 
             // Email validation function
@@ -2134,7 +2337,7 @@
                 messageDiv.textContent = message;
                 messageDiv.className = `newsletter-message newsletter-${type}`;
                 messageDiv.style.display = 'block';
-                
+
                 // Auto-hide success messages after 5 seconds
                 if (type === 'success') {
                     setTimeout(() => {
@@ -2145,7 +2348,7 @@
 
             // Set button state
             function setButtonState(state) {
-                switch(state) {
+                switch (state) {
                     case 'loading':
                         btnText.textContent = 'Subscribing...';
                         newsletterBtn.disabled = true;
@@ -2165,7 +2368,7 @@
             }
 
             // Hide message when user starts typing again
-            newsletterEmail.addEventListener('input', function() {
+            newsletterEmail.addEventListener('input', function () {
                 if (messageDiv.style.display === 'block') {
                     messageDiv.style.display = 'none';
                 }
@@ -2173,4 +2376,5 @@
         }
     </script>
 </body>
+
 </html>

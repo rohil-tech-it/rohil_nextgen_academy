@@ -49,7 +49,9 @@
             color: var(--white);
             padding: 15px 0;
             font-size: 15px;
-            height: 60px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
         }
 
         .top-bar-container {
@@ -59,6 +61,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
 
         .contact-info {
@@ -320,8 +323,9 @@
             box-shadow: var(--shadow);
         }
 
-        .contact-form {
+        .contact-form h3 {
             color: var(--primary-red);
+            margin-bottom: 20px;
         }
 
         .form-group {
@@ -635,24 +639,23 @@
             .top-bar-container {
                 flex-direction: column;
                 gap: 10px;
+                padding: 10px 20px;
             }
 
             .top-bar {
-                height: 200px;
+                min-height: auto;
+                padding: 10px 0;
             }
 
             .contact-info {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 10px;
             }
 
             .banner {
                 height: 300px;
                 padding: 60px 0;
-            }
-
-            .banner-title {
-                font-size: 2.2rem;
             }
 
             .section-title h2 {
@@ -675,6 +678,16 @@
                 margin-left: 0;
                 margin-top: 10px;
             }
+
+            .contact-detail {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .contact-detail i {
+                margin-right: 0;
+            }
         }
 
         @media (max-width: 576px) {
@@ -695,6 +708,19 @@
                 right: 20px;
                 width: 40px;
                 height: 40px;
+            }
+
+            .contact-info-card,
+            .contact-form {
+                padding: 20px;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title p {
+                font-size: 1rem;
             }
         }
 
@@ -737,36 +763,6 @@
             flex-direction: column;
             overflow: hidden;
             margin-bottom: 15px;
-        }
-        
-        .chat-container {
-            width: 350px;
-            height: 500px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
-
-        .chatbot-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: white;
-        }
-
-        .chat-logo img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            position: fixed;
-            bottom: 110px;
-            left: 20px;
-            z-index: 999;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .chat-header {
@@ -982,6 +978,10 @@
             outline: none;
         }
 
+        .newsletter-input:focus {
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+        }
+
         .newsletter-btn {
             background: white;
             color: var(--primary-red);
@@ -1095,24 +1095,41 @@
             background: var(--dark-red);
         }
 
-        /* Responsive adjustments */
+        /* Responsive adjustments for chat widget */
         @media (max-width: 768px) {
-
             .chat-container {
-                width: 300px;
+                width: 290px;
                 height: 450px;
+            }
+
+            .newsletter-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .newsletter-content {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
             }
         }
 
         @media (max-width: 480px) {
-
             .top-bar {
-                height: 180px;
+                height: 200px;
             }
 
             .chat-container {
-                width: 280px;
+                width: 330px;
                 left: 10px;
+            }
+
+            .chat-widget {
+                left: 10px;
+                bottom: 10px;
             }
         }
     </style>
@@ -1258,7 +1275,6 @@
                         </div>
 
                         <div class="button-group">
-
                             <button type="button" id="whatsappBtn" class="whatsapp-btn">
                                 <i class="fab fa-whatsapp"></i> Send via WhatsApp
                             </button>
@@ -1274,9 +1290,6 @@
         <div class="chat-container" id="chatContainer">
             <div class="chat-header">
                 <div>
-                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Chatbot" class="chatbot-image"
-                        style="width: 50px; height: 50px;">
-
                     <h3>Course Information</h3>
                     <div class="chat-status">
                         <div class="status-indicator"></div>
@@ -1422,7 +1435,7 @@
             <i class="fas fa-comments"></i>
         </div>
     </div>
-    
+
     <!-- Map Section -->
     <section class="map-section">
         <div class="container">
@@ -1511,6 +1524,7 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
 
         // Mobile Menu Toggle
@@ -1896,10 +1910,16 @@
             }
         }, 10000);
 
+        // Initialize EmailJS with your public key
+        (function () {
+            // Replace with your actual EmailJS public key
+            emailjs.init("zImWs-QBwGe-B-JT3");
+        })();
 
-        // EmailJS Newsletter form submission
+        // Newsletter form submission
         document.getElementById('newsletterForm').addEventListener('submit', function (e) {
             e.preventDefault();
+
             const email = document.getElementById('newsletterEmail').value;
             const messageDiv = document.getElementById('newsletterMessage');
             const submitBtn = document.getElementById('newsletterBtn');
@@ -1918,7 +1938,7 @@
             submitBtn.textContent = "Subscribing...";
             submitBtn.disabled = true;
 
-            // Send email using EmailJS with proper template parameters
+            // Send email using EmailJS
             emailjs.send("service_45iohnc", "template_hjk6fxj", {
                 to_email: "rohiltechtrainee@gmail.com",
                 from_email: email,
@@ -1945,19 +1965,22 @@
                         messageDiv.style.display = 'none';
                     }, 5000);
                 }, function (error) {
+                    console.log('FAILED...', error);
+                    // Show error message
+                    messageDiv.textContent = "Sorry, there was an error. Please try again later or contact us directly.";
+                    messageDiv.className = "newsletter-message newsletter-error";
+                    messageDiv.style.display = 'block';
 
                     // Reset button
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
+
+                    // Hide message after 5 seconds
+                    setTimeout(function () {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
                 });
         });
-
-
-        // Initialize EmailJS with your public key
-        (function () {
-            // Initialize EmailJS with your public key
-            emailjs.init("zImWs-QBwGe-B-JT3");
-        })();
 
     </script>
 </body>

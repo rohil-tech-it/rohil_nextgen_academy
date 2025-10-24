@@ -1082,7 +1082,7 @@
             }
 
             .banner {
-                height: 450px;
+                height: 500px;
                 padding: 60px 0;
             }
 
@@ -1135,6 +1135,28 @@
 
             .newsletter-form {
                 width: 100%;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .chat-container {
+                width: 330px;
+                height: 450px;
+            }
+
+            .newsletter-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .newsletter-content {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
             }
         }
 
@@ -1446,13 +1468,12 @@
         @media (max-width: 768px) {
 
             .chat-container {
-                width: 300px;
+                width: 290px;
                 height: 450px;
             }
         }
 
         @media (max-width: 480px) {
-
 
             .chat-container {
                 width: 280px;
@@ -1684,7 +1705,7 @@
     </section>
 
     <!-- Footer -->
-     
+
     <footer class="tech-footer">
         <div class="footer-content">
             <div class="footer-column">
@@ -2210,7 +2231,7 @@
                         </div>
                         <div class="course-actions">
                             <a href="${course.detailsUrl}" class="know-more-btn" data-id="${course.id}">Know More</a>
-                            <a href="#" class="enroll-btn" data-id="${course.id}">Enroll Now</a>
+                            <a href="#" class="enroll-btn" data-id="${course.id}" data-title="${course.title}">Enroll Now</a>
                         </div>
                     </div>
                 `;
@@ -2223,9 +2244,21 @@
                 btn.addEventListener('click', function (e) {
                     e.preventDefault();
                     const courseId = this.getAttribute('data-id');
-                    openEnrollmentModal(courseId);
+                    const courseTitle = this.getAttribute('data-title');
+                    openWhatsApp(courseTitle);
                 });
             });
+        }
+
+        // Open WhatsApp with pre-filled message
+        function openWhatsApp(courseTitle) {
+            const phoneNumber = "919751867879";
+            const message = `Hello, I'm interested in enrolling in the ${courseTitle} course. Please provide me with more details.`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            // Open WhatsApp in a new tab
+            window.open(whatsappURL, '_blank');
         }
 
         // Filter courses based on category and search term
