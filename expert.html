@@ -403,16 +403,32 @@
     @media (max-width: 768px) {
 
         .chat-container {
-            width: 300px;
+            width: 290px;
             height: 450px;
+        }
+
+        .newsletter-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            flex-direction: column;
         }
     }
 
     @media (max-width: 480px) {
-
+        .top-bar {
+            height: 200px;
+        }
 
         .chat-container {
-            width: 280px;
+            width: 330px;
             left: 10px;
         }
     }
@@ -1036,7 +1052,7 @@
 
                 <div class="typing-indicator" id="typingIndicator">
                     <span class="typing-dots">
-                         Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
+                        Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
                     </span>
                 </div>
             </div>
@@ -1052,7 +1068,7 @@
         </div>
     </div>
 
-    
+
     <!-- Newsletter Subscription Section -->
     <section class="newsletter-section">
         <div class="newsletter-container">
@@ -1122,7 +1138,7 @@
     </footer>
     <script>
         // Initialize EmailJS with your Public Key
-        (function() {
+        (function () {
             emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Replace with your actual EmailJS public key
         })();
 
@@ -1393,7 +1409,7 @@
         // Newsletter Subscription with EmailJS
         document.getElementById('newsletterForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const email = document.getElementById('newsletterEmail').value;
             const messageDiv = document.getElementById('newsletterMessage');
             const submitBtn = document.getElementById('newsletterBtn');
@@ -1420,42 +1436,42 @@
                 message: `A new user has subscribed to the Rohil NextGen newsletter.\n\nEmail: ${email}\n\nDate: ${new Date().toLocaleString()}`,
                 reply_to: email
             })
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                
-                // Show success message
-                messageDiv.textContent = `Thank you for subscribing with ${email}! You will receive updates from Rohil NextGen.`;
-                messageDiv.className = "newsletter-message newsletter-success";
-                messageDiv.style.display = 'block';
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
 
-                // Reset form
-                document.getElementById('newsletterForm').reset();
+                    // Show success message
+                    messageDiv.textContent = `Thank you for subscribing with ${email}! You will receive updates from Rohil NextGen.`;
+                    messageDiv.className = "newsletter-message newsletter-success";
+                    messageDiv.style.display = 'block';
 
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
+                    // Reset form
+                    document.getElementById('newsletterForm').reset();
 
-                // Hide message after 5 seconds
-                setTimeout(function() {
-                    messageDiv.style.display = 'none';
-                }, 5000);
-            }, function(error) {
-                console.log('FAILED...', error);
-                
-                // Show error message
-                messageDiv.textContent = "Sorry, there was an error. Please try again later or contact us directly.";
-                messageDiv.className = "newsletter-message newsletter-error";
-                messageDiv.style.display = 'block';
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
 
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
+                    // Hide message after 5 seconds
+                    setTimeout(function () {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                }, function (error) {
+                    console.log('FAILED...', error);
 
-                // Hide message after 5 seconds
-                setTimeout(function() {
-                    messageDiv.style.display = 'none';
-                }, 5000);
-            });
+                    // Show error message
+                    messageDiv.textContent = "Sorry, there was an error. Please try again later or contact us directly.";
+                    messageDiv.className = "newsletter-message newsletter-error";
+                    messageDiv.style.display = 'block';
+
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+
+                    // Hide message after 5 seconds
+                    setTimeout(function () {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                });
         });
     </script>
 </body>
