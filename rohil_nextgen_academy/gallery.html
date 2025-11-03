@@ -89,7 +89,7 @@
             transform: translateY(-3px) scale(1.1);
         }
 
-        /* Navigation Styles */
+        /* Navigation Styles - IMPROVED RESPONSIVE */
         .navbar {
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -135,6 +135,9 @@
             font-size: 16px;
             transition: color 0.3s;
             padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .nav-link:hover {
@@ -180,6 +183,30 @@
             display: none;
             cursor: pointer;
             font-size: 24px;
+            background: none;
+            border: none;
+            color: var(--text-black);
+            z-index: 1001;
+        }
+
+        /* Mobile Overlay */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         /* Gallery Section Styles */
@@ -224,32 +251,6 @@
             margin: 0 auto;
         }
 
-        /* Gallery Filter */
-        .gallery-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background-color: var(--primary-red);
-            color: white;
-            border-color: var(--primary-red);
-        }
-
         /* Advanced Grid Gallery */
         .gallery-grid {
             display: grid;
@@ -292,6 +293,49 @@
 
         .gallery-item:hover .gallery-img {
             transform: scale(1.1);
+        }
+
+        /* Video Container Styles */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .gallery-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover .gallery-video {
+            transform: scale(1.05);
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(212, 4, 4, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .video-play-btn:hover {
+            background-color: rgba(212, 4, 4, 1);
+            transform: translate(-50%, -50%) scale(1.1);
         }
 
         .gallery-overlay {
@@ -406,6 +450,47 @@
         .lightbox-nav:hover {
             color: var(--primary-red);
             background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            width: 800px;
+        }
+
+        .video-modal-video {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .video-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .video-modal-close:hover {
+            color: var(--primary-red);
         }
 
 
@@ -948,16 +1033,63 @@
             }
         }
 
-
+        /* IMPROVED RESPONSIVE STYLES */
         @media (max-width: 768px) {
+            .top-bar-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .top-bar {
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .contact-info {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
             .hamburger {
                 display: block;
             }
 
+            .mobile-overlay {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 280px;
+                height: 100vh;
+                transition: 0.4s ease;
+                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+                padding: 80px 0 20px;
+                gap: 0;
+                overflow-y: auto;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
             .nav-item {
-                position: relative;
-                margin: 15px 0;
-                margin-left: 30px;
+                margin: 0;
+                width: 100%;
+            }
+
+            .nav-link {
+                padding: 15px 25px;
+                width: 100%;
+                justify-content: space-between;
+                border-bottom: 1px solid #eee;
+                font-size: 16px;
             }
 
             .dropdown {
@@ -968,35 +1100,28 @@
                 box-shadow: none;
                 display: none;
                 background-color: var(--light-grey);
-                margin-top: 10px;
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease;
+                width: 100%;
             }
 
             .dropdown.active {
                 display: block;
-                max-height: 3100px;
+                max-height: 300px;
             }
 
             .dropdown-item {
-                padding: 12px 20px;
-                border-bottom: 1px solid #eee;
-                display: block;
+                padding: 12px 40px;
+                border-bottom: 1px solid #ddd;
+                font-size: 14px;
             }
 
-            .nav-link {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-            }
-
-            .nav-link i {
+            .nav-link i.fa-chevron-down {
                 transition: transform 0.3s ease;
             }
 
-            .nav-link.active i {
+            .nav-link.active i.fa-chevron-down {
                 transform: rotate(180deg);
             }
 
@@ -1023,27 +1148,6 @@
                 height: 450px;
             }
 
-            .hamburger {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                flex-direction: column;
-                background-color: var(--white);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-                padding: 20px 0;
-                gap: 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
 
             .top-bar-container {
                 flex-direction: column;
@@ -1092,15 +1196,6 @@
         @media (max-width: 576px) {
             .gallery-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .gallery-filter {
-                gap: 10px;
-            }
-
-            .filter-btn {
-                padding: 8px 15px;
-                font-size: 14px;
             }
         }
     </style>
@@ -1154,7 +1249,7 @@
                     </div>
                 </li>
                 <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
-                <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li class="nav-item"><a href="scholarship.html" class="nav-link active">Scholarship</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
 
@@ -1164,6 +1259,7 @@
         </div>
     </nav>
 
+
     <!-- Gallery Section -->
     <section class="gallery-section">
         <div class="container">
@@ -1171,125 +1267,70 @@
                 <h1>Our Gallery</h1>
                 <p>Explore moments from our training sessions, events, and student achievements at Rohil NextGen</p>
             </div>
-
-            <!-- Gallery Filter -->
-            <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="training">Training Sessions</button>
-                <button class="filter-btn" data-filter="events">Events</button>
-                <button class="filter-btn" data-filter="placement">Placements</button>
-                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
-            </div>
-
             <!-- Gallery Grid -->
             <div class="gallery-grid">
                 <!-- Training Session Images -->
                 <div class="gallery-item" data-category="training">
                     <div class="gallery-img-container">
-                        <img src="" alt="image1" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3 class="gallery-title">Java Full Stack Training</h3>
-                            <p class="gallery-description">Students learning Java Full Stack Development with hands-on
-                                coding sessions.</p>
-                            <span class="gallery-category">Training</span>
-                        </div>
+                        <img src="./images/g1.jpeg" alt="image1" class="gallery-img">
+                        <div class="gallery-overlay"></div>
                     </div>
                 </div>
 
                 <div class="gallery-item" data-category="training">
                     <div class="gallery-img-container">
-                        <img src="" alt="image2" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3 class="gallery-title">Python Data Science Class</h3>
-                            <p class="gallery-description">Interactive session on Python libraries for data analysis and
-                                visualization.</p>
-                            <span class="gallery-category">Training</span>
-                        </div>
+                        <img src="./images/g2.jpeg" alt="image2" class="gallery-img">
+                        <div class="gallery-overlay"></div>
                     </div>
                 </div>
 
                 <div class="gallery-item" data-category="training">
                     <div class="gallery-img-container">
-                        <img src="" alt="image3" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3 class="gallery-title">Web Development Workshop</h3>
-                            <p class="gallery-description">Students building responsive websites using HTML, CSS, and
-                                JavaScript.</p>
-                            <span class="gallery-category">Training</span>
-                        </div>
+                        <img src="./images/g3.jpeg" alt="image3" class="gallery-img">
+                        <div class="gallery-overlay"></div>
                     </div>
                 </div>
 
                 <!-- Events Images -->
                 <div class="gallery-item wide" data-category="events">
                     <div class="gallery-img-container">
-                        <img src="" alt="image4" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3 class="gallery-title">Annual Tech Fest 2024</h3>
-                            <p class="gallery-description">Students showcasing their innovative projects at our annual
-                                tech festival.</p>
-                            <span class="gallery-category">Events</span>
-                        </div>
+                        <img src="./images/g4.jpeg" alt="image4" class="gallery-img">
+                        <div class="gallery-overlay"></div>
                     </div>
                 </div>
 
                 <div class="gallery-item" data-category="events">
                     <div class="gallery-img-container">
-                        <img src="" alt="image5" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3 class="gallery-title">Industry Expert Session</h3>
-                            <p class="gallery-description">Guest lecture from industry professionals sharing real-world
-                                insights.</p>
-                            <span class="gallery-category">Events</span>
-                        </div>
+                        <img src="./images/g5.jpeg" alt="image5" class="gallery-img">
+                        <div class="gallery-overlay"></div>
                     </div>
                 </div>
 
                 <!-- Placement Images -->
                 <div class="gallery-item" data-category="placement">
                     <div class="gallery-img-container">
-                        <img src="" alt="image6" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3 class="gallery-title">Campus Placement Drive</h3>
-                            <p class="gallery-description">Our students participating in campus recruitment with top
-                                companies.</p>
-                            <span class="gallery-category">Placements</span>
-                        </div>
+                        <img src="./images/g6.jpeg" alt="image6" class="gallery-img">
+                        <div class="gallery-overlay"></div>
                     </div>
                 </div>
 
                 <div class="gallery-item tall" data-category="placement">
                     <div class="gallery-img-container">
-                        <img src="" alt="image7" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3 class="gallery-title">Mock Interview Sessions</h3>
-                            <p class="gallery-description">Students practicing for placements with simulated interview
-                                rounds.</p>
-                            <span class="gallery-category">Placements</span>
-                        </div>
+                        <img src="./images/g7.png" alt="image7" class="gallery-img">
+                        <div class="gallery-overlay"></div>
                     </div>
                 </div>
 
                 <div class="gallery-item" data-category="placement">
                     <div class="gallery-img-container">
-                        <img src="" alt="image8" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3 class="gallery-title">Placement Success Stories</h3>
-                            <p class="gallery-description">Our successful students celebrating their job offers with the
-                                team.</p>
-                            <span class="gallery-category">Placements</span>
-                        </div>
+                        <img src="./images/g8.jpeg" alt="image8" class="gallery-img">
+                        <div class="gallery-overlay"></div>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="placement">
                     <div class="gallery-img-container">
-                        <img src="" alt="image9" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3 class="gallery-title">Placement Success Stories</h3>
-                            <p class="gallery-description">Our successful students celebrating their job offers with the
-                                team.</p>
-                            <span class="gallery-category">Placements</span>
-                        </div>
+                        <img src="./images/g9.jpeg" alt="image9" class="gallery-img">
+                        <div class="gallery-overlay"></div>
                     </div>
                 </div>
 
@@ -1297,13 +1338,8 @@
                 <!-- Infrastructure Images -->
                 <div class="gallery-item" data-category="infrastructure">
                     <div class="gallery-img-container">
-                        <img src="" alt="image10" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3 class="gallery-title">Modern Computer Lab</h3>
-                            <p class="gallery-description">Our fully-equipped computer lab with high-speed internet and
-                                latest software.</p>
-                            <span class="gallery-category">Infrastructure</span>
-                        </div>
+                        <img src="./images/g10.jpeg" alt="image10" class="gallery-img">
+                        <div class="gallery-overlay"></div>
                     </div>
                 </div>
 
@@ -1311,42 +1347,51 @@
                 <!-- Infrastructure Images -->
                 <div class="gallery-item" data-category="infrastructure">
                     <div class="gallery-img-container">
-                        <img src="" alt="image11" class="gallery-img">
+                        <img src="./images/g11.jpeg" alt="image11" class="gallery-img">
+                        <div class="gallery-overlay"></div>
+                    </div>
+                </div>
+                <!-- Student Review Videos -->
+                <div class="gallery-item" data-category="reviews">
+                    <div class="video-container">
+                        <video class="gallery-video" poster="./videos/v2.png">
+                            <source src="./videos/v1 (2).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
                         <div class="gallery-overlay">
-                            <h3 class="gallery-title">Modern Computer Lab</h3>
-                            <p class="gallery-description">Our fully-equipped computer lab with high-speed internet and
-                                latest software.</p>
-                            <span class="gallery-category">Infrastructure</span>
+                            <h3 class="gallery-title">Our Journey</h3>
+                            <p class="gallery-description">Pavithra shares her journey from beginner to Mobile App
+                                Development developer after
+                                completing our Flutter course.</p>
+                            <span class="gallery-category">Student Review</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="gallery-item wide" data-category="infrastructure">
-                    <div class="gallery-img-container">
-                        <img src="" alt="image12" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3 class="gallery-title">Interactive Classroom</h3>
-                            <p class="gallery-description">Spacious classrooms with digital boards and comfortable
-                                seating.</p>
-                            <span class="gallery-category">Infrastructure</span>
+                <div class="gallery-item" data-category="reviews">
+                    <div class="video-container">
+                        <video class="gallery-video" poster="./videos/v1.png">
+                            <source src="./videos/v1 (1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-play-btn">
+                            <i class="fas fa-play"></i>
                         </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="infrastructure">
-                    <div class="gallery-img-container">
-                        <img src="" alt="image13" class="gallery-img">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-title">Digital Library</h3>
-                            <p class="gallery-description">Well-stocked library with technical books and online
-                                resources.</p>
-                            <span class="gallery-category">Infrastructure</span>
+                            <h3 class="gallery-title">Our Journey</h3>
+                            <p class="gallery-description">Vetrivel talks about his placement journey and how Rohil
+                                NextGen
+                                helped him secure a job at a top IT company.</p>
+                            <span class="gallery-category">Student Review</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
+
 
     <!-- Lightbox Modal -->
     <div class="lightbox-modal" id="lightboxModal">
@@ -1359,6 +1404,16 @@
             <div class="lightbox-nav lightbox-next" id="lightboxNext">
                 <i class="fas fa-chevron-right"></i>
             </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <span class="video-modal-close" id="videoModalClose">&times;</span>
+            <video class="video-modal-video" controls id="videoModalVideo">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
@@ -1647,29 +1702,6 @@
                 }
             }
         });
-        // Gallery Filter Functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-
-                const filterValue = btn.getAttribute('data-filter');
-
-                galleryItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
         // Lightbox Functionality
         const lightboxModal = document.getElementById('lightboxModal');
         const lightboxImg = document.getElementById('lightboxImg');
@@ -1731,6 +1763,52 @@
                     currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
                     lightboxImg.src = galleryImages[currentImageIndex].src;
                 }
+            }
+        });
+
+        // Video Modal Functionality
+        const videoModal = document.getElementById('videoModal');
+        const videoModalVideo = document.getElementById('videoModalVideo');
+        const videoModalClose = document.getElementById('videoModalClose');
+        const videoPlayButtons = document.querySelectorAll('.video-play-btn');
+        const galleryVideos = document.querySelectorAll('.gallery-video');
+
+        // Open video modal when play button is clicked
+        videoPlayButtons.forEach((btn, index) => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const video = galleryVideos[index];
+                videoModalVideo.src = video.querySelector('source').src;
+                videoModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+
+                // Play the video when modal opens
+                videoModalVideo.play();
+            });
+        });
+
+        // Close video modal
+        videoModalClose.addEventListener('click', () => {
+            videoModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            videoModalVideo.pause();
+        });
+
+        // Close video modal when clicking outside
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                videoModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                videoModalVideo.pause();
+            }
+        });
+
+        // Close video modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && videoModal.style.display === 'flex') {
+                videoModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                videoModalVideo.pause();
             }
         });
 

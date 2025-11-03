@@ -20,6 +20,9 @@
             --medium-gray: #666666;
             --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
+            --text-black: #333;
+            --text-grey: #666;
+            --light-grey: #f5f5f5;
         }
 
         * {
@@ -33,6 +36,7 @@
             line-height: 1.6;
             color: var(--dark-gray);
             background-color: var(--white);
+            overflow-x: hidden;
         }
 
         .container {
@@ -87,7 +91,7 @@
             transform: translateY(-3px) scale(1.1);
         }
 
-        /* Navigation Styles */
+        /* Navigation Styles - IMPROVED RESPONSIVE */
         .navbar {
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -133,6 +137,9 @@
             font-size: 16px;
             transition: color 0.3s;
             padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .nav-link:hover {
@@ -178,6 +185,30 @@
             display: none;
             cursor: pointer;
             font-size: 24px;
+            background: none;
+            border: none;
+            color: var(--text-black);
+            z-index: 1001;
+        }
+
+        /* Mobile Overlay */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         /* Enhanced Banner Section */
@@ -691,7 +722,8 @@
 
         /* Enhanced Footer */
         .tech-footer {
-            background-color: #656566;
+            background: linear-gradient(rgba(97, 97, 97, 0.95), rgba(128, 112, 112, 0.98)),
+                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             color: var(--white);
             padding: 60px 0 20px;
         }
@@ -869,12 +901,63 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Responsive Styles */
+        /* IMPROVED RESPONSIVE STYLES */
         @media (max-width: 768px) {
+            .top-bar-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .top-bar {
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .contact-info {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .mobile-overlay {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 280px;
+                height: 100vh;
+                transition: 0.4s ease;
+                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+                padding: 80px 0 20px;
+                gap: 0;
+                overflow-y: auto;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
             .nav-item {
-                position: relative;
-                margin: 15px 0;
-                margin-left: 30px;
+                margin: 0;
+                width: 100%;
+            }
+
+            .nav-link {
+                padding: 15px 25px;
+                width: 100%;
+                justify-content: space-between;
+                border-bottom: 1px solid #eee;
+                font-size: 16px;
             }
 
             .dropdown {
@@ -885,10 +968,10 @@
                 box-shadow: none;
                 display: none;
                 background-color: var(--light-grey);
-                margin-top: 10px;
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease;
+                width: 100%;
             }
 
             .dropdown.active {
@@ -897,93 +980,18 @@
             }
 
             .dropdown-item {
-                padding: 12px 20px;
-                border-bottom: 1px solid #eee;
-                display: block;
+                padding: 12px 40px;
+                border-bottom: 1px solid #ddd;
+                font-size: 14px;
             }
 
-            .nav-link {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-            }
-
-            .nav-link i {
+            .nav-link i.fa-chevron-down {
                 transition: transform 0.3s ease;
             }
 
-            .nav-link.active i {
+            .nav-link.active i.fa-chevron-down {
                 transform: rotate(180deg);
             }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-
-            .banner-title {
-                font-size: 2.2rem;
-            }
-
-            .banner-subtitle {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                flex-direction: column;
-                background-color: var(--white);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-                padding: 20px 0;
-                gap: 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .top-bar-container {
-                flex-direction: column;
-                gap: 10px;
-
-            }
-
-            .top-bar {
-
-                height: 120px;
-            }
-
-            .contact-info {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .syllabus-content {
-                grid-template-columns: 1fr;
-                max-width: 600px;
-            }
-
-            .section-title h1 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
 
             .banner {
                 padding: 80px 0;
@@ -1014,6 +1022,17 @@
                 flex-direction: column;
                 gap: 10px;
                 text-align: center;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .syllabus-content {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .section-title h1 {
+                font-size: 2rem;
             }
         }
 
@@ -1051,8 +1070,8 @@
 </head>
 
 <body>
-
-    <!-- Navigation -->
+   
+    <!-- Navigation - IMPROVED RESPONSIVE -->
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
@@ -1080,14 +1099,18 @@
                     </div>
                 </li>
                 <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+                <li class="nav-item"><a href="Scholarship.html" class="nav-link active">Scholarship</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
 
-            <div class="hamburger">
+            <button class="hamburger">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <!-- Enhanced Hero Section -->
     <section class="banner">
@@ -1534,56 +1557,54 @@
         </div>
     </section>
 
-
-  
     <!-- Footer -->
-            <footer class="tech-footer">
-                <div class="footer-content">
-                    <div class="footer-column">
-                        <h3>About Rohil NextGen</h3>
-                        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses
-                            in software development, data science, cybersecurity, and more.</p>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/profile.php?id=61574571321905"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="footer-column">
-                        <h3>Quick Links</h3>
-                        <ul class="footer-links">
-                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                            <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
-                            <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
-                            <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
-                            <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li>
-                            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-column">
-                        <h3>Our Courses</h3>
-                        <ul class="footer-links">
-                            <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil
-                                    Nadu</a></li>
-                            <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-                            <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
-                            <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
-                        </ul>
-                    </div>
-
+    <footer class="tech-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Rohil NextGen</h3>
+                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses
+                    in software development, data science, cybersecurity, and more.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61574571321905"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a>
                 </div>
+            </div>
 
-                <div class="footer-bottom">
-                    <div class="copyright">
-                        <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
-                    </div>
-                    <div class="footer-bottom-links">
-                        <p>Designed By Rohil Technologies</p>
-                    </div>
-                </div>
-            </footer>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                    <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
+                    <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
+                    <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Our Courses</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil
+                            Nadu</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
+            </div>
+            <div class="footer-bottom-links">
+                <p>Designed By Rohil Technologies</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
@@ -1591,38 +1612,69 @@
     </div>
 
     <script>
-        // Mobile Menu Toggle
+        // IMPROVED MOBILE NAVIGATION
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const body = document.body;
 
-        hamburger.addEventListener('click', () => {
+        // Toggle mobile menu
+        function toggleMobileMenu() {
             navMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', (e) => {
-            // Only close menu if it's not a dropdown trigger
-            if (!e.target.closest('.nav-item').querySelector('.dropdown')) {
-                navMenu.classList.remove('active');
+            mobileOverlay.classList.toggle('active');
+            body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            
+            // Change hamburger icon
+            const icon = hamburger.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
-        }));
+        }
+
+        // Close mobile menu
+        function closeMobileMenu() {
+            navMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            body.style.overflow = '';
+            
+            // Reset hamburger icon
+            const icon = hamburger.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+            
+            // Close all dropdowns
+            document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                dropdown.classList.remove('active');
+                const navLink = dropdown.previousElementSibling;
+                navLink?.classList.remove('active');
+            });
+        }
+
+        // Event listeners
+        hamburger.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', closeMobileMenu);
 
         // Mobile Dropdown Functionality
         document.querySelectorAll('.nav-item').forEach(item => {
             const dropdown = item.querySelector('.dropdown');
             const navLink = item.querySelector('.nav-link');
+            const chevron = navLink?.querySelector('.fa-chevron-down');
 
-            if (dropdown) {
-                // Add click event for mobile dropdowns
+            if (dropdown && navLink) {
                 navLink.addEventListener('click', (e) => {
                     if (window.innerWidth <= 768) {
                         e.preventDefault();
-
-                        // Close other open dropdowns
+                        
+                        // Close other dropdowns
                         document.querySelectorAll('.dropdown.active').forEach(otherDropdown => {
                             if (otherDropdown !== dropdown) {
                                 otherDropdown.classList.remove('active');
-                                otherDropdown.previousElementSibling.classList.remove('active');
+                                const otherNavLink = otherDropdown.previousElementSibling;
+                                otherNavLink?.classList.remove('active');
                             }
                         });
 
@@ -1634,15 +1686,35 @@
             }
         });
 
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                if (!e.target.closest('.nav-item') && !e.target.closest('.hamburger')) {
-                    document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                        dropdown.previousElementSibling.classList.remove('active');
-                    });
-                }
+        // Close menu when clicking on non-dropdown links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (!link.querySelector('.fa-chevron-down')) {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        closeMobileMenu();
+                    }
+                });
+            }
+        });
+
+        // Close menu on resize if window becomes larger
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+
+        // Prevent dropdown from closing when clicking inside it
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+
+        // Close menu with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                closeMobileMenu();
             }
         });
 
@@ -1671,24 +1743,6 @@
             });
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
         // Back to Top Button
         const backToTopButton = document.getElementById('backToTop');
 
@@ -1706,18 +1760,6 @@
                 behavior: 'smooth'
             });
         });
-
-        // Close mobile menu on resize if window becomes larger
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                navMenu.classList.remove('active');
-                document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-                    dropdown.classList.remove('active');
-                    dropdown.previousElementSibling.classList.remove('active');
-                });
-            }
-        });
     </script>
 </body>
-
 </html>

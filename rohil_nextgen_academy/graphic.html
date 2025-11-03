@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohil NextGen - Python Programming</title>
+    <title>Rohil NextGen - Graphic Design</title>
     <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -21,6 +21,9 @@
             --medium-gray: #666666;
             --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
+            --text-black: #333;
+            --text-grey: #666;
+            --light-grey: #f5f5f5;
         }
 
         * {
@@ -34,6 +37,7 @@
             line-height: 1.6;
             color: var(--dark-gray);
             background-color: var(--white);
+            overflow-x: hidden;
         }
 
         .container {
@@ -88,7 +92,7 @@
             transform: translateY(-3px) scale(1.1);
         }
 
-        /* Navigation Styles */
+        /* Navigation Styles - IMPROVED RESPONSIVE */
         .navbar {
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -134,6 +138,9 @@
             font-size: 16px;
             transition: color 0.3s;
             padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .nav-link:hover {
@@ -179,17 +186,44 @@
             display: none;
             cursor: pointer;
             font-size: 24px;
+            background: none;
+            border: none;
+            color: var(--text-black);
+            z-index: 1001;
         }
 
-        /* Banner Section */
+        /* Mobile Overlay */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+           /* Enhanced Banner Section */
         .banner {
-            background-image: url(./images/graphicdesign.jpg);
-            background-size: cover;
+            background-image: url("./images/graphicdesign.jpg");
             background-position: center;
+            background-size: cover;
             color: var(--white);
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             min-height: 500px;
         }
 
@@ -200,7 +234,7 @@
             position: relative;
             z-index: 1;
         }
-
+      
         /* Overview Section */
         .overview-section {
             padding: 60px 0;
@@ -725,15 +759,63 @@
             background-color: var(--dark-red);
         }
 
-        /* Responsive Styles */
-
-        /* Responsive Styles */
-        /* Mobile Dropdown Fix */
+        /* IMPROVED RESPONSIVE STYLES */
         @media (max-width: 768px) {
+            .top-bar-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .top-bar {
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .contact-info {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .mobile-overlay {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 280px;
+                height: 100vh;
+                transition: 0.4s ease;
+                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+                padding: 80px 0 20px;
+                gap: 0;
+                overflow-y: auto;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
             .nav-item {
-                position: relative;
-                margin: 15px 0;
-                margin-left: 30px;
+                margin: 0;
+                width: 100%;
+            }
+
+            .nav-link {
+                padding: 15px 25px;
+                width: 100%;
+                justify-content: space-between;
+                border-bottom: 1px solid #eee;
+                font-size: 16px;
             }
 
             .dropdown {
@@ -744,10 +826,10 @@
                 box-shadow: none;
                 display: none;
                 background-color: var(--light-grey);
-                margin-top: 10px;
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease;
+                width: 100%;
             }
 
             .dropdown.active {
@@ -756,85 +838,23 @@
             }
 
             .dropdown-item {
-                padding: 12px 20px;
-                border-bottom: 1px solid #eee;
-                display: block;
+                padding: 12px 40px;
+                border-bottom: 1px solid #ddd;
+                font-size: 14px;
             }
 
-            .nav-link {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-            }
-
-            .nav-link i {
+            .nav-link i.fa-chevron-down {
                 transition: transform 0.3s ease;
             }
 
-            .nav-link.active i {
+            .nav-link.active i.fa-chevron-down {
                 transform: rotate(180deg);
             }
-        }
 
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                flex-direction: column;
-                background-color: var(--white);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-                padding: 20px 0;
-                gap: 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .top-bar-container {
-                flex-direction: column;
-                gap: 10px;
-
-            }
-
-            .top-bar {
-
-                height: 120px;
-            }
-
-            .contact-info {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-
-
-        @media (max-width: 992px) {
-            .syllabus-content {
-                grid-template-columns: 1fr;
-                max-width: 600px;
-            }
-
-            .section-title h1 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-
-            .banner {
-                padding: 80px 0;
+             .banner {
                 min-height: 300px;
-
+                background-size: cover;
+                
             }
 
             .section-title h1 {
@@ -874,6 +894,17 @@
             }
         }
 
+        @media (max-width: 992px) {
+            .syllabus-content {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .section-title h1 {
+                font-size: 2rem;
+            }
+        }
+
         @media (max-width: 576px) {
             .contact-info {
                 flex-direction: column;
@@ -886,7 +917,7 @@
             }
 
             .stat-value {
-                font-size: 2rem;
+                fontSize: 2rem;
             }
 
             .back-to-top {
@@ -918,8 +949,8 @@
 </head>
 
 <body>
-
-    <!-- Navigation -->
+  
+    <!-- Navigation - IMPROVED RESPONSIVE -->
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
@@ -947,15 +978,20 @@
                     </div>
                 </li>
                 <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+                <li class="nav-item"><a href="Scholarship.html" class="nav-link active">Scholarship</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
 
-            <div class="hamburger">
+            <button class="hamburger">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </nav>
 
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Rest of your UI/UX specific content remains the same -->
     <!-- Hero Section -->
     <section class="banner">
         <div class="banner-content">
@@ -970,13 +1006,10 @@
                 <div class="overview-content">
                     <div class="section-title">
                         <h1>Graphic Designing Overview</h1>
-                        <p>Master Modern Graphic Design Skills: Become a Certified Graphic Designer and Launch Your
-                            Creative Career!</p>
+                        <p>Master Modern Graphic Design Skills: Become a Certified Graphic Designer and Launch Your Creative Career!</p>
                     </div>
                     <div class="highlight-box">
-                        <p><strong>Rohil NextGen</strong> offers a comprehensive Graphic Design training program
-                            covering Photoshop, Illustrator, CorelDRAW, and design principles to create stunning visuals
-                            and digital art.</p>
+                        <p><strong>Rohil NextGen</strong> offers a comprehensive Graphic Design training program covering Photoshop, Illustrator, CorelDRAW, and design principles to create stunning visuals and digital art.</p>
                     </div>
                     <!--Rating-->
                     <div class="rating">
@@ -996,7 +1029,7 @@
                     <div class="course-stats">
                         <div class="stat">
                             <div class="stat-value">2025</div>
-                            <div class="stat-label">Updated Curriculam</div>
+                            <div class="stat-label">Updated Curriculum</div>
                         </div>
                         <div class="stat">
                             <div class="stat-value">40</div>
@@ -1047,7 +1080,7 @@
     <section class="course-details-section">
         <div class="container">
             <div class="course-header">
-                <h2>Master Core Python Programming</h2>
+                <h2>Master Core Graphic Design Skills</h2>
                 <p class="course-subtitle">
                     <span style="font-size: 30px; color: #e2062c; font-weight: bold;">❝</span>
                     Learn Photoshop, Illustrator, CorelDRAW, and Visual Storytelling Techniques <span
@@ -1057,32 +1090,27 @@
 
             <div class="course-description">
                 <h3>Course Overview</h3>
-                <p>The Graphic Designing course is designed to build strong creative skills in designing stunning
-                    visuals for web, print, and digital platforms. Covering Adobe Photoshop, Illustrator, CorelDRAW, and
-                    branding basics, students will be ready for real-world projects and creative roles.</p>
+                <p>The Graphic Designing course is designed to build strong creative skills in designing stunning visuals for web, print, and digital platforms. Covering Adobe Photoshop, Illustrator, CorelDRAW, and branding basics, students will be ready for real-world projects and creative roles.</p>
             </div>
 
             <div class="course-goals">
                 <h3>Key Learning Outcomes</h3>
                 <ul>
                     <li><i class="fas fa-paint-brush"></i> Create stunning graphics, logos, banners, and posters.</li>
-                    <li><i class="fas fa-th-pen-nib"></i> Master typography, color theory, and layout design.</li>
-                    <li><i class="fas fa-laptop"></i> Design professional brochures, business cards, and flyers.</li>
+                    <li><i class="fas fa-font"></i> Master typography, color theory, and layout design.</li>
+                    <li><i class="fas fa-id-card"></i> Design professional brochures, business cards, and flyers.</li>
                     <li><i class="fas fa-image"></i> Enhance and manipulate images using Photoshop.</li>
-                    <li><i class="fas fa-bullhorn"></i> Build brand identities and visual communication strategies.</li>
+                    <li><i class="fas fa-palette"></i> Build brand identities and visual communication strategies.</li>
                 </ul>
             </div>
             <div class="future-scope">
                 <h3>Career Prospects with This Course</h3>
                 <ul>
-                    <li><i class="fas fa-palette"></i> Work as a Graphic Designer in agencies, media houses, or
-                        freelancing platforms.</li>
+                    <li><i class="fas fa-briefcase"></i> Work as a Graphic Designer in agencies, media houses, or freelancing platforms.</li>
                     <li><i class="fas fa-ad"></i> Design ads, marketing materials, and digital content for brands.</li>
-                    <li><i class="fas fa-photo-video"></i> Step into UI Design and Digital Product Designing.</li>
-                    <li><i class="fas fa-bullseye"></i> Grow into Branding Specialist, Art Director, or Visual Designer
-                        roles.</li>
-                    <li><i class="fas fa-lightbulb"></i> Build an outstanding portfolio that grabs attention from top
-                        companies.</li>
+                    <li><i class="fas fa-laptop"></i> Step into UI Design and Digital Product Designing.</li>
+                    <li><i class="fas fa-chart-line"></i> Grow into Branding Specialist, Art Director, or Visual Designer roles.</li>
+                    <li><i class="fas fa-folder-open"></i> Build an outstanding portfolio that grabs attention from top companies.</li>
                 </ul>
             </div>
         </div>
@@ -1094,34 +1122,34 @@
             <h2 class="syllabus-title">Syllabus</h2>
             <div class="syllabus-content">
                 <div class="syllabus-item">
-                    <i class="fas fa-play-circle"></i> Basics of Graphic Designing & Design Principles
+                    <i class="fas fa-pencil-alt"></i> Basics of Graphic Designing & Design Principles
                 </div>
                 <div class="syllabus-item">
-                    <i class="fas fa-paint-brush"></i> Adobe Photoshop: Image Editing & Visual Effects
+                    <i class="fas fa-image"></i> Adobe Photoshop: Image Editing & Visual Effects
                 </div>
                 <div class="syllabus-item">
-                    <i class="fas fa-vector-square"></i> Adobe Illustrator: Vector Graphics & Logo Designing
+                    <i class="fas fa-pen-nib"></i> Adobe Illustrator: Vector Graphics & Logo Designing
                 </div>
                 <div class="syllabus-item">
-                    <i class="fas fa-draw-polygon"></i> CorelDRAW: Layout and Typography
+                    <i class="fas fa-th"></i> CorelDRAW: Layout and Typography
                 </div>
                 <div class="syllabus-item">
                     <i class="fas fa-palette"></i> Color Theory, Typography, and Branding
                 </div>
                 <div class="syllabus-item">
-                    <i class="fas fa-cube"></i> Working with Layers, Masks, and Effects
+                    <i class="fas fa-layer-group"></i> Working with Layers, Masks, and Effects
                 </div>
                 <div class="syllabus-item">
-                    <i class="fas fa-layer-group"></i> Designing Posters, Flyers, and Social Media Creatives
+                    <i class="fas fa-file-image"></i> Designing Posters, Flyers, and Social Media Creatives
                 </div>
                 <div class="syllabus-item">
-                    <i class="fas fa-pen-fancy"></i> Creative Project Planning and Storyboarding
+                    <i class="fas fa-clipboard-list"></i> Creative Project Planning and Storyboarding
                 </div>
                 <div class="syllabus-item">
-                    <i class="fas fa-lightbulb"></i> Capstone Projects: Branding Kit, Social Media Campaigns
+                    <i class="fas fa-project-diagram"></i> Capstone Projects: Branding Kit, Social Media Campaigns
                 </div>
                 <div class="syllabus-item">
-                    <i class="fas fa-cloud-upload-alt"></i> Portfolio Building and Online Publishing
+                    <i class="fas fa-briefcase"></i> Portfolio Building and Online Publishing
                 </div>
             </div>
         </div>
@@ -1141,7 +1169,7 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>The course duration is 40 hours, including creative project work.</p>
+                        <p>The course duration is 40 hours, including project-based learning and hands-on practice.</p>
                     </div>
                 </div>
 
@@ -1151,8 +1179,7 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>No prior artistic skills are required! We will teach you from basic to advanced designing
-                            techniques.</p>
+                        <p>No, beginners are welcome! We start from the basics and guide you step-by-step through the design process.</p>
                     </div>
                 </div>
 
@@ -1162,7 +1189,7 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, you will receive a certification from Rohil NextGen Academy after course completion.</p>
+                        <p>Yes, you will receive an industry-recognized certification from Rohil NextGen Academy.</p>
                     </div>
                 </div>
 
@@ -1172,8 +1199,7 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, hands-on practice with Adobe Photoshop, Illustrator, and CorelDRAW is part of the
-                            course.</p>
+                        <p>Yes, our course extensively covers both Adobe Photoshop and Illustrator, along with CorelDRAW.</p>
                     </div>
                 </div>
 
@@ -1183,8 +1209,7 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>You will build projects like branding kits, posters, social media posts, and personal
-                            portfolios.</p>
+                        <p>You will create real-world projects like logos, branding kits, social media campaigns, posters, and marketing materials.</p>
                     </div>
                 </div>
 
@@ -1194,14 +1219,12 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! We assist with portfolio development, interview preparation, and freelance project
-                            opportunities.</p>
+                        <p>Absolutely! We offer portfolio building, resume preparation, mock interviews, and direct job referrals.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="tech-footer">
@@ -1259,38 +1282,69 @@
     </div>
 
     <script>
-        // Mobile Menu Toggle
+        // IMPROVED MOBILE NAVIGATION
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const body = document.body;
 
-        hamburger.addEventListener('click', () => {
+        // Toggle mobile menu
+        function toggleMobileMenu() {
             navMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', (e) => {
-            // Only close menu if it's not a dropdown trigger
-            if (!e.target.closest('.nav-item').querySelector('.dropdown')) {
-                navMenu.classList.remove('active');
+            mobileOverlay.classList.toggle('active');
+            body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            
+            // Change hamburger icon
+            const icon = hamburger.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
-        }));
+        }
+
+        // Close mobile menu
+        function closeMobileMenu() {
+            navMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            body.style.overflow = '';
+            
+            // Reset hamburger icon
+            const icon = hamburger.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+            
+            // Close all dropdowns
+            document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                dropdown.classList.remove('active');
+                const navLink = dropdown.previousElementSibling;
+                navLink?.classList.remove('active');
+            });
+        }
+
+        // Event listeners
+        hamburger.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', closeMobileMenu);
 
         // Mobile Dropdown Functionality
         document.querySelectorAll('.nav-item').forEach(item => {
             const dropdown = item.querySelector('.dropdown');
             const navLink = item.querySelector('.nav-link');
+            const chevron = navLink?.querySelector('.fa-chevron-down');
 
-            if (dropdown) {
-                // Add click event for mobile dropdowns
+            if (dropdown && navLink) {
                 navLink.addEventListener('click', (e) => {
                     if (window.innerWidth <= 768) {
                         e.preventDefault();
-
-                        // Close other open dropdowns
+                        
+                        // Close other dropdowns
                         document.querySelectorAll('.dropdown.active').forEach(otherDropdown => {
                             if (otherDropdown !== dropdown) {
                                 otherDropdown.classList.remove('active');
-                                otherDropdown.previousElementSibling.classList.remove('active');
+                                const otherNavLink = otherDropdown.previousElementSibling;
+                                otherNavLink?.classList.remove('active');
                             }
                         });
 
@@ -1302,77 +1356,36 @@
             }
         });
 
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                if (!e.target.closest('.nav-item') && !e.target.closest('.hamburger')) {
-                    document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                        dropdown.previousElementSibling.classList.remove('active');
-                    });
-                }
+        // Close menu when clicking on non-dropdown links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (!link.querySelector('.fa-chevron-down')) {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        closeMobileMenu();
+                    }
+                });
             }
         });
 
-        // Carousel Functionality
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        const carouselDots = document.querySelectorAll('.carousel-dot');
-        let currentIndex = 0;
+        // Close menu on resize if window becomes larger
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
 
-        function showSlide(index) {
-            // Hide all slides
-            carouselItems.forEach(item => item.classList.remove('active'));
-            carouselDots.forEach(dot => dot.classList.remove('active'));
-
-            // Show the selected slide
-            carouselItems[index].classList.add('active');
-            carouselDots[index].classList.add('active');
-            currentIndex = index;
-        }
-
-        // Add click event to dots
-        carouselDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index);
+        // Prevent dropdown from closing when clicking inside it
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
             });
         });
 
-        // Auto slide change
-        let carouselInterval = setInterval(() => {
-            let nextIndex = (currentIndex + 1) % carouselItems.length;
-            showSlide(nextIndex);
-        }, 5000);
-
-        // Pause carousel on hover
-        carouselItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                clearInterval(carouselInterval);
-            });
-
-            item.addEventListener('mouseleave', () => {
-                carouselInterval = setInterval(() => {
-                    let nextIndex = (currentIndex + 1) % carouselItems.length;
-                    showSlide(nextIndex);
-                }, 5000);
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        // Close menu with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
         });
 
         // Back to Top Button
@@ -1380,9 +1393,9 @@
 
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
+                backToTopButton.classList.add('active');
             } else {
-                backToTopButton.classList.remove('show');
+                backToTopButton.classList.remove('active');
             }
         });
 
@@ -1393,16 +1406,6 @@
             });
         });
 
-        // Close mobile menu on resize if window becomes larger
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                navMenu.classList.remove('active');
-                document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-                    dropdown.classList.remove('active');
-                    dropdown.previousElementSibling.classList.remove('active');
-                });
-            }
-        });
         // FAQ Accordion Functionality
         document.addEventListener('DOMContentLoaded', function () {
             const faqItems = document.querySelectorAll('.faq-item');
@@ -1425,5 +1428,4 @@
         });
     </script>
 </body>
-
 </html>
