@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         // Initialize EmailJS with your public key
         (function () {
@@ -25,6 +26,9 @@
             --light-gray: #f5f5f5;
             --dark-gray: #333333;
             --medium-gray: #666666;
+            --text-black: #333333;
+            --text-grey: #666666;
+            --light-grey: #f5f5f5;
             --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
             --primary: #d40404;
@@ -252,7 +256,7 @@
         }
 
         /* Keep rounded corners for the form logo */
-        .logo {
+        .form-logo {
             height: 80px;
             width: auto;
             border-radius: 50%;
@@ -1081,7 +1085,7 @@
                 padding: 20px;
             }
 
-            .logo {
+            .form-logo {
                 height: 60px;
             }
 
@@ -1186,7 +1190,7 @@
         <div class="form-container">
             <div class="header">
                 <div class="logo-container">
-                    <img src="./images/rohil_nextgen.png" alt="Rohil NextGen Logo" class="logo">
+                    <img src="./images/rohil_nextgen.png" alt="Rohil NextGen Logo" class="form-logo">
                 </div>
                 <div class="header-content">
                     <h1>Rohil NextGen Scholarship</h1>
@@ -1790,6 +1794,7 @@
         const filePreviewLink = document.getElementById('filePreviewLink');
         let selectedFile = null;
 
+        // Improved file input handling for mobile devices
         certificateInput.addEventListener('change', function (e) {
             const file = e.target.files[0];
 
@@ -1824,11 +1829,15 @@
             }
         });
 
+        // Improved file input reset function
         function resetFileInput() {
             certificateInput.value = '';
             fileName.textContent = '';
             fileInputLabel.classList.remove('has-file');
             filePreview.style.display = 'none';
+            if (selectedFile) {
+                URL.revokeObjectURL(filePreviewLink.href);
+            }
             selectedFile = null;
         }
 

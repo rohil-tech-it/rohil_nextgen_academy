@@ -1513,21 +1513,175 @@
             background: var(--dark-red);
         }
 
-        /* Responsive adjustments */
+        /* Enhanced Mobile Responsiveness */
         @media (max-width: 768px) {
+            .chat-widget {
+                bottom: 15px;
+                left: 15px;
+            }
 
             .chat-container {
-                width: 290px;
-                height: 450px;
+                width: calc(100vw - 30px);
+                height: 70vh;
+                max-height: 500px;
+                position: fixed;
+                bottom: 80px;
+                left: 15px;
+                right: 15px;
+                margin: 0;
+            }
+
+            .chat-toggle {
+                width: 55px;
+                height: 55px;
+                font-size: 22px;
+            }
+
+            .chat-header {
+                padding: 12px 15px;
+            }
+
+            .chat-header h3 {
+                font-size: 15px;
+            }
+
+            .chat-messages {
+                padding: 10px;
+            }
+
+            .message-content {
+                max-width: 90%;
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+            .chat-input-container {
+                padding: 10px;
+            }
+
+            .chat-input {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+
+            .send-button {
+                width: 38px;
+                height: 38px;
+            }
+
+            .course-item {
+                padding: 10px;
+            }
+
+            .course-title {
+                font-size: 13px;
+            }
+
+            .course-details {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .quick-actions {
+                gap: 8px;
+            }
+
+            .quick-action-btn {
+                padding: 6px 10px;
+                font-size: 10px;
+                min-width: 70px;
+            }
+
+            .chat-overlay {
+                display: block;
             }
         }
 
         @media (max-width: 480px) {
-
-            .chat-container {
-                width: 280px;
+            .chat-widget {
+                bottom: 10px;
                 left: 10px;
             }
+
+            .chat-container {
+                width: calc(100vw - 20px);
+                left: 10px;
+                right: 10px;
+                bottom: 70px;
+                height: 65vh;
+            }
+
+            .chat-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .chat-header {
+                padding: 10px 12px;
+            }
+
+            .chat-header h3 {
+                font-size: 14px;
+            }
+
+            .message-content {
+                max-width: 95%;
+            }
+
+            .course-title {
+                font-size: 12px;
+            }
+
+            .quick-actions {
+                flex-direction: column;
+            }
+
+            .quick-action-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .chat-container {
+                height: 60vh;
+            }
+
+            .chat-header {
+                padding: 8px 10px;
+            }
+
+            .chat-header h3 {
+                font-size: 13px;
+            }
+
+            .chat-messages {
+                padding: 8px;
+            }
+
+            .message-content {
+                max-width: 98%;
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+
+            .course-title {
+                font-size: 11px;
+            }
+        }
+
+        /* Landscape mode adjustments */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .chat-container {
+                height: 80vh;
+                max-height: 300px;
+            }
+        }
+
+        /* Prevent body scroll when chat is open on mobile */
+        body.chat-open {
+            overflow: hidden;
         }
     </style>
 </head>
