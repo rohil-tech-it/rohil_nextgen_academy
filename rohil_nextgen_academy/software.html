@@ -1,1752 +1,2096 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rohil NextGen - Software Engineering Course</title>
-    <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link
+      rel="icon"
+      type="images/rohil_nextgen"
+      href="./images/rohil_nextgen-removebg-preview.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            --primary-red: #d40404;
-            --dark-red: #a80303;
-            --light-red: #ffeded;
-            --white: #ffffff;
-            --light-gray: #f5f5f5;
-            --dark-gray: #333333;
-            --medium-gray: #666666;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+      :root {
+        --primary-red: #d40404;
+        --dark-red: #a80303;
+        --light-red: #ffeded;
+        --white: #ffffff;
+        --light-gray: #f5f5f5;
+        --dark-gray: #333333;
+        --medium-gray: #666666;
+        --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--dark-gray);
+        background-color: var(--white);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Top Bar Styles */
+      .top-bar {
+        background-color: var(--primary-red);
+        color: var(--white);
+        padding: 15px 0;
+        font-size: 15px;
+        height: 60px;
+      }
+
+      .top-bar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .contact-info {
+        display: flex;
+        gap: 20px;
+      }
+
+      .contact-info div {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 18px;
+      }
+
+      .social-icons a {
+        color: var(--white);
+        font-size: 25px;
+        transition: opacity 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: var(--text-grey);
+        transform: translateY(-3px) scale(1.1);
+      }
+
+      /* Navigation Styles - IMPROVED RESPONSIVE */
+      .navbar {
+        background-color: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        height: 80px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 100px;
+        width: 120px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+      }
+
+      .nav-item {
+        position: relative;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-black);
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-red);
+      }
+
+      .dropdown {
+        position: absolute;
+        background-color: var(--white);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s;
+        z-index: 100;
+      }
+
+      .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-item {
+        display: block;
+        padding: 12px 20px;
+        text-decoration: none;
+        color: var(--text-grey);
+        border-bottom: 1px solid #eee;
+        transition: all 0.3s;
+      }
+
+      .dropdown-item:hover {
+        background-color: var(--light-grey);
+        color: var(--primary-red);
+        padding-left: 25px;
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: var(--text-black);
+        z-index: 1001;
+      }
+
+      /* Mobile Overlay */
+      .mobile-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+      }
+
+      .mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Enhanced Banner Section */
+      .banner {
+        background-image: url("./images/engg.png");
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+        padding: 120px 0;
+        text-align: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 500px;
+      }
+
+      .banner-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .banner-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .banner-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--primary-red);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: var(--transition);
+        margin-top: 20px;
+      }
+
+      .cta-button:hover {
+        background-color: var(--dark-red);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Overview Section */
+      .overview-section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        margin-bottom: 30px;
+      }
+
+      .section-title h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: var(--dark-gray);
+      }
+
+      .section-title p {
+        font-size: 1.2rem;
+        color: var(--medium-gray);
+      }
+
+      .highlight-box {
+        background-color: var(--light-gray);
+        padding: 25px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+        box-shadow: var(--shadow);
+        border-left: 5px solid var(--primary-red);
+      }
+
+      .highlight-box p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+
+      .highlight-box p strong {
+        color: var(--primary-red);
+      }
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .rating-badge {
+        background-color: var(--primary-red);
+        color: var(--white);
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+
+      /* Enhanced Course Overview Section */
+      .course-overview {
+        padding: 40px 0 60px;
+      }
+
+      .course-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .stat {
+        text-align: center;
+        padding: 25px 15px;
+        background-color: var(--light-gray);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stat:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .stat-value {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary-red);
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        color: var(--dark-gray);
+        font-weight: 500;
+      }
+
+      /* Enhanced Certification Section */
+      .certification-section {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .certification-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--dark-gray);
+        margin-bottom: 40px;
+      }
+
+      .certification-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .course-goals h3 {
+        color: var(--primary-red);
+      }
+
+      .future-scope h3 {
+        color: var(--primary-red);
+      }
+
+      .certification-info-box {
+        background-color: var(--white);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        padding: 30px 20px;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .certification-info-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .certification-icon {
+        font-size: 48px;
+        color: var(--primary-red);
+        margin-bottom: 20px;
+      }
+
+      .certification-subtitle {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--dark-gray);
+        margin-bottom: 10px;
+      }
+
+      .certification-description {
+        font-size: 1rem;
+        color: var(--medium-gray);
+        margin-bottom: 15px;
+      }
+
+      .certification-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--dark-gray);
+      }
+
+      /* Course Details Section */
+      .course-details-section {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 30px;
+        border-radius: 12px;
+      }
+
+      .course-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .course-header h2 {
+        font-size: 2.2rem;
+        color: var(--dark-gray);
+        margin-bottom: 15px;
+      }
+
+      .course-subtitle {
+        font-size: 1.2rem;
+        color: var(--medium-gray);
+        font-style: italic;
+      }
+
+      .course-description,
+      .course-goals,
+      .future-scope {
+        margin-bottom: 40px;
+      }
+
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.5rem;
+        color: var(--primary-red);
+        margin-bottom: 15px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .course-description h3::after,
+      .course-goals h3::after,
+      .future-scope h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--primary-red);
+      }
+
+      .course-description p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--medium-gray);
+      }
+
+      .course-goals ul,
+      .future-scope ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .course-goals li,
+      .future-scope li {
+        padding: 10px 0;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .course-goals i,
+      .future-scope i {
+        color: var(--primary-red);
+        margin-top: 5px;
+      }
+
+      /* Enhanced Syllabus Section */
+      .syllabus-container {
+        padding: 80px 20px;
+        background: linear-gradient(to right, #f7f7f7, #eaeaea);
+        text-align: center;
+        border-radius: 15px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .syllabus-title {
+        font-size: 2.5rem;
+        color: var(--dark-gray);
+        margin-bottom: 50px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .syllabus-title::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary-red);
+      }
+
+      .syllabus-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        justify-content: center;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .week-container {
+        background: var(--white);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        margin-bottom: 25px;
+        transition: var(--transition);
+      }
+
+      .week-container:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .week-header {
+        background-color: var(--primary-red);
+        color: var(--white);
+        padding: 20px 25px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: var(--transition);
+      }
+
+      .week-header:hover {
+        background-color: var(--dark-red);
+      }
+
+      .week-header h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .week-icon {
+        color: var(--white);
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+
+      .week-content {
+        padding: 0 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+      }
+
+      .week-container.active .week-content {
+        max-height: 1000px;
+        padding: 25px;
+      }
+
+      .week-container.active .week-icon {
+        transform: rotate(180deg);
+      }
+
+      .week-theory,
+      .week-practical {
+        margin-bottom: 25px;
+      }
+
+      .week-theory h4,
+      .week-practical h4 {
+        color: var(--primary-red);
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .week-theory ul,
+      .week-practical ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .week-theory li,
+      .week-practical li {
+        padding: 8px 0;
+        font-size: 1rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .week-theory i,
+      .week-practical i {
+        color: var(--primary-red);
+        margin-top: 5px;
+        font-size: 0.9rem;
+      }
+
+      /* Enhanced FAQ Section */
+      .faq-section {
+        padding: 80px 0;
+        background-color: var(--light-gray);
+      }
+
+      .faq-content {
+        background-color: var(--white);
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid #eee;
+      }
+
+      .faq-item:last-child {
+        border-bottom: none;
+      }
+
+      .faq-question {
+        padding: 20px 25px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: var(--transition);
+      }
+
+      .faq-question:hover {
+        background-color: var(--light-red);
+      }
+
+      .faq-question h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--dark-gray);
+        margin: 0;
+      }
+
+      .faq-icon {
+        color: var(--primary-red);
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+
+      .faq-answer {
+        padding: 0 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        background-color: var(--light-red);
+      }
+
+      .faq-answer p {
+        padding: 20px 0;
+        color: var(--medium-gray);
+        margin: 0;
+      }
+
+      .faq-item.active .faq-question {
+        background-color: var(--light-red);
+      }
+
+      .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+        padding: 0 25px;
+      }
+
+      /* Enhanced Footer */
+      .tech-footer {
+        background-color: #656566;
+        color: var(--white);
+        padding: 60px 0 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        color: var(--white);
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--primary-red);
+      }
+
+      .footer-column p {
+        margin-bottom: 20px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        color: var(--white);
+        transition: var(--transition);
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary-red);
+        transform: translateY(-3px);
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .footer-links a:hover {
+        color: var(--primary-red);
+        transform: translateX(5px);
+      }
+
+      .footer-links i {
+        font-size: 0.8rem;
+        color: var(--primary-red);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 20px;
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .footer-bottom p {
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-red);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background-color: var(--dark-red);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--white);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Top Bar Styles */
-        .top-bar {
-            background-color: var(--primary-red);
-            color: var(--white);
-            padding: 15px 0;
-            font-size: 15px;
-            height: 60px;
-        }
-
-        .top-bar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 20px;
-        }
-
-        .contact-info div {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 18px;
-        }
-
-        .social-icons a {
-            color: var(--white);
-            font-size: 25px;
-            transition: opacity 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: var(--text-grey);
-            transform: translateY(-3px) scale(1.1);
-        }
-
-
-        /* Navigation Styles - IMPROVED RESPONSIVE */
-        .navbar {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            height: 80px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 100px;
-            width: 120px;
+        .mobile-overlay {
+          display: block;
         }
 
         .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 30px;
+          position: fixed;
+          top: 0;
+          left: -100%;
+          flex-direction: column;
+          background-color: var(--white);
+          width: 280px;
+          height: 100vh;
+          transition: 0.4s ease;
+          box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+          padding: 80px 0 20px;
+          gap: 0;
+          overflow-y: auto;
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          left: 0;
         }
 
         .nav-item {
-            position: relative;
+          margin: 0;
+          width: 100%;
         }
 
         .nav-link {
-            text-decoration: none;
-            color: var(--text-black);
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.3s;
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-red);
+          padding: 15px 25px;
+          width: 100%;
+          justify-content: space-between;
+          border-bottom: 1px solid #eee;
+          font-size: 16px;
         }
 
         .dropdown {
-            position: absolute;
-            background-color: var(--white);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            min-width: 200px;
-            top: 100%;
-            left: 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.3s;
-            z-index: 100;
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          display: none;
+          background-color: var(--light-grey);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+          width: 100%;
         }
 
-        .nav-item:hover .dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+        .dropdown.active {
+          display: block;
+          max-height: 300px;
         }
 
         .dropdown-item {
-            display: block;
-            padding: 12px 20px;
-            text-decoration: none;
-            color: var(--text-grey);
-            border-bottom: 1px solid #eee;
-            transition: all 0.3s;
+          padding: 12px 40px;
+          border-bottom: 1px solid #ddd;
+          font-size: 14px;
         }
 
-        .dropdown-item:hover {
-            background-color: var(--light-grey);
-            color: var(--primary-red);
-            padding-left: 25px;
+        .nav-link i.fa-chevron-down {
+          transition: transform 0.3s ease;
         }
 
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-            background: none;
-            border: none;
-            color: var(--text-black);
-            z-index: 1001;
+        .nav-link.active i.fa-chevron-down {
+          transform: rotate(180deg);
         }
 
-        /* Mobile Overlay */
-        .mobile-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
+        .top-bar-container {
+          flex-direction: column;
+          gap: 10px;
         }
 
-        .mobile-overlay.active {
-            opacity: 1;
-            visibility: visible;
+        .top-bar {
+          height: 120px;
         }
 
-
-        /* Enhanced Banner Section */
-        .banner {
-            background-image: url("./images/engg.png");
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 120px 0;
-            text-align: center;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 500px;
+        .contact-info {
+          flex-wrap: wrap;
+          justify-content: center;
         }
+      }
 
-        .banner-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .banner-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .banner-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-red);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            margin-top: 20px;
-        }
-
-        .cta-button:hover {
-            background-color: var(--dark-red);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Overview Section */
-        .overview-section {
-            padding: 60px 0;
-        }
-
-        .section-title {
-            margin-bottom: 30px;
+      @media (max-width: 992px) {
+        .syllabus-content {
+          grid-template-columns: 1fr;
+          max-width: 600px;
         }
 
         .section-title h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--dark-gray);
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .banner {
+          padding: 80px 0;
+          min-height: 300px;
+        }
+
+        .section-title h1 {
+          font-size: 1.8rem;
         }
 
         .section-title p {
-            font-size: 1.2rem;
-            color: var(--medium-gray);
-        }
-
-        .highlight-box {
-            background-color: var(--light-gray);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            box-shadow: var(--shadow);
-            border-left: 5px solid var(--primary-red);
-
-        }
-
-        .highlight-box p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .highlight-box p strong {
-            color: var(--primary-red);
-        }
-
-        .rating {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .rating-badge {
-            background-color: var(--primary-red);
-            color: var(--white);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        /* Enhanced Course Overview Section */
-        .course-overview {
-            padding: 40px 0 60px;
+          font-size: 1.1rem;
         }
 
         .course-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+          grid-template-columns: repeat(2, 1fr);
         }
 
-        .stat {
-            text-align: center;
-            padding: 25px 15px;
-            background-color: var(--light-gray);
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-
-        .stat:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary-red);
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: var(--dark-gray);
-            font-weight: 500;
-        }
-
-        /* Enhanced Certification Section */
-        .certification-section {
-            background-color: #f8f9fa;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .certification-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--dark-gray);
-            margin-bottom: 40px;
-        }
-
-        .certification-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .course-goals h3 {
-            color: var(--primary-red);
-        }
-
-        .future-scope h3 {
-            color: var(--primary-red);
-
-        }
-
-        .certification-info-box {
-            background-color: var(--white);
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            padding: 30px 20px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .certification-info-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .certification-icon {
-            font-size: 48px;
-            color: var(--primary-red);
-            margin-bottom: 20px;
-        }
-
-        .certification-subtitle {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--dark-gray);
-            margin-bottom: 10px;
-        }
-
-        .certification-description {
-            font-size: 1rem;
-            color: var(--medium-gray);
-            margin-bottom: 15px;
-        }
-
-        .certification-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--dark-gray);
-        }
-
-        /* Course Details Section */
-        .course-details-section {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 30px;
-            border-radius: 12px;
-        }
-
-        .course-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .course-header h2 {
-            font-size: 2.2rem;
-            color: var(--dark-gray);
-            margin-bottom: 15px;
-        }
-
-        .course-subtitle {
-            font-size: 1.2rem;
-            color: var(--medium-gray);
-            font-style: italic;
-        }
-
-        .course-description,
-        .course-goals,
-        .future-scope {
-            margin-bottom: 40px;
-        }
-
-        .course-description h3,
-        .course-goals h3,
-        .future-scope h3 {
-            font-size: 1.5rem;
-            color: var(--primary-red);
-            margin-bottom: 15px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .course-description h3::after,
-        .course-goals h3::after,
-        .future-scope h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-red);
-        }
-
-        .course-description p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--medium-gray);
-        }
-
-        .course-goals ul,
-        .future-scope ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .course-goals li,
-        .future-scope li {
-            padding: 10px 0;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .course-goals i,
-        .future-scope i {
-            color: var(--primary-red);
-            margin-top: 5px;
-        }
-
-        /* Enhanced Syllabus Section */
         .syllabus-container {
-            padding: 80px 20px;
-            background: linear-gradient(to right, #f7f7f7, #eaeaea);
-            text-align: center;
-            border-radius: 15px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+          padding: 60px 15px;
         }
 
         .syllabus-title {
-            font-size: 2.5rem;
-            color: var(--dark-gray);
-            margin-bottom: 50px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .syllabus-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary-red);
-        }
-
-        .syllabus-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            justify-content: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .week-container {
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            margin-bottom: 25px;
-            transition: var(--transition);
-        }
-
-        .week-container:hover {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .week-header {
-            background-color: var(--primary-red);
-            color: var(--white);
-            padding: 20px 25px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
-        }
-
-        .week-header:hover {
-            background-color: var(--dark-red);
-        }
-
-        .week-header h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .week-icon {
-            color: var(--white);
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .week-content {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-        }
-
-        .week-container.active .week-content {
-            max-height: 1000px;
-            padding: 25px;
-        }
-
-        .week-container.active .week-icon {
-            transform: rotate(180deg);
-        }
-
-        .week-theory,
-        .week-practical {
-            margin-bottom: 25px;
-        }
-
-        .week-theory h4,
-        .week-practical h4 {
-            color: var(--primary-red);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .week-theory ul,
-        .week-practical ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .week-theory li,
-        .week-practical li {
-            padding: 8px 0;
-            font-size: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .week-theory i,
-        .week-practical i {
-            color: var(--primary-red);
-            margin-top: 5px;
-            font-size: 0.9rem;
-        }
-
-        /* Enhanced FAQ Section */
-        .faq-section {
-            padding: 80px 0;
-            background-color: var(--light-gray);
-        }
-
-        .faq-content {
-            background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #eee;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            padding: 20px 25px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
-        }
-
-        .faq-question:hover {
-            background-color: var(--light-red);
-        }
-
-        .faq-question h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--dark-gray);
-            margin: 0;
-        }
-
-        .faq-icon {
-            color: var(--primary-red);
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .faq-answer {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            background-color: var(--light-red);
-        }
-
-        .faq-answer p {
-            padding: 20px 0;
-            color: var(--medium-gray);
-            margin: 0;
-        }
-
-        .faq-item.active .faq-question {
-            background-color: var(--light-red);
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding: 0 25px;
-        }
-
-        /* Enhanced Footer */
-        .tech-footer {
-            background-color: #656566;
-            color: var(--white);
-            padding: 60px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--white);
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--primary-red);
-        }
-
-        .footer-column p {
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            color: var(--white);
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary-red);
-            transform: translateY(-3px);
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-red);
-            transform: translateX(5px);
-        }
-
-        .footer-links i {
-            font-size: 0.8rem;
-            color: var(--primary-red);
+          font-size: 2.2rem;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            padding-top: 20px;
-            margin-top: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 20px;
-            padding-right: 20px;
+          flex-direction: column;
+          gap: 10px;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .contact-info {
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
         }
 
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.8);
-            margin: 0;
+        .course-stats {
+          grid-template-columns: 1fr;
         }
 
-        /* Back to Top Button */
+        .stat-value {
+          font-size: 2rem;
+        }
+
         .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-red);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 999;
+          bottom: 20px;
+          right: 20px;
+          width: 40px;
+          height: 40px;
         }
 
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
+        .syllabus-container {
+          padding: 50px 10px;
         }
 
-        .back-to-top:hover {
-            background-color: var(--dark-red);
+        .syllabus-title {
+          font-size: 2rem;
         }
-
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .mobile-overlay {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                flex-direction: column;
-                background-color: var(--white);
-                width: 280px;
-                height: 100vh;
-                transition: 0.4s ease;
-                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
-                padding: 80px 0 20px;
-                gap: 0;
-                overflow-y: auto;
-                z-index: 999;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-item {
-                margin: 0;
-                width: 100%;
-            }
-
-            .nav-link {
-                padding: 15px 25px;
-                width: 100%;
-                justify-content: space-between;
-                border-bottom: 1px solid #eee;
-                font-size: 16px;
-            }
-
-            .dropdown {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                display: none;
-                background-color: var(--light-grey);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-                width: 100%;
-            }
-
-            .dropdown.active {
-                display: block;
-                max-height: 300px;
-            }
-
-            .dropdown-item {
-                padding: 12px 40px;
-                border-bottom: 1px solid #ddd;
-                font-size: 14px;
-            }
-
-            .nav-link i.fa-chevron-down {
-                transition: transform 0.3s ease;
-            }
-
-            .nav-link.active i.fa-chevron-down {
-                transform: rotate(180deg);
-            }
-
-            .top-bar-container {
-                flex-direction: column;
-                gap: 10px;
-
-            }
-
-            .top-bar {
-
-                height: 120px;
-            }
-
-            .contact-info {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .syllabus-content {
-                grid-template-columns: 1fr;
-                max-width: 600px;
-            }
-
-            .section-title h1 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-
-            .banner {
-                padding: 80px 0;
-                min-height: 300px;
-            }
-
-            .section-title h1 {
-                font-size: 1.8rem;
-            }
-
-            .section-title p {
-                font-size: 1.1rem;
-            }
-
-            .course-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .syllabus-container {
-                padding: 60px 15px;
-            }
-
-            .syllabus-title {
-                font-size: 2.2rem;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .contact-info {
-                flex-direction: column;
-                gap: 10px;
-                align-items: center;
-            }
-
-            .course-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-value {
-                font-size: 2rem;
-            }
-
-            .back-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 40px;
-                height: 40px;
-            }
-
-            .syllabus-container {
-                padding: 50px 10px;
-            }
-
-            .syllabus-title {
-                font-size: 2rem;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo">
-            </div>
-
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown">
-                        <a href="classic.html" class="dropdown-item">Classic</a>
-                        <a href="professional.html" class="dropdown-item">Professional</a>
-                        <a href="expert.html" class="dropdown-item">Expert</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown">
-                        <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
-                        <a href="placement-success.html" class="dropdown-item">Placement Success</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
-                <li class="nav-item"><a href="Scholarship.html" class="nav-link active">Scholarship</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
+      <div class="container nav-container">
+        <div class="logo">
+          <img
+            src="./images/rohil_nextgen-removebg-preview.png"
+            alt="Rohil NextGen Logo"
+          />
         </div>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="gallery.html" class="nav-link">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"
+              >Courses <i class="fas fa-chevron-down"></i
+            ></a>
+            <div class="dropdown">
+              <a href="classic.html" class="dropdown-item">Classic</a>
+              <a href="professional.html" class="dropdown-item">Professional</a>
+              <a href="expert.html" class="dropdown-item">Expert</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="browsecourse.html" class="nav-link">Browse Courses</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"
+              >Support <i class="fas fa-chevron-down"></i
+            ></a>
+            <div class="dropdown">
+              <a href="placement.html" class="dropdown-item"
+                >Placement Training</a
+              >
+              <a href="companies.html" class="dropdown-item"
+                >Tie-up Companies</a
+              >
+              <a href="placement-success.html" class="dropdown-item"
+                >Placement Success</a
+              >
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="techblog.html" class="nav-link">Techblog</a>
+          </li>
+          <li class="nav-item">
+            <a href="scholarship.html" class="nav-link active">Scholarship</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
     </nav>
 
     <!-- Enhanced Hero Section -->
     <section class="banner">
-        <div class="banner-content">
-
-        </div>
+      <div class="banner-content"></div>
     </section>
 
     <!-- Overview Section -->
     <section class="overview-section" id="overview">
-        <div class="container">
-            <div class="overview-container">
-                <div class="overview-content">
-                    <div class="section-title">
-                        <h1 style="text-align: center;">Software Engineering Course Overview</h1>
-                        <p style="text-align: center; font-weight: bold;">Become a Software Engineering Expert — Learn
-                            Algorithms, System Design, Web Development, and Advanced Software Practices in One Complete
-                            Program!</p>
-                    </div>
-                    <div class="highlight-box">
-                        <p><strong>Rohil NextGen</strong> offers a comprehensive Software Engineering training covering
-                            Core Software Engineering Principles, Object-Oriented Design, Web Development, and System
-                            Design using industry tools and platforms.</p>
-                    </div>
-                    <!--Rating-->
-                    <div class="rating">
-                        <span class="rating-badge">TOP RATED 4.9</span>
-                        <span>4.9 Ratings</span>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="overview-container">
+          <div class="overview-content">
+            <div class="section-title">
+              <h1 style="text-align: center">
+                Software Engineering Course Overview
+              </h1>
+              <p style="text-align: center; font-weight: bold">
+                Become a Software Engineering Expert — Learn Algorithms, System
+                Design, Web Development, and Advanced Software Practices in One
+                Complete Program!
+              </p>
             </div>
+            <div class="highlight-box">
+              <p>
+                <strong>Rohil NextGen</strong> offers a comprehensive Software
+                Engineering training covering Core Software Engineering
+                Principles, Object-Oriented Design, Web Development, and System
+                Design using industry tools and platforms.
+              </p>
+            </div>
+            <!--Rating-->
+            <div class="rating">
+              <span class="rating-badge">TOP RATED 4.9</span>
+              <span>4.9 Ratings</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Course Overview Section -->
     <section class="course-overview">
-        <div class="container">
-            <div class="course-content">
-                <div class="course-text">
-                    <div class="course-stats">
-                        <div class="stat">
-                            <div class="stat-value">3 Months</div>
-                            <div class="stat-label">Course Duration</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">120</div>
-                            <div class="stat-label">Total Hours</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">70</div>
-                            <div class="stat-label">Practical Hours</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">2025</div>
-                            <div class="stat-label">Latest Curriculum</div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="course-content">
+          <div class="course-text">
+            <div class="course-stats">
+              <div class="stat">
+                <div class="stat-value">3 Months</div>
+                <div class="stat-label">Course Duration</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">120</div>
+                <div class="stat-label">Total Hours</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">70</div>
+                <div class="stat-label">Practical Hours</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">2025</div>
+                <div class="stat-label">Latest Curriculum</div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Certification Section -->
     <section class="certification-section">
-        <div class="container">
-            <h2 class="certification-title">Why Choose Software Engineering Certification?</h2>
-            <div class="certification-content">
-                <div class="certification-info-box">
-                    <i class="fas fa-money-bill-wave certification-icon"></i>
-                    <h4 class="certification-subtitle">Annual Income</h4>
-                    <p class="certification-description">Estimated Salary</p>
-                    <h3 class="certification-number">₹ 20 L</h3>
-                </div>
-                <div class="certification-info-box">
-                    <i class="fas fa-chart-line certification-icon"></i>
-                    <h4 class="certification-subtitle">Job Demand</h4>
-                    <p class="certification-description">Yearly Increase in Opportunities</p>
-                    <h3 class="certification-number">90%</h3>
-                </div>
-                <div class="certification-info-box">
-                    <i class="fas fa-users certification-icon"></i>
-                    <h4 class="certification-subtitle">Software Engineers Needed</h4>
-                    <p class="certification-description">Projected by 2026</p>
-                    <h3 class="certification-number">4 L</h3>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="certification-title">
+          Why Choose Software Engineering Certification?
+        </h2>
+        <div class="certification-content">
+          <div class="certification-info-box">
+            <i class="fas fa-money-bill-wave certification-icon"></i>
+            <h4 class="certification-subtitle">Annual Income</h4>
+            <p class="certification-description">Estimated Salary</p>
+            <h3 class="certification-number">₹ 20 L</h3>
+          </div>
+          <div class="certification-info-box">
+            <i class="fas fa-chart-line certification-icon"></i>
+            <h4 class="certification-subtitle">Job Demand</h4>
+            <p class="certification-description">
+              Yearly Increase in Opportunities
+            </p>
+            <h3 class="certification-number">90%</h3>
+          </div>
+          <div class="certification-info-box">
+            <i class="fas fa-users certification-icon"></i>
+            <h4 class="certification-subtitle">Software Engineers Needed</h4>
+            <p class="certification-description">Projected by 2026</p>
+            <h3 class="certification-number">4 L</h3>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Course Details Section -->
     <section class="course-details-section">
-        <div class="container">
-            <div class="course-header">
-                <h2>Become a Software Engineering Specialist</h2>
-                <p class="course-subtitle">
-                    <span style="font-size: 30px; color: var(--primary-red); font-weight: bold;">❝</span>
-                    Learn Algorithms, System Design, and Full Stack Development <span
-                        style="font-size: 30px; color: var(--primary-red); font-weight: bold;">❞</span>
-                </p>
-            </div>
-
-            <div class="course-description">
-                <h3>Course Overview</h3>
-                <p>This Software Engineering course equips you with the skills to build scalable systems, design
-                    software architecture, and implement advanced algorithms. You will work with tools like Git, Docker,
-                    Kubernetes, and learn frameworks such as React, Node.js, and Django.</p>
-            </div>
-
-            <div class="course-goals">
-                <h3>Key Learning Outcomes</h3>
-                <ul>
-                    <li><i class="fas fa-sitemap"></i> Master Software Development Life Cycle (SDLC) and Agile
-                        Practices.</li>
-                    <li><i class="fas fa-globe"></i> Build Web Applications using React, Node.js, and Django.</li>
-                    <li><i class="fas fa-database"></i> Learn Database Design and SQL for Scalable Systems.</li>
-                    <li><i class="fas fa-project-diagram"></i> Dive into System Design and Architecture for Large Scale
-                        Applications.</li>
-                    <li><i class="fas fa-code"></i> Implement Advanced Algorithms and Data Structures.</li>
-                </ul>
-            </div>
-            <div class="future-scope">
-                <h3>Career Prospects with This Course</h3>
-                <ul>
-                    <li><i class="fas fa-laptop-code"></i> Work as a Software Engineer or Full Stack Developer.</li>
-                    <li><i class="fas fa-cloud"></i> Become a Cloud Engineer or DevOps Specialist.</li>
-                    <li><i class="fas fa-server"></i> Join as a System Architect or Backend Developer.</li>
-                    <li><i class="fas fa-chart-bar"></i> Take on roles as a Data Engineer or Machine Learning Engineer.
-                    </li>
-                    <li><i class="fas fa-tasks"></i> Lead Software Projects in Agile or Scrum Environments.</li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="course-header">
+          <h2>Become a Software Engineering Specialist</h2>
+          <p class="course-subtitle">
+            <span
+              style="
+                font-size: 30px;
+                color: var(--primary-red);
+                font-weight: bold;
+              "
+              >❝</span
+            >
+            Learn Algorithms, System Design, and Full Stack Development
+            <span
+              style="
+                font-size: 30px;
+                color: var(--primary-red);
+                font-weight: bold;
+              "
+              >❞</span
+            >
+          </p>
         </div>
+
+        <div class="course-description">
+          <h3>Course Overview</h3>
+          <p>
+            This Software Engineering course equips you with the skills to build
+            scalable systems, design software architecture, and implement
+            advanced algorithms. You will work with tools like Git, Docker,
+            Kubernetes, and learn frameworks such as React, Node.js, and Django.
+          </p>
+        </div>
+
+        <div class="course-goals">
+          <h3>Key Learning Outcomes</h3>
+          <ul>
+            <li>
+              <i class="fas fa-sitemap"></i> Master Software Development Life
+              Cycle (SDLC) and Agile Practices.
+            </li>
+            <li>
+              <i class="fas fa-globe"></i> Build Web Applications using React,
+              Node.js, and Django.
+            </li>
+            <li>
+              <i class="fas fa-database"></i> Learn Database Design and SQL for
+              Scalable Systems.
+            </li>
+            <li>
+              <i class="fas fa-project-diagram"></i> Dive into System Design and
+              Architecture for Large Scale Applications.
+            </li>
+            <li>
+              <i class="fas fa-code"></i> Implement Advanced Algorithms and Data
+              Structures.
+            </li>
+          </ul>
+        </div>
+        <div class="future-scope">
+          <h3>Career Prospects with This Course</h3>
+          <ul>
+            <li>
+              <i class="fas fa-laptop-code"></i> Work as a Software Engineer or
+              Full Stack Developer.
+            </li>
+            <li>
+              <i class="fas fa-cloud"></i> Become a Cloud Engineer or DevOps
+              Specialist.
+            </li>
+            <li>
+              <i class="fas fa-server"></i> Join as a System Architect or
+              Backend Developer.
+            </li>
+            <li>
+              <i class="fas fa-chart-bar"></i> Take on roles as a Data Engineer
+              or Machine Learning Engineer.
+            </li>
+            <li>
+              <i class="fas fa-tasks"></i> Lead Software Projects in Agile or
+              Scrum Environments.
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Syllabus Section -->
     <section class="syllabus-container">
-        <div class="container">
-            <h2 class="syllabus-title">Software Engineering Fundamentals – 20 Weeks (Theory + Practical)</h2>
-            <div class="syllabus-content">
-                <!-- Week 1-2 -->
-                <div class="week-container">
-                    <div class="week-header">
-                        <h3>Week 1-2: Introduction to Software Engineering</h3>
-                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="week-content">
-                        <div class="week-theory">
-                            <h4><i class="fas fa-book"></i> Theory</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> What is Software Engineering?</li>
-                                <li><i class="fas fa-check-circle"></i> Software Development Life Cycle (SDLC)</li>
-                                <li><i class="fas fa-check-circle"></i> Models: Waterfall, Agile, Spiral, V-Model</li>
-                                <li><i class="fas fa-check-circle"></i> Software Process vs Product</li>
-                                <li><i class="fas fa-check-circle"></i> Requirements Engineering Basics</li>
-                            </ul>
-                        </div>
-                        <div class="week-practical">
-                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Analyze and document requirements for a sample
-                                    project</li>
-                                <li><i class="fas fa-check-circle"></i> Create a basic SRS (Software Requirements
-                                    Specification) document</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 3-4 -->
-                <div class="week-container">
-                    <div class="week-header">
-                        <h3>Week 3-4: Software Design Principles</h3>
-                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="week-content">
-                        <div class="week-theory">
-                            <h4><i class="fas fa-book"></i> Theory</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> SOLID Principles</li>
-                                <li><i class="fas fa-check-circle"></i> Design Patterns Overview</li>
-                                <li><i class="fas fa-check-circle"></i> Architectural Patterns</li>
-                                <li><i class="fas fa-check-circle"></i> UML Diagrams and Modeling</li>
-                            </ul>
-                        </div>
-                        <div class="week-practical">
-                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Design a system using UML diagrams</li>
-                                <li><i class="fas fa-check-circle"></i> Implement SOLID principles in code examples</li>
-                                <li><i class="fas fa-check-circle"></i> Create design pattern implementations</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 5-6 -->
-                <div class="week-container">
-                    <div class="week-header">
-                        <h3>Week 5-6: Programming Principles (Language-Agnostic)</h3>
-                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="week-content">
-                        <div class="week-theory">
-                            <h4><i class="fas fa-book"></i> Theory</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Clean Code Principles</li>
-                                <li><i class="fas fa-check-circle"></i> Code Refactoring Techniques</li>
-                                <li><i class="fas fa-check-circle"></i> Test-Driven Development (TDD)</li>
-                                <li><i class="fas fa-check-circle"></i> Code Review Best Practices</li>
-                            </ul>
-                        </div>
-                        <div class="week-practical">
-                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Refactor existing code samples</li>
-                                <li><i class="fas fa-check-circle"></i> Practice TDD with small projects</li>
-                                <li><i class="fas fa-check-circle"></i> Conduct peer code reviews</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 7-8 -->
-                <div class="week-container">
-                    <div class="week-header">
-                        <h3>Week 7-8: Object-Oriented Programming (OOP)</h3>
-                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="week-content">
-                        <div class="week-theory">
-                            <h4><i class="fas fa-book"></i> Theory</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Classes, Objects, and Inheritance</li>
-                                <li><i class="fas fa-check-circle"></i> Polymorphism and Abstraction</li>
-                                <li><i class="fas fa-check-circle"></i> Encapsulation and Information Hiding</li>
-                                <li><i class="fas fa-check-circle"></i> Interface and Abstract Classes</li>
-                            </ul>
-                        </div>
-                        <div class="week-practical">
-                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Build OOP-based applications</li>
-                                <li><i class="fas fa-check-circle"></i> Implement inheritance hierarchies</li>
-                                <li><i class="fas fa-check-circle"></i> Create polymorphic systems</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 9-10 -->
-                <div class="week-container">
-                    <div class="week-header">
-                        <h3>Week 9-10: Software Testing</h3>
-                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="week-content">
-                        <div class="week-theory">
-                            <h4><i class="fas fa-book"></i> Theory</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Unit Testing and Integration Testing</li>
-                                <li><i class="fas fa-check-circle"></i> Test Automation Frameworks</li>
-                                <li><i class="fas fa-check-circle"></i> Performance and Load Testing</li>
-                                <li><i class="fas fa-check-circle"></i> Security Testing Principles</li>
-                            </ul>
-                        </div>
-                        <div class="week-practical">
-                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Write comprehensive test suites</li>
-                                <li><i class="fas fa-check-circle"></i> Implement automated testing pipelines</li>
-                                <li><i class="fas fa-check-circle"></i> Conduct performance testing</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 11-12 -->
-                <div class="week-container">
-                    <div class="week-header">
-                        <h3>Week 11-12: Software Project Management</h3>
-                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="week-content">
-                        <div class="week-theory">
-                            <h4><i class="fas fa-book"></i> Theory</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Agile Methodologies (Scrum, Kanban)</li>
-                                <li><i class="fas fa-check-circle"></i> Project Planning and Estimation</li>
-                                <li><i class="fas fa-check-circle"></i> Risk Management and Mitigation</li>
-                                <li><i class="fas fa-check-circle"></i> Team Collaboration and Communication</li>
-                            </ul>
-                        </div>
-                        <div class="week-practical">
-                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Create project plans and timelines</li>
-                                <li><i class="fas fa-check-circle"></i> Conduct sprint planning sessions</li>
-                                <li><i class="fas fa-check-circle"></i> Practice agile ceremonies</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 13-14 -->
-                <div class="week-container">
-                    <div class="week-header">
-                        <h3>Week 13-14: Software Maintenance & Configuration</h3>
-                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="week-content">
-                        <div class="week-theory">
-                            <h4><i class="fas fa-book"></i> Theory</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Version Control with Git</li>
-                                <li><i class="fas fa-check-circle"></i> Code Maintenance Strategies</li>
-                                <li><i class="fas fa-check-circle"></i> Configuration Management</li>
-                                <li><i class="fas fa-check-circle"></i> Documentation Best Practices</li>
-                            </ul>
-                        </div>
-                        <div class="week-practical">
-                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Master Git workflows and branching</li>
-                                <li><i class="fas fa-check-circle"></i> Maintain and update existing codebases</li>
-                                <li><i class="fas fa-check-circle"></i> Create comprehensive documentation</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 15-16 -->
-                <div class="week-container">
-                    <div class="week-header">
-                        <h3>Week 15-16: Advanced Software Development Techniques</h3>
-                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="week-content">
-                        <div class="week-theory">
-                            <h4><i class="fas fa-book"></i> Theory</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Microservices Architecture</li>
-                                <li><i class="fas fa-check-circle"></i> API Design and Development</li>
-                                <li><i class="fas fa-check-circle"></i> Database Optimization</li>
-                                <li><i class="fas fa-check-circle"></i> Caching Strategies</li>
-                            </ul>
-                        </div>
-                        <div class="week-practical">
-                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Build microservices applications</li>
-                                <li><i class="fas fa-check-circle"></i> Design and implement REST APIs</li>
-                                <li><i class="fas fa-check-circle"></i> Optimize database performance</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 17-18 -->
-                <div class="week-container">
-                    <div class="week-header">
-                        <h3>Week 17-18: DevOps and Continuous Integration</h3>
-                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="week-content">
-                        <div class="week-theory">
-                            <h4><i class="fas fa-book"></i> Theory</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> CI/CD Pipeline Setup</li>
-                                <li><i class="fas fa-check-circle"></i> Containerization with Docker</li>
-                                <li><i class="fas fa-check-circle"></i> Infrastructure as Code</li>
-                                <li><i class="fas fa-check-circle"></i> Monitoring and Logging</li>
-                            </ul>
-                        </div>
-                        <div class="week-practical">
-                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Set up CI/CD pipelines</li>
-                                <li><i class="fas fa-check-circle"></i> Containerize applications with Docker</li>
-                                <li><i class="fas fa-check-circle"></i> Implement monitoring solutions</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 19-20 -->
-                <div class="week-container">
-                    <div class="week-header">
-                        <h3>Week 19-20: Final Project and Case Study</h3>
-                        <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="week-content">
-                        <div class="week-theory">
-                            <h4><i class="fas fa-book"></i> Theory</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Project Documentation</li>
-                                <li><i class="fas fa-check-circle"></i> Deployment Strategies</li>
-                                <li><i class="fas fa-check-circle"></i> Production Readiness</li>
-                                <li><i class="fas fa-check-circle"></i> Post-Launch Maintenance</li>
-                            </ul>
-                        </div>
-                        <div class="week-practical">
-                            <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Complete capstone software project</li>
-                                <li><i class="fas fa-check-circle"></i> Deploy application to production</li>
-                                <li><i class="fas fa-check-circle"></i> Create comprehensive project documentation</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="syllabus-title">
+          Software Engineering Fundamentals – 20 Weeks (Theory + Practical)
+        </h2>
+        <div class="syllabus-content">
+          <!-- Week 1-2 -->
+          <div class="week-container">
+            <div class="week-header">
+              <h3>Week 1-2: Introduction to Software Engineering</h3>
+              <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
             </div>
+            <div class="week-content">
+              <div class="week-theory">
+                <h4><i class="fas fa-book"></i> Theory</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> What is Software
+                    Engineering?
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Software Development
+                    Life Cycle (SDLC)
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Models: Waterfall,
+                    Agile, Spiral, V-Model
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Software Process vs
+                    Product
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Requirements Engineering
+                    Basics
+                  </li>
+                </ul>
+              </div>
+              <div class="week-practical">
+                <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Analyze and document
+                    requirements for a sample project
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Create a basic SRS
+                    (Software Requirements Specification) document
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Week 3-4 -->
+          <div class="week-container">
+            <div class="week-header">
+              <h3>Week 3-4: Software Design Principles</h3>
+              <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="week-content">
+              <div class="week-theory">
+                <h4><i class="fas fa-book"></i> Theory</h4>
+                <ul>
+                  <li><i class="fas fa-check-circle"></i> SOLID Principles</li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Design Patterns Overview
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Architectural Patterns
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> UML Diagrams and
+                    Modeling
+                  </li>
+                </ul>
+              </div>
+              <div class="week-practical">
+                <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Design a system using
+                    UML diagrams
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Implement SOLID
+                    principles in code examples
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Create design pattern
+                    implementations
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Week 5-6 -->
+          <div class="week-container">
+            <div class="week-header">
+              <h3>Week 5-6: Programming Principles (Language-Agnostic)</h3>
+              <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="week-content">
+              <div class="week-theory">
+                <h4><i class="fas fa-book"></i> Theory</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Clean Code Principles
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Code Refactoring
+                    Techniques
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Test-Driven Development
+                    (TDD)
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Code Review Best
+                    Practices
+                  </li>
+                </ul>
+              </div>
+              <div class="week-practical">
+                <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Refactor existing code
+                    samples
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Practice TDD with small
+                    projects
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Conduct peer code
+                    reviews
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Week 7-8 -->
+          <div class="week-container">
+            <div class="week-header">
+              <h3>Week 7-8: Object-Oriented Programming (OOP)</h3>
+              <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="week-content">
+              <div class="week-theory">
+                <h4><i class="fas fa-book"></i> Theory</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Classes, Objects, and
+                    Inheritance
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Polymorphism and
+                    Abstraction
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Encapsulation and
+                    Information Hiding
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Interface and Abstract
+                    Classes
+                  </li>
+                </ul>
+              </div>
+              <div class="week-practical">
+                <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Build OOP-based
+                    applications
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Implement inheritance
+                    hierarchies
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Create polymorphic
+                    systems
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Week 9-10 -->
+          <div class="week-container">
+            <div class="week-header">
+              <h3>Week 9-10: Software Testing</h3>
+              <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="week-content">
+              <div class="week-theory">
+                <h4><i class="fas fa-book"></i> Theory</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Unit Testing and
+                    Integration Testing
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Test Automation
+                    Frameworks
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Performance and Load
+                    Testing
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Security Testing
+                    Principles
+                  </li>
+                </ul>
+              </div>
+              <div class="week-practical">
+                <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Write comprehensive test
+                    suites
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Implement automated
+                    testing pipelines
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Conduct performance
+                    testing
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Week 11-12 -->
+          <div class="week-container">
+            <div class="week-header">
+              <h3>Week 11-12: Software Project Management</h3>
+              <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="week-content">
+              <div class="week-theory">
+                <h4><i class="fas fa-book"></i> Theory</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Agile Methodologies
+                    (Scrum, Kanban)
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Project Planning and
+                    Estimation
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Risk Management and
+                    Mitigation
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Team Collaboration and
+                    Communication
+                  </li>
+                </ul>
+              </div>
+              <div class="week-practical">
+                <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Create project plans and
+                    timelines
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Conduct sprint planning
+                    sessions
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Practice agile
+                    ceremonies
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Week 13-14 -->
+          <div class="week-container">
+            <div class="week-header">
+              <h3>Week 13-14: Software Maintenance & Configuration</h3>
+              <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="week-content">
+              <div class="week-theory">
+                <h4><i class="fas fa-book"></i> Theory</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Version Control with Git
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Code Maintenance
+                    Strategies
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Configuration Management
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Documentation Best
+                    Practices
+                  </li>
+                </ul>
+              </div>
+              <div class="week-practical">
+                <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Master Git workflows and
+                    branching
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Maintain and update
+                    existing codebases
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Create comprehensive
+                    documentation
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Week 15-16 -->
+          <div class="week-container">
+            <div class="week-header">
+              <h3>Week 15-16: Advanced Software Development Techniques</h3>
+              <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="week-content">
+              <div class="week-theory">
+                <h4><i class="fas fa-book"></i> Theory</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Microservices
+                    Architecture
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> API Design and
+                    Development
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Database Optimization
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Caching Strategies
+                  </li>
+                </ul>
+              </div>
+              <div class="week-practical">
+                <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Build microservices
+                    applications
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Design and implement
+                    REST APIs
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Optimize database
+                    performance
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Week 17-18 -->
+          <div class="week-container">
+            <div class="week-header">
+              <h3>Week 17-18: DevOps and Continuous Integration</h3>
+              <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="week-content">
+              <div class="week-theory">
+                <h4><i class="fas fa-book"></i> Theory</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> CI/CD Pipeline Setup
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Containerization with
+                    Docker
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Infrastructure as Code
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Monitoring and Logging
+                  </li>
+                </ul>
+              </div>
+              <div class="week-practical">
+                <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Set up CI/CD pipelines
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Containerize
+                    applications with Docker
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Implement monitoring
+                    solutions
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Week 19-20 -->
+          <div class="week-container">
+            <div class="week-header">
+              <h3>Week 19-20: Final Project and Case Study</h3>
+              <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="week-content">
+              <div class="week-theory">
+                <h4><i class="fas fa-book"></i> Theory</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Project Documentation
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Deployment Strategies
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Production Readiness
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Post-Launch Maintenance
+                  </li>
+                </ul>
+              </div>
+              <div class="week-practical">
+                <h4><i class="fas fa-laptop-code"></i> Practical</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Complete capstone
+                    software project
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Deploy application to
+                    production
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Create comprehensive
+                    project documentation
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq-section">
-        <div class="container">
-            <div class="section-title">
-                <h2 style="text-align: center;">Frequently Asked Questions</h2>
-            </div>
-
-            <div class="faq-content">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What is Software Engineering?</h3>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Software Engineering is the systematic application of engineering approaches to the
-                            development of software. It involves designing, developing, testing, and maintaining
-                            software applications using well-defined scientific principles, methods, and procedures.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Do I need programming experience for this course?</h3>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Basic programming knowledge is recommended but not mandatory. The course covers software
-                            engineering principles that are language-agnostic, though we'll work with multiple
-                            programming languages and frameworks throughout the curriculum.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Will I receive a certificate after completing the Software Engineering course?</h3>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, upon successful completion of the course and final project, you will receive a
-                            certificate from Rohil NextGen that validates your Software Engineering skills.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What kind of projects will I work on during the course?</h3>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>You'll work on real-world projects including web applications, system design, database
-                            design, API development, and a comprehensive capstone project that integrates all software
-                            engineering principles you've learned.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What tools and technologies will I learn?</h3>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>You'll learn Git, Docker, Kubernetes, React, Node.js, Django, various databases, testing
-                            frameworks, CI/CD tools, and software engineering methodologies like Agile and Scrum.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What career support do you provide after course completion?</h3>
-                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We provide resume building assistance, interview preparation, portfolio development guidance,
-                            and connect you with our placement partners for job opportunities in software engineering
-                            roles across various industries.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2 style="text-align: center">Frequently Asked Questions</h2>
         </div>
-    </section>
 
+        <div class="faq-content">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What is Software Engineering?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Software Engineering is the systematic application of
+                engineering approaches to the development of software. It
+                involves designing, developing, testing, and maintaining
+                software applications using well-defined scientific principles,
+                methods, and procedures.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do I need programming experience for this course?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Basic programming knowledge is recommended but not mandatory.
+                The course covers software engineering principles that are
+                language-agnostic, though we'll work with multiple programming
+                languages and frameworks throughout the curriculum.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>
+                Will I receive a certificate after completing the Software
+                Engineering course?
+              </h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, upon successful completion of the course and final project,
+                you will receive a certificate from Rohil NextGen that validates
+                your Software Engineering skills.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What kind of projects will I work on during the course?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                You'll work on real-world projects including web applications,
+                system design, database design, API development, and a
+                comprehensive capstone project that integrates all software
+                engineering principles you've learned.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What tools and technologies will I learn?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                You'll learn Git, Docker, Kubernetes, React, Node.js, Django,
+                various databases, testing frameworks, CI/CD tools, and software
+                engineering methodologies like Agile and Scrum.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>
+                What career support do you provide after course completion?
+              </h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We provide resume building assistance, interview preparation,
+                portfolio development guidance, and connect you with our
+                placement partners for job opportunities in software engineering
+                roles across various industries.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="tech-footer">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>About Rohil NextGen</h3>
-                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses
-                    in software development, data science, cybersecurity, and more.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61574571321905"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
-                    <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
-                    <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
-                    <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li>
-                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>Our Courses</h3>
-                <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil
-                            Nadu</a></li>
-                    <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-                    <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
-                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
-                </ul>
-            </div>
-
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Rohil NextGen</h3>
+          <p>
+            We are a premier technology education platform in Virudhunagar
+            offering cutting-edge courses in software development, data science,
+            cybersecurity, and more.
+          </p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61574571321905"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/rohil_nextgen/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.youtube.com/@rohiltechdigitalteam"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
         </div>
 
-        <div class="footer-bottom">
-            <div class="copyright">
-                <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
-            </div>
-            <div class="footer-bottom-links">
-                <p>Designed By Rohil Technologies</p>
-            </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li>
+              <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+            </li>
+            <li>
+              <a href="classic.html"
+                ><i class="fas fa-chevron-right"></i> Courses</a
+              >
+            </li>
+            <li>
+              <a href="browsecourse.html"
+                ><i class="fas fa-chevron-right"></i> Browse Courses</a
+              >
+            </li>
+            <li>
+              <a href="companies.html"
+                ><i class="fas fa-chevron-right"></i> Tie-up Companies</a
+              >
+            </li>
+            <li>
+              <a href="placement-success.html"
+                ><i class="fas fa-chevron-right"></i> Placements</a
+              >
+            </li>
+            <li>
+              <a href="contact.html"
+                ><i class="fas fa-chevron-right"></i> Contact</a
+              >
+            </li>
+          </ul>
         </div>
+
+        <div class="footer-column">
+          <h3>Our Courses</h3>
+          <ul class="footer-links">
+            <li>
+              <a href="#"
+                ><i class="fas fa-map-marker-alt"></i>Rohil NextGen,
+                Virudhunagar, Tamil Nadu</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
+        </div>
+        <div class="footer-bottom-links">
+          <p>Designed By Rohil Technologies</p>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
     </div>
 
     <script>
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
+      // Mobile Menu Toggle
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', (e) => {
-            // Only close menu if it's not a dropdown trigger
-            if (!e.target.closest('.nav-item').querySelector('.dropdown')) {
-                navMenu.classList.remove('active');
-            }
-        }));
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", (e) => {
+          // Only close menu if it's not a dropdown trigger
+          if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
+            navMenu.classList.remove("active");
+          }
+        })
+      );
 
-        // Mobile Dropdown Functionality
-        document.querySelectorAll('.nav-item').forEach(item => {
-            const dropdown = item.querySelector('.dropdown');
-            const navLink = item.querySelector('.nav-link');
+      // Mobile Dropdown Functionality
+      document.querySelectorAll(".nav-item").forEach((item) => {
+        const dropdown = item.querySelector(".dropdown");
+        const navLink = item.querySelector(".nav-link");
 
-            if (dropdown) {
-                // Add click event for mobile dropdowns
-                navLink.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-
-                        // Close other open dropdowns
-                        document.querySelectorAll('.dropdown.active').forEach(otherDropdown => {
-                            if (otherDropdown !== dropdown) {
-                                otherDropdown.classList.remove('active');
-                                otherDropdown.previousElementSibling.classList.remove('active');
-                            }
-                        });
-
-                        // Toggle current dropdown
-                        dropdown.classList.toggle('active');
-                        navLink.classList.toggle('active');
-                    }
-                });
-            }
-        });
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', (e) => {
+        if (dropdown) {
+          // Add click event for mobile dropdowns
+          navLink.addEventListener("click", (e) => {
             if (window.innerWidth <= 768) {
-                if (!e.target.closest('.nav-item') && !e.target.closest('.hamburger')) {
-                    document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                        dropdown.previousElementSibling.classList.remove('active');
-                    });
-                }
-            }
-        });
+              e.preventDefault();
 
-        // Week Accordion Functionality
-        document.querySelectorAll('.week-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const weekContainer = header.parentElement;
-                weekContainer.classList.toggle('active');
-            });
-        });
-
-        // FAQ Accordion Functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-
-                // Close all other FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    if (item !== faqItem) {
-                        item.classList.remove('active');
-                    }
+              // Close other open dropdowns
+              document
+                .querySelectorAll(".dropdown.active")
+                .forEach((otherDropdown) => {
+                  if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove("active");
+                    otherDropdown.previousElementSibling.classList.remove(
+                      "active"
+                    );
+                  }
                 });
 
-                // Toggle current FAQ item
-                faqItem.classList.toggle('active');
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('active');
-            } else {
-                backToTopButton.classList.remove('active');
+              // Toggle current dropdown
+              dropdown.classList.toggle("active");
+              navLink.classList.toggle("active");
             }
-        });
+          });
+        }
+      });
 
-        backToTopButton.addEventListener('click', () => {
+      // Close dropdowns when clicking outside
+      document.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          if (
+            !e.target.closest(".nav-item") &&
+            !e.target.closest(".hamburger")
+          ) {
+            document
+              .querySelectorAll(".dropdown.active")
+              .forEach((dropdown) => {
+                dropdown.classList.remove("active");
+                dropdown.previousElementSibling.classList.remove("active");
+              });
+          }
+        }
+      });
+
+      // Week Accordion Functionality
+      document.querySelectorAll(".week-header").forEach((header) => {
+        header.addEventListener("click", () => {
+          const weekContainer = header.parentElement;
+          weekContainer.classList.toggle("active");
+        });
+      });
+
+      // FAQ Accordion Functionality
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const faqItem = question.parentElement;
+
+          // Close all other FAQ items
+          document.querySelectorAll(".faq-item").forEach((item) => {
+            if (item !== faqItem) {
+              item.classList.remove("active");
+            }
+          });
+
+          // Toggle current FAQ item
+          faqItem.classList.toggle("active");
+        });
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
             window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
             });
+          }
         });
+      });
 
-        // Close mobile menu on resize if window becomes larger
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                navMenu.classList.remove('active');
-                document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-                    dropdown.classList.remove('active');
-                    dropdown.previousElementSibling.classList.remove('active');
-                });
-            }
+      // Back to Top Button
+      const backToTopButton = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add("active");
+        } else {
+          backToTopButton.classList.remove("active");
+        }
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
         });
+      });
+
+      // Close mobile menu on resize if window becomes larger
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          navMenu.classList.remove("active");
+          document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+            dropdown.classList.remove("active");
+            dropdown.previousElementSibling.classList.remove("active");
+          });
+        }
+      });
     </script>
-</body>
-
+  </body>
 </html>
