@@ -787,6 +787,24 @@
             transform: rotate(180deg);
         }
     }
+    @media (max-width: 360px) {
+    .chat-container {
+      height: 380px;
+    }
+
+    .chat-header {
+      padding: 10px 12px;
+    }
+
+    .chat-header h3 {
+      font-size: 14px;
+    }
+
+    .chatbot-image {
+      width: 35px;
+      height: 35px;
+    }
+  }
 </style>
 </head>
 
@@ -1500,28 +1518,93 @@
         function getBotResponse(message) {
             const lowerMessage = message.toLowerCase();
 
-            if (lowerMessage.includes('courses') || lowerMessage.includes('all courses')) {
-                return "Here are all our available courses. Click on any course to see details:";
-            } else if (lowerMessage.includes('java')) {
-                return "Java Full Stack Development covers Core Java, Advanced Java, Spring Framework, Hibernate, and Frontend technologies. Click on the Java course above for details.";
-            } else if (lowerMessage.includes('python')) {
-                return "Python with Data Science includes Python fundamentals, data analysis with Pandas, machine learning, and web frameworks. Click on the Python course above for details.";
-            } else if (lowerMessage.includes('web development') || lowerMessage.includes('web')) {
-                return "Web Development covers frontend (HTML, CSS, JavaScript, React) and backend (Node.js, databases). Click on the Web Development course above for details.";
-            } else if (lowerMessage.includes('mobile') || lowerMessage.includes('app')) {
-                return "Mobile App Development covers Android, iOS, and cross-platform development with React Native/Flutter. Click on the Mobile App Development course above for details.";
-            } else if (lowerMessage.includes('data science') || lowerMessage.includes('analytics')) {
-                return "Data Science & Analytics covers statistics, Python libraries, visualization, and machine learning algorithms. Click on the Data Science course above for details.";
-            } else if (lowerMessage.includes('cloud')) {
-                return "Cloud Computing covers AWS, Azure, Google Cloud, and DevOps tools. Click on the Cloud Computing course above for details.";
-            } else if (lowerMessage.includes('support') || lowerMessage.includes('help')) {
-                return "Our customer support team is currently away. Please leave your message and we'll get back to you as soon as possible.";
-            } else if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('phone')) {
-                return "You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
-            } else if (lowerMessage.includes('placement') || lowerMessage.includes('job')) {
-                return "We provide 100% placement assistance with our extensive network of hiring partners. Would you like to know more about our placement training?";
+            // Add greeting recognition first
+            if (lowerMessage.includes("good morning")) {
+                return "Good morning! ☀️ Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+            } else if (lowerMessage.includes("good afternoon")) {
+                return "Good afternoon! 🌞 Welcome to Rohil Technologies. How can I assist you today? You can ask about our courses, placements, or contact information.";
+            } else if (lowerMessage.includes("good evening")) {
+                return "Good evening! 🌙 Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+            } else if (
+                lowerMessage.includes("hi") ||
+                lowerMessage.includes("hello") ||
+                lowerMessage.includes("hey")
+            ) {
+                return "Hi there! 👋 Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+            } else if (
+                lowerMessage.includes("thank you") ||
+                lowerMessage.includes("thanks") ||
+                lowerMessage.includes("thankyou")
+            ) {
+                return "You're welcome! 😊 Glad I could help. Let me know if you need any more information about our courses or services!";
+            } else if (
+                lowerMessage.includes("courses") ||
+                lowerMessage.includes("all courses")
+            ) {
+                return "Here are all our trending courses: Java Full Stack, Python Data Science, Web Development, Mobile App Development, Cloud Computing, Artificial Intelligence, Machine Learning, Cybersecurity, DevOps, and UI/UX Design. Click on any course above to see details.";
+            } else if (lowerMessage.includes("java")) {
+                return "💻 Java Full Stack Development covers Core Java, Advanced Java, Spring Framework, Hibernate, and Frontend technologies like HTML, CSS, and React. Click on the Java course above for details.";
+            } else if (lowerMessage.includes("python")) {
+                return "🐍 Python with Data Science includes Python basics, data analysis with Pandas, visualization, machine learning, and web frameworks like Flask and Django. Click on the Python course above for details.";
+            } else if (
+                lowerMessage.includes("web development") ||
+                lowerMessage.includes("web")
+            ) {
+                return "🌐 Web Development covers frontend (HTML, CSS, JavaScript, React) and backend (Node.js, Express, and databases). Click on the Web Development course above for details.";
+            } else if (
+                lowerMessage.includes("mobile") ||
+                lowerMessage.includes("app")
+            ) {
+                return "📱 Mobile App Development covers Android, iOS, and cross-platform app development with Flutter and React Native. Click on the Mobile App Development course above for details.";
+            } else if (
+                lowerMessage.includes("data science") ||
+                lowerMessage.includes("analytics")
+            ) {
+                return "📊 Data Science & Analytics covers Python, statistics, Pandas, visualization tools (Matplotlib, Power BI), and machine learning. Click on the Data Science course above for details.";
+            } else if (lowerMessage.includes("cloud")) {
+                return "☁️ Cloud Computing includes AWS, Azure, Google Cloud, and DevOps integration for scalable deployment. Click on the Cloud Computing course above for details.";
+            } else if (
+                lowerMessage.includes("ai") ||
+                lowerMessage.includes("artificial intelligence")
+            ) {
+                return "🤖 Artificial Intelligence covers neural networks, deep learning, NLP (Natural Language Processing), and Generative AI tools like ChatGPT. Click on the AI course above for details.";
+            } else if (
+                lowerMessage.includes("ml") ||
+                lowerMessage.includes("machine learning")
+            ) {
+                return "🧠 Machine Learning course includes supervised and unsupervised learning, regression, classification, and model deployment techniques. Click on the ML course above for more info.";
+            } else if (
+                lowerMessage.includes("cyber security") ||
+                lowerMessage.includes("cybersecurity") ||
+                lowerMessage.includes("hacking")
+            ) {
+                return "🔐 Cybersecurity covers ethical hacking, network security, penetration testing, and protecting against real-world cyber threats. Click on the Cybersecurity course above for details.";
+            } else if (lowerMessage.includes("devops")) {
+                return "⚙️ DevOps training includes CI/CD, Docker, Kubernetes, Jenkins, and version control with Git & GitHub. Click on the DevOps course above for details.";
+            } else if (
+                lowerMessage.includes("ui") ||
+                lowerMessage.includes("ux") ||
+                lowerMessage.includes("design")
+            ) {
+                return "🎨 UI/UX Design covers design principles, Figma, Adobe XD, wireframing, and prototyping for modern digital interfaces. Click on the UI/UX course above for details.";
+            } else if (
+                lowerMessage.includes("placement") ||
+                lowerMessage.includes("job")
+            ) {
+                return "🎯 We provide 100% placement assistance with mock interviews, resume building, and connections to our hiring partners. Would you like to know more about our placement training?";
+            } else if (
+                lowerMessage.includes("support") ||
+                lowerMessage.includes("help")
+            ) {
+                return "💬 Our support team is currently away. Please leave your message and we'll get back to you as soon as possible.";
+            } else if (
+                lowerMessage.includes("contact") ||
+                lowerMessage.includes("email") ||
+                lowerMessage.includes("phone")
+            ) {
+                return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
             } else {
-                return "Thank you for your message. Our team will get back to you shortly. Type 'courses' to see all available programs.";
+                return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
             }
         }
 

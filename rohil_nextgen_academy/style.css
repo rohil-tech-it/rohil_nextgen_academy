@@ -218,48 +218,30 @@
         }
 
         .carousel-item:nth-child(1) {
-            background-image: url('./videos/c1.png');
-
+            background-image: url('./carosuel/carosuel.jpg');
         }
 
         .carousel-item:nth-child(2) {
-            background-image: url('./videos/c2.png');
+            background-image: url('./carosuel/carosuel1.jpg');
         }
 
         .carousel-item:nth-child(3) {
-            background-image: url('./videos/c3.png');
+            background-image: url('./carosuel/carosuel2.jpg');
         }
 
-        /* Responsive Fix — Match 3rd Image Proportions to First Image */
-        .carousel-item:nth-child(3) {
-            background-image: url('./videos/c3.png');
-            background-size: cover;
-            background-position: center top;
-            background-repeat: no-repeat;
+        .carousel-item:nth-child(4) {
+            background-image: url("./carosuel/carosuel3.jpg");          
         }
-
-
-        /* Mobile screens */
-        @media (max-width: 768px) {
-            .carousel-item:nth-child(3) {
-                height: 1100px;
-                background-size: contain;
-                /* Ensure full image visible */
-                background-position: center;
-            }
+        .carousel-item:nth-child(5) {
+            background-image: url("./carosuel/carosuel4.jpg");          
         }
-
-        /* Small mobile screens */
-        @media (max-width: 480px) {
-            .carousel-item:nth-child(3) {
-                height: 1100px;
-                background-size: contain;
-                background-position: center;
-                background-position: center top;
-            }
+        .carousel-item:nth-child(6) {
+            background-image: url("./carosuel/carosuel5.jpg");          
         }
-
-
+        .carousel-item:nth-child(7) {
+            background-image: url("./carosuel/carosuel6.jpg");          
+        }
+       
         .carousel-content {
             position: absolute;
             top: 50%;
@@ -1102,11 +1084,10 @@
             .top-bar-container {
                 flex-direction: column;
                 gap: 10px;
-
             }
 
             .top-bar {
-                height: 150px;
+                height: 190px;
             }
 
             .contact-info {

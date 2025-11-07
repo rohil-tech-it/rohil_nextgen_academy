@@ -80,7 +80,7 @@ carouselDots.forEach((dot, index) => {
 let carouselInterval = setInterval(() => {
     let nextIndex = (currentIndex + 1) % carouselItems.length;
     showSlide(nextIndex);
-}, 5000);
+}, 2000);
 
 // Pause carousel on hover
 carouselItems.forEach(item => {
@@ -92,7 +92,7 @@ carouselItems.forEach(item => {
         carouselInterval = setInterval(() => {
             let nextIndex = (currentIndex + 1) % carouselItems.length;
             showSlide(nextIndex);
-        }, 5000);
+        }, 2000);
     });
 });
 

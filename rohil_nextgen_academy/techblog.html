@@ -1,2844 +1,2724 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tech Blog - Rohil NextGen</title>
-    <link
-      rel="icon"
-      type="images/rohil_nextgen"
-      href="./images/rohil_nextgen-removebg-preview.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Add EmailJS SDK -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <style>
-      :root {
-        --primary-red: #d40404;
-        --dark-red: #a80303;
-        --light-red: #ffeded;
-        --white: #ffffff;
-        --light-gray: #f5f5f5;
-        --dark-gray: #333333;
-        --medium-gray: #666666;
-        --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        --transition: all 0.3s ease;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Blog - Rohil NextGen</title>
+  <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- Add EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <style>
+    :root {
+      --primary-red: #d40404;
+      --dark-red: #a80303;
+      --light-red: #ffeded;
+      --white: #ffffff;
+      --light-gray: #f5f5f5;
+      --dark-gray: #333333;
+      --medium-gray: #666666;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6;
+      color: var(--dark-gray);
+      background-color: var(--white);
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Bar Styles - FIXED */
+    .top-bar {
+      background-color: var(--primary-red);
+      color: var(--white);
+      padding: 15px 0;
+      font-size: 15px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .top-bar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info div {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 18px;
+    }
+
+    .social-icons a {
+      color: var(--white);
+      font-size: 25px;
+      transition: opacity 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--light-gray);
+      transform: translateY(-3px) scale(1.1);
+    }
+
+    /* Navigation Styles - IMPROVED RESPONSIVE */
+    .navbar {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 80px;
+      width: 100px;
+      object-fit: contain;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--dark-gray);
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-red);
+    }
+
+    .nav-link.active {
+      color: var(--primary-red);
+    }
+
+    .dropdown {
+      position: absolute;
+      background-color: var(--white);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      min-width: 200px;
+      top: 100%;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s;
+      z-index: 100;
+      border-radius: 5px;
+    }
+
+    .nav-item:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-item {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: var(--medium-gray);
+      border-bottom: 1px solid #eee;
+      transition: all 0.3s;
+    }
+
+    .dropdown-item:hover {
+      background-color: var(--light-gray);
+      color: var(--primary-red);
+      padding-left: 25px;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: var(--dark-gray);
+      z-index: 1001;
+    }
+
+    /* Mobile Overlay */
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .mobile-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Hero Section - IMPROVED */
+    .hero-section {
+      background-image: linear-gradient(rgba(102, 100, 100, 0.7),
+          rgba(29, 29, 29, 0.7)),
+        url("./images/tech-blog.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: var(--white);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--primary-red);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+      margin-top: 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: var(--dark-red);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Blog Section - IMPROVED */
+    .blog-section {
+      padding: 60px 0;
+      background-color: var(--white);
+    }
+
+    .section-title {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: var(--dark-gray);
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+      color: var(--medium-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .blog-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+    }
+
+    .blog-posts {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .blog-post {
+      background-color: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .blog-post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .blog-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .blog-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .blog-post:hover .blog-image img {
+      transform: scale(1.05);
+    }
+
+    .blog-content {
+      padding: 20px;
+    }
+
+    .blog-meta {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      font-size: 0.85rem;
+      color: var(--medium-gray);
+      flex-wrap: wrap;
+    }
+
+    .blog-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .blog-meta i {
+      color: var(--primary-red);
+    }
+
+    .blog-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--dark-gray);
+      line-height: 1.4;
+    }
+
+    .blog-content p {
+      margin-bottom: 20px;
+      color: var(--medium-gray);
+      line-height: 1.6;
+    }
+
+    .read-more {
+      display: inline-block;
+      color: var(--primary-red);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    .read-more:hover {
+      color: var(--dark-red);
+      transform: translateX(5px);
+    }
+
+    /* Related Content Styles */
+    .related-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      margin-top: 0;
+      background-color: var(--light-gray);
+      border-radius: 8px;
+      padding: 0 20px;
+    }
+
+    .related-content.active {
+      max-height: 1000px;
+      margin-top: 20px;
+      padding: 20px;
+    }
+
+    .related-content h4 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: var(--dark-gray);
+      border-bottom: 2px solid var(--primary-red);
+      padding-bottom: 8px;
+    }
+
+    .related-content p {
+      margin-bottom: 15px;
+      color: var(--medium-gray);
+      line-height: 1.6;
+    }
+
+    .related-content ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .related-content li {
+      margin-bottom: 8px;
+      color: var(--medium-gray);
+      line-height: 1.5;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .sidebar-widget {
+      background-color: var(--white);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .widget-title {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: var(--dark-gray);
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .widget-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--primary-red);
+    }
+
+    .categories-list {
+      list-style: none;
+    }
+
+    .categories-list li {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .categories-list li:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .categories-list a {
+      color: var(--medium-gray);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .categories-list a:hover {
+      color: var(--primary-red);
+    }
+
+    .categories-list span {
+      background-color: var(--light-red);
+      color: var(--primary-red);
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    .recent-posts {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .recent-post {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .recent-post-image {
+      width: 70px;
+      height: 70px;
+      border-radius: 5px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .recent-post-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .recent-post-content h4 {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+
+    .recent-post-content span {
+      font-size: 0.8rem;
+      color: var(--medium-gray);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background-color: var(--light-gray);
+      color: var(--medium-gray);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      transition: var(--transition);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .tag:hover {
+      background-color: var(--primary-red);
+      color: var(--white);
+    }
+
+    /* WhatsApp Newsletter Styles */
+    .whatsapp-newsletter {
+      background-color: var(--white);
+      color: var(--dark-gray);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .whatsapp-newsletter .widget-title {
+      color: var(--dark-gray);
+    }
+
+    .whatsapp-newsletter .widget-title::after {
+      background-color: var(--primary-red);
+    }
+
+    .whatsapp-newsletter p {
+      margin-bottom: 15px;
+      color: var(--dark-gray);
+      line-height: 1.5;
+    }
+
+    .whatsapp-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .whatsapp-form input,
+    .whatsapp-form select {
+      padding: 10px 12px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      font-family: "Poppins", sans-serif;
+      transition: var(--transition);
+      background-color: var(--white);
+      font-size: 14px;
+    }
+
+    .whatsapp-form input:focus,
+    .whatsapp-form select:focus {
+      outline: none;
+      border-color: var(--dark-gray);
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+      background-color: var(--white);
+    }
+
+    .whatsapp-btn i {
+      font-size: 1.1rem;
+    }
+
+    .whatsapp-btn {
+      background-color: var(--white);
+      color: var(--primary-red);
+      border: 2px solid var(--primary-red);
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: var(--dark-gray);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .whatsapp-btn:disabled {
+      background-color: var(--light-gray);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Success/Error Messages */
+    .message {
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-top: 15px;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    /* Loading Animation */
+    .loading {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 3px solid rgba(37, 211, 102, 0.3);
+      border-radius: 50%;
+      border-top-color: #25d366;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Newsletter Subscription Styles */
+    .newsletter-section {
+      background: linear-gradient(135deg,
+          var(--primary-red),
+          var(--dark-red));
+      padding: 40px 0;
+      margin-top: 40px;
+      color: white;
+    }
+
+    .newsletter-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-content {
+      flex: 1;
+      min-width: 300px;
+      margin-right: 30px;
+    }
+
+    .newsletter-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .newsletter-content p {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 0;
+      color: white;
+      line-height: 1.5;
+    }
+
+    .newsletter-form {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      gap: 10px;
+      position: relative;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 5px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      outline: none;
+      min-width: 0;
+    }
+
+    .newsletter-btn {
+      background: white;
+      color: var(--primary-red);
+      border: none;
+      border-radius: 5px;
+      padding: 12px 20px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .newsletter-btn:hover:not(:disabled) {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    .newsletter-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .newsletter-message {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .newsletter-success {
+      background-color: rgba(46, 204, 113, 0.2);
+      color: white;
+      border: 1px solid #2ecc71;
+    }
+
+    .newsletter-error {
+      background-color: rgba(231, 76, 60, 0.2);
+      color: #ffcccb;
+      border: 1px solid #e74c3c;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background-color: var(--white);
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .modal h3 {
+      color: var(--primary-red);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .modal p {
+      margin-bottom: 20px;
+      color: var(--medium-gray);
+      line-height: 1.5;
+    }
+
+    .modal button {
+      background-color: var(--primary-red);
+      color: var(--white);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .modal button:hover {
+      background-color: var(--dark-red);
+    }
+
+    /* Pagination Styles */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .pagination a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--white);
+      color: var(--dark-gray);
+      border-radius: 5px;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      font-size: 14px;
+    }
+
+    .pagination a.active,
+    .pagination a:hover {
+      background-color: var(--primary-red);
+      color: var(--white);
+    }
+
+    .pagination a.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .pagination a.disabled:hover {
+      background-color: var(--white);
+      color: var(--dark-gray);
+    }
+
+    /* Chat Widget Styles - LEFT SIDE */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .chat-toggle {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg,
+          var(--primary-red),
+          var(--primary-red));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 24px;
+    }
+
+    .chat-toggle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .chat-container {
+      width: 350px;
+      height: 500px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg,
+          var(--primary-red),
+          var(--dark-red));
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chatbot-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    .chat-logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 110px;
+      left: 20px;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .chat-header h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .chat-status {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    .status-indicator {
+      width: 8px;
+      height: 8px;
+      background-color: #2ecc71;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+
+    .chat-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+    }
+
+    .message {
+      margin-bottom: 15px;
+      display: flex;
+    }
+
+    .message.user {
+      justify-content: flex-end;
+    }
+
+    .message.bot {
+      justify-content: flex-start;
+    }
+
+    .message-content {
+      max-width: 80%;
+      padding: 10px 15px;
+      border-radius: 18px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .user .message-content {
+      background: linear-gradient(135deg,
+          var(--primary-red),
+          var(--dark-red));
+      color: white;
+      border-bottom-right-radius: 5px;
+    }
+
+    .bot .message-content {
+      background: white;
+      color: #333;
+      border: 1px solid #e0e0e0;
+      border-bottom-left-radius: 5px;
+    }
+
+    .chat-input-container {
+      padding: 15px;
+      border-top: 1px solid #e0e0e0;
+      display: flex;
+      background: white;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 25px;
+      outline: none;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+    }
+
+    .chat-input:focus {
+      border-color: var(--primary-red);
+    }
+
+    .send-button {
+      background: linear-gradient(135deg,
+          var(--primary-red),
+          var(--dark-red));
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .send-button:hover {
+      transform: scale(1.05);
+    }
+
+    .typing-indicator {
+      display: none;
+      padding: 10px 15px;
+      font-style: italic;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .typing-dots {
+      display: inline-block;
+    }
+
+    .typing-dots span {
+      animation: typing 1.4s infinite;
+      opacity: 0.6;
+    }
+
+    .typing-dots span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .typing-dots span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes typing {
+
+      0%,
+      60%,
+      100% {
+        opacity: 0.6;
       }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-        line-height: 1.6;
-        color: var(--dark-gray);
-        background-color: var(--white);
-        overflow-x: hidden;
-      }
-
-      .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* Top Bar Styles - FIXED */
-      .top-bar {
-        background-color: var(--primary-red);
-        color: var(--white);
-        padding: 15px 0;
-        font-size: 15px;
-        min-height: 60px;
-        display: flex;
-        align-items: center;
-      }
-
-      .top-bar-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        width: 100%;
-        flex-wrap: wrap;
-      }
-
-      .contact-info {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-
-      .contact-info div {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        white-space: nowrap;
-      }
-
-      .social-icons {
-        display: flex;
-        gap: 18px;
-      }
-
-      .social-icons a {
-        color: var(--white);
-        font-size: 25px;
-        transition: opacity 0.3s;
-      }
-
-      .social-icons a:hover {
-        color: var(--light-gray);
-        transform: translateY(-3px) scale(1.1);
-      }
-
-      /* Navigation Styles - IMPROVED RESPONSIVE */
-      .navbar {
-        background-color: var(--white);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        height: 80px;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-      }
-
-      .logo img {
-        height: 80px;
-        width: 100px;
-        object-fit: contain;
-      }
-
-      .nav-menu {
-        display: flex;
-        list-style: none;
-        gap: 25px;
-      }
-
-      .nav-item {
-        position: relative;
-      }
-
-      .nav-link {
-        text-decoration: none;
-        color: var(--dark-gray);
-        font-weight: 500;
-        font-size: 16px;
-        transition: color 0.3s;
-        padding: 10px 0;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-
-      .nav-link:hover {
-        color: var(--primary-red);
-      }
-
-      .nav-link.active {
-        color: var(--primary-red);
-      }
-
-      .dropdown {
-        position: absolute;
-        background-color: var(--white);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        min-width: 200px;
-        top: 100%;
-        left: 0;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all 0.3s;
-        z-index: 100;
-        border-radius: 5px;
-      }
-
-      .nav-item:hover .dropdown {
+      30% {
         opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
       }
+    }
 
-      .dropdown-item {
-        display: block;
-        padding: 12px 20px;
-        text-decoration: none;
-        color: var(--medium-gray);
-        border-bottom: 1px solid #eee;
-        transition: all 0.3s;
-      }
+    /* Course List Styles */
+    .course-list {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-      .dropdown-item:hover {
-        background-color: var(--light-gray);
-        color: var(--primary-red);
-        padding-left: 25px;
-      }
+    .course-item {
+      background: white;
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.3s;
+      border-left: 3px solid var(--primary-red);
+    }
 
-      .hamburger {
-        display: none;
-        cursor: pointer;
-        font-size: 24px;
-        background: none;
-        border: none;
-        color: var(--dark-gray);
-        z-index: 1001;
-      }
+    .course-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
 
-      /* Mobile Overlay */
-      .mobile-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 998;
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-      }
+    .course-title {
+      font-weight: 600;
+      color: var(--dark-red);
+      margin-bottom: 5px;
+    }
 
-      .mobile-overlay.active {
-        opacity: 1;
-        visibility: visible;
-      }
+    .course-duration {
+      font-size: 12px;
+      color: #777;
+    }
 
-      /* Hero Section - IMPROVED */
-      .hero-section {
-        background-image: linear-gradient(
-            rgba(102, 100, 100, 0.7),
-            rgba(29, 29, 29, 0.7)
-          ),
-          url("./images/tech-blog.webp");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: var(--white);
-        padding: 100px 0;
-        text-align: center;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 400px;
-      }
+    .course-details {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 5px;
+      font-size: 13px;
+    }
 
-      .hero-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-        position: relative;
-        z-index: 1;
-      }
+    .course-details.active {
+      display: block;
+    }
 
-      .hero-title {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        font-weight: 700;
-        line-height: 1.2;
-      }
+    .quick-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-      .hero-subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-        opacity: 0.9;
-        line-height: 1.5;
-      }
+    .quick-action-btn {
+      background: var(--primary-red);
+      color: white;
+      border: none;
+      border-radius: 15px;
+      padding: 5px 10px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
 
-      .cta-button {
-        display: inline-block;
-        background-color: var(--primary-red);
-        color: white;
-        padding: 12px 25px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: var(--transition);
-        margin-top: 20px;
-        border: none;
-        cursor: pointer;
-      }
+    .quick-action-btn:hover {
+      background: var(--dark-red);
+    }
 
-      .cta-button:hover {
-        background-color: var(--dark-red);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      }
+    /* Enhanced Footer */
+    .tech-footer {
+      background: linear-gradient(rgba(97, 97, 97, 0.95),
+          rgba(128, 112, 112, 0.98));
+      color: var(--white);
+      padding: 50px 0 20px;
+    }
 
-      /* Blog Section - IMPROVED */
-      .blog-section {
-        padding: 60px 0;
-        background-color: var(--white);
-      }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-      .section-title {
-        margin-bottom: 40px;
-        text-align: center;
-      }
+    .footer-column h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: var(--white);
+      position: relative;
+      padding-bottom: 10px;
+    }
 
-      .section-title h2 {
-        font-size: 2rem;
-        margin-bottom: 15px;
-        color: var(--dark-gray);
-      }
+    .footer-column h3::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--primary-red);
+    }
 
-      .section-title p {
-        font-size: 1.1rem;
-        color: var(--medium-gray);
-        max-width: 600px;
-        margin: 0 auto;
-      }
+    .footer-column p {
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+    }
 
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      color: var(--white);
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary-red);
+      transform: translateY(-3px);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-red);
+      transform: translateX(5px);
+    }
+
+    .footer-links i {
+      font-size: 0.8rem;
+      color: var(--primary-red);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 20px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+      gap: 15px;
+    }
+
+    .footer-bottom p {
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary-red);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 999;
+      border: none;
+      font-size: 18px;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--dark-red);
+    }
+
+    /* ========== RESPONSIVE STYLES ========== */
+
+    /* Large devices (desktops, 992px and up) */
+    @media (max-width: 992px) {
       .blog-container {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 40px;
-      }
-
-      .blog-posts {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 30px;
-      }
-
-      .blog-post {
-        background-color: var(--white);
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-      }
-
-      .blog-post:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-      }
-
-      .blog-image {
-        height: 200px;
-        overflow: hidden;
-      }
-
-      .blog-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: var(--transition);
-      }
-
-      .blog-post:hover .blog-image img {
-        transform: scale(1.05);
-      }
-
-      .blog-content {
-        padding: 20px;
-      }
-
-      .blog-meta {
-        display: flex;
-        gap: 15px;
-        margin-bottom: 15px;
-        font-size: 0.85rem;
-        color: var(--medium-gray);
-        flex-wrap: wrap;
-      }
-
-      .blog-meta span {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-
-      .blog-meta i {
-        color: var(--primary-red);
-      }
-
-      .blog-content h3 {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-        color: var(--dark-gray);
-        line-height: 1.4;
-      }
-
-      .blog-content p {
-        margin-bottom: 20px;
-        color: var(--medium-gray);
-        line-height: 1.6;
-      }
-
-      .read-more {
-        display: inline-block;
-        color: var(--primary-red);
-        font-weight: 600;
-        text-decoration: none;
-        transition: var(--transition);
-        cursor: pointer;
-        border: none;
-        background: none;
-        font-family: inherit;
-        font-size: inherit;
-      }
-
-      .read-more:hover {
-        color: var(--dark-red);
-        transform: translateX(5px);
-      }
-
-      /* Related Content Styles */
-      .related-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
-        margin-top: 0;
-        background-color: var(--light-gray);
-        border-radius: 8px;
-        padding: 0 20px;
-      }
-
-      .related-content.active {
-        max-height: 1000px;
-        margin-top: 20px;
-        padding: 20px;
-      }
-
-      .related-content h4 {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-        color: var(--dark-gray);
-        border-bottom: 2px solid var(--primary-red);
-        padding-bottom: 8px;
-      }
-
-      .related-content p {
-        margin-bottom: 15px;
-        color: var(--medium-gray);
-        line-height: 1.6;
-      }
-
-      .related-content ul {
-        margin-left: 20px;
-        margin-bottom: 15px;
-      }
-
-      .related-content li {
-        margin-bottom: 8px;
-        color: var(--medium-gray);
-        line-height: 1.5;
       }
 
       .sidebar {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .nav-menu {
+        gap: 20px;
+      }
+    }
+
+    /* Medium devices (tablets, 768px and up) */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
         flex-direction: column;
-        gap: 30px;
+        background-color: var(--white);
+        width: 280px;
+        height: 100vh;
+        transition: 0.4s ease;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+        padding: 80px 20px 20px;
+        gap: 0;
+        overflow-y: auto;
+        z-index: 999;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .nav-item {
+        margin: 0;
+        width: 100%;
+      }
+
+      .nav-link {
+        padding: 15px 0;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+        font-size: 16px;
+      }
+
+      .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        display: none;
+        background-color: var(--light-gray);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+
+      .dropdown.active {
+        display: block;
+        max-height: 300px;
+      }
+
+      .dropdown-item {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ddd;
+        font-size: 14px;
+      }
+
+      .nav-link i.fa-chevron-down {
+        transition: transform 0.3s ease;
+      }
+
+      .nav-link.active i.fa-chevron-down {
+        transform: rotate(180deg);
+      }
+
+      .top-bar-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+
+      .top-bar {
+        min-height: auto;
+        padding: 20px 0;
+      }
+
+      .contact-info {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+
+      .hero-section {
+        padding: 80px 0;
+        min-height: 350px;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+
+      .newsletter-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .newsletter-content {
+        margin-right: 0;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .sidebar {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .chat-container {
+        width: 320px;
+        height: 450px;
+      }
+    }
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .hero-title {
+        font-size: 1.8rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .section-title h2 {
+        font-size: 1.6rem;
+      }
+
+      .blog-content {
+        padding: 15px;
+      }
+
+      .blog-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .blog-meta {
+        font-size: 0.8rem;
+        gap: 10px;
       }
 
       .sidebar-widget {
-        background-color: var(--white);
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: var(--shadow);
+        padding: 15px;
       }
 
       .widget-title {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        color: var(--dark-gray);
-        position: relative;
-        padding-bottom: 10px;
-      }
-
-      .widget-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 2px;
-        background-color: var(--primary-red);
-      }
-
-      .categories-list {
-        list-style: none;
-      }
-
-      .categories-list li {
-        margin-bottom: 10px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #eee;
-      }
-
-      .categories-list li:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-      }
-
-      .categories-list a {
-        color: var(--medium-gray);
-        text-decoration: none;
-        transition: var(--transition);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .categories-list a:hover {
-        color: var(--primary-red);
-      }
-
-      .categories-list span {
-        background-color: var(--light-red);
-        color: var(--primary-red);
-        padding: 2px 8px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-      }
-
-      .recent-posts {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+        font-size: 1.1rem;
       }
 
       .recent-post {
-        display: flex;
-        gap: 15px;
-        align-items: flex-start;
+        gap: 12px;
       }
 
       .recent-post-image {
-        width: 70px;
-        height: 70px;
-        border-radius: 5px;
-        overflow: hidden;
-        flex-shrink: 0;
-      }
-
-      .recent-post-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .recent-post-content h4 {
-        font-size: 0.9rem;
-        margin-bottom: 5px;
-        line-height: 1.4;
-      }
-
-      .recent-post-content span {
-        font-size: 0.8rem;
-        color: var(--medium-gray);
+        width: 60px;
+        height: 60px;
       }
 
       .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
+        gap: 6px;
       }
 
       .tag {
-        background-color: var(--light-gray);
-        color: var(--medium-gray);
-        padding: 5px 12px;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        transition: var(--transition);
-        text-decoration: none;
-        display: inline-block;
+        padding: 4px 10px;
+        font-size: 0.8rem;
       }
 
-      .tag:hover {
-        background-color: var(--primary-red);
-        color: var(--white);
+      .pagination a {
+        width: 35px;
+        height: 35px;
+        font-size: 13px;
       }
 
-      /* WhatsApp Newsletter Styles */
-      .whatsapp-newsletter {
-        background-color: var(--white);
-        color: var(--dark-gray);
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: var(--shadow);
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
       }
 
-      .whatsapp-newsletter .widget-title {
-        color: var(--dark-gray);
+      .chat-container {
+        width: 300px;
+        height: 420px;
+        left: 10px;
+        right: 10px;
+        margin: 0 auto;
       }
 
-      .whatsapp-newsletter .widget-title::after {
-        background-color: var(--primary-red);
+      .chat-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
       }
 
-      .whatsapp-newsletter p {
-        margin-bottom: 15px;
-        color: var(--dark-gray);
-        line-height: 1.5;
+      .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    /* Extra small devices (phones, 480px and down) */
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.6rem;
       }
 
-      .whatsapp-form {
-        display: flex;
+      .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .blog-image {
+        height: 180px;
+      }
+
+      .blog-meta {
         flex-direction: column;
-        gap: 12px;
+        gap: 8px;
       }
 
       .whatsapp-form input,
       .whatsapp-form select {
-        padding: 10px 12px;
-        border: 1px solid rgba(0, 0, 0, 0.3);
-        border-radius: 5px;
-        font-family: "Poppins", sans-serif;
-        transition: var(--transition);
-        background-color: var(--white);
-        font-size: 14px;
-      }
-
-      .whatsapp-form input:focus,
-      .whatsapp-form select:focus {
-        outline: none;
-        border-color: var(--dark-gray);
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
-        background-color: var(--white);
-      }
-
-      .whatsapp-btn i {
-        font-size: 1.1rem;
+        padding: 8px 10px;
       }
 
       .whatsapp-btn {
-        background-color: var(--white);
-        color: var(--primary-red);
-        border: 2px solid var(--primary-red);
-        padding: 10px 15px;
-        border-radius: 5px;
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        cursor: pointer;
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        font-size: 14px;
-      }
-
-      .whatsapp-btn:hover {
-        background-color: var(--dark-gray);
-        color: var(--white);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .whatsapp-btn:disabled {
-        background-color: var(--light-gray);
-        cursor: not-allowed;
-        transform: none;
-        box-shadow: none;
-      }
-
-      /* Success/Error Messages */
-      .message {
-        padding: 10px 15px;
-        border-radius: 5px;
-        margin-top: 15px;
-        font-size: 0.9rem;
-        display: none;
-      }
-
-      /* Loading Animation */
-      .loading {
-        display: inline-block;
-        width: 18px;
-        height: 18px;
-        border: 3px solid rgba(37, 211, 102, 0.3);
-        border-radius: 50%;
-        border-top-color: #25d366;
-        animation: spin 1s ease-in-out infinite;
-        margin-right: 8px;
-      }
-
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      /* Newsletter Subscription Styles */
-      .newsletter-section {
-        background: linear-gradient(
-          135deg,
-          var(--primary-red),
-          var(--dark-red)
-        );
-        padding: 40px 0;
-        margin-top: 40px;
-        color: white;
-      }
-
-      .newsletter-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .newsletter-content {
-        flex: 1;
-        min-width: 300px;
-        margin-right: 30px;
-      }
-
-      .newsletter-content h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        font-weight: 600;
-      }
-
-      .newsletter-content p {
-        font-size: 1rem;
-        opacity: 0.9;
-        margin-bottom: 0;
-        color: white;
-        line-height: 1.5;
-      }
-
-      .newsletter-form {
-        flex: 1;
-        min-width: 300px;
-        display: flex;
-        gap: 10px;
-        position: relative;
+        padding: 8px 12px;
+        font-size: 13px;
       }
 
       .newsletter-input {
-        flex: 1;
-        padding: 12px 15px;
-        border: none;
-        border-radius: 5px;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        outline: none;
-        min-width: 0;
+        padding: 10px 12px;
       }
 
       .newsletter-btn {
-        background: white;
-        color: var(--primary-red);
-        border: none;
-        border-radius: 5px;
-        padding: 12px 20px;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        min-width: 120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        white-space: nowrap;
-      }
-
-      .newsletter-btn:hover:not(:disabled) {
-        background: #f0f0f0;
-        transform: translateY(-2px);
-      }
-
-      .newsletter-btn:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-      }
-
-      .newsletter-message {
-        display: none;
-        margin-top: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
-        width: 100%;
-      }
-
-      .newsletter-success {
-        background-color: rgba(46, 204, 113, 0.2);
-        color: white;
-        border: 1px solid #2ecc71;
-      }
-
-      .newsletter-error {
-        background-color: rgba(231, 76, 60, 0.2);
-        color: #ffcccb;
-        border: 1px solid #e74c3c;
-      }
-
-      /* Modal Styles */
-      .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
+        padding: 10px 15px;
+        min-width: 100px;
       }
 
       .modal-content {
-        background-color: var(--white);
-        padding: 25px;
-        border-radius: 10px;
-        max-width: 500px;
-        width: 100%;
-        box-shadow: var(--shadow);
-        text-align: center;
-      }
-
-      .modal h3 {
-        color: var(--primary-red);
-        margin-bottom: 15px;
-        font-size: 1.3rem;
-      }
-
-      .modal p {
-        margin-bottom: 20px;
-        color: var(--medium-gray);
-        line-height: 1.5;
-      }
-
-      .modal button {
-        background-color: var(--primary-red);
-        color: var(--white);
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        transition: var(--transition);
-      }
-
-      .modal button:hover {
-        background-color: var(--dark-red);
-      }
-
-      /* Pagination Styles */
-      .pagination {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 40px;
-        flex-wrap: wrap;
-      }
-
-      .pagination a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background-color: var(--white);
-        color: var(--dark-gray);
-        border-radius: 5px;
-        text-decoration: none;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        font-size: 14px;
-      }
-
-      .pagination a.active,
-      .pagination a:hover {
-        background-color: var(--primary-red);
-        color: var(--white);
-      }
-
-      .pagination a.disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      .pagination a.disabled:hover {
-        background-color: var(--white);
-        color: var(--dark-gray);
-      }
-
-      /* Chat Widget Styles - LEFT SIDE */
-      .chat-widget {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        z-index: 1000;
-        font-family: "Poppins", sans-serif;
-      }
-
-      .chat-toggle {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(
-          135deg,
-          var(--primary-red),
-          var(--primary-red)
-        );
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-        color: white;
-        font-size: 24px;
-      }
-
-      .chat-toggle:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        padding: 20px;
       }
 
       .chat-container {
-        width: 350px;
-        height: 500px;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-        display: none;
-        flex-direction: column;
-        overflow: hidden;
-        margin-bottom: 15px;
-      }
-
-      .chat-header {
-        background: linear-gradient(
-          135deg,
-          var(--primary-red),
-          var(--dark-red)
-        );
-        color: white;
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .chatbot-image {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background-color: white;
-      }
-
-      .chat-logo img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        position: fixed;
-        bottom: 110px;
-        left: 20px;
-        z-index: 999;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .chat-header h3 {
-        margin: 0;
-        font-size: 16px;
-        font-weight: 600;
-      }
-
-      .chat-status {
-        display: flex;
-        align-items: center;
-        font-size: 12px;
-      }
-
-      .status-indicator {
-        width: 8px;
-        height: 8px;
-        background-color: #2ecc71;
-        border-radius: 50%;
-        margin-right: 5px;
-      }
-
-      .chat-close {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 18px;
-        cursor: pointer;
-      }
-
-      .chat-messages {
-        flex: 1;
-        padding: 15px;
-        overflow-y: auto;
-        background-color: #f9f9f9;
-      }
-
-      .message {
-        margin-bottom: 15px;
-        display: flex;
-      }
-
-      .message.user {
-        justify-content: flex-end;
-      }
-
-      .message.bot {
-        justify-content: flex-start;
+        width: 280px;
+        height: 400px;
       }
 
       .message-content {
-        max-width: 80%;
-        padding: 10px 15px;
-        border-radius: 18px;
-        font-size: 14px;
-        line-height: 1.4;
+        max-width: 85%;
+        font-size: 13px;
+        padding: 8px 12px;
       }
+    }
 
-      .user .message-content {
-        background: linear-gradient(
-          135deg,
+    /* Enhanced Chat Widget Styles - LEFT SIDE */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .chat-toggle {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg,
           var(--primary-red),
-          var(--dark-red)
-        );
-        color: white;
-        border-bottom-right-radius: 5px;
-      }
+          var(--primary-red));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 24px;
+    }
 
-      .bot .message-content {
-        background: white;
-        color: #333;
-        border: 1px solid #e0e0e0;
-        border-bottom-left-radius: 5px;
-      }
+    .chat-toggle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
 
-      .chat-input-container {
-        padding: 15px;
-        border-top: 1px solid #e0e0e0;
-        display: flex;
-        background: white;
-      }
+    .chat-container {
+      width: 350px;
+      height: 500px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
 
-      .chat-input {
-        flex: 1;
-        padding: 12px 15px;
-        border: 1px solid #e0e0e0;
-        border-radius: 25px;
-        outline: none;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-      }
-
-      .chat-input:focus {
-        border-color: var(--primary-red);
-      }
-
-      .send-button {
-        background: linear-gradient(
-          135deg,
+    .chat-header {
+      background: linear-gradient(135deg,
           var(--primary-red),
-          var(--dark-red)
-        );
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        margin-left: 10px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.2s ease;
-      }
+          var(--dark-red));
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-      .send-button:hover {
-        transform: scale(1.05);
-      }
+    .chatbot-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: white;
+    }
 
-      .typing-indicator {
-        display: none;
-        padding: 10px 15px;
-        font-style: italic;
-        color: #777;
-        font-size: 12px;
-      }
+    .chat-logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 110px;
+      left: 20px;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
 
-      .typing-dots {
-        display: inline-block;
-      }
+    .chat-header h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
 
-      .typing-dots span {
-        animation: typing 1.4s infinite;
+    .chat-status {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    .status-indicator {
+      width: 8px;
+      height: 8px;
+      background-color: #2ecc71;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+
+    .chat-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+    }
+
+    .message {
+      margin-bottom: 15px;
+      display: flex;
+    }
+
+    .message.user {
+      justify-content: flex-end;
+    }
+
+    .message.bot {
+      justify-content: flex-start;
+    }
+
+    .message-content {
+      max-width: 80%;
+      padding: 10px 15px;
+      border-radius: 18px;
+      font-size: 14px;
+      line-height: 1.4;
+      word-wrap: break-word;
+    }
+
+    .user .message-content {
+      background: linear-gradient(135deg,
+          var(--primary-red),
+          var(--dark-red));
+      color: white;
+      border-bottom-right-radius: 5px;
+    }
+
+    .bot .message-content {
+      background: white;
+      color: #333;
+      border: 1px solid #e0e0e0;
+      border-bottom-left-radius: 5px;
+    }
+
+    .chat-input-container {
+      padding: 15px;
+      border-top: 1px solid #e0e0e0;
+      display: flex;
+      background: white;
+      align-items: center;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 25px;
+      outline: none;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      min-height: 20px;
+    }
+
+    .chat-input:focus {
+      border-color: var(--primary-red);
+    }
+
+    .send-button {
+      background: linear-gradient(135deg,
+          var(--primary-red),
+          var(--dark-red));
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .send-button:hover {
+      transform: scale(1.05);
+    }
+
+    .typing-indicator {
+      display: none;
+      padding: 10px 15px;
+      font-style: italic;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .typing-dots {
+      display: inline-block;
+    }
+
+    .typing-dots span {
+      animation: typing 1.4s infinite;
+      opacity: 0.6;
+    }
+
+    .typing-dots span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .typing-dots span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes typing {
+
+      0%,
+      60%,
+      100% {
         opacity: 0.6;
       }
 
-      .typing-dots span:nth-child(2) {
-        animation-delay: 0.2s;
+      30% {
+        opacity: 1;
+      }
+    }
+
+    /* Course List Styles */
+    .course-list {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .course-item {
+      background: white;
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.3s;
+      border-left: 3px solid var(--primary-red);
+    }
+
+    .course-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .course-title {
+      font-weight: 600;
+      color: var(--dark-red);
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .course-duration {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .course-details {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+
+    .course-details.active {
+      display: block;
+    }
+
+    .quick-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .quick-action-btn {
+      background: var(--primary-red);
+      color: white;
+      border: none;
+      border-radius: 15px;
+      padding: 8px 12px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: background 0.3s;
+      min-height: 30px;
+    }
+
+    .quick-action-btn:hover {
+      background: var(--dark-red);
+    }
+
+    /* Enhanced Mobile Responsiveness for Chat Widget */
+    @media (max-width: 768px) {
+      .chat-widget {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        display: flex;
+        justify-content: flex-start;
       }
 
-      .typing-dots span:nth-child(3) {
-        animation-delay: 0.4s;
+      .chat-container {
+        width: 100%;
+        max-width: 400px;
+        height: 70vh;
+        max-height: 500px;
+        position: fixed;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 0;
       }
 
-      @keyframes typing {
-        0%,
-        60%,
-        100% {
-          opacity: 0.6;
-        }
-
-        30% {
-          opacity: 1;
-        }
+      .chat-toggle {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+        position: relative;
+        z-index: 1001;
       }
 
-      /* Course List Styles */
-      .course-list {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
+      .chat-header {
+        padding: 12px 15px;
       }
 
-      .course-item {
-        background: white;
-        border-radius: 8px;
+      .chat-header h3 {
+        font-size: 15px;
+      }
+
+      .chat-messages {
         padding: 12px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: all 0.3s;
-        border-left: 3px solid var(--primary-red);
       }
 
-      .course-item:hover {
-        transform: translateX(5px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      .message-content {
+        max-width: 85%;
+        font-size: 13px;
+        padding: 10px 12px;
       }
 
-      .course-title {
-        font-weight: 600;
-        color: var(--dark-red);
-        margin-bottom: 5px;
+      .chat-input-container {
+        padding: 12px;
       }
 
-      .course-duration {
-        font-size: 12px;
-        color: #777;
-      }
-
-      .course-details {
-        display: none;
-        margin-top: 10px;
-        padding: 10px;
-        background: #f5f5f5;
-        border-radius: 5px;
+      .chat-input {
+        padding: 10px 12px;
         font-size: 13px;
       }
 
-      .course-details.active {
-        display: block;
+      .send-button {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
       }
 
-      .quick-actions {
-        display: flex;
-        gap: 10px;
-        margin-top: 10px;
+      .course-item {
+        padding: 10px;
+      }
+
+      .course-title {
+        font-size: 13px;
+      }
+
+      .course-details {
+        font-size: 12px;
+        padding: 8px;
       }
 
       .quick-action-btn {
-        background: var(--primary-red);
-        color: white;
-        border: none;
-        border-radius: 15px;
-        padding: 5px 10px;
-        font-size: 11px;
-        cursor: pointer;
-        transition: background 0.3s;
+        padding: 6px 10px;
+        font-size: 10px;
+        min-height: 28px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .chat-widget {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
       }
 
-      .quick-action-btn:hover {
-        background: var(--dark-red);
+      .chat-container {
+        height: 65vh;
+        max-height: 450px;
+        bottom: 70px;
       }
 
-      /* Enhanced Footer */
-      .tech-footer {
-        background: linear-gradient(
-          rgba(97, 97, 97, 0.95),
-          rgba(128, 112, 112, 0.98)
-        );
-        color: var(--white);
-        padding: 50px 0 20px;
-      }
-
-      .footer-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .footer-column h3 {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        color: var(--white);
-        position: relative;
-        padding-bottom: 10px;
-      }
-
-      .footer-column h3::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 2px;
-        background-color: var(--primary-red);
-      }
-
-      .footer-column p {
-        margin-bottom: 20px;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.6;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 15px;
-      }
-
-      .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        color: var(--white);
-        transition: var(--transition);
-        text-decoration: none;
-      }
-
-      .social-links a:hover {
-        background-color: var(--primary-red);
-        transform: translateY(-3px);
-      }
-
-      .footer-links {
-        list-style: none;
-        padding: 0;
-      }
-
-      .footer-links li {
-        margin-bottom: 10px;
-      }
-
-      .footer-links a {
-        color: rgba(255, 255, 255, 0.9);
-        text-decoration: none;
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 14px;
-      }
-
-      .footer-links a:hover {
-        color: var(--primary-red);
-        transform: translateX(5px);
-      }
-
-      .footer-links i {
-        font-size: 0.8rem;
-        color: var(--primary-red);
-      }
-
-      .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-        padding-top: 20px;
-        margin-top: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 20px;
-        padding-right: 20px;
-        gap: 15px;
-      }
-
-      .footer-bottom p {
-        color: rgba(255, 255, 255, 0.8);
-        margin: 0;
-        font-size: 14px;
-      }
-
-      /* Back to Top Button */
-      .back-to-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
+      .chat-toggle {
         width: 50px;
         height: 50px;
-        background-color: var(--primary-red);
-        color: var(--white);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-        z-index: 999;
-        border: none;
-        font-size: 18px;
-      }
-
-      .back-to-top.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .back-to-top:hover {
-        background-color: var(--dark-red);
-      }
-
-      /* ========== RESPONSIVE STYLES ========== */
-
-      /* Large devices (desktops, 992px and up) */
-      @media (max-width: 992px) {
-        .blog-container {
-          grid-template-columns: 1fr;
-          gap: 30px;
-        }
-
-        .sidebar {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 25px;
-        }
-
-        .hero-title {
-          font-size: 2.2rem;
-        }
-
-        .nav-menu {
-          gap: 20px;
-        }
-      }
-
-      /* Medium devices (tablets, 768px and up) */
-      @media (max-width: 768px) {
-        .hamburger {
-          display: block;
-        }
-
-        .nav-menu {
-          position: fixed;
-          top: 0;
-          left: -100%;
-          flex-direction: column;
-          background-color: var(--white);
-          width: 280px;
-          height: 100vh;
-          transition: 0.4s ease;
-          box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
-          padding: 80px 20px 20px;
-          gap: 0;
-          overflow-y: auto;
-          z-index: 999;
-        }
-
-        .nav-menu.active {
-          left: 0;
-        }
-
-        .nav-item {
-          margin: 0;
-          width: 100%;
-        }
-
-        .nav-link {
-          padding: 15px 0;
-          width: 100%;
-          justify-content: space-between;
-          border-bottom: 1px solid #eee;
-          font-size: 16px;
-        }
-
-        .dropdown {
-          position: static;
-          opacity: 1;
-          visibility: visible;
-          transform: none;
-          box-shadow: none;
-          display: none;
-          background-color: var(--light-gray);
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.3s ease;
-          width: 100%;
-          margin-top: 10px;
-          border-radius: 5px;
-        }
-
-        .dropdown.active {
-          display: block;
-          max-height: 300px;
-        }
-
-        .dropdown-item {
-          padding: 12px 15px;
-          border-bottom: 1px solid #ddd;
-          font-size: 14px;
-        }
-
-        .nav-link i.fa-chevron-down {
-          transition: transform 0.3s ease;
-        }
-
-        .nav-link.active i.fa-chevron-down {
-          transform: rotate(180deg);
-        }
-
-        .top-bar-container {
-          flex-direction: column;
-          gap: 15px;
-          text-align: center;
-        }
-
-        .top-bar {
-          min-height: auto;
-          padding: 20px 0;
-        }
-
-        .contact-info {
-          justify-content: center;
-          gap: 15px;
-        }
-
-        .social-icons {
-          justify-content: center;
-        }
-
-        .hero-section {
-          padding: 80px 0;
-          min-height: 350px;
-        }
-
-        .hero-title {
-          font-size: 2rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1.1rem;
-        }
-
-        .section-title h2 {
-          font-size: 1.8rem;
-        }
-
-        .newsletter-container {
-          flex-direction: column;
-          text-align: center;
-          gap: 20px;
-        }
-
-        .newsletter-content {
-          margin-right: 0;
-        }
-
-        .newsletter-form {
-          flex-direction: column;
-          width: 100%;
-        }
-
-        .sidebar {
-          grid-template-columns: 1fr;
-        }
-
-        .footer-bottom {
-          flex-direction: column;
-          text-align: center;
-          gap: 10px;
-        }
-
-        .chat-container {
-          width: 320px;
-          height: 450px;
-        }
-      }
-
-      /* Small devices (landscape phones, 576px and up) */
-      @media (max-width: 576px) {
-        .container {
-          padding: 0 15px;
-        }
-
-        .hero-title {
-          font-size: 1.8rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1rem;
-        }
-
-        .section-title h2 {
-          font-size: 1.6rem;
-        }
-
-        .blog-content {
-          padding: 15px;
-        }
-
-        .blog-content h3 {
-          font-size: 1.2rem;
-        }
-
-        .blog-meta {
-          font-size: 0.8rem;
-          gap: 10px;
-        }
-
-        .sidebar-widget {
-          padding: 15px;
-        }
-
-        .widget-title {
-          font-size: 1.1rem;
-        }
-
-        .recent-post {
-          gap: 12px;
-        }
-
-        .recent-post-image {
-          width: 60px;
-          height: 60px;
-        }
-
-        .tags {
-          gap: 6px;
-        }
-
-        .tag {
-          padding: 4px 10px;
-          font-size: 0.8rem;
-        }
-
-        .pagination a {
-          width: 35px;
-          height: 35px;
-          font-size: 13px;
-        }
-
-        .footer-content {
-          grid-template-columns: 1fr;
-          gap: 25px;
-        }
-
-        .chat-container {
-          width: 300px;
-          height: 420px;
-          left: 10px;
-          right: 10px;
-          margin: 0 auto;
-        }
-
-        .chat-toggle {
-          width: 50px;
-          height: 50px;
-          font-size: 20px;
-        }
-
-        .back-to-top {
-          width: 45px;
-          height: 45px;
-          bottom: 20px;
-          right: 20px;
-        }
-      }
-
-      /* Extra small devices (phones, 480px and down) */
-      @media (max-width: 480px) {
-        .hero-title {
-          font-size: 1.6rem;
-        }
-
-        .cta-button {
-          padding: 10px 20px;
-          font-size: 0.9rem;
-        }
-
-        .blog-image {
-          height: 180px;
-        }
-
-        .blog-meta {
-          flex-direction: column;
-          gap: 8px;
-        }
-
-        .whatsapp-form input,
-        .whatsapp-form select {
-          padding: 8px 10px;
-        }
-
-        .whatsapp-btn {
-          padding: 8px 12px;
-          font-size: 13px;
-        }
-
-        .newsletter-input {
-          padding: 10px 12px;
-        }
-
-        .newsletter-btn {
-          padding: 10px 15px;
-          min-width: 100px;
-        }
-
-        .modal-content {
-          padding: 20px;
-        }
-
-        .chat-container {
-          width: 280px;
-          height: 400px;
-        }
-
-        .message-content {
-          max-width: 85%;
-          font-size: 13px;
-          padding: 8px 12px;
-        }
-      }
-
-      /* Enhanced Chat Widget Styles - LEFT SIDE */
-      .chat-widget {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        z-index: 1000;
-        font-family: "Poppins", sans-serif;
-      }
-
-      .chat-toggle {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(
-          135deg,
-          var(--primary-red),
-          var(--primary-red)
-        );
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-        color: white;
-        font-size: 24px;
-      }
-
-      .chat-toggle:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-      }
-
-      .chat-container {
-        width: 350px;
-        height: 500px;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-        display: none;
-        flex-direction: column;
-        overflow: hidden;
-        margin-bottom: 15px;
+        font-size: 20px;
       }
 
       .chat-header {
-        background: linear-gradient(
-          135deg,
-          var(--primary-red),
-          var(--dark-red)
-        );
-        color: white;
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .chatbot-image {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background-color: white;
-      }
-
-      .chat-logo img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        position: fixed;
-        bottom: 110px;
-        left: 20px;
-        z-index: 999;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 10px 12px;
       }
 
       .chat-header h3 {
-        margin: 0;
-        font-size: 16px;
-        font-weight: 600;
+        font-size: 14px;
       }
 
       .chat-status {
-        display: flex;
-        align-items: center;
-        font-size: 12px;
-      }
-
-      .status-indicator {
-        width: 8px;
-        height: 8px;
-        background-color: #2ecc71;
-        border-radius: 50%;
-        margin-right: 5px;
+        font-size: 11px;
       }
 
       .chat-close {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 18px;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
       }
 
       .chat-messages {
-        flex: 1;
-        padding: 15px;
-        overflow-y: auto;
-        background-color: #f9f9f9;
+        padding: 10px;
       }
 
       .message {
-        margin-bottom: 15px;
-        display: flex;
-      }
-
-      .message.user {
-        justify-content: flex-end;
-      }
-
-      .message.bot {
-        justify-content: flex-start;
+        margin-bottom: 12px;
       }
 
       .message-content {
-        max-width: 80%;
-        padding: 10px 15px;
-        border-radius: 18px;
-        font-size: 14px;
-        line-height: 1.4;
-        word-wrap: break-word;
-      }
-
-      .user .message-content {
-        background: linear-gradient(
-          135deg,
-          var(--primary-red),
-          var(--dark-red)
-        );
-        color: white;
-        border-bottom-right-radius: 5px;
-      }
-
-      .bot .message-content {
-        background: white;
-        color: #333;
-        border: 1px solid #e0e0e0;
-        border-bottom-left-radius: 5px;
+        max-width: 90%;
+        font-size: 12px;
+        padding: 8px 10px;
       }
 
       .chat-input-container {
-        padding: 15px;
-        border-top: 1px solid #e0e0e0;
-        display: flex;
-        background: white;
-        align-items: center;
+        padding: 10px;
       }
 
       .chat-input {
-        flex: 1;
-        padding: 12px 15px;
-        border: 1px solid #e0e0e0;
-        border-radius: 25px;
-        outline: none;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        min-height: 20px;
-      }
-
-      .chat-input:focus {
-        border-color: var(--primary-red);
+        padding: 8px 10px;
+        font-size: 12px;
       }
 
       .send-button {
-        background: linear-gradient(
-          135deg,
-          var(--primary-red),
-          var(--dark-red)
-        );
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        margin-left: 10px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.2s ease;
-        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+        margin-left: 8px;
       }
 
-      .send-button:hover {
-        transform: scale(1.05);
-      }
-
-      .typing-indicator {
-        display: none;
-        padding: 10px 15px;
-        font-style: italic;
-        color: #777;
-        font-size: 12px;
-      }
-
-      .typing-dots {
-        display: inline-block;
-      }
-
-      .typing-dots span {
-        animation: typing 1.4s infinite;
-        opacity: 0.6;
-      }
-
-      .typing-dots span:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-
-      .typing-dots span:nth-child(3) {
-        animation-delay: 0.4s;
-      }
-
-      @keyframes typing {
-        0%,
-        60%,
-        100% {
-          opacity: 0.6;
-        }
-
-        30% {
-          opacity: 1;
-        }
-      }
-
-      /* Course List Styles */
       .course-list {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
+        gap: 8px;
       }
 
       .course-item {
-        background: white;
-        border-radius: 8px;
-        padding: 12px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: all 0.3s;
-        border-left: 3px solid var(--primary-red);
-      }
-
-      .course-item:hover {
-        transform: translateX(5px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        padding: 8px;
       }
 
       .course-title {
-        font-weight: 600;
-        color: var(--dark-red);
-        margin-bottom: 5px;
-        font-size: 14px;
+        font-size: 12px;
       }
 
       .course-duration {
-        font-size: 12px;
-        color: #777;
+        font-size: 11px;
       }
 
       .course-details {
-        display: none;
-        margin-top: 10px;
-        padding: 10px;
-        background: #f5f5f5;
-        border-radius: 5px;
-        font-size: 13px;
-      }
-
-      .course-details.active {
-        display: block;
+        font-size: 11px;
+        padding: 6px;
       }
 
       .quick-actions {
-        display: flex;
-        gap: 10px;
-        margin-top: 10px;
-        flex-wrap: wrap;
+        gap: 6px;
       }
 
       .quick-action-btn {
-        background: var(--primary-red);
-        color: white;
-        border: none;
-        border-radius: 15px;
-        padding: 8px 12px;
+        padding: 5px 8px;
+        font-size: 9px;
+        min-height: 26px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .chat-container {
+        height: 60vh;
+        max-height: 400px;
+      }
+
+      .chat-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+      }
+
+      .message-content {
+        max-width: 92%;
         font-size: 11px;
-        cursor: pointer;
-        transition: background 0.3s;
-        min-height: 30px;
       }
 
-      .quick-action-btn:hover {
-        background: var(--dark-red);
+      .quick-actions {
+        flex-direction: column;
+        gap: 5px;
       }
 
-      /* Enhanced Mobile Responsiveness for Chat Widget */
-      @media (max-width: 768px) {
-        .chat-widget {
-          bottom: 15px;
-          left: 15px;
-          right: 15px;
-          display: flex;
-          justify-content: flex-start;
-        }
+      .quick-action-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
 
-        .chat-container {
-          width: 100%;
-          max-width: 400px;
-          height: 70vh;
-          max-height: 500px;
-          position: fixed;
-          bottom: 80px;
-          left: 50%;
-          transform: translateX(-50%);
-          margin-bottom: 0;
-        }
+    /* Prevent body scroll when chat is open on mobile */
+    body.chat-open {
+      overflow: hidden;
+    }
 
-        .chat-toggle {
-          width: 55px;
-          height: 55px;
-          font-size: 22px;
-          position: relative;
-          z-index: 1001;
-        }
-
-        .chat-header {
-          padding: 12px 15px;
-        }
-
-        .chat-header h3 {
-          font-size: 15px;
-        }
-
-        .chat-messages {
-          padding: 12px;
-        }
-
-        .message-content {
-          max-width: 85%;
-          font-size: 13px;
-          padding: 10px 12px;
-        }
-
-        .chat-input-container {
-          padding: 12px;
-        }
-
-        .chat-input {
-          padding: 10px 12px;
-          font-size: 13px;
-        }
-
-        .send-button {
-          width: 38px;
-          height: 38px;
-          font-size: 14px;
-        }
-
-        .course-item {
-          padding: 10px;
-        }
-
-        .course-title {
-          font-size: 13px;
-        }
-
-        .course-details {
-          font-size: 12px;
-          padding: 8px;
-        }
-
-        .quick-action-btn {
-          padding: 6px 10px;
-          font-size: 10px;
-          min-height: 28px;
-        }
+    /* Very small devices (phones, 360px and down) */
+    @media (max-width: 360px) {
+      .top-bar-container {
+        padding: 0 10px;
       }
 
-      @media (max-width: 576px) {
-        .chat-widget {
-          bottom: 10px;
-          left: 10px;
-          right: 10px;
-        }
-
-        .chat-container {
-          height: 65vh;
-          max-height: 450px;
-          bottom: 70px;
-        }
-
-        .chat-toggle {
-          width: 50px;
-          height: 50px;
-          font-size: 20px;
-        }
-
-        .chat-header {
-          padding: 10px 12px;
-        }
-
-        .chat-header h3 {
-          font-size: 14px;
-        }
-
-        .chat-status {
-          font-size: 11px;
-        }
-
-        .chat-close {
-          width: 28px;
-          height: 28px;
-          font-size: 16px;
-        }
-
-        .chat-messages {
-          padding: 10px;
-        }
-
-        .message {
-          margin-bottom: 12px;
-        }
-
-        .message-content {
-          max-width: 90%;
-          font-size: 12px;
-          padding: 8px 10px;
-        }
-
-        .chat-input-container {
-          padding: 10px;
-        }
-
-        .chat-input {
-          padding: 8px 10px;
-          font-size: 12px;
-        }
-
-        .send-button {
-          width: 36px;
-          height: 36px;
-          font-size: 13px;
-          margin-left: 8px;
-        }
-
-        .course-list {
-          gap: 8px;
-        }
-
-        .course-item {
-          padding: 8px;
-        }
-
-        .course-title {
-          font-size: 12px;
-        }
-
-        .course-duration {
-          font-size: 11px;
-        }
-
-        .course-details {
-          font-size: 11px;
-          padding: 6px;
-        }
-
-        .quick-actions {
-          gap: 6px;
-        }
-
-        .quick-action-btn {
-          padding: 5px 8px;
-          font-size: 9px;
-          min-height: 26px;
-        }
+      .contact-info div {
+        font-size: 13px;
       }
 
-      @media (max-width: 360px) {
-        .chat-container {
-          height: 60vh;
-          max-height: 400px;
-        }
-
-        .chat-toggle {
-          width: 45px;
-          height: 45px;
-          font-size: 18px;
-        }
-
-        .message-content {
-          max-width: 92%;
-          font-size: 11px;
-        }
-
-        .quick-actions {
-          flex-direction: column;
-          gap: 5px;
-        }
-
-        .quick-action-btn {
-          width: 100%;
-          justify-content: center;
-        }
+      .social-icons a {
+        font-size: 20px;
       }
 
-      /* Prevent body scroll when chat is open on mobile */
-      body.chat-open {
-        overflow: hidden;
+      .nav-container {
+        padding: 0 15px;
       }
 
-      /* Very small devices (phones, 360px and down) */
-      @media (max-width: 360px) {
-        .top-bar-container {
-          padding: 0 10px;
-        }
-
-        .contact-info div {
-          font-size: 13px;
-        }
-
-        .social-icons a {
-          font-size: 20px;
-        }
-
-        .nav-container {
-          padding: 0 15px;
-        }
-
-        .logo img {
-          height: 70px;
-          width: 90px;
-        }
-
-        .hero-section {
-          padding: 60px 0;
-        }
-
-        .hero-title {
-          font-size: 1.4rem;
-        }
-
-        .chat-container {
-          width: 260px;
-        }
+      .logo img {
+        height: 70px;
+        width: 90px;
       }
-    </style>
-  </head>
 
-  <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-container">
-        <div class="contact-info">
-          <div><i class="fas fa-map-marker-alt"></i>Viruthunagar</div>
-          <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
-          <div><i class="fas fa-phone"></i>+91 97518 67879</div>
-        </div>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/profile.php?id=61574571321905"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="https://www.instagram.com/rohil_nextgen/"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a
-            href="https://youtube.com/@rohiltechdigitalteam?si=ziFJIu4UCkfetVE1"
-            ><i class="fab fa-youtube"></i
-          ></a>
-        </div>
+      .hero-section {
+        padding: 60px 0;
+      }
+
+      .hero-title {
+        font-size: 1.4rem;
+      }
+
+      .chat-container {
+        width: 260px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .chat-container {
+        height: 380px;
+      }
+
+      .chat-header {
+        padding: 10px 12px;
+      }
+
+      .chat-header h3 {
+        font-size: 14px;
+      }
+
+      .chatbot-image {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i>Viruthunagar</div>
+        <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
+        <div><i class="fas fa-phone"></i>+91 97518 67879</div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61574571321905"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@rohiltechdigitalteam?si=ziFJIu4UCkfetVE1"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
+  </div>
 
-    <!-- Navigation - IMPROVED RESPONSIVE -->
-    <nav class="navbar">
-      <div class="container nav-container">
-        <div class="logo">
-          <img
-            src="./images/rohil_nextgen-removebg-preview.png"
-            alt="Rohil NextGen Logo"
-          />
+  <!-- Navigation - IMPROVED RESPONSIVE -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="gallery.html" class="nav-link">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown">
+            <a href="classic.html" class="dropdown-item">Classic</a>
+            <a href="professional.html" class="dropdown-item">Professional</a>
+            <a href="expert.html" class="dropdown-item">Expert</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown">
+            <a href="placement.html" class="dropdown-item">Placement Training</a>
+            <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+            <a href="placement-success.html" class="dropdown-item">Placement Success</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="techblog.html" class="nav-link active">Techblog</a>
+        </li>
+        <li class="nav-item">
+          <a href="scholarship.html" class="nav-link">Scholarship</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+      <button class="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Tech Blog</h1>
+      <p class="hero-subtitle">
+        Stay updated with the latest technology trends, tutorials, and
+        industry insights
+      </p>
+      <a href="#featured" class="cta-button">Explore Articles</a>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="blog-section" id="featured">
+    <div class="container">
+      <div class="section-title">
+        <h2>Latest Tech Articles</h2>
+        <p>Insights, tutorials, and updates from the world of technology</p>
+      </div>
+
+      <div class="blog-container">
+        <div class="blog-posts" id="blogPostsContainer">
+          <!-- Blog posts will be loaded here by JavaScript -->
         </div>
 
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="gallery.html" class="nav-link">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link"
-              >Courses <i class="fas fa-chevron-down"></i
-            ></a>
-            <div class="dropdown">
-              <a href="classic.html" class="dropdown-item">Classic</a>
-              <a href="professional.html" class="dropdown-item">Professional</a>
-              <a href="expert.html" class="dropdown-item">Expert</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link"
-              >Support <i class="fas fa-chevron-down"></i
-            ></a>
-            <div class="dropdown">
-              <a href="placement.html" class="dropdown-item"
-                >Placement Training</a
-              >
-              <a href="companies.html" class="dropdown-item"
-                >Tie-up Companies</a
-              >
-              <a href="placement-success.html" class="dropdown-item"
-                >Placement Success</a
-              >
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="techblog.html" class="nav-link active">Techblog</a>
-          </li>
-          <li class="nav-item">
-            <a href="scholarship.html" class="nav-link">Scholarship</a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact</a>
-          </li>
-        </ul>
+        <div class="sidebar">
+          <!-- Categories Widget -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Categories</h3>
+            <ul class="categories-list">
+              <li>
+                <a href="#">Web Development <span>12</span></a>
+              </li>
+              <li>
+                <a href="#">Data Science <span>8</span></a>
+              </li>
+              <li>
+                <a href="#">Artificial Intelligence <span>15</span></a>
+              </li>
+              <li>
+                <a href="#">Cybersecurity <span>7</span></a>
+              </li>
+              <li>
+                <a href="#">Mobile Development <span>9</span></a>
+              </li>
+              <li>
+                <a href="#">Cloud Computing <span>11</span></a>
+              </li>
+            </ul>
+          </div>
 
-        <button class="hamburger">
-          <i class="fas fa-bars"></i>
+          <!-- Recent Posts Widget -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Recent Posts</h3>
+            <div class="recent-posts">
+              <div class="recent-post">
+                <div class="recent-post-image">
+                  <img src="./images/python.jpg" alt="Python Programming" />
+                </div>
+                <div class="recent-post-content">
+                  <h4>Python for Data Analysis: Complete Guide</h4>
+                  <span>September 12, 2025</span>
+                </div>
+              </div>
+              <div class="recent-post">
+                <div class="recent-post-image">
+                  <img src="./images/react.png" alt="React JS" />
+                </div>
+                <div class="recent-post-content">
+                  <h4>React JS Best Practices for 2025</h4>
+                  <span>October 8, 2025</span>
+                </div>
+              </div>
+              <div class="recent-post">
+                <div class="recent-post-image">
+                  <img src="./images/dev-ops.jpg" alt="DevOps" />
+                </div>
+                <div class="recent-post-content">
+                  <h4>DevOps Tools Every Developer Should Know</h4>
+                  <span>August 3, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tags Widget -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Popular Tags</h3>
+            <div class="tags">
+              <a href="./frontend.html" class="tag">JavaScript</a>
+              <a href="./python-code.html" class="tag">Python</a>
+              <a href="./react.html" class="tag">React</a>
+              <a href="./ml.html" class="tag">Machine Learning</a>
+              <a href="./cloudcompute.html" class="tag">Cloud</a>
+              <a href="./aws.html" class="tag">AWS</a>
+              <a href="./ai-ml.html" class="tag">Artificial Intelligence</a>
+              <a href="./chatgpt.html" class="tag">ChatGPT & Prompt Engineering</a>
+              <a href="./cloud-devops.html" class="tag">DevOps</a>
+              <a href="./uxui.html" class="tag">UI/UX Design</a>
+            </div>
+          </div>
+
+          <!-- WhatsApp Newsletter Widget -->
+          <div class="whatsapp-newsletter">
+            <h3 class="widget-title">WhatsApp Updates</h3>
+            <p>
+              Get the latest tech updates and tutorials directly on WhatsApp
+            </p>
+            <form class="whatsapp-form" id="whatsappForm">
+              <input type="text" id="nameInput" placeholder="Your Name" required />
+              <input type="tel" id="phoneInput" placeholder="Your WhatsApp Number" required />
+              <select id="interestSelect">
+                <option value="">Select your interest</option>
+                <option value="web-development">Web Development</option>
+                <option value="data-science">Data Science</option>
+                <option value="ai-ml">AI & Machine Learning</option>
+                <option value="cybersecurity">Cybersecurity</option>
+                <option value="mobile-dev">Mobile Development</option>
+                <option value="cloud-computing">Cloud Computing</option>
+                <option value="all">All Updates</option>
+              </select>
+              <button type="submit" class="whatsapp-btn" id="whatsappSubscribeBtn">
+                <i class="fab fa-whatsapp"></i>
+                <span>Subscribe via WhatsApp</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="paginationContainer">
+        <!-- Pagination will be generated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Chat Widget - LEFT SIDE -->
+  <div class="chat-widget">
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-header">
+        <div>
+          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Chatbot" class="chatbot-image"
+            style="width: 50px; height: 50px" />
+          <h3>Course Information</h3>
+          <div class="chat-status">
+            <div class="status-indicator"></div>
+            <span>Online</span>
+          </div>
+        </div>
+        <button class="chat-close" id="chatClose">
+          <i class="fas fa-times"></i>
         </button>
       </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">Tech Blog</h1>
-        <p class="hero-subtitle">
-          Stay updated with the latest technology trends, tutorials, and
-          industry insights
-        </p>
-        <a href="#featured" class="cta-button">Explore Articles</a>
-      </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section class="blog-section" id="featured">
-      <div class="container">
-        <div class="section-title">
-          <h2>Latest Tech Articles</h2>
-          <p>Insights, tutorials, and updates from the world of technology</p>
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot">
+          <div class="message-content">
+            Welcome to Rohil NextGen! I'm here to help you explore our
+            courses. Type "courses" to see all available programs.
+          </div>
+        </div>
+        <div class="message bot">
+          <div class="message-content">
+            You can also ask about specific courses like Java, Python, Web
+            Development, etc.
+          </div>
         </div>
 
-        <div class="blog-container">
-          <div class="blog-posts" id="blogPostsContainer">
-            <!-- Blog posts will be loaded here by JavaScript -->
-          </div>
-
-          <div class="sidebar">
-            <!-- Categories Widget -->
-            <div class="sidebar-widget">
-              <h3 class="widget-title">Categories</h3>
-              <ul class="categories-list">
-                <li>
-                  <a href="#">Web Development <span>12</span></a>
-                </li>
-                <li>
-                  <a href="#">Data Science <span>8</span></a>
-                </li>
-                <li>
-                  <a href="#">Artificial Intelligence <span>15</span></a>
-                </li>
-                <li>
-                  <a href="#">Cybersecurity <span>7</span></a>
-                </li>
-                <li>
-                  <a href="#">Mobile Development <span>9</span></a>
-                </li>
-                <li>
-                  <a href="#">Cloud Computing <span>11</span></a>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Recent Posts Widget -->
-            <div class="sidebar-widget">
-              <h3 class="widget-title">Recent Posts</h3>
-              <div class="recent-posts">
-                <div class="recent-post">
-                  <div class="recent-post-image">
-                    <img src="./images/python.jpg" alt="Python Programming" />
-                  </div>
-                  <div class="recent-post-content">
-                    <h4>Python for Data Analysis: Complete Guide</h4>
-                    <span>September 12, 2025</span>
-                  </div>
-                </div>
-                <div class="recent-post">
-                  <div class="recent-post-image">
-                    <img src="./images/react.png" alt="React JS" />
-                  </div>
-                  <div class="recent-post-content">
-                    <h4>React JS Best Practices for 2025</h4>
-                    <span>October 8, 2025</span>
-                  </div>
-                </div>
-                <div class="recent-post">
-                  <div class="recent-post-image">
-                    <img src="./images/dev-ops.jpg" alt="DevOps" />
-                  </div>
-                  <div class="recent-post-content">
-                    <h4>DevOps Tools Every Developer Should Know</h4>
-                    <span>August 3, 2025</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tags Widget -->
-            <div class="sidebar-widget">
-              <h3 class="widget-title">Popular Tags</h3>
-              <div class="tags">
-                <a href="./frontend.html" class="tag">JavaScript</a>
-                <a href="./python-code.html" class="tag">Python</a>
-                <a href="./react.html" class="tag">React</a>
-                <a href="./ml.html" class="tag">Machine Learning</a>
-                <a href="./cloudcompute.html" class="tag">Cloud</a>
-                <a href="./aws.html" class="tag">AWS</a>
-                <a href="./ai-ml.html" class="tag">Artificial Intelligence</a>
-                <a href="./chatgpt.html" class="tag"
-                  >ChatGPT & Prompt Engineering</a
-                >
-                <a href="./cloud-devops.html" class="tag">DevOps</a>
-                <a href="./uxui.html" class="tag">UI/UX Design</a>
-              </div>
-            </div>
-
-            <!-- WhatsApp Newsletter Widget -->
-            <div class="whatsapp-newsletter">
-              <h3 class="widget-title">WhatsApp Updates</h3>
+        <!-- Course List (initially hidden) -->
+        <div class="course-list" id="courseList">
+          <div class="course-item" data-course="java">
+            <div class="course-title">Java Full Stack Development</div>
+            <div class="course-duration">Duration: 3 months</div>
+            <div class="course-details" id="java-details">
               <p>
-                Get the latest tech updates and tutorials directly on WhatsApp
+                <strong>Core Java:</strong> OOPs, Collections, Multithreading
               </p>
-              <form class="whatsapp-form" id="whatsappForm">
-                <input
-                  type="text"
-                  id="nameInput"
-                  placeholder="Your Name"
-                  required
-                />
-                <input
-                  type="tel"
-                  id="phoneInput"
-                  placeholder="Your WhatsApp Number"
-                  required
-                />
-                <select id="interestSelect">
-                  <option value="">Select your interest</option>
-                  <option value="web-development">Web Development</option>
-                  <option value="data-science">Data Science</option>
-                  <option value="ai-ml">AI & Machine Learning</option>
-                  <option value="cybersecurity">Cybersecurity</option>
-                  <option value="mobile-dev">Mobile Development</option>
-                  <option value="cloud-computing">Cloud Computing</option>
-                  <option value="all">All Updates</option>
-                </select>
-                <button
-                  type="submit"
-                  class="whatsapp-btn"
-                  id="whatsappSubscribeBtn"
-                >
-                  <i class="fab fa-whatsapp"></i>
-                  <span>Subscribe via WhatsApp</span>
+              <p><strong>Advanced Java:</strong> JDBC, Servlets, JSP</p>
+              <p><strong>Frameworks:</strong> Spring, Hibernate</p>
+              <p><strong>Frontend:</strong> HTML, CSS, JavaScript, React</p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Java')">
+                  Enroll Now
                 </button>
-              </form>
+                <button class="quick-action-btn" onclick="requestSyllabus('Java')">
+                  Get Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-item" data-course="python">
+            <div class="course-title">Python with Data Science</div>
+            <div class="course-duration">Duration: 4 months</div>
+            <div class="course-details" id="python-details">
+              <p><strong>Python Fundamentals:</strong> Core Python, OOPs</p>
+              <p><strong>Data Analysis:</strong> Pandas, NumPy, Matplotlib</p>
+              <p>
+                <strong>Machine Learning:</strong> Scikit-learn, TensorFlow
+              </p>
+              <p><strong>Web Framework:</strong> Django/Flask</p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Python')">
+                  Enroll Now
+                </button>
+                <button class="quick-action-btn" onclick="requestSyllabus('Python')">
+                  Get Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-item" data-course="web">
+            <div class="course-title">Web Development</div>
+            <div class="course-duration">Duration: 3 months</div>
+            <div class="course-details" id="web-details">
+              <p><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React</p>
+              <p><strong>Backend:</strong> Node.js, Express.js</p>
+              <p><strong>Database:</strong> MongoDB, MySQL</p>
+              <p><strong>Tools:</strong> Git, REST APIs, Deployment</p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Web Development')">
+                  Enroll Now
+                </button>
+                <button class="quick-action-btn" onclick="requestSyllabus('Web Development')">
+                  Get Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-item" data-course="mobile">
+            <div class="course-title">Mobile App Development</div>
+            <div class="course-duration">Duration: 3 months</div>
+            <div class="course-details" id="mobile-details">
+              <p><strong>Android:</strong> Java/Kotlin, Android Studio</p>
+              <p><strong>iOS:</strong> Swift, Xcode</p>
+              <p><strong>Cross-platform:</strong> React Native/Flutter</p>
+              <p><strong>Backend Integration:</strong> Firebase, APIs</p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Mobile App Development')">
+                  Enroll Now
+                </button>
+                <button class="quick-action-btn" onclick="requestSyllabus('Mobile App Development')">
+                  Get Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-item" data-course="data">
+            <div class="course-title">Data Science & Analytics</div>
+            <div class="course-duration">Duration: 4 months</div>
+            <div class="course-details" id="data-details">
+              <p>
+                <strong>Statistics:</strong> Probability, Hypothesis Testing
+              </p>
+              <p>
+                <strong>Python Libraries:</strong> Pandas, NumPy, Scikit-learn
+              </p>
+              <p>
+                <strong>Visualization:</strong> Matplotlib, Seaborn, Tableau
+              </p>
+              <p>
+                <strong>ML Algorithms:</strong> Regression, Classification,
+                Clustering
+              </p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Data Science')">
+                  Enroll Now
+                </button>
+                <button class="quick-action-btn" onclick="requestSyllabus('Data Science')">
+                  Get Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-item" data-course="cloud">
+            <div class="course-title">Cloud Computing</div>
+            <div class="course-duration">Duration: 3 months</div>
+            <div class="course-details" id="cloud-details">
+              <p><strong>AWS:</strong> EC2, S3, Lambda, RDS</p>
+              <p><strong>Azure:</strong> Virtual Machines, App Services</p>
+              <p>
+                <strong>Google Cloud:</strong> Compute Engine, Cloud Storage
+              </p>
+              <p><strong>DevOps:</strong> Docker, Kubernetes, CI/CD</p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Cloud Computing')">
+                  Enroll Now
+                </button>
+                <button class="quick-action-btn" onclick="requestSyllabus('Cloud Computing')">
+                  Get Syllabus
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Pagination -->
-        <div class="pagination" id="paginationContainer">
-          <!-- Pagination will be generated by JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Chat Widget - LEFT SIDE -->
-    <div class="chat-widget">
-      <div class="chat-container" id="chatContainer">
-        <div class="chat-header">
-          <div>
-            <img
-              src="./images/rohil_nextgen-removebg-preview.png"
-              alt="Chatbot"
-              class="chatbot-image"
-              style="width: 50px; height: 50px"
-            />
-            <h3>Course Information</h3>
-            <div class="chat-status">
-              <div class="status-indicator"></div>
-              <span>Online</span>
-            </div>
-          </div>
-          <button class="chat-close" id="chatClose">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="chat-messages" id="chatMessages">
-          <div class="message bot">
-            <div class="message-content">
-              Welcome to Rohil NextGen! I'm here to help you explore our
-              courses. Type "courses" to see all available programs.
-            </div>
-          </div>
-          <div class="message bot">
-            <div class="message-content">
-              You can also ask about specific courses like Java, Python, Web
-              Development, etc.
-            </div>
-          </div>
-
-          <!-- Course List (initially hidden) -->
-          <div class="course-list" id="courseList">
-            <div class="course-item" data-course="java">
-              <div class="course-title">Java Full Stack Development</div>
-              <div class="course-duration">Duration: 3 months</div>
-              <div class="course-details" id="java-details">
-                <p>
-                  <strong>Core Java:</strong> OOPs, Collections, Multithreading
-                </p>
-                <p><strong>Advanced Java:</strong> JDBC, Servlets, JSP</p>
-                <p><strong>Frameworks:</strong> Spring, Hibernate</p>
-                <p><strong>Frontend:</strong> HTML, CSS, JavaScript, React</p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Java')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Java')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item" data-course="python">
-              <div class="course-title">Python with Data Science</div>
-              <div class="course-duration">Duration: 4 months</div>
-              <div class="course-details" id="python-details">
-                <p><strong>Python Fundamentals:</strong> Core Python, OOPs</p>
-                <p><strong>Data Analysis:</strong> Pandas, NumPy, Matplotlib</p>
-                <p>
-                  <strong>Machine Learning:</strong> Scikit-learn, TensorFlow
-                </p>
-                <p><strong>Web Framework:</strong> Django/Flask</p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Python')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Python')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item" data-course="web">
-              <div class="course-title">Web Development</div>
-              <div class="course-duration">Duration: 3 months</div>
-              <div class="course-details" id="web-details">
-                <p><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React</p>
-                <p><strong>Backend:</strong> Node.js, Express.js</p>
-                <p><strong>Database:</strong> MongoDB, MySQL</p>
-                <p><strong>Tools:</strong> Git, REST APIs, Deployment</p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Web Development')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Web Development')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item" data-course="mobile">
-              <div class="course-title">Mobile App Development</div>
-              <div class="course-duration">Duration: 3 months</div>
-              <div class="course-details" id="mobile-details">
-                <p><strong>Android:</strong> Java/Kotlin, Android Studio</p>
-                <p><strong>iOS:</strong> Swift, Xcode</p>
-                <p><strong>Cross-platform:</strong> React Native/Flutter</p>
-                <p><strong>Backend Integration:</strong> Firebase, APIs</p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Mobile App Development')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Mobile App Development')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item" data-course="data">
-              <div class="course-title">Data Science & Analytics</div>
-              <div class="course-duration">Duration: 4 months</div>
-              <div class="course-details" id="data-details">
-                <p>
-                  <strong>Statistics:</strong> Probability, Hypothesis Testing
-                </p>
-                <p>
-                  <strong>Python Libraries:</strong> Pandas, NumPy, Scikit-learn
-                </p>
-                <p>
-                  <strong>Visualization:</strong> Matplotlib, Seaborn, Tableau
-                </p>
-                <p>
-                  <strong>ML Algorithms:</strong> Regression, Classification,
-                  Clustering
-                </p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Data Science')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Data Science')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item" data-course="cloud">
-              <div class="course-title">Cloud Computing</div>
-              <div class="course-duration">Duration: 3 months</div>
-              <div class="course-details" id="cloud-details">
-                <p><strong>AWS:</strong> EC2, S3, Lambda, RDS</p>
-                <p><strong>Azure:</strong> Virtual Machines, App Services</p>
-                <p>
-                  <strong>Google Cloud:</strong> Compute Engine, Cloud Storage
-                </p>
-                <p><strong>DevOps:</strong> Docker, Kubernetes, CI/CD</p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Cloud Computing')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Cloud Computing')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="typing-indicator" id="typingIndicator">
-            <span class="typing-dots">
-              Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
-            </span>
-          </div>
-        </div>
-        <div class="chat-input-container">
-          <input
-            type="text"
-            class="chat-input"
-            id="chatInput"
-            placeholder="Ask about courses..."
-          />
-          <button class="send-button" id="sendButton">
-            <i class="fas fa-paper-plane"></i>
-          </button>
+        <div class="typing-indicator" id="typingIndicator">
+          <span class="typing-dots">
+            Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
+          </span>
         </div>
       </div>
-      <div class="chat-toggle" id="chatToggle">
-        <i class="fas fa-comments"></i>
+      <div class="chat-input-container">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ask about courses..." />
+        <button class="send-button" id="sendButton">
+          <i class="fas fa-paper-plane"></i>
+        </button>
       </div>
     </div>
-
-    <!-- Newsletter Subscription Section -->
-    <section class="newsletter-section">
-      <div class="newsletter-container">
-        <div class="newsletter-content">
-          <h3>Stay Updated with Rohil NextGen</h3>
-          <p>
-            Subscribe to our newsletter for the latest course updates, tech
-            insights, and placement opportunities.
-          </p>
-        </div>
-        <form class="newsletter-form" id="newsletterForm">
-          <input
-            type="email"
-            class="newsletter-input"
-            id="newsletterEmail"
-            placeholder="Enter your email address"
-            required
-          />
-          <button type="submit" class="newsletter-btn" id="newsletterBtn">
-            <span id="btnText">Subscribe</span>
-            <i class="fas fa-paper-plane"></i>
-          </button>
-          <div id="newsletterMessage" class="newsletter-message"></div>
-        </form>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="tech-footer">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>About Rohil NextGen</h3>
-          <p>
-            We are a premier technology education platform in Virudhunagar
-            offering cutting-edge courses in software development, data science,
-            cybersecurity, and more.
-          </p>
-          <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61574571321905"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://www.instagram.com/rohil_nextgen/"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="https://www.youtube.com/@rohiltechdigitalteam"
-              ><i class="fab fa-youtube"></i
-            ></a>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
-            </li>
-            <li>
-              <a href="classic.html"
-                ><i class="fas fa-chevron-right"></i> Courses</a
-              >
-            </li>
-            <li>
-              <a href="browsecourse.html"
-                ><i class="fas fa-chevron-right"></i> Browse Courses</a
-              >
-            </li>
-            <li>
-              <a href="companies.html"
-                ><i class="fas fa-chevron-right"></i> Tie-up Companies</a
-              >
-            </li>
-            <li>
-              <a href="placement-success.html"
-                ><i class="fas fa-chevron-right"></i> Placements</a
-              >
-            </li>
-            <li>
-              <a href="contact.html"
-                ><i class="fas fa-chevron-right"></i> Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Contact Info</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="#"
-                ><i class="fas fa-map-marker-alt"></i>Rohil NextGen,
-                Virudhunagar, Tamil Nadu</a
-              >
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a>
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="copyright">
-          <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
-        </div>
-        <div class="footer-bottom-links">
-          <p>Designed By Rohil Technologies</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
-      <i class="fas fa-arrow-up"></i>
+    <div class="chat-toggle" id="chatToggle">
+      <i class="fas fa-comments"></i>
     </div>
+  </div>
 
-    <!-- Confirmation Modal -->
-    <div class="modal" id="confirmationModal">
-      <div class="modal-content">
-        <h3>Confirm Your Subscription</h3>
+  <!-- Newsletter Subscription Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <h3>Stay Updated with Rohil NextGen</h3>
         <p>
-          We've opened WhatsApp for you. Please send the pre-filled message to
-          complete your subscription.
+          Subscribe to our newsletter for the latest course updates, tech
+          insights, and placement opportunities.
         </p>
-        <button id="closeModal">Close</button>
+      </div>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email address"
+          required />
+        <button type="submit" class="newsletter-btn" id="newsletterBtn">
+          <span id="btnText">Subscribe</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+        <div id="newsletterMessage" class="newsletter-message"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="tech-footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>About Rohil NextGen</h3>
+        <p>
+          We are a premier technology education platform in Virudhunagar
+          offering cutting-edge courses in software development, data science,
+          cybersecurity, and more.
+        </p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61574571321905"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+          </li>
+          <li>
+            <a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a>
+          </li>
+          <li>
+            <a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a>
+          </li>
+          <li>
+            <a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a>
+          </li>
+          <li>
+            <a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a>
+          </li>
+          <li>
+            <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Info</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen,
+              Virudhunagar, Tamil Nadu</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <script>
-      // Initialize EmailJS
-      (function () {
-        emailjs.init("zImWs-QBwGe-B-JT3"); // Replace with your actual EmailJS public key
-      })();
+    <div class="footer-bottom">
+      <div class="copyright">
+        <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
+      </div>
+      <div class="footer-bottom-links">
+        <p>Designed By Rohil Technologies</p>
+      </div>
+    </div>
+  </footer>
 
-      // Blog Data
-      const blogPosts = [
-        {
-          id: 1,
-          title: "The Future of AI and Machine Learning in 2025",
-          excerpt:
-            "Explore how artificial intelligence and machine learning are transforming industries and creating new career opportunities. Learn about the latest trends and how to prepare for the AI-driven future.",
-          image: "./images/ai1.jpg",
-          date: "May 15, 2025",
-          category: "Artificial Intelligence",
-          author: "Rohil Groups",
-          relatedContent: `
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div class="modal" id="confirmationModal">
+    <div class="modal-content">
+      <h3>Confirm Your Subscription</h3>
+      <p>
+        We've opened WhatsApp for you. Please send the pre-filled message to
+        complete your subscription.
+      </p>
+      <button id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Initialize EmailJS
+    (function () {
+      emailjs.init("zImWs-QBwGe-B-JT3"); // Replace with your actual EmailJS public key
+    })();
+
+    // Blog Data
+    const blogPosts = [
+      {
+        id: 1,
+        title: "The Future of AI and Machine Learning in 2025",
+        excerpt:
+          "Explore how artificial intelligence and machine learning are transforming industries and creating new career opportunities. Learn about the latest trends and how to prepare for the AI-driven future.",
+        image: "./images/ai1.jpg",
+        date: "May 15, 2025",
+        category: "Artificial Intelligence",
+        author: "Rohil Groups",
+        relatedContent: `
                     <h4>Key AI Trends for 2025</h4>
                     <p>Artificial Intelligence continues to evolve at a rapid pace. Here are the key trends to watch:</p>
                     <ul>
@@ -2850,17 +2730,17 @@
                     </ul>
                     <p>These developments are creating new opportunities for developers and data scientists. Understanding these trends will help you stay ahead in the competitive tech landscape.</p>
                 `,
-        },
-        {
-          id: 2,
-          title: "Data Science Career Path: From Beginner to Expert",
-          excerpt:
-            "Learn how to build a successful career in data science. This comprehensive guide covers essential skills, tools, and learning paths for aspiring data scientists at every level.",
-          image: "./images/datascience.jpg",
-          date: "May 5, 2025",
-          category: "Data Science",
-          author: "Rohil Groups",
-          relatedContent: `
+      },
+      {
+        id: 2,
+        title: "Data Science Career Path: From Beginner to Expert",
+        excerpt:
+          "Learn how to build a successful career in data science. This comprehensive guide covers essential skills, tools, and learning paths for aspiring data scientists at every level.",
+        image: "./images/datascience.jpg",
+        date: "May 5, 2025",
+        category: "Data Science",
+        author: "Rohil Groups",
+        relatedContent: `
                     <h4>Essential Data Science Skills</h4>
                     <p>To succeed in data science, you need a combination of technical and soft skills:</p>
                     <ul>
@@ -2872,17 +2752,17 @@
                     </ul>
                     <p>Start with Python and SQL, then gradually build your expertise in machine learning and data visualization. Practical projects are key to developing these skills.</p>
                 `,
-        },
-        {
-          id: 3,
-          title: "Essential Cybersecurity Practices for Developers",
-          excerpt:
-            "Protect your applications and data with these essential cybersecurity practices. Learn about common vulnerabilities and how to implement security measures in your development workflow.",
-          image: "./images/cyber-awarness.jpg",
-          date: "April 28, 2025",
-          category: "Cybersecurity",
-          author: "Rohil Groups",
-          relatedContent: `
+      },
+      {
+        id: 3,
+        title: "Essential Cybersecurity Practices for Developers",
+        excerpt:
+          "Protect your applications and data with these essential cybersecurity practices. Learn about common vulnerabilities and how to implement security measures in your development workflow.",
+        image: "./images/cyber-awarness.jpg",
+        date: "April 28, 2025",
+        category: "Cybersecurity",
+        author: "Rohil Groups",
+        relatedContent: `
                     <h4>Top Security Practices for Developers</h4>
                     <p>Security should be integrated into every stage of development:</p>
                     <ul>
@@ -2894,17 +2774,17 @@
                     </ul>
                     <p>Implementing these practices from the beginning can prevent common vulnerabilities like SQL injection, XSS, and CSRF attacks.</p>
                 `,
-        },
-        {
-          id: 4,
-          title: "Python for Data Analysis: Complete Guide",
-          excerpt:
-            "Master data analysis with Python. This guide covers everything from basic data manipulation with Pandas to advanced visualization techniques.",
-          image: "./images/python.webp",
-          date: "May 12, 2025",
-          category: "Data Science",
-          author: "Rohil Groups",
-          relatedContent: `
+      },
+      {
+        id: 4,
+        title: "Python for Data Analysis: Complete Guide",
+        excerpt:
+          "Master data analysis with Python. This guide covers everything from basic data manipulation with Pandas to advanced visualization techniques.",
+        image: "./images/python.webp",
+        date: "May 12, 2025",
+        category: "Data Science",
+        author: "Rohil Groups",
+        relatedContent: `
                     <h4>Python Libraries for Data Analysis</h4>
                     <p>Python offers a rich ecosystem of libraries for data analysis:</p>
                     <ul>
@@ -2916,17 +2796,17 @@
                     </ul>
                     <p>Start with Pandas for data manipulation, then explore visualization libraries to create insightful charts and graphs from your data.</p>
                 `,
-        },
-        {
-          id: 5,
-          title: "React JS Best Practices for 2025",
-          excerpt:
-            "Learn the latest React JS best practices to build scalable and maintainable applications. Discover performance optimization techniques and modern development patterns.",
-          image: "./images/react.avif",
-          date: "May 8, 2025",
-          category: "Web Development",
-          author: "Rohil Groups",
-          relatedContent: `
+      },
+      {
+        id: 5,
+        title: "React JS Best Practices for 2025",
+        excerpt:
+          "Learn the latest React JS best practices to build scalable and maintainable applications. Discover performance optimization techniques and modern development patterns.",
+        image: "./images/react.avif",
+        date: "May 8, 2025",
+        category: "Web Development",
+        author: "Rohil Groups",
+        relatedContent: `
                     <h4>React Development Best Practices</h4>
                     <p>Follow these practices to write better React code:</p>
                     <ul>
@@ -2938,17 +2818,17 @@
                     </ul>
                     <p>These practices will help you build applications that are easier to maintain, test, and scale as your project grows.</p>
                 `,
-        },
-        {
-          id: 6,
-          title: "DevOps Tools Every Developer Should Know",
-          excerpt:
-            "Explore essential DevOps tools that streamline development workflows. From containerization with Docker to CI/CD pipelines, learn the tools that matter.",
-          image: "./images/devops.jpg",
-          date: "May 3, 2025",
-          category: "DevOps",
-          author: "Rohil Groups",
-          relatedContent: `
+      },
+      {
+        id: 6,
+        title: "DevOps Tools Every Developer Should Know",
+        excerpt:
+          "Explore essential DevOps tools that streamline development workflows. From containerization with Docker to CI/CD pipelines, learn the tools that matter.",
+        image: "./images/devops.jpg",
+        date: "May 3, 2025",
+        category: "DevOps",
+        author: "Rohil Groups",
+        relatedContent: `
                     <h4>Essential DevOps Tools</h4>
                     <p>Modern development relies on these DevOps tools:</p>
                     <ul>
@@ -2960,17 +2840,17 @@
                     </ul>
                     <p>Understanding these tools will help you automate development workflows, improve collaboration, and deploy applications more reliably.</p>
                 `,
-        },
-        {
-          id: 7,
-          title: "Cloud Computing: AWS vs Azure vs Google Cloud",
-          excerpt:
-            "Compare the top cloud platforms and understand their strengths. Make informed decisions about which cloud provider best suits your project requirements.",
-          image: "./images/cloud.jpg",
-          date: "April 25, 2025",
-          category: "Cloud Computing",
-          author: "Rohil Groups",
-          relatedContent: `
+      },
+      {
+        id: 7,
+        title: "Cloud Computing: AWS vs Azure vs Google Cloud",
+        excerpt:
+          "Compare the top cloud platforms and understand their strengths. Make informed decisions about which cloud provider best suits your project requirements.",
+        image: "./images/cloud.jpg",
+        date: "April 25, 2025",
+        category: "Cloud Computing",
+        author: "Rohil Groups",
+        relatedContent: `
                     <h4>Cloud Platform Comparison</h4>
                     <p>Each cloud platform has its strengths:</p>
                     <ul>
@@ -2980,17 +2860,17 @@
                     </ul>
                     <p>Consider factors like existing technology stack, specific service requirements, and pricing when choosing a cloud provider. Many organizations use multiple clouds to leverage the strengths of each platform.</p>
                 `,
-        },
-        {
-          id: 9,
-          title: "ChatGPT & Prompt Engineering Mastery",
-          excerpt:
-            "Master the art of prompt engineering with ChatGPT. Learn techniques to get better responses and leverage AI for various development tasks.",
-          image: "./images/chatgpt.jpg",
-          date: "April 15, 2025",
-          category: "Artificial Intelligence",
-          author: "Rohil Groups",
-          relatedContent: `
+      },
+      {
+        id: 9,
+        title: "ChatGPT & Prompt Engineering Mastery",
+        excerpt:
+          "Master the art of prompt engineering with ChatGPT. Learn techniques to get better responses and leverage AI for various development tasks.",
+        image: "./images/chatgpt.jpg",
+        date: "April 15, 2025",
+        category: "Artificial Intelligence",
+        author: "Rohil Groups",
+        relatedContent: `
                     <h4>Effective Prompt Engineering</h4>
                     <p>Improve your interactions with AI models:</p>
                     <ul>
@@ -3002,17 +2882,17 @@
                     </ul>
                     <p>Mastering prompt engineering can significantly improve the quality of AI-generated content and code, making you more productive in development tasks.</p>
                 `,
-        },
-        {
-          id: 10,
-          title: "Mobile App Development Trends 2025",
-          excerpt:
-            "Stay ahead with the latest mobile app development trends. From cross-platform frameworks to native development, explore what's shaping mobile technology.",
-          image: "./images/mobile.jpg",
-          date: "April 10, 2025",
-          category: "Mobile Development",
-          author: "Rohil Groups",
-          relatedContent: `
+      },
+      {
+        id: 10,
+        title: "Mobile App Development Trends 2025",
+        excerpt:
+          "Stay ahead with the latest mobile app development trends. From cross-platform frameworks to native development, explore what's shaping mobile technology.",
+        image: "./images/mobile.jpg",
+        date: "April 10, 2025",
+        category: "Mobile Development",
+        author: "Rohil Groups",
+        relatedContent: `
                     <h4>Mobile Development Trends</h4>
                     <p>The mobile landscape continues to evolve:</p>
                     <ul>
@@ -3024,50 +2904,50 @@
                     </ul>
                     <p>Understanding these trends will help you choose the right approach for your mobile projects and create apps that leverage the latest technologies.</p>
                 `,
-        },
-      ];
+      },
+    ];
 
-      // Pagination Configuration
-      const postsPerPage = 3;
-      let currentPage = 1;
+    // Pagination Configuration
+    const postsPerPage = 3;
+    let currentPage = 1;
 
-      // DOM Elements
-      const blogPostsContainer = document.getElementById("blogPostsContainer");
-      const paginationContainer = document.getElementById(
-        "paginationContainer"
-      );
-      const whatsappForm = document.getElementById("whatsappForm");
-      const nameInput = document.getElementById("nameInput");
-      const phoneInput = document.getElementById("phoneInput");
-      const interestSelect = document.getElementById("interestSelect");
-      const whatsappSubscribeBtn = document.getElementById(
-        "whatsappSubscribeBtn"
-      );
-      const confirmationModal = document.getElementById("confirmationModal");
-      const closeModal = document.getElementById("closeModal");
+    // DOM Elements
+    const blogPostsContainer = document.getElementById("blogPostsContainer");
+    const paginationContainer = document.getElementById(
+      "paginationContainer"
+    );
+    const whatsappForm = document.getElementById("whatsappForm");
+    const nameInput = document.getElementById("nameInput");
+    const phoneInput = document.getElementById("phoneInput");
+    const interestSelect = document.getElementById("interestSelect");
+    const whatsappSubscribeBtn = document.getElementById(
+      "whatsappSubscribeBtn"
+    );
+    const confirmationModal = document.getElementById("confirmationModal");
+    const closeModal = document.getElementById("closeModal");
 
-      // Initialize the blog
-      document.addEventListener("DOMContentLoaded", function () {
-        displayBlogPosts();
-        setupPagination();
-        setupWhatsAppNewsletter();
-        setupNavigation();
-        initNewsletter();
-        setupChatWidget();
-      });
+    // Initialize the blog
+    document.addEventListener("DOMContentLoaded", function () {
+      displayBlogPosts();
+      setupPagination();
+      setupWhatsAppNewsletter();
+      setupNavigation();
+      initNewsletter();
+      setupChatWidget();
+    });
 
-      // Display blog posts for current page
-      function displayBlogPosts() {
-        const startIndex = (currentPage - 1) * postsPerPage;
-        const endIndex = startIndex + postsPerPage;
-        const postsToShow = blogPosts.slice(startIndex, endIndex);
+    // Display blog posts for current page
+    function displayBlogPosts() {
+      const startIndex = (currentPage - 1) * postsPerPage;
+      const endIndex = startIndex + postsPerPage;
+      const postsToShow = blogPosts.slice(startIndex, endIndex);
 
-        blogPostsContainer.innerHTML = "";
+      blogPostsContainer.innerHTML = "";
 
-        postsToShow.forEach((post) => {
-          const postElement = document.createElement("article");
-          postElement.className = "blog-post";
-          postElement.innerHTML = `
+      postsToShow.forEach((post) => {
+        const postElement = document.createElement("article");
+        postElement.className = "blog-post";
+        postElement.innerHTML = `
                     <div class="blog-image">
                         <img src="${post.image}" alt="${post.title}" loading="lazy">
                     </div>
@@ -3085,291 +2965,257 @@
                         </div>
                     </div>
                 `;
-          blogPostsContainer.appendChild(postElement);
-        });
+        blogPostsContainer.appendChild(postElement);
+      });
 
-        // Add event listeners to read more buttons
-        document.querySelectorAll(".read-more").forEach((button) => {
-          button.addEventListener("click", function () {
-            const postId = this.getAttribute("data-post-id");
-            const relatedContent = document.getElementById(`related-${postId}`);
+      // Add event listeners to read more buttons
+      document.querySelectorAll(".read-more").forEach((button) => {
+        button.addEventListener("click", function () {
+          const postId = this.getAttribute("data-post-id");
+          const relatedContent = document.getElementById(`related-${postId}`);
 
-            // Toggle active class to show/hide related content
-            relatedContent.classList.toggle("active");
+          // Toggle active class to show/hide related content
+          relatedContent.classList.toggle("active");
 
-            // Update button text
-            if (relatedContent.classList.contains("active")) {
-              this.innerHTML = 'Show Less <i class="fas fa-arrow-up"></i>';
-            } else {
-              this.innerHTML = 'Read More <i class="fas fa-arrow-right"></i>';
-            }
-          });
-        });
-      }
-
-      // Setup pagination
-      function setupPagination() {
-        const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-
-        paginationContainer.innerHTML = "";
-
-        // Previous button
-        const prevButton = document.createElement("a");
-        prevButton.href = "#";
-        prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
-        if (currentPage === 1) {
-          prevButton.classList.add("disabled");
-        }
-        prevButton.addEventListener("click", (e) => {
-          e.preventDefault();
-          if (currentPage > 1) {
-            currentPage--;
-            displayBlogPosts();
-            setupPagination();
-            window.scrollTo({ top: 0, behavior: "smooth" });
+          // Update button text
+          if (relatedContent.classList.contains("active")) {
+            this.innerHTML = 'Show Less <i class="fas fa-arrow-up"></i>';
+          } else {
+            this.innerHTML = 'Read More <i class="fas fa-arrow-right"></i>';
           }
         });
-        paginationContainer.appendChild(prevButton);
+      });
+    }
 
-        // Page numbers
-        for (let i = 1; i <= totalPages; i++) {
-          const pageLink = document.createElement("a");
-          pageLink.href = "#";
-          pageLink.textContent = i;
-          if (i === currentPage) {
-            pageLink.classList.add("active");
-          }
-          pageLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            currentPage = i;
-            displayBlogPosts();
-            setupPagination();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          });
-          paginationContainer.appendChild(pageLink);
-        }
+    // Setup pagination
+    function setupPagination() {
+      const totalPages = Math.ceil(blogPosts.length / postsPerPage);
 
-        // Next button
-        const nextButton = document.createElement("a");
-        nextButton.href = "#";
-        nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
-        if (currentPage === totalPages) {
-          nextButton.classList.add("disabled");
+      paginationContainer.innerHTML = "";
+
+      // Previous button
+      const prevButton = document.createElement("a");
+      prevButton.href = "#";
+      prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+      if (currentPage === 1) {
+        prevButton.classList.add("disabled");
+      }
+      prevButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+          currentPage--;
+          displayBlogPosts();
+          setupPagination();
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
-        nextButton.addEventListener("click", (e) => {
+      });
+      paginationContainer.appendChild(prevButton);
+
+      // Page numbers
+      for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement("a");
+        pageLink.href = "#";
+        pageLink.textContent = i;
+        if (i === currentPage) {
+          pageLink.classList.add("active");
+        }
+        pageLink.addEventListener("click", (e) => {
           e.preventDefault();
-          if (currentPage < totalPages) {
-            currentPage++;
-            displayBlogPosts();
-            setupPagination();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }
+          currentPage = i;
+          displayBlogPosts();
+          setupPagination();
+          window.scrollTo({ top: 0, behavior: "smooth" });
         });
-        paginationContainer.appendChild(nextButton);
+        paginationContainer.appendChild(pageLink);
       }
 
-      // Setup WhatsApp newsletter functionality
-      function setupWhatsAppNewsletter() {
-        whatsappForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-          handleWhatsAppSubscription();
-        });
-
-        closeModal.addEventListener("click", function () {
-          confirmationModal.style.display = "none";
-          resetForm();
-        });
+      // Next button
+      const nextButton = document.createElement("a");
+      nextButton.href = "#";
+      nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+      if (currentPage === totalPages) {
+        nextButton.classList.add("disabled");
       }
-
-      // Handle WhatsApp subscription
-      function handleWhatsAppSubscription() {
-        const name = nameInput.value.trim();
-        const phone = phoneInput.value.trim();
-        const interest = interestSelect.value;
-
-        if (!name || !phone || !interest) {
-          alert("Please fill in all fields");
-          return;
+      nextButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentPage < totalPages) {
+          currentPage++;
+          displayBlogPosts();
+          setupPagination();
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
+      });
+      paginationContainer.appendChild(nextButton);
+    }
 
-        if (!isValidPhone(phone)) {
-          alert("Please enter a valid phone number");
-          return;
-        }
+    // Setup WhatsApp newsletter functionality
+    function setupWhatsAppNewsletter() {
+      whatsappForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        handleWhatsAppSubscription();
+      });
 
-        // Show loading state
-        whatsappSubscribeBtn.disabled = true;
-        whatsappSubscribeBtn.innerHTML =
-          '<div class="loading"></div> Subscribing...';
-
-        // Simulate API call
-        setTimeout(() => {
-          subscribeViaWhatsApp(name, phone, interest);
-        }, 2000);
-      }
-
-      // Subscribe via WhatsApp
-      function subscribeViaWhatsApp(name, phone, interest) {
-        // Format phone number (remove any non-digit characters)
-        const formattedPhone = phone.replace(/\D/g, "");
-
-        // Create WhatsApp message
-        const message = encodeURIComponent(
-          `Hello ${name}! Thank you for subscribing to Rohil NextGen WhatsApp updates. ` +
-            `You'll receive updates about ${getInterestDisplayName(
-              interest
-            )}. ` +
-            `Stay tuned for the latest tech insights and tutorials!`
-        );
-
-        // Create WhatsApp URL
-        const whatsappUrl = `https://wa.me/919751867879?text=${message}`;
-
-        // Open WhatsApp in new tab
-        window.open(whatsappUrl, "_blank");
-
-        // Show confirmation modal
-        confirmationModal.style.display = "flex";
-
-        // Reset form
+      closeModal.addEventListener("click", function () {
+        confirmationModal.style.display = "none";
         resetForm();
+      });
+    }
+
+    // Handle WhatsApp subscription
+    function handleWhatsAppSubscription() {
+      const name = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
+      const interest = interestSelect.value;
+
+      if (!name || !phone || !interest) {
+        alert("Please fill in all fields");
+        return;
       }
 
-      // Get display name for interest
-      function getInterestDisplayName(interest) {
-        const interests = {
-          "web-development": "Web Development",
-          "data-science": "Data Science",
-          "ai-ml": "AI & Machine Learning",
-          cybersecurity: "Cybersecurity",
-          "mobile-dev": "Mobile Development",
-          "cloud-computing": "Cloud Computing",
-          all: "all technology topics",
-        };
-        return interests[interest] || interest;
+      if (!isValidPhone(phone)) {
+        alert("Please enter a valid phone number");
+        return;
       }
+
+      // Show loading state
+      whatsappSubscribeBtn.disabled = true;
+      whatsappSubscribeBtn.innerHTML =
+        '<div class="loading"></div> Subscribing...';
+
+      // Simulate API call
+      setTimeout(() => {
+        subscribeViaWhatsApp(name, phone, interest);
+      }, 2000);
+    }
+
+    // Subscribe via WhatsApp
+    function subscribeViaWhatsApp(name, phone, interest) {
+      // Format phone number (remove any non-digit characters)
+      const formattedPhone = phone.replace(/\D/g, "");
+
+      // Create WhatsApp message
+      const message = encodeURIComponent(
+        `Hello ${name}! Thank you for subscribing to Rohil NextGen WhatsApp updates. ` +
+        `You'll receive updates about ${getInterestDisplayName(
+          interest
+        )}. ` +
+        `Stay tuned for the latest tech insights and tutorials!`
+      );
+
+      // Create WhatsApp URL
+      const whatsappUrl = `https://wa.me/919751867879?text=${message}`;
+
+      // Open WhatsApp in new tab
+      window.open(whatsappUrl, "_blank");
+
+      // Show confirmation modal
+      confirmationModal.style.display = "flex";
 
       // Reset form
-      function resetForm() {
-        whatsappForm.reset();
-        whatsappSubscribeBtn.disabled = false;
-        whatsappSubscribeBtn.innerHTML =
-          '<i class="fab fa-whatsapp"></i><span>Subscribe via WhatsApp</span>';
-      }
+      resetForm();
+    }
 
-      // Phone validation (basic Indian format)
-      function isValidPhone(phone) {
-        const phoneRegex = /^[6-9]\d{9}$/;
-        return phoneRegex.test(phone.replace(/\D/g, ""));
-      }
+    // Get display name for interest
+    function getInterestDisplayName(interest) {
+      const interests = {
+        "web-development": "Web Development",
+        "data-science": "Data Science",
+        "ai-ml": "AI & Machine Learning",
+        cybersecurity: "Cybersecurity",
+        "mobile-dev": "Mobile Development",
+        "cloud-computing": "Cloud Computing",
+        all: "all technology topics",
+      };
+      return interests[interest] || interest;
+    }
 
-      // Setup navigation functionality
-      function setupNavigation() {
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
-        const mobileOverlay = document.createElement("div");
-        mobileOverlay.className = "mobile-overlay";
-        document.body.appendChild(mobileOverlay);
+    // Reset form
+    function resetForm() {
+      whatsappForm.reset();
+      whatsappSubscribeBtn.disabled = false;
+      whatsappSubscribeBtn.innerHTML =
+        '<i class="fab fa-whatsapp"></i><span>Subscribe via WhatsApp</span>';
+    }
 
-        hamburger.addEventListener("click", () => {
-          navMenu.classList.toggle("active");
-          mobileOverlay.classList.toggle("active");
-          document.body.style.overflow = navMenu.classList.contains("active")
-            ? "hidden"
-            : "";
-        });
+    // Phone validation (basic Indian format)
+    function isValidPhone(phone) {
+      const phoneRegex = /^[6-9]\d{9}$/;
+      return phoneRegex.test(phone.replace(/\D/g, ""));
+    }
 
-        mobileOverlay.addEventListener("click", () => {
-          navMenu.classList.remove("active");
-          mobileOverlay.classList.remove("active");
-          document.body.style.overflow = "";
-        });
+    // Setup navigation functionality
+    function setupNavigation() {
+      // Mobile Menu Toggle
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+      const mobileOverlay = document.createElement("div");
+      mobileOverlay.className = "mobile-overlay";
+      document.body.appendChild(mobileOverlay);
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll(".nav-link").forEach((n) =>
-          n.addEventListener("click", (e) => {
-            // Only close menu if it's not a dropdown trigger
-            if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
-              navMenu.classList.remove("active");
-              mobileOverlay.classList.remove("active");
-              document.body.style.overflow = "";
-            }
-          })
-        );
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        mobileOverlay.classList.toggle("active");
+        document.body.style.overflow = navMenu.classList.contains("active")
+          ? "hidden"
+          : "";
+      });
 
-        // Mobile Dropdown Functionality
-        document.querySelectorAll(".nav-item").forEach((item) => {
-          const dropdown = item.querySelector(".dropdown");
-          const navLink = item.querySelector(".nav-link");
+      mobileOverlay.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      });
 
-          if (dropdown) {
-            // Add click event for mobile dropdowns
-            navLink.addEventListener("click", (e) => {
-              if (window.innerWidth <= 768) {
-                e.preventDefault();
-
-                // Close other open dropdowns
-                document
-                  .querySelectorAll(".dropdown.active")
-                  .forEach((otherDropdown) => {
-                    if (otherDropdown !== dropdown) {
-                      otherDropdown.classList.remove("active");
-                      otherDropdown.previousElementSibling.classList.remove(
-                        "active"
-                      );
-                    }
-                  });
-
-                // Toggle current dropdown
-                dropdown.classList.toggle("active");
-                navLink.classList.toggle("active");
-              }
-            });
-          }
-        });
-
-        // Close dropdowns when clicking outside
-        document.addEventListener("click", (e) => {
-          if (window.innerWidth <= 768) {
-            if (
-              !e.target.closest(".nav-item") &&
-              !e.target.closest(".hamburger")
-            ) {
-              document
-                .querySelectorAll(".dropdown.active")
-                .forEach((dropdown) => {
-                  dropdown.classList.remove("active");
-                  dropdown.previousElementSibling.classList.remove("active");
-                });
-            }
-          }
-        });
-
-        // Back to Top Button
-        const backToTopButton = document.getElementById("backToTop");
-
-        window.addEventListener("scroll", () => {
-          if (window.pageYOffset > 300) {
-            backToTopButton.classList.add("active");
-          } else {
-            backToTopButton.classList.remove("active");
-          }
-        });
-
-        backToTopButton.addEventListener("click", () => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        });
-
-        // Close mobile menu on resize if window becomes larger
-        window.addEventListener("resize", () => {
-          if (window.innerWidth > 768) {
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", (e) => {
+          // Only close menu if it's not a dropdown trigger
+          if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
             navMenu.classList.remove("active");
             mobileOverlay.classList.remove("active");
             document.body.style.overflow = "";
+          }
+        })
+      );
+
+      // Mobile Dropdown Functionality
+      document.querySelectorAll(".nav-item").forEach((item) => {
+        const dropdown = item.querySelector(".dropdown");
+        const navLink = item.querySelector(".nav-link");
+
+        if (dropdown) {
+          // Add click event for mobile dropdowns
+          navLink.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+
+              // Close other open dropdowns
+              document
+                .querySelectorAll(".dropdown.active")
+                .forEach((otherDropdown) => {
+                  if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove("active");
+                    otherDropdown.previousElementSibling.classList.remove(
+                      "active"
+                    );
+                  }
+                });
+
+              // Toggle current dropdown
+              dropdown.classList.toggle("active");
+              navLink.classList.toggle("active");
+            }
+          });
+        }
+      });
+
+      // Close dropdowns when clicking outside
+      document.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          if (
+            !e.target.closest(".nav-item") &&
+            !e.target.closest(".hamburger")
+          ) {
             document
               .querySelectorAll(".dropdown.active")
               .forEach((dropdown) => {
@@ -3377,331 +3223,385 @@
                 dropdown.previousElementSibling.classList.remove("active");
               });
           }
+        }
+      });
+
+      // Back to Top Button
+      const backToTopButton = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add("active");
+        } else {
+          backToTopButton.classList.remove("active");
+        }
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
         });
-      }
+      });
 
-      // Newsletter Functionality
-      function initNewsletter() {
-        const newsletterForm = document.getElementById("newsletterForm");
-        const newsletterEmail = document.getElementById("newsletterEmail");
-        const newsletterBtn = document.getElementById("newsletterBtn");
-        const btnText = document.getElementById("btnText");
-        const messageDiv = document.getElementById("newsletterMessage");
-
-        newsletterForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const email = newsletterEmail.value.trim();
-
-          // Validate email
-          if (!validateEmail(email)) {
-            showMessage("Please enter a valid email address.", "error");
-            return;
-          }
-
-          // Show loading state
-          setButtonState("loading");
-
-          // Send email using EmailJS
-          emailjs
-            .send("service_45iohnc", "template_hjk6fxj", {
-              to_email: "rohiltechtrainee@gmail.com",
-              user_email: email,
-              subject: "New Newsletter Subscription - Rohil NextGen",
-              message: `New newsletter subscription from Rohil NextGen website:\n\nEmail: ${email}\nDate: ${new Date().toLocaleString()}`,
-              reply_to: email,
-            })
-            .then(function (response) {
-              console.log("SUCCESS!", response.status, response.text);
-              showMessage(
-                "Thank you for subscribing! You will receive updates from Rohil NextGen.",
-                "success"
-              );
-              newsletterForm.reset();
-              setButtonState("success");
-
-              // Reset button after 2 seconds
-              setTimeout(() => {
-                setButtonState("default");
-              }, 2000);
-            })
-            .catch(function (error) {
-              console.error("FAILED...", error);
-              showMessage(
-                "Sorry, there was an error. Please try again later or contact us directly.",
-                "error"
-              );
-              setButtonState("error");
-
-              // Reset button after 3 seconds
-              setTimeout(() => {
-                setButtonState("default");
-              }, 3000);
+      // Close mobile menu on resize if window becomes larger
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          navMenu.classList.remove("active");
+          mobileOverlay.classList.remove("active");
+          document.body.style.overflow = "";
+          document
+            .querySelectorAll(".dropdown.active")
+            .forEach((dropdown) => {
+              dropdown.classList.remove("active");
+              dropdown.previousElementSibling.classList.remove("active");
             });
-        });
+        }
+      });
+    }
 
-        // Email validation function
-        function validateEmail(email) {
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return emailRegex.test(email);
+    // Newsletter Functionality
+    function initNewsletter() {
+      const newsletterForm = document.getElementById("newsletterForm");
+      const newsletterEmail = document.getElementById("newsletterEmail");
+      const newsletterBtn = document.getElementById("newsletterBtn");
+      const btnText = document.getElementById("btnText");
+      const messageDiv = document.getElementById("newsletterMessage");
+
+      newsletterForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const email = newsletterEmail.value.trim();
+
+        // Validate email
+        if (!validateEmail(email)) {
+          showMessage("Please enter a valid email address.", "error");
+          return;
         }
 
-        // Show message function
-        function showMessage(message, type) {
-          messageDiv.textContent = message;
-          messageDiv.className = `newsletter-message newsletter-${type}`;
-          messageDiv.style.display = "block";
+        // Show loading state
+        setButtonState("loading");
 
-          // Auto-hide success messages after 5 seconds
-          if (type === "success") {
+        // Send email using EmailJS
+        emailjs
+          .send("service_45iohnc", "template_hjk6fxj", {
+            to_email: "rohiltechtrainee@gmail.com",
+            user_email: email,
+            subject: "New Newsletter Subscription - Rohil NextGen",
+            message: `New newsletter subscription from Rohil NextGen website:\n\nEmail: ${email}\nDate: ${new Date().toLocaleString()}`,
+            reply_to: email,
+          })
+          .then(function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            showMessage(
+              "Thank you for subscribing! You will receive updates from Rohil NextGen.",
+              "success"
+            );
+            newsletterForm.reset();
+            setButtonState("success");
+
+            // Reset button after 2 seconds
             setTimeout(() => {
-              messageDiv.style.display = "none";
-            }, 5000);
-          }
-        }
+              setButtonState("default");
+            }, 2000);
+          })
+          .catch(function (error) {
+            console.error("FAILED...", error);
+            showMessage(
+              "Sorry, there was an error. Please try again later or contact us directly.",
+              "error"
+            );
+            setButtonState("error");
 
-        // Set button state
-        function setButtonState(state) {
-          switch (state) {
-            case "loading":
-              btnText.textContent = "Subscribing...";
-              newsletterBtn.disabled = true;
-              break;
-            case "success":
-              btnText.textContent = "Subscribed!";
-              newsletterBtn.disabled = true;
-              break;
-            case "error":
-              btnText.textContent = "Failed!";
-              newsletterBtn.disabled = true;
-              break;
-            default:
-              btnText.textContent = "Subscribe";
-              newsletterBtn.disabled = false;
-          }
-        }
+            // Reset button after 3 seconds
+            setTimeout(() => {
+              setButtonState("default");
+            }, 3000);
+          });
+      });
 
-        // Hide message when user starts typing again
-        newsletterEmail.addEventListener("input", function () {
-          if (messageDiv.style.display === "block") {
-            messageDiv.style.display = "none";
-          }
-        });
+      // Email validation function
+      function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
       }
 
-      // Chat Widget Functionality
-      function setupChatWidget() {
-        const chatToggle = document.getElementById("chatToggle");
-        const chatContainer = document.getElementById("chatContainer");
-        const chatClose = document.getElementById("chatClose");
-        const chatMessages = document.getElementById("chatMessages");
-        const chatInput = document.getElementById("chatInput");
-        const sendButton = document.getElementById("sendButton");
-        const typingIndicator = document.getElementById("typingIndicator");
-        const courseList = document.getElementById("courseList");
+      // Show message function
+      function showMessage(message, type) {
+        messageDiv.textContent = message;
+        messageDiv.className = `newsletter-message newsletter-${type}`;
+        messageDiv.style.display = "block";
 
-        // Toggle chat visibility
-        chatToggle.addEventListener("click", function () {
-          chatContainer.style.display =
-            chatContainer.style.display === "flex" ? "none" : "flex";
-        });
+        // Auto-hide success messages after 5 seconds
+        if (type === "success") {
+          setTimeout(() => {
+            messageDiv.style.display = "none";
+          }, 5000);
+        }
+      }
 
-        // Close chat
-        chatClose.addEventListener("click", function () {
-          chatContainer.style.display = "none";
-        });
+      // Set button state
+      function setButtonState(state) {
+        switch (state) {
+          case "loading":
+            btnText.textContent = "Subscribing...";
+            newsletterBtn.disabled = true;
+            break;
+          case "success":
+            btnText.textContent = "Subscribed!";
+            newsletterBtn.disabled = true;
+            break;
+          case "error":
+            btnText.textContent = "Failed!";
+            newsletterBtn.disabled = true;
+            break;
+          default:
+            btnText.textContent = "Subscribe";
+            newsletterBtn.disabled = false;
+        }
+      }
 
-        // Course item click handlers
-        document.querySelectorAll(".course-item").forEach((item) => {
-          item.addEventListener("click", function () {
-            const course = this.getAttribute("data-course");
-            const details = document.getElementById(`${course}-details`);
+      // Hide message when user starts typing again
+      newsletterEmail.addEventListener("input", function () {
+        if (messageDiv.style.display === "block") {
+          messageDiv.style.display = "none";
+        }
+      });
+    }
 
-            // Toggle course details
-            document.querySelectorAll(".course-details").forEach((d) => {
-              if (d !== details) d.classList.remove("active");
-            });
+    // Chat Widget Functionality
+    function setupChatWidget() {
+      const chatToggle = document.getElementById("chatToggle");
+      const chatContainer = document.getElementById("chatContainer");
+      const chatClose = document.getElementById("chatClose");
+      const chatMessages = document.getElementById("chatMessages");
+      const chatInput = document.getElementById("chatInput");
+      const sendButton = document.getElementById("sendButton");
+      const typingIndicator = document.getElementById("typingIndicator");
+      const courseList = document.getElementById("courseList");
 
-            details.classList.toggle("active");
-            scrollToBottom();
+      // Toggle chat visibility
+      chatToggle.addEventListener("click", function () {
+        chatContainer.style.display =
+          chatContainer.style.display === "flex" ? "none" : "flex";
+      });
+
+      // Close chat
+      chatClose.addEventListener("click", function () {
+        chatContainer.style.display = "none";
+      });
+
+      // Course item click handlers
+      document.querySelectorAll(".course-item").forEach((item) => {
+        item.addEventListener("click", function () {
+          const course = this.getAttribute("data-course");
+          const details = document.getElementById(`${course}-details`);
+
+          // Toggle course details
+          document.querySelectorAll(".course-details").forEach((d) => {
+            if (d !== details) d.classList.remove("active");
           });
+
+          details.classList.toggle("active");
+          scrollToBottom();
         });
+      });
 
-        // Send message function
-        function sendMessage() {
-          const message = chatInput.value.trim();
-          if (message === "") return;
+      // Send message function
+      function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message === "") return;
 
-          // Add user message
-          addMessage(message, "user");
-          chatInput.value = "";
+        // Add user message
+        addMessage(message, "user");
+        chatInput.value = "";
 
-          // Show typing indicator
-          typingIndicator.style.display = "block";
-          scrollToBottom();
+        // Show typing indicator
+        typingIndicator.style.display = "block";
+        scrollToBottom();
 
-          // Simulate bot response after a delay
-          setTimeout(function () {
-            typingIndicator.style.display = "none";
-            let botResponse = getBotResponse(message);
-
-            if (
-              message.toLowerCase().includes("courses") ||
-              message.toLowerCase().includes("all courses")
-            ) {
-              courseList.style.display = "flex";
-              addMessage(botResponse, "bot");
-            } else {
-              courseList.style.display = "none";
-              addMessage(botResponse, "bot");
-            }
-          }, 1500);
-        }
-
-        // Add message to chat
-        function addMessage(text, sender) {
-          const messageDiv = document.createElement("div");
-          messageDiv.className = `message ${sender}`;
-
-          const messageContent = document.createElement("div");
-          messageContent.className = "message-content";
-          messageContent.textContent = text;
-
-          messageDiv.appendChild(messageContent);
-          chatMessages.appendChild(messageDiv);
-
-          scrollToBottom();
-        }
-
-        // Scroll to bottom of chat
-        function scrollToBottom() {
-          chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        // Get bot response based on user input
-        function getBotResponse(message) {
-          const lowerMessage = message.toLowerCase();
+        // Simulate bot response after a delay
+        setTimeout(function () {
+          typingIndicator.style.display = "none";
+          let botResponse = getBotResponse(message);
 
           if (
-            lowerMessage.includes("courses") ||
-            lowerMessage.includes("all courses")
+            message.toLowerCase().includes("courses") ||
+            message.toLowerCase().includes("all courses")
           ) {
-            return "Here are all our trending courses: Java Full Stack, Python Data Science, Web Development, Mobile App Development, Cloud Computing, Artificial Intelligence, Machine Learning, Cybersecurity, DevOps, and UI/UX Design. Click on any course above to see details.";
-          } else if (lowerMessage.includes("java")) {
-            return "💻 Java Full Stack Development covers Core Java, Advanced Java, Spring Framework, Hibernate, and Frontend technologies like HTML, CSS, and React. Click on the Java course above for details.";
-          } else if (lowerMessage.includes("python")) {
-            return "🐍 Python with Data Science includes Python basics, data analysis with Pandas, visualization, machine learning, and web frameworks like Flask and Django. Click on the Python course above for details.";
-          } else if (
-            lowerMessage.includes("web development") ||
-            lowerMessage.includes("web")
-          ) {
-            return "🌐 Web Development covers frontend (HTML, CSS, JavaScript, React) and backend (Node.js, Express, and databases). Click on the Web Development course above for details.";
-          } else if (
-            lowerMessage.includes("mobile") ||
-            lowerMessage.includes("app")
-          ) {
-            return "📱 Mobile App Development covers Android, iOS, and cross-platform app development with Flutter and React Native. Click on the Mobile App Development course above for details.";
-          } else if (
-            lowerMessage.includes("data science") ||
-            lowerMessage.includes("analytics")
-          ) {
-            return "📊 Data Science & Analytics covers Python, statistics, Pandas, visualization tools (Matplotlib, Power BI), and machine learning. Click on the Data Science course above for details.";
-          } else if (lowerMessage.includes("cloud")) {
-            return "☁️ Cloud Computing includes AWS, Azure, Google Cloud, and DevOps integration for scalable deployment. Click on the Cloud Computing course above for details.";
-          } else if (
-            lowerMessage.includes("ai") ||
-            lowerMessage.includes("artificial intelligence")
-          ) {
-            return "🤖 Artificial Intelligence covers neural networks, deep learning, NLP (Natural Language Processing), and Generative AI tools like ChatGPT. Click on the AI course above for details.";
-          } else if (
-            lowerMessage.includes("ml") ||
-            lowerMessage.includes("machine learning")
-          ) {
-            return "🧠 Machine Learning course includes supervised and unsupervised learning, regression, classification, and model deployment techniques. Click on the ML course above for more info.";
-          } else if (
-            lowerMessage.includes("cyber security") ||
-            lowerMessage.includes("cybersecurity") ||
-            lowerMessage.includes("hacking")
-          ) {
-            return "🔐 Cybersecurity covers ethical hacking, network security, penetration testing, and protecting against real-world cyber threats. Click on the Cybersecurity course above for details.";
-          } else if (lowerMessage.includes("devops")) {
-            return "⚙️ DevOps training includes CI/CD, Docker, Kubernetes, Jenkins, and version control with Git & GitHub. Click on the DevOps course above for details.";
-          } else if (
-            lowerMessage.includes("ui") ||
-            lowerMessage.includes("ux") ||
-            lowerMessage.includes("design")
-          ) {
-            return "🎨 UI/UX Design covers design principles, Figma, Adobe XD, wireframing, and prototyping for modern digital interfaces. Click on the UI/UX course above for details.";
-          } else if (
-            lowerMessage.includes("placement") ||
-            lowerMessage.includes("job")
-          ) {
-            return "🎯 We provide 100% placement assistance with mock interviews, resume building, and connections to our hiring partners. Would you like to know more about our placement training?";
-          } else if (
-            lowerMessage.includes("support") ||
-            lowerMessage.includes("help")
-          ) {
-            return "💬 Our support team is currently away. Please leave your message and we'll get back to you as soon as possible.";
-          } else if (
-            lowerMessage.includes("contact") ||
-            lowerMessage.includes("email") ||
-            lowerMessage.includes("phone")
-          ) {
-            return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+            courseList.style.display = "flex";
+            addMessage(botResponse, "bot");
           } else {
-            return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
+            courseList.style.display = "none";
+            addMessage(botResponse, "bot");
           }
-        }
-
-        // Course enrollment function
-        window.enrollCourse = function (courseName) {
-          addMessage(`I'm interested in enrolling in ${courseName}`, "user");
-
-          typingIndicator.style.display = "block";
-          scrollToBottom();
-
-          setTimeout(function () {
-            typingIndicator.style.display = "none";
-            addMessage(
-              `Great! I've noted your interest in ${courseName}. Our admission team will contact you shortly with enrollment details.`,
-              "bot"
-            );
-          }, 1500);
-        };
-
-        // Syllabus request function
-        window.requestSyllabus = function (courseName) {
-          addMessage(`Can I get the syllabus for ${courseName}?`, "user");
-
-          typingIndicator.style.display = "block";
-          scrollToBottom();
-
-          setTimeout(function () {
-            typingIndicator.style.display = "none";
-            addMessage(
-              `I've sent the ${courseName} syllabus to your email. Please check your inbox. If you don't receive it, contact us at admin@rohiltechnologies.com`,
-              "bot"
-            );
-          }, 1500);
-        };
-
-        // Send message on button click
-        sendButton.addEventListener("click", sendMessage);
-
-        // Send message on Enter key
-        chatInput.addEventListener("keypress", function (e) {
-          if (e.key === "Enter") {
-            sendMessage();
-          }
-        });
-
-        // Auto-open chat after 10 seconds
-        setTimeout(function () {
-          if (chatContainer.style.display !== "flex") {
-            chatContainer.style.display = "flex";
-          }
-        }, 10000);
+        }, 1500);
       }
-    </script>
-  </body>
+
+      // Add message to chat
+      function addMessage(text, sender) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = `message ${sender}`;
+
+        const messageContent = document.createElement("div");
+        messageContent.className = "message-content";
+        messageContent.textContent = text;
+
+        messageDiv.appendChild(messageContent);
+        chatMessages.appendChild(messageDiv);
+
+        scrollToBottom();
+      }
+
+      // Scroll to bottom of chat
+      function scrollToBottom() {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      // Get bot response based on user input
+      function getBotResponse(message) {
+        const lowerMessage = message.toLowerCase();
+
+        // Add greeting recognition first
+        if (lowerMessage.includes("good morning")) {
+          return "Good morning! ☀️ Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+        } else if (lowerMessage.includes("good afternoon")) {
+          return "Good afternoon! 🌞 Welcome to Rohil Technologies. How can I assist you today? You can ask about our courses, placements, or contact information.";
+        } else if (lowerMessage.includes("good evening")) {
+          return "Good evening! 🌙 Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+        } else if (
+          lowerMessage.includes("hi") ||
+          lowerMessage.includes("hello") ||
+          lowerMessage.includes("hey")
+        ) {
+          return "Hi there! 👋 Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+        } else if (
+          lowerMessage.includes("thank you") ||
+          lowerMessage.includes("thanks") ||
+          lowerMessage.includes("thankyou")
+        ) {
+          return "You're welcome! 😊 Glad I could help. Let me know if you need any more information about our courses or services!";
+        } else if (
+          lowerMessage.includes("courses") ||
+          lowerMessage.includes("all courses")
+        ) {
+          return "Here are all our trending courses: Java Full Stack, Python Data Science, Web Development, Mobile App Development, Cloud Computing, Artificial Intelligence, Machine Learning, Cybersecurity, DevOps, and UI/UX Design. Click on any course above to see details.";
+        } else if (lowerMessage.includes("java")) {
+          return "💻 Java Full Stack Development covers Core Java, Advanced Java, Spring Framework, Hibernate, and Frontend technologies like HTML, CSS, and React. Click on the Java course above for details.";
+        } else if (lowerMessage.includes("python")) {
+          return "🐍 Python with Data Science includes Python basics, data analysis with Pandas, visualization, machine learning, and web frameworks like Flask and Django. Click on the Python course above for details.";
+        } else if (
+          lowerMessage.includes("web development") ||
+          lowerMessage.includes("web")
+        ) {
+          return "🌐 Web Development covers frontend (HTML, CSS, JavaScript, React) and backend (Node.js, Express, and databases). Click on the Web Development course above for details.";
+        } else if (
+          lowerMessage.includes("mobile") ||
+          lowerMessage.includes("app")
+        ) {
+          return "📱 Mobile App Development covers Android, iOS, and cross-platform app development with Flutter and React Native. Click on the Mobile App Development course above for details.";
+        } else if (
+          lowerMessage.includes("data science") ||
+          lowerMessage.includes("analytics")
+        ) {
+          return "📊 Data Science & Analytics covers Python, statistics, Pandas, visualization tools (Matplotlib, Power BI), and machine learning. Click on the Data Science course above for details.";
+        } else if (lowerMessage.includes("cloud")) {
+          return "☁️ Cloud Computing includes AWS, Azure, Google Cloud, and DevOps integration for scalable deployment. Click on the Cloud Computing course above for details.";
+        } else if (
+          lowerMessage.includes("ai") ||
+          lowerMessage.includes("artificial intelligence")
+        ) {
+          return "🤖 Artificial Intelligence covers neural networks, deep learning, NLP (Natural Language Processing), and Generative AI tools like ChatGPT. Click on the AI course above for details.";
+        } else if (
+          lowerMessage.includes("ml") ||
+          lowerMessage.includes("machine learning")
+        ) {
+          return "🧠 Machine Learning course includes supervised and unsupervised learning, regression, classification, and model deployment techniques. Click on the ML course above for more info.";
+        } else if (
+          lowerMessage.includes("cyber security") ||
+          lowerMessage.includes("cybersecurity") ||
+          lowerMessage.includes("hacking")
+        ) {
+          return "🔐 Cybersecurity covers ethical hacking, network security, penetration testing, and protecting against real-world cyber threats. Click on the Cybersecurity course above for details.";
+        } else if (lowerMessage.includes("devops")) {
+          return "⚙️ DevOps training includes CI/CD, Docker, Kubernetes, Jenkins, and version control with Git & GitHub. Click on the DevOps course above for details.";
+        } else if (
+          lowerMessage.includes("ui") ||
+          lowerMessage.includes("ux") ||
+          lowerMessage.includes("design")
+        ) {
+          return "🎨 UI/UX Design covers design principles, Figma, Adobe XD, wireframing, and prototyping for modern digital interfaces. Click on the UI/UX course above for details.";
+        } else if (
+          lowerMessage.includes("placement") ||
+          lowerMessage.includes("job")
+        ) {
+          return "🎯 We provide 100% placement assistance with mock interviews, resume building, and connections to our hiring partners. Would you like to know more about our placement training?";
+        } else if (
+          lowerMessage.includes("support") ||
+          lowerMessage.includes("help")
+        ) {
+          return "💬 Our support team is currently away. Please leave your message and we'll get back to you as soon as possible.";
+        } else if (
+          lowerMessage.includes("contact") ||
+          lowerMessage.includes("email") ||
+          lowerMessage.includes("phone")
+        ) {
+          return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+        } else {
+          return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
+        }
+      }
+
+      // Course enrollment function
+      window.enrollCourse = function (courseName) {
+        addMessage(`I'm interested in enrolling in ${courseName}`, "user");
+
+        typingIndicator.style.display = "block";
+        scrollToBottom();
+
+        setTimeout(function () {
+          typingIndicator.style.display = "none";
+          addMessage(
+            `Great! I've noted your interest in ${courseName}. Our admission team will contact you shortly with enrollment details.`,
+            "bot"
+          );
+        }, 1500);
+      };
+
+      // Syllabus request function
+      window.requestSyllabus = function (courseName) {
+        addMessage(`Can I get the syllabus for ${courseName}?`, "user");
+
+        typingIndicator.style.display = "block";
+        scrollToBottom();
+
+        setTimeout(function () {
+          typingIndicator.style.display = "none";
+          addMessage(
+            `I've sent the ${courseName} syllabus to your email. Please check your inbox. If you don't receive it, contact us at admin@rohiltechnologies.com`,
+            "bot"
+          );
+        }, 1500);
+      };
+
+      // Send message on button click
+      sendButton.addEventListener("click", sendMessage);
+
+      // Send message on Enter key
+      chatInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          sendMessage();
+        }
+      });
+
+      // Auto-open chat after 10 seconds
+      setTimeout(function () {
+        if (chatContainer.style.display !== "flex") {
+          chatContainer.style.display = "flex";
+        }
+      }, 10000);
+    }
+  </script>
+</body>
+
 </html>

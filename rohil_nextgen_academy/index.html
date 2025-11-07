@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohil NextGen</title>
-    <link
-      rel="icon"
-      type="images/rohil_nextgen"
-      href="./images/rohil_nextgen-removebg-preview.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css" />
-    <!-- EmailJS SDK -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-  </head>
-  <style>
-    /* Chat Widget Styles - LEFT SIDE */
-    .chat-widget {
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rohil NextGen</title>
+  <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<style>
+  /* Chat Widget Styles - LEFT SIDE */
+      .chat-widget {
       position: fixed;
       bottom: 20px;
       left: 20px;
@@ -35,13 +24,12 @@
     }
 
     .chat-toggle {
+      background: linear-gradient(135deg,
+          var(--primary-red),
+          var(--primary-red));
       width: 60px;
       height: 60px;
-      background: linear-gradient(
-        135deg,
-        var(--primary-red),
-        var(--primary-red)
-      );
+      color: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -71,30 +59,14 @@
     }
 
     .chat-header {
-      background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+      background: linear-gradient(135deg,
+          var(--primary-red),
+          var(--dark-red));
       color: white;
       padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-
-    .chatbot-image {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: white;
-    }
-
-    .chat-logo img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      position: fixed;
-      bottom: 110px;
-      left: 20px;
-      z-index: 999;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .chat-header h3 {
@@ -108,8 +80,7 @@
       align-items: center;
       font-size: 12px;
     }
-
-    .status-indicator {
+.status-indicator {
       width: 8px;
       height: 8px;
       background-color: #2ecc71;
@@ -154,7 +125,9 @@
     }
 
     .user .message-content {
-      background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+      background: linear-gradient(135deg,
+          var(--primary-red),
+          var(--dark-red));
       color: white;
       border-bottom-right-radius: 5px;
     }
@@ -187,8 +160,28 @@
       border-color: var(--primary-red);
     }
 
+    .chatbot-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    .chat-logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 110px;
+      left: 20px;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
     .send-button {
-      background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+      background: linear-gradient(135deg,
+          var(--primary-red),
+          var(--dark-red));
       color: white;
       border: none;
       border-radius: 50%;
@@ -231,1234 +224,1378 @@
       animation-delay: 0.4s;
     }
 
-    @keyframes typing {
-      0%,
-      60%,
-      100% {
-        opacity: 0.6;
-      }
 
-      30% {
-        opacity: 1;
-      }
+  @keyframes typing {
+    0%, 60%, 100% {
+      opacity: 0.6;
+    }
+    30% {
+      opacity: 1;
+    }
+  }
+
+  /* Course List Styles */
+  .course-list {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .course-item {
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+    border-left: 3px solid var(--primary-red);
+  }
+
+  .course-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .course-title {
+    font-weight: 600;
+    color: var(--dark-red);
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .course-duration {
+    font-size: 12px;
+    color: #777;
+  }
+
+  .course-details {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+
+  .course-details.active {
+    display: block;
+  }
+
+  .quick-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .quick-action-btn {
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 6px 12px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+  }
+
+  .quick-action-btn:hover {
+    background: var(--dark-red);
+  }
+
+  /* Responsive adjustments for chat widget */
+  @media (max-width: 768px) {
+    .chat-widget {
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      display: flex;
+      justify-content: flex-start;
     }
 
-    /* Course List Styles */
-    .course-list {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
+    .chat-container {
+      width: calc(100vw - 30px);
+      max-width: 400px;
+      height: 70vh;
+      max-height: 500px;
+      bottom: 70px;
+      left: 0;
+      right: auto;
     }
 
-    .course-item {
-      background: white;
-      border-radius: 8px;
-      padding: 12px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: all 0.3s;
-      border-left: 3px solid var(--primary-red);
+    .chat-toggle {
+      width: 55px;
+      height: 55px;
+      font-size: 22px;
     }
 
-    .course-item:hover {
-      transform: translateX(5px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    .message {
+      max-width: 90%;
     }
 
-    .course-title {
-      font-weight: 600;
-      color: var(--dark-red);
-      margin-bottom: 5px;
-    }
-
-    .course-duration {
-      font-size: 12px;
-      color: #777;
-    }
-
-    .course-details {
-      display: none;
-      margin-top: 10px;
-      padding: 10px;
-      background: #f5f5f5;
-      border-radius: 5px;
+    .message-content {
+      padding: 10px 14px;
       font-size: 13px;
     }
 
-    .course-details.active {
-      display: block;
+    .chat-input-container {
+      padding: 12px;
+    }
+
+    .chat-input {
+      padding: 10px 14px;
+      font-size: 13px;
+    }
+
+    .send-button {
+      width: 38px;
+      height: 38px;
+      font-size: 14px;
+    }
+
+    .course-title {
+      font-size: 13px;
+    }
+
+    .course-details {
+      font-size: 12px;
     }
 
     .quick-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
+      gap: 6px;
     }
 
     .quick-action-btn {
-      background: var(--primary-red);
-      color: white;
-      border: none;
-      border-radius: 15px;
       padding: 5px 10px;
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .chat-widget {
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+    }
+
+    .chat-container {
+      width: calc(100vw - 20px);
+      height: 65vh;
+      max-height: 450px;
+      bottom: 65px;
+    }
+
+    .chat-toggle {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+    }
+
+    .chat-header {
+      padding: 12px 15px;
+    }
+
+    .chat-header h3 {
+      font-size: 15px;
+    }
+
+    .chat-messages {
+      padding: 12px;
+    }
+
+    .message {
+      max-width: 95%;
+    }
+
+    .message-content {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+
+    .chat-input-container {
+      padding: 10px 12px;
+    }
+
+    .chat-input {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+
+    .send-button {
+      width: 36px;
+      height: 36px;
+      font-size: 13px;
+    }
+
+    .course-item {
+      padding: 10px;
+    }
+
+    .course-title {
+      font-size: 12px;
+    }
+
+    .course-duration {
       font-size: 11px;
-      cursor: pointer;
-      transition: background 0.3s;
     }
 
-    .quick-action-btn:hover {
-      background: var(--dark-red);
+    .course-details {
+      padding: 8px;
+      font-size: 11px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .chat-container {
+      height: 60vh;
+      max-height: 400px;
     }
 
-    /* Newsletter Subscription Styles */
-    .newsletter-section {
-      background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
-      padding: 40px 0;
-      margin-top: 40px;
-      color: white;
+    .chat-header {
+      padding: 10px 12px;
     }
 
+    .chat-header h3 {
+      font-size: 14px;
+    }
+
+    .chat-status {
+      font-size: 11px;
+    }
+
+    .chat-messages {
+      padding: 10px;
+    }
+
+    .message-content {
+      padding: 6px 10px;
+      font-size: 11px;
+    }
+  }
+
+  /* Landscape mode adjustments */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .chat-container {
+      height: 80vh;
+      max-height: 300px;
+    }
+  }
+
+  /* Prevent chat from being too small on very small screens */
+  @media (max-width: 320px) {
+    .chat-container {
+      width: 300px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .chat-widget {
+      justify-content: center;
+    }
+  }
+
+  /* Newsletter Subscription Styles */
+  .newsletter-section {
+    background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+    padding: 40px 0;
+    margin-top: 40px;
+    color: white;
+  }
+
+  .newsletter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-content {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 30px;
+  }
+
+  .newsletter-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .newsletter-content p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 0;
+    color: white;
+  }
+
+  .newsletter-form {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    gap: 10px;
+    position: relative;
+  }
+
+  .newsletter-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .newsletter-btn {
+    background: white;
+    color: var(--primary-red);
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+  }
+
+  .newsletter-btn:hover:not(:disabled) {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+  }
+
+  .newsletter-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .newsletter-message {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .newsletter-success {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: white;
+    border: 1px solid #2ecc71;
+  }
+
+  .newsletter-error {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #ffcccb;
+    border: 1px solid #e74c3c;
+  }
+
+  /* Responsive adjustments for newsletter */
+  @media (max-width: 768px) {
     .newsletter-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      text-align: center;
     }
 
     .newsletter-content {
-      flex: 1;
-      min-width: 300px;
-      margin-right: 30px;
-    }
-
-    .newsletter-content h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    .newsletter-content p {
-      font-size: 16px;
-      opacity: 0.9;
-      margin-bottom: 0;
-      color: white;
+      margin-right: 0;
+      margin-bottom: 20px;
     }
 
     .newsletter-form {
-      flex: 1;
-      min-width: 300px;
-      display: flex;
-      gap: 10px;
-      position: relative;
+      flex-direction: column;
     }
+  }
+</style>
 
-    .newsletter-input {
-      flex: 1;
-      padding: 12px 15px;
-      border: none;
-      border-radius: 5px;
-      font-family: "Poppins", sans-serif;
-      font-size: 14px;
-      outline: none;
-    }
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i>Viruthunagar</div>
+        <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
+        <div><i class="fas fa-phone"></i>+91 97518 67879</div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61574571321905"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@rohiltechdigitalteam?si=ziFJIu4UCkfetVE1"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
 
-    .newsletter-btn {
-      background: white;
-      color: var(--primary-red);
-      border: none;
-      border-radius: 5px;
-      padding: 12px 25px;
-      font-family: "Poppins", sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      min-width: 120px;
-    }
-
-    .newsletter-btn:hover:not(:disabled) {
-      background: #f0f0f0;
-      transform: translateY(-2px);
-    }
-
-    .newsletter-btn:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-    }
-
-    .newsletter-message {
-      display: none;
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 5px;
-      text-align: center;
-      width: 100%;
-    }
-
-    .newsletter-success {
-      background-color: rgba(46, 204, 113, 0.2);
-      color: white;
-      border: 1px solid #2ecc71;
-    }
-
-    .newsletter-error {
-      background-color: rgba(231, 76, 60, 0.2);
-      color: #ffcccb;
-      border: 1px solid #e74c3c;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .chat-container {
-        width: 290px;
-        height: 450px;
-      }
-
-      .newsletter-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .newsletter-content {
-        margin-right: 0;
-        margin-bottom: 20px;
-      }
-
-      .newsletter-form {
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .top-bar {
-        height: 200px;
-      }
-
-      .chat-container {
-        width: 320px;
-        left: 10px;
-      }
-    }
-  </style>
-
-  <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-container">
-        <div class="contact-info">
-          <div><i class="fas fa-map-marker-alt"></i>Viruthunagar</div>
-          <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
-          <div><i class="fas fa-phone"></i>+91 97518 67879</div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <!-- Placeholder for logo -->
+        <div class="logo" style="display: flex; align-items: center">
+          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
         </div>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/profile.php?id=61574571321905"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="https://www.instagram.com/rohil_nextgen/"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a
-            href="https://youtube.com/@rohiltechdigitalteam?si=ziFJIu4UCkfetVE1"
-            ><i class="fab fa-youtube"></i
-          ></a>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="gallery.html" class="nav-link">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown">
+            <a href="classic.html" class="dropdown-item">Classic</a>
+            <a href="professional.html" class="dropdown-item">Professional</a>
+            <a href="expert.html" class="dropdown-item">Expert</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown">
+            <a href="placement.html" class="dropdown-item">Placement Training</a>
+            <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+            <a href="placement-success.html" class="dropdown-item">Placement Success</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="techblog.html" class="nav-link">Techblog</a>
+        </li>
+        <li class="nav-item">
+          <a href="scholarship.html" class="nav-link active">Scholarship</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <section class="carousel" id="home">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="carousel-content"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-content"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-content"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-content"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-content"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-content"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-content"></div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <div class="carousel-dot active" data-index="0"></div>
+      <div class="carousel-dot" data-index="1"></div>
+      <div class="carousel-dot" data-index="2"></div>
+      <div class="carousel-dot" data-index="3"></div>
+      <div class="carousel-dot" data-index="4"></div>
+      <div class="carousel-dot" data-index="5"></div>
+      <div class="carousel-dot" data-index="6"></div>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="overview-section" id="overview">
+    <div class="container">
+      <div class="overview-container">
+        <div class="overview-content">
+          <div class="section-title">
+            <h1>Rohil NextGen Overview</h1>
+            <h2>Celebrating Seven Years of Excellence in Virudhunagar</h2>
+          </div>
+          <div class="highlight-box">
+            <p>
+              Rohil NextGen Software Training and Placement Academy has been a
+              pioneer in providing world-class software training in
+              Virudhunagar for the past seven years. We take pride in being
+              recognized as the Best Training Academy in Virudhunagar,
+              dedicated to delivering quality education that bridges the gap
+              between academic learning and industry demands.
+            </p>
+          </div>
+        </div>
+        <div class="overview-image">
+          <img src="./images/overview.jpg" alt="Rohil NextGen Training Academy" />
         </div>
       </div>
     </div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="logo">
-          <!-- Placeholder for logo -->
-          <div class="logo" style="display: flex; align-items: center">
-            <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
-          </div>
+  </section>
+  <!-- Features Section -->
+  <section class="section">
+    <div class="section-title">
+      <h2>Why Choose Rohil NextGen?</h2>
+      <p>
+        We provide comprehensive learning solutions designed to bridge the gap
+        between academia and industry requirements.
+      </p>
+    </div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon-container">
+          <i class="fas fa-laptop-code feature-icon"></i>
         </div>
-
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="gallery.html" class="nav-link">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link"
-              >Courses <i class="fas fa-chevron-down"></i
-            ></a>
-            <div class="dropdown">
-              <a href="classic.html" class="dropdown-item">Classic</a>
-              <a href="professional.html" class="dropdown-item">Professional</a>
-              <a href="expert.html" class="dropdown-item">Expert</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link"
-              >Support <i class="fas fa-chevron-down"></i
-            ></a>
-            <div class="dropdown">
-              <a href="placement.html" class="dropdown-item"
-                >Placement Training</a
-              >
-              <a href="companies.html" class="dropdown-item"
-                >Tie-up Companies</a
-              >
-              <a href="placement-success.html" class="dropdown-item"
-                >Placement Success</a
-              >
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="techblog.html" class="nav-link">Techblog</a>
-          </li>
-          <li class="nav-item">
-            <a href="scholarship.html" class="nav-link active">Scholarship</a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact</a>
-          </li>
-        </ul>
-
-        <div class="hamburger">
-          <i class="fas fa-bars"></i>
+        <div class="feature-content">
+          <h3>Industry-Relevant Curriculum</h3>
+          <p>
+            Our courses are designed by industry experts to ensure you learn
+            the most in-demand skills.
+          </p>
         </div>
       </div>
-    </nav>
+      <div class="feature-card">
+        <div class="feature-icon-container">
+          <i class="fas fa-chalkboard-teacher feature-icon"></i>
+        </div>
+        <div class="feature-content">
+          <h3>Expert Instructors</h3>
+          <p>
+            Our trainers come from top multinational companies (MNCs),
+            bringing real-world expertise into the classroom.
+          </p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-container">
+          <i class="fas fa-briefcase feature-icon"></i>
+        </div>
+        <div class="feature-content">
+          <h3>Placement Assistance</h3>
+          <p>
+            Get 100% placement support with our extensive network of hiring
+            partners.
+          </p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-container">
+          <i class="fas fa-mobile-alt feature-icon"></i>
+        </div>
+        <div class="feature-content">
+          <h3>Web & Mobile App Deployment</h3>
+          <p>
+            Learn complete software development lifecycle including web and
+            mobile application deployment.
+          </p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-container">
+          <i class="fas fa-user-clock feature-icon"></i>
+        </div>
+        <div class="feature-content">
+          <h3>Career Gap Solutions</h3>
+          <p>
+            Specialized training to help students overcome career gaps and
+            enter the job market confidently.
+          </p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-container">
+          <i class="fas fa-project-diagram feature-icon"></i>
+        </div>
+        <div class="feature-content">
+          <h3>Real-Time Projects</h3>
+          <p>
+            Hands-on training with real-world projects to build industry-ready
+            skills.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Carousel -->
-    <section class="carousel" id="home">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="carousel-content"></div>
-        </div>
-        <div class="carousel-item">
-          <div class="carousel-content"></div>
-        </div>
-        <div class="carousel-item">
-          <div class="carousel-content"></div>
-        </div>
-      </div>
-      <div class="carousel-controls">
-        <div class="carousel-dot active" data-index="0"></div>
-        <div class="carousel-dot" data-index="1"></div>
-        <div class="carousel-dot" data-index="2"></div>
-      </div>
-    </section>
-
-    <!-- Overview Section -->
-    <section class="overview-section" id="overview">
-      <div class="container">
-        <div class="overview-container">
-          <div class="overview-content">
-            <div class="section-title">
-              <h1>Rohil NextGen Overview</h1>
-              <h2>Celebrating Seven Years of Excellence in Virudhunagar</h2>
-            </div>
-            <div class="highlight-box">
-              <p>
-                Rohil NextGen Software Training and Placement Academy has been a
-                pioneer in providing world-class software training in
-                Virudhunagar for the past seven years. We take pride in being
-                recognized as the Best Training Academy in Virudhunagar,
-                dedicated to delivering quality education that bridges the gap
-                between academic learning and industry demands.
-              </p>
-            </div>
-          </div>
-          <div class="overview-image">
-            <img
-              src="./images/overview.jpg"
-              alt="Rohil NextGen Training Academy"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Features Section -->
-    <section class="section">
+  <div class="containerss">
+    <div class="purpose">
       <div class="section-title">
-        <h2>Why Choose Rohil NextGen?</h2>
+        <h1>Our Prupose</h1>
+      </div>
+      <!-- Mission Section -->
+      <section class="sections">
+        <div class="icon-container">
+          <div class="icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+        </div>
+        <div class="content">
+          <h2>Our Mission</h2>
+          <p>
+            We are committed to delivering high-quality education<span class="highlight">
+              high-quality education, </span>hands-on training, and placement support, empowering students to
+            become future-ready tech professionals.
+          </p>
+        </div>
+      </section>
+
+      <!-- Vision Section -->
+      <section class="sections reverse">
+        <div class="icon-container">
+          <div class="icon">
+            <i class="fas fa-eye"></i>
+          </div>
+        </div>
+        <div class="content">
+          <h2>Our Vision</h2>
+          <p>
+            Rohil NextGen aims to be the leading
+            <span class="highlight">software training institute,</span>
+            preparing students with real-world tech skills and industry
+            expertise to excel in their careers.
+          </p>
+        </div>
+      </section>
+
+      <!-- Values Section -->
+
+      <section class="sections">
+        <div class="icon-container">
+          <div class="icon">
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+        <div class="content">
+          <h2>Our Values</h2>
+          <p>
+            <span class="highlight">Integrity:</span> We conduct business with
+            honesty, transparency, and ethical behavior in all our
+            interactions.
+          </p>
+          <p>
+            <span class="highlight">Innovation:</span> We embrace creativity
+            and continuously seek new ways to solve challenges and improve our
+            offerings.
+          </p>
+          <p>
+            <span class="highlight">Collaboration:</span> We believe in the
+            power of teamwork and value diverse perspectives that lead to
+            better outcomes.
+          </p>
+          <p>
+            <span class="highlight">Excellence:</span> We are committed to
+            delivering the highest quality in everything we do, striving for
+            continuous improvement.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div class="partnership-section">
+      <div class="section-title">
+        <h1>Our Tie-up Companies</h1>
+
+        <!-- First Row (Left to Right) -->
+        <div class="logo-slider row-1">
+          <div class="logos">
+            <img src="./images/img1.png" alt="Logo 1" />
+            <img src="./images/img2.png" alt="Logo 2" />
+            <img src="./images/img3.webp" alt="Logo 3" />
+            <img src="./images/img4.jpg" alt="Logo 4" />
+            <img src="./images/img5.png" alt="Logo 5" />
+            <img src="./images/img6.png" alt="Logo 6" />
+            <img src="./images/img7.png" alt="Logo 7" />
+            <img src="./images/img8.png" alt="Logo 8" />
+            <img src="./images/img9.png" alt="Logo 9" />
+            <img src="./images/img10.png" alt="Logo 11" />
+            <img src="./images/img11.png" alt="Logo 10" />
+            <img src="./images/img12.png" alt="Logo 12" />
+            <img src="./images/img13.png" alt="Logo 13" />
+            <img src="./images/img14.avif" alt="Logo 18" />
+            <img src="./images/img15.png" alt="Logo 19" />
+            <img src="./images/img16.png" alt="Logo 20" />
+            <img src="./images/img17.webp" alt="Logo 16" />
+            <img src="./images/img18.png" alt="Logo 15" />
+            <img src="./images/img19.jfif" alt="Logo 14" />
+          </div>
+        </div>
+
+        <!-- Second Row (Right to Left) -->
+        <div class="logo-slider row-2 mt-2">
+          <div class="logos">
+            <img src="./images/img20.jpg" alt="Logo 15" />
+            <img src="./images/img21.png" alt="Logo 16" />
+            <img src="./images/img22.avif" alt="Logo 17" />
+            <img src="./images/img23.png" alt="Logo 18" />
+            <img src="./images/img24.jpg" alt="Logo 19" />
+            <img src="./images/img25.jfif" alt="Logo 20" />
+            <img src="./images/img26.avif" alt="Logo 21" />
+            <img src="./images/img27.png" alt="Logo 22" />
+            <img src="./images/img28.png" alt="Logo 23" />
+            <img src="./images/img29.png" alt="Logo 24" />
+            <!-- Duplicate for seamless effect -->
+            <img src="./images/img30.jfif" alt="Logo 25" />
+            <img src="./images/img31.png" alt="Logo 26" />
+            <img src="./images/img32.png" alt="Logo 27" />
+            <img src="./images/img33.png" alt="Logo 28" />
+            <img src="./images/img3.webp" alt="Logo 29" />
+            <img src="./images/img13.png" alt="Logo 30" />
+            <img src="./images/img5.png" alt="Logo 31" />
+            <img src="./images/img16.png" alt="Logo 32" />
+            <img src="./images/img25.jfif" alt="Logo 33" />
+            <img src="./images/img27.png" alt="Logo 34" />
+          </div>
+        </div>
+
+        <!-- Third Row (Left to Right) -->
+        <div class="logo-slider row-3 mt-2">
+          <div class="logos">
+            <img src="./images/img2.png" alt="Logo 35" />
+            <img src="./images/img4.jpg" alt="Logo 36" />
+            <img src="./images/img6.png" alt="Logo 37" />
+            <img src="./images/img8.png" alt="Logo 38" />
+            <img src="./images/img10.png" alt="Logo 39" />
+            <img src="./images/img18.png" alt="Logo 40" />
+            <img src="./images/img22.avif" alt="Logo 41" />
+            <img src="./images/img33.png" alt="Logo 42" />
+            <img src="./images/img21.png" alt="Logo 43" />
+            <img src="./images/img30.jfif" alt="Logo 44" />
+            <!-- Duplicate for seamless effect -->
+            <img src="./images/img28.png" alt="Logo 45" />
+            <img src="./images/img29.png" alt="Logo 46" />
+            <img src="./images/img26.avif" alt="Logo 47" />
+            <img src="./images/img34.avif" alt="Logo 48" />
+            <img src="./images/img35.png" alt="Logo 49" />
+            <img src="./images/img36.jpg" alt="Logo 50" />
+            <img src="./images/img3.webp" alt="Logo 51" />
+            <img src="./images/img34.avif" alt="Logo 52" />
+            <img src="./images/img4.jpg" alt="Logo 53" />
+            <img src="./images/img1.png" alt="Logo 54" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter Subscription Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <h3>Stay Updated with Rohil NextGen</h3>
         <p>
-          We provide comprehensive learning solutions designed to bridge the gap
-          between academia and industry requirements.
+          Subscribe to our newsletter for the latest course updates, tech
+          insights, and placement opportunities.
         </p>
       </div>
-      <div class="features">
-        <div class="feature-card">
-          <div class="feature-icon-container">
-            <i class="fas fa-laptop-code feature-icon"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Industry-Relevant Curriculum</h3>
-            <p>
-              Our courses are designed by industry experts to ensure you learn
-              the most in-demand skills.
-            </p>
-          </div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon-container">
-            <i class="fas fa-chalkboard-teacher feature-icon"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Expert Instructors</h3>
-            <p>
-              Our trainers come from top multinational companies (MNCs),
-              bringing real-world expertise into the classroom.
-            </p>
-          </div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon-container">
-            <i class="fas fa-briefcase feature-icon"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Placement Assistance</h3>
-            <p>
-              Get 100% placement support with our extensive network of hiring
-              partners.
-            </p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email address"
+          required />
+        <button type="submit" class="newsletter-btn" id="newsletterBtn">
+          <i class="fas fa-paper-plane"></i> Subscribe
+        </button>
+      </form>
+      <div id="newsletterMessage" class="newsletter-message"></div>
+    </div>
+  </section>
+
+  <!-- Chat Widget - LEFT SIDE -->
+  <div class="chat-widget">
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-header">
+        <div>
+          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Chatbot" class="chatbot-image"
+            style="width: 50px; height: 50px" />
+
+          <h3>Course Information</h3>
+          <div class="chat-status">
+            <div class="status-indicator"></div>
+            <span>Online</span>
           </div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon-container">
-            <i class="fas fa-mobile-alt feature-icon"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Web & Mobile App Deployment</h3>
-            <p>
-              Learn complete software development lifecycle including web and
-              mobile application deployment.
-            </p>
-          </div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon-container">
-            <i class="fas fa-user-clock feature-icon"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Career Gap Solutions</h3>
-            <p>
-              Specialized training to help students overcome career gaps and
-              enter the job market confidently.
-            </p>
+        <button class="chat-close" id="chatClose">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot">
+          <div class="message-content">
+            Welcome to Rohil NextGen! I'm here to help you explore our
+            courses. Type "courses" to see all available programs.
           </div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon-container">
-            <i class="fas fa-project-diagram feature-icon"></i>
+        <div class="message bot">
+          <div class="message-content">
+            You can also ask about specific courses like Java, Python, Web
+            Development, etc.
           </div>
-          <div class="feature-content">
-            <h3>Real-Time Projects</h3>
-            <p>
-              Hands-on training with real-world projects to build industry-ready
-              skills.
-            </p>
+        </div>
+
+        <!-- Course List (initially hidden) -->
+        <div class="course-list" id="courseList">
+          <div class="course-item" data-course="java">
+            <div class="course-title">Java Full Stack Development</div>
+            <div class="course-duration">Duration: 3 months</div>
+            <div class="course-details" id="java-details">
+              <p>
+                <strong>Core Java:</strong> OOPs, Collections, Multithreading
+              </p>
+              <p><strong>Advanced Java:</strong> JDBC, Servlets, JSP</p>
+              <p><strong>Frameworks:</strong> Spring, Hibernate</p>
+              <p><strong>Frontend:</strong> HTML, CSS, JavaScript, React</p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Java')">
+                  Enroll Now
+                </button>
+                <button class="quick-action-btn" onclick="requestSyllabus('Java')">
+                  Get Syllabus
+                </button>
+              </div>
+            </div>
           </div>
+
+          <div class="course-item" data-course="python">
+            <div class="course-title">Python with Data Science</div>
+            <div class="course-duration">Duration: 4 months</div>
+            <div class="course-details" id="python-details">
+              <p><strong>Python Fundamentals:</strong> Core Python, OOPs</p>
+              <p><strong>Data Analysis:</strong> Pandas, NumPy, Matplotlib</p>
+              <p>
+                <strong>Machine Learning:</strong> Scikit-learn, TensorFlow
+              </p>
+              <p><strong>Web Framework:</strong> Django/Flask</p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Python')">
+                  Enroll Now
+                </button>
+                <button class="quick-action-btn" onclick="requestSyllabus('Python')">
+                  Get Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-item" data-course="web">
+            <div class="course-title">Web Development</div>
+            <div class="course-duration">Duration: 3 months</div>
+            <div class="course-details" id="web-details">
+              <p><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React</p>
+              <p><strong>Backend:</strong> Node.js, Express.js</p>
+              <p><strong>Database:</strong> MongoDB, MySQL</p>
+              <p><strong>Tools:</strong> Git, REST APIs, Deployment</p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Web Development')">
+                  Enroll Now
+                </button>
+                <button class="quick-action-btn" onclick="requestSyllabus('Web Development')">
+                  Get Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-item" data-course="mobile">
+            <div class="course-title">Mobile App Development</div>
+            <div class="course-duration">Duration: 3 months</div>
+            <div class="course-details" id="mobile-details">
+              <p><strong>Android:</strong> Java/Kotlin, Android Studio</p>
+              <p><strong>iOS:</strong> Swift, Xcode</p>
+              <p><strong>Cross-platform:</strong> React Native/Flutter</p>
+              <p><strong>Backend Integration:</strong> Firebase, APIs</p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Mobile App Development')">
+                  Enroll Now
+                </button>
+                <button class="quick-action-btn" onclick="requestSyllabus('Mobile App Development')">
+                  Get Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-item" data-course="data">
+            <div class="course-title">Data Science & Analytics</div>
+            <div class="course-duration">Duration: 4 months</div>
+            <div class="course-details" id="data-details">
+              <p>
+                <strong>Statistics:</strong> Probability, Hypothesis Testing
+              </p>
+              <p>
+                <strong>Python Libraries:</strong> Pandas, NumPy, Scikit-learn
+              </p>
+              <p>
+                <strong>Visualization:</strong> Matplotlib, Seaborn, Tableau
+              </p>
+              <p>
+                <strong>ML Algorithms:</strong> Regression, Classification,
+                Clustering
+              </p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Data Science')">
+                  Enroll Now
+                </button>
+                <button class="quick-action-btn" onclick="requestSyllabus('Data Science')">
+                  Get Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-item" data-course="cloud">
+            <div class="course-title">Cloud Computing</div>
+            <div class="course-duration">Duration: 3 months</div>
+            <div class="course-details" id="cloud-details">
+              <p><strong>AWS:</strong> EC2, S3, Lambda, RDS</p>
+              <p><strong>Azure:</strong> Virtual Machines, App Services</p>
+              <p>
+                <strong>Google Cloud:</strong> Compute Engine, Cloud Storage
+              </p>
+              <p><strong>DevOps:</strong> Docker, Kubernetes, CI/CD</p>
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="enrollCourse('Cloud Computing')">
+                  Enroll Now
+                </button>
+                <button class="quick-action-btn" onclick="requestSyllabus('Cloud Computing')">
+                  Get Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="typing-indicator" id="typingIndicator">
+          <span class="typing-dots">
+            Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
+          </span>
         </div>
       </div>
-    </section>
+      <div class="chat-input-container">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ask about courses..." />
+        <button class="send-button" id="sendButton">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+    <div class="chat-toggle" id="chatToggle">
+      <i class="fas fa-comments"></i>
+    </div>
+  </div>
 
-    <div class="containerss">
-      <div class="purpose">
-        <div class="section-title">
-          <h1>Our Prupose</h1>
+  <!-- Footer -->
+  <footer class="tech-footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>About Rohil NextGen</h3>
+        <p>
+          We are a premier technology education platform in Virudhunagar
+          offering cutting-edge courses in software development, data science,
+          cybersecurity, and more.
+        </p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a>
         </div>
-        <!-- Mission Section -->
-        <section class="sections">
-          <div class="icon-container">
-            <div class="icon">
-              <i class="fas fa-bullseye"></i>
-            </div>
-          </div>
-          <div class="content">
-            <h2>Our Mission</h2>
-            <p>
-              We are committed to delivering high-quality education<span
-                class="highlight"
-              >
-                high-quality education, </span
-              >hands-on training, and placement support, empowering students to
-              become future-ready tech professionals.
-            </p>
-          </div>
-        </section>
-
-        <!-- Vision Section -->
-        <section class="sections reverse">
-          <div class="icon-container">
-            <div class="icon">
-              <i class="fas fa-eye"></i>
-            </div>
-          </div>
-          <div class="content">
-            <h2>Our Vision</h2>
-            <p>
-              Rohil NextGen aims to be the leading
-              <span class="highlight">software training institute,</span>
-              preparing students with real-world tech skills and industry
-              expertise to excel in their careers.
-            </p>
-          </div>
-        </section>
-
-        <!-- Values Section -->
-
-        <section class="sections">
-          <div class="icon-container">
-            <div class="icon">
-              <i class="fas fa-heart"></i>
-            </div>
-          </div>
-          <div class="content">
-            <h2>Our Values</h2>
-            <p>
-              <span class="highlight">Integrity:</span> We conduct business with
-              honesty, transparency, and ethical behavior in all our
-              interactions.
-            </p>
-            <p>
-              <span class="highlight">Innovation:</span> We embrace creativity
-              and continuously seek new ways to solve challenges and improve our
-              offerings.
-            </p>
-            <p>
-              <span class="highlight">Collaboration:</span> We believe in the
-              power of teamwork and value diverse perspectives that lead to
-              better outcomes.
-            </p>
-            <p>
-              <span class="highlight">Excellence:</span> We are committed to
-              delivering the highest quality in everything we do, striving for
-              continuous improvement.
-            </p>
-          </div>
-        </section>
       </div>
 
-      <div class="partnership-section">
-        <div class="section-title">
-          <h1>Our Partnership</h1>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+          </li>
+          <li>
+            <a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a>
+          </li>
+          <li>
+            <a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a>
+          </li>
+          <li>
+            <a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a>
+          </li>
+          <li>
+            <a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a>
+          </li>
+          <li>
+            <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
 
-          <!-- First Row (Left to Right) -->
-          <div class="logo-slider row-1">
-            <div class="logos">
-              <img src="./images/img1.png" alt="Logo 1" />
-              <img src="./images/img2.png" alt="Logo 2" />
-              <img src="./images/img3.webp" alt="Logo 3" />
-              <img src="./images/img4.jpg" alt="Logo 4" />
-              <img src="./images/img5.png" alt="Logo 5" />
-              <img src="./images/img6.png" alt="Logo 6" />
-              <img src="./images/img7.png" alt="Logo 7" />
-              <img src="./images/img8.png" alt="Logo 8" />
-              <img src="./images/img9.png" alt="Logo 9" />
-              <img src="./images/img10.png" alt="Logo 11" />
-              <img src="./images/img11.png" alt="Logo 10" />
-              <img src="./images/img12.png" alt="Logo 12" />
-              <img src="./images/img13.png" alt="Logo 13" />
-              <img src="./images/img14.avif" alt="Logo 18" />
-              <img src="./images/img15.png" alt="Logo 19" />
-              <img src="./images/img16.png" alt="Logo 20" />
-              <img src="./images/img17.webp" alt="Logo 16" />
-              <img src="./images/img18.png" alt="Logo 15" />
-              <img src="./images/img19.jfif" alt="Logo 14" />
-            </div>
-          </div>
-
-          <!-- Second Row (Right to Left) -->
-          <div class="logo-slider row-2 mt-2">
-            <div class="logos">
-              <img src="./images/img20.jpg" alt="Logo 15" />
-              <img src="./images/img21.png" alt="Logo 16" />
-              <img src="./images/img22.avif" alt="Logo 17" />
-              <img src="./images/img23.png" alt="Logo 18" />
-              <img src="./images/img24.jpg" alt="Logo 19" />
-              <img src="./images/img25.jfif" alt="Logo 20" />
-              <img src="./images/img26.avif" alt="Logo 21" />
-              <img src="./images/img27.png" alt="Logo 22" />
-              <img src="./images/img28.png" alt="Logo 23" />
-              <img src="./images/img29.png" alt="Logo 24" />
-              <!-- Duplicate for seamless effect -->
-              <img src="./images/img30.jfif" alt="Logo 25" />
-              <img src="./images/img31.png" alt="Logo 26" />
-              <img src="./images/img32.png" alt="Logo 27" />
-              <img src="./images/img33.png" alt="Logo 28" />
-              <img src="./images/img3.webp" alt="Logo 29" />
-              <img src="./images/img13.png" alt="Logo 30" />
-              <img src="./images/img5.png" alt="Logo 31" />
-              <img src="./images/img16.png" alt="Logo 32" />
-              <img src="./images/img25.jfif" alt="Logo 33" />
-              <img src="./images/img27.png" alt="Logo 34" />
-            </div>
-          </div>
-
-          <!-- Third Row (Left to Right) -->
-          <div class="logo-slider row-3 mt-2">
-            <div class="logos">
-              <img src="./images/img2.png" alt="Logo 35" />
-              <img src="./images/img4.jpg" alt="Logo 36" />
-              <img src="./images/img6.png" alt="Logo 37" />
-              <img src="./images/img8.png" alt="Logo 38" />
-              <img src="./images/img10.png" alt="Logo 39" />
-              <img src="./images/img18.png" alt="Logo 40" />
-              <img src="./images/img22.avif" alt="Logo 41" />
-              <img src="./images/img33.png" alt="Logo 42" />
-              <img src="./images/img21.png" alt="Logo 43" />
-              <img src="./images/img30.jfif" alt="Logo 44" />
-              <!-- Duplicate for seamless effect -->
-              <img src="./images/img28.png" alt="Logo 45" />
-              <img src="./images/img29.png" alt="Logo 46" />
-              <img src="./images/img26.avif" alt="Logo 47" />
-              <img src="./images/img34.avif" alt="Logo 48" />
-              <img src="./images/img35.png" alt="Logo 49" />
-              <img src="./images/img36.jpg" alt="Logo 50" />
-              <img src="./images/img3.webp" alt="Logo 51" />
-              <img src="./images/img34.avif" alt="Logo 52" />
-              <img src="./images/img4.jpg" alt="Logo 53" />
-              <img src="./images/img1.png" alt="Logo 54" />
-            </div>
-          </div>
-        </div>
+      <div class="footer-column">
+        <h3>Our Courses</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen,
+              Virudhunagar, Tamil Nadu</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <!-- Newsletter Subscription Section -->
-    <section class="newsletter-section">
-      <div class="newsletter-container">
-        <div class="newsletter-content">
-          <h3>Stay Updated with Rohil NextGen</h3>
-          <p>
-            Subscribe to our newsletter for the latest course updates, tech
-            insights, and placement opportunities.
-          </p>
-        </div>
-        <form class="newsletter-form" id="newsletterForm">
-          <input
-            type="email"
-            class="newsletter-input"
-            id="newsletterEmail"
-            placeholder="Enter your email address"
-            required
-          />
-          <button type="submit" class="newsletter-btn" id="newsletterBtn">
-            <i class="fas fa-paper-plane"></i> Subscribe
-          </button>
-        </form>
-        <div id="newsletterMessage" class="newsletter-message"></div>
+    <div class="footer-bottom">
+      <div class="copyright">
+        <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
       </div>
-    </section>
-
-    <!-- Chat Widget - LEFT SIDE -->
-    <div class="chat-widget">
-      <div class="chat-container" id="chatContainer">
-        <div class="chat-header">
-          <div>
-            <img
-              src="./images/rohil_nextgen-removebg-preview.png"
-              alt="Chatbot"
-              class="chatbot-image"
-              style="width: 50px; height: 50px"
-            />
-
-            <h3>Course Information</h3>
-            <div class="chat-status">
-              <div class="status-indicator"></div>
-              <span>Online</span>
-            </div>
-          </div>
-          <button class="chat-close" id="chatClose">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="chat-messages" id="chatMessages">
-          <div class="message bot">
-            <div class="message-content">
-              Welcome to Rohil NextGen! I'm here to help you explore our
-              courses. Type "courses" to see all available programs.
-            </div>
-          </div>
-          <div class="message bot">
-            <div class="message-content">
-              You can also ask about specific courses like Java, Python, Web
-              Development, etc.
-            </div>
-          </div>
-
-          <!-- Course List (initially hidden) -->
-          <div class="course-list" id="courseList">
-            <div class="course-item" data-course="java">
-              <div class="course-title">Java Full Stack Development</div>
-              <div class="course-duration">Duration: 3 months</div>
-              <div class="course-details" id="java-details">
-                <p>
-                  <strong>Core Java:</strong> OOPs, Collections, Multithreading
-                </p>
-                <p><strong>Advanced Java:</strong> JDBC, Servlets, JSP</p>
-                <p><strong>Frameworks:</strong> Spring, Hibernate</p>
-                <p><strong>Frontend:</strong> HTML, CSS, JavaScript, React</p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Java')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Java')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item" data-course="python">
-              <div class="course-title">Python with Data Science</div>
-              <div class="course-duration">Duration: 4 months</div>
-              <div class="course-details" id="python-details">
-                <p><strong>Python Fundamentals:</strong> Core Python, OOPs</p>
-                <p><strong>Data Analysis:</strong> Pandas, NumPy, Matplotlib</p>
-                <p>
-                  <strong>Machine Learning:</strong> Scikit-learn, TensorFlow
-                </p>
-                <p><strong>Web Framework:</strong> Django/Flask</p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Python')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Python')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item" data-course="web">
-              <div class="course-title">Web Development</div>
-              <div class="course-duration">Duration: 3 months</div>
-              <div class="course-details" id="web-details">
-                <p><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React</p>
-                <p><strong>Backend:</strong> Node.js, Express.js</p>
-                <p><strong>Database:</strong> MongoDB, MySQL</p>
-                <p><strong>Tools:</strong> Git, REST APIs, Deployment</p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Web Development')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Web Development')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item" data-course="mobile">
-              <div class="course-title">Mobile App Development</div>
-              <div class="course-duration">Duration: 3 months</div>
-              <div class="course-details" id="mobile-details">
-                <p><strong>Android:</strong> Java/Kotlin, Android Studio</p>
-                <p><strong>iOS:</strong> Swift, Xcode</p>
-                <p><strong>Cross-platform:</strong> React Native/Flutter</p>
-                <p><strong>Backend Integration:</strong> Firebase, APIs</p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Mobile App Development')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Mobile App Development')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item" data-course="data">
-              <div class="course-title">Data Science & Analytics</div>
-              <div class="course-duration">Duration: 4 months</div>
-              <div class="course-details" id="data-details">
-                <p>
-                  <strong>Statistics:</strong> Probability, Hypothesis Testing
-                </p>
-                <p>
-                  <strong>Python Libraries:</strong> Pandas, NumPy, Scikit-learn
-                </p>
-                <p>
-                  <strong>Visualization:</strong> Matplotlib, Seaborn, Tableau
-                </p>
-                <p>
-                  <strong>ML Algorithms:</strong> Regression, Classification,
-                  Clustering
-                </p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Data Science')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Data Science')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item" data-course="cloud">
-              <div class="course-title">Cloud Computing</div>
-              <div class="course-duration">Duration: 3 months</div>
-              <div class="course-details" id="cloud-details">
-                <p><strong>AWS:</strong> EC2, S3, Lambda, RDS</p>
-                <p><strong>Azure:</strong> Virtual Machines, App Services</p>
-                <p>
-                  <strong>Google Cloud:</strong> Compute Engine, Cloud Storage
-                </p>
-                <p><strong>DevOps:</strong> Docker, Kubernetes, CI/CD</p>
-                <div class="quick-actions">
-                  <button
-                    class="quick-action-btn"
-                    onclick="enrollCourse('Cloud Computing')"
-                  >
-                    Enroll Now
-                  </button>
-                  <button
-                    class="quick-action-btn"
-                    onclick="requestSyllabus('Cloud Computing')"
-                  >
-                    Get Syllabus
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="typing-indicator" id="typingIndicator">
-            <span class="typing-dots">
-              Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
-            </span>
-          </div>
-        </div>
-        <div class="chat-input-container">
-          <input
-            type="text"
-            class="chat-input"
-            id="chatInput"
-            placeholder="Ask about courses..."
-          />
-          <button class="send-button" id="sendButton">
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </div>
-      </div>
-      <div class="chat-toggle" id="chatToggle">
-        <i class="fas fa-comments"></i>
+      <div class="footer-bottom-links">
+        <p>Designed By Rohil Technologies</p>
       </div>
     </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="tech-footer">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>About Rohil NextGen</h3>
-          <p>
-            We are a premier technology education platform in Virudhunagar
-            offering cutting-edge courses in software development, data science,
-            cybersecurity, and more.
-          </p>
-          <div class="social-links">
-            <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://www.instagram.com/rohil_nextgen/"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="https://www.youtube.com/@rohiltechdigitalteam"
-              ><i class="fab fa-youtube"></i
-            ></a>
-          </div>
-        </div>
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
 
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
-            </li>
-            <li>
-              <a href="classic.html"
-                ><i class="fas fa-chevron-right"></i> Courses</a
-              >
-            </li>
-            <li>
-              <a href="browsecourse.html"
-                ><i class="fas fa-chevron-right"></i> Browse Courses</a
-              >
-            </li>
-            <li>
-              <a href="companies.html"
-                ><i class="fas fa-chevron-right"></i> Tie-up Companies</a
-              >
-            </li>
-            <li>
-              <a href="placement-success.html"
-                ><i class="fas fa-chevron-right"></i> Placements</a
-              >
-            </li>
-            <li>
-              <a href="contact.html"
-                ><i class="fas fa-chevron-right"></i> Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Our Courses</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="#"
-                ><i class="fas fa-map-marker-alt"></i>Rohil NextGen,
-                Virudhunagar, Tamil Nadu</a
-              >
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a>
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="copyright">
-          <p>&copy; 2025 Rohil NextGen. All Rights Reserved.</p>
-        </div>
-        <div class="footer-bottom-links">
-          <p>Designed By Rohil Technologies</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
-      <i class="fas fa-arrow-up"></i>
-    </div>
-
-    <script>
+  <script>
+    // Initialize EmailJS with your public key
+    (function () {
       // Initialize EmailJS with your public key
-      (function () {
-        // Initialize EmailJS with your public key
-        emailjs.init("zImWs-QBwGe-B-JT3");
-      })();
+      emailjs.init("zImWs-QBwGe-B-JT3");
+    })();
 
-      // Chat Widget Functionality
-      const chatToggle = document.getElementById("chatToggle");
-      const chatContainer = document.getElementById("chatContainer");
-      const chatClose = document.getElementById("chatClose");
-      const chatMessages = document.getElementById("chatMessages");
-      const chatInput = document.getElementById("chatInput");
-      const sendButton = document.getElementById("sendButton");
-      const typingIndicator = document.getElementById("typingIndicator");
-      const courseList = document.getElementById("courseList");
+    // Chat Widget Functionality
+    const chatToggle = document.getElementById("chatToggle");
+    const chatContainer = document.getElementById("chatContainer");
+    const chatClose = document.getElementById("chatClose");
+    const chatMessages = document.getElementById("chatMessages");
+    const chatInput = document.getElementById("chatInput");
+    const sendButton = document.getElementById("sendButton");
+    const typingIndicator = document.getElementById("typingIndicator");
+    const courseList = document.getElementById("courseList");
 
-      // Toggle chat visibility
-      chatToggle.addEventListener("click", function () {
-        chatContainer.style.display =
-          chatContainer.style.display === "flex" ? "none" : "flex";
-      });
+    // Toggle chat visibility
+    chatToggle.addEventListener("click", function () {
+      chatContainer.style.display =
+        chatContainer.style.display === "flex" ? "none" : "flex";
+    });
 
-      // Close chat
-      chatClose.addEventListener("click", function () {
-        chatContainer.style.display = "none";
-      });
+    // Close chat
+    chatClose.addEventListener("click", function () {
+      chatContainer.style.display = "none";
+    });
 
-      // Course item click handlers
-      document.querySelectorAll(".course-item").forEach((item) => {
-        item.addEventListener("click", function () {
-          const course = this.getAttribute("data-course");
-          const details = document.getElementById(`${course}-details`);
+    // Course item click handlers
+    document.querySelectorAll('.course-item').forEach(item => {
+      item.addEventListener('click', function () {
+        const course = this.getAttribute('data-course');
+        const details = document.getElementById(`${course}-details`);
 
-          // Toggle course details
-          document.querySelectorAll(".course-details").forEach((d) => {
-            if (d !== details) d.classList.remove("active");
-          });
-
-          details.classList.toggle("active");
-          scrollToBottom();
+        // Toggle course details
+        document.querySelectorAll('.course-details').forEach(d => {
+          if (d !== details) d.classList.remove('active');
         });
+
+        details.classList.toggle('active');
+        scrollToBottom();
       });
+    });
 
-      // Send message function
-      function sendMessage() {
-        const message = chatInput.value.trim();
-        if (message === "") return;
+    // Send message function
+    function sendMessage() {
+      const message = chatInput.value.trim();
+      if (message === "") return;
 
-        // Add user message
-        addMessage(message, "user");
-        chatInput.value = "";
+      // Add user message
+      addMessage(message, "user");
+      chatInput.value = "";
 
-        // Show typing indicator
-        typingIndicator.style.display = "block";
-        scrollToBottom();
+      // Show typing indicator
+      typingIndicator.style.display = "block";
+      scrollToBottom();
 
-        // Simulate bot response after a delay
-        setTimeout(function () {
-          typingIndicator.style.display = "none";
-          let botResponse = getBotResponse(message);
-
-          if (
-            message.toLowerCase().includes("courses") ||
-            message.toLowerCase().includes("all courses")
-          ) {
-            courseList.style.display = "flex";
-            addMessage(botResponse, "bot");
-          } else {
-            courseList.style.display = "none";
-            addMessage(botResponse, "bot");
-          }
-        }, 1500);
-      }
-
-      // Add message to chat
-      function addMessage(text, sender) {
-        const messageDiv = document.createElement("div");
-        messageDiv.className = `message ${sender}`;
-
-        const messageContent = document.createElement("div");
-        messageContent.className = "message-content";
-        messageContent.textContent = text;
-
-        messageDiv.appendChild(messageContent);
-        chatMessages.appendChild(messageDiv);
-
-        scrollToBottom();
-      }
-
-      // Scroll to bottom of chat
-      function scrollToBottom() {
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
-
-      // Get bot response based on user input
-      function getBotResponse(message) {
-        const lowerMessage = message.toLowerCase();
+      // Simulate bot response after a delay
+      setTimeout(function () {
+        typingIndicator.style.display = "none";
+        let botResponse = getBotResponse(message);
 
         if (
-          lowerMessage.includes("courses") ||
-          lowerMessage.includes("all courses")
+          message.toLowerCase().includes("courses") ||
+          message.toLowerCase().includes("all courses")
         ) {
-          return "Here are all our trending courses: Java Full Stack, Python Data Science, Web Development, Mobile App Development, Cloud Computing, Artificial Intelligence, Machine Learning, Cybersecurity, DevOps, and UI/UX Design. Click on any course above to see details.";
-        } else if (lowerMessage.includes("java")) {
-          return "💻 Java Full Stack Development covers Core Java, Advanced Java, Spring Framework, Hibernate, and Frontend technologies like HTML, CSS, and React. Click on the Java course above for details.";
-        } else if (lowerMessage.includes("python")) {
-          return "🐍 Python with Data Science includes Python basics, data analysis with Pandas, visualization, machine learning, and web frameworks like Flask and Django. Click on the Python course above for details.";
-        } else if (
-          lowerMessage.includes("web development") ||
-          lowerMessage.includes("web")
-        ) {
-          return "🌐 Web Development covers frontend (HTML, CSS, JavaScript, React) and backend (Node.js, Express, and databases). Click on the Web Development course above for details.";
-        } else if (
-          lowerMessage.includes("mobile") ||
-          lowerMessage.includes("app")
-        ) {
-          return "📱 Mobile App Development covers Android, iOS, and cross-platform app development with Flutter and React Native. Click on the Mobile App Development course above for details.";
-        } else if (
-          lowerMessage.includes("data science") ||
-          lowerMessage.includes("analytics")
-        ) {
-          return "📊 Data Science & Analytics covers Python, statistics, Pandas, visualization tools (Matplotlib, Power BI), and machine learning. Click on the Data Science course above for details.";
-        } else if (lowerMessage.includes("cloud")) {
-          return "☁️ Cloud Computing includes AWS, Azure, Google Cloud, and DevOps integration for scalable deployment. Click on the Cloud Computing course above for details.";
-        } else if (
-          lowerMessage.includes("ai") ||
-          lowerMessage.includes("artificial intelligence")
-        ) {
-          return "🤖 Artificial Intelligence covers neural networks, deep learning, NLP (Natural Language Processing), and Generative AI tools like ChatGPT. Click on the AI course above for details.";
-        } else if (
-          lowerMessage.includes("ml") ||
-          lowerMessage.includes("machine learning")
-        ) {
-          return "🧠 Machine Learning course includes supervised and unsupervised learning, regression, classification, and model deployment techniques. Click on the ML course above for more info.";
-        } else if (
-          lowerMessage.includes("cyber security") ||
-          lowerMessage.includes("cybersecurity") ||
-          lowerMessage.includes("hacking")
-        ) {
-          return "🔐 Cybersecurity covers ethical hacking, network security, penetration testing, and protecting against real-world cyber threats. Click on the Cybersecurity course above for details.";
-        } else if (lowerMessage.includes("devops")) {
-          return "⚙️ DevOps training includes CI/CD, Docker, Kubernetes, Jenkins, and version control with Git & GitHub. Click on the DevOps course above for details.";
-        } else if (
-          lowerMessage.includes("ui") ||
-          lowerMessage.includes("ux") ||
-          lowerMessage.includes("design")
-        ) {
-          return "🎨 UI/UX Design covers design principles, Figma, Adobe XD, wireframing, and prototyping for modern digital interfaces. Click on the UI/UX course above for details.";
-        } else if (
-          lowerMessage.includes("placement") ||
-          lowerMessage.includes("job")
-        ) {
-          return "🎯 We provide 100% placement assistance with mock interviews, resume building, and connections to our hiring partners. Would you like to know more about our placement training?";
-        } else if (
-          lowerMessage.includes("support") ||
-          lowerMessage.includes("help")
-        ) {
-          return "💬 Our support team is currently away. Please leave your message and we'll get back to you as soon as possible.";
-        } else if (
-          lowerMessage.includes("contact") ||
-          lowerMessage.includes("email") ||
-          lowerMessage.includes("phone")
-        ) {
-          return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+          courseList.style.display = "flex";
+          addMessage(botResponse, "bot");
         } else {
-          return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
+          courseList.style.display = "none";
+          addMessage(botResponse, "bot");
         }
+      }, 1500);
+    }
+
+    // Add message to chat
+    function addMessage(text, sender) {
+      const messageDiv = document.createElement("div");
+      messageDiv.className = `message ${sender}`;
+
+      const messageContent = document.createElement("div");
+      messageContent.className = "message-content";
+      messageContent.innerHTML = text.replace(/\n/g, '<br>');
+
+      messageDiv.appendChild(messageContent);
+      chatMessages.appendChild(messageDiv);
+
+      scrollToBottom();
+    }
+
+    // Scroll to bottom of chat
+    function scrollToBottom() {
+      setTimeout(() => {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 100);
+    }
+
+    // Get bot response based on user input
+    function getBotResponse(message) {
+      const lowerMessage = message.toLowerCase();
+
+      // Add greeting recognition first
+      if (lowerMessage.includes("good morning")) {
+        return "Good morning! ☀️ Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+      } else if (lowerMessage.includes("good afternoon")) {
+        return "Good afternoon! 🌞 Welcome to Rohil Technologies. How can I assist you today? You can ask about our courses, placements, or contact information.";
+      } else if (lowerMessage.includes("good evening")) {
+        return "Good evening! 🌙 Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+      } else if (
+        lowerMessage.includes("hi") ||
+        lowerMessage.includes("hello") ||
+        lowerMessage.includes("hey")
+      ) {
+        return "Hi there! 👋 Welcome to Rohil Technologies. How can I help you today? You can ask about:<br>• Courses<br>• Placements<br>• Contact";
+      } else if (
+        lowerMessage.includes("thank you") ||
+        lowerMessage.includes("thanks") ||
+        lowerMessage.includes("thankyou")
+      ) {
+        return "You're welcome! 😊 Glad I could help. Let me know if you need any more information about our courses or services!";
+      } else if (
+        lowerMessage.includes("courses") ||
+        lowerMessage.includes("all courses") ||
+        lowerMessage.includes("services")
+      ) {
+        return "Here are all our trending courses: Java Full Stack, Python Data Science, Web Development, Mobile App Development, Cloud Computing, Artificial Intelligence, Machine Learning, Cybersecurity, DevOps, and UI/UX Design. Click on any course above to see details.";
+      } else if (lowerMessage.includes("java")) {
+        return "💻 Java Full Stack Development covers Core Java, Advanced Java, Spring Framework, Hibernate, and Frontend technologies like HTML, CSS, and React. Click on the Java course above for details.";
+      } else if (lowerMessage.includes("python")) {
+        return "🐍 Python with Data Science includes Python basics, data analysis with Pandas, visualization, machine learning, and web frameworks like Flask and Django. Click on the Python course above for details.";
+      } else if (
+        lowerMessage.includes("web development") ||
+        lowerMessage.includes("web")
+      ) {
+        return "🌐 Web Development covers frontend (HTML, CSS, JavaScript, React) and backend (Node.js, Express, and databases). Click on the Web Development course above for details.";
+      } else if (
+        lowerMessage.includes("mobile") ||
+        lowerMessage.includes("app")
+      ) {
+        return "📱 Mobile App Development covers Android, iOS, and cross-platform app development with Flutter and React Native. Click on the Mobile App Development course above for details.";
+      } else if (
+        lowerMessage.includes("data science") ||
+        lowerMessage.includes("analytics")
+      ) {
+        return "📊 Data Science & Analytics covers Python, statistics, Pandas, visualization tools (Matplotlib, Power BI), and machine learning. Click on the Data Science course above for details.";
+      } else if (lowerMessage.includes("cloud")) {
+        return "☁️ Cloud Computing includes AWS, Azure, Google Cloud, and DevOps integration for scalable deployment. Click on the Cloud Computing course above for details.";
+      } else if (
+        lowerMessage.includes("ai") ||
+        lowerMessage.includes("artificial intelligence")
+      ) {
+        return "🤖 Artificial Intelligence covers neural networks, deep learning, NLP (Natural Language Processing), and Generative AI tools like ChatGPT. Click on the AI course above for details.";
+      } else if (
+        lowerMessage.includes("ml") ||
+        lowerMessage.includes("machine learning")
+      ) {
+        return "🧠 Machine Learning course includes supervised and unsupervised learning, regression, classification, and model deployment techniques. Click on the ML course above for more info.";
+      } else if (
+        lowerMessage.includes("cyber security") ||
+        lowerMessage.includes("cybersecurity") ||
+        lowerMessage.includes("hacking")
+      ) {
+        return "🔐 Cybersecurity covers ethical hacking, network security, penetration testing, and protecting against real-world cyber threats. Click on the Cybersecurity course above for details.";
+      } else if (lowerMessage.includes("devops")) {
+        return "⚙️ DevOps training includes CI/CD, Docker, Kubernetes, Jenkins, and version control with Git & GitHub. Click on the DevOps course above for details.";
+      } else if (
+        lowerMessage.includes("ui") ||
+        lowerMessage.includes("ux") ||
+        lowerMessage.includes("design")
+      ) {
+        return "🎨 UI/UX Design covers design principles, Figma, Adobe XD, wireframing, and prototyping for modern digital interfaces. Click on the UI/UX course above for details.";
+      } else if (
+        lowerMessage.includes("placement") ||
+        lowerMessage.includes("job")
+      ) {
+        return "🎯 We provide 100% placement assistance with mock interviews, resume building, and connections to our hiring partners. Would you like to know more about our placement training?";
+      } else if (
+        lowerMessage.includes("support") ||
+        lowerMessage.includes("help")
+      ) {
+        return "💬 Our support team is currently away. Please leave your message and we'll get back to you as soon as possible.";
+      } else if (
+        lowerMessage.includes("contact") ||
+        lowerMessage.includes("email") ||
+        lowerMessage.includes("phone")
+      ) {
+        return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+      } else {
+        return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
       }
+    }
 
-      // Course enrollment function
-      window.enrollCourse = function (courseName) {
-        addMessage(`I'm interested in enrolling in ${courseName}`, "user");
+    // Course enrollment function
+    window.enrollCourse = function (courseName) {
+      addMessage(`I'm interested in enrolling in ${courseName}`, "user");
 
-        typingIndicator.style.display = "block";
-        scrollToBottom();
+      typingIndicator.style.display = "block";
+      scrollToBottom();
 
-        setTimeout(function () {
-          typingIndicator.style.display = "none";
-          addMessage(
-            `Great! I've noted your interest in ${courseName}. Our admission team will contact you shortly with enrollment details.`,
-            "bot"
-          );
-        }, 1500);
-      };
-
-      // Syllabus request function
-      window.requestSyllabus = function (courseName) {
-        addMessage(`Can I get the syllabus for ${courseName}?`, "user");
-
-        typingIndicator.style.display = "block";
-        scrollToBottom();
-
-        setTimeout(function () {
-          typingIndicator.style.display = "none";
-          addMessage(
-            `I've sent the ${courseName} syllabus to your email. Please check your inbox. If you don't receive it, contact us at admin@rohiltechnologies.com`,
-            "bot"
-          );
-        }, 1500);
-      };
-
-      // Send message on button click
-      sendButton.addEventListener("click", sendMessage);
-
-      // Send message on Enter key
-      chatInput.addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-          sendMessage();
-        }
-      });
-
-      // Auto-open chat after 10 seconds
       setTimeout(function () {
-        if (chatContainer.style.display !== "flex") {
-          chatContainer.style.display = "flex";
+        typingIndicator.style.display = "none";
+        addMessage(
+          `Great! I've noted your interest in ${courseName}. Our admission team will contact you shortly with enrollment details.`,
+          "bot"
+        );
+      }, 1500);
+    };
+
+    // Syllabus request function
+    window.requestSyllabus = function (courseName) {
+      addMessage(`Can I get the syllabus for ${courseName}?`, "user");
+
+      typingIndicator.style.display = "block";
+      scrollToBottom();
+
+      setTimeout(function () {
+        typingIndicator.style.display = "none";
+        addMessage(
+          `I've sent the ${courseName} syllabus to your email. Please check your inbox. If you don't receive it, contact us at admin@rohiltechnologies.com`,
+          "bot"
+        );
+      }, 1500);
+    };
+
+    // Send message on button click
+    sendButton.addEventListener("click", sendMessage);
+
+    // Send message on Enter key
+    chatInput.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        sendMessage();
+      }
+    });
+
+    // Auto-open chat after 10 seconds
+    setTimeout(function () {
+      if (chatContainer.style.display !== "flex") {
+        chatContainer.style.display = "flex";
+      }
+    }, 10000);
+
+    // Handle window resize for chat widget
+    window.addEventListener('resize', function() {
+      const chatContainer = document.getElementById('chatContainer');
+      if (window.innerWidth <= 768 && chatContainer.style.display === 'flex') {
+        // Ensure proper positioning on mobile
+        chatContainer.style.bottom = '70px';
+        chatContainer.style.left = '0';
+      }
+    });
+
+    // Close chat when clicking outside on mobile
+    document.addEventListener('click', function(e) {
+      const chatContainer = document.getElementById('chatContainer');
+      const chatToggle = document.getElementById('chatToggle');
+      const chatClose = document.getElementById('chatClose');
+      
+      if (window.innerWidth <= 768 && 
+          chatContainer.style.display === 'flex' &&
+          !chatContainer.contains(e.target) && 
+          !chatToggle.contains(e.target)) {
+        chatContainer.style.display = 'none';
+      }
+    });
+
+    // EmailJS Newsletter form submission
+    document
+      .getElementById("newsletterForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = document.getElementById("newsletterEmail").value;
+        const messageDiv = document.getElementById("newsletterMessage");
+        const submitBtn = document.getElementById("newsletterBtn");
+
+        // Simple email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          messageDiv.textContent = "Please enter a valid email address.";
+          messageDiv.className = "newsletter-message newsletter-error";
+          messageDiv.style.display = "block";
+          return;
         }
-      }, 10000);
 
-      // EmailJS Newsletter form submission
-      document
-        .getElementById("newsletterForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const email = document.getElementById("newsletterEmail").value;
-          const messageDiv = document.getElementById("newsletterMessage");
-          const submitBtn = document.getElementById("newsletterBtn");
+        // Show loading state
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = "Subscribing...";
+        submitBtn.disabled = true;
 
-          // Simple email validation
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(email)) {
-            messageDiv.textContent = "Please enter a valid email address.";
-            messageDiv.className = "newsletter-message newsletter-error";
-            messageDiv.style.display = "block";
-            return;
-          }
+        // Send email using EmailJS with proper template parameters
+        emailjs
+          .send("service_45iohnc", "template_hjk6fxj", {
+            to_email: "rohiltechtrainee@gmail.com",
+            from_email: email,
+            subject: "New Newsletter Subscription - Rohil NextGen",
+            message: `A new user has subscribed to the Rohil NextGen newsletter.\n\nEmail: ${email}\n\nDate: ${new Date().toLocaleString()}`,
+            reply_to: email,
+          })
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+              // Show success message
+              messageDiv.textContent = `Thank you for subscribing with ${email}! You will receive updates from Rohil NextGen.`;
+              messageDiv.className = "newsletter-message newsletter-success";
+              messageDiv.style.display = "block";
 
-          // Show loading state
-          const originalText = submitBtn.textContent;
-          submitBtn.textContent = "Subscribing...";
-          submitBtn.disabled = true;
+              // Reset form
+              document.getElementById("newsletterForm").reset();
 
-          // Send email using EmailJS with proper template parameters
-          emailjs
-            .send("service_45iohnc", "template_hjk6fxj", {
-              to_email: "rohiltechtrainee@gmail.com",
-              from_email: email,
-              subject: "New Newsletter Subscription - Rohil NextGen",
-              message: `A new user has subscribed to the Rohil NextGen newsletter.\n\nEmail: ${email}\n\nDate: ${new Date().toLocaleString()}`,
-              reply_to: email,
-            })
-            .then(
-              function (response) {
-                console.log("SUCCESS!", response.status, response.text);
-                // Show success message
-                messageDiv.textContent = `Thank you for subscribing with ${email}! You will receive updates from Rohil NextGen.`;
-                messageDiv.className = "newsletter-message newsletter-success";
-                messageDiv.style.display = "block";
+              // Reset button
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
 
-                // Reset form
-                document.getElementById("newsletterForm").reset();
+              // Hide message after 5 seconds
+              setTimeout(function () {
+                messageDiv.style.display = "none";
+              }, 5000);
+            },
+            function (error) {
+              // Reset button
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+            }
+          );
+      });
+  </script>
+  <script src="./script.js"></script>
+</body>
 
-                // Reset button
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-
-                // Hide message after 5 seconds
-                setTimeout(function () {
-                  messageDiv.style.display = "none";
-                }, 5000);
-              },
-              function (error) {
-                // Reset button
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-              }
-            );
-        });
-    </script>
-    <script src="./script.js"></script>
-  </body>
 </html>
