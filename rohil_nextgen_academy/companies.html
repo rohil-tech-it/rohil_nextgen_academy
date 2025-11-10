@@ -2287,19 +2287,38 @@
         function getBotResponse(message) {
             const lowerMessage = message.toLowerCase();
 
-            // Add greeting recognition first
+            // Add greeting recognition first - REORDERED for proper matching
             if (lowerMessage.includes("good morning")) {
-                return "Good morning! ☀️ Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+                return "Good morning! ☀️ Welcome to Rohil Groups. How can I help you today? You can ask about our courses, placements, or contact information.";
             } else if (lowerMessage.includes("good afternoon")) {
-                return "Good afternoon! 🌞 Welcome to Rohil Technologies. How can I assist you today? You can ask about our courses, placements, or contact information.";
+                return "Good afternoon! 🌞 Welcome to Rohil Groups. How can I assist you today? You can ask about our courses, placements, or contact information.";
             } else if (lowerMessage.includes("good evening")) {
-                return "Good evening! 🌙 Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+                return "Good evening! 🌙 Welcome to Rohil Groups. How can I help you today? You can ask about our courses, placements, or contact information.";
+            } else if (
+                lowerMessage.includes("b.tech") ||
+                lowerMessage.includes("b.sc") ||
+                lowerMessage.includes("graduate") ||
+                lowerMessage.includes("passed out") ||
+                lowerMessage.includes("passed-out") ||
+                lowerMessage.includes("student") ||
+                lowerMessage.includes("Hi, I am a 2023 passed-out MCA student. Can I get a job in the IT field?") ||
+                lowerMessage.includes("job in it")
+            ) {
+                // Extract year from message if present
+                const yearMatch = lowerMessage.match(/\b(19|20)\d{2}\b/);
+                const year = yearMatch ? yearMatch[0] : '';
+
+                if (year) {
+                    return `Of course! 🎯 Even though you graduated in ${year}, you can definitely get a job in the IT field. What matters most is your skills, projects, and practical knowledge.`;
+                } else {
+                    return "Of course! 🎯 You can definitely get a job in the IT field. What matters most is your skills, projects, and practical knowledge.";
+                }
             } else if (
                 lowerMessage.includes("hi") ||
                 lowerMessage.includes("hello") ||
                 lowerMessage.includes("hey")
             ) {
-                return "Hi there! 👋 Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+                return "Hi there! 👋 Welcome to Rohil Groups. How can I help you today? You can ask about:<br>• Courses<br>• Placements<br>• Contact";
             } else if (
                 lowerMessage.includes("thank you") ||
                 lowerMessage.includes("thanks") ||
@@ -2308,7 +2327,8 @@
                 return "You're welcome! 😊 Glad I could help. Let me know if you need any more information about our courses or services!";
             } else if (
                 lowerMessage.includes("courses") ||
-                lowerMessage.includes("all courses")
+                lowerMessage.includes("all courses") ||
+                lowerMessage.includes("services")
             ) {
                 return "Here are all our trending courses: Java Full Stack, Python Data Science, Web Development, Mobile App Development, Cloud Computing, Artificial Intelligence, Machine Learning, Cybersecurity, DevOps, and UI/UX Design. Click on any course above to see details.";
             } else if (lowerMessage.includes("java")) {
@@ -2372,6 +2392,12 @@
                 lowerMessage.includes("phone")
             ) {
                 return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+            } else if (
+                lowerMessage.includes("suitable course") ||
+                lowerMessage.includes("what should i learn?") ||
+                lowerMessage.includes("recommend course")
+            ) {
+                return `To recommend the most suitable course, please share your educational background and area of interest. MCA / B.Tech / B.Sc IT → Full Stack Development, Data Analytics, or Cloud Computing. MBA / BBA → Digital Marketing or Business Analytics. Non-technical background → Web Design or Basic Computer Application`;
             } else {
                 return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
             }

@@ -778,7 +778,7 @@
       }
     }
 
-        /* Chat Widget Styles - LEFT SIDE */
+    /* Chat Widget Styles - LEFT SIDE */
     .chat-widget {
       position: fixed;
       bottom: 20px;
@@ -988,10 +988,15 @@
     .typing-dots span:nth-child(3) {
       animation-delay: 0.4s;
     }
+
     @keyframes typing {
-      0%, 60%, 100% {
+
+      0%,
+      60%,
+      100% {
         opacity: 0.6;
       }
+
       30% {
         opacity: 1;
       }
@@ -1956,7 +1961,7 @@
         if (e.target.classList.contains('quick-action-btn')) {
           return;
         }
-        
+
         const course = this.getAttribute('data-course');
         const details = document.getElementById(`${course}-details`);
 
@@ -1989,17 +1994,17 @@
         typingIndicator.style.display = "none";
         const botResponse = getBotResponse(message);
 
-        if (message.toLowerCase().includes("courses") || 
-            message.toLowerCase().includes("all courses") ||
-            message.toLowerCase().includes("what courses") ||
-            message.toLowerCase().includes("available courses")) {
+        if (message.toLowerCase().includes("courses") ||
+          message.toLowerCase().includes("all courses") ||
+          message.toLowerCase().includes("what courses") ||
+          message.toLowerCase().includes("available courses")) {
           courseList.style.display = "flex";
           addMessage(botResponse, "bot");
         } else {
           courseList.style.display = "none";
           addMessage(botResponse, "bot");
         }
-        
+
         sendButton.disabled = false;
       }, 1000 + Math.random() * 1000); // Random delay between 1-2 seconds
     }
@@ -2011,7 +2016,7 @@
 
       const messageContent = document.createElement("div");
       messageContent.className = "message-content";
-      
+
       // Handle line breaks properly
       messageContent.innerHTML = text.replace(/\n/g, '<br>');
 
@@ -2032,51 +2037,119 @@
     function getBotResponse(message) {
       const lowerMessage = message.toLowerCase();
 
-      // Greeting recognition
+
+      // Add greeting recognition first - REORDERED for proper matching
       if (lowerMessage.includes("good morning")) {
-        return "Good morning! ☀️ Welcome to Rohil Technologies. How can I help you today? You can ask about:\n• Courses\n• Placements\n• Contact";
+        return "Good morning! ☀️ Welcome to Rohil Groups. How can I help you today? You can ask about our courses, placements, or contact information.";
       } else if (lowerMessage.includes("good afternoon")) {
-        return "Good afternoon! 🌞 Welcome to Rohil Technologies. How can I assist you today? You can ask about:\n• Courses\n• Placements\n• Contact";
+        return "Good afternoon! 🌞 Welcome to Rohil Groups. How can I assist you today? You can ask about our courses, placements, or contact information.";
       } else if (lowerMessage.includes("good evening")) {
-        return "Good evening! 🌙 Welcome to Rohil Technologies. How can I help you today? You can ask about:\n• Courses\n• Placements\n• Contact";
-      } else if (lowerMessage.includes("hi") || lowerMessage.includes("hello") || lowerMessage.includes("hey")) {
-        return "Hi there! 👋 Welcome to Rohil Technologies. How can I help you today? You can ask about:\n• Courses\n• Placements\n• Contact";
-      } else if (lowerMessage.includes("thank you") || lowerMessage.includes("thanks") || lowerMessage.includes("thankyou")) {
+        return "Good evening! 🌙 Welcome to Rohil Groups. How can I help you today? You can ask about our courses, placements, or contact information.";
+      } else if (
+        lowerMessage.includes("b.tech") ||
+        lowerMessage.includes("b.sc") ||
+        lowerMessage.includes("graduate") ||
+        lowerMessage.includes("passed out") ||
+        lowerMessage.includes("passed-out") ||
+        lowerMessage.includes("student") ||
+        lowerMessage.includes("Hi, I am a 2023 passed-out MCA student. Can I get a job in the IT field?") ||
+        lowerMessage.includes("job in it")
+      ) {
+        // Extract year from message if present
+        const yearMatch = lowerMessage.match(/\b(19|20)\d{2}\b/);
+        const year = yearMatch ? yearMatch[0] : '';
+
+        if (year) {
+          return `Of course! 🎯 Even though you graduated in ${year}, you can definitely get a job in the IT field. What matters most is your skills, projects, and practical knowledge.`;
+        } else {
+          return "Of course! 🎯 You can definitely get a job in the IT field. What matters most is your skills, projects, and practical knowledge.";
+        }
+      } else if (
+        lowerMessage.includes("hi") ||
+        lowerMessage.includes("hello") ||
+        lowerMessage.includes("hey")
+      ) {
+        return "Hi there! 👋 Welcome to Rohil Groups. How can I help you today? You can ask about:<br>• Courses<br>• Placements<br>• Contact";
+      } else if (
+        lowerMessage.includes("thank you") ||
+        lowerMessage.includes("thanks") ||
+        lowerMessage.includes("thankyou")
+      ) {
         return "You're welcome! 😊 Glad I could help. Let me know if you need any more information about our courses or services!";
-      } 
-      // Course inquiries
-      else if (lowerMessage.includes("courses") || lowerMessage.includes("all courses") || lowerMessage.includes("what courses") || lowerMessage.includes("available courses")) {
-        return "Here are all our trending courses:\n• Java Full Stack\n• Python Data Science\n• Web Development\n• Mobile App Development\n• Cloud Computing\n• Artificial Intelligence\n• Machine Learning\n• Cybersecurity\n• DevOps\n• UI/UX Design\n\nClick on any course above to see details!";
+      } else if (
+        lowerMessage.includes("courses") ||
+        lowerMessage.includes("all courses") ||
+        lowerMessage.includes("services")
+      ) {
+        return "Here are all our trending courses: Java Full Stack, Python Data Science, Web Development, Mobile App Development, Cloud Computing, Artificial Intelligence, Machine Learning, Cybersecurity, DevOps, and UI/UX Design. Click on any course above to see details.";
       } else if (lowerMessage.includes("java")) {
-        return "💻 Java Full Stack Development covers:\n• Core Java: OOPs, Collections, Multithreading\n• Advanced Java: JDBC, Servlets, JSP\n• Frameworks: Spring, Hibernate\n• Frontend: HTML, CSS, JavaScript, React\n\nClick on the Java course above for more details!";
+        return "💻 Java Full Stack Development covers Core Java, Advanced Java, Spring Framework, Hibernate, and Frontend technologies like HTML, CSS, and React. Click on the Java course above for details.";
       } else if (lowerMessage.includes("python")) {
-        return "🐍 Python with Data Science includes:\n• Python basics & OOPs\n• Data analysis with Pandas, NumPy\n• Visualization & Machine Learning\n• Web frameworks: Flask & Django\n\nClick on the Python course above for details!";
-      } else if (lowerMessage.includes("web development") || lowerMessage.includes("web")) {
-        return "🌐 Web Development covers:\n• Frontend: HTML, CSS, JavaScript, React\n• Backend: Node.js, Express, Databases\n• Full-stack development\n• Deployment & hosting\n\nClick on the Web Development course above!";
-      } else if (lowerMessage.includes("mobile") || lowerMessage.includes("app")) {
-        return "📱 Mobile App Development covers:\n• Android & iOS development\n• Cross-platform: Flutter & React Native\n• Backend integration\n• App store deployment\n\nClick on Mobile App Development above!";
-      } else if (lowerMessage.includes("data science") || lowerMessage.includes("analytics")) {
-        return "📊 Data Science & Analytics covers:\n• Python programming\n• Statistics & probability\n• Machine learning algorithms\n• Data visualization tools\n\nClick on Data Science course above!";
+        return "🐍 Python with Data Science includes Python basics, data analysis with Pandas, visualization, machine learning, and web frameworks like Flask and Django. Click on the Python course above for details.";
+      } else if (
+        lowerMessage.includes("web development") ||
+        lowerMessage.includes("web")
+      ) {
+        return "🌐 Web Development covers frontend (HTML, CSS, JavaScript, React) and backend (Node.js, Express, and databases). Click on the Web Development course above for details.";
+      } else if (
+        lowerMessage.includes("mobile") ||
+        lowerMessage.includes("app")
+      ) {
+        return "📱 Mobile App Development covers Android, iOS, and cross-platform app development with Flutter and React Native. Click on the Mobile App Development course above for details.";
+      } else if (
+        lowerMessage.includes("data science") ||
+        lowerMessage.includes("analytics")
+      ) {
+        return "📊 Data Science & Analytics covers Python, statistics, Pandas, visualization tools (Matplotlib, Power BI), and machine learning. Click on the Data Science course above for details.";
       } else if (lowerMessage.includes("cloud")) {
-        return "☁️ Cloud Computing includes:\n• AWS, Azure, Google Cloud\n• DevOps integration\n• Scalable deployment\n• Containerization\n\nClick on Cloud Computing above!";
-      } else if (lowerMessage.includes("ai") || lowerMessage.includes("artificial intelligence")) {
-        return "🤖 Artificial Intelligence covers:\n• Neural networks & deep learning\n• NLP (Natural Language Processing)\n• Computer vision\n• Generative AI tools\n\nClick on AI course above!";
-      } else if (lowerMessage.includes("ml") || lowerMessage.includes("machine learning")) {
-        return "🧠 Machine Learning includes:\n• Supervised & unsupervised learning\n• Regression & classification\n• Model deployment\n• Real-world projects\n\nClick on ML course above!";
-      } else if (lowerMessage.includes("cyber security") || lowerMessage.includes("cybersecurity") || lowerMessage.includes("hacking")) {
-        return "🔐 Cybersecurity covers:\n• Ethical hacking\n• Network security\n• Penetration testing\n• Threat protection\n\nClick on Cybersecurity above!";
+        return "☁️ Cloud Computing includes AWS, Azure, Google Cloud, and DevOps integration for scalable deployment. Click on the Cloud Computing course above for details.";
+      } else if (
+        lowerMessage.includes("ai") ||
+        lowerMessage.includes("artificial intelligence")
+      ) {
+        return "🤖 Artificial Intelligence covers neural networks, deep learning, NLP (Natural Language Processing), and Generative AI tools like ChatGPT. Click on the AI course above for details.";
+      } else if (
+        lowerMessage.includes("ml") ||
+        lowerMessage.includes("machine learning")
+      ) {
+        return "🧠 Machine Learning course includes supervised and unsupervised learning, regression, classification, and model deployment techniques. Click on the ML course above for more info.";
+      } else if (
+        lowerMessage.includes("cyber security") ||
+        lowerMessage.includes("cybersecurity") ||
+        lowerMessage.includes("hacking")
+      ) {
+        return "🔐 Cybersecurity covers ethical hacking, network security, penetration testing, and protecting against real-world cyber threats. Click on the Cybersecurity course above for details.";
       } else if (lowerMessage.includes("devops")) {
-        return "⚙️ DevOps training includes:\n• CI/CD pipelines\n• Docker & Kubernetes\n• Jenkins & Git\n• Cloud deployment\n\nClick on DevOps course above!";
-      } else if (lowerMessage.includes("ui") || lowerMessage.includes("ux") || lowerMessage.includes("design")) {
-        return "🎨 UI/UX Design covers:\n• Design principles\n• Figma & Adobe XD\n• Wireframing & prototyping\n• User research\n\nClick on UI/UX course above!";
-      } 
-      // Other inquiries
-      else if (lowerMessage.includes("placement") || lowerMessage.includes("job")) {
-        return "🎯 We provide 100% placement assistance with:\n• Mock interviews\n• Resume building\n• Industry connections\n• Career guidance\n\nWould you like to know more about our placement training?";
-      } else if (lowerMessage.includes("support") || lowerMessage.includes("help")) {
+        return "⚙️ DevOps training includes CI/CD, Docker, Kubernetes, Jenkins, and version control with Git & GitHub. Click on the DevOps course above for details.";
+      } else if (
+        lowerMessage.includes("ui") ||
+        lowerMessage.includes("ux") ||
+        lowerMessage.includes("design")
+      ) {
+        return "🎨 UI/UX Design covers design principles, Figma, Adobe XD, wireframing, and prototyping for modern digital interfaces. Click on the UI/UX course above for details.";
+      } else if (
+        lowerMessage.includes("placement") ||
+        lowerMessage.includes("job")
+      ) {
+        return "🎯 We provide 100% placement assistance with mock interviews, resume building, and connections to our hiring partners. Would you like to know more about our placement training?";
+      } else if (
+        lowerMessage.includes("support") ||
+        lowerMessage.includes("help")
+      ) {
         return "💬 Our support team is currently away. Please leave your message and we'll get back to you as soon as possible.";
-      } else if (lowerMessage.includes("contact") || lowerMessage.includes("email") || lowerMessage.includes("phone")) {
-        return "📞 You can reach us at:\n• Email: admin@rohiltechnologies.com\n• Phone: +91 97518 67879\n• Location: Virudhunagar\n\nWe're here to help you!";
+      } else if (
+        lowerMessage.includes("contact") ||
+        lowerMessage.includes("email") ||
+        lowerMessage.includes("phone")
+      ) {
+        return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+      } else if (
+        lowerMessage.includes("which course?") ||
+        lowerMessage.includes("suitable course") ||
+        lowerMessage.includes("what should i learn?") ||
+        lowerMessage.includes("recommend course")
+      ) {
+          return `To recommend the most suitable course, please share your educational background and area of interest. MCA / B.Tech / B.Sc IT → Full Stack Development, Data Analytics, or Cloud Computing. MBA / BBA → Digital Marketing or Business Analytics. Non-technical background → Web Design or Basic Computer Application`;
       } else {
         return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
       }
@@ -2115,7 +2188,7 @@
     };
 
     // Enable send button when input has text
-    chatInput.addEventListener('input', function() {
+    chatInput.addEventListener('input', function () {
       sendButton.disabled = this.value.trim() === '';
     });
 
@@ -2139,11 +2212,11 @@
     }, 5000);
 
     // Close chat when clicking outside on mobile
-    document.addEventListener('click', function(e) {
-      if (window.innerWidth <= 768 && 
-          chatContainer.style.display === 'flex' &&
-          !chatContainer.contains(e.target) && 
-          !chatToggle.contains(e.target)) {
+    document.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768 &&
+        chatContainer.style.display === 'flex' &&
+        !chatContainer.contains(e.target) &&
+        !chatToggle.contains(e.target)) {
         chatContainer.style.display = 'none';
       }
     });

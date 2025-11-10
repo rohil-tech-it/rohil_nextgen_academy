@@ -30,6 +30,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Poppins", sans-serif;
       line-height: 1.6;
@@ -45,7 +49,7 @@
       padding: 0 20px;
     }
 
-    /* Top Bar Styles - FIXED */
+    /* Top Bar Styles */
     .top-bar {
       background-color: var(--primary-red);
       color: var(--white);
@@ -96,7 +100,7 @@
       transform: translateY(-3px) scale(1.1);
     }
 
-    /* Navigation Styles - IMPROVED RESPONSIVE */
+    /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -222,7 +226,7 @@
       visibility: visible;
     }
 
-    /* Hero Section - IMPROVED */
+    /* Hero Section */
     .hero-section {
       background-image: linear-gradient(rgba(102, 100, 100, 0.7),
           rgba(29, 29, 29, 0.7)),
@@ -283,7 +287,7 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
-    /* Blog Section - IMPROVED */
+    /* Blog Section */
     .blog-section {
       padding: 60px 0;
       background-color: var(--white);
@@ -402,6 +406,62 @@
       transform: translateX(5px);
     }
 
+    /* Interview Questions Specific Styles */
+    .interview-questions {
+      background: var(--light-gray);
+      border-radius: 10px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .interview-questions h4 {
+      color: var(--primary-red);
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      border-bottom: 2px solid var(--primary-red);
+      padding-bottom: 10px;
+    }
+
+    .question-item {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--primary-red);
+    }
+
+    .question {
+      font-weight: 600;
+      color: var(--dark-gray);
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .answer {
+      color: var(--medium-gray);
+      line-height: 1.6;
+    }
+
+    .answer ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    .answer li {
+      margin-bottom: 8px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      background: var(--primary-red);
+      color: var(--white);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
     /* Related Content Styles */
     .related-content {
       max-height: 0;
@@ -417,31 +477,6 @@
       max-height: 1000px;
       margin-top: 20px;
       padding: 20px;
-    }
-
-    .related-content h4 {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      color: var(--dark-gray);
-      border-bottom: 2px solid var(--primary-red);
-      padding-bottom: 8px;
-    }
-
-    .related-content p {
-      margin-bottom: 15px;
-      color: var(--medium-gray);
-      line-height: 1.6;
-    }
-
-    .related-content ul {
-      margin-left: 20px;
-      margin-bottom: 15px;
-    }
-
-    .related-content li {
-      margin-bottom: 8px;
-      color: var(--medium-gray);
-      line-height: 1.5;
     }
 
     .sidebar {
@@ -883,7 +918,7 @@
       color: var(--dark-gray);
     }
 
-    /* Chat Widget Styles - LEFT SIDE */
+    /* Chat Widget Styles */
     .chat-widget {
       position: fixed;
       bottom: 20px;
@@ -942,17 +977,6 @@
       height: 60px;
       border-radius: 50%;
       background-color: white;
-    }
-
-    .chat-logo img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      position: fixed;
-      bottom: 110px;
-      left: 20px;
-      z-index: 999;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .chat-header h3 {
@@ -1484,6 +1508,18 @@
         width: 320px;
         height: 450px;
       }
+
+      .interview-questions {
+        padding: 15px;
+      }
+
+      .question-item {
+        padding: 15px;
+      }
+
+      .question {
+        font-size: 1rem;
+      }
     }
 
     /* Small devices (landscape phones, 576px and up) */
@@ -1630,579 +1666,6 @@
         padding: 8px 12px;
       }
     }
-
-    /* Enhanced Chat Widget Styles - LEFT SIDE */
-    .chat-widget {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 1000;
-      font-family: "Poppins", sans-serif;
-    }
-
-    .chat-toggle {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg,
-          var(--primary-red),
-          var(--primary-red));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      color: white;
-      font-size: 24px;
-    }
-
-    .chat-toggle:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    .chat-container {
-      width: 350px;
-      height: 500px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      margin-bottom: 15px;
-    }
-
-    .chat-header {
-      background: linear-gradient(135deg,
-          var(--primary-red),
-          var(--dark-red));
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .chatbot-image {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: white;
-    }
-
-    .chat-logo img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      position: fixed;
-      bottom: 110px;
-      left: 20px;
-      z-index: 999;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .chat-header h3 {
-      margin: 0;
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .chat-status {
-      display: flex;
-      align-items: center;
-      font-size: 12px;
-    }
-
-    .status-indicator {
-      width: 8px;
-      height: 8px;
-      background-color: #2ecc71;
-      border-radius: 50%;
-      margin-right: 5px;
-    }
-
-    .chat-close {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .chat-messages {
-      flex: 1;
-      padding: 15px;
-      overflow-y: auto;
-      background-color: #f9f9f9;
-    }
-
-    .message {
-      margin-bottom: 15px;
-      display: flex;
-    }
-
-    .message.user {
-      justify-content: flex-end;
-    }
-
-    .message.bot {
-      justify-content: flex-start;
-    }
-
-    .message-content {
-      max-width: 80%;
-      padding: 10px 15px;
-      border-radius: 18px;
-      font-size: 14px;
-      line-height: 1.4;
-      word-wrap: break-word;
-    }
-
-    .user .message-content {
-      background: linear-gradient(135deg,
-          var(--primary-red),
-          var(--dark-red));
-      color: white;
-      border-bottom-right-radius: 5px;
-    }
-
-    .bot .message-content {
-      background: white;
-      color: #333;
-      border: 1px solid #e0e0e0;
-      border-bottom-left-radius: 5px;
-    }
-
-    .chat-input-container {
-      padding: 15px;
-      border-top: 1px solid #e0e0e0;
-      display: flex;
-      background: white;
-      align-items: center;
-    }
-
-    .chat-input {
-      flex: 1;
-      padding: 12px 15px;
-      border: 1px solid #e0e0e0;
-      border-radius: 25px;
-      outline: none;
-      font-family: "Poppins", sans-serif;
-      font-size: 14px;
-      min-height: 20px;
-    }
-
-    .chat-input:focus {
-      border-color: var(--primary-red);
-    }
-
-    .send-button {
-      background: linear-gradient(135deg,
-          var(--primary-red),
-          var(--dark-red));
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      margin-left: 10px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-      flex-shrink: 0;
-    }
-
-    .send-button:hover {
-      transform: scale(1.05);
-    }
-
-    .typing-indicator {
-      display: none;
-      padding: 10px 15px;
-      font-style: italic;
-      color: #777;
-      font-size: 12px;
-    }
-
-    .typing-dots {
-      display: inline-block;
-    }
-
-    .typing-dots span {
-      animation: typing 1.4s infinite;
-      opacity: 0.6;
-    }
-
-    .typing-dots span:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .typing-dots span:nth-child(3) {
-      animation-delay: 0.4s;
-    }
-
-    @keyframes typing {
-
-      0%,
-      60%,
-      100% {
-        opacity: 0.6;
-      }
-
-      30% {
-        opacity: 1;
-      }
-    }
-
-    /* Course List Styles */
-    .course-list {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .course-item {
-      background: white;
-      border-radius: 8px;
-      padding: 12px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: all 0.3s;
-      border-left: 3px solid var(--primary-red);
-    }
-
-    .course-item:hover {
-      transform: translateX(5px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .course-title {
-      font-weight: 600;
-      color: var(--dark-red);
-      margin-bottom: 5px;
-      font-size: 14px;
-    }
-
-    .course-duration {
-      font-size: 12px;
-      color: #777;
-    }
-
-    .course-details {
-      display: none;
-      margin-top: 10px;
-      padding: 10px;
-      background: #f5f5f5;
-      border-radius: 5px;
-      font-size: 13px;
-    }
-
-    .course-details.active {
-      display: block;
-    }
-
-    .quick-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
-
-    .quick-action-btn {
-      background: var(--primary-red);
-      color: white;
-      border: none;
-      border-radius: 15px;
-      padding: 8px 12px;
-      font-size: 11px;
-      cursor: pointer;
-      transition: background 0.3s;
-      min-height: 30px;
-    }
-
-    .quick-action-btn:hover {
-      background: var(--dark-red);
-    }
-
-    /* Enhanced Mobile Responsiveness for Chat Widget */
-    @media (max-width: 768px) {
-      .chat-widget {
-        bottom: 15px;
-        left: 15px;
-        right: 15px;
-        display: flex;
-        justify-content: flex-start;
-      }
-
-      .chat-container {
-        width: 100%;
-        max-width: 400px;
-        height: 70vh;
-        max-height: 500px;
-        position: fixed;
-        bottom: 80px;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-bottom: 0;
-      }
-
-      .chat-toggle {
-        width: 55px;
-        height: 55px;
-        font-size: 22px;
-        position: relative;
-        z-index: 1001;
-      }
-
-      .chat-header {
-        padding: 12px 15px;
-      }
-
-      .chat-header h3 {
-        font-size: 15px;
-      }
-
-      .chat-messages {
-        padding: 12px;
-      }
-
-      .message-content {
-        max-width: 85%;
-        font-size: 13px;
-        padding: 10px 12px;
-      }
-
-      .chat-input-container {
-        padding: 12px;
-      }
-
-      .chat-input {
-        padding: 10px 12px;
-        font-size: 13px;
-      }
-
-      .send-button {
-        width: 38px;
-        height: 38px;
-        font-size: 14px;
-      }
-
-      .course-item {
-        padding: 10px;
-      }
-
-      .course-title {
-        font-size: 13px;
-      }
-
-      .course-details {
-        font-size: 12px;
-        padding: 8px;
-      }
-
-      .quick-action-btn {
-        padding: 6px 10px;
-        font-size: 10px;
-        min-height: 28px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .chat-widget {
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
-      }
-
-      .chat-container {
-        height: 65vh;
-        max-height: 450px;
-        bottom: 70px;
-      }
-
-      .chat-toggle {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-      }
-
-      .chat-header {
-        padding: 10px 12px;
-      }
-
-      .chat-header h3 {
-        font-size: 14px;
-      }
-
-      .chat-status {
-        font-size: 11px;
-      }
-
-      .chat-close {
-        width: 28px;
-        height: 28px;
-        font-size: 16px;
-      }
-
-      .chat-messages {
-        padding: 10px;
-      }
-
-      .message {
-        margin-bottom: 12px;
-      }
-
-      .message-content {
-        max-width: 90%;
-        font-size: 12px;
-        padding: 8px 10px;
-      }
-
-      .chat-input-container {
-        padding: 10px;
-      }
-
-      .chat-input {
-        padding: 8px 10px;
-        font-size: 12px;
-      }
-
-      .send-button {
-        width: 36px;
-        height: 36px;
-        font-size: 13px;
-        margin-left: 8px;
-      }
-
-      .course-list {
-        gap: 8px;
-      }
-
-      .course-item {
-        padding: 8px;
-      }
-
-      .course-title {
-        font-size: 12px;
-      }
-
-      .course-duration {
-        font-size: 11px;
-      }
-
-      .course-details {
-        font-size: 11px;
-        padding: 6px;
-      }
-
-      .quick-actions {
-        gap: 6px;
-      }
-
-      .quick-action-btn {
-        padding: 5px 8px;
-        font-size: 9px;
-        min-height: 26px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .chat-container {
-        height: 60vh;
-        max-height: 400px;
-      }
-
-      .chat-toggle {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-      }
-
-      .message-content {
-        max-width: 92%;
-        font-size: 11px;
-      }
-
-      .quick-actions {
-        flex-direction: column;
-        gap: 5px;
-      }
-
-      .quick-action-btn {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-
-    /* Prevent body scroll when chat is open on mobile */
-    body.chat-open {
-      overflow: hidden;
-    }
-
-    /* Very small devices (phones, 360px and down) */
-    @media (max-width: 360px) {
-      .top-bar-container {
-        padding: 0 10px;
-      }
-
-      .contact-info div {
-        font-size: 13px;
-      }
-
-      .social-icons a {
-        font-size: 20px;
-      }
-
-      .nav-container {
-        padding: 0 15px;
-      }
-
-      .logo img {
-        height: 70px;
-        width: 90px;
-      }
-
-      .hero-section {
-        padding: 60px 0;
-      }
-
-      .hero-title {
-        font-size: 1.4rem;
-      }
-
-      .chat-container {
-        width: 260px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .chat-container {
-        height: 380px;
-      }
-
-      .chat-header {
-        padding: 10px 12px;
-      }
-
-      .chat-header h3 {
-        font-size: 14px;
-      }
-
-      .chatbot-image {
-        width: 35px;
-        height: 35px;
-      }
-    }
   </style>
 </head>
 
@@ -2223,7 +1686,7 @@
     </div>
   </div>
 
-  <!-- Navigation - IMPROVED RESPONSIVE -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="container nav-container">
       <div class="logo">
@@ -2410,7 +1873,7 @@
     </div>
   </section>
 
-  <!-- Chat Widget - LEFT SIDE -->
+  <!-- Chat Widget -->
   <div class="chat-widget">
     <div class="chat-container" id="chatContainer">
       <div class="chat-header">
@@ -2707,35 +2170,68 @@
       emailjs.init("zImWs-QBwGe-B-JT3"); // Replace with your actual EmailJS public key
     })();
 
-    // Blog Data
+    // Updated Blog Data with GenAI & ML Interview Questions
     const blogPosts = [
       {
         id: 1,
-        title: "The Future of AI and Machine Learning in 2025",
-        excerpt:
-          "Explore how artificial intelligence and machine learning are transforming industries and creating new career opportunities. Learn about the latest trends and how to prepare for the AI-driven future.",
+        title: "Top 5 GenAI & ML Interview Questions Asked in FAANG 2025",
+        excerpt: "Prepare for your FAANG interviews with these top 15 Generative AI and Machine Learning questions that are currently being asked in 2025. Master these concepts to ace your next technical interview.",
         image: "./images/ai1.jpg",
-        date: "May 15, 2025",
+        date: "November 10, 2025",
         category: "Artificial Intelligence",
         author: "Rohil Groups",
         relatedContent: `
-                    <h4>Key AI Trends for 2025</h4>
-                    <p>Artificial Intelligence continues to evolve at a rapid pace. Here are the key trends to watch:</p>
-                    <ul>
-                        <li>Generative AI and its applications in content creation</li>
-                        <li>AI-powered cybersecurity solutions</li>
-                        <li>Edge AI for real-time processing</li>
-                        <li>Explainable AI for transparency</li>
-                        <li>AI in healthcare diagnostics</li>
-                    </ul>
-                    <p>These developments are creating new opportunities for developers and data scientists. Understanding these trends will help you stay ahead in the competitive tech landscape.</p>
-                `,
+          <div class="interview-questions">
+            <h4>Top 5 GenAI & ML Interview Questions for FAANG 2025</h4>
+            
+            <div class="question-item">
+              <div class="question">1. What are some popular Generative AI models?</div>
+              <div class="answer">
+                <ul>
+                  <li><strong>GPT (OpenAI), DALL·E / Midjourney, Claude / Gemini</strong> Adds positional information to embeddings</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="question-item">
+              <div class="question">2. What are the main types of Generative Models?</div>
+              <div class="answer">
+                <p>Fine-tuning adapts pre-trained models to specific tasks:</p>
+                <ul>
+                  <li><strong>Variational Autoencoders (VAE), GANs .</strong></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="question-item">
+              <div class="question">3. What is a Transformer model?</div>
+              <div class="answer">
+                <p>A deep learning architecture based on self-attention, used for handling sequential data (like text).</p>
+              </div>
+            </div>
+
+            <div class="question-item">
+              <div class="question">4. What is RLHF (Reinforcement Learning with Human Feedback)?</div>
+              <div class="answer">
+                <p>It combines reinforcement learning + human feedback to make outputs more aligned, safe, and relevant.</p>
+              </div>
+            </div>
+
+            <div class="question-item">
+              <div class="question">5. Explain Overfitting and Underfitting.</div>
+              <div class="answer">
+                <ul>
+                  <li><strong>Overfitting: </strong> Model memorizes training data → performs poorly on new data.</li>
+                  <li><strong>Underfitting: </strong> Model too simple → cannot learn patterns properly.</li>
+                </ul>
+              </div>
+            </div>
+        `,
       },
       {
         id: 2,
         title: "Data Science Career Path: From Beginner to Expert",
-        excerpt:
-          "Learn how to build a successful career in data science. This comprehensive guide covers essential skills, tools, and learning paths for aspiring data scientists at every level.",
+        excerpt: "Learn how to build a successful career in data science. This comprehensive guide covers essential skills, tools, and learning paths for aspiring data scientists at every level.",
         image: "./images/datascience.jpg",
         date: "May 5, 2025",
         category: "Data Science",
@@ -2756,8 +2252,7 @@
       {
         id: 3,
         title: "Essential Cybersecurity Practices for Developers",
-        excerpt:
-          "Protect your applications and data with these essential cybersecurity practices. Learn about common vulnerabilities and how to implement security measures in your development workflow.",
+        excerpt: "Protect your applications and data with these essential cybersecurity practices. Learn about common vulnerabilities and how to implement security measures in your development workflow.",
         image: "./images/cyber-awarness.jpg",
         date: "April 28, 2025",
         category: "Cybersecurity",
@@ -2778,8 +2273,7 @@
       {
         id: 4,
         title: "Python for Data Analysis: Complete Guide",
-        excerpt:
-          "Master data analysis with Python. This guide covers everything from basic data manipulation with Pandas to advanced visualization techniques.",
+        excerpt: "Master data analysis with Python. This guide covers everything from basic data manipulation with Pandas to advanced visualization techniques.",
         image: "./images/python.webp",
         date: "May 12, 2025",
         category: "Data Science",
@@ -2800,8 +2294,7 @@
       {
         id: 5,
         title: "React JS Best Practices for 2025",
-        excerpt:
-          "Learn the latest React JS best practices to build scalable and maintainable applications. Discover performance optimization techniques and modern development patterns.",
+        excerpt: "Learn the latest React JS best practices to build scalable and maintainable applications. Discover performance optimization techniques and modern development patterns.",
         image: "./images/react.avif",
         date: "May 8, 2025",
         category: "Web Development",
@@ -2819,92 +2312,7 @@
                     <p>These practices will help you build applications that are easier to maintain, test, and scale as your project grows.</p>
                 `,
       },
-      {
-        id: 6,
-        title: "DevOps Tools Every Developer Should Know",
-        excerpt:
-          "Explore essential DevOps tools that streamline development workflows. From containerization with Docker to CI/CD pipelines, learn the tools that matter.",
-        image: "./images/devops.jpg",
-        date: "May 3, 2025",
-        category: "DevOps",
-        author: "Rohil Groups",
-        relatedContent: `
-                    <h4>Essential DevOps Tools</h4>
-                    <p>Modern development relies on these DevOps tools:</p>
-                    <ul>
-                        <li><strong>Docker:</strong> Containerization platform</li>
-                        <li><strong>Kubernetes:</strong> Container orchestration</li>
-                        <li><strong>Jenkins:</strong> Continuous integration</li>
-                        <li><strong>Git:</strong> Version control system</li>
-                        <li><strong>Terraform:</strong> Infrastructure as code</li>
-                    </ul>
-                    <p>Understanding these tools will help you automate development workflows, improve collaboration, and deploy applications more reliably.</p>
-                `,
-      },
-      {
-        id: 7,
-        title: "Cloud Computing: AWS vs Azure vs Google Cloud",
-        excerpt:
-          "Compare the top cloud platforms and understand their strengths. Make informed decisions about which cloud provider best suits your project requirements.",
-        image: "./images/cloud.jpg",
-        date: "April 25, 2025",
-        category: "Cloud Computing",
-        author: "Rohil Groups",
-        relatedContent: `
-                    <h4>Cloud Platform Comparison</h4>
-                    <p>Each cloud platform has its strengths:</p>
-                    <ul>
-                        <li><strong>AWS:</strong> Market leader with the most services</li>
-                        <li><strong>Azure:</strong> Excellent integration with Microsoft products</li>
-                        <li><strong>Google Cloud:</strong> Strong in data analytics and AI/ML</li>
-                    </ul>
-                    <p>Consider factors like existing technology stack, specific service requirements, and pricing when choosing a cloud provider. Many organizations use multiple clouds to leverage the strengths of each platform.</p>
-                `,
-      },
-      {
-        id: 9,
-        title: "ChatGPT & Prompt Engineering Mastery",
-        excerpt:
-          "Master the art of prompt engineering with ChatGPT. Learn techniques to get better responses and leverage AI for various development tasks.",
-        image: "./images/chatgpt.jpg",
-        date: "April 15, 2025",
-        category: "Artificial Intelligence",
-        author: "Rohil Groups",
-        relatedContent: `
-                    <h4>Effective Prompt Engineering</h4>
-                    <p>Improve your interactions with AI models:</p>
-                    <ul>
-                        <li>Be specific and detailed in your prompts</li>
-                        <li>Provide context and examples</li>
-                        <li>Use step-by-step instructions for complex tasks</li>
-                        <li>Specify the desired format for responses</li>
-                        <li>Iterate and refine your prompts</li>
-                    </ul>
-                    <p>Mastering prompt engineering can significantly improve the quality of AI-generated content and code, making you more productive in development tasks.</p>
-                `,
-      },
-      {
-        id: 10,
-        title: "Mobile App Development Trends 2025",
-        excerpt:
-          "Stay ahead with the latest mobile app development trends. From cross-platform frameworks to native development, explore what's shaping mobile technology.",
-        image: "./images/mobile.jpg",
-        date: "April 10, 2025",
-        category: "Mobile Development",
-        author: "Rohil Groups",
-        relatedContent: `
-                    <h4>Mobile Development Trends</h4>
-                    <p>The mobile landscape continues to evolve:</p>
-                    <ul>
-                        <li>Cross-platform frameworks (React Native, Flutter)</li>
-                        <li>5G-enabled applications</li>
-                        <li>Augmented Reality experiences</li>
-                        <li>Progressive Web Apps (PWAs)</li>
-                        <li>AI-powered mobile features</li>
-                    </ul>
-                    <p>Understanding these trends will help you choose the right approach for your mobile projects and create apps that leverage the latest technologies.</p>
-                `,
-      },
+
     ];
 
     // Pagination Configuration
@@ -2913,16 +2321,12 @@
 
     // DOM Elements
     const blogPostsContainer = document.getElementById("blogPostsContainer");
-    const paginationContainer = document.getElementById(
-      "paginationContainer"
-    );
+    const paginationContainer = document.getElementById("paginationContainer");
     const whatsappForm = document.getElementById("whatsappForm");
     const nameInput = document.getElementById("nameInput");
     const phoneInput = document.getElementById("phoneInput");
     const interestSelect = document.getElementById("interestSelect");
-    const whatsappSubscribeBtn = document.getElementById(
-      "whatsappSubscribeBtn"
-    );
+    const whatsappSubscribeBtn = document.getElementById("whatsappSubscribeBtn");
     const confirmationModal = document.getElementById("confirmationModal");
     const closeModal = document.getElementById("closeModal");
 
@@ -3462,19 +2866,38 @@
       function getBotResponse(message) {
         const lowerMessage = message.toLowerCase();
 
-        // Add greeting recognition first
+        // Add greeting recognition first - REORDERED for proper matching
         if (lowerMessage.includes("good morning")) {
-          return "Good morning! ☀️ Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+          return "Good morning! ☀️ Welcome to Rohil Groups. How can I help you today? You can ask about our courses, placements, or contact information.";
         } else if (lowerMessage.includes("good afternoon")) {
-          return "Good afternoon! 🌞 Welcome to Rohil Technologies. How can I assist you today? You can ask about our courses, placements, or contact information.";
+          return "Good afternoon! 🌞 Welcome to Rohil Groups. How can I assist you today? You can ask about our courses, placements, or contact information.";
         } else if (lowerMessage.includes("good evening")) {
-          return "Good evening! 🌙 Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+          return "Good evening! 🌙 Welcome to Rohil Groups. How can I help you today? You can ask about our courses, placements, or contact information.";
+        } else if (
+          lowerMessage.includes("b.tech") ||
+          lowerMessage.includes("b.sc") ||
+          lowerMessage.includes("graduate") ||
+          lowerMessage.includes("passed out") ||
+          lowerMessage.includes("passed-out") ||
+          lowerMessage.includes("student") ||
+          lowerMessage.includes("Hi, I am a 2023 passed-out MCA student. Can I get a job in the IT field?") ||
+          lowerMessage.includes("job in it")
+        ) {
+          // Extract year from message if present
+          const yearMatch = lowerMessage.match(/\b(19|20)\d{2}\b/);
+          const year = yearMatch ? yearMatch[0] : '';
+
+          if (year) {
+            return `Of course! 🎯 Even though you graduated in ${year}, you can definitely get a job in the IT field. What matters most is your skills, projects, and practical knowledge.`;
+          } else {
+            return "Of course! 🎯 You can definitely get a job in the IT field. What matters most is your skills, projects, and practical knowledge.";
+          }
         } else if (
           lowerMessage.includes("hi") ||
           lowerMessage.includes("hello") ||
           lowerMessage.includes("hey")
         ) {
-          return "Hi there! 👋 Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+          return "Hi there! 👋 Welcome to Rohil Groups. How can I help you today? You can ask about: Courses, Placements, Contact";
         } else if (
           lowerMessage.includes("thank you") ||
           lowerMessage.includes("thanks") ||
@@ -3483,7 +2906,8 @@
           return "You're welcome! 😊 Glad I could help. Let me know if you need any more information about our courses or services!";
         } else if (
           lowerMessage.includes("courses") ||
-          lowerMessage.includes("all courses")
+          lowerMessage.includes("all courses") ||
+          lowerMessage.includes("services")
         ) {
           return "Here are all our trending courses: Java Full Stack, Python Data Science, Web Development, Mobile App Development, Cloud Computing, Artificial Intelligence, Machine Learning, Cybersecurity, DevOps, and UI/UX Design. Click on any course above to see details.";
         } else if (lowerMessage.includes("java")) {
@@ -3547,6 +2971,13 @@
           lowerMessage.includes("phone")
         ) {
           return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+        } else if (
+          lowerMessage.includes("which course?") ||
+          lowerMessage.includes("suitable course") ||
+          lowerMessage.includes("what should i learn?") ||
+          lowerMessage.includes("recommend course")
+        ) {
+          return `To recommend the most suitable course, please share your educational background and area of interest. MCA / B.Tech / B.Sc IT → Full Stack Development, Data Analytics, or Cloud Computing. MBA / BBA → Digital Marketing or Business Analytics. Non-technical background → Web Design or Basic Computer Application`;
         } else {
           return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
         }

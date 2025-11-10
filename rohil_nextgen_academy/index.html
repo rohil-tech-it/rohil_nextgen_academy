@@ -12,10 +12,77 @@
   <link rel="stylesheet" href="./style.css" />
   <!-- EmailJS SDK -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-</head>
-<style>
-  /* Chat Widget Styles - LEFT SIDE */
-      .chat-widget {
+  <style>
+    /* Dropdown Menu Styles */
+    .nav-item {
+      position: relative;
+    }
+    
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .dropdown.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .dropdown-item {
+      display: block;
+      padding: 12px 20px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+      transition: all 0.3s ease;
+    }
+    
+    .dropdown-item:last-child {
+      border-bottom: none;
+    }
+    
+    .dropdown-item:hover {
+      background: var(--primary-red);
+      color: white;
+    }
+    
+    /* Mobile Dropdown Styles */
+    @media (max-width: 768px) {
+      .dropdown {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+      
+      .dropdown.active {
+        display: block;
+      }
+      
+      .dropdown-item {
+        padding: 10px 15px 10px 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgb(46, 46, 46);
+      }
+    }
+
+    /* Rest of your existing styles remain the same */
+    /* Chat Widget Styles - LEFT SIDE */
+    .chat-widget {
       position: fixed;
       bottom: 20px;
       left: 20px;
@@ -80,7 +147,8 @@
       align-items: center;
       font-size: 12px;
     }
-.status-indicator {
+
+    .status-indicator {
       width: 8px;
       height: 8px;
       background-color: #2ecc71;
@@ -224,395 +292,468 @@
       animation-delay: 0.4s;
     }
 
+    @keyframes typing {
 
-  @keyframes typing {
-    0%, 60%, 100% {
-      opacity: 0.6;
-    }
-    30% {
-      opacity: 1;
-    }
-  }
+      0%,
+      60%,
+      100% {
+        opacity: 0.6;
+      }
 
-  /* Course List Styles */
-  .course-list {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .course-item {
-    background: white;
-    border-radius: 8px;
-    padding: 12px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s;
-    border-left: 3px solid var(--primary-red);
-  }
-
-  .course-item:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  }
-
-  .course-title {
-    font-weight: 600;
-    color: var(--dark-red);
-    margin-bottom: 5px;
-    font-size: 14px;
-  }
-
-  .course-duration {
-    font-size: 12px;
-    color: #777;
-  }
-
-  .course-details {
-    display: none;
-    margin-top: 10px;
-    padding: 10px;
-    background: #f5f5f5;
-    border-radius: 5px;
-    font-size: 13px;
-  }
-
-  .course-details.active {
-    display: block;
-  }
-
-  .quick-actions {
-    display: flex;
-    gap: 8px;
-    margin-top: 10px;
-    flex-wrap: wrap;
-  }
-
-  .quick-action-btn {
-    background: var(--primary-red);
-    color: white;
-    border: none;
-    border-radius: 15px;
-    padding: 6px 12px;
-    font-size: 11px;
-    cursor: pointer;
-    transition: background 0.3s;
-    white-space: nowrap;
-  }
-
-  .quick-action-btn:hover {
-    background: var(--dark-red);
-  }
-
-  /* Responsive adjustments for chat widget */
-  @media (max-width: 768px) {
-    .chat-widget {
-      bottom: 15px;
-      left: 15px;
-      right: 15px;
-      display: flex;
-      justify-content: flex-start;
+      30% {
+        opacity: 1;
+      }
     }
 
-    .chat-container {
-      width: calc(100vw - 30px);
-      max-width: 400px;
-      height: 70vh;
-      max-height: 500px;
-      bottom: 70px;
-      left: 0;
-      right: auto;
-    }
-
-    .chat-toggle {
-      width: 55px;
-      height: 55px;
-      font-size: 22px;
-    }
-
-    .message {
-      max-width: 90%;
-    }
-
-    .message-content {
-      padding: 10px 14px;
-      font-size: 13px;
-    }
-
-    .chat-input-container {
-      padding: 12px;
-    }
-
-    .chat-input {
-      padding: 10px 14px;
-      font-size: 13px;
-    }
-
-    .send-button {
-      width: 38px;
-      height: 38px;
-      font-size: 14px;
-    }
-
-    .course-title {
-      font-size: 13px;
-    }
-
-    .course-details {
-      font-size: 12px;
-    }
-
-    .quick-actions {
-      gap: 6px;
-    }
-
-    .quick-action-btn {
-      padding: 5px 10px;
-      font-size: 10px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .chat-widget {
-      bottom: 10px;
-      left: 10px;
-      right: 10px;
-    }
-
-    .chat-container {
-      width: calc(100vw - 20px);
-      height: 65vh;
-      max-height: 450px;
-      bottom: 65px;
-    }
-
-    .chat-toggle {
-      width: 50px;
-      height: 50px;
-      font-size: 20px;
-    }
-
-    .chat-header {
-      padding: 12px 15px;
-    }
-
-    .chat-header h3 {
-      font-size: 15px;
-    }
-
-    .chat-messages {
-      padding: 12px;
-    }
-
-    .message {
-      max-width: 95%;
-    }
-
-    .message-content {
-      padding: 8px 12px;
-      font-size: 12px;
-    }
-
-    .chat-input-container {
-      padding: 10px 12px;
-    }
-
-    .chat-input {
-      padding: 8px 12px;
-      font-size: 12px;
-    }
-
-    .send-button {
-      width: 36px;
-      height: 36px;
-      font-size: 13px;
+    /* Course List Styles */
+    .course-list {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
     }
 
     .course-item {
-      padding: 10px;
+      background: white;
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.3s;
+      border-left: 3px solid var(--primary-red);
+    }
+
+    .course-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
 
     .course-title {
-      font-size: 12px;
-    }
-
-    .course-duration {
-      font-size: 11px;
-    }
-
-    .course-details {
-      padding: 8px;
-      font-size: 11px;
-    }
-  }
-
-  @media (max-width: 360px) {
-    .chat-container {
-      height: 60vh;
-      max-height: 400px;
-    }
-
-    .chat-header {
-      padding: 10px 12px;
-    }
-
-    .chat-header h3 {
+      font-weight: 600;
+      color: var(--dark-red);
+      margin-bottom: 5px;
       font-size: 14px;
     }
 
-    .chat-status {
-      font-size: 11px;
+    .course-duration {
+      font-size: 12px;
+      color: #777;
     }
 
-    .chat-messages {
+    .course-details {
+      display: none;
+      margin-top: 10px;
       padding: 10px;
+      background: #f5f5f5;
+      border-radius: 5px;
+      font-size: 13px;
     }
 
-    .message-content {
-      padding: 6px 10px;
+    .course-details.active {
+      display: block;
+    }
+
+    .quick-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .quick-action-btn {
+      background: var(--primary-red);
+      color: white;
+      border: none;
+      border-radius: 15px;
+      padding: 6px 12px;
       font-size: 11px;
+      cursor: pointer;
+      transition: background 0.3s;
+      white-space: nowrap;
     }
-  }
 
-  /* Landscape mode adjustments */
-  @media (max-height: 500px) and (orientation: landscape) {
-    .chat-container {
-      height: 80vh;
-      max-height: 300px;
+    .quick-action-btn:hover {
+      background: var(--dark-red);
     }
-  }
 
-  /* Prevent chat from being too small on very small screens */
-  @media (max-width: 320px) {
-    .chat-container {
-      width: 300px;
-      left: 50%;
-      transform: translateX(-50%);
+    /* Responsive adjustments for chat widget */
+    @media (max-width: 768px) {
+      .chat-widget {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .chat-container {
+        width: calc(100vw - 30px);
+        max-width: 400px;
+        height: 70vh;
+        max-height: 500px;
+        bottom: 70px;
+        left: 0;
+        right: auto;
+      }
+
+      .chat-toggle {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+      }
+
+      .message {
+        max-width: 90%;
+      }
+
+      .message-content {
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      .chat-input-container {
+        padding: 12px;
+      }
+
+      .chat-input {
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      .send-button {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+      }
+
+      .course-title {
+        font-size: 13px;
+      }
+
+      .course-details {
+        font-size: 12px;
+      }
+
+      .quick-actions {
+        gap: 6px;
+      }
+
+      .quick-action-btn {
+        padding: 5px 10px;
+        font-size: 10px;
+      }
     }
-    
-    .chat-widget {
-      justify-content: center;
+
+    @media (max-width: 480px) {
+      .chat-widget {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+      }
+
+      .chat-container {
+        width: calc(100vw - 20px);
+        height: 65vh;
+        max-height: 450px;
+        bottom: 65px;
+      }
+
+      .chat-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+
+      .chat-header {
+        padding: 12px 15px;
+      }
+
+      .chat-header h3 {
+        font-size: 15px;
+      }
+
+      .chat-messages {
+        padding: 12px;
+      }
+
+      .message {
+        max-width: 95%;
+      }
+
+      .message-content {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      .chat-input-container {
+        padding: 10px 12px;
+      }
+
+      .chat-input {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      .send-button {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+      }
+
+      .course-item {
+        padding: 10px;
+      }
+
+      .course-title {
+        font-size: 12px;
+      }
+
+      .course-duration {
+        font-size: 11px;
+      }
+
+      .course-details {
+        padding: 8px;
+        font-size: 11px;
+      }
     }
-  }
 
-  /* Newsletter Subscription Styles */
-  .newsletter-section {
-    background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
-    padding: 40px 0;
-    margin-top: 40px;
-    color: white;
-  }
+    @media (max-width: 360px) {
+      .chat-container {
+        height: 60vh;
+        max-height: 400px;
+      }
 
-  .newsletter-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+      .chat-header {
+        padding: 10px 12px;
+      }
 
-  .newsletter-content {
-    flex: 1;
-    min-width: 300px;
-    margin-right: 30px;
-  }
+      .chat-header h3 {
+        font-size: 14px;
+      }
 
-  .newsletter-content h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
+      .chat-status {
+        font-size: 11px;
+      }
 
-  .newsletter-content p {
-    font-size: 16px;
-    opacity: 0.9;
-    margin-bottom: 0;
-    color: white;
-  }
+      .chat-messages {
+        padding: 10px;
+      }
 
-  .newsletter-form {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    gap: 10px;
-    position: relative;
-  }
+      .message-content {
+        padding: 6px 10px;
+        font-size: 11px;
+      }
+    }
 
-  .newsletter-input {
-    flex: 1;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 5px;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    outline: none;
-  }
+    /* Landscape mode adjustments */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .chat-container {
+        height: 80vh;
+        max-height: 300px;
+      }
+    }
 
-  .newsletter-btn {
-    background: white;
-    color: var(--primary-red);
-    border: none;
-    border-radius: 5px;
-    padding: 12px 25px;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 120px;
-  }
+    /* Prevent chat from being too small on very small screens */
+    @media (max-width: 320px) {
+      .chat-container {
+        width: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
-  .newsletter-btn:hover:not(:disabled) {
-    background: #f0f0f0;
-    transform: translateY(-2px);
-  }
+      .chat-widget {
+        justify-content: center;
+      }
+    }
 
-  .newsletter-btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
+    /* Newsletter Subscription Styles */
+    .newsletter-section {
+      background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+      padding: 40px 0;
+      margin-top: 40px;
+      color: white;
+    }
 
-  .newsletter-message {
-    display: none;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    width: 100%;
-  }
-
-  .newsletter-success {
-    background-color: rgba(46, 204, 113, 0.2);
-    color: white;
-    border: 1px solid #2ecc71;
-  }
-
-  .newsletter-error {
-    background-color: rgba(231, 76, 60, 0.2);
-    color: #ffcccb;
-    border: 1px solid #e74c3c;
-  }
-
-  /* Responsive adjustments for newsletter */
-  @media (max-width: 768px) {
     .newsletter-container {
-      flex-direction: column;
-      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .newsletter-content {
-      margin-right: 0;
-      margin-bottom: 20px;
+      flex: 1;
+      min-width: 300px;
+      margin-right: 30px;
+    }
+
+    .newsletter-content h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .newsletter-content p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 0;
+      color: white;
     }
 
     .newsletter-form {
-      flex-direction: column;
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      gap: 10px;
+      position: relative;
     }
-  }
-</style>
+
+    .newsletter-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 5px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .newsletter-btn {
+      background: white;
+      color: var(--primary-red);
+      border: none;
+      border-radius: 5px;
+      padding: 12px 25px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+    }
+
+    .newsletter-btn:hover:not(:disabled) {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    .newsletter-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .newsletter-message {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .newsletter-success {
+      background-color: rgba(46, 204, 113, 0.2);
+      color: white;
+      border: 1px solid #2ecc71;
+    }
+
+    .newsletter-error {
+      background-color: rgba(231, 76, 60, 0.2);
+      color: #ffcccb;
+      border: 1px solid #e74c3c;
+    }
+
+    /* Responsive adjustments for newsletter */
+    @media (max-width: 768px) {
+      .newsletter-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .newsletter-content {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+
+    /* Back to Top Button - FIXED */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary-red);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      border: none;
+      outline: none;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--dark-red);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Mobile Responsive Adjustments for Back-to-Top Button */
+    @media (max-width: 768px) {
+      .back-to-top {
+        bottom: 80px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .back-to-top {
+        bottom: 70px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .back-to-top {
+        bottom: 70px;
+        right: 10px;
+        width: 38px;
+        height: 38px;
+      }
+    }
+
+    /* Ensure button doesn't interfere with chat widget on mobile */
+    @media (max-width: 768px) {
+      .back-to-top {
+        z-index: 998; /* Lower than chat widget */
+      }
+    }
+  </style>
+</head>
 
 <body>
   <!-- Top Bar -->
@@ -648,8 +789,8 @@
         <li class="nav-item">
           <a href="gallery.html" class="nav-link">Gallery</a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+        <li class="nav-item dropdown-parent">
+          <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="classic.html" class="dropdown-item">Classic</a>
             <a href="professional.html" class="dropdown-item">Professional</a>
@@ -659,8 +800,8 @@
         <li class="nav-item">
           <a href="browsecourse.html" class="nav-link">Browse Courses</a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+        <li class="nav-item dropdown-parent">
+          <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="placement.html" class="dropdown-item">Placement Training</a>
             <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
@@ -1265,7 +1406,7 @@
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
+  <!-- Back to Top Button - FIXED -->
   <div class="back-to-top" id="backToTop">
     <i class="fas fa-arrow-up"></i>
   </div>
@@ -1276,6 +1417,47 @@
       // Initialize EmailJS with your public key
       emailjs.init("zImWs-QBwGe-B-JT3");
     })();
+
+    // Dropdown Menu Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+      
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const dropdown = this.nextElementSibling;
+          
+          // Close all other dropdowns
+          document.querySelectorAll('.dropdown').forEach(d => {
+            if (d !== dropdown) {
+              d.classList.remove('active');
+            }
+          });
+          
+          // Toggle current dropdown
+          dropdown.classList.toggle('active');
+        });
+      });
+      
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown-parent')) {
+          document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+          });
+        }
+      });
+      
+      // Handle mobile menu toggle (hamburger menu)
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (hamburger) {
+        hamburger.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+        });
+      }
+    });
 
     // Chat Widget Functionality
     const chatToggle = document.getElementById("chatToggle");
@@ -1371,19 +1553,38 @@
     function getBotResponse(message) {
       const lowerMessage = message.toLowerCase();
 
-      // Add greeting recognition first
+      // Add greeting recognition first - REORDERED for proper matching
       if (lowerMessage.includes("good morning")) {
-        return "Good morning! ☀️ Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+        return "Good morning! ☀️ Welcome to Rohil Groups. How can I help you today? You can ask about our courses, placements, or contact information.";
       } else if (lowerMessage.includes("good afternoon")) {
-        return "Good afternoon! 🌞 Welcome to Rohil Technologies. How can I assist you today? You can ask about our courses, placements, or contact information.";
+        return "Good afternoon! 🌞 Welcome to Rohil Groups. How can I assist you today? You can ask about our courses, placements, or contact information.";
       } else if (lowerMessage.includes("good evening")) {
-        return "Good evening! 🌙 Welcome to Rohil Technologies. How can I help you today? You can ask about our courses, placements, or contact information.";
+        return "Good evening! 🌙 Welcome to Rohil Groups. How can I help you today? You can ask about our courses, placements, or contact information.";
+      } else if (
+        lowerMessage.includes("b.tech") ||
+        lowerMessage.includes("b.sc") ||
+        lowerMessage.includes("graduate") ||
+        lowerMessage.includes("passed out") ||
+        lowerMessage.includes("passed-out") ||
+        lowerMessage.includes("student") ||
+        lowerMessage.includes("Hi, I am a 2023 passed-out MCA student. Can I get a job in the IT field?") ||
+        lowerMessage.includes("job in it")
+      ) {
+        // Extract year from message if present
+        const yearMatch = lowerMessage.match(/\b(19|20)\d{2}\b/);
+        const year = yearMatch ? yearMatch[0] : '';
+
+        if (year) {
+          return `Of course! 🎯 Even though you graduated in ${year}, you can definitely get a job in the IT field. What matters most is your skills, projects, and practical knowledge.`;
+        } else {
+          return "Of course! 🎯 You can definitely get a job in the IT field. What matters most is your skills, projects, and practical knowledge.";
+        }
       } else if (
         lowerMessage.includes("hi") ||
         lowerMessage.includes("hello") ||
         lowerMessage.includes("hey")
       ) {
-        return "Hi there! 👋 Welcome to Rohil Technologies. How can I help you today? You can ask about:<br>• Courses<br>• Placements<br>• Contact";
+        return "Hi there! 👋 Welcome to Rohil Groups. How can I help you today? You can ask about:<br>• Courses<br>• Placements<br>• Contact";
       } else if (
         lowerMessage.includes("thank you") ||
         lowerMessage.includes("thanks") ||
@@ -1457,11 +1658,17 @@
         lowerMessage.includes("phone")
       ) {
         return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+      } else if (
+        lowerMessage.includes("which course?") ||
+        lowerMessage.includes("suitable course") ||
+        lowerMessage.includes("what should i learn?") ||
+        lowerMessage.includes("recommend course")
+      ) {
+        return `To recommend the most suitable course, please share your educational background and area of interest.<br><br>• <strong>MCA / B.Tech / B.Sc IT</strong> → Full Stack Development, Data Analytics, or Cloud Computing<br>• <strong>MBA / BBA</strong> → Digital Marketing or Business Analytics<br>• <strong>Non-technical background</strong> → Web Design or Basic Computer Application`;
       } else {
         return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
       }
     }
-
     // Course enrollment function
     window.enrollCourse = function (courseName) {
       addMessage(`I'm interested in enrolling in ${courseName}`, "user");
@@ -1511,8 +1718,28 @@
       }
     }, 10000);
 
+    // Back to Top Button - FIXED
+    const backToTopButton = document.getElementById("backToTop");
+
+    // Show/hide button based on scroll position
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add("active");
+      } else {
+        backToTopButton.classList.remove("active");
+      }
+    });
+
+    // Smooth scroll to top when button is clicked
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
     // Handle window resize for chat widget
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       const chatContainer = document.getElementById('chatContainer');
       if (window.innerWidth <= 768 && chatContainer.style.display === 'flex') {
         // Ensure proper positioning on mobile
@@ -1522,15 +1749,15 @@
     });
 
     // Close chat when clicking outside on mobile
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
       const chatContainer = document.getElementById('chatContainer');
       const chatToggle = document.getElementById('chatToggle');
       const chatClose = document.getElementById('chatClose');
-      
-      if (window.innerWidth <= 768 && 
-          chatContainer.style.display === 'flex' &&
-          !chatContainer.contains(e.target) && 
-          !chatToggle.contains(e.target)) {
+
+      if (window.innerWidth <= 768 &&
+        chatContainer.style.display === 'flex' &&
+        !chatContainer.contains(e.target) &&
+        !chatToggle.contains(e.target)) {
         chatContainer.style.display = 'none';
       }
     });
