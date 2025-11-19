@@ -80,13 +80,21 @@
 
     .social-icons a {
         color: var(--white);
-        font-size: 25px;
-        transition: opacity 0.3s;
+        font-size: 20px;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
     }
 
     .social-icons a:hover {
-        color: var(--text-grey);
-        transform: translateY(-3px) scale(1.1);
+        background: var(--white);
+        color: var(--primary-red);
+        transform: translateY(-2px);
     }
 
     /* Navigation Styles - IMPROVED RESPONSIVE */
@@ -189,7 +197,7 @@
         z-index: 1001;
     }
 
-    /* Main Carousel Section (Below Navbar) */
+    /* Main Carousel Section (Below Navbar) - UPDATED */
     .main-carousel-section {
         padding: 0;
         background-image: url('./images/code.jpg');
@@ -201,6 +209,7 @@
         margin: 0 auto;
         overflow: hidden;
         height: 500px;
+        /* Default height for desktop */
     }
 
     .main-carousel-track {
@@ -242,6 +251,7 @@
         font-size: 1.2rem;
         margin-bottom: 30px;
         opacity: 0.9;
+        color: var(--white);
     }
 
     .slide-image {
@@ -274,7 +284,7 @@
         transform: translateY(-2px);
     }
 
-    /* Main Carousel Controls */
+    /* Main Carousel Controls - UPDATED (REMOVED ARROWS) */
     .main-carousel-controls {
         position: absolute;
         bottom: 30px;
@@ -298,40 +308,6 @@
         background: var(--primary-red);
         transform: scale(1.3);
     }
-
-    .main-carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.2);
-        color: var(--white);
-        border: none;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 1.5rem;
-        transition: all 0.3s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        backdrop-filter: blur(10px);
-        z-index: 10;
-    }
-
-    .main-carousel-btn:hover {
-        background: var(--primary-red);
-        transform: translateY(-50%) scale(1.1);
-    }
-
-    .main-prev-btn {
-        left: 30px;
-    }
-
-    .main-next-btn {
-        right: 30px;
-    }
-
 
     /* Courses Section */
     .courses-section {
@@ -563,10 +539,23 @@
         background-color: var(--dark-red);
     }
 
-    /* Responsive Styles */
-    /* Mobile Dropdown Fix */
+    /* Responsive Styles - UPDATED */
+    @media (max-width: 1024px) {
+        .main-carousel-container {
+            height: 450px;
+        }
+
+        .slide-text h2 {
+            font-size: 2.5rem;
+        }
+
+        .slide-text p {
+            font-size: 1.1rem;
+        }
+    }
+
     @media (max-width: 768px) {
-         .hamburger {
+        .hamburger {
             display: block;
         }
 
@@ -639,13 +628,40 @@
         .nav-link.active i.fa-chevron-down {
             transform: rotate(180deg);
         }
+
+        /* Updated Carousel for Mobile */
+        .main-carousel-container {
+            height: 350px;
+        }
+
+        .slide-text {
+            padding: 0 20px;
+        }
+
+        .slide-text h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .slide-text p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            padding: 12px 25px;
+            font-size: 1rem;
+        }
+
+        .main-carousel-controls {
+            bottom: 20px;
+        }
     }
 
-    @media (max-width: 768px) {
-                .top-bar-container {
+    @media (max-width: 480px) {
+        .top-bar-container {
             flex-direction: column;
             gap: 10px;
-
         }
 
         .top-bar {
@@ -660,6 +676,24 @@
         .course-card {
             background-position: center;
             margin-right: 50px;
+        }
+
+        /* Further Mobile Optimization for Carousel */
+        .main-carousel-container {
+            height: 300px;
+        }
+
+        .slide-text h2 {
+            font-size: 1.8rem;
+        }
+
+        .slide-text p {
+            font-size: 0.9rem;
+        }
+
+        .cta-button {
+            padding: 10px 20px;
+            font-size: 0.9rem;
         }
     }
 </style>
@@ -684,36 +718,50 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
+        <div class="nav-container">
             <div class="logo">
-                <div class="logo" style="display: flex; align-items: center;">
-                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo">
+                <!-- Placeholder for logo -->
+                <div class="logo" style="display: flex; align-items: center">
+                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
                 </div>
             </div>
 
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item dropdown-parent">
+                    <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
                         <a href="classic.html" class="dropdown-item">Classic</a>
                         <a href="professional.html" class="dropdown-item">Professional</a>
                         <a href="expert.html" class="dropdown-item">Expert</a>
+                        <a href="internship.html" class="dropdown-item">Internship</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+                    <a href="browsecourse.html" class="nav-link">Browse Courses</a>
+                </li>
+                <li class="nav-item dropdown-parent">
+                    <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
                         <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+                                    <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
                         <a href="placement-success.html" class="dropdown-item">Placement Success</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
-                <li class="nav-item"><a href="scholarship.html" class="nav-link active">Scholarship</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <a href="techblog.html" class="nav-link">Techblog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="scholarship.html" class="nav-link">Scholarship</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
             </ul>
 
             <div class="hamburger">
@@ -721,6 +769,7 @@
             </div>
         </div>
     </nav>
+
 
     <!-- Main Carousel (Below Navbar) -->
     <section class="main-carousel-section">
@@ -766,14 +815,6 @@
                 </div>
 
             </div>
-
-            <!-- Carousel Navigation Buttons -->
-            <button class="main-carousel-btn main-prev-btn">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="main-carousel-btn main-next-btn">
-                <i class="fas fa-chevron-right"></i>
-            </button>
 
             <!-- Dot Indicators -->
             <div class="main-carousel-controls">
@@ -826,14 +867,16 @@
         </div>
     </section>
 
-
     <!-- Footer -->
     <footer class="tech-footer">
         <div class="footer-content">
             <div class="footer-column">
                 <h3>About Rohil NextGen</h3>
-                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses
-                    in software development, data science, cybersecurity, and more.</p>
+                <p>
+                    We are a premier technology education platform in Virudhunagar
+                    offering cutting-edge courses in software development, data science,
+                    cybersecurity, and more.
+                </p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61574571321905"><i
                             class="fab fa-facebook-f"></i></a>
@@ -845,26 +888,45 @@
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
-                    <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
-                    <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
-                    <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li>
-                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li>
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a>
+                    </li>
+                    <li>
+                        <a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a>
+                    </li>
+                    <li>
+                        <a href="companies.html"><i class="fas fa-chevron-right"></i> Tied-up Companies</a>
+                    </li>
+                    <li>
+                        <a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a>
+                    </li>
+                    <li>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                    </li>
                 </ul>
             </div>
 
             <div class="footer-column">
                 <h3>Our Courses</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil
-                            Nadu</a></li>
-                    <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-                    <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
-                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                    <li>
+                        <a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen,
+                            Virudhunagar, Tamil Nadu</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a>
+                    </li>
                 </ul>
             </div>
-
         </div>
 
         <div class="footer-bottom">
@@ -876,7 +938,6 @@
             </div>
         </div>
     </footer>
-
 
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
@@ -891,8 +952,6 @@
                 this.track = document.querySelector('.main-carousel-track');
                 this.slides = document.querySelectorAll('.main-slide');
                 this.dots = document.querySelectorAll('.main-carousel-dot');
-                this.prevBtn = document.querySelector('.main-prev-btn');
-                this.nextBtn = document.querySelector('.main-next-btn');
                 this.currentSlide = 0;
                 this.slideCount = this.slides.length;
                 this.autoPlayInterval = null;
@@ -902,10 +961,6 @@
             }
 
             init() {
-                // Event listeners
-                this.prevBtn.addEventListener('click', () => this.prevSlide());
-                this.nextBtn.addEventListener('click', () => this.nextSlide());
-
                 // Dot click events
                 this.dots.forEach(dot => {
                     dot.addEventListener('click', (e) => {
@@ -1132,9 +1187,9 @@
 
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
+                backToTopButton.classList.add('active');
             } else {
-                backToTopButton.classList.remove('show');
+                backToTopButton.classList.remove('active');
             }
         });
 

@@ -91,16 +91,24 @@
 
     .social-icons a {
       color: var(--white);
-      font-size: 25px;
-      transition: opacity 0.3s;
+      font-size: 20px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .social-icons a:hover {
-      color: var(--light-gray);
-      transform: translateY(-3px) scale(1.1);
+      background: var(--white);
+      color: var(--primary-red);
+      transform: translateY(-2px);
     }
 
-    /* Navigation Styles */
+    /*Navigation*/
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -125,15 +133,14 @@
     }
 
     .logo img {
-      height: 80px;
-      width: 100px;
-      object-fit: contain;
+      height: 100px;
+      width: 120px;
     }
 
     .nav-menu {
       display: flex;
       list-style: none;
-      gap: 25px;
+      gap: 30px;
     }
 
     .nav-item {
@@ -142,7 +149,7 @@
 
     .nav-link {
       text-decoration: none;
-      color: var(--dark-gray);
+      color: var(--text-black);
       font-weight: 500;
       font-size: 16px;
       transition: color 0.3s;
@@ -150,14 +157,28 @@
       display: flex;
       align-items: center;
       gap: 5px;
+      position: relative;
     }
 
     .nav-link:hover {
       color: var(--primary-red);
     }
 
+    /* Active state styles */
     .nav-link.active {
       color: var(--primary-red);
+      font-weight: 600;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary-red);
+      border-radius: 2px;
     }
 
     .dropdown {
@@ -172,7 +193,6 @@
       transform: translateY(10px);
       transition: all 0.3s;
       z-index: 100;
-      border-radius: 5px;
     }
 
     .nav-item:hover .dropdown {
@@ -185,15 +205,23 @@
       display: block;
       padding: 12px 20px;
       text-decoration: none;
-      color: var(--medium-gray);
+      color: var(--text-grey);
       border-bottom: 1px solid #eee;
       transition: all 0.3s;
     }
 
     .dropdown-item:hover {
-      background-color: var(--light-gray);
+      background-color: var(--light-grey);
       color: var(--primary-red);
       padding-left: 25px;
+    }
+
+    /* Active state for dropdown items */
+    .dropdown-item.active {
+      background-color: var(--light-grey);
+      color: var(--primary-red);
+      font-weight: 500;
+      border-left: 3px solid var(--primary-red);
     }
 
     .hamburger {
@@ -202,7 +230,7 @@
       font-size: 24px;
       background: none;
       border: none;
-      color: var(--dark-gray);
+      color: var(--text-black);
       z-index: 1001;
     }
 
@@ -406,12 +434,13 @@
       transform: translateX(5px);
     }
 
-    /* Interview Questions Specific Styles */
+    /* Interview Questions Specific Styles - IMPROVED */
     .interview-questions {
       background: var(--light-gray);
       border-radius: 10px;
       padding: 25px;
       margin: 20px 0;
+      overflow: hidden;
     }
 
     .interview-questions h4 {
@@ -429,6 +458,7 @@
       margin-bottom: 15px;
       box-shadow: var(--shadow);
       border-left: 4px solid var(--primary-red);
+      overflow: hidden;
     }
 
     .question {
@@ -436,11 +466,13 @@
       color: var(--dark-gray);
       margin-bottom: 12px;
       font-size: 1.1rem;
+      line-height: 1.4;
     }
 
     .answer {
       color: var(--medium-gray);
       line-height: 1.6;
+      overflow: hidden;
     }
 
     .answer ul {
@@ -450,6 +482,7 @@
 
     .answer li {
       margin-bottom: 8px;
+      line-height: 1.5;
     }
 
     .category-tag {
@@ -462,7 +495,7 @@
       margin-bottom: 10px;
     }
 
-    /* Related Content Styles */
+    /* Related Content Styles - IMPROVED */
     .related-content {
       max-height: 0;
       overflow: hidden;
@@ -477,6 +510,7 @@
       max-height: 1000px;
       margin-top: 20px;
       padding: 20px;
+      overflow-y: auto;
     }
 
     .sidebar {
@@ -508,43 +542,6 @@
       width: 50px;
       height: 2px;
       background-color: var(--primary-red);
-    }
-
-    .categories-list {
-      list-style: none;
-    }
-
-    .categories-list li {
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .categories-list li:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    .categories-list a {
-      color: var(--medium-gray);
-      text-decoration: none;
-      transition: var(--transition);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .categories-list a:hover {
-      color: var(--primary-red);
-    }
-
-    .categories-list span {
-      background-color: var(--light-red);
-      color: var(--primary-red);
-      padding: 2px 8px;
-      border-radius: 20px;
-      font-size: 0.8rem;
     }
 
     .recent-posts {
@@ -878,47 +875,7 @@
       background-color: var(--dark-red);
     }
 
-    /* Pagination Styles */
-    .pagination {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .pagination a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background-color: var(--white);
-      color: var(--dark-gray);
-      border-radius: 5px;
-      text-decoration: none;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      font-size: 14px;
-    }
-
-    .pagination a.active,
-    .pagination a:hover {
-      background-color: var(--primary-red);
-      color: var(--white);
-    }
-
-    .pagination a.disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    .pagination a.disabled:hover {
-      background-color: var(--white);
-      color: var(--dark-gray);
-    }
-
-    /* Chat Widget Styles */
+    /* Chat Widget Styles - UPDATED */
     .chat-widget {
       position: fixed;
       bottom: 20px;
@@ -972,11 +929,28 @@
       align-items: center;
     }
 
+    .chat-header-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .chatbot-image {
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .chatbot-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 5px;
     }
 
     .chat-header h3 {
@@ -1005,6 +979,13 @@
       color: white;
       font-size: 18px;
       cursor: pointer;
+      padding: 5px;
+      border-radius: 50%;
+      transition: background-color 0.2s;
+    }
+
+    .chat-close:hover {
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     .chat-messages {
@@ -1012,18 +993,21 @@
       padding: 15px;
       overflow-y: auto;
       background-color: #f9f9f9;
-    }
-
-    .message {
-      margin-bottom: 15px;
       display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .message.user {
+    .chat-message {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .chat-message.user {
       justify-content: flex-end;
     }
 
-    .message.bot {
+    .chat-message.bot {
       justify-content: flex-start;
     }
 
@@ -1033,6 +1017,7 @@
       border-radius: 18px;
       font-size: 14px;
       line-height: 1.4;
+      word-wrap: break-word;
     }
 
     .user .message-content {
@@ -1509,8 +1494,11 @@
         height: 450px;
       }
 
+      /* IMPROVED: Interview Questions Responsive Styles */
       .interview-questions {
         padding: 15px;
+        max-height: 500px;
+        overflow-y: auto;
       }
 
       .question-item {
@@ -1519,6 +1507,20 @@
 
       .question {
         font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      .answer {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .answer ul {
+        padding-left: 15px;
+      }
+
+      .answer li {
+        margin-bottom: 6px;
       }
     }
 
@@ -1579,12 +1581,6 @@
         font-size: 0.8rem;
       }
 
-      .pagination a {
-        width: 35px;
-        height: 35px;
-        font-size: 13px;
-      }
-
       .footer-content {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -1609,6 +1605,24 @@
         height: 45px;
         bottom: 20px;
         right: 20px;
+      }
+
+      /* IMPROVED: Interview Questions for Small Screens */
+      .interview-questions {
+        padding: 12px;
+        max-height: 400px;
+      }
+
+      .question-item {
+        padding: 12px;
+      }
+
+      .question {
+        font-size: 0.95rem;
+      }
+
+      .answer {
+        font-size: 0.85rem;
       }
     }
 
@@ -1665,6 +1679,28 @@
         font-size: 13px;
         padding: 8px 12px;
       }
+
+      /* IMPROVED: Interview Questions for Extra Small Screens */
+      .interview-questions {
+        padding: 10px;
+        max-height: 350px;
+      }
+
+      .question-item {
+        padding: 10px;
+      }
+
+      .question {
+        font-size: 0.9rem;
+      }
+
+      .answer {
+        font-size: 0.8rem;
+      }
+
+      .answer ul {
+        padding-left: 12px;
+      }
     }
   </style>
 </head>
@@ -1688,9 +1724,12 @@
 
   <!-- Navigation -->
   <nav class="navbar">
-    <div class="container nav-container">
+    <div class="nav-container">
       <div class="logo">
-        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
+        <!-- Placeholder for logo -->
+        <div class="logo" style="display: flex; align-items: center">
+          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
+        </div>
       </div>
 
       <ul class="nav-menu">
@@ -1700,22 +1739,23 @@
         <li class="nav-item">
           <a href="gallery.html" class="nav-link">Gallery</a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+        <li class="nav-item dropdown-parent">
+          <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="classic.html" class="dropdown-item">Classic</a>
             <a href="professional.html" class="dropdown-item">Professional</a>
             <a href="expert.html" class="dropdown-item">Expert</a>
+            <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
         <li class="nav-item">
           <a href="browsecourse.html" class="nav-link">Browse Courses</a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+        <li class="nav-item dropdown-parent">
+          <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="placement.html" class="dropdown-item">Placement Training</a>
-            <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+            <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
@@ -1730,9 +1770,9 @@
         </li>
       </ul>
 
-      <button class="hamburger">
+      <div class="hamburger">
         <i class="fas fa-bars"></i>
-      </button>
+      </div>
     </div>
   </nav>
 
@@ -1762,31 +1802,6 @@
         </div>
 
         <div class="sidebar">
-          <!-- Categories Widget -->
-          <div class="sidebar-widget">
-            <h3 class="widget-title">Categories</h3>
-            <ul class="categories-list">
-              <li>
-                <a href="#">Web Development <span>12</span></a>
-              </li>
-              <li>
-                <a href="#">Data Science <span>8</span></a>
-              </li>
-              <li>
-                <a href="#">Artificial Intelligence <span>15</span></a>
-              </li>
-              <li>
-                <a href="#">Cybersecurity <span>7</span></a>
-              </li>
-              <li>
-                <a href="#">Mobile Development <span>9</span></a>
-              </li>
-              <li>
-                <a href="#">Cloud Computing <span>11</span></a>
-              </li>
-            </ul>
-          </div>
-
           <!-- Recent Posts Widget -->
           <div class="sidebar-widget">
             <h3 class="widget-title">Recent Posts</h3>
@@ -1811,11 +1826,11 @@
               </div>
               <div class="recent-post">
                 <div class="recent-post-image">
-                  <img src="./images/dev-ops.jpg" alt="DevOps" />
+                  <img src="./images/flutter.png" alt="DevOps" />
                 </div>
                 <div class="recent-post-content">
-                  <h4>DevOps Tools Every Developer Should Know</h4>
-                  <span>August 3, 2025</span>
+                  <h4>Smart Flutter Development Practices to Master in 2025.</h4>
+                  <span>November 18, 2025</span>
                 </div>
               </div>
             </div>
@@ -1865,11 +1880,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Pagination -->
-      <div class="pagination" id="paginationContainer">
-        <!-- Pagination will be generated by JavaScript -->
-      </div>
     </div>
   </section>
 
@@ -1877,13 +1887,16 @@
   <div class="chat-widget">
     <div class="chat-container" id="chatContainer">
       <div class="chat-header">
-        <div>
-          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Chatbot" class="chatbot-image"
-            style="width: 50px; height: 50px" />
-          <h3>Course Information</h3>
-          <div class="chat-status">
-            <div class="status-indicator"></div>
-            <span>Online</span>
+        <div class="chat-header-content">
+          <div class="chatbot-image">
+            <img src="./images/rohil_nextgen-removebg-preview.png" alt="Chatbot" />
+          </div>
+          <div>
+            <h3>Course Information</h3>
+            <div class="chat-status">
+              <div class="status-indicator"></div>
+              <span>Online</span>
+            </div>
           </div>
         </div>
         <button class="chat-close" id="chatClose">
@@ -1891,13 +1904,13 @@
         </button>
       </div>
       <div class="chat-messages" id="chatMessages">
-        <div class="message bot">
+        <div class="chat-message bot">
           <div class="message-content">
             Welcome to Rohil NextGen! I'm here to help you explore our
             courses. Type "courses" to see all available programs.
           </div>
         </div>
-        <div class="message bot">
+        <div class="chat-message bot">
           <div class="message-content">
             You can also ask about specific courses like Java, Python, Web
             Development, etc.
@@ -2106,7 +2119,7 @@
             <a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a>
           </li>
           <li>
-            <a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a>
+            <a href="companies.html"><i class="fas fa-chevron-right"></i> Tied-up Companies</a>
           </li>
           <li>
             <a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a>
@@ -2174,145 +2187,88 @@
     const blogPosts = [
       {
         id: 1,
-        title: "Top 5 GenAI & ML Interview Questions Asked in FAANG 2025",
-        excerpt: "Prepare for your FAANG interviews with these top 15 Generative AI and Machine Learning questions that are currently being asked in 2025. Master these concepts to ace your next technical interview.",
-        image: "./images/ai1.jpg",
-        date: "November 10, 2025",
-        category: "Artificial Intelligence",
-        author: "Rohil Groups",
+        title: "Career Opportunities for Lua Developers in 2025",
+        excerpt: "Discover why Lua is becoming a high-demand skill in 2025 and how students can use it to build a strong career in technology.",
+        image: "./images/LUA GameDevelopment.png",
+        date: "November 18, 2025",
+        category: "Lua Developer",
+        author: "Rohil NextGen",
         relatedContent: `
-          <div class="interview-questions">
-            <h4>Top 5 GenAI & ML Interview Questions for FAANG 2025</h4>
-            
-            <div class="question-item">
-              <div class="question">1. What are some popular Generative AI models?</div>
-              <div class="answer">
-                <ul>
-                  <li><strong>GPT (OpenAI), DALL·E / Midjourney, Claude / Gemini</strong> Adds positional information to embeddings</li>
-                </ul>
-              </div>
-            </div>
+      <div class="interview-questions">
+        <h4>Key Changes & Trends in 2025 for Lua Developers</h4>
 
-            <div class="question-item">
-              <div class="question">2. What are the main types of Generative Models?</div>
-              <div class="answer">
-                <p>Fine-tuning adapts pre-trained models to specific tasks:</p>
-                <ul>
-                  <li><strong>Variational Autoencoders (VAE), GANs .</strong></li>
-                </ul>
-              </div>
-            </div>
+        <div class="question-item">
+          <div class="question">Why Lua Is Gaining Popularity in 2025?</div>
+          <div class="answer">
+            <p>This question focuses on problem-framing: identifying what's truly being solved, understanding business metrics, data constraints, and deployment context.</p>
+          </div>
+        </div>
 
-            <div class="question-item">
-              <div class="question">3. What is a Transformer model?</div>
-              <div class="answer">
-                <p>A deep learning architecture based on self-attention, used for handling sequential data (like text).</p>
-              </div>
-            </div>
+       <h4>Top Career Opportunities for Lua Developers</h4>
 
-            <div class="question-item">
-              <div class="question">4. What is RLHF (Reinforcement Learning with Human Feedback)?</div>
-              <div class="answer">
-                <p>It combines reinforcement learning + human feedback to make outputs more aligned, safe, and relevant.</p>
-              </div>
-            </div>
+        <div class="question-item">
+          <div class="question">1. Game Scripting Developer</div>
+          <div class="answer">
+            <p>Used in Roblox, CryEngine, and indie game engines for building
+gameplay mechanics and tools.</p>
+          </div>
+        </div>
 
-            <div class="question-item">
-              <div class="question">5. Explain Overfitting and Underfitting.</div>
-              <div class="answer">
-                <ul>
-                  <li><strong>Overfitting: </strong> Model memorizes training data → performs poorly on new data.</li>
-                  <li><strong>Underfitting: </strong> Model too simple → cannot learn patterns properly.</li>
-                </ul>
-              </div>
-            </div>
-        `,
-      },
-      {
-        id: 2,
-        title: "Data Science Career Path: From Beginner to Expert",
-        excerpt: "Learn how to build a successful career in data science. This comprehensive guide covers essential skills, tools, and learning paths for aspiring data scientists at every level.",
-        image: "./images/datascience.jpg",
-        date: "May 5, 2025",
-        category: "Data Science",
-        author: "Rohil Groups",
-        relatedContent: `
-                    <h4>Essential Data Science Skills</h4>
-                    <p>To succeed in data science, you need a combination of technical and soft skills:</p>
-                    <ul>
-                        <li>Programming languages: Python, R, SQL</li>
-                        <li>Statistical analysis and mathematics</li>
-                        <li>Machine learning algorithms</li>
-                        <li>Data visualization tools</li>
-                        <li>Communication and storytelling</li>
-                    </ul>
-                    <p>Start with Python and SQL, then gradually build your expertise in machine learning and data visualization. Practical projects are key to developing these skills.</p>
-                `,
-      },
-      {
-        id: 3,
-        title: "Essential Cybersecurity Practices for Developers",
-        excerpt: "Protect your applications and data with these essential cybersecurity practices. Learn about common vulnerabilities and how to implement security measures in your development workflow.",
-        image: "./images/cyber-awarness.jpg",
-        date: "April 28, 2025",
-        category: "Cybersecurity",
-        author: "Rohil Groups",
-        relatedContent: `
-                    <h4>Top Security Practices for Developers</h4>
-                    <p>Security should be integrated into every stage of development:</p>
-                    <ul>
-                        <li>Input validation and sanitization</li>
-                        <li>Secure authentication and authorization</li>
-                        <li>Regular dependency updates</li>
-                        <li>Encryption of sensitive data</li>
-                        <li>Security testing and code reviews</li>
-                    </ul>
-                    <p>Implementing these practices from the beginning can prevent common vulnerabilities like SQL injection, XSS, and CSRF attacks.</p>
-                `,
-      },
-      {
-        id: 4,
-        title: "Python for Data Analysis: Complete Guide",
-        excerpt: "Master data analysis with Python. This guide covers everything from basic data manipulation with Pandas to advanced visualization techniques.",
-        image: "./images/python.webp",
-        date: "May 12, 2025",
-        category: "Data Science",
-        author: "Rohil Groups",
-        relatedContent: `
-                    <h4>Python Libraries for Data Analysis</h4>
-                    <p>Python offers a rich ecosystem of libraries for data analysis:</p>
-                    <ul>
-                        <li><strong>Pandas:</strong> Data manipulation and analysis</li>
-                        <li><strong>NumPy:</strong> Numerical computing</li>
-                        <li><strong>Matplotlib:</strong> Basic plotting and visualization</li>
-                        <li><strong>Seaborn:</strong> Statistical data visualization</li>
-                        <li><strong>Scikit-learn:</strong> Machine learning algorithms</li>
-                    </ul>
-                    <p>Start with Pandas for data manipulation, then explore visualization libraries to create insightful charts and graphs from your data.</p>
-                `,
-      },
-      {
-        id: 5,
-        title: "React JS Best Practices for 2025",
-        excerpt: "Learn the latest React JS best practices to build scalable and maintainable applications. Discover performance optimization techniques and modern development patterns.",
-        image: "./images/react.avif",
-        date: "May 8, 2025",
-        category: "Web Development",
-        author: "Rohil Groups",
-        relatedContent: `
-                    <h4>React Development Best Practices</h4>
-                    <p>Follow these practices to write better React code:</p>
-                    <ul>
-                        <li>Use functional components with hooks</li>
-                        <li>Implement proper state management</li>
-                        <li>Optimize performance with memoization</li>
-                        <li>Follow component composition patterns</li>
-                        <li>Write comprehensive tests</li>
-                    </ul>
-                    <p>These practices will help you build applications that are easier to maintain, test, and scale as your project grows.</p>
-                `,
-      },
+        <div class="question-item">
+          <div class="question">2. Automation &amp; AI Scripting Engineer</div>
+          <div class="answer">
+                       <p>Lua scripts help automate workflows, AI models, and internal
+systems in tech companies.</p>
+          </div>
+        </div>
 
+        <div class="question-item">
+          <div class="question">3. IoT &amp; Embedded Systems Programmer</div>
+          <div class="answer">
+            <p>Smart devices and robotics use Lua for fast, low-memory processing.</p>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <div class="question">4. Tools &amp; Plugin Developer</div>
+          <div class="answer">
+            <p>Many apps rely on Lua to build custom tools, plugins, and
+performance scripts.</p>
+          </div>
+        </div>
+
+          <div class="question-item">
+          <div class="question">5. Startup Automation Engineer</div>
+          <div class="answer">
+               <p>Startups prefer Lua for rapid development and lightweight
+automation solutions.</p>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <div class="question">5. Why Students Should Learn Lua Now</div>
+          <div class="answer">
+            <ul>
+              <li><strong></strong>Easy language for beginners</li>
+              <li><strong></strong>Fast to learn and apply</li>
+              <li><strong></strong>Useful for final-year projects</li>
+              <li><strong></strong>High demand in gaming and automation</li>
+              <li><strong>Rare skill </strong>→ faster hiring opportunities</li>
+            </ul>
+            <p>Lua helps students enter tech fields quickly while building confidence
+in coding.</p>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <div class="question">6. Learn Lua to Unlock New Opportunities</div>
+          <div class="answer">
+            <p>As industries shift toward speed, automation, and embedded technology, Lua developers are becoming more valuable.
+                  Learning Lua in 2025 gives students a strong advantage and opens doors to a growing range of tech careers.</p>
+          </div>
+        </div>       
+    `,
+      }
     ];
 
     // Pagination Configuration
@@ -2321,7 +2277,6 @@
 
     // DOM Elements
     const blogPostsContainer = document.getElementById("blogPostsContainer");
-    const paginationContainer = document.getElementById("paginationContainer");
     const whatsappForm = document.getElementById("whatsappForm");
     const nameInput = document.getElementById("nameInput");
     const phoneInput = document.getElementById("phoneInput");
@@ -2333,7 +2288,6 @@
     // Initialize the blog
     document.addEventListener("DOMContentLoaded", function () {
       displayBlogPosts();
-      setupPagination();
       setupWhatsAppNewsletter();
       setupNavigation();
       initNewsletter();
@@ -2389,67 +2343,6 @@
           }
         });
       });
-    }
-
-    // Setup pagination
-    function setupPagination() {
-      const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-
-      paginationContainer.innerHTML = "";
-
-      // Previous button
-      const prevButton = document.createElement("a");
-      prevButton.href = "#";
-      prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
-      if (currentPage === 1) {
-        prevButton.classList.add("disabled");
-      }
-      prevButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (currentPage > 1) {
-          currentPage--;
-          displayBlogPosts();
-          setupPagination();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      });
-      paginationContainer.appendChild(prevButton);
-
-      // Page numbers
-      for (let i = 1; i <= totalPages; i++) {
-        const pageLink = document.createElement("a");
-        pageLink.href = "#";
-        pageLink.textContent = i;
-        if (i === currentPage) {
-          pageLink.classList.add("active");
-        }
-        pageLink.addEventListener("click", (e) => {
-          e.preventDefault();
-          currentPage = i;
-          displayBlogPosts();
-          setupPagination();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-        paginationContainer.appendChild(pageLink);
-      }
-
-      // Next button
-      const nextButton = document.createElement("a");
-      nextButton.href = "#";
-      nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
-      if (currentPage === totalPages) {
-        nextButton.classList.add("disabled");
-      }
-      nextButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (currentPage < totalPages) {
-          currentPage++;
-          displayBlogPosts();
-          setupPagination();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      });
-      paginationContainer.appendChild(nextButton);
     }
 
     // Setup WhatsApp newsletter functionality
@@ -2773,7 +2666,7 @@
       });
     }
 
-    // Chat Widget Functionality
+    // Chat Widget Functionality - UPDATED
     function setupChatWidget() {
       const chatToggle = document.getElementById("chatToggle");
       const chatContainer = document.getElementById("chatContainer");
@@ -2786,8 +2679,15 @@
 
       // Toggle chat visibility
       chatToggle.addEventListener("click", function () {
-        chatContainer.style.display =
-          chatContainer.style.display === "flex" ? "none" : "flex";
+        const isVisible = chatContainer.style.display === "flex";
+        chatContainer.style.display = isVisible ? "none" : "flex";
+
+        // Focus on input when opening chat
+        if (!isVisible) {
+          setTimeout(() => {
+            chatInput.focus();
+          }, 300);
+        }
       });
 
       // Close chat
@@ -2797,7 +2697,10 @@
 
       // Course item click handlers
       document.querySelectorAll(".course-item").forEach((item) => {
-        item.addEventListener("click", function () {
+        item.addEventListener("click", function (e) {
+          // Prevent triggering when clicking buttons inside course details
+          if (e.target.classList.contains('quick-action-btn')) return;
+
           const course = this.getAttribute("data-course");
           const details = document.getElementById(`${course}-details`);
 
@@ -2845,7 +2748,7 @@
       // Add message to chat
       function addMessage(text, sender) {
         const messageDiv = document.createElement("div");
-        messageDiv.className = `message ${sender}`;
+        messageDiv.className = `chat-message ${sender}`;
 
         const messageContent = document.createElement("div");
         messageContent.className = "message-content";
@@ -2903,7 +2806,7 @@
           lowerMessage.includes("thanks") ||
           lowerMessage.includes("thankyou")
         ) {
-          return "You're welcome! 😊 Glad I could help. Let me know if you need any more information about our courses or services!";
+          return "You're welcome! 😊 Glad I could help. Spread the joy of learning.";
         } else if (
           lowerMessage.includes("courses") ||
           lowerMessage.includes("all courses") ||
@@ -3029,6 +2932,7 @@
       setTimeout(function () {
         if (chatContainer.style.display !== "flex") {
           chatContainer.style.display = "flex";
+          chatInput.focus();
         }
       }, 10000);
     }

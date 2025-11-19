@@ -829,36 +829,50 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
+        <div class="nav-container">
             <div class="logo">
-                <div class="logo" style="display: flex; align-items: center;">
-                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo">
+                <!-- Placeholder for logo -->
+                <div class="logo" style="display: flex; align-items: center">
+                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
                 </div>
             </div>
 
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item dropdown-parent">
+                    <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
                         <a href="classic.html" class="dropdown-item">Classic</a>
-                        <a href="professional.html" class="dropdown-item">Professional</a>
+                        <a href="professional.html" class="dropdown-item active">Professional</a>
                         <a href="expert.html" class="dropdown-item">Expert</a>
+                        <a href="internship.html" class="dropdown-item">Internship</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+                    <a href="browsecourse.html" class="nav-link">Browse Courses</a>
+                </li>
+                <li class="nav-item dropdown-parent">
+                    <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
                         <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+                                    <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
                         <a href="placement-success.html" class="dropdown-item">Placement Success</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
-                <li class="nav-item"><a href="gallery.html" class="nav-link active">Scholarship</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <a href="techblog.html" class="nav-link">Techblog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="scholarship.html" class="nav-link">Scholarship</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
             </ul>
 
             <div class="hamburger">
@@ -1266,14 +1280,16 @@
             <div id="newsletterMessage" class="newsletter-message"></div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="tech-footer">
         <div class="footer-content">
             <div class="footer-column">
                 <h3>About Rohil NextGen</h3>
-                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses
-                    in software development, data science, cybersecurity, and more.</p>
+                <p>
+                    We are a premier technology education platform in Virudhunagar
+                    offering cutting-edge courses in software development, data science,
+                    cybersecurity, and more.
+                </p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61574571321905"><i
                             class="fab fa-facebook-f"></i></a>
@@ -1285,26 +1301,45 @@
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
-                    <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
-                    <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
-                    <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li>
-                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li>
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a>
+                    </li>
+                    <li>
+                        <a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a>
+                    </li>
+                    <li>
+                        <a href="companies.html"><i class="fas fa-chevron-right"></i> Tied-up Companies</a>
+                    </li>
+                    <li>
+                        <a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a>
+                    </li>
+                    <li>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                    </li>
                 </ul>
             </div>
 
             <div class="footer-column">
                 <h3>Our Courses</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil
-                            Nadu</a></li>
-                    <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-                    <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
-                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                    <li>
+                        <a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen,
+                            Virudhunagar, Tamil Nadu</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a>
+                    </li>
                 </ul>
             </div>
-
         </div>
 
         <div class="footer-bottom">
@@ -1316,6 +1351,7 @@
             </div>
         </div>
     </footer>
+
     <script>
         // Initialize EmailJS with your public key
         (function () {
@@ -1556,7 +1592,7 @@
                 lowerMessage.includes("thanks") ||
                 lowerMessage.includes("thankyou")
             ) {
-                return "You're welcome! 😊 Glad I could help. Let me know if you need any more information about our courses or services!";
+                return "You're welcome! 😊 Glad I could help. Spread the joy of learning.";
             } else if (
                 lowerMessage.includes("courses") ||
                 lowerMessage.includes("all courses") ||

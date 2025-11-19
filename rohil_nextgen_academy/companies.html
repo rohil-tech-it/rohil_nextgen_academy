@@ -79,13 +79,21 @@
 
         .social-icons a {
             color: var(--white);
-            font-size: 25px;
-            transition: opacity 0.3s;
+            font-size: 20px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .social-icons a:hover {
-            color: var(--light-gray);
-            transform: translateY(-3px) scale(1.1);
+            background: var(--white);
+            color: var(--primary-red);
+            transform: translateY(-2px);
         }
 
         /* Navigation Styles - IMPROVED RESPONSIVE */
@@ -137,10 +145,28 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            position: relative;
         }
 
         .nav-link:hover {
             color: var(--primary-red);
+        }
+
+        /* Active state styles */
+        .nav-link.active {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-red);
+            border-radius: 2px;
         }
 
         .dropdown {
@@ -178,6 +204,14 @@
             padding-left: 25px;
         }
 
+        /* Active state for dropdown items */
+        .dropdown-item.active {
+            background-color: var(--light-grey);
+            color: var(--primary-red);
+            font-weight: 500;
+            border-left: 3px solid var(--primary-red);
+        }
+
         .hamburger {
             display: none;
             cursor: pointer;
@@ -210,7 +244,7 @@
 
         /* Hero Section */
         .hero-section {
-            background-image: linear-gradient(rgba(102, 100, 100, 0.7), rgba(29, 29, 29, 0.7)), url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
+            background-image: linear-gradient(rgba(78, 78, 78, 0.7), rgba(29, 29, 29, 0.7)), url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -350,6 +384,60 @@
             background-color: var(--primary-red);
         }
 
+        /* Updated Pagination Styles - Responsive */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .pagination-button {
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            color: var(--dark-gray);
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            min-width: 42px;
+            height: 42px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .pagination-button:hover {
+            background-color: var(--primary-red);
+            color: var(--white);
+            border-color: var(--primary-red);
+        }
+
+        .pagination-button.active {
+            background-color: var(--primary-red);
+            color: var(--white);
+            border-color: var(--primary-red);
+        }
+
+        .pagination-button:disabled {
+            background-color: var(--light-gray);
+            color: var(--medium-gray);
+            cursor: not-allowed;
+        }
+
+        .pagination-ellipsis {
+            background: none !important;
+            border: none !important;
+            color: var(--medium-gray);
+            cursor: default;
+            padding: 10px 5px;
+        }
+
         /* Partnership Info */
         .partnership-info {
             background-color: var(--light-gray);
@@ -391,7 +479,6 @@
         .info-card p {
             color: var(--medium-gray);
         }
-
 
         /* Chat Widget Styles - LEFT SIDE */
         .chat-widget {
@@ -676,42 +763,6 @@
             background: var(--dark-red);
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-
-            .chat-container {
-                width: 290px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .chat-container {
-                height: 380px;
-            }
-
-            .chat-header {
-                padding: 10px 12px;
-            }
-
-            .chat-header h3 {
-                font-size: 14px;
-            }
-
-            .chatbot-image {
-                width: 35px;
-                height: 35px;
-            }
-        }
-
-        @media (max-width: 480px) {
-
-            .chat-container {
-                width: 330px;
-                left: 10px;
-            }
-        }
-
         /* Enhanced Footer */
         .tech-footer {
             background: linear-gradient(rgba(97, 97, 97, 0.95), rgba(128, 112, 112, 0.98)),
@@ -822,7 +873,7 @@
             margin: 0;
         }
 
-        /* Back to Top Button */
+        /* Back to Top Button - IMPROVED */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -840,6 +891,9 @@
             visibility: hidden;
             transition: var(--transition);
             z-index: 999;
+            border: none;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .back-to-top.active {
@@ -849,8 +903,9 @@
 
         .back-to-top:hover {
             background-color: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
-
 
         /* Newsletter Subscription Styles */
         .newsletter-section {
@@ -966,15 +1021,47 @@
 
         @media (max-width: 992px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.0rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.0rem;
+                margin-bottom: 30px;
+                opacity: 0.9;
             }
 
             .companies-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+
+            .pagination {
+                gap: 6px;
+            }
+
+            .pagination-button {
+                min-width: 38px;
+                height: 38px;
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                min-height: 260px;
+                /* perfectly fits mobile */
+                padding: 60px 0;
+            }
         }
 
         @media (max-width: 768px) {
+            .hero-section {
+                min-height: 250px;
+                /* reduce height for tablets & small screens */
+                padding: 80px 0;
+                /* reduce padding */
+            }
+
             .top-bar-container {
                 flex-direction: column;
                 gap: 10px;
@@ -1064,41 +1151,67 @@
             .nav-link.active i.fa-chevron-down {
                 transform: rotate(180deg);
             }
-        }
-
-        @media (max-width: 992px) {
-
-            .carousel-content h2 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .top-bar-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .top-bar {
-                height: 200px;
-            }
-
-            .contact-info {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
 
             .companies-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pagination {
+                gap: 4px;
+            }
+
+            .pagination-button {
+                min-width: 36px;
+                height: 36px;
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .chat-container {
+                width: 290px;
+                height: 450px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .companies-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .company-card {
+                height: 200px;
+                padding: 20px 15px;
+            }
+
+            .company-name {
+                font-size: 1rem;
+            }
+
+            .pagination {
+                gap: 3px;
+            }
+
+            .pagination-button {
+                min-width: 32px;
+                height: 32px;
+                font-size: 11px;
+                padding: 5px 8px;
             }
 
             .footer-bottom {
@@ -1120,28 +1233,57 @@
             .newsletter-form {
                 flex-direction: column;
             }
+
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
         }
 
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
+        @media (max-width: 480px) {
+            .chat-container {
+                width: 330px;
+                left: 10px;
             }
 
-            .section-title h2 {
-                font-size: 2rem;
+            .pagination {
+                gap: 2px;
             }
 
-            .companies-grid {
-                grid-template-columns: repeat(1, 1fr);
+            .pagination-button {
+                min-width: 30px;
+                height: 30px;
+                font-size: 10px;
+                padding: 4px 6px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .chat-container {
+                height: 380px;
             }
 
-            .company-card {
-                height: 200px;
-                padding: 20px 15px;
+            .chat-header {
+                padding: 10px 12px;
             }
 
-            .company-name {
-                font-size: 1rem;
+            .chat-header h3 {
+                font-size: 14px;
+            }
+
+            .chatbot-image {
+                width: 35px;
+                height: 35px;
+            }
+
+            .pagination-button {
+                min-width: 28px;
+                height: 28px;
+                font-size: 9px;
+                padding: 3px 5px;
             }
         }
     </style>
@@ -1164,36 +1306,53 @@
             </div>
         </div>
     </div>
+
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
+        <div class="nav-container">
             <div class="logo">
-                <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo">
+                <!-- Placeholder for logo -->
+                <div class="logo" style="display: flex; align-items: center">
+                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
+                </div>
             </div>
 
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item dropdown-parent">
+                    <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
                         <a href="classic.html" class="dropdown-item">Classic</a>
                         <a href="professional.html" class="dropdown-item">Professional</a>
                         <a href="expert.html" class="dropdown-item">Expert</a>
+                        <a href="internship.html" class="dropdown-item">Internship</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+                    <a href="browsecourse.html" class="nav-link">Browse Courses</a>
+                </li>
+                <li class="nav-item dropdown-parent">
+                    <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
                         <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+                        <a href="companies.html" class="dropdown-item active">Tied-up Companies</a>
                         <a href="placement-success.html" class="dropdown-item">Placement Success</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
-                <li class="nav-item"><a href="scholarship.html" class="nav-link active">Scholarship</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <a href="techblog.html" class="nav-link">Techblog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="scholarship.html" class="nav-link">Scholarship</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
             </ul>
 
             <div class="hamburger">
@@ -1205,7 +1364,7 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">Our Tie-up Companies</h1>
+            <h1 class="hero-title">Our Tied-up Companies</h1>
             <p class="hero-subtitle">Connecting talent with leading technology companies for successful career
                 placements</p>
             <a href="#companies" class="cta-button">Explore Companies</a>
@@ -1224,608 +1383,16 @@
             <!-- Group 1 -->
             <div class="company-group">
                 <h3 class="group-title">Global Technology Leaders</h3>
-                <div class="companies-grid">
-                    <div class="company-card">
-                        <img src="./logos/logo (2).png" alt="ROHIL TECHNOLOGIES" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/finforz.png" alt="ROHIL TECHNOLOGIES" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/codingmart.jfif" alt="ROHIL TECHNOLOGIES" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (36).jpeg" alt="ROHIL TECHNOLOGIES" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/accenture.png" alt="ROHIL TECHNOLOGIES" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/google.png" alt="ROHIL TECHNOLOGIES" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/great innovus.png" alt="ROHIL TECHNOLOGIES" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/acl digital.png" alt="aquaconnect®" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/adobe.png" alt="virtusa" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/apple.png" alt="tcs" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/aqua.jpg" alt="mahindra" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/arm.jfif" alt="infor" class="company-logo">
-
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/asg-tech.png" alt="ICS" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/atos.png" alt="HOLTech" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/bosch.png" alt="idea's 2IT" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/capgemini.png" alt="Digital" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/capita.png" alt="PALM BY THE NEWPORT" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/cat.jpg" alt="CIRCLE" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/chetu.png" alt="actrenalin M&Y" class="company-logo">
-
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/cisco.png" alt="New Port of SES" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/cloustech.png" alt="salesforce" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/cog.jpg" alt="newgen" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/csc.png" alt="Myphasis" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/dci.png" alt="Kissflow" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/dell.png" alt="inspirisys" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/dxc tech.png" alt="Institute of Science" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/egrove.jfif" alt="xariant" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/elroi.jfif" alt="Roche" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/epam.png" alt="KONE" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/esales.jfif" alt="softcrylic" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/exceltento.jfif" alt="Chetu" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/fis.png" alt="KBR" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/hcl.png" alt="newage" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/hexaware.png" alt="ABB" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/hpe.png" alt="Finforz" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/ideas.jfif" alt="Atos" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/hcltech.jfif" alt="intellect" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img2.png" alt="ERICSSON" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img22.avif" alt="incedo" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img3.webp" alt="anow.com" class="company-logo">
-                        <div class="company-name">anow.com</div>
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img32.png" alt="carelon" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img33.png" alt="INFIN" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img36.jpg" alt="SAP" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img4.jpg" alt="Microsoft" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img5.png" alt="Jio" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img6.png" alt="iPod" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img7.png" alt="HALEON" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img8.png" alt="exela" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/img9.png" alt="SAINT-GOBAIN" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/infosys.png" alt="Hewlett Packard Enterprise" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/infin.jfif" alt="L&T Technology Services" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/itellect.png" alt="3i Infotech" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/kamaraj.jfif" alt="KPI T'" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/kissflow.png" alt="INDIUM" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/kone.png" alt="SIEMENS" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/kpit.jfif" alt="Bytesompass" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (1).avif" alt="Bytesompass" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/carelon.png" alt="Bytesompass" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/jio.png" alt="Bytesompass" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/trinomix.png" alt="Bytesompass" class="company-logo">
-                    </div>
+                <div class="companies-grid" id="companiesGrid">
+                    <!-- Company cards will be populated by JavaScript -->
                 </div>
             </div>
 
-            <!-- Group 2 -->
-            <div class="company-group">
-                <div class="companies-grid">
-                    <div class="company-card">
-                        <img src="./logos/logo (1).png" alt="Bytesompass" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (102).png" alt="BLUE PEAR" class="company-logo">
-
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (105).png" alt="TRONIEX" class="company-logo">
-
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (106).jpeg" alt="SaaSForest" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (112).jpeg" alt="SystemaNX" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (113).jpeg" alt="VELANCE" class="company-logo">
-
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (114).jpeg" alt="Coazidel Consultancy Services" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (197).png" alt="Fogrove Systems" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (116).png" alt="Futurik Technolo" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (117).jpeg" alt="EiBS" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (118).jpeg" alt="INFOTECH" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (119).jpeg" alt="GOFRUGAL" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (120).jpeg" alt="AstraByte" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (121).jpeg" alt="Elysium Corp." class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (122).jpeg" alt="Aportivo" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (123).jpeg" alt="XL Dynamics" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (124).jpeg" alt="Straive" class="company-logo">
-                        <div class="company-name">Straive</div>
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (125).jpeg" alt="Infodge" class="company-logo">
-                        <div class="company-name">Infodge</div>
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (126).png" alt="Capita" class="company-logo">
-                        <div class="company-name">Capita</div>
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (127).jpeg" alt="Lavish" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (128).jpeg" alt="CONNECT" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (129).png" alt="DATERPILLAR" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (130).png" alt="DATERPILLAR" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/logo (131).png" alt="DATERPILLAR" class="company-logo">
-                    </div>
-                    <div class="company-card">
-                        <img src="./logos/banibro.png" alt="DATERPILLAR" class="company-logo">
-                    </div>
-                </div>
+            <!-- Updated Pagination Controls - Responsive -->
+            <div class="pagination" id="pagination">
+                <!-- Page numbers will be populated by JavaScript -->
             </div>
-
-
-            <div class="companies-grid">
-                <div class="company-card">
-                    <img src="./logos/logo (132).png" alt="STRIDES" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (133).jpeg" alt="VYOG" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (134).jpeg" alt="ROFTR" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (135).jpeg" alt="KYRAN" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (136).png" alt="SMS" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (137).jpeg" alt="ITPARK" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (138).png" alt="Tartlabs" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (139).png" alt="ACURUS BE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (140).png" alt="MASSIVE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (141).png" alt="VeeServ Technologies" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (142).png" alt="Balt" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (143).png" alt="MATICZ" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (144).jpeg" alt="BONDING TOGETHER" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (145).png" alt="Testleaf" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (146).png" alt="Vaagai" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (147).png" alt="JEEVAN" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (148).jpeg" alt="ADHOC" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (149).jpeg" alt="CORPORATE TEA" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (150).jpeg" alt="SPORT FOR TEA" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (151).png" alt="BOTRE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (152).png" alt="CleusTech" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (153).jpeg" alt="VAS" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (154).jpeg" alt="ELYSIAN" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (155).png" alt="COME" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (156).png" alt="COPY" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (157).png" alt="ELROI" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (158).png" alt="Elisabeth" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (159).png" alt="LAMBA Tech Softics" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (160).png" alt="Tamizha Software Solution" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (161).png" alt="TAMIZHA" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (162).png" alt="BSE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (163).png" alt="QUALITY THROUGH RESEARCH" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (164).png" alt="TEC" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (165).png" alt="CAP DIGISOFT" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (166).png" alt="ZAIGO Infotech" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (167).jpeg" alt="BANNARI AMMAI" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (168).png" alt="KAMARAI" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (169).png" alt="Excelanto" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (170).png" alt="OMghradius" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (171) (1).png" alt="CONNECT" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (172) (1).png" alt="EBX" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (173).png" alt="solaris" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (174).png" alt="SAIC" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (175).jpeg" alt="J. Innervex" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (176).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (177).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (178).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (179).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (180).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (181).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo(182).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (183).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (184).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (185).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (186).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (4).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (187).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-
-                <div class="company-card">
-                    <img src="./logos/logo (188).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (193).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (194).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (195).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (189).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (190).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (191).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (6).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (196).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (23).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (25).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (26).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (30).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (36).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (200).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (201).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/hi-tech.jfif" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (203).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (204).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (205).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (206).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (207).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (208).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (209).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/lt.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/ness.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/newgen.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/payoda.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/pramati.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/pws.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/r system.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/salesforce.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/sap.webp" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/solartis.jfif" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/tata.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/tcs.jfif" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (191).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/tesark.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/udmy.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/walmart.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/wipro.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/virtusa.jfif" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/zaigo.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/zensar.png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/zoho.jpg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logosss (1).jfif" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logosss (1).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (41).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (125).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logo (134).jpeg" alt="TRIOANGLE" class="company-logo">
-                </div>
-                <div class="company-card">
-                    <img src="./logos/logosss (2).png" alt="TRIOANGLE" class="company-logo">
-                </div>
-            </div>
+        </div>
     </section>
 
     <!-- Partnership Info -->
@@ -2051,7 +1618,7 @@
                     <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
                     <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
                     <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
-                    <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
+                    <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tied-up Companies</a></li>
                     <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a>
                     </li>
                     <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
@@ -2082,15 +1649,404 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <div class="back-to-top">
+    <button class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
-    </div>
+    </button>
 
     <script>
         // Initialize EmailJS with your Public Key
         (function () {
             emailjs.init("zImWs-QBwGe-B-JT3");
         })();
+
+        // Companies Data - Only logos
+        const companiesData = [
+            { logo: "./logos/logo (2).png" },
+            { logo: "./logos/finforz.png" },
+            { logo: "./logos/codingmart.jfif" },
+            { logo: "./logos/logo (36).jpeg" },
+            { logo: "./logos/accenture.png" },
+            { logo: "./logos/great innovus.png" },
+            { logo: "./logos/acl digital.png" },
+            { logo: "./logos/adobe.png" },
+            { logo: "./logos/aqua.jpg" },
+            { logo: "./logos/arm.jfif" },
+            { logo: "./logos/asg-tech.png" },
+            { logo: "./logos/atos.png" },
+            { logo: "./logos/bosch.png" },
+            { logo: "./logos/capgemini.png" },
+            { logo: "./logos/capita.png" },
+            { logo: "./logos/cat.jpg" },
+            { logo: "./logos/chetu.png" },
+            { logo: "./logos/cisco.png" },
+            { logo: "./logos/cloustech.png" },
+            { logo: "./logos/cog.jpg" },
+            { logo: "./logos/csc.png" },
+            { logo: "./logos/dci.png" },
+            { logo: "./logos/dell.png" },
+            { logo: "./logos/dxc tech.png" },
+            { logo: "./logos/egrove.jfif" },
+            { logo: "./logos/elroi.jfif" },
+            { logo: "./logos/epam.png" },
+            { logo: "./logos/esales.jfif" },
+            { logo: "./logos/exceltento.jfif" },
+            { logo: "./logos/fis.png" },
+            { logo: "./logos/hcl.png" },
+            { logo: "./logos/hexaware.png" },
+            { logo: "./logos/hpe.png" },
+            { logo: "./logos/ideas.jfif" },
+            { logo: "./logos/hcltech.jfif" },
+            { logo: "./logos/img2.png" },
+            { logo: "./logos/img22.avif" },
+            { logo: "./logos/img3.webp" },
+            { logo: "./logos/img32.png" },
+            { logo: "./logos/img33.png" },
+            { logo: "./logos/img36.jpg" },
+            { logo: "./logos/img4.jpg" },
+            { logo: "./logos/img5.png" },
+            { logo: "./logos/img6.png" },
+            { logo: "./logos/img7.png" },
+            { logo: "./logos/img8.png" },
+            { logo: "./logos/img9.png" },
+            { logo: "./logos/infosys.png" },
+            { logo: "./logos/infin.jfif" },
+            { logo: "./logos/itellect.png" },
+            { logo: "./logos/kamaraj.jfif" },
+            { logo: "./logos/kissflow.png" },
+            { logo: "./logos/kone.png" },
+            { logo: "./logos/kpit.jfif" },
+            { logo: "./logos/logo (1).avif" },
+            { logo: "./logos/carelon.png" },
+            { logo: "./logos/jio.png" },
+            { logo: "./logos/trinomix.png" },
+            { logo: "./logos/logo (1).png" },
+            { logo: "./logos/logo (102).png" },
+            { logo: "./logos/logo (105).png" },
+            { logo: "./logos/logo (106).jpeg" },
+            { logo: "./logos/logo (112).jpeg" },
+            { logo: "./logos/logo (113).jpeg" },
+            { logo: "./logos/logo (114).jpeg" },
+            { logo: "./logos/logo (197).png" },
+            { logo: "./logos/logo (116).png" },
+            { logo: "./logos/logo (117).jpeg" },
+            { logo: "./logos/logo (118).jpeg" },
+            { logo: "./logos/logo (119).jpeg" },
+            { logo: "./logos/logo (120).jpeg" },
+            { logo: "./logos/logo (121).jpeg" },
+            { logo: "./logos/logo (122).jpeg" },
+            { logo: "./logos/logo (123).jpeg" },
+            { logo: "./logos/logo (124).jpeg" },
+            { logo: "./logos/logo (125).jpeg" },
+            { logo: "./logos/logo (126).png" },
+            { logo: "./logos/logo (127).jpeg" },
+            { logo: "./logos/logo (128).jpeg" },
+            { logo: "./logos/logo (129).png" },
+            { logo: "./logos/logo (130).png" },
+            { logo: "./logos/logo (131).png" },
+            { logo: "./logos/banibro.png" },
+            { logo: "./logos/logo (132).png" },
+            { logo: "./logos/logo (133).jpeg" },
+            { logo: "./logos/logo (134).jpeg" },
+            { logo: "./logos/logo (135).jpeg" },
+            { logo: "./logos/logo (136).png" },
+            { logo: "./logos/logo (137).jpeg" },
+            { logo: "./logos/logo (138).png" },
+            { logo: "./logos/logo (139).png" },
+            { logo: "./logos/logo (140).png" },
+            { logo: "./logos/logo (141).png" },
+            { logo: "./logos/logo (142).png" },
+            { logo: "./logos/logo (143).png" },
+            { logo: "./logos/logo (144).jpeg" },
+            { logo: "./logos/logo (145).png" },
+            { logo: "./logos/logo (146).png" },
+            { logo: "./logos/logo (147).png" },
+            { logo: "./logos/logo (148).jpeg" },
+            { logo: "./logos/logo (149).jpeg" },
+            { logo: "./logos/logo (150).jpeg" },
+            { logo: "./logos/logo (151).png" },
+            { logo: "./logos/logo (152).png" },
+            { logo: "./logos/logo (153).jpeg" },
+            { logo: "./logos/logo (154).jpeg" },
+            { logo: "./logos/logo (155).png" },
+            { logo: "./logos/logo (156).png" },
+            { logo: "./logos/logo (157).png" },
+            { logo: "./logos/logo (158).png" },
+            { logo: "./logos/logo (159).png" },
+            { logo: "./logos/logo (160).png" },
+            { logo: "./logos/logo (161).png" },
+            { logo: "./logos/logo (162).png" },
+            { logo: "./logos/logo (163).png" },
+            { logo: "./logos/logo (164).png" },
+            { logo: "./logos/logo (165).png" },
+            { logo: "./logos/logo (166).png" },
+            { logo: "./logos/logo (167).jpeg" },
+            { logo: "./logos/logo (168).png" },
+            { logo: "./logos/logo (169).png" },
+            { logo: "./logos/logo (170).png" },
+            { logo: "./logos/logo (171) (1).png" },
+            { logo: "./logos/logo (172) (1).png" },
+            { logo: "./logos/logo (173).png" },
+            { logo: "./logos/logo (174).png" },
+            { logo: "./logos/logo (175).jpeg" },
+            { logo: "./logos/logo (176).png" },
+            { logo: "./logos/logo (177).png" },
+            { logo: "./logos/logo (178).jpeg" },
+            { logo: "./logos/logo (179).png" },
+            { logo: "./logos/logo (180).jpeg" },
+            { logo: "./logos/logo (181).png" },
+            { logo: "./logos/logo(182).png" },
+            { logo: "./logos/logo (183).png" },
+            { logo: "./logos/logo (184).png" },
+            { logo: "./logos/logo (185).png" },
+            { logo: "./logos/logo (186).jpeg" },
+            { logo: "./logos/logo (4).png" },
+            { logo: "./logos/logo (187).jpeg" },
+            { logo: "./logos/logo (188).png" },
+            { logo: "./logos/logo (193).png" },
+            { logo: "./logos/logo (194).png" },
+            { logo: "./logos/logo (195).png" },
+            { logo: "./logos/logo (189).jpeg" },
+            { logo: "./logos/logo (190).jpeg" },
+            { logo: "./logos/logo (191).jpeg" },
+            { logo: "./logos/logo (6).png" },
+            { logo: "./logos/logo (196).jpeg" },
+            { logo: "./logos/logo (23).png" },
+            { logo: "./logos/logo (25).jpeg" },
+            { logo: "./logos/logo (26).jpeg" },
+            { logo: "./logos/logo (30).jpeg" },
+            { logo: "./logos/logo (36).jpeg" },
+            { logo: "./logos/logo (200).jpeg" },
+            { logo: "./logos/logo (201).png" },
+            { logo: "./logos/hi-tech.jfif" },
+            { logo: "./logos/logo (203).jpeg" },
+            { logo: "./logos/logo (204).png" },
+            { logo: "./logos/logo (205).jpeg" },
+            { logo: "./logos/logo (206).jpeg" },
+            { logo: "./logos/logo (207).jpeg" },
+            { logo: "./logos/logo (208).png" },
+            { logo: "./logos/logo (209).jpeg" },
+            { logo: "./logos/lt.png" },
+            { logo: "./logos/ness.png" },
+            { logo: "./logos/newgen.png" },
+            { logo: "./logos/payoda.png" },
+            { logo: "./logos/pramati.png" },
+            { logo: "./logos/pws.png" },
+            { logo: "./logos/r system.png" },
+            { logo: "./logos/salesforce.png" },
+            { logo: "./logos/sap.webp" },
+            { logo: "./logos/solartis.jfif" },
+            { logo: "./logos/tata.png" },
+            { logo: "./logos/tcs.jfif" },
+            { logo: "./logos/logo (191).jpeg" },
+            { logo: "./logos/tesark.png" },
+            { logo: "./logos/udmy.png" },
+            { logo: "./logos/walmart.png" },
+            { logo: "./logos/wipro.png" },
+            { logo: "./logos/virtusa.jfif" },
+            { logo: "./logos/zaigo.png" },
+            { logo: "./logos/zensar.png" },
+            { logo: "./logos/zoho.jpg" },
+            { logo: "./logos/logosss (1).jfif" },
+            { logo: "./logos/logosss (1).png" },
+            { logo: "./logos/logo (41).png" },
+            { logo: "./logos/logo (125).jpeg" },
+            { logo: "./logos/logo (134).jpeg" },
+            { logo: "./images/tech.png" },
+            { logo: "./images/l1.png" },
+            { logo: "./images/l2.png" },
+            { logo: "./images/l3.png" },
+            { logo: "./images/l4.png" },
+            { logo: "./images/l5.png" },
+            { logo: "./images/l6.png" },
+            { logo: "./images/l7.png" },
+            { logo: "./images/l8.png" },
+            { logo: "./images/l9.png" },
+            { logo: "./images/l10.png" },
+            { logo: "./images/l11.png" },
+            { logo: "./images/l12.png" },
+            { logo: "./images/l13.png" },
+            { logo: "./images/l14.png" },
+            { logo: "./images/l15.png" },
+            { logo: "./images/l16.png" },
+            { logo: "./images/l17.png" },
+            { logo: "./images/l18.png" },
+            { logo: "./images/l19.png" },
+            { logo: "./images/l20.png" },
+            { logo: "./images/l21.png" },
+            { logo: "./images/l22.png" },
+            { logo: "./images/l23.png" },
+            { logo: "./images/l24.png" },
+            { logo: "./images/l25.png" },
+            { logo: "./images/l26.png" },
+            { logo: "./images/l27.png" },
+            { logo: "./images/l28.png" },
+            { logo: "./images/l19.png" },
+            { logo: "./images/l30.png" },
+            { logo: "./images/l31.png" },
+            { logo: "./images/l32.png" },
+
+        ];
+
+        // Pagination variables
+        let currentPage = 1;
+        const companiesPerPage = 50;
+        const totalPages = Math.ceil(companiesData.length / companiesPerPage);
+
+        // DOM Elements
+        const companiesGrid = document.getElementById('companiesGrid');
+        const paginationContainer = document.getElementById('pagination');
+        const backToTopButton = document.getElementById('backToTop');
+
+        // Function to display companies for the current page
+        function displayCompanies() {
+            companiesGrid.innerHTML = '';
+
+            const startIndex = (currentPage - 1) * companiesPerPage;
+            const endIndex = startIndex + companiesPerPage;
+            const companiesToShow = companiesData.slice(startIndex, endIndex);
+
+            companiesToShow.forEach(company => {
+                const companyCard = document.createElement('div');
+                companyCard.className = 'company-card';
+
+                companyCard.innerHTML = `
+            <img src="${company.logo}" alt="Company Logo" class="company-logo">
+        `;
+
+                companiesGrid.appendChild(companyCard);
+            });
+
+            // Update pagination controls
+            updatePagination();
+        }
+
+        // Function to update pagination controls - IMPROVED RESPONSIVE
+        function updatePagination() {
+            paginationContainer.innerHTML = '';
+
+            // Add previous button if not on first page
+            if (currentPage > 1) {
+                const prevButton = document.createElement('button');
+                prevButton.className = 'pagination-button';
+                prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevButton.title = 'Previous Page';
+                prevButton.addEventListener('click', () => {
+                    currentPage--;
+                    displayCompanies();
+                    window.scrollTo({ top: companiesGrid.offsetTop - 100, behavior: 'smooth' });
+                });
+                paginationContainer.appendChild(prevButton);
+            }
+
+            // Show all page numbers - with responsive behavior
+            const maxVisiblePages = window.innerWidth < 576 ? 5 : window.innerWidth < 768 ? 7 : totalPages;
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+            // Adjust if we're at the end
+            if (endPage - startPage < maxVisiblePages - 1) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+
+            // Add first page and ellipsis if needed
+            if (startPage > 1) {
+                const firstButton = document.createElement('button');
+                firstButton.className = 'pagination-button';
+                firstButton.textContent = '1';
+                firstButton.addEventListener('click', () => {
+                    currentPage = 1;
+                    displayCompanies();
+                    window.scrollTo({ top: companiesGrid.offsetTop - 100, behavior: 'smooth' });
+                });
+                paginationContainer.appendChild(firstButton);
+
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.className = 'pagination-button pagination-ellipsis';
+                    ellipsis.textContent = '...';
+                    paginationContainer.appendChild(ellipsis);
+                }
+            }
+
+            // Create page number buttons
+            for (let i = startPage; i <= endPage; i++) {
+                const pageButton = document.createElement('button');
+                pageButton.className = 'pagination-button';
+                pageButton.textContent = i;
+
+                if (i === currentPage) {
+                    pageButton.classList.add('active');
+                }
+
+                pageButton.addEventListener('click', () => {
+                    currentPage = i;
+                    displayCompanies();
+                    window.scrollTo({ top: companiesGrid.offsetTop - 100, behavior: 'smooth' });
+                });
+
+                paginationContainer.appendChild(pageButton);
+            }
+
+            // Add last page and ellipsis if needed
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.className = 'pagination-button pagination-ellipsis';
+                    ellipsis.textContent = '...';
+                    paginationContainer.appendChild(ellipsis);
+                }
+
+                const lastButton = document.createElement('button');
+                lastButton.className = 'pagination-button';
+                lastButton.textContent = totalPages;
+                lastButton.addEventListener('click', () => {
+                    currentPage = totalPages;
+                    displayCompanies();
+                    window.scrollTo({ top: companiesGrid.offsetTop - 100, behavior: 'smooth' });
+                });
+                paginationContainer.appendChild(lastButton);
+            }
+
+            // Add next button if there are more pages
+            if (currentPage < totalPages) {
+                const nextButton = document.createElement('button');
+                nextButton.className = 'pagination-button';
+                nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextButton.title = 'Next Page';
+                nextButton.addEventListener('click', () => {
+                    currentPage++;
+                    displayCompanies();
+                    window.scrollTo({ top: companiesGrid.offsetTop - 100, behavior: 'smooth' });
+                });
+                paginationContainer.appendChild(nextButton);
+            }
+        }
+
+        // Initialize the display
+        displayCompanies();
+
+        // Back to Top Button Functionality - IMPROVED
+        function toggleBackToTop() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        }
+
+        // Initial check
+        toggleBackToTop();
+
+        // Listen for scroll events
+        window.addEventListener('scroll', toggleBackToTop);
+
+        // Back to top click handler
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
         // Newsletter Functionality
         document.addEventListener('DOMContentLoaded', function () {
@@ -2324,7 +2280,7 @@
                 lowerMessage.includes("thanks") ||
                 lowerMessage.includes("thankyou")
             ) {
-                return "You're welcome! 😊 Glad I could help. Let me know if you need any more information about our courses or services!";
+                return "You're welcome! 😊 Glad I could help. Spread the joy of learning.";
             } else if (
                 lowerMessage.includes("courses") ||
                 lowerMessage.includes("all courses") ||
@@ -2445,24 +2401,6 @@
             }
         }, 10000);
 
-        // Back to Top Button
-        const backToTopButton = document.querySelector('.back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('active');
-            } else {
-                backToTopButton.classList.remove('active');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
         // Mobile Menu Toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
@@ -2517,7 +2455,11 @@
                 }
             }
         });
+
+        // Update pagination on window resize for better responsiveness
+        window.addEventListener('resize', updatePagination);
     </script>
+
 </body>
 
 </html>

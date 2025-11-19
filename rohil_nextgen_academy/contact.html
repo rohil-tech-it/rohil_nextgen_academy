@@ -84,13 +84,21 @@
 
     .social-icons a {
       color: var(--white);
-      font-size: 25px;
-      transition: opacity 0.3s;
+      font-size: 20px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .social-icons a:hover {
-      color: var(--text-grey);
-      transform: translateY(-3px);
+      background: var(--white);
+      color: var(--primary-red);
+      transform: translateY(-2px);
     }
 
     /* Navigation Styles - IMPROVED RESPONSIVE */
@@ -142,10 +150,28 @@
       display: flex;
       align-items: center;
       gap: 5px;
+      position: relative;
     }
 
     .nav-link:hover {
       color: var(--primary-red);
+    }
+
+    /* Active state styles */
+    .nav-link.active {
+      color: var(--primary-red);
+      font-weight: 600;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary-red);
+      border-radius: 2px;
     }
 
     .dropdown {
@@ -181,6 +207,14 @@
       background-color: var(--light-grey);
       color: var(--primary-red);
       padding-left: 25px;
+    }
+
+    /* Active state for dropdown items */
+    .dropdown-item.active {
+      background-color: var(--light-grey);
+      color: var(--primary-red);
+      font-weight: 500;
+      border-left: 3px solid var(--primary-red);
     }
 
     .hamburger {
@@ -563,7 +597,7 @@
       margin: 0;
     }
 
-    /* Back to Top Button */
+    /* Back to Top Button - FIXED STYLES */
     .back-to-top {
       position: fixed;
       bottom: 30px;
@@ -579,8 +613,11 @@
       cursor: pointer;
       opacity: 0;
       visibility: hidden;
-      transition: var(--transition);
-      z-index: 999;
+      transition: all 0.3s ease;
+      z-index: 9999;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      font-size: 18px;
     }
 
     .back-to-top.active {
@@ -590,20 +627,13 @@
 
     .back-to-top:hover {
       background-color: var(--dark-red);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
 
     /* Responsive Styles */
     /* Mobile Dropdown Fix */
     @media (max-width: 768px) {
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .top-bar {
-        height: auto;
-        padding: 10px 0;
-      }
 
       .contact-info {
         flex-wrap: wrap;
@@ -703,7 +733,7 @@
       }
 
       .banner {
-        height: 285px;
+        height: 250px;
         padding: 60px 0;
         background-position: center;
         justify-content: center;
@@ -742,6 +772,15 @@
       .contact-detail i {
         margin-right: 0;
       }
+
+      /* Responsive adjustments for back-to-top button */
+      .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 16px;
+      }
     }
 
     @media (max-width: 576px) {
@@ -758,10 +797,11 @@
       }
 
       .back-to-top {
-        bottom: 20px;
-        right: 20px;
         width: 40px;
         height: 40px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 14px;
       }
 
       .contact-info-card,
@@ -1321,9 +1361,12 @@
 
   <!-- Navigation -->
   <nav class="navbar">
-    <div class="container nav-container">
+    <div class="nav-container">
       <div class="logo">
-        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
+        <!-- Placeholder for logo -->
+        <div class="logo" style="display: flex; align-items: center">
+          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
+        </div>
       </div>
 
       <ul class="nav-menu">
@@ -1333,22 +1376,23 @@
         <li class="nav-item">
           <a href="gallery.html" class="nav-link">Gallery</a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+        <li class="nav-item dropdown-parent">
+          <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="classic.html" class="dropdown-item">Classic</a>
             <a href="professional.html" class="dropdown-item">Professional</a>
             <a href="expert.html" class="dropdown-item">Expert</a>
+            <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
         <li class="nav-item">
           <a href="browsecourse.html" class="nav-link">Browse Courses</a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+        <li class="nav-item dropdown-parent">
+          <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="placement.html" class="dropdown-item">Placement Training</a>
-            <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+            <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
@@ -1356,10 +1400,10 @@
           <a href="techblog.html" class="nav-link">Techblog</a>
         </li>
         <li class="nav-item">
-          <a href="scholarship.html" class="nav-link active">Scholarship</a>
+          <a href="scholarship.html" class="nav-link ">Scholarship</a>
         </li>
         <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
         </li>
       </ul>
 
@@ -1710,7 +1754,7 @@
             <a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a>
           </li>
           <li>
-            <a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a>
+            <a href="companies.html"><i class="fas fa-chevron-right"></i> Tied-up Companies</a>
           </li>
           <li>
             <a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a>
@@ -1751,9 +1795,9 @@
     </div>
   </footer>
   <!-- Back to Top Button -->
-  <div class="back-to-top" id="backToTop">
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
-  </div>
+  </button>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
@@ -1846,9 +1890,10 @@
       });
     });
 
-    // Back to Top Button
+    // Back to Top Button Functionality - FIXED VERSION
     const backToTopButton = document.getElementById("backToTop");
 
+    // Show/hide button based on scroll position
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
         backToTopButton.classList.add("active");
@@ -1857,10 +1902,11 @@
       }
     });
 
+    // Smooth scroll to top when button is clicked
     backToTopButton.addEventListener("click", () => {
       window.scrollTo({
         top: 0,
-        behavior: "smooth",
+        behavior: "smooth"
       });
     });
 
@@ -2075,7 +2121,7 @@
         lowerMessage.includes("thanks") ||
         lowerMessage.includes("thankyou")
       ) {
-        return "You're welcome! 😊 Glad I could help. Let me know if you need any more information about our courses or services!";
+        return "You're welcome! 😊 Glad I could help. Spread the joy of learning.";
       } else if (
         lowerMessage.includes("courses") ||
         lowerMessage.includes("all courses") ||
@@ -2149,7 +2195,7 @@
         lowerMessage.includes("what should i learn?") ||
         lowerMessage.includes("recommend course")
       ) {
-          return `To recommend the most suitable course, please share your educational background and area of interest. MCA / B.Tech / B.Sc IT → Full Stack Development, Data Analytics, or Cloud Computing. MBA / BBA → Digital Marketing or Business Analytics. Non-technical background → Web Design or Basic Computer Application`;
+        return `To recommend the most suitable course, please share your educational background and area of interest. MCA / B.Tech / B.Sc IT → Full Stack Development, Data Analytics, or Cloud Computing. MBA / BBA → Digital Marketing or Business Analytics. Non-technical background → Web Design or Basic Computer Application`;
       } else {
         return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
       }

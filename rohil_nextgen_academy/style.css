@@ -57,13 +57,21 @@
 
         .social-icons a {
             color: var(--white);
-            font-size: 25px;
-            transition: opacity 0.3s;
+            font-size: 20px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .social-icons a:hover {
-            color: var(--text-grey);
-            transform: translateY(-3px) scale(1.1);
+            background: var(--white);
+            color: var(--primary-red);
+            transform: translateY(-2px);
         }
 
         /* Navigation Styles - IMPROVED RESPONSIVE */
@@ -115,10 +123,28 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            position: relative;
         }
 
         .nav-link:hover {
             color: var(--primary-red);
+        }
+
+        /* Active state styles */
+        .nav-link.active {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-red);
+            border-radius: 2px;
         }
 
         .dropdown {
@@ -156,6 +182,14 @@
             padding-left: 25px;
         }
 
+        /* Active state for dropdown items */
+        .dropdown-item.active {
+            background-color: var(--light-grey);
+            color: var(--primary-red);
+            font-weight: 500;
+            border-left: 3px solid var(--primary-red);
+        }
+
         .hamburger {
             display: none;
             cursor: pointer;
@@ -164,6 +198,52 @@
             border: none;
             color: var(--text-black);
             z-index: 1001;
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                gap: 20px;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .dropdown {
+                position: static;
+                box-shadow: none;
+                background-color: var(--light-grey);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                min-width: unset;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-item.active .dropdown {
+                max-height: 300px;
+            }
+
+            .nav-link.active::after {
+                display: none;
+            }
         }
 
         /* Mobile Overlay */
@@ -230,18 +310,21 @@
         }
 
         .carousel-item:nth-child(4) {
-            background-image: url("./carosuel/carosuel3.jpg");          
+            background-image: url("./carosuel/carosuel3.jpg");
         }
+
         .carousel-item:nth-child(5) {
-            background-image: url("./carosuel/carosuel4.jpg");          
+            background-image: url("./carosuel/carosuel4.jpg");
         }
+
         .carousel-item:nth-child(6) {
-            background-image: url("./carosuel/carosuel5.jpg");          
+            background-image: url("./carosuel/carosuel5.jpg");
         }
+
         .carousel-item:nth-child(7) {
-            background-image: url("./carosuel/carosuel6.jpg");          
+            background-image: url("./carosuel/carosuel6.jpg");
         }
-       
+
         .carousel-content {
             position: absolute;
             top: 50%;

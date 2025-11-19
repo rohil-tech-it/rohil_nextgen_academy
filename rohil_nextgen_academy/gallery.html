@@ -80,14 +80,24 @@
 
         .social-icons a {
             color: var(--white);
-            font-size: 25px;
-            transition: opacity 0.3s;
+            font-size: 20px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .social-icons a:hover {
-            color: var(--light-gray);
-            transform: translateY(-3px) scale(1.1);
+            background: var(--white);
+            color: var(--primary-red);
+            transform: translateY(-2px);
         }
+
+        /* Navigation Styles - IMPROVED RESPONSIVE */
 
         /* Navigation Styles - IMPROVED RESPONSIVE */
         .navbar {
@@ -138,10 +148,28 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            position: relative;
         }
 
         .nav-link:hover {
             color: var(--primary-red);
+        }
+
+        /* Active state styles */
+        .nav-link.active {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-red);
+            border-radius: 2px;
         }
 
         .dropdown {
@@ -179,6 +207,14 @@
             padding-left: 25px;
         }
 
+        /* Active state for dropdown items */
+        .dropdown-item.active {
+            background-color: var(--light-grey);
+            color: var(--primary-red);
+            font-weight: 500;
+            border-left: 3px solid var(--primary-red);
+        }
+
         .hamburger {
             display: none;
             cursor: pointer;
@@ -188,6 +224,7 @@
             color: var(--text-black);
             z-index: 1001;
         }
+        
 
         /* Mobile Overlay */
         .mobile-overlay {
@@ -228,7 +265,7 @@
 
         .section-title h1 {
             font-size: 36px;
-            color: var(--dark-red);
+            color: var(--text-black);
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
@@ -1242,34 +1279,48 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <div class="logo" style="display: flex; align-items: center;">
-                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo">
+                <!-- Placeholder for logo -->
+                <div class="logo" style="display: flex; align-items: center">
+                    <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
                 </div>
             </div>
 
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link active">Gallery</a>
+                </li>
+                <li class="nav-item dropdown-parent">
+                    <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
                         <a href="classic.html" class="dropdown-item">Classic</a>
                         <a href="professional.html" class="dropdown-item">Professional</a>
                         <a href="expert.html" class="dropdown-item">Expert</a>
+                        <a href="internship.html" class="dropdown-item">Internship</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+                    <a href="browsecourse.html" class="nav-link">Browse Courses</a>
+                </li>
+                <li class="nav-item dropdown-parent">
+                    <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
                         <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tie-up Companies</a>
+                                    <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
                         <a href="placement-success.html" class="dropdown-item">Placement Success</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
-                <li class="nav-item"><a href="scholarship.html" class="nav-link active">Scholarship</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <a href="techblog.html" class="nav-link">Techblog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="scholarship.html" class="nav-link ">Scholarship</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
             </ul>
 
             <div class="hamburger">
@@ -1277,7 +1328,6 @@
             </div>
         </div>
     </nav>
-
 
     <!-- Gallery Section -->
     <section class="gallery-section">
@@ -1386,6 +1436,58 @@
                         <div class="gallery-overlay"></div>
                     </div>
                 </div>
+
+                <!-- Infrastructure Images -->
+                <div class="gallery-item" data-category="infrastructure">
+                    <div class="gallery-img-container">
+                        <img src="./images/g14.webp" alt="image11" class="gallery-img">
+                        <div class="gallery-overlay"></div>
+                    </div>
+                </div>
+
+                <!-- Infrastructure Images -->
+                <div class="gallery-item" data-category="infrastructure">
+                    <div class="gallery-img-container">
+                        <img src="./images/g15.webp" alt="image11" class="gallery-img">
+                        <div class="gallery-overlay"></div>
+                    </div>
+                </div>
+
+                <!-- Infrastructure Images -->
+                <div class="gallery-item" data-category="infrastructure">
+                    <div class="gallery-img-container">
+                        <img src="./images/g16.webp" alt="image11" class="gallery-img">
+                        <div class="gallery-overlay"></div>
+                    </div>
+                </div>
+
+
+                <!-- Infrastructure Images -->
+                <div class="gallery-item" data-category="infrastructure">
+                    <div class="gallery-img-container">
+                        <img src="./images/g17 (1).jpeg" alt="image11" class="gallery-img">
+                        <div class="gallery-overlay"></div>
+                    </div>
+                </div>
+
+
+                <!-- Infrastructure Images -->
+                <div class="gallery-item" data-category="infrastructure">
+                    <div class="gallery-img-container">
+                        <img src="./images/g17 (2).jpeg" alt="image11" class="gallery-img">
+                        <div class="gallery-overlay"></div>
+                    </div>
+                </div>
+
+
+                <!-- Infrastructure Images -->
+                <div class="gallery-item" data-category="infrastructure">
+                    <div class="gallery-img-container">
+                        <img src="./images/g17 (3).jpeg" alt="image11" class="gallery-img">
+                        <div class="gallery-overlay"></div>
+                    </div>
+                </div>
+
                 <!-- Student Review Videos -->
                 <div class="gallery-item" data-category="reviews">
                     <div class="video-container">
@@ -1417,13 +1519,33 @@
                         </div>
                         <div class="gallery-overlay">
                             <h3 class="gallery-title">Our Journey</h3>
-                            <p class="gallery-description">Vetrivel talks about his placement journey and how Rohil
+                            <p class="gallery-description">Vetrivel Raja talks about his placement journey and how Rohil
                                 NextGen
                                 helped him secure a job at a top IT company.</p>
                             <span class="gallery-category">Student Review</span>
                         </div>
                     </div>
                 </div>
+
+                <div class="gallery-item" data-category="reviews">
+                    <div class="video-container">
+                        <video class="gallery-video" poster="./videos/v3.png">
+                            <source src="./videos/v3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-title">Academy Review</h3>
+                            <p class="gallery-description">Sakthivel talks about their own experience, challenges,
+                                growth to Rohil
+                                NextGen </p>
+                            <span class="gallery-category">Overview of Rohil NextGen</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
     </section>
 
@@ -1631,8 +1753,11 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h3>About Rohil NextGen</h3>
-                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses
-                    in software development, data science, cybersecurity, and more.</p>
+                <p>
+                    We are a premier technology education platform in Virudhunagar
+                    offering cutting-edge courses in software development, data science,
+                    cybersecurity, and more.
+                </p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/"><i
                             class="fab fa-facebook-f"></i></a>
@@ -1644,25 +1769,43 @@
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
-                    <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
-                    <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tie-up Companies</a></li>
-                    <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a>
+                    <li>
+                        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
                     </li>
-                    <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li>
+                        <a href="classic.html"><i class="fas fa-chevron-right"></i> Courses</a>
+                    </li>
+                    <li>
+                        <a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a>
+                    </li>
+                    <li>
+                        <a href="companies.html"><i class="fas fa-chevron-right"></i> Tied-up Companies</a>
+                    </li>
+                    <li>
+                        <a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a>
+                    </li>
+                    <li>
+                        <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                    </li>
                 </ul>
             </div>
 
             <div class="footer-column">
-                <h3>Contact Info</h3>
+                <h3>Our Courses</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil
-                            Nadu</a></li>
-                    <li><a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-                    <li><a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
-                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                    <li>
+                        <a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen,
+                            Virudhunagar, Tamil Nadu</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-phone"></i>+91 97518 67879</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -1676,6 +1819,7 @@
             </div>
         </div>
     </footer>
+
 
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
@@ -2013,6 +2157,7 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
+
         // Get bot response based on user input
         function getBotResponse(message) {
             const lowerMessage = message.toLowerCase();
@@ -2048,13 +2193,13 @@
                 lowerMessage.includes("hello") ||
                 lowerMessage.includes("hey")
             ) {
-                return "Hi there! 👋 Welcome to Rohil Groups. How can I help you today? You can ask about:<br>• Courses<br>• Placements<br>• Contact";
+                return "Hi there! 👋 Welcome to Rohil Groups. How can I help you today? You can ask about: • Courses • Placements • Contact";
             } else if (
                 lowerMessage.includes("thank you") ||
                 lowerMessage.includes("thanks") ||
                 lowerMessage.includes("thankyou")
             ) {
-                return "You're welcome! 😊 Glad I could help. Let me know if you need any more information about our courses or services!";
+                return "You're welcome! 😊 Glad I could help. Spread the joy of learning.";
             } else if (
                 lowerMessage.includes("courses") ||
                 lowerMessage.includes("all courses") ||
@@ -2072,6 +2217,7 @@
                 return "🌐 Web Development covers frontend (HTML, CSS, JavaScript, React) and backend (Node.js, Express, and databases). Click on the Web Development course above for details.";
             } else if (
                 lowerMessage.includes("mobile") ||
+                lowerMessage.includes("mobile app") ||
                 lowerMessage.includes("app")
             ) {
                 return "📱 Mobile App Development covers Android, iOS, and cross-platform app development with Flutter and React Native. Click on the Mobile App Development course above for details.";
@@ -2103,6 +2249,7 @@
             } else if (
                 lowerMessage.includes("ui") ||
                 lowerMessage.includes("ux") ||
+                lowerMessage.includes("uxui") ||
                 lowerMessage.includes("design")
             ) {
                 return "🎨 UI/UX Design covers design principles, Figma, Adobe XD, wireframing, and prototyping for modern digital interfaces. Click on the UI/UX course above for details.";
@@ -2128,11 +2275,12 @@
                 lowerMessage.includes("what should i learn?") ||
                 lowerMessage.includes("recommend course")
             ) {
-          return `To recommend the most suitable course, please share your educational background and area of interest. MCA / B.Tech / B.Sc IT → Full Stack Development, Data Analytics, or Cloud Computing. MBA / BBA → Digital Marketing or Business Analytics. Non-technical background → Web Design or Basic Computer Application`;
+                return `To recommend the most suitable course, please share your educational background and area of interest.<br><br>• <strong>MCA / B.Tech / B.Sc IT</strong> → Full Stack Development, Data Analytics, or Cloud Computing<br>• <strong>MBA / BBA</strong> → Digital Marketing or Business Analytics<br>• <strong>Non-technical background</strong> → Web Design or Basic Computer Application`;
             } else {
                 return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
             }
         }
+
         // Course enrollment function
         window.enrollCourse = function (courseName) {
             addMessage(`I'm interested in enrolling in ${courseName}`, 'user');
@@ -2175,9 +2323,6 @@
                 chatContainer.style.display = 'flex';
             }
         }, 10000);
-
-
-
 
     </script>
 </body>
