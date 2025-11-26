@@ -220,8 +220,7 @@
     /* Main Carousel Section (Below Navbar) */
     .main-carousel-section {
         padding: 0;
-        background-color: #1a1a1a;
-        /* Fallback color if image doesn't load */
+        background-image: url('./images/coding.jpg');
     }
 
     .main-carousel-container {
@@ -252,7 +251,7 @@
         height: 100%;
         display: flex;
         align-items: center;
-        background: rgba(75, 72, 72, 0.6);
+        background: rgba(0, 0, 0, 0.6);
     }
 
     .slide-text {
@@ -376,11 +375,6 @@
     .course-image {
         height: 200px;
         overflow: hidden;
-        background-color: #f0f0f0;
-        /* Fallback color */
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .course-image img {
@@ -800,7 +794,7 @@
                     <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
                         <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
+                                    <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
                         <a href="placement-success.html" class="dropdown-item">Placement Success</a>
                     </div>
                 </li>
@@ -821,16 +815,12 @@
         </div>
     </nav>
 
-    <!-- Mobile Overlay (for closing menu) -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-
     <!-- Main Carousel (Below Navbar) -->
     <section class="main-carousel-section">
         <div class="main-carousel-container">
             <div class="main-carousel-track">
                 <!-- Slide 1: C Programming -->
                 <div class="main-slide">
-                    <img src="./images/coding.jpg" alt="code">
                     <div class="main-slide-content">
                         <div class="slide-text">
                             <h2>Master <span class="language-highlight">C Programming</span></h2>
@@ -842,7 +832,6 @@
 
                 <!-- Slide 2: C++ Programming -->
                 <div class="main-slide">
-                    <img src="./images/coding.jpg" alt="code">
                     <div class="main-slide-content">
                         <div class="slide-text">
                             <h2>Advanced <span class="language-highlight">C++ Development</span></h2>
@@ -853,9 +842,7 @@
                 </div>
 
                 <!-- Slide 3: Java Programming -->
-
                 <div class="main-slide">
-                    <img src="./images/coding.jpg" alt="code">
                     <div class="main-slide-content">
                         <div class="slide-text">
                             <h2>Enterprise <span class="language-highlight">Java Development</span></h2>
@@ -868,7 +855,6 @@
 
                 <!-- Slide 4: Python Programming -->
                 <div class="main-slide">
-                    <img src="./images/coding.jpg" alt="code">
                     <div class="main-slide-content">
                         <div class="slide-text">
                             <h2>Python for <span class="language-highlight">Everything</span></h2>
@@ -901,7 +887,7 @@
                 <!-- Python Programming -->
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="./images/python.jpg" alt="Python Programming">
+                        <img src="./images/python.jpg" alt="Technical Programming">
                     </div>
                     <div class="course-content">
                         <h3>Python Programming</h3>
@@ -912,7 +898,7 @@
                 <!-- Full Stack -->
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="./images/fullstack1.jpg" alt="Full Stack Web Development">
+                        <img src="./images/fullstack1.jpg" alt="Cybersecurity and Network">
                     </div>
                     <div class="course-content">
                         <h3>Full Stack Web Development</h3>
@@ -923,7 +909,7 @@
                 <!-- Java Programming -->
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="./images/java.png" alt="Java Programming">
+                        <img src="./images/java.png" alt="Cloud, DevOps & Systems">
                     </div>
                     <div class="course-content">
                         <h3>Java Programming</h3>
@@ -934,7 +920,7 @@
                 <!-- C / C++ -->
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="./images/cc++.jpg" alt="C/C++ Programming">
+                        <img src="./images/cc++.jpg" alt="Design & Creative Tech">
                     </div>
                     <div class="course-content">
                         <h3>C/C++ Programming</h3>
@@ -1021,6 +1007,7 @@
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
+    </section>
 
     <script>
         // Main Carousel functionality
@@ -1032,7 +1019,7 @@
                 this.currentSlide = 0;
                 this.slideCount = this.slides.length;
                 this.autoPlayInterval = null;
-                this.autoPlayDelay = 5000; // 5 seconds (increased for better UX)
+                this.autoPlayDelay = 2000; // 2 seconds
 
                 this.init();
             }
@@ -1140,17 +1127,9 @@
         // Mobile Menu Toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
-        const mobileOverlay = document.getElementById('mobileOverlay');
 
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            mobileOverlay.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on overlay
-        mobileOverlay.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            mobileOverlay.classList.remove('active');
         });
 
         // Close mobile menu when clicking on a link
@@ -1158,7 +1137,6 @@
             // Only close menu if it's not a dropdown trigger
             if (!e.target.closest('.nav-item').querySelector('.dropdown')) {
                 navMenu.classList.remove('active');
-                mobileOverlay.classList.remove('active');
             }
         }));
 
@@ -1223,7 +1201,6 @@
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
                 navMenu.classList.remove('active');
-                mobileOverlay.classList.remove('active');
                 document.querySelectorAll('.dropdown.active').forEach(dropdown => {
                     dropdown.classList.remove('active');
                     dropdown.previousElementSibling.classList.remove('active');

@@ -29,7 +29,7 @@
     }
 
     body {
-      font-family: "Poppins", sans-serif;
+            font-family: Georgia;
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
@@ -228,6 +228,38 @@
       padding: 0 20px;
       position: relative;
       z-index: 1;
+    }
+
+    .banner-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .banner-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--primary-red);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      margin-top: 20px;
+    }
+
+    .cta-button:hover {
+      background-color: var(--dark-red);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     /* Overview Section */
@@ -944,7 +976,15 @@
         text-align: center;
       }
 
-        .top-bar-container {
+      .banner-title {
+        font-size: 2.2rem;
+      }
+
+      .banner-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .top-bar-container {
         flex-direction: column;
         gap: 10px;
       }
@@ -973,7 +1013,7 @@
     @media (max-width: 768px) {
       .banner {
         padding: 80px 0;
-        min-height: 300px;
+        min-height: 350px;
         background-size: cover;
       }
 
