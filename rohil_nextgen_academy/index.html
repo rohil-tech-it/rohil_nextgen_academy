@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rohil NextGen</title>
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
@@ -78,6 +79,7 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         color: rgb(46, 46, 46);
       }
+
     }
 
     /* Rest of your existing styles remain the same */
@@ -87,7 +89,7 @@
       bottom: 20px;
       left: 20px;
       z-index: 1000;
-            font-family: Georgia;
+      font-family: Georgia;
     }
 
     .chat-toggle {
@@ -220,7 +222,7 @@
       border: 1px solid #e0e0e0;
       border-radius: 25px;
       outline: none;
-            font-family: Georgia;
+      font-family: Georgia;
       font-size: 14px;
     }
 
@@ -374,6 +376,230 @@
 
     .quick-action-btn:hover {
       background: var(--dark-red);
+    }
+
+    /* UPDATED: Trending Courses Section with Dots Navigation */
+    .trending-courses-section {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    .trending-courses-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .trending-courses-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .trending-courses-title h2 {
+      font-size: 36px;
+      color: var(--primary-red);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .trending-courses-title p {
+      font-size: 18px;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .trending-courses-slider {
+      position: relative;
+      overflow: hidden;
+      padding: 20px 0 50px 0;
+    }
+
+    .trending-courses-track {
+      display: flex;
+      gap: 30px;
+      transition: transform 0.5s ease-in-out;
+      padding: 10px 0;
+    }
+
+    .trending-course-item {
+      flex: 0 0 auto;
+      width: 200px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .trending-course-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .course-icon-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .course-icon-container {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 15px;
+      background: white;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(212, 8, 8, 0.1);
+      transition: all 0.3s ease;
+      border: 3px solid transparent;
+    }
+
+    .course-icon-container:hover {
+      border-color: var(--primary-red);
+      box-shadow: 0 15px 40px rgba(212, 8, 8, 0.2);
+    }
+
+    .course-icon {
+      font-size: 50px;
+      color: var(--primary-red);
+    }
+
+    .course-icon-image {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .course-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .course-category {
+      font-size: 14px;
+      color: #666;
+      font-weight: 500;
+    }
+
+    /* Navigation Dots */
+    .trending-dots-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 30px;
+      padding: 10px 0;
+    }
+
+    .trending-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #ddd;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .trending-dot:hover {
+      background-color: var(--primary-red);
+      transform: scale(1.2);
+    }
+
+    .trending-dot.active {
+      background-color: var(--primary-red);
+      transform: scale(1.2);
+      box-shadow: 0 0 10px rgba(212, 8, 8, 0.3);
+    }
+
+    /* Touch/swipe indicators for mobile */
+    .trending-swipe-hint {
+      display: none;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .trending-swipe-hint i {
+      margin: 0 5px;
+      color: var(--primary-red);
+    }
+
+    /* Responsive adjustments for trending courses */
+    @media (max-width: 768px) {
+      .trending-courses-title h2 {
+        font-size: 28px;
+      }
+
+      .trending-courses-title p {
+        font-size: 16px;
+      }
+
+      .trending-course-item {
+        width: 160px;
+      }
+
+      .course-icon-container {
+        width: 120px;
+        height: 120px;
+      }
+
+      .course-icon {
+        font-size: 40px;
+      }
+
+      .course-icon-image {
+        width: 70px;
+        height: 70px;
+      }
+
+      .course-name {
+        font-size: 16px;
+      }
+
+      .trending-swipe-hint {
+        display: block;
+      }
+
+      .trending-dot {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .trending-courses-section {
+        padding: 40px 0;
+      }
+
+      .trending-courses-title h2 {
+        font-size: 24px;
+      }
+
+      .trending-course-item {
+        width: 140px;
+      }
+
+      .course-icon-container {
+        width: 100px;
+        height: 100px;
+      }
+
+      .course-icon {
+        font-size: 35px;
+      }
+
+      .course-icon-image {
+        width: 60px;
+        height: 60px;
+      }
+
+      .trending-dot {
+        width: 8px;
+        height: 8px;
+      }
     }
 
     /* Responsive adjustments for chat widget */
@@ -617,7 +843,7 @@
       padding: 12px 15px;
       border: none;
       border-radius: 5px;
-            font-family: Georgia;
+      font-family: Georgia;
       font-size: 14px;
       outline: none;
     }
@@ -628,7 +854,7 @@
       border: none;
       border-radius: 5px;
       padding: 12px 25px;
-            font-family: Georgia;
+      font-family: Georgia;
       font-size: 14px;
       font-weight: 600;
       cursor: pointer;
@@ -717,6 +943,7 @@
       transform: translateY(-3px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
+
 
     /* Mobile Responsive Adjustments for Back-to-Top Button */
     @media (max-width: 768px) {
@@ -885,6 +1112,288 @@
         </div>
         <div class="overview-image">
           <img src="./images/overview.jpg" alt="Rohil NextGen Training Academy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPDATED: Trending Courses Section with Dots -->
+  <section class="trending-courses-section">
+    <div class="trending-courses-container">
+      <div class="trending-courses-title">
+        <h2>Latest Trending Courses 2025</h2>
+        <p>Explore our most in-demand courses for 2025. Click on any icon to learn more</p>
+      </div>
+      <div class="trending-courses-slider">
+        <div class="trending-courses-track" id="trendingCoursesTrack">
+
+          <!-- Course 1: UX & AI -->
+          <div class="trending-course-item">
+            <a href="./expert9.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <div class="course-icon">
+                  <i class="fas fa-brain"></i> <!-- AI Icon -->
+                </div>
+              </div>
+              <div class="course-name">UX & AI</div>
+            </a>
+          </div>
+
+          <!-- Course 2: Testing -->
+          <div class="trending-course-item">
+            <a href="./expert16.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <div class="course-icon">
+                  <i class="fas fa-vial"></i> <!-- Testing / QA Icon -->
+                </div>
+              </div>
+              <div class="course-name">Software Testing</div>
+            </a>
+          </div>
+
+          <!-- Course 3: Data Science -->
+          <div class="trending-course-item">
+            <a href="./datascience.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <div class="course-icon">
+                  <i class="fas fa-chart-line"></i> <!-- Data Science Icon -->
+                </div>
+              </div>
+              <div class="course-name">Data Science</div>
+            </a>
+          </div>
+
+          <!-- Course 4: Data Analytics -->
+          <div class="trending-course-item">
+            <a href="./data-analyse.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <div class="course-icon">
+                  <i class="fas fa-chart-pie"></i> <!-- Data Analytics Icon -->
+                </div>
+              </div>
+              <div class="course-name">Data Analytics</div>
+            </a>
+          </div>
+
+          <!-- Course 5: ODOO -->
+          <div class="trending-course-item">
+            <a href="./expert22.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <div class="course-icon">ODOO</div>
+              </div>
+              <div class="course-name">ODOO ERP</div>
+            </a>
+          </div>
+
+          <!-- Course 6: Digital Marketing -->
+          <div class="trending-course-item">
+            <a href="./digitalmarket.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <div class="course-icon">
+                  <i class="fas fa-bullhorn"></i> <!-- Digital Marketing Icon -->
+                </div>
+              </div>
+              <div class="course-name">Digital Marketing</div>
+            </a>
+          </div>
+
+          <!-- Course 7: LUA -->
+          <div class="trending-course-item">
+            <a href="expert20.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <div class="course-icon">LUA</div>
+              </div>
+              <div class="course-name">LUA Scripting</div>
+            </a>
+          </div>
+
+          <!-- Course 8: Python -->
+          <div class="trending-course-item">
+            <a href="./python-code.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fab fa-python course-icon"></i>
+              </div>
+              <div class="course-name">Python</div>
+            </a>
+          </div>
+
+          <!-- Course 9: Java -->
+          <div class="trending-course-item">
+            <a href="java-code.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fab fa-java course-icon"></i>
+              </div>
+              <div class="course-name">Java</div>
+            </a>
+          </div>
+
+          <!-- Course 10: JavaScript -->
+          <div class="trending-course-item">
+            <a href="frontend.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fab fa-js course-icon"></i>
+              </div>
+              <div class="course-name">JavaScript</div>
+            </a>
+          </div>
+
+
+          <!-- Course 11: AI/ML -->
+          <div class="trending-course-item">
+            <a href="ai-ml.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fas fa-robot course-icon"></i>
+              </div>
+              <div class="course-name">AI/ML</div>
+            </a>
+          </div>
+
+          <!-- Course 12: React -->
+          <div class="trending-course-item">
+            <a href="./expert11.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fab fa-react course-icon"></i>
+              </div>
+              <div class="course-name">React</div>
+            </a>
+          </div>
+
+          <!-- Course 13: Angular -->
+          <div class="trending-course-item">
+            <a href="./expert10.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fab fa-angular course-icon"></i>
+              </div>
+              <div class="course-name">Angular</div>
+            </a>
+          </div>
+
+          <!-- Course 14: Vue.js -->
+          <div class="trending-course-item">
+            <a href="expert21.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fab fa-vuejs course-icon"></i>
+              </div>
+              <div class="course-name">Vue.js</div>
+            </a>
+          </div>
+
+          <!-- Course 15: Node.js -->
+          <div class="trending-course-item">
+            <a href="expert11.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fab fa-node-js course-icon"></i>
+              </div>
+              <div class="course-name">Node.js</div>
+            </a>
+          </div>
+
+          <!-- Course 16: Docker -->
+          <div class="trending-course-item">
+            <a href="./docker.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fab fa-docker course-icon"></i>
+              </div>
+              <div class="course-name">Docker</div>
+            </a>
+          </div>
+
+          <!-- Course 17: Kubernetes -->
+          <div class="trending-course-item">
+            <a href="./kubernetes.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <div class="course-icon">K8s</div>
+              </div>
+              <div class="course-name">Kubernetes</div>
+            </a>
+          </div>
+
+          <!-- Course 18: AWS -->
+          <div class="trending-course-item">
+            <a href="./aws.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fab fa-aws course-icon"></i>
+              </div>
+              <div class="course-name">AWS</div>
+            </a>
+          </div>
+
+          <!-- Course 19: Azure -->
+          <div class="trending-course-item">
+            <a href="./cloudcompute.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fab fa-microsoft course-icon"></i>
+              </div>
+              <div class="course-name">Azure</div>
+            </a>
+          </div>
+
+          <!-- Course 20: Cybersecurity -->
+          <div class="trending-course-item">
+            <a href="./cybersecure.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fas fa-shield-alt course-icon"></i>
+              </div>
+              <div class="course-name">Cybersecurity</div>
+            </a>
+          </div>
+
+          <!-- Course 21: Blockchain -->
+          <div class="trending-course-item">
+            <a href="./blockchain.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fas fa-link course-icon"></i>
+              </div>
+              <div class="course-name">Blockchain</div>
+            </a>
+          </div>
+
+          <!-- Course 22: Flutter -->
+          <div class="trending-course-item">
+            <a href="./flutter.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fas fa-mobile-alt course-icon"></i>
+              </div>
+              <div class="course-name">Flutter</div>
+            </a>
+          </div>
+
+          <!-- Course 23: Swift -->
+          <div class="trending-course-item">
+            <a href="./swift.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <i class="fab fa-swift course-icon"></i>
+              </div>
+              <div class="course-name">Swift</div>
+            </a>
+          </div>
+
+          <!-- Course 24: Kotlin -->
+          <div class="trending-course-item">
+            <a href="./kotlin.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <div class="course-icon">KT</div>
+              </div>
+              <div class="course-name">Kotlin</div>
+            </a>
+          </div>
+
+          <!-- Course 25: DevOps -->
+          <div class="trending-course-item">
+            <a href="./cloud-devops.html" class="course-icon-link">
+              <div class="course-icon-container">
+                <div class="course-icon">
+                  <i class="fas fa-tools"></i> <!-- DevOps Icon -->
+                </div>
+              </div>
+              <div class="course-name">DevOps</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Dots Container -->
+        <div class="trending-dots-container" id="trendingDots">
+          <!-- Dots will be generated by JavaScript -->
         </div>
       </div>
     </div>
@@ -1351,7 +1860,7 @@
 
         <div class="typing-indicator" id="typingIndicator">
           <span class="typing-dots">
-            Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
+            Rohil NextGen is typing<span>.</span><span>.</span><span>.</span>
           </span>
         </div>
       </div>
@@ -1489,7 +1998,115 @@
           navMenu.classList.toggle('active');
         });
       }
+
+      // Initialize trending courses with dots navigation
+      initializeTrendingCoursesWithDots();
     });
+
+    // Trending Courses Navigation with Dots
+    function initializeTrendingCoursesWithDots() {
+      const track = document.getElementById('trendingCoursesTrack');
+      const dotsContainer = document.getElementById('trendingDots');
+
+      if (!track || !dotsContainer) return;
+
+      const items = Array.from(track.children);
+      const itemWidth = 200 + 30; // width + gap
+      const visibleItems = 5; // Number of items visible at once
+      const totalSlides = Math.ceil(items.length / visibleItems);
+      let currentSlide = 0;
+      let autoScrollInterval;
+
+      // Create dots
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'trending-dot';
+        if (i === 0) dot.classList.add('active');
+        dot.setAttribute('data-slide', i);
+
+        dot.addEventListener('click', () => {
+          goToSlide(i);
+          resetAutoScroll(); // Reset auto-scroll when user clicks dot
+        });
+
+        dotsContainer.appendChild(dot);
+      }
+
+      // Function to go to specific slide
+      function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        const position = -currentSlide * visibleItems * itemWidth;
+        track.style.transform = `translateX(${position}px)`;
+
+        // Update active dot
+        const dots = dotsContainer.querySelectorAll('.trending-dot');
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentSlide);
+        });
+      }
+
+      // Auto-scroll functionality
+      function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+          const nextSlide = (currentSlide + 1) % totalSlides;
+          goToSlide(nextSlide);
+        }, 2000); // Auto-scroll every 4 seconds
+      }
+
+      function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+      }
+
+      function resetAutoScroll() {
+        stopAutoScroll();
+        startAutoScroll();
+      }
+
+      // Pause auto-scroll on hover
+      track.addEventListener('mouseenter', stopAutoScroll);
+      track.addEventListener('mouseleave', startAutoScroll);
+
+      // Touch/swipe support for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoScroll();
+      }, { passive: true });
+
+      track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoScroll();
+      }, { passive: true });
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0 && currentSlide < totalSlides - 1) {
+            // Swipe left - go to next slide
+            goToSlide(currentSlide + 1);
+          } else if (diff < 0 && currentSlide > 0) {
+            // Swipe right - go to previous slide
+            goToSlide(currentSlide - 1);
+          }
+        }
+      }
+
+      // Start auto-scroll
+      startAutoScroll();
+
+      // Add swipe hint for mobile
+      if (window.innerWidth <= 768) {
+        const swipeHint = document.createElement('div');
+        swipeHint.className = 'trending-swipe-hint';
+        swipeHint.innerHTML = '<i class="fas fa-hand-point-up"></i> Swipe to navigate <i class="fas fa-hand-point-up"></i>';
+        track.parentElement.appendChild(swipeHint);
+      }
+    }
 
     // Chat Widget Functionality
     const chatToggle = document.getElementById("chatToggle");
@@ -1587,11 +2204,11 @@
 
       // Add greeting recognition first - REORDERED for proper matching
       if (lowerMessage.includes("good morning")) {
-        return "Good morning! ☀️ Welcome to Rohil Groups. How can I help you today? You can ask about our courses, placements, or contact information.";
+        return "Good morning! ☀️ Welcome to Rohil NextGen. How can I help you today? You can ask about our courses, placements, or contact information.";
       } else if (lowerMessage.includes("good afternoon")) {
-        return "Good afternoon! 🌞 Welcome to Rohil Groups. How can I assist you today? You can ask about our courses, placements, or contact information.";
+        return "Good afternoon! 🌞 Welcome to Rohil NextGen. How can I assist you today? You can ask about our courses, placements, or contact information.";
       } else if (lowerMessage.includes("good evening")) {
-        return "Good evening! 🌙 Welcome to Rohil Groups. How can I help you today? You can ask about our courses, placements, or contact information.";
+        return "Good evening! 🌙 Welcome to Rohil NextGen. How can I help you today? You can ask about our courses, placements, or contact information.";
       } else if (
         lowerMessage.includes("b.tech") ||
         lowerMessage.includes("b.sc") ||
@@ -1616,7 +2233,7 @@
         lowerMessage.includes("hello") ||
         lowerMessage.includes("hey")
       ) {
-        return "Hi there! 👋 Welcome to Rohil Groups. How can I help you today? You can ask about:<br>• Courses<br>• Placements<br>• Contact";
+        return "Hi there! 👋 Welcome to Rohil NextGen. How can I help you today? You can ask about:<br>• Courses<br>• Placements<br>• Contact";
       } else if (
         lowerMessage.includes("thank you") ||
         lowerMessage.includes("thanks") ||
@@ -1699,10 +2316,18 @@
         lowerMessage.includes("recommend course")
       ) {
         return `To recommend the most suitable course, please share your educational background and area of interest.<br><br>• <strong>MCA / B.Tech / B.Sc IT</strong> → Full Stack Development, Data Analytics, or Cloud Computing<br>• <strong>MBA / BBA</strong> → Digital Marketing or Business Analytics<br>• <strong>Non-technical background</strong> → Web Design or Basic Computer Application`;
+      }
+      else if (
+        lowerMessage.includes("bye") ||
+        lowerMessage.includes("goodbye") ||
+        lowerMessage.includes("see you")
+      ) {
+        return "👋 Goodbye! Have a great day! If you need any help, feel free to message again.";
       } else {
         return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
       }
     }
+
     // Course enrollment function
     window.enrollCourse = function (courseName) {
       addMessage(`I'm interested in enrolling in ${courseName}`, "user");

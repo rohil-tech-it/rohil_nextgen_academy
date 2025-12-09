@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohil NextGen</title>
     <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
@@ -1087,7 +1087,89 @@
                         <a href="./testing.html" class="know-more-btn">Know More</a>
                     </div>
                 </div>
-                <!--16 VBA in EXCEL -->
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/bi.jfif" alt="App Development">
+                    </div>
+                    <div class="course-content">
+                        <h3>Business Intelligence</h3>
+                        <p>To transform raw data into actionable insights using reporting, dashboards, and data
+                            visualization tools.</p>
+                        <a href="expert19.html" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/lua.jpg" alt="App Development">
+                    </div>
+                    <div class="course-content">
+                        <h3>LUA Development</h3>
+                        <p>Develop Lua scripts to analyze data, extract insights, and drive data-informed business
+                            decisions.</p>
+                        <a href="expert20.html" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+
+                     <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/ba.jpg" alt="App Development">
+                    </div>
+                    <div class="course-content">
+                        <h3>Business Analytics</h3>
+                        <p>To analyze data, uncover insights, and support data-driven decision-making for improving
+                            business performance.</p>
+                        <a href="expert18.html" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/vuejs.png" alt="vuejs">
+                    </div>
+                    <div class="course-content">
+                        <h3>Vue.js</h3>
+                        <p>Build interactive, fast, and scalable web interfaces using Vue.js for enhanced user
+                            experience.</p>
+                        <a href="expert21.html" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/odoo.webp" alt="odoo">
+                    </div>
+                    <div class="course-content">
+                        <h3>Odoo Development </h3>
+                        <p>Build tailored Odoo applications that optimize processes and support business growth.</p>
+                        <a href="expert22.html" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/nextjs.png" alt="nextjs">
+                    </div>
+                    <div class="course-content">
+                        <h3>Next.js</h3>
+                        <p>Build high-performance, SEO-friendly, and scalable web applications using Next.js.</p>
+                        <a href="expert23.html" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/frappe.png" alt="odoo">
+                    </div>
+                    <div class="course-content">
+                        <h3>Frappe Development </h3>
+                        <p>Develop customized Odoo solutions to improve workflows and boost business growth.</p>
+                        <a href="expert24.html" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+
                 <div class="course-card">
                     <div class="course-image">
                         <img src="./gif/c15.gif
@@ -1246,7 +1328,7 @@
 
                 <div class="typing-indicator" id="typingIndicator">
                     <span class="typing-dots">
-                        Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
+                        Rohil NextGen is typing<span>.</span><span>.</span><span>.</span>
                     </span>
                 </div>
             </div>
@@ -1660,6 +1742,12 @@
                 lowerMessage.includes("phone")
             ) {
                 return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+            } else if (
+                lowerMessage.includes("bye") ||
+                lowerMessage.includes("goodbye") ||
+                lowerMessage.includes("see you")
+            ) {
+                return "👋 Goodbye! Have a great day! If you need any help, feel free to message again.";
             } else if (
                 lowerMessage.includes("which course?") ||
                 lowerMessage.includes("suitable course") ||

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Internship Programs - Rohil NextGen</title>
     <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <!-- EmailJS SDK -->
@@ -1443,7 +1444,7 @@
             bottom: 20px;
             left: 20px;
             z-index: 1000;
-                  font-family: Georgia;
+            font-family: Georgia;
         }
 
         .chat-toggle {
@@ -1576,7 +1577,7 @@
             border: 1px solid #e0e0e0;
             border-radius: 25px;
             outline: none;
-                  font-family: Georgia;
+            font-family: Georgia;
             font-size: 14px;
         }
 
@@ -1973,7 +1974,7 @@
             padding: 12px 15px;
             border: none;
             border-radius: 5px;
-                  font-family: Georgia;
+            font-family: Georgia;
             font-size: 14px;
             outline: none;
         }
@@ -1984,7 +1985,7 @@
             border: none;
             border-radius: 5px;
             padding: 12px 25px;
-                  font-family: Georgia;
+            font-family: Georgia;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
@@ -2163,7 +2164,7 @@
                     <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
                         <a href="placement.html" class="dropdown-item">Placement Training</a>
-                                    <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
+                        <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
                         <a href="placement-success.html" class="dropdown-item">Placement Success</a>
                     </div>
                 </li>
@@ -2260,16 +2261,16 @@
                 <!-- Internship Course 3 -->
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="./images/mobile-app.avif" alt="Mobile App Development Internship">
+                        <img src="./images/uxui-desing.jpg" alt="Mobile App Development Internship">
                     </div>
                     <div class="course-content">
-                        <h3 class="course-title">Mobile App Development Internship</h3>
-                        <p class="course-description">Create cross-platform mobile applications using React Native and
-                            Flutter with backend integration.</p>
+                        <h3 class="course-title">UI/UX Internship</h3>
+                        <p class="course-description">Gain hands-on experience in UI/UX design using Figma, focusing on
+                            wireframes, prototypes, and design systems.</p>
                         <div class="course-meta">
                             <div class="course-duration">
                                 <i class="far fa-clock"></i>
-                                <span>2 Months</span>
+                                <span>20 Days</span>
                             </div>
                             <div class="course-level">
                                 <i class="fas fa-signal"></i>
@@ -2391,6 +2392,54 @@
                         <h3 class="course-title">Graphic Design Internship</h3>
                         <p class="course-description">Learn the fundamentals of graphic design, including typography,
                             color theory, and software tools like Adobe Photoshop and Illustrator.</p>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i>
+                                <span>2 Months</span>
+                            </div>
+                            <div class="course-level">
+                                <i class="fas fa-signal"></i>
+                                <span>Intermediate</span>
+                            </div>
+                        </div>
+                        <button class="whatsapp-btn" onclick="openWhatsApp('Cloud Computing Internship')">
+                            <i class="fab fa-whatsapp"></i> Apply Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/flutter.png" alt="Cloud Computing Internship">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Flutter Internship</h3>
+                        <p class="course-description">Master Flutter widgets, layouts, state management (Provider/Bloc),
+                            Firebase integration, and deploy complete mobile applications..</p>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="far fa-clock"></i>
+                                <span>1 Months</span>
+                            </div>
+                            <div class="course-level">
+                                <i class="fas fa-signal"></i>
+                                <span>Intermediate</span>
+                            </div>
+                        </div>
+                        <button class="whatsapp-btn" onclick="openWhatsApp('Cloud Computing Internship')">
+                            <i class="fab fa-whatsapp"></i> Apply Now
+                        </button>
+                    </div>
+                </div>
+                <!-- Internship Course 8 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="./images/react.png" alt="Cloud Computing Internship">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">React Internship</h3>
+                        <p class="course-description">Gain practical experience building dynamic and responsive web
+                            applications using React, JavaScript, APIs, and modern frontend tools.</p>
                         <div class="course-meta">
                             <div class="course-duration">
                                 <i class="far fa-clock"></i>
@@ -3029,7 +3078,7 @@
 
                 <div class="typing-indicator" id="typingIndicator">
                     <span class="typing-dots">
-                        Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
+                        Rohil NextGen is typing<span>.</span><span>.</span><span>.</span>
                     </span>
                 </div>
             </div>
@@ -3366,6 +3415,12 @@
                 lowerMessage.includes("phone")
             ) {
                 return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+            } else if (
+                lowerMessage.includes("bye") ||
+                lowerMessage.includes("goodbye") ||
+                lowerMessage.includes("see you")
+            ) {
+                return "👋 Goodbye! Have a great day! If you need any help, feel free to message again.";
             } else if (
                 lowerMessage.includes("which course?") ||
                 lowerMessage.includes("suitable course") ||

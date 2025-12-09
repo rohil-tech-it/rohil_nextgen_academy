@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tie-up Companies - Rohil NextGen</title>
     <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -1560,7 +1560,7 @@
 
                 <div class="typing-indicator" id="typingIndicator">
                     <span class="typing-dots">
-                        Rohil Groups is typing <span>.</span><span>.</span><span>.</span>
+                        Rohil NextGen is typing<span>.</span><span>.</span><span>.</span>
                     </span>
                 </div>
             </div>
@@ -2348,6 +2348,12 @@
                 lowerMessage.includes("phone")
             ) {
                 return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
+            } else if (
+                lowerMessage.includes("bye") ||
+                lowerMessage.includes("goodbye") ||
+                lowerMessage.includes("see you")
+            ) {
+                return "👋 Goodbye! Have a great day! If you need any help, feel free to message again.";
             } else if (
                 lowerMessage.includes("suitable course") ||
                 lowerMessage.includes("what should i learn?") ||

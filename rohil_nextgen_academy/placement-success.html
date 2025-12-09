@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Placement Success - Rohil NextGen</title>
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <!-- Add EmailJS SDK -->
@@ -31,7 +32,7 @@
     }
 
     body {
-            font-family: Georgia;
+      font-family: Georgia;
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
@@ -800,7 +801,7 @@
       .nav-link.active i.fa-chevron-down {
         transform: rotate(180deg);
       }
-      
+
     }
 
     @media (max-width: 992px) {
@@ -879,7 +880,7 @@
       bottom: 20px;
       left: 20px;
       z-index: 1000;
-            font-family: Georgia;
+      font-family: Georgia;
     }
 
     .chat-toggle {
@@ -1029,7 +1030,7 @@
       border: 1px solid #e0e0e0;
       border-radius: 25px;
       outline: none;
-            font-family: Georgia;
+      font-family: Georgia;
       font-size: 14px;
     }
 
@@ -1148,7 +1149,7 @@
       padding: 12px 15px;
       border: none;
       border-radius: 5px;
-            font-family: Georgia;
+      font-family: Georgia;
       font-size: 14px;
       outline: none;
     }
@@ -1159,7 +1160,7 @@
       border: none;
       border-radius: 5px;
       padding: 12px 25px;
-            font-family: Georgia;
+      font-family: Georgia;
       font-size: 14px;
       font-weight: 600;
       cursor: pointer;
@@ -1370,7 +1371,7 @@
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
+            <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
             <a href="placement-success.html" class="dropdown-item active">Placement Success</a>
           </div>
         </li>
@@ -1660,7 +1661,7 @@
 
         <div class="typing-indicator" id="typingIndicator">
           <span class="typing-dots">
-            Rohil Groups is typing<span>.</span><span>.</span><span>.</span>
+            Rohil NextGen is typing<span>.</span><span>.</span><span>.</span>
           </span>
         </div>
       </div>
@@ -2503,6 +2504,19 @@
       ) {
         return "📞 You can reach us at admin@rohiltechnologies.com or call +91 97518 67879. Our office is located in Virudhunagar.";
       } else if (
+        lowerMessage.includes("bye") ||
+        lowerMessage.includes("goodbye") ||
+        lowerMessage.includes("see you")
+      ) {
+        return "👋 Goodbye! Have a great day! If you need any help, feel free to message again.";
+      } else if (
+        lowerMessage.includes("bye") ||
+        lowerMessage.includes("goodbye") ||
+        lowerMessage.includes("see you")
+      ) {
+        return "👋 Goodbye! Have a great day! If you need any help, feel free to message again.";
+      }
+      else if (
         lowerMessage.includes("which course?") ||
         lowerMessage.includes("suitable course") ||
         lowerMessage.includes("what should i learn?") ||
@@ -2512,6 +2526,7 @@
       } else {
         return "🤔 I didn't quite get that. Try typing 'courses' to see all our trending programs — including AI, Data Science, Full Stack, and more!";
       }
+
     }
 
     // Course enrollment function
