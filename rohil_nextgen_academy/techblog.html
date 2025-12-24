@@ -435,6 +435,43 @@
       transform: translateX(5px);
     }
 
+    /* NEW: WhatsApp Contact Button Styles */
+    .whatsapp-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--primary-red);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      margin-left: 15px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .whatsapp-contact-btn:hover {
+      background-color: var(--medium-gray);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-contact-btn i {
+      font-size: 1.1rem;
+    }
+
+    .blog-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
     /* Interview Questions Specific Styles - IMPROVED */
     .interview-questions {
       background: var(--light-gray);
@@ -2249,6 +2286,94 @@
     // Updated Blog Data with GenAI & ML Interview Questions
     const blogPosts = [
       {
+        id: 10,
+        title: "Cloud Computing Careers – Global Job Opportunities for Freshers",
+        excerpt:
+          "Cloud computing is one of the fastest-growing IT career paths with global job opportunities. Discover why freshers are choosing cloud careers and how Rohil NextGen helps you succeed.",
+        image: "./images/cc.jpg",
+        date: "December 23, 2025",
+        category: "Cloud Careers",
+        author: "Rohil NextGen",
+        relatedContent: `
+    <div class="interview-questions">
+      <h4>Cloud Computing Careers – Global Job Opportunities for Freshers</h4>
+
+      <div class="question-item">
+        <div class="question">Why Choose Cloud Computing as a Career?</div>
+        <div class="answer">
+          <p>
+            Cloud computing enables businesses to run applications, manage data, and scale securely using platforms like AWS, Microsoft Azure, and Google Cloud.
+            Due to rapid digital transformation, cloud professionals are in high demand across India and global markets.
+          </p>
+          <p>
+            Cloud computing is considered one of the fastest-growing and highest-paying IT career paths today.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question">Career Opportunities After Cloud Computing Training</div>
+        <div class="answer">
+          <ul>
+            <li>Cloud Support Engineer</li>
+            <li>Junior Cloud Engineer</li>
+            <li>Cloud Administrator</li>
+            <li>DevOps Trainee</li>
+            <li>Cloud Architect (with experience)</li>
+            <li>Cloud Consultant</li>
+          </ul>
+          <p>
+            Job opportunities are available in India, Middle East, Europe, USA, and remote global teams.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question">Skills You Will Learn at Rohil NextGen</div>
+        <div class="answer">
+          <ul>
+            <li>Cloud fundamentals (AWS / Azure / GCP basics)</li>
+            <li>Linux and networking essentials</li>
+            <li>Virtual machines & cloud infrastructure</li>
+            <li>Cloud security best practices</li>
+            <li>Real-time hands-on projects</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question">Why Rohil NextGen?</div>
+        <div class="answer">
+          <ul>
+            <li>Job-oriented cloud computing course</li>
+            <li>Beginner-friendly, practical training</li>
+            <li>Industry-relevant syllabus</li>
+            <li>Internship and placement guidance</li>
+            <li>Dedicated career support for freshers</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question">Start Your Cloud Career Today</div>
+        <div class="answer">
+          <p>
+            Cloud computing is a future-proof technology with excellent salary growth and global demand.
+            With expert training from Rohil NextGen, you can confidently step into the IT industry and build a successful cloud career.
+          </p>
+          <p>
+            <strong>📍 Location:</strong> Virudhunagar, Tamil Nadu<br/>
+            <strong>🌐 Website:</strong> www.rohilnextgen.com<br/>
+            <strong>📧 Email:</strong> admin@rohiltechnologies.com<br/>
+            <strong>📞 Phone:</strong> 9751867879
+          </p>
+        </div>
+      </div>
+    </div>
+  `
+      },
+
+      {
         id: 9,
         title: "How 50+ Engineers Got Promoted Fast – The One Thing They All Did",
         excerpt:
@@ -2264,7 +2389,7 @@
         <div class="question">The Secret Habit of Fast-Tracking Engineers</div>
         <div class="answer">
           <p>
-           All these engineers shared a common behavior: they focused on continuous learning and skill improvement beyond their regular tasks. They didn’t just complete assignments; they learned new technologies, understood business impact, and solved problems proactively.
+           All these engineers shared a common behavior: they focused on continuous learning and skill improvement beyond their regular tasks. They didn't just complete assignments; they learned new technologies, understood business impact, and solved problems proactively.
           </p>
           <p>
             For students, this translates into:
@@ -2283,7 +2408,7 @@
         <div class="answer">
           <p>
            Companies promote engineers who add visible impact.
-            Technical knowledge alone isn’t enough – those who show initiative and adaptability stand out. 
+            Technical knowledge alone isn't enough – those who show initiative and adaptability stand out. 
             Students who adopt this habit early create a strong foundation for faster career growth.
           </p>
         </div>
@@ -2305,12 +2430,12 @@
         <div class="question">Conclusion</div>
         <div class="answer">
           <p>
-            Success isn’t just about talent – it’s about action, curiosity, and consistent growth. The engineers who got promoted fast didn’t wait for opportunities; they created them by learning, innovating, and taking initiative. As a student, if you adopt the same mindset today, your career growth won’t be a matter of
+            Success isn't just about talent – it's about action, curiosity, and consistent growth. The engineers who got promoted fast didn't wait for opportunities; they created them by learning, innovating, and taking initiative. As a student, if you adopt the same mindset today, your career growth won't be a matter of
              chance – it will be inevitable. Start now, stay curious, and make your future unstoppable!
           </p>
           <p>
             As a student, if you start learning, innovating, and taking initiative
-            today, your career growth won’t be accidental — it will be inevitable.
+            today, your career growth won't be accidental — it will be inevitable.
             Start now and make your future unstoppable.
           </p>
         </div>
@@ -2333,7 +2458,7 @@
       <div class="question-item">
         <div class="answer">
           <p>
-           In today’s competitive job market, resumes alone are no longer enough.
+           In today's competitive job market, resumes alone are no longer enough.
             Employers are moving beyond traditional CVs and focusing on proof-of-work –
             tangible evidence of your skills and achievements. This trend emphasizes what
             you have done over what you claim to know.
@@ -2361,7 +2486,7 @@
         <div class="question">Why it Matters:</div>
         <div class="answer">
           <ul>
-            <li><strong> Show, Don’t Tell:</strong> Employers see your actual skills in action.</li>
+            <li><strong> Show, Don't Tell:</strong> Employers see your actual skills in action.</li>
             <li><strong> Build Credibility: </strong> Tangible work proves your expertise.</li>
             <li><strong>Career Growth:</strong>  A strong PoW portfolio can fast-track opportunities.</li>
             <li><strong> Remote Opportunities:</strong> - Digital proof-of-work makes global hiring easier.</li>
@@ -2396,7 +2521,7 @@
       },
       {
         id: 1,
-        title: "How 2025’s Latest Software Trends Shape What Students Must Learn — AI, No-Code &amp; Cloud-Native Skills",
+        title: "How 2025's Latest Software Trends Shape What Students Must Learn — AI, No-Code &amp; Cloud-Native Skills",
         excerpt: "Explore how AI-assisted coding, cloud-native skills, and no-code platforms are becoming essential for the modern developer.",
         image: "./images/software-trends.png",
         date: "December 2, 2025",
@@ -3141,7 +3266,12 @@ in coding.</p>
             </div>
             <h3>${post.title}</h3>
             <p>${post.excerpt}</p>
-            <button class="read-more" data-post-id="${post.id}">Read More <i class="fas fa-arrow-right"></i></button>
+            <div class="blog-actions">
+              <button class="read-more" data-post-id="${post.id}">Read More <i class="fas fa-arrow-right"></i></button>
+              <button class="whatsapp-contact-btn" onclick="contactViaWhatsApp('${post.title.replace(/'/g, "\\'")}')">
+                <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+              </button>
+            </div>
             <div class="related-content" id="related-${post.id}">
               ${post.relatedContent}
             </div>
@@ -3224,6 +3354,17 @@ in coding.</p>
       pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
       paginationContainer.appendChild(pageInfo);
     }
+
+    // NEW: WhatsApp Contact Function
+    window.contactViaWhatsApp = function(articleTitle) {
+      const phoneNumber = "919751867879"; // WhatsApp number
+      const message = encodeURIComponent(
+        `Hello Rohil NextGen Team!\n\nI read your article: "${articleTitle}"\n\nI'm interested in learning more about this topic. Could you please provide more information?\n\nThank you!`
+      );
+      
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(whatsappUrl, "_blank");
+    };
 
     // Setup WhatsApp newsletter functionality
     function setupWhatsAppNewsletter() {
