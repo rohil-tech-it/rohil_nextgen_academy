@@ -551,6 +551,91 @@
       overflow-y: auto;
     }
 
+    /* NEW: Thoughts Box for Each Blog Post */
+    .post-thoughts-box {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary-red);
+    }
+
+    .post-thoughts-title {
+      font-size: 1.1rem;
+      color: var(--dark-gray);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .post-thoughts-title i {
+      color: var(--primary-red);
+    }
+
+    .post-thoughts-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-family: Georgia;
+      font-size: 1rem;
+      resize: vertical;
+      transition: var(--transition);
+      margin-bottom: 15px;
+    }
+
+    .post-thoughts-textarea:focus {
+      outline: none;
+      border-color: var(--primary-red);
+    }
+
+    .post-thoughts-textarea::placeholder {
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .post-thoughts-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .post-thoughts-note {
+      font-size: 0.85rem;
+      color: var(--medium-gray);
+      flex: 1;
+    }
+
+    .post-whatsapp-btn {
+      background-color: var(--primary-red);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-family: Georgia;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .post-whatsapp-btn:hover {
+      background-color: var(--dark-red);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(212, 4, 4, 0.3);
+    }
+
+    .post-whatsapp-btn i {
+      font-size: 1.1rem;
+    }
+
     .sidebar {
       display: flex;
       flex-direction: column;
@@ -1617,6 +1702,22 @@
       .answer li {
         margin-bottom: 6px;
       }
+
+      /* NEW: Thoughts Box Responsive */
+      .post-thoughts-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .post-thoughts-note {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .post-whatsapp-btn {
+        width: 100%;
+        justify-content: center;
+      }
     }
 
     /* Small devices (landscape phones, 576px and up) */
@@ -1795,6 +1896,20 @@
 
       .answer ul {
         padding-left: 12px;
+      }
+
+      /* NEW: Thoughts Box for Extra Small Screens */
+      .post-thoughts-box {
+        padding: 15px;
+      }
+
+      .post-thoughts-title {
+        font-size: 1rem;
+      }
+
+      .post-thoughts-textarea {
+        min-height: 80px;
+        padding: 10px;
       }
     }
   </style>
@@ -2196,12 +2311,16 @@
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
         <p>
-          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.
+          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
+          development, data science, cybersecurity, and IT training with placement support. Get the best software
+          training in Virudhunagar with industry experts.
         </p>
         <div class="social-links">
-          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
+              class="fab fa-youtube"></i></a>
         </div>
       </div>
 
@@ -2222,7 +2341,8 @@
         <ul class="footer-links">
           <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
           <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
+              admin@rohiltechnologies.com</a></li>
           <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
         </ul>
       </div>
@@ -2264,10 +2384,161 @@
     // Updated Blog Data with GenAI & ML Interview Questions
     const blogPosts = [
       {
-        id: 13,
-        title: "Most People Think Their Job Is Safe From AI. They’re Wrong.",
+        id: 14,
+        title: "The Skill-First Revolution: Why 2026 Belongs to the Specialist",
         excerpt:
-          "Artificial Intelligence is no longer the future—it’s already transforming jobs. Discover why traditional skills are no longer enough and how Rohil NextGen helps you stay relevant in the AI era.",
+          "Discover why 2026 belongs to skill-first specialists, how hiring has shifted from degrees to verified competence, and how Rohil NextGen prepares students for future-ready tech careers.",
+        image: "./images/skill.png",
+        date: "January 21, 2026",
+        category: "Career & Skills",
+        author: "Rohil NextGen",
+        relatedContent: `
+    <div class="interview-questions">
+
+      <h4>The Skill-First Revolution: Why 2026 Belongs to the Specialist</h4>
+
+      <div class="question-item">
+        <div class="question">Introduction: From Degrees to Demonstrated Skills</div>
+        <div class="answer">
+          <p>
+            For decades, a college degree acted as the primary gateway to employment.
+            In 2026, that reality has fundamentally changed.
+          </p>
+          <p>
+            Employers are no longer impressed by certificates alone—they demand
+            proof of real, job-ready skills. This shift has triggered the
+            <strong>Skill-First Revolution</strong>.
+          </p>
+          <p>
+            Specialists with proven competence are now outperforming traditional
+            degree holders in the job market.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question">The Shift in Hiring Architecture</div>
+        <div class="answer">
+          <p>
+            Earlier, HR teams relied heavily on degrees as the first screening filter.
+            Today, hiring systems are skill-driven and automated.
+          </p>
+          <p>Modern companies evaluate candidates through:</p>
+          <ul>
+            <li>Practical coding challenges</li>
+            <li>Tool-specific tasks (Flutter, DevOps, AI-based Python workflows)</li>
+            <li>Real-world problem-solving assessments</li>
+          </ul>
+          <p>
+            Only candidates who prove competence move forward. Your university name
+            matters less than your verified ability.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question">Why Rohil NextGen's Model Works in 2026</div>
+        <div class="answer">
+          <p>
+            Traditional degree programs struggle to keep pace with rapidly evolving
+            technologies. Industry tools now change every six months.
+          </p>
+          <p>
+            Rohil NextGen bridges this gap with an industry-aligned, practical learning model.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question">Agility: Learning What the Industry Uses Now</div>
+        <div class="answer">
+          <p>Rohil NextGen students master modern, in-demand technologies such as:</p>
+          <ul>
+            <li>Updated MERN Stack</li>
+            <li>Production-level Kubernetes & cloud deployments</li>
+            <li>Modern CI/CD and DevOps workflows</li>
+          </ul>
+          <p>
+            This agility ensures students remain relevant and employable in the 2026 job market.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question">Proof of Work: The New Resume</div>
+        <div class="answer">
+          <p>
+            In today's economy, a project portfolio has replaced the traditional resume.
+          </p>
+          <p>Employers prioritize candidates who can demonstrate:</p>
+          <ul>
+            <li>Live, deployed applications</li>
+            <li>Secure payment integrations</li>
+            <li>Real-world use cases and performance optimization</li>
+          </ul>
+          <p>
+            Rohil NextGen emphasizes hands-on projects that recruiters can directly verify.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question">The "Double-Threat" Developer</div>
+        <div class="answer">
+          <p>Companies now look for professionals who combine:</p>
+          <ul>
+            <li><strong>Hard Skills:</strong> Programming, cloud, DevOps, frameworks</li>
+            <li><strong>Soft Skills:</strong> Communication, teamwork, agile collaboration</li>
+          </ul>
+          <p>
+            Rohil NextGen trains students to become Double-Threat Developers—technically
+            strong and workplace-ready.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question">How to Build a Skills-First Identity</div>
+        <div class="answer">
+          <ol>
+            <li>
+              <strong>Niche Down:</strong> Become a specialist, not a generic coder.
+              Example: Flutter expert with secure payment integration.
+            </li>
+            <li>
+              <strong>Certify and Verify:</strong> Rohil NextGen certifications validate
+              real, hands-on competence.
+            </li>
+            <li>
+              <strong>Practice Public Learning:</strong> Share blogs, GitHub projects,
+              and real bug fixes to build credibility.
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question">Conclusion: Why 2026 Belongs to Specialists</div>
+        <div class="answer">
+          <p>
+            The future of hiring is clear: skills over degrees, proof over promises,
+            and specialists over generalists.
+          </p>
+          <p>
+            With its skill-first, project-driven approach, <strong>Rohil NextGen</strong>
+            prepares students not just for jobs—but for long-term, future-ready careers.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  `
+      },
+      {
+        id: 13,
+        title: "Most People Think Their Job Is Safe From AI. They're Wrong.",
+        excerpt:
+          "Artificial Intelligence is no longer the future—it's already transforming jobs. Discover why traditional skills are no longer enough and how Rohil NextGen helps you stay relevant in the AI era.",
         image: "./images/jobidsafe.jpg",
         date: "January 13, 2026",
         category: "Artificial Intelligence",
@@ -2275,7 +2546,7 @@
         relatedContent: `
   <div class="interview-questions">
 
-    <h4>Most People Think Their Job Is Safe From AI. They’re Wrong.</h4>
+    <h4>Most People Think Their Job Is Safe From AI. They're Wrong.</h4>
 
     <div class="question-item">
       <div class="question">Introduction</div>
@@ -2291,7 +2562,7 @@
         </p>
         <p>
           At <strong>Rohil NextGen</strong>, we help students and professionals stay relevant
-          by equipping them with digital and AI-powered skills required in today’s global
+          by equipping them with digital and AI-powered skills required in today's global
           job market.
         </p>
       </div>
@@ -2394,7 +2665,7 @@
           secure is to keep learning.
         </p>
         <p>
-          Those who invest in upgrading their skills today will lead tomorrow’s workforce.
+          Those who invest in upgrading their skills today will lead tomorrow's workforce.
           Let <strong>Rohil NextGen</strong> help you build a successful and future-proof career.
         </p>
       </div>
@@ -2419,7 +2690,7 @@
       <div class="question">Introduction</div>
       <div class="answer">
         <p>
-          In today’s fast-paced and competitive world, success is not only about hard work,
+          In today's fast-paced and competitive world, success is not only about hard work,
           but about making the right decisions at the right time.
           Game Theory helps individuals think strategically and act wisely.
         </p>
@@ -2939,7 +3210,7 @@
       },
       {
         id: 1,
-        title: "How 2025's Latest Software Trends Shape What Students Must Learn — AI, No-Code &amp; Cloud-Native Skills",
+        title: "How 2025's Latest Software Trends Shape What Students Must Learn — AI, No-Code & Cloud-Native Skills",
         excerpt: "Explore how AI-assisted coding, cloud-native skills, and no-code platforms are becoming essential for the modern developer.",
         image: "./images/software-trends.png",
         date: "December 2, 2025",
@@ -2996,7 +3267,7 @@
                    <ul>
             <li><strong>AI-Assisted Development </strong> – Learn how to integrate AI tools into
               coding workflows.</li>
-            <li><strong>Cloud-Native &amp; DevOps Bootcamp </strong> – Master microservices,
+            <li><strong>Cloud-Native & DevOps Bootcamp </strong> – Master microservices,
                 containers, and cloud deployment.</li>
             <li><strong>Low-Code Business App Development – </strong> Build functional
               applications with minimal coding.</li>
@@ -3168,7 +3439,7 @@ gameplay mechanics and tools.</p>
         </div>
 
         <div class="question-item">
-          <div class="question">2. Automation &amp; AI Scripting Engineer</div>
+          <div class="question">2. Automation & AI Scripting Engineer</div>
           <div class="answer">
                        <p>Lua scripts help automate workflows, AI models, and internal
 systems in tech companies.</p>
@@ -3176,14 +3447,14 @@ systems in tech companies.</p>
         </div>
 
         <div class="question-item">
-          <div class="question">3. IoT &amp; Embedded Systems Programmer</div>
+          <div class="question">3. IoT & Embedded Systems Programmer</div>
           <div class="answer">
             <p>Smart devices and robotics use Lua for fast, low-memory processing.</p>
           </div>
         </div>
 
         <div class="question-item">
-          <div class="question">4. Tools &amp; Plugin Developer</div>
+          <div class="question">4. Tools & Plugin Developer</div>
           <div class="answer">
             <p>Many apps rely on Lua to build custom tools, plugins, and
 performance scripts.</p>
@@ -3684,12 +3955,25 @@ in coding.</p>
             </div>
             <h3>${post.title}</h3>
             <p>${post.excerpt}</p>
-            <div class="blog-actions">
+           
+            
+            <!-- NEW: Thoughts Box for Each Blog Post -->
+            <div class="post-thoughts-box" id="thoughts-${post.id}">
+              <h4 class="post-thoughts-title">
+                <i class="fas fa-comment-dots"></i> Share your thoughts with us
+              </h4>
+              <textarea class="post-thoughts-textarea" 
+                id="thoughts-textarea-${post.id}" 
+                placeholder="Type your message here... (e.g., I loved your article on ${post.category}! Could you cover more about this topic?)">
+              </textarea>
+           <div class="blog-actions">
               <button class="read-more" data-post-id="${post.id}">Read More <i class="fas fa-arrow-right"></i></button>
               <button class="whatsapp-contact-btn" onclick="contactViaWhatsApp('${post.title.replace(/'/g, "\\'")}')">
                 <i class="fab fa-whatsapp"></i> Contact via WhatsApp
               </button>
             </div>
+            </div>
+            
             <div class="related-content" id="related-${post.id}">
               ${post.relatedContent}
             </div>
@@ -3782,6 +4066,52 @@ in coding.</p>
 
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
       window.open(whatsappUrl, "_blank");
+    };
+
+    // NEW: Send Post Thoughts Function
+    window.sendPostThoughts = function (postId, postTitle) {
+      const textarea = document.getElementById(`thoughts-textarea-${postId}`);
+      const message = textarea.value.trim();
+
+      if (!message) {
+        alert("Please type your thoughts before sending!");
+        textarea.focus();
+        return;
+      }
+
+      if (message.length < 10) {
+        alert("Please provide more details in your message (at least 10 characters)");
+        textarea.focus();
+        return;
+      }
+
+      const phoneNumber = "919751867879";
+      const formattedMessage = encodeURIComponent(
+        `💬 Thoughts on Article: ${postTitle}\n\n` +
+        `My Message: ${message}\n\n` +
+        `Sent via Rohil NextGen Tech Blog`
+      );
+
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${formattedMessage}`;
+      window.open(whatsappUrl, "_blank");
+
+      // Reset textarea after sending
+      textarea.value = "";
+
+      // Show success message
+      const thoughtsBox = document.getElementById(`thoughts-${postId}`);
+      const originalHTML = thoughtsBox.innerHTML;
+
+      thoughtsBox.innerHTML = `
+        <div style="text-align: center; padding: 20px;">
+          <i class="fas fa-check-circle" style="color: #25d366; font-size: 2rem; margin-bottom: 10px;"></i>
+          <h4 style="color: var(--dark-gray); margin-bottom: 10px;">Thank you for sharing your thoughts!</h4>
+          <p style="color: var(--medium-gray);">We've opened WhatsApp for you. Please send the message to complete.</p>
+          <button onclick="location.reload()" style="background-color: var(--primary-red); color: white; border: none; padding: 8px 15px; border-radius: 5px; margin-top: 10px; cursor: pointer;">
+            Share More Thoughts
+          </button>
+        </div>
+      `;
     };
 
     // Setup WhatsApp newsletter functionality
