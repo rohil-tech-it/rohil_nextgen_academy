@@ -4,943 +4,1095 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohil NextGen - Python Programming</title>
-  <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <!-- SEO Title -->
+  <title>Ethical Hacking Course | Cyber Security Training | Rohil NextGen</title>
+  <!-- SEO Meta Description -->
+  <meta name="description"
+    content="Learn Ethical Hacking and Cyber Security with hands-on labs, real-time attacks, certification & placement support at Rohil NextGen. Enroll now!" />
+  <!-- SEO Keywords -->
+  <meta name="keywords"
+    content="Ethical Hacking Course in Virudhunagar, Cyber Security Training, Penetration Testing Course, Kali Linux Training, Ethical Hacker Course, Rohil NextGen Ethical Hacking" />
+  <!-- Author -->
+  <meta name="author" content="Rohil NextGen" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./images/rohil_nextgen-removebg-preview.png" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link href="./style.css" rel="stylesheet" />
-  <style>
-    :root {
-      --primary-red: #d40404;
-      --dark-red: #a80303;
-      --light-red: #ffeded;
-      --white: #ffffff;
-      --light-gray: #f5f5f5;
-      --dark-gray: #333333;
-      --medium-gray: #666666;
-      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<style>
+  :root {
+    --primary-red: #d40404;
+    --dark-red: #a80303;
+    --light-red: #ffeded;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333333;
+    --medium-gray: #666666;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Georgia;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--white);
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Top Bar Styles */
+  .top-bar {
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 15px 0;
+    font-size: 15px;
+    height: 60px;
+  }
+
+  .top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .contact-info {
+    display: flex;
+    gap: 20px;
+  }
+
+  .contact-info div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 18px;
+  }
+
+  .social-icons a {
+    color: var(--white);
+    font-size: 25px;
+    transition: opacity 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: var(--text-grey);
+    transform: translateY(-3px) scale(1.1);
+  }
+
+  /* Navigation Styles - IMPROVED RESPONSIVE */
+  .navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 80px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 100px;
+    width: 120px;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: var(--text-black);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-link:hover {
+    color: var(--primary-red);
+  }
+
+  .dropdown {
+    position: absolute;
+    background-color: var(--white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    z-index: 100;
+  }
+
+  .nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--text-grey);
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s;
+  }
+
+  .dropdown-item:hover {
+    background-color: var(--light-grey);
+    color: var(--primary-red);
+    padding-left: 25px;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: var(--text-black);
+    z-index: 1001;
+  }
+
+  /* Mobile Overlay */
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+  }
+
+  .mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Banner Section */
+  .banner {
+    background-image: url(./images/ethical-hacking.jpg);
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    min-height: 500px;
+  }
+
+  .banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Overview Section */
+  .overview-section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    margin-bottom: 30px;
+  }
+
+  .section-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-gray);
+  }
+
+  .section-title p {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+  }
+
+  .highlight-box {
+    background-color: var(--light-gray);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+  }
+
+  .highlight-box p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .highlight-box p strong {
+    color: var(--primary-red);
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .rating-badge {
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  /* Course Overview Section */
+  .course-overview {
+    padding: 40px 0 60px;
+  }
+
+  .course-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 25px 15px;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+
+  .stat:hover {
+    transform: translateY(-5px);
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-red);
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+  }
+
+  /* Certification Section */
+  .certification-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .certification-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+    margin-bottom: 40px;
+  }
+
+  .certification-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .course-goals h3 {
+    color: var(--primary-red);
+  }
+
+  .future-scope h3 {
+    color: var(--primary-red);
+  }
+
+  .certification-info-box {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 30px 20px;
+    transition: var(--transition);
+  }
+
+  .certification-info-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .certification-icon {
+    font-size: 48px;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+  }
+
+  .certification-subtitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+  }
+
+  .certification-description {
+    font-size: 1rem;
+    color: var(--medium-gray);
+    margin-bottom: 15px;
+  }
+
+  .certification-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+  }
+
+  /* Course Details Section */
+  .course-details-section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+  }
+
+  .course-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .course-header h2 {
+    font-size: 2.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 15px;
+  }
+
+  .course-subtitle {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+    font-style: italic;
+  }
+
+  .course-description,
+  .course-goals,
+  .future-scope {
+    margin-bottom: 40px;
+  }
+
+  .course-description h3,
+  .course-goals h3,
+  .future-scope h3 {
+    font-size: 1.5rem;
+    color: var(--primary-red);
+    margin-bottom: 15px;
+  }
+
+  .course-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--medium-gray);
+  }
+
+  .course-goals ul,
+  .future-scope ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .course-goals li,
+  .future-scope li {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .course-goals i,
+  .future-scope i {
+    color: var(--primary-red);
+    margin-top: 5px;
+  }
+
+  /* Syllabus Section */
+  .syllabus-container {
+    padding: 80px 20px;
+    background: linear-gradient(to right, #f7f7f7, #eaeaea);
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .syllabus-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .syllabus-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .syllabus-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--dark-gray);
+    background: var(--white);
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    width: 100%;
+    border-left: 5px solid var(--primary-red);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .syllabus-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(212, 4, 4, 0.1),
+        transparent);
+    transition: var(--transition);
+  }
+
+  .syllabus-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid var(--dark-red);
+  }
+
+  .syllabus-item:hover::before {
+    left: 100%;
+  }
+
+  .syllabus-item i {
+    color: var(--primary-red);
+    font-size: 1.6rem;
+    margin-right: 15px;
+    width: 35px;
+    text-align: center;
+    transition: var(--transition);
+  }
+
+  .syllabus-item:hover i {
+    color: var(--dark-red);
+    transform: scale(1.2);
+  }
+
+  /* FAQ Section */
+  .section-title h2 {
+    color: var(--text-black);
+  }
+
+  .faq-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+  }
+
+  .faq-content {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #eee;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-question {
+    padding: 20px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+  }
+
+  .faq-question:hover {
+    background-color: var(--light-red);
+  }
+
+  .faq-question h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin: 0;
+  }
+
+  .faq-icon {
+    color: var(--primary-red);
+    font-size: 1.2rem;
+    transition: var(--transition);
+  }
+
+  .faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background-color: var(--light-red);
+  }
+
+  .faq-answer p {
+    padding: 20px 0;
+    color: var(--medium-gray);
+    margin: 0;
+  }
+
+  .faq-item.active .faq-question {
+    background-color: var(--light-red);
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 25px;
+  }
+
+  /* Footer */
+  .tech-footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 60px 0 20px;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .footer-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--white);
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .footer-column h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-red);
+  }
+
+  .footer-column p {
+    margin-bottom: 20px;
+    color: #ccc;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--white);
+    transition: var(--transition);
+  }
+
+  .social-links a:hover {
+    background-color: var(--primary-red);
+    transform: translateY(-3px);
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+
+  .footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-links a:hover {
+    color: var(--primary-red);
+  }
+
+  .footer-links i {
+    font-size: 0.8rem;
+    color: var(--primary-red);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer-bottom p {
+    color: #999;
+    margin: 0;
+  }
+
+  /* Back to Top Button */
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-red);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 999;
+  }
+
+  .back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .back-to-top:hover {
+    background-color: var(--dark-red);
+  }
+
+  /* Responsive Styles */
+  /* Mobile Dropdown Fix */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-            font-family: Georgia;
-      line-height: 1.6;
-      color: var(--dark-gray);
-      background-color: var(--white);
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Top Bar Styles */
-    .top-bar {
-      background-color: var(--primary-red);
-      color: var(--white);
-      padding: 15px 0;
-      font-size: 15px;
-      height: 60px;
-    }
-
-    .top-bar-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .contact-info {
-      display: flex;
-      gap: 20px;
-    }
-
-    .contact-info div {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 18px;
-    }
-
-    .social-icons a {
-      color: var(--white);
-      font-size: 25px;
-      transition: opacity 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: var(--text-grey);
-      transform: translateY(-3px) scale(1.1);
-    }
-
-    /* Navigation Styles - IMPROVED RESPONSIVE */
-    .navbar {
-      background-color: var(--white);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      height: 80px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo img {
-      height: 100px;
-      width: 120px;
+    .mobile-overlay {
+      display: block;
     }
 
     .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 30px;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      flex-direction: column;
+      background-color: var(--white);
+      width: 280px;
+      height: 100vh;
+      transition: 0.4s ease;
+      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+      padding: 80px 0 20px;
+      gap: 0;
+      overflow-y: auto;
+      z-index: 999;
+    }
+
+    .nav-menu.active {
+      left: 0;
     }
 
     .nav-item {
-      position: relative;
+      margin: 0;
+      width: 100%;
     }
 
     .nav-link {
-      text-decoration: none;
-      color: var(--text-black);
-      font-weight: 500;
+      padding: 15px 25px;
+      width: 100%;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
       font-size: 16px;
-      transition: color 0.3s;
-      padding: 10px 0;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .nav-link:hover {
-      color: var(--primary-red);
     }
 
     .dropdown {
-      position: absolute;
-      background-color: var(--white);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      min-width: 200px;
-      top: 100%;
-      left: 0;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.3s;
-      z-index: 100;
-    }
-
-    .nav-item:hover .dropdown {
+      position: static;
       opacity: 1;
       visibility: visible;
-      transform: translateY(0);
+      transform: none;
+      box-shadow: none;
+      display: none;
+      background-color: var(--light-grey);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      width: 100%;
+    }
+
+    .dropdown.active {
+      display: block;
+      max-height: 300px;
     }
 
     .dropdown-item {
-      display: block;
-      padding: 12px 20px;
-      text-decoration: none;
-      color: var(--text-grey);
-      border-bottom: 1px solid #eee;
-      transition: all 0.3s;
+      padding: 12px 40px;
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
     }
 
-    .dropdown-item:hover {
-      background-color: var(--light-grey);
-      color: var(--primary-red);
-      padding-left: 25px;
+    .nav-link i.fa-chevron-down {
+      transition: transform 0.3s ease;
     }
 
-    .hamburger {
-      display: none;
-      cursor: pointer;
-      font-size: 24px;
-      background: none;
-      border: none;
-      color: var(--text-black);
-      z-index: 1001;
+    .nav-link.active i.fa-chevron-down {
+      transform: rotate(180deg);
     }
 
-    /* Mobile Overlay */
-    .mobile-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 998;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-    }
-
-    .mobile-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* Banner Section */
-    .banner {
-      background-image: url(./images/ethical-hacking.jpg);
-      background-size: cover;
-      background-position: center;
-      color: var(--white);
-      padding: 100px 0;
-      text-align: center;
-      position: relative;
-      min-height: 500px;
-    }
-
-    .banner-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Overview Section */
-    .overview-section {
-      padding: 60px 0;
-    }
-
-    .section-title {
-      margin-bottom: 30px;
-    }
-
-    .section-title h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: var(--dark-gray);
-    }
-
-    .section-title p {
-      font-size: 1.2rem;
-      color: var(--medium-gray);
-    }
-
-    .highlight-box {
-      background-color: var(--light-gray);
-      padding: 25px;
-      border-radius: 8px;
-      margin-bottom: 25px;
-      box-shadow: var(--shadow);
-    }
-
-    .highlight-box p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    .highlight-box p strong {
-      color: var(--primary-red);
-    }
-
-    .rating {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    .rating-badge {
-      background-color: var(--primary-red);
-      color: var(--white);
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: bold;
-    }
-
-    /* Course Overview Section */
-    .course-overview {
-      padding: 40px 0 60px;
-    }
-
-    .course-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
-    .stat {
-      text-align: center;
-      padding: 25px 15px;
-      background-color: var(--light-gray);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-
-    .stat:hover {
-      transform: translateY(-5px);
-    }
-
-    .stat-value {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: var(--primary-red);
-      margin-bottom: 10px;
-    }
-
-    .stat-label {
-      font-size: 1rem;
-      color: var(--dark-gray);
-      font-weight: 500;
-    }
-
-    /* Certification Section */
-    .certification-section {
-      background-color: #f8f9fa;
-      padding: 60px 0;
-      text-align: center;
-    }
-
-    .certification-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--dark-gray);
-      margin-bottom: 40px;
-    }
-
-    .certification-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
-    }
-
-    .certification-info-box {
-      background-color: var(--white);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      padding: 30px 20px;
-      transition: var(--transition);
-    }
-
-    .certification-info-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .certification-icon {
-      font-size: 48px;
-      color: var(--primary-red);
-      margin-bottom: 20px;
-    }
-
-    .certification-subtitle {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--dark-gray);
-      margin-bottom: 10px;
-    }
-
-    .certification-description {
-      font-size: 1rem;
-      color: var(--medium-gray);
-      margin-bottom: 15px;
-    }
-
-    .certification-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--dark-gray);
-    }
-
-    /* Course Details Section */
-    .course-details-section {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 30px;
-      border-radius: 12px;
-    }
-
-    .course-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .course-header h2 {
-      font-size: 2.2rem;
-      color: var(--dark-gray);
-      margin-bottom: 15px;
-    }
-
-    .course-subtitle {
-      font-size: 1.2rem;
-      color: var(--medium-gray);
-      font-style: italic;
-    }
-
-    .course-description,
-    .course-goals,
-    .future-scope {
-      margin-bottom: 40px;
-    }
-
-    .course-description h3,
-    .course-goals h3,
-    .future-scope h3 {
-      font-size: 1.5rem;
-      color: var(--primary-red);
-      margin-bottom: 15px;
-    }
-
-    .course-description p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: var(--medium-gray);
-    }
-
-    .course-goals ul,
-    .future-scope ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .course-goals li,
-    .future-scope li {
-      padding: 10px 0;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: flex-start;
+    .top-bar-container {
+      flex-direction: column;
       gap: 10px;
     }
 
-    .course-goals i,
-    .future-scope i {
-      color: var(--primary-red);
-      margin-top: 5px;
+    .top-bar {
+      height: 120px;
     }
 
-    /* Syllabus Section */
+    .contact-info {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .syllabus-content {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+    }
+
+    .section-title h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .banner {
+      padding: 80px 0;
+      min-height: 300px;
+    }
+
+    .section-title h1 {
+      font-size: 1.8rem;
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+    }
+
+    .course-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .syllabus-container {
-      padding: 80px 20px;
-      background: linear-gradient(to right, #f7f7f7, #eaeaea);
+      padding: 60px 15px;
+    }
+
+    .syllabus-title {
+      font-size: 2.2rem;
+    }
+
+    .syllabus-item {
+      padding: 18px 20px;
+      font-size: 1rem;
+    }
+
+    .syllabus-item i {
+      font-size: 1.4rem;
+      margin-right: 12px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 10px;
       text-align: center;
-      border-radius: 15px;
-      margin-bottom: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .contact-info {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .course-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+    }
+
+    .back-to-top {
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .syllabus-container {
+      padding: 50px 10px;
     }
 
     .syllabus-title {
       font-size: 2rem;
-      font-weight: 700;
-      color: var(--dark-gray);
-      margin-bottom: 50px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .syllabus-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-      justify-content: center;
-      max-width: 1000px;
-      margin: 0 auto;
     }
 
     .syllabus-item {
-      display: flex;
-      align-items: center;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--dark-gray);
-      background: var(--white);
-      padding: 20px 25px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      width: 100%;
-      border-left: 5px solid var(--primary-red);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .syllabus-item::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg,
-          transparent,
-          rgba(212, 4, 4, 0.1),
-          transparent);
-      transition: var(--transition);
-    }
-
-    .syllabus-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-      border-left: 5px solid var(--dark-red);
-    }
-
-    .syllabus-item:hover::before {
-      left: 100%;
+      padding: 15px 18px;
+      font-size: 0.95rem;
     }
 
     .syllabus-item i {
-      color: var(--primary-red);
-      font-size: 1.6rem;
-      margin-right: 15px;
-      width: 35px;
-      text-align: center;
-      transition: var(--transition);
-    }
-
-    .syllabus-item:hover i {
-      color: var(--dark-red);
-      transform: scale(1.2);
-    }
-
-    /* FAQ Section */
-    .section-title h2 {
-      color: var(--text-black);
-    }
-
-    .faq-section {
-      padding: 80px 0;
-      background-color: var(--light-gray);
-    }
-
-    .faq-content {
-      background-color: var(--white);
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid #eee;
-    }
-
-    .faq-item:last-child {
-      border-bottom: none;
-    }
-
-    .faq-question {
-      padding: 20px 25px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: var(--transition);
-    }
-
-    .faq-question:hover {
-      background-color: var(--light-red);
-    }
-
-    .faq-question h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--dark-gray);
-      margin: 0;
-    }
-
-    .faq-icon {
-      color: var(--primary-red);
-      font-size: 1.2rem;
-      transition: var(--transition);
-    }
-
-    .faq-answer {
-      padding: 0 25px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-      background-color: var(--light-red);
-    }
-
-    .faq-answer p {
-      padding: 20px 0;
-      color: var(--medium-gray);
-      margin: 0;
-    }
-
-    .faq-item.active .faq-question {
-      background-color: var(--light-red);
-    }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(180deg);
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 500px;
-      padding: 0 25px;
-    }
-
-    /* Footer */
-    .tech-footer {
-      background-color: var(--dark-gray);
-      color: var(--white);
-      padding: 60px 0 20px;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .footer-column h3 {
       font-size: 1.3rem;
-      margin-bottom: 20px;
-      color: var(--white);
-      position: relative;
-      padding-bottom: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  .feature-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .feature-stats .stat {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .feature-stats .stat:hover {
+    transform: translateY(-6px);
+  }
+
+  .feature-stats i {
+    font-size: 42px;
+    color: #c40000;
+    margin-bottom: 15px;
+  }
+
+  .feature-stats .stat-label {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  /* 📱 Tablet */
+  @media (max-width: 992px) {
+    .feature-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* 📱 Mobile */
+  @media (max-width: 576px) {
+    .feature-stats {
+      grid-template-columns: 1fr;
     }
 
-    .footer-column h3::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background-color: var(--primary-red);
+    .feature-stats .stat {
+      padding: 25px 15px;
     }
 
-    .footer-column p {
-      margin-bottom: 20px;
-      color: #ccc;
+    .feature-stats i {
+      font-size: 36px;
     }
 
-    .social-links {
-      display: flex;
-      gap: 15px;
+    .feature-stats .stat-label {
+      font-size: 15px;
+    }
+  }
+
+  /* Section title */
+  .section-title {
+    text-align: center;
+    font-size: 28px;
+    color: #e2062c;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+
+  .section-title i {
+    margin-right: 10px;
+  }
+
+  /* Grid layout */
+  .curriculum-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  /* Card style */
+  .curriculum-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .curriculum-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(226, 6, 44, 0.25);
+  }
+
+  /* Card heading */
+  .curriculum-card h4 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 15px;
+  }
+
+  .curriculum-card h4 i {
+    color: var(--primary-red);
+    margin-right: 8px;
+  }
+
+  /* Highlight list */
+  .highlight-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+  .highlight-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+
+  .highlight-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-red);
+    font-weight: bold;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 576px) {
+    .section-title {
+      font-size: 22px;
     }
 
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      color: var(--white);
-      transition: var(--transition);
+    .curriculum-card {
+      padding: 20px;
     }
-
-    .social-links a:hover {
-      background-color: var(--primary-red);
-      transform: translateY(-3px);
-    }
-
-    .footer-links {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-links li {
-      margin-bottom: 10px;
-    }
-
-    .footer-links a {
-      color: #ccc;
-      text-decoration: none;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary-red);
-    }
-
-    .footer-links i {
-      font-size: 0.8rem;
-      color: var(--primary-red);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 20px;
-      margin-top: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    .footer-bottom p {
-      color: #999;
-      margin: 0;
-    }
-
-    /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      background-color: var(--primary-red);
-      color: var(--white);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-      z-index: 999;
-    }
-
-    .back-to-top.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top:hover {
-      background-color: var(--dark-red);
-    }
-
-    /* Responsive Styles */
-    /* Mobile Dropdown Fix */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
-
-      .mobile-overlay {
-        display: block;
-      }
-
-      .nav-menu {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        flex-direction: column;
-        background-color: var(--white);
-        width: 280px;
-        height: 100vh;
-        transition: 0.4s ease;
-        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
-        padding: 80px 0 20px;
-        gap: 0;
-        overflow-y: auto;
-        z-index: 999;
-      }
-
-      .nav-menu.active {
-        left: 0;
-      }
-
-      .nav-item {
-        margin: 0;
-        width: 100%;
-      }
-
-      .nav-link {
-        padding: 15px 25px;
-        width: 100%;
-        justify-content: space-between;
-        border-bottom: 1px solid #eee;
-        font-size: 16px;
-      }
-
-      .dropdown {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        display: none;
-        background-color: var(--light-grey);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        width: 100%;
-      }
-
-      .dropdown.active {
-        display: block;
-        max-height: 300px;
-      }
-
-      .dropdown-item {
-        padding: 12px 40px;
-        border-bottom: 1px solid #ddd;
-        font-size: 14px;
-      }
-
-      .nav-link i.fa-chevron-down {
-        transition: transform 0.3s ease;
-      }
-
-      .nav-link.active i.fa-chevron-down {
-        transform: rotate(180deg);
-      }
-
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .top-bar {
-        height: 120px;
-      }
-
-      .contact-info {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 992px) {
-      .syllabus-content {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .section-title h1 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .banner {
-        padding: 80px 0;
-        min-height: 300px;
-      }
-
-      .section-title h1 {
-        font-size: 1.8rem;
-      }
-
-      .section-title p {
-        font-size: 1.1rem;
-      }
-
-      .course-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .syllabus-container {
-        padding: 60px 15px;
-      }
-
-      .syllabus-title {
-        font-size: 2.2rem;
-      }
-
-      .syllabus-item {
-        padding: 18px 20px;
-        font-size: 1rem;
-      }
-
-      .syllabus-item i {
-        font-size: 1.4rem;
-        margin-right: 12px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .contact-info {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .course-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .stat-value {
-        font-size: 2rem;
-      }
-
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-      }
-
-      .syllabus-container {
-        padding: 50px 10px;
-      }
-
-      .syllabus-title {
-        font-size: 2rem;
-      }
-
-      .syllabus-item {
-        padding: 15px 18px;
-        font-size: 0.95rem;
-      }
-
-      .syllabus-item i {
-        font-size: 1.3rem;
-        margin-right: 10px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
@@ -978,7 +1130,7 @@
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
+            <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
@@ -1019,10 +1171,12 @@
           </div>
           <div class="highlight-box">
             <p>
-              <strong>Rohil NextGen</strong> offers a complete Ethical Hacking
-              training program covering Cyber Security Fundamentals, Network
-              Security, Penetration Testing, and Tools like Kali Linux,
-              Metasploit, and Wireshark.
+              The <strong>Ethical Hacking Course</strong> at <strong> Rohil NextGen </strong>is a comprehensive and
+              job-oriented training program designed
+              for students, freshers, and professionals who want to build a career in cyber security and ethical
+              hacking.
+              This Classic Course focuses on real-world hacking techniques, penetration testing concepts, vulnerability
+              assessment, and security best practices, ensuring learners gain practical, industry-relevant skills.
             </p>
           </div>
           <!--Rating-->
@@ -1037,28 +1191,26 @@
 
   <!-- Course Overview Section -->
   <section class="course-overview">
-    <div class="container">
-      <div class="course-content">
-        <div class="course-text">
-          <div class="course-stats">
-            <div class="stat">
-              <div class="stat-value">2025</div>
-              <div class="stat-label">Latest Curriculum</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">60</div>
-              <div class="stat-label">Total Hours</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">25</div>
-              <div class="stat-label">Theory (Hours)</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">35</div>
-              <div class="stat-label">Practical (Hours)</div>
-            </div>
-          </div>
-        </div>
+    <div class="course-stats feature-stats">
+
+      <div class="stat">
+        <i class="fas fa-user-shield"></i>
+        <div class="stat-label">Ethical Hacker Career Path</div>
+      </div>
+
+      <div class="stat">
+        <i class="fas fa-tools"></i>
+        <div class="stat-label">Industry Tools Training</div>
+      </div>
+
+      <div class="stat">
+        <i class="fas fa-certificate"></i>
+        <div class="stat-label">Globally Recognized Certificate</div>
+      </div>
+
+      <div class="stat">
+        <i class="fas fa-briefcase"></i>
+        <div class="stat-label">Placement & Career Support</div>
       </div>
     </div>
   </section>
@@ -1095,78 +1247,107 @@
   <!-- Course Details Section -->
   <section class="course-details-section">
     <div class="container">
+
+      <!-- Header -->
       <div class="course-header">
         <h2>Become a Professional Ethical Hacker</h2>
         <p class="course-subtitle">
           <span style="font-size: 30px; color: #e2062c; font-weight: bold">❝</span>
-          Learn Penetration Testing, Cyber Security, Network Defense, and
-          Ethical Hacking Techniques
+          Master Cyber Security, Network Defense & Ethical Hacking Skills with
+          Practical Training
           <span style="font-size: 30px; color: #e2062c; font-weight: bold">❞</span>
         </p>
       </div>
 
       <div class="course-description">
-        <h3>Course Overview</h3>
+        <h3 class="section-title">
+          <i class="fas fa-book-open"></i>
+          What You Will Learn (Curriculum Overview)
+        </h3>
+
+        <div class="curriculum-grid">
+
+          <div class="curriculum-card">
+            <h4><i class="fas fa-shield-alt"></i> Ethical Hacking Fundamentals</h4>
+            <ul class="highlight-list">
+              <li>Introduction to Cyber Security</li>
+              <li>Types of Hackers & Cyber Attacks</li>
+              <li>Legal & Ethical Considerations</li>
+            </ul>
+          </div>
+
+          <div class="curriculum-card">
+            <h4><i class="fas fa-network-wired"></i> Networking & System Security</h4>
+            <ul class="highlight-list">
+              <li>Networking Basics</li>
+              <li>TCP/IP & Network Protocols</li>
+              <li>Linux Fundamentals</li>
+            </ul>
+          </div>
+
+          <div class="curriculum-card">
+            <h4><i class="fas fa-user-secret"></i> Hacking Techniques</h4>
+            <ul class="highlight-list">
+              <li>Footprinting & Reconnaissance</li>
+              <li>Scanning & Enumeration</li>
+              <li>System & Network Hacking</li>
+            </ul>
+          </div>
+
+          <div class="curriculum-card">
+            <h4><i class="fas fa-globe"></i> Web & Application Security</h4>
+            <ul class="highlight-list">
+              <li>Web Application Vulnerabilities</li>
+              <li>SQL Injection & XSS Basics</li>
+              <li>Security Testing Methods</li>
+            </ul>
+          </div>
+
+          <div class="curriculum-card">
+            <h4><i class="fas fa-laptop-code"></i> Practical Training</h4>
+            <ul class="highlight-list">
+              <li>Hands-on Lab Sessions</li>
+              <li>Real-Time Attack Simulations</li>
+              <li>Case Studies & Mini Projects</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Career Opportunities -->
+      <div class="future-scope">
+        <h3>Career Opportunities After Ethical Hacking Course</h3>
+        <ul>
+          <li><i class="fas fa-user-secret"></i> Ethical Hacker</li>
+          <li><i class="fas fa-user-shield"></i> Cyber Security Analyst</li>
+          <li><i class="fas fa-bug"></i> Penetration Tester</li>
+          <li><i class="fas fa-briefcase"></i> Security Consultant</li>
+          <li><i class="fas fa-network-wired"></i> Network Security Engineer</li>
+        </ul>
         <p>
-          This Ethical Hacking course is designed to teach you network
-          security, vulnerabilities analysis, penetration testing
-          methodologies, and hands-on experience using real-world hacking
-          tools like Kali Linux, Metasploit, Burp Suite, and Wireshark.
+          Cyber security professionals are in high demand across industries
+          worldwide.
         </p>
       </div>
 
+      <!-- Course Highlights -->
       <div class="course-goals">
-        <h3>Key Learning Outcomes</h3>
+        <h3>Course Highlights</h3>
         <ul>
-          <li>
-            <i class="fas fa-user-secret"></i> Master fundamentals of Ethical
-            Hacking and Cyber Security.
-          </li>
-          <li>
-            <i class="fas fa-network-wired"></i> Learn network scanning,
-            sniffing, and enumeration techniques.
-          </li>
-          <li>
-            <i class="fas fa-bug"></i> Perform vulnerability assessments and
-            exploit testing.
-          </li>
-          <li>
-            <i class="fas fa-tools"></i> Get hands-on with hacking tools like
-            Metasploit, Nmap, and Wireshark.
-          </li>
-          <li>
-            <i class="fas fa-shield-alt"></i> Protect systems by learning
-            real-world defense strategies.
-          </li>
+          <li><i class="fas fa-check-circle"></i> Industry-relevant cyber security curriculum</li>
+          <li><i class="fas fa-flask"></i> Practical & lab-based training</li>
+          <li><i class="fas fa-laptop-code"></i> Real-time hacking scenarios</li>
+          <li><i class="fas fa-briefcase"></i> Job-oriented certification course</li>
+          <li><i class="fas fa-certificate"></i> Course completion certificate</li>
+          <li><i class="fas fa-handshake"></i> Placement assistance</li>
+          <li><i class="fas fa-file-alt"></i> Resume & interview preparation</li>
+          <li><i class="fas fa-chalkboard-teacher"></i> Expert cyber security trainers</li>
         </ul>
       </div>
-      <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
-        <ul>
-          <li>
-            <i class="fas fa-user-shield"></i>Start your career as a Certified
-            Ethical Hacker (CEH).
-          </li>
-          <li>
-            <i class="fas fa-search"></i> Work as a Penetration Tester or
-            Security Analyst.
-          </li>
-          <li>
-            <i class="fas fa-lock"></i> Join companies as a Cyber Security
-            Specialist or Security Consultant.
-          </li>
-          <li>
-            <i class="fas fa-building"></i> Protect government, finance, and
-            healthcare institutions.
-          </li>
-          <li>
-            <i class="fas fa-bullseye"></i> Build your own Cyber Security
-            consulting firm.
-          </li>
-        </ul>
-      </div>
+
     </div>
   </section>
+
 
   <!-- Syllabus Section -->
   <section class="syllabus-container">
@@ -1220,52 +1401,52 @@
       <div class="faq-content">
         <div class="faq-item">
           <div class="faq-question">
-            <h3>How long is the Ethical Hacking course?</h3>
+            <h3>Is this course suitable for beginners?
+            </h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
             <p>
-              The course is 60 hours long, including real-time labs and
-              projects.
+              Yes. Basic computer knowledge is sufficient.
             </p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Do I need programming knowledge?</h3>
+            <h3>Is ethical hacking legal?
+            </h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
             <p>
-              Basic networking knowledge is helpful but not mandatory. We
-              cover the essentials in the course.
+              Yes. Ethical hacking is legal when performed with proper authorization.
             </p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Will I get a certificate after completion?</h3>
+            <h3>Will I get a certificate?
+            </h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
             <p>
-              Yes, a professional certification will be awarded after
-              completing the course.
+              Yes. An Ethical Hacking Course Completion Certificate is provided.
             </p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Are real-world projects included?</h3>
+            <h3>Do you provide placement support?
+            </h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
             <p>
-              Absolutely! You will work on penetration testing projects and
-              simulated attack labs.
+              Yes. Placement guidance and interview preparation are included.
             </p>
           </div>
         </div>
@@ -1305,12 +1486,16 @@
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
         <p>
-          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.
+          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
+          development, data science, cybersecurity, and IT training with placement support. Get the best software
+          training in Virudhunagar with industry experts.
         </p>
         <div class="social-links">
-          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
+              class="fab fa-youtube"></i></a>
         </div>
       </div>
 
@@ -1331,7 +1516,8 @@
         <ul class="footer-links">
           <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
           <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
+              admin@rohiltechnologies.com</a></li>
           <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
         </ul>
       </div>
