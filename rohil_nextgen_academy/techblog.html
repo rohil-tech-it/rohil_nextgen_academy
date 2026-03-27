@@ -2385,6 +2385,16 @@
     // Updated Blog Data with GenAI & ML Interview Questions
     const blogPosts = [
       {
+        "id": 26,
+        "title": "Full Stack Development Course: Skills, Tools & Career Scope",
+        "excerpt": "Build Complete Web Applications and Unlock Powerful Career Opportunities. Discover why Full Stack Development is a top IT career path and how you can gain the skills to succeed.",
+        "image": "./images/Full Stack Development Course.png",
+        "date": "March 27, 2026",
+        "category": "IT Training",
+        "author": "Rohil NextGen",
+        "relatedContent": "<div class=\"interview-questions\">\n      <h4>Full Stack Development Course: Skills, Tools & Career Scope</h4>\n      <p>Build Complete Web Applications and Unlock Powerful Career Opportunities</p>\n      \n      <p>In today’s digital world, businesses rely heavily on websites and web applications to connect with customers and manage operations. As a result, Full Stack Development has become one of the most valuable and in-demand skills in the IT industry. A Full Stack Developer has the ability to work on both the frontend (user interface) and the backend (server and database) of a web application.</p>\n      \n      <p>At <strong>Rohil NextGen</strong>, our Full Stack Development course is designed to help students gain the technical expertise and practical experience needed to build modern web applications and succeed in the IT industry.</p>\n\n      <div class=\"question-item\">\n        <div class=\"question\">What Is Full Stack Development?</div>\n        <div class=\"answer\">\n          <p>Full Stack Development refers to the process of developing both the client-side and server-side components of a web application. This means a Full Stack Developer can handle everything from designing the user interface to managing the server, database, and application logic.</p>\n          <p>Instead of focusing on only one part of development, full stack professionals understand the complete software development process, making them highly valuable to companies.</p>\n        </div>\n      </div>\n\n      <div class=\"question-item\">\n        <div class=\"question\">Key Skills You Learn in Full Stack Development</div>\n        <div class=\"answer\">\n          <p>A well-structured Full Stack Development course helps students build strong technical and problem-solving abilities. Important skills include:</p>\n          <ul>\n            <li>Programming fundamentals and logical thinking</li>\n            <li>Frontend development using HTML, CSS, and JavaScript</li>\n            <li>Backend programming and server-side development</li>\n            <li>Database management and SQL queries</li>\n            <li>API development and integration</li>\n            <li>Debugging and application optimization</li>\n          </ul>\n          <p>These skills allow developers to design, build, and maintain fully functional web applications.</p>\n        </div>\n      </div>\n\n      <div class=\"question-item\">\n        <div class=\"question\">Tools and Technologies Used</div>\n        <div class=\"answer\">\n          <p>Full Stack Developers work with a variety of modern tools and frameworks to build efficient and scalable applications. Some commonly used technologies include:</p>\n          <ul>\n            <li><strong>Frontend Tools:</strong> HTML, CSS, JavaScript, React or Angular</li>\n            <li><strong>Backend Technologies:</strong> Node.js, Java, or Python</li>\n            <li><strong>Databases:</strong> MySQL, MongoDB, or PostgreSQL</li>\n            <li><strong>Version Control:</strong> Git and GitHub</li>\n            <li><strong>Deployment Tools:</strong> Cloud platforms and hosting services</li>\n          </ul>\n          <p>Learning these tools prepares students to work in real development environments.</p>\n        </div>\n      </div>\n\n      <div class=\"question-item\">\n        <div class=\"question\">Career Opportunities in Full Stack Development</div>\n        <div class=\"answer\">\n          <p>Full Stack Development offers a wide range of career opportunities across industries. After completing a Full Stack course, professionals can pursue roles such as:</p>\n          <ul>\n            <li>Full Stack Developer</li>\n            <li>Web Developer</li>\n            <li>Software Engineer</li>\n            <li>Backend or Frontend Developer</li>\n            <li>Application Developer</li>\n          </ul>\n          <p>With experience, developers can also become Technical Leads, Solution Architects, or start their own tech ventures.</p>\n        </div>\n      </div>\n\n      <div class=\"question-item\">\n        <div class=\"question\">How Rohil NextGen Helps You Become Job-Ready</div>\n        <div class=\"answer\">\n          <p>At <strong>Rohil NextGen</strong>, we focus on practical learning and real-world application. Our Full Stack Development training includes:</p>\n          <ul>\n            <li>Hands-on coding practice</li>\n            <li>Real-time projects and portfolio building</li>\n            <li>Industry-relevant tools and frameworks</li>\n            <li>Guidance from experienced trainers</li>\n            <li>Career-focused skill development</li>\n          </ul>\n          <p>This approach helps students gain confidence and prepare for real IT job roles.</p>\n        </div>\n      </div>\n\n      <div class=\"question-item\">\n        <div class=\"question\">Build Your Future in Web Development</div>\n        <div class=\"answer\">\n          <p>Full Stack Development is one of the most powerful skills in the modern technology landscape. By mastering both frontend and backend technologies, developers gain flexibility, high demand, and excellent career growth opportunities.</p>\n          <p>Join <strong>Rohil NextGen</strong> and start your journey toward becoming a professional Full Stack Developer.</p>\n        </div>\n      </div>\n    </div>"
+      },
+      {
         "id": 25,
         "title": "How to Choose the Right IT Course After College",
         "excerpt": "Make a Smart Decision for Your Career Future. Discover how to select the right IT course based on your interests, industry demand, and practical learning opportunities.",
@@ -5669,7 +5679,7 @@ in coding.</p>
       });
     }
 
-    // Setup pagination controls
+    // Setup pagination controls - SIMPLIFIED VERSION
     function setupPagination() {
       const totalPages = Math.ceil(blogPosts.length / postsPerPage);
 
@@ -5690,18 +5700,59 @@ in coding.</p>
       });
       paginationContainer.appendChild(prevButton);
 
-      // Page number buttons
-      for (let i = 1; i <= totalPages; i++) {
+      // Function to add page button
+      function addPageButton(pageNum) {
         const pageButton = document.createElement('button');
-        pageButton.textContent = i;
-        pageButton.classList.toggle('active', i === currentPage);
+        pageButton.textContent = pageNum;
+        pageButton.classList.toggle('active', pageNum === currentPage);
         pageButton.addEventListener('click', () => {
-          currentPage = i;
+          currentPage = pageNum;
           displayBlogPosts();
           setupPagination();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         paginationContainer.appendChild(pageButton);
+      }
+
+      // Show limited page numbers: 1, 2, 3, ..., last page
+      if (totalPages <= 5) {
+        // If 5 or fewer pages, show all
+        for (let i = 1; i <= totalPages; i++) {
+          addPageButton(i);
+        }
+      } else {
+        // Always show first page
+        addPageButton(1);
+
+        // Show pages around current page
+        let startPage = Math.max(2, currentPage - 1);
+        let endPage = Math.min(totalPages - 1, currentPage + 1);
+
+        // Add dots before if needed
+        if (startPage > 2) {
+          const dots = document.createElement('button');
+          dots.textContent = '...';
+          dots.disabled = true;
+          dots.style.cursor = 'default';
+          paginationContainer.appendChild(dots);
+        }
+
+        // Add middle pages
+        for (let i = startPage; i <= endPage; i++) {
+          addPageButton(i);
+        }
+
+        // Add dots after if needed
+        if (endPage < totalPages - 1) {
+          const dots = document.createElement('button');
+          dots.textContent = '...';
+          dots.disabled = true;
+          dots.style.cursor = 'default';
+          paginationContainer.appendChild(dots);
+        }
+
+        // Always show last page
+        addPageButton(totalPages);
       }
 
       // Next button
