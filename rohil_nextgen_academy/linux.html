@@ -4,13 +4,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohil NextGen</title>
+  <title>Linux Training Course | Linux Administration Certification | Rohil NextGen</title>
+  <meta name="description"
+    content="Learn Linux administration with hands-on training, real-time server practice, certification, and placement support at Rohil NextGen Institute." />
+  <meta name="keywords"
+    content="Linux Training Course, Linux Administration Course, Linux Training Institute, Linux Course in Virudhunagar, Linux Server Training, Linux Certification Course" />
+  <meta name="author" content="Rohil NextGen" />
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link href="./style.css" rel="stylesheet" />
+
+  <!-- JSON-LD Schema for Course -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Linux Training Course - Linux Administration Certification",
+    "description": "Learn Linux administration with hands-on training, real-time server practice, certification, and placement support at Rohil NextGen Institute.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rohil NextGen",
+      "sameAs": "https://www.rohilnextgen.com"
+    },
+    "courseCode": "LINUX-001",
+    "educationalCredentialAwarded": "Linux Administration Certification",
+    "teaches": "Linux system administration, Linux commands, server configuration, shell scripting, system security",
+    "occupationalCredentialAwarded": "Linux System Administrator, DevOps Engineer, Cloud Engineer",
+    "timeRequired": "PT40H",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "In-Person",
+      "location": {
+        "@type": "Place",
+        "name": "Rohil NextGen, Virudhunagar, Tamil Nadu"
+      },
+      "startDate": "2026-04-15"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need prior Linux knowledge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This course starts with Linux fundamentals and is designed for beginners."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I practice real Linux commands?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Students will practice commands in a real Linux environment with hands-on labs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is certification provided?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A Linux Training Certificate is provided after course completion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What career opportunities are available after this course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can become a Linux System Administrator, DevOps Engineer, Cloud Engineer, IT Infrastructure Engineer, or Server Administrator."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --primary-red: #d40404;
@@ -31,7 +106,7 @@
     }
 
     body {
-            font-family: Georgia;
+      font-family: Georgia;
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
@@ -85,11 +160,11 @@
     }
 
     .social-icons a:hover {
-      color: var(--text-grey);
+      color: var(--dark-gray);
       transform: translateY(-3px) scale(1.1);
     }
 
-    /* Navigation Styles - IMPROVED RESPONSIVE */
+    /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -130,7 +205,7 @@
 
     .nav-link {
       text-decoration: none;
-      color: var(--text-black);
+      color: var(--dark-gray);
       font-weight: 500;
       font-size: 16px;
       transition: color 0.3s;
@@ -168,13 +243,13 @@
       display: block;
       padding: 12px 20px;
       text-decoration: none;
-      color: var(--text-grey);
+      color: var(--dark-gray);
       border-bottom: 1px solid #eee;
       transition: all 0.3s;
     }
 
     .dropdown-item:hover {
-      background-color: var(--light-grey);
+      background-color: var(--light-gray);
       color: var(--primary-red);
       padding-left: 25px;
     }
@@ -185,7 +260,7 @@
       font-size: 24px;
       background: none;
       border: none;
-      color: var(--text-black);
+      color: var(--dark-gray);
       z-index: 1001;
     }
 
@@ -211,14 +286,14 @@
 
     /* Banner Section */
     .banner {
-      background-image: url(./images/linux-essential.jpg);
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/linux-essential.jpg);
       background-size: cover;
       background-position: center;
       color: var(--white);
       padding: 100px 0;
       text-align: center;
       position: relative;
-      min-height: 500px;
+      min-height: 450px;
     }
 
     .banner-content {
@@ -340,14 +415,6 @@
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
-    }
-
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
     }
 
     .certification-info-box {
@@ -538,10 +605,6 @@
     }
 
     /* FAQ Section */
-    .section-title h2 {
-      color: var(--dark-gray);
-    }
-
     .faq-section {
       padding: 80px 0;
       background-color: var(--light-gray);
@@ -617,9 +680,10 @@
       padding: 0 25px;
     }
 
+
     /* Footer */
     .tech-footer {
-      background-color: var(--dark-gray);
+      background-color: var(--medium-gray);
       color: var(--white);
       padding: 60px 0 20px;
     }
@@ -653,7 +717,7 @@
 
     .footer-column p {
       margin-bottom: 20px;
-      color: #ccc;
+      color: var(--white);
     }
 
     .social-links {
@@ -688,7 +752,7 @@
     }
 
     .footer-links a {
-      color: #ccc;
+      color: var(--white);
       text-decoration: none;
       transition: var(--transition);
       display: flex;
@@ -721,9 +785,10 @@
     }
 
     .footer-bottom p {
-      color: #999;
+      color: var(--light-red);
       margin: 0;
     }
+
 
     /* Back to Top Button */
     .back-to-top {
@@ -745,7 +810,7 @@
       z-index: 999;
     }
 
-    .back-to-top.active {
+    .back-to-top.show {
       opacity: 1;
       visibility: visible;
     }
@@ -755,63 +820,8 @@
     }
 
     /* Responsive Styles */
-
-    /* Responsive Styles */
-    /* Mobile Dropdown Fix */
-    @media (max-width: 768px) {
-      .nav-item {
-        position: relative;
-        margin: 15px 0;
-        margin-left: 30px;
-      }
-
-      .dropdown {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        display: none;
-        background-color: var(--light-grey);
-        margin-top: 10px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-
-      .dropdown.active {
-        display: block;
-        max-height: 300px;
-      }
-
-      .dropdown-item {
-        padding: 12px 20px;
-        border-bottom: 1px solid #eee;
-        display: block;
-      }
-
-      .nav-link {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-      }
-
-      .nav-link i {
-        transition: transform 0.3s ease;
-      }
-
-      .nav-link.active i {
-        transform: rotate(180deg);
-      }
-    }
-
     @media (max-width: 768px) {
       .hamburger {
-        display: block;
-      }
-
-      .mobile-overlay {
         display: block;
       }
 
@@ -855,139 +865,30 @@
         transform: none;
         box-shadow: none;
         display: none;
-        background-color: var(--light-grey);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
+        background-color: var(--light-gray);
         width: 100%;
       }
 
       .dropdown.active {
         display: block;
-        max-height: 300px;
       }
 
       .dropdown-item {
         padding: 12px 40px;
-        border-bottom: 1px solid #ddd;
-        font-size: 14px;
       }
 
-      .nav-link i.fa-chevron-down {
-        transition: transform 0.3s ease;
-      }
-
-      .nav-link.active i.fa-chevron-down {
-        transform: rotate(180deg);
-      }
-
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .top-bar {
-        height: 120px;
-      }
-
-      .contact-info {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 992px) {
       .syllabus-content {
         grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .section-title h1 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .banner {
-        padding: 80px 0;
-        min-height: 250px;
       }
 
       .section-title h1 {
         font-size: 1.8rem;
       }
 
-      .section-title p {
-        font-size: 1.1rem;
-      }
-
-      .course-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .syllabus-container {
-        padding: 60px 15px;
-      }
-
-      .syllabus-title {
-        font-size: 2.2rem;
-      }
-
-      .syllabus-item {
-        padding: 18px 20px;
-        font-size: 1rem;
-      }
-
-      .syllabus-item i {
-        font-size: 1.4rem;
-        margin-right: 12px;
-      }
-
       .footer-bottom {
         flex-direction: column;
         gap: 10px;
         text-align: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .contact-info {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .course-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .stat-value {
-        font-size: 2rem;
-      }
-
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-      }
-
-      .syllabus-container {
-        padding: 50px 10px;
-      }
-
-      .syllabus-title {
-        font-size: 2rem;
-      }
-
-      .syllabus-item {
-        padding: 15px 18px;
-        font-size: 0.95rem;
-      }
-
-      .syllabus-item i {
-        font-size: 1.3rem;
-        margin-right: 10px;
       }
     }
   </style>
@@ -999,19 +900,12 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <!-- Placeholder for logo -->
-        <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
-        </div>
+        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
       </div>
 
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -1021,26 +915,18 @@
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-        </li>
+        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
+            <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="techblog.html" class="nav-link">Techblog</a>
-        </li>
-        <li class="nav-item">
-          <a href="scholarship.html" class="nav-link">Scholarship</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="hamburger">
@@ -1049,11 +935,9 @@
     </div>
   </nav>
 
-
-  <!-- Hero Section -->
+  <!-- Hero Section with H1 -->
   <section class="banner">
     <div class="banner-content">
-      <!-- Banner content can be added here if needed -->
     </div>
   </section>
 
@@ -1063,21 +947,15 @@
       <div class="overview-container">
         <div class="overview-content">
           <div class="section-title">
-            <h1>Linux Essentials Overview</h1>
-            <p>
-              Master the Foundations of Linux: Become a Certified Linux
-              Professional and Open Endless Career Opportunities!
-            </p>
+            <h1>Linux Training Course Overview</h1>
+            <p>Master the Foundations of Linux: Become a Certified Linux Professional and Open Endless Career
+              Opportunities!</p>
           </div>
           <div class="highlight-box">
-            <p>
-              <strong>Rohil NextGen</strong> offers a comprehensive Linux
-              Essentials training program covering Linux basics, command-line
-              operations, shell scripting, system administration, and server
-              management.
-            </p>
+            <p><strong>Rohil NextGen</strong> offers a comprehensive Linux training program covering Linux basics,
+              command-line operations, shell scripting, system administration, and server management. Linux is widely
+              used in web servers, cloud platforms, DevOps environments, and enterprise IT systems.</p>
           </div>
-          <!--Rating-->
           <div class="rating">
             <span class="rating-badge">BEST INSTITUTE</span>
             <span>4.9 Ratings</span>
@@ -1087,55 +965,46 @@
     </div>
   </section>
 
-  <!-- Course Overview Section -->
+  <!-- Course Stats -->
   <section class="course-overview">
     <div class="container">
-      <div class="course-content">
-        <div class="course-text">
-          <div class="course-stats">
-            <div class="stat">
-              <div class="stat-value">2025</div>
-              <div class="stat-label">Latest Curriculam</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">40</div>
-              <div class="stat-label">Duration (Hours)</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">15</div>
-              <div class="stat-label">Theory (Hours)</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">25</div>
-              <div class="stat-label">Practical (Hours)</div>
-            </div>
-          </div>
+      <div class="course-stats">
+        <div class="stat">
+          <div class="stat-value">2026</div>
+          <div class="stat-label">Latest Curriculum</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">40</div>
+          <div class="stat-label">Duration (Hours)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">15</div>
+          <div class="stat-label">Theory (Hours)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">25</div>
+          <div class="stat-label">Practical (Hours)</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Certification Section -->
+  <!-- Certification Stats -->
   <section class="certification-section">
     <div class="container">
-      <h2 class="certification-title">
-        Why Choose Linux Essentials Certification Training?
-      </h2>
+      <h2 class="certification-title">Why Choose Linux Essentials Certification Training?</h2>
       <div class="certification-content">
-        <div class="certification-info-box">
-          <i class="fas fa-wallet certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-wallet certification-icon"></i>
           <h4 class="certification-subtitle">Annual Earnings</h4>
           <p class="certification-description">Estimated Salary</p>
           <h3 class="certification-number">₹ 5.2 L</h3>
         </div>
-        <div class="certification-info-box">
-          <i class="fas fa-chart-line certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-chart-line certification-icon"></i>
           <h4 class="certification-subtitle">Career Growth</h4>
           <p class="certification-description">Growth Rate This Year</p>
           <h3 class="certification-number">22%</h3>
         </div>
-        <div class="certification-info-box">
-          <i class="fas fa-briefcase certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-briefcase certification-icon"></i>
           <h4 class="certification-subtitle">Job Demand</h4>
           <p class="certification-description">Projected by 2026</p>
           <h3 class="certification-number">4.2 L</h3>
@@ -1144,78 +1013,45 @@
     </div>
   </section>
 
-  <!-- Course Details Section -->
+  <!-- Course Details -->
   <section class="course-details-section">
     <div class="container">
       <div class="course-header">
         <h2>Become a Professional Linux Administrator</h2>
-        <p class="course-subtitle">
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❝</span>
-          Learn Linux Fundamentals, System Management, Shell Scripting, and
-          Server Setup
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❞</span>
-        </p>
+        <p class="course-subtitle">Learn Linux Fundamentals, System Management, Shell Scripting, and Server Setup</p>
       </div>
-
       <div class="course-description">
-        <h3>Course Overview</h3>
-        <p>
-          This Linux Essentials course is designed to teach you core concepts,
-          system navigation, basic shell scripting, package management, and
-          system administration using popular Linux distributions like Ubuntu
-          and CentOS.
-        </p>
+        <h3>Introduction to Linux Operating System</h3>
+        <p>Linux is one of the most powerful and widely used operating systems in the IT industry. Essential skill for
+          system administrators, widely used in servers and cloud platforms, strong foundation for DevOps careers, and
+          high demand in IT infrastructure jobs.</p>
       </div>
-
       <div class="course-goals">
-        <h3>Key Learning Outcomes</h3>
+        <h3>Linux Course Curriculum</h3>
         <ul>
-          <li>
-            <i class="fas fa-terminal"></i> Understand Linux operating system
-            structure and command-line basics.
+          <li><i class="fas fa-terminal"></i> Linux Fundamentals - Distributions, Installation, File System Structure
           </li>
-          <li>
-            <i class="fas fa-cogs"></i> Perform basic system administration
-            and user management tasks.
+          <li><i class="fas fa-code"></i> Linux Commands - Basic Commands, File Management, User & Permission Management
           </li>
-          <li>
-            <i class="fas fa-code"></i> Write simple shell scripts for
-            automation and productivity.
-          </li>
-          <li>
-            <i class="fas fa-network-wired"></i> Manage networking, services,
-            and security configurations.
-          </li>
-          <li>
-            <i class="fas fa-server"></i> Set up and manage Linux servers for
-            real-world applications.
-          </li>
+          <li><i class="fas fa-cogs"></i> System Administration - Package Management, Process Management, System
+            Monitoring</li>
+          <li><i class="fas fa-server"></i> Server and Security - Linux Server Configuration, Network Settings, Security
+            Protection</li>
+          <li><i class="fas fa-chalkboard-user"></i> Practical Training - Hands-on Linux Labs, Real-time Server
+            Practice, Project-based Learning</li>
         </ul>
       </div>
       <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
+        <h3>Career Opportunities After Linux Course</h3>
         <ul>
-          <li>
-            <i class="fas fa-user-shield"></i> Start as a Linux System
-            Administrator or Support Engineer.
-          </li>
-          <li>
-            <i class="fas fa-cloud"></i>Enter cloud computing roles (AWS,
-            Azure) with strong Linux skills.
-          </li>
-          <li>
-            <i class="fas fa-shield-alt"></i> Explore cybersecurity and
-            penetration testing fields.
-          </li>
-          <li>
-            <i class="fas fa-network-wired"></i> Work as a DevOps Engineer
-            using Linux for server management.
-          </li>
-          <li>
-            <i class="fas fa-briefcase"></i> Build your career in tech
-            companies, startups, and MNCs.
-          </li>
+          <li><i class="fas fa-user-shield"></i> Linux System Administrator</li>
+          <li><i class="fas fa-cloud"></i> DevOps Engineer</li>
+          <li><i class="fas fa-cloud-upload-alt"></i> Cloud Engineer</li>
+          <li><i class="fas fa-network-wired"></i> IT Infrastructure Engineer</li>
+          <li><i class="fas fa-server"></i> Server Administrator</li>
         </ul>
+        <p style="margin-top: 15px;">Linux professionals are in demand across IT companies, cloud service providers, and
+          enterprise infrastructure teams.</p>
       </div>
     </div>
   </section>
@@ -1223,42 +1059,18 @@
   <!-- Syllabus Section -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">Syllabus</h2>
+      <h2 class="syllabus-title">Linux Course Syllabus</h2>
       <div class="syllabus-content">
-        <div class="syllabus-item">
-          <i class="fas fa-play-circle"></i> Introduction to Linux & Open
-          Source
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-terminal"></i> Command-Line Basics and File System
-          Navigation
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-user-cog"></i> User and Group Management
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-cogs"></i> Process Management and Scheduling
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-th-list"></i> Package Installation and Software
-          Management
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-file-archive"></i> Linux Permissions and Security
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-users"></i> Basic Shell Scripting
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-lock"></i> Networking Fundamentals in Linux
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-network-wired"></i> Server Setup and Administration
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-server"></i> Backup, Recovery and System
-          Maintenance
-        </div>
+        <div class="syllabus-item"><i class="fas fa-play-circle"></i> Introduction to Linux & Open Source</div>
+        <div class="syllabus-item"><i class="fas fa-terminal"></i> Command-Line Basics and File System Navigation</div>
+        <div class="syllabus-item"><i class="fas fa-user-cog"></i> User and Group Management</div>
+        <div class="syllabus-item"><i class="fas fa-cogs"></i> Process Management and Scheduling</div>
+        <div class="syllabus-item"><i class="fas fa-th-list"></i> Package Installation and Software Management</div>
+        <div class="syllabus-item"><i class="fas fa-file-archive"></i> Linux Permissions and Security</div>
+        <div class="syllabus-item"><i class="fas fa-users"></i> Basic Shell Scripting</div>
+        <div class="syllabus-item"><i class="fas fa-lock"></i> Networking Fundamentals in Linux</div>
+        <div class="syllabus-item"><i class="fas fa-network-wired"></i> Server Setup and Administration</div>
+        <div class="syllabus-item"><i class="fas fa-server"></i> Backup, Recovery and System Maintenance</div>
       </div>
     </div>
   </section>
@@ -1267,85 +1079,44 @@
   <section class="faq-section">
     <div class="container">
       <div class="section-title">
-        <h2>Frequently Asked Questions</h2>
+        <h2>
+          <center> Frequently Asked Questions</center>
+        </h2>
       </div>
-
       <div class="faq-content">
         <div class="faq-item">
           <div class="faq-question">
-            <h3>How long is the Linux Essentials course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Do I need prior Linux knowledge?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              The course lasts for 40 hours, including hands-on labs and
-              real-world projects.
-            </p>
+            <p>No. This course starts with Linux fundamentals and is designed for beginners.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Do I need any prior knowledge before starting?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Will I practice real Linux commands?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              No, we start from scratch! Beginners are welcome and will
-              advance to professional levels.
-            </p>
+            <p>Yes. Students will practice commands in a real Linux environment with hands-on labs.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Will I receive a certification?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Is certification provided?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, a recognized Linux Essentials certification will be awarded
-              upon course completion.
-            </p>
+            <p>Yes. A Linux Training Certificate is provided after course completion.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Will there be hands-on labs?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>What career opportunities are available?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, the course includes practical labs on live Linux systems
-              and servers.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>What career paths can I explore after this course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>
-              You can become a Linux System Administrator, DevOps Engineer,
-              Cloud Specialist, or Cybersecurity Analyst.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Is job assistance provided?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>
-              Yes! We help with resume building, interview preparation, and
-              job placement assistance.
-            </p>
+            <p>You can become a Linux System Administrator, DevOps Engineer, Cloud Engineer, IT Infrastructure Engineer,
+              or Server Administrator.</p>
           </div>
         </div>
       </div>
@@ -1358,12 +1129,16 @@
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
         <p>
-          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.
+          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
+          development, data science, cybersecurity, and IT training with placement support. Get the best software
+          training in Virudhunagar with industry experts.
         </p>
         <div class="social-links">
-          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
+              class="fab fa-youtube"></i></a>
         </div>
       </div>
 
@@ -1384,7 +1159,8 @@
         <ul class="footer-links">
           <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
           <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
+              admin@rohiltechnologies.com</a></li>
           <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
         </ul>
       </div>
@@ -1400,54 +1176,22 @@
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <div class="back-to-top" id="backToTop">
-    <i class="fas fa-arrow-up"></i>
-  </div>
+  <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
 
   <script>
     // Mobile Menu Toggle
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    hamburger.addEventListener("click", () => navMenu.classList.toggle("active"));
 
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-    });
-
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll(".nav-link").forEach((n) =>
-      n.addEventListener("click", (e) => {
-        // Only close menu if it's not a dropdown trigger
-        if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
-          navMenu.classList.remove("active");
-        }
-      })
-    );
-
-    // Mobile Dropdown Functionality
+    // Mobile Dropdown
     document.querySelectorAll(".nav-item").forEach((item) => {
       const dropdown = item.querySelector(".dropdown");
       const navLink = item.querySelector(".nav-link");
-
       if (dropdown) {
-        // Add click event for mobile dropdowns
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other open dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  otherDropdown.previousElementSibling.classList.remove(
-                    "active"
-                  );
-                }
-              });
-
-            // Toggle current dropdown
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -1455,130 +1199,16 @@
       }
     });
 
-    // Close dropdowns when clicking outside
-    document.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        if (
-          !e.target.closest(".nav-item") &&
-          !e.target.closest(".hamburger")
-        ) {
-          document
-            .querySelectorAll(".dropdown.active")
-            .forEach((dropdown) => {
-              dropdown.classList.remove("active");
-              dropdown.previousElementSibling.classList.remove("active");
-            });
-        }
-      }
-    });
+    // Back to Top
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => backToTop.classList.toggle("show", window.pageYOffset > 300));
+    backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-    // Carousel Functionality
-    const carouselItems = document.querySelectorAll(".carousel-item");
-    const carouselDots = document.querySelectorAll(".carousel-dot");
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      // Hide all slides
-      carouselItems.forEach((item) => item.classList.remove("active"));
-      carouselDots.forEach((dot) => dot.classList.remove("active"));
-
-      // Show the selected slide
-      carouselItems[index].classList.add("active");
-      carouselDots[index].classList.add("active");
-      currentIndex = index;
-    }
-
-    // Add click event to dots
-    carouselDots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showSlide(index);
-      });
-    });
-
-    // Auto slide change
-    let carouselInterval = setInterval(() => {
-      let nextIndex = (currentIndex + 1) % carouselItems.length;
-      showSlide(nextIndex);
-    }, 5000);
-
-    // Pause carousel on hover
-    carouselItems.forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        clearInterval(carouselInterval);
-      });
-
-      item.addEventListener("mouseleave", () => {
-        carouselInterval = setInterval(() => {
-          let nextIndex = (currentIndex + 1) % carouselItems.length;
-          showSlide(nextIndex);
-        }, 5000);
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        if (targetId === "#") return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
-      });
-    });
-
-    // Back to Top Button
-    const backToTopButton = document.getElementById("backToTop");
-
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add("show");
-      } else {
-        backToTopButton.classList.remove("show");
-      }
-    });
-
-    backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
-
-    // Close mobile menu on resize if window becomes larger
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        navMenu.classList.remove("active");
-        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-          dropdown.classList.remove("active");
-          dropdown.previousElementSibling.classList.remove("active");
-        });
-      }
-    });
-    // FAQ Accordion Functionality
-    document.addEventListener("DOMContentLoaded", function () {
-      const faqItems = document.querySelectorAll(".faq-item");
-
-      faqItems.forEach((item) => {
-        const question = item.querySelector(".faq-question");
-
-        question.addEventListener("click", () => {
-          // Close all other items
-          faqItems.forEach((otherItem) => {
-            if (otherItem !== item) {
-              otherItem.classList.remove("active");
-            }
-          });
-
-          // Toggle current item
-          item.classList.toggle("active");
-        });
+    // FAQ Accordion
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      item.querySelector(".faq-question").addEventListener("click", () => {
+        document.querySelectorAll(".faq-item").forEach(other => { if (other !== item) other.classList.remove("active"); });
+        item.classList.toggle("active");
       });
     });
   </script>
