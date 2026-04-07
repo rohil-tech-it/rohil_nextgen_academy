@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Main styles (your original design, untouched) -->
-  <style>
+<style>
     :root {
       --primary-red: #d40404;
       --dark-red: #a80303;
@@ -255,6 +255,7 @@
       align-items: center;
       gap: 15px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .rating-badge {
@@ -428,6 +429,7 @@
     .future-scope i {
       color: var(--primary-red);
       margin-top: 5px;
+      flex-shrink: 0;
     }
 
     /* Syllabus / Curriculum */
@@ -503,6 +505,7 @@
       width: 35px;
       text-align: center;
       transition: var(--transition);
+      flex-shrink: 0;
     }
 
     .syllabus-item:hover i {
@@ -536,7 +539,7 @@
       box-shadow: var(--shadow);
       text-align: center;
       transition: var(--transition);
-      border-bottom: 3px solid var(--primary-red);
+      border-top: 3px solid var(--primary-red);
     }
 
     .tool-card:hover,
@@ -632,6 +635,8 @@
       color: var(--primary-red);
       font-size: 1.2rem;
       transition: var(--transition);
+      flex-shrink: 0;
+      margin-left: 15px;
     }
 
     .faq-answer {
@@ -707,6 +712,7 @@
     .social-links {
       display: flex;
       gap: 15px;
+      flex-wrap: wrap;
     }
 
     .social-links a {
@@ -755,6 +761,7 @@
     .footer-links i {
       font-size: 0.8rem;
       color: var(--primary-red);
+      flex-shrink: 0;
     }
 
     .footer-bottom {
@@ -807,9 +814,53 @@
       background-color: var(--dark-red);
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
+    /* ======================================== */
+    /* ENHANCED MOBILE RESPONSIVE STYLES */
+    /* ======================================== */
 
+    /* Tablet Devices (768px - 991px) */
+    @media (max-width: 991px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .section-title h1 {
+        font-size: 2rem;
+      }
+
+      .certification-title {
+        font-size: 1.8rem;
+      }
+
+      .course-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .syllabus-content {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+
+      .syllabus-title {
+        font-size: 1.8rem;
+      }
+
+      .tools-grid,
+      .projects-grid,
+      .highlights-grid {
+        gap: 20px;
+      }
+
+      .tool-card h4,
+      .project-card h4,
+      .highlight-card h4 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Mobile Devices (576px - 767px) */
+    @media (max-width: 767px) {
+      /* Navigation */
       .hamburger {
         display: block;
       }
@@ -829,15 +880,21 @@
         transition: 0.4s;
         padding: 80px 0 20px;
         z-index: 999;
+        overflow-y: auto;
       }
 
       .nav-menu.active {
         left: 0;
       }
 
+      .nav-item {
+        width: 100%;
+      }
+
       .nav-link {
         padding: 15px 25px;
         border-bottom: 1px solid #eee;
+        font-size: 15px;
       }
 
       .dropdown {
@@ -845,34 +902,415 @@
         opacity: 1;
         visibility: visible;
         display: none;
+        width: 100%;
+        box-shadow: none;
       }
 
       .dropdown.active {
         display: block;
       }
 
-      .banner {
-        padding: 80px 0;
-        min-height: 300px;
+      .dropdown-item {
+        padding: 12px 40px;
+        font-size: 14px;
       }
 
-      .section-title h1 {
+      /* Banner */
+      .banner {
+        padding: 60px 0;
+        min-height: 350px;
+      }
+
+      .banner-content h1 {
         font-size: 1.8rem;
       }
 
+      .banner-content p {
+        font-size: 1rem;
+      }
+
+      /* Overview Section */
+      .overview-section {
+        padding: 40px 0;
+      }
+
+      .section-title h1 {
+        font-size: 1.6rem;
+      }
+
+      .section-title p {
+        font-size: 1rem;
+      }
+
+      .highlight-box {
+        padding: 20px;
+      }
+
+      .highlight-box p {
+        font-size: 1rem;
+      }
+
+      /* Course Stats */
+      .course-overview {
+        padding: 30px 0 40px;
+      }
+
+      .course-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .stat {
+        padding: 15px 12px;
+      }
+
+      .stat-value {
+        font-size: 1.8rem;
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+      }
+
+      /* Certification Section */
+      .certification-section {
+        padding: 40px 0;
+      }
+
+      .certification-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+
+      .certification-content {
+        gap: 20px;
+      }
+
+      .certification-info-box {
+        padding: 20px 15px;
+      }
+
+      .certification-icon {
+        font-size: 36px;
+      }
+
+      .certification-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .certification-number {
+        font-size: 1.6rem;
+      }
+
+      /* Course Details */
+      .course-details-section {
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .course-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .course-subtitle {
+        font-size: 1rem;
+      }
+
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.3rem;
+      }
+
+      .course-description p {
+        font-size: 1rem;
+      }
+
+      .course-goals li,
+      .future-scope li {
+        font-size: 1rem;
+        gap: 8px;
+      }
+
+      /* Syllabus */
+      .syllabus-container {
+        padding: 40px 15px;
+        margin-bottom: 30px;
+      }
+
+      .syllabus-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+
       .syllabus-content {
-        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .syllabus-item {
+        padding: 15px 18px;
+        font-size: 0.95rem;
+      }
+
+      .syllabus-item i {
+        font-size: 1.3rem;
+        margin-right: 12px;
+        width: 28px;
+      }
+
+      /* Tools, Projects, Highlights Grid */
+      .tools-section,
+      .projects-section,
+      .why-choose-section,
+      .testimonials-section {
+        padding: 40px 0;
+      }
+
+      .tools-grid,
+      .projects-grid,
+      .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 25px;
+      }
+
+      .tool-card,
+      .project-card,
+      .highlight-card {
+        padding: 20px 15px;
+      }
+
+      .tool-card i,
+      .project-card i,
+      .highlight-card i {
+        font-size: 2rem;
+      }
+
+      .tool-card h4,
+      .project-card h4,
+      .highlight-card h4 {
+        font-size: 1.1rem;
+      }
+
+      .tool-card p,
+      .project-card p {
+        font-size: 0.85rem;
+      }
+
+      /* Testimonials */
+      .testimonial-card {
+        padding: 20px;
+      }
+
+      .testimonial-card p {
+        font-size: 0.95rem;
+      }
+
+      /* FAQ */
+      .faq-section {
+        padding: 40px 0;
+      }
+
+      .faq-question {
+        padding: 15px 18px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.95rem;
+      }
+
+      .faq-answer p {
+        font-size: 0.9rem;
+        padding: 15px 0;
+      }
+
+      /* Footer */
+      .tech-footer {
+        padding: 40px 0 20px;
+      }
+
+      .footer-content {
+        gap: 25px;
+      }
+
+      .footer-column h3 {
+        font-size: 1.3rem;
+      }
+
+      .footer-column p,
+      .footer-links a {
+        font-size: 14px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .footer-bottom p {
+        font-size: 12px;
+      }
+
+      /* Back to Top */
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
       }
     }
 
-    @media (max-width: 576px) {
-      .course-stats {
-        grid-template-columns: 1fr;
+    /* Small Mobile Devices (480px and below) */
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
       }
 
-      .back-to-top {
-        width: 40px;
-        height: 40px;
+      .banner {
+        padding: 40px 0;
+        min-height: 280px;
+      }
+
+      .banner-content h1 {
+        font-size: 1.4rem;
+      }
+
+      .banner-content p {
+        font-size: 0.85rem;
+      }
+
+      .section-title h1 {
+        font-size: 1.4rem;
+      }
+
+      .course-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .stat {
+        padding: 12px 10px;
+      }
+
+      .stat-value {
+        font-size: 1.5rem;
+      }
+
+      .certification-title {
+        font-size: 1.3rem;
+      }
+
+      .certification-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .course-header h2 {
+        font-size: 1.3rem;
+      }
+
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.2rem;
+      }
+
+      .syllabus-title {
+        font-size: 1.3rem;
+      }
+
+      .syllabus-content {
+        gap: 12px;
+      }
+
+      .syllabus-item {
+        padding: 12px 15px;
+        font-size: 0.85rem;
+      }
+
+      .syllabus-item i {
+        font-size: 1.1rem;
+        margin-right: 10px;
+        width: 24px;
+      }
+
+      /* Grids become single column on very small devices */
+      .tools-grid,
+      .projects-grid,
+      .highlights-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .tool-card,
+      .project-card,
+      .highlight-card {
+        padding: 15px 12px;
+      }
+
+      .faq-question {
+        padding: 12px 15px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.85rem;
+      }
+
+      .faq-icon {
+        font-size: 1rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    /* Landscape Mode for Mobile */
+    @media (max-width: 767px) and (orientation: landscape) {
+      .nav-menu {
+        overflow-y: auto;
+        padding: 60px 0 20px;
+      }
+
+      .banner {
+        min-height: 250px;
+        padding: 40px 0;
+      }
+
+      .syllabus-item {
+        padding: 12px 18px;
+      }
+
+      .tools-grid,
+      .projects-grid,
+      .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Touch Device Optimizations */
+    @media (hover: none) and (pointer: coarse) {
+      .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+      }
+
+      .nav-item .dropdown.active {
+        display: block;
+      }
+
+      .stat:hover,
+      .certification-info-box:hover,
+      .syllabus-item:hover,
+      .tool-card:hover,
+      .project-card:hover,
+      .highlight-card:hover {
+        transform: none;
       }
     }
   </style>

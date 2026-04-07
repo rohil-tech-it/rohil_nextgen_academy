@@ -4,18 +4,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- SEO Title -->
-  <title>Learn DevOps Online at Rohil NextGen, Virudhunagar</title>
-  <!-- SEO Meta Description -->
+  <!-- SEO Optimized Title -->
+  <title>Cloud DevOps Course | DevOps Training & Certification | Rohil NextGen</title>
+  <!-- SEO Optimized Meta Description -->
   <meta name="description"
-    content="Master DevOps from scratch at Rohil NextGen, Virudhunagar. Hands-on projects with CI/CD, Docker, Kubernetes, and more. Placement support included. Call +91 97518 67879.">
+    content="Learn Cloud DevOps with hands-on training in automation, CI/CD pipelines, cloud infrastructure, and real-time projects at Rohil NextGen Institute. Placement support included." />
+  <meta name="keywords"
+    content="Cloud DevOps Course, DevOps Training Institute, DevOps Course with Placement, DevOps Training in Virudhunagar, Cloud DevOps Certification, DevOps Engineer Training" />
+  <meta name="author" content="Rohil NextGen" />
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="./style.css" rel="stylesheet" />
-  <style>
+
+  <!-- Course Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Cloud DevOps Course - DevOps Training & Certification",
+    "description": "Learn Cloud DevOps with hands-on training in automation, CI/CD pipelines, cloud infrastructure, and real-time projects at Rohil NextGen Institute.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rohil NextGen",
+      "sameAs": "https://www.rohilnextgen.com"
+    },
+    "courseCode": "DEVOPS-001",
+    "educationalCredentialAwarded": "DevOps Certification",
+    "teaches": "CI/CD pipelines, Docker, Kubernetes, Jenkins, Ansible, Terraform, AWS, Azure, Git, GitHub",
+    "occupationalCredentialAwarded": "DevOps Engineer, Cloud Engineer, Site Reliability Engineer, Automation Engineer",
+    "timeRequired": "PT80H",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "In-Person",
+      "location": {
+        "@type": "Place",
+        "name": "Rohil NextGen, Virudhunagar, Tamil Nadu"
+      },
+      "startDate": "2026-04-15"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema Markup for Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long is the DevOps course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The course lasts for 80 hours, including hands-on labs, real-world projects, and capstone projects."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need any prior knowledge before starting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Basic knowledge of Linux and programming is helpful but not required. We start with fundamentals and progress to advanced topics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I receive a certification?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you'll receive a recognized DevOps Engineer certification upon successful completion of the course and project work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What career paths can I explore after this course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can become a DevOps Engineer, Site Reliability Engineer (SRE), Cloud Engineer, Automation Engineer, or Release Manager."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is job assistance provided?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We provide comprehensive job assistance including resume building, interview preparation, and placement support with our partner companies."
+        }
+      }
+    ]
+  }
+  </script>
+<style>
     :root {
       --primary-red: #d40404;
       --dark-red: #a80303;
@@ -35,10 +117,11 @@
     }
 
     body {
-      font-family: Georgia;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
+      overflow-x: hidden;
     }
 
     .container {
@@ -89,11 +172,11 @@
     }
 
     .social-icons a:hover {
-      color: var(--text-grey);
+      color: var(--dark-gray);
       transform: translateY(-3px) scale(1.1);
     }
 
-    /* Navigation Styles - IMPROVED RESPONSIVE */
+    /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -134,7 +217,7 @@
 
     .nav-link {
       text-decoration: none;
-      color: var(--text-black);
+      color: var(--dark-gray);
       font-weight: 500;
       font-size: 16px;
       transition: color 0.3s;
@@ -172,13 +255,13 @@
       display: block;
       padding: 12px 20px;
       text-decoration: none;
-      color: var(--text-grey);
+      color: var(--dark-gray);
       border-bottom: 1px solid #eee;
       transition: all 0.3s;
     }
 
     .dropdown-item:hover {
-      background-color: var(--light-grey);
+      background-color: var(--light-gray);
       color: var(--primary-red);
       padding-left: 25px;
     }
@@ -189,7 +272,7 @@
       font-size: 24px;
       background: none;
       border: none;
-      color: var(--text-black);
+      color: var(--dark-gray);
       z-index: 1001;
     }
 
@@ -215,14 +298,14 @@
 
     /* Banner Section */
     .banner {
-      background-image: url(./images/devops.jpg);
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./images/devops.jpg);
       background-size: cover;
       background-position: center;
       color: var(--white);
       padding: 100px 0;
       text-align: center;
       position: relative;
-      height: 500px;
+      min-height: 450px;
     }
 
     .banner-content {
@@ -275,6 +358,7 @@
       align-items: center;
       gap: 15px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .rating-badge {
@@ -344,14 +428,6 @@
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
-    }
-
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
     }
 
     .certification-info-box {
@@ -456,6 +532,7 @@
     .future-scope i {
       color: var(--primary-red);
       margin-top: 5px;
+      flex-shrink: 0;
     }
 
     /* Syllabus Section */
@@ -534,6 +611,7 @@
       width: 35px;
       text-align: center;
       transition: var(--transition);
+      flex-shrink: 0;
     }
 
     .syllabus-item:hover i {
@@ -541,11 +619,41 @@
       transform: scale(1.2);
     }
 
-    /* FAQ Section */
-    .section-title h2 {
-      color: var(--dark-gray);
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+      padding: 60px 0;
+      text-align: center;
+      color: var(--white);
     }
 
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--white);
+      color: var(--primary-red);
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* FAQ Section */
     .faq-section {
       padding: 80px 0;
       background-color: var(--light-gray);
@@ -592,6 +700,8 @@
       color: var(--primary-red);
       font-size: 1.2rem;
       transition: var(--transition);
+      flex-shrink: 0;
+      margin-left: 15px;
     }
 
     .faq-answer {
@@ -663,6 +773,7 @@
     .social-links {
       display: flex;
       gap: 15px;
+      flex-wrap: wrap;
     }
 
     .social-links a {
@@ -707,6 +818,7 @@
     .footer-links i {
       font-size: 0.8rem;
       color: var(--primary-red);
+      flex-shrink: 0;
     }
 
     .footer-bottom {
@@ -749,7 +861,7 @@
       z-index: 999;
     }
 
-    .back-to-top.active {
+    .back-to-top.show {
       opacity: 1;
       visibility: visible;
     }
@@ -758,32 +870,75 @@
       background-color: var(--dark-red);
     }
 
-    /* Responsive Styles */
+    /* ======================================== */
+    /* ENHANCED MOBILE RESPONSIVE STYLES */
+    /* ======================================== */
 
-    /* Responsive Styles */
-    /* Mobile Dropdown Fix */
-    @media (max-width: 768px) {
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
+    /* Tablet Devices (768px - 991px) */
+    @media (max-width: 991px) {
+      .container {
+        padding: 0 15px;
       }
 
+      .section-title h1 {
+        font-size: 2rem;
+      }
+
+      .certification-title {
+        font-size: 1.8rem;
+      }
+
+      .course-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .syllabus-content {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+
+      .syllabus-title {
+        font-size: 1.8rem;
+      }
+
+      .course-stats {
+        gap: 15px;
+      }
+    }
+
+    /* Mobile Devices (576px - 767px) */
+    @media (max-width: 767px) {
+      /* Top Bar */
       .top-bar {
         height: auto;
         padding: 10px 0;
       }
 
-      .contact-info {
-        flex-wrap: wrap;
-        justify-content: center;
+      .top-bar-container {
+        flex-direction: column;
         gap: 10px;
       }
 
-      .hamburger {
-        display: block;
+      .contact-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
       }
 
-      .mobile-overlay {
+      .contact-info div {
+        font-size: 13px;
+      }
+
+      .social-icons {
+        gap: 15px;
+      }
+
+      .social-icons a {
+        font-size: 20px;
+      }
+
+      /* Navigation */
+      .hamburger {
         display: block;
       }
 
@@ -817,7 +972,7 @@
         width: 100%;
         justify-content: space-between;
         border-bottom: 1px solid #eee;
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .dropdown {
@@ -827,129 +982,149 @@
         transform: none;
         box-shadow: none;
         display: none;
-        background-color: var(--light-grey);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
+        background-color: var(--light-gray);
         width: 100%;
       }
 
       .dropdown.active {
         display: block;
-        max-height: 300px;
       }
 
       .dropdown-item {
         padding: 12px 40px;
-        border-bottom: 1px solid #ddd;
         font-size: 14px;
       }
 
-      .nav-link i.fa-chevron-down {
-        transition: transform 0.3s ease;
-      }
-
-      .nav-link.active i.fa-chevron-down {
-        transform: rotate(180deg);
-      }
-
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .top-bar {
-        height: 120px;
-      }
-
-      .contact-info {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 992px) {
-      .syllabus-content {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .section-title h1 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 768px) {
+      /* Banner */
       .banner {
-        padding: 80px 0;
-        height: 300px;
+        padding: 60px 0;
+        min-height: 350px;
+      }
+
+      .banner-content h1 {
+        font-size: 1.8rem !important;
+      }
+
+      .banner-content p {
+        font-size: 1rem !important;
+      }
+
+      /* Overview Section */
+      .overview-section {
+        padding: 40px 0;
       }
 
       .section-title h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .section-title p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+      }
+
+      .highlight-box {
+        padding: 20px;
+      }
+
+      .highlight-box p {
+        font-size: 1rem;
+      }
+
+      /* Course Stats */
+      .course-overview {
+        padding: 30px 0 40px;
       }
 
       .course-stats {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
       }
 
-      .syllabus-container {
-        padding: 60px 15px;
-      }
-
-      .syllabus-title {
-        font-size: 2.2rem;
-      }
-
-      .syllabus-item {
-        padding: 18px 20px;
-        font-size: 1rem;
-      }
-
-      .syllabus-item i {
-        font-size: 1.4rem;
-        margin-right: 12px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .contact-info {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .course-stats {
-        grid-template-columns: 1fr;
+      .stat {
+        padding: 15px 10px;
       }
 
       .stat-value {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
+      .stat-label {
+        font-size: 0.85rem;
       }
 
+      /* Certification Section */
+      .certification-section {
+        padding: 40px 0;
+      }
+
+      .certification-title {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+      }
+
+      .certification-content {
+        gap: 20px;
+      }
+
+      .certification-info-box {
+        padding: 20px 15px;
+      }
+
+      .certification-icon {
+        font-size: 36px;
+      }
+
+      .certification-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .certification-number {
+        font-size: 1.6rem;
+      }
+
+      /* Course Details */
+      .course-details-section {
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .course-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .course-subtitle {
+        font-size: 1rem;
+      }
+
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.3rem;
+      }
+
+      .course-description p {
+        font-size: 1rem;
+      }
+
+      .course-goals li,
+      .future-scope li {
+        font-size: 1rem;
+        gap: 8px;
+      }
+
+      /* Syllabus */
       .syllabus-container {
-        padding: 50px 10px;
+        padding: 40px 15px;
+        margin-bottom: 30px;
       }
 
       .syllabus-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+
+      .syllabus-content {
+        gap: 15px;
       }
 
       .syllabus-item {
@@ -959,7 +1134,218 @@
 
       .syllabus-item i {
         font-size: 1.3rem;
+        margin-right: 12px;
+        width: 28px;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 40px 0;
+      }
+
+      .cta-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .cta-section p {
+        font-size: 0.95rem;
+        padding: 0 15px;
+      }
+
+      .cta-button {
+        padding: 10px 25px;
+        font-size: 14px;
+      }
+
+      /* FAQ */
+      .faq-section {
+        padding: 40px 0;
+      }
+
+      .faq-question {
+        padding: 15px 18px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.95rem;
+      }
+
+      .faq-answer p {
+        font-size: 0.9rem;
+      }
+
+      /* Footer */
+      .tech-footer {
+        padding: 40px 0 20px;
+      }
+
+      .footer-content {
+        gap: 30px;
+      }
+
+      .footer-column h3 {
+        font-size: 1.1rem;
+      }
+
+      .footer-column p,
+      .footer-links a {
+        font-size: 0.9rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .footer-bottom p {
+        font-size: 0.8rem;
+      }
+
+      /* Back to Top */
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    /* Small Mobile Devices (480px and below) */
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
+      }
+
+      .top-bar-container {
+        gap: 8px;
+      }
+
+      .contact-info {
+        gap: 10px;
+      }
+
+      .contact-info div {
+        font-size: 11px;
+      }
+
+      .banner {
+        padding: 40px 0;
+        min-height: 280px;
+      }
+
+      .banner-content h1 {
+        font-size: 1.4rem !important;
+      }
+
+      .banner-content p {
+        font-size: 0.85rem !important;
+      }
+
+      .section-title h1 {
+        font-size: 1.4rem;
+      }
+
+      .course-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .stat {
+        padding: 12px 10px;
+      }
+
+      .stat-value {
+        font-size: 1.5rem;
+      }
+
+      .certification-title {
+        font-size: 1.3rem;
+      }
+
+      .certification-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .course-header h2 {
+        font-size: 1.3rem;
+      }
+
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.2rem;
+      }
+
+      .syllabus-title {
+        font-size: 1.3rem;
+      }
+
+      .syllabus-item {
+        padding: 12px 15px;
+        font-size: 0.85rem;
+      }
+
+      .syllabus-item i {
+        font-size: 1.1rem;
         margin-right: 10px;
+        width: 24px;
+      }
+
+      .faq-question {
+        padding: 12px 15px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.85rem;
+      }
+
+      .faq-icon {
+        font-size: 1rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+
+    /* Landscape Mode for Mobile */
+    @media (max-width: 767px) and (orientation: landscape) {
+      .nav-menu {
+        overflow-y: auto;
+        padding: 60px 0 20px;
+      }
+
+      .banner {
+        min-height: 250px;
+        padding: 40px 0;
+      }
+
+      .syllabus-item {
+        padding: 12px 18px;
+      }
+    }
+
+    /* Touch Device Optimizations */
+    @media (hover: none) and (pointer: coarse) {
+      .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+      }
+
+      .nav-item .dropdown.active {
+        display: block;
+      }
+
+      .stat:hover,
+      .certification-info-box:hover,
+      .syllabus-item:hover {
+        transform: none;
       }
     }
   </style>
@@ -971,19 +1357,12 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <!-- Placeholder for logo -->
-        <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
-        </div>
+        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
       </div>
 
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -993,9 +1372,7 @@
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-        </li>
+        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -1004,15 +1381,9 @@
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="techblog.html" class="nav-link">Techblog</a>
-        </li>
-        <li class="nav-item">
-          <a href="scholarship.html" class="nav-link">Scholarship</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="hamburger">
@@ -1021,10 +1392,9 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Optimized H1 -->
   <section class="banner">
     <div class="banner-content">
-      <!-- Banner content can be added here if needed -->
     </div>
   </section>
 
@@ -1034,20 +1404,17 @@
       <div class="overview-container">
         <div class="overview-content">
           <div class="section-title">
-            <h1>DevOps Course Overview</h1>
-            <p>
-              Master DevOps Culture, Tools, and Practices: Become a Certified
-              DevOps Engineer and Accelerate Your IT Career!
-            </p>
+            <h1>Introduction to Cloud DevOps</h1>
+            <p>The Cloud DevOps Course at Rohil NextGen is designed to help students and IT professionals master modern
+              software development and deployment practices. DevOps combines development and operations to improve
+              collaboration, automation, and faster software delivery.</p>
           </div>
           <div class="highlight-box">
-            <p>
-              <strong>Rohil NextGen</strong> offers a complete Web Design
-              training program covering UI/UX principles, HTML5, CSS3,
-              Responsive Design, and Graphic Tools like Figma and Photoshop.
-            </p>
+            <p><strong>Rohil NextGen</strong> offers a comprehensive DevOps training program covering DevOps
+              fundamentals, CI/CD pipelines, containerization, cloud infrastructure, automation tools, and real-time
+              projects. DevOps is one of the fastest-growing fields in the IT industry due to the increasing demand for
+              automation and efficient software delivery.</p>
           </div>
-          <!--Rating-->
           <div class="rating">
             <span class="rating-badge">BEST INSTITUTE</span>
             <span>4.9 Ratings</span>
@@ -1060,26 +1427,22 @@
   <!-- Course Overview Section -->
   <section class="course-overview">
     <div class="container">
-      <div class="course-content">
-        <div class="course-text">
-          <div class="course-stats">
-            <div class="stat">
-              <div class="stat-value">2025</div>
-              <div class="stat-label">Latest Curriculam</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">80</div>
-              <div class="stat-label">Duration (Hours)</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">30</div>
-              <div class="stat-label">Theory (Hours)</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">50</div>
-              <div class="stat-label">Practical (Hours)</div>
-            </div>
-          </div>
+      <div class="course-stats">
+        <div class="stat">
+          <div class="stat-value">2026</div>
+          <div class="stat-label">Latest Curriculum</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">80</div>
+          <div class="stat-label">Duration (Hours)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">30</div>
+          <div class="stat-label">Theory (Hours)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">50</div>
+          <div class="stat-label">Practical (Hours)</div>
         </div>
       </div>
     </div>
@@ -1088,24 +1451,19 @@
   <!-- Certification Section -->
   <section class="certification-section">
     <div class="container">
-      <h2 class="certification-title">
-        Why Choose DevOps Certification Training?
-      </h2>
+      <h2 class="certification-title">Why Choose Cloud DevOps Certification Training?</h2>
       <div class="certification-content">
-        <div class="certification-info-box">
-          <i class="fas fa-wallet certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-wallet certification-icon"></i>
           <h4 class="certification-subtitle">Annual Earnings</h4>
           <p class="certification-description">Estimated Salary</p>
           <h3 class="certification-number">₹ 12.5 L</h3>
         </div>
-        <div class="certification-info-box">
-          <i class="fas fa-chart-line certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-chart-line certification-icon"></i>
           <h4 class="certification-subtitle">Career Growth</h4>
           <p class="certification-description">Growth Rate This Year</p>
           <h3 class="certification-number">35%</h3>
         </div>
-        <div class="certification-info-box">
-          <i class="fas fa-briefcase certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-briefcase certification-icon"></i>
           <h4 class="certification-subtitle">Job Demand</h4>
           <p class="certification-description">Projected by 2026</p>
           <h3 class="certification-number">6.8 L</h3>
@@ -1114,79 +1472,44 @@
     </div>
   </section>
 
-  <!-- Course Details Section -->
+  <!-- Course Details Section with Optimized Content -->
   <section class="course-details-section">
     <div class="container">
       <div class="course-header">
-        <h2>Become a Professional DevOps Engineer</h2>
-        <p class="course-subtitle">
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❝</span>
-          Master CI/CD, Containerization, Cloud Platforms, and Automation
-          Tools
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❞</span>
-        </p>
+        <h2>DevOps Course Curriculum</h2>
+        <p class="course-subtitle">Master DevOps Tools and Technologies with Practical Training</p>
       </div>
 
       <div class="course-description">
-        <h3>Course Overview</h3>
-        <p>
-          This comprehensive DevOps course is designed to teach you the
-          principles, practices, and tools needed to implement DevOps in
-          real-world scenarios. You'll learn about continuous integration,
-          continuous delivery, infrastructure as code, containerization,
-          monitoring, and cloud platforms like AWS and Azure.
-        </p>
+        <h3>DevOps Fundamentals</h3>
+        <p>DevOps is one of the fastest-growing fields in the IT industry due to the increasing demand for automation
+          and efficient software delivery. Benefits of learning DevOps include high demand for DevOps engineers,
+          opportunities in global IT companies, faster software development and deployment, essential for cloud-based
+          infrastructure, and high salary with career growth potential.</p>
       </div>
 
       <div class="course-goals">
-        <h3>Key Learning Outcomes</h3>
+        <h3>DevOps Tools and Technologies</h3>
         <ul>
-          <li>
-            <i class="fas fa-code-branch"></i> Implement CI/CD pipelines using
-            Jenkins, GitLab CI, and GitHub Actions
-          </li>
-          <li>
-            <i class="fas fa-cube"></i> Master containerization with Docker
-            and orchestration with Kubernetes
-          </li>
-          <li>
-            <i class="fas fa-cloud"></i> Deploy and manage applications on
-            cloud platforms (AWS, Azure)
-          </li>
-          <li>
-            <i class="fas fa-code"></i> Automate infrastructure using
-            Terraform and Ansible
-          </li>
-          <li>
-            <i class="fas fa-chart-bar"></i> Implement monitoring and logging
-            with Prometheus, Grafana, and ELK Stack
-          </li>
+          <li><i class="fas fa-code-branch"></i> Version Control Systems - Git & GitHub</li>
+          <li><i class="fas fa-cogs"></i> CI/CD Pipeline - Jenkins, GitLab CI, GitHub Actions</li>
+          <li><i class="fas fa-cube"></i> Containerization - Docker & Kubernetes</li>
+          <li><i class="fas fa-cloud"></i> Infrastructure as Code - Terraform & Ansible</li>
+          <li><i class="fas fa-chart-bar"></i> Monitoring - Prometheus, Grafana, ELK Stack</li>
         </ul>
       </div>
+
       <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
+        <h3>Career Opportunities in DevOps</h3>
         <ul>
-          <li>
-            <i class="fas fa-user-tie"></i> Start as a DevOps Engineer, SRE,
-            or Cloud Engineer
-          </li>
-          <li>
-            <i class="fas fa-cloud"></i> Work with top cloud providers like
-            AWS, Azure, and GCP
-          </li>
-          <li>
-            <i class="fas fa-building"></i> Join leading tech companies,
-            startups, and enterprises
-          </li>
-          <li>
-            <i class="fas fa-rocket"></i> Lead digital transformation
-            initiatives in organizations
-          </li>
-          <li>
-            <i class="fas fa-chart-line"></i> Command high salaries with
-            excellent growth potential
-          </li>
+          <li><i class="fas fa-user-tie"></i> DevOps Engineer</li>
+          <li><i class="fas fa-cloud"></i> Cloud Engineer</li>
+          <li><i class="fas fa-shield-alt"></i> Site Reliability Engineer (SRE)</li>
+          <li><i class="fas fa-robot"></i> Automation Engineer</li>
+          <li><i class="fas fa-chart-line"></i> Cloud DevOps Architect</li>
         </ul>
+        <p style="margin-top: 15px;">DevOps professionals are highly demanded in software companies, cloud service
+          providers, and enterprise IT teams.</p>
       </div>
     </div>
   </section>
@@ -1194,41 +1517,18 @@
   <!-- Syllabus Section -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">Syllabus</h2>
+      <h2 class="syllabus-title">DevOps Course Syllabus</h2>
       <div class="syllabus-content">
-        <div class="syllabus-item">
-          <i class="fas fa-play-circle"></i> Introduction to DevOps Culture &
-          Principles
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-code-branch"></i> Version Control with Git & GitHub
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-cogs"></i> Continuous Integration with Jenkins
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-rocket"></i> Continuous Deployment & Delivery
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-cube"></i> Containerization with Docker
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-sitemap"></i> Container Orchestration with
-          Kubernetes
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-cloud"></i> Infrastructure as Code with Terraform
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-robot"></i> Configuration Management with Ansible
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-chart-bar"></i> Monitoring with Prometheus &
-          Grafana
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-server"></i> Cloud Platforms (AWS & Azure)
-        </div>
+        <div class="syllabus-item"><i class="fas fa-play-circle"></i> Introduction to DevOps Culture & Principles</div>
+        <div class="syllabus-item"><i class="fas fa-code-branch"></i> Version Control with Git & GitHub</div>
+        <div class="syllabus-item"><i class="fas fa-cogs"></i> Continuous Integration with Jenkins</div>
+        <div class="syllabus-item"><i class="fas fa-rocket"></i> Continuous Deployment & Delivery</div>
+        <div class="syllabus-item"><i class="fas fa-cube"></i> Containerization with Docker</div>
+        <div class="syllabus-item"><i class="fas fa-sitemap"></i> Container Orchestration with Kubernetes</div>
+        <div class="syllabus-item"><i class="fas fa-cloud"></i> Infrastructure as Code with Terraform</div>
+        <div class="syllabus-item"><i class="fas fa-robot"></i> Configuration Management with Ansible</div>
+        <div class="syllabus-item"><i class="fas fa-chart-bar"></i> Monitoring with Prometheus & Grafana</div>
+        <div class="syllabus-item"><i class="fas fa-server"></i> Cloud Platforms (AWS & Azure)</div>
       </div>
     </div>
   </section>
@@ -1239,85 +1539,60 @@
       <div class="section-title">
         <h2>Frequently Asked Questions</h2>
       </div>
-
       <div class="faq-content">
         <div class="faq-item">
           <div class="faq-question">
-            <h3>How long is the DevOps course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>How long is the DevOps course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              The course lasts for 80 hours, including hands-on labs,
-              real-world projects, and capstone projects.
-            </p>
+            <p>The course lasts for 80 hours, including hands-on labs, real-world projects, and capstone projects.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Do I need any prior knowledge before starting?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Do I need any prior knowledge before starting?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Basic knowledge of Linux and programming is helpful but not
-              required. We start with fundamentals and progress to advanced
-              topics.
-            </p>
+            <p>Basic knowledge of Linux and programming is helpful but not required. We start with fundamentals and
+              progress to advanced topics.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Will I receive a certification?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Will I receive a certification?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, you'll receive a recognized DevOps Engineer certification
-              upon successful completion of the course and project work.
-            </p>
+            <p>Yes, you'll receive a recognized DevOps Engineer certification upon successful completion of the course
+              and project work.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Will there be hands-on labs?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Will I learn DevOps tools?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, the course includes extensive hands-on labs with real
-              DevOps tools, cloud platforms, and project work.
-            </p>
+            <p>Yes. Students will learn popular DevOps tools used in the industry including Docker, Kubernetes, Jenkins,
+              Ansible, and Terraform.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What career paths can I explore after this course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>What career paths can I explore after this course?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              You can become a DevOps Engineer, Site Reliability Engineer
-              (SRE), Cloud Engineer, Automation Engineer, or Release Manager.
-            </p>
+            <p>You can become a DevOps Engineer, Site Reliability Engineer (SRE), Cloud Engineer, Automation Engineer,
+              or Release Manager.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Is job assistance provided?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Is job assistance provided?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes! We provide comprehensive job assistance including resume
-              building, interview preparation, and placement support with our
-              partner companies.
-            </p>
+            <p>Yes! We provide comprehensive job assistance including resume building, interview preparation, and
+              placement support with our partner companies.</p>
           </div>
         </div>
       </div>
@@ -1329,16 +1604,17 @@
     <div class="footer-content">
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
-        <p>
-          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.
-        </p>
+        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
+          development, data science, cybersecurity, and IT training with placement support. Get the best software
+          training in Virudhunagar with industry experts.</p>
         <div class="social-links">
-          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
+              class="fab fa-youtube"></i></a>
         </div>
       </div>
-
       <div class="footer-column">
         <h3>Quick Links</h3>
         <ul class="footer-links">
@@ -1350,21 +1626,20 @@
           <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-column">
         <h3>Contact Rohil NextGen</h3>
         <ul class="footer-links">
           <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
           <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
+              admin@rohiltechnologies.com</a></li>
           <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div class="copyright">
-        <p>&copy; 2025 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
+        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
       </div>
       <div class="footer-bottom-links">
         <p>Designed By Rohil Technologies</p>
@@ -1389,7 +1664,6 @@
     // Close mobile menu when clicking on a link
     document.querySelectorAll(".nav-link").forEach((n) =>
       n.addEventListener("click", (e) => {
-        // Only close menu if it's not a dropdown trigger
         if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
           navMenu.classList.remove("active");
         }
@@ -1402,24 +1676,15 @@
       const navLink = item.querySelector(".nav-link");
 
       if (dropdown) {
-        // Add click event for mobile dropdowns
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other open dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  otherDropdown.previousElementSibling.classList.remove(
-                    "active"
-                  );
-                }
-              });
-
-            // Toggle current dropdown
+            document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+              if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove("active");
+                otherDropdown.previousElementSibling.classList.remove("active");
+              }
+            });
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -1430,79 +1695,13 @@
     // Close dropdowns when clicking outside
     document.addEventListener("click", (e) => {
       if (window.innerWidth <= 768) {
-        if (
-          !e.target.closest(".nav-item") &&
-          !e.target.closest(".hamburger")
-        ) {
-          document
-            .querySelectorAll(".dropdown.active")
-            .forEach((dropdown) => {
-              dropdown.classList.remove("active");
-              dropdown.previousElementSibling.classList.remove("active");
-            });
-        }
-      }
-    });
-
-    // Carousel Functionality
-    const carouselItems = document.querySelectorAll(".carousel-item");
-    const carouselDots = document.querySelectorAll(".carousel-dot");
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      // Hide all slides
-      carouselItems.forEach((item) => item.classList.remove("active"));
-      carouselDots.forEach((dot) => dot.classList.remove("active"));
-
-      // Show the selected slide
-      carouselItems[index].classList.add("active");
-      carouselDots[index].classList.add("active");
-      currentIndex = index;
-    }
-
-    // Add click event to dots
-    carouselDots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showSlide(index);
-      });
-    });
-
-    // Auto slide change
-    let carouselInterval = setInterval(() => {
-      let nextIndex = (currentIndex + 1) % carouselItems.length;
-      showSlide(nextIndex);
-    }, 5000);
-
-    // Pause carousel on hover
-    carouselItems.forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        clearInterval(carouselInterval);
-      });
-
-      item.addEventListener("mouseleave", () => {
-        carouselInterval = setInterval(() => {
-          let nextIndex = (currentIndex + 1) % carouselItems.length;
-          showSlide(nextIndex);
-        }, 5000);
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        if (targetId === "#") return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
+        if (!e.target.closest(".nav-item") && !e.target.closest(".hamburger")) {
+          document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+            dropdown.classList.remove("active");
+            dropdown.previousElementSibling.classList.remove("active");
           });
         }
-      });
+      }
     });
 
     // Back to Top Button
@@ -1533,6 +1732,7 @@
         });
       }
     });
+
     // FAQ Accordion Functionality
     document.addEventListener("DOMContentLoaded", function () {
       const faqItems = document.querySelectorAll(".faq-item");
@@ -1541,14 +1741,11 @@
         const question = item.querySelector(".faq-question");
 
         question.addEventListener("click", () => {
-          // Close all other items
           faqItems.forEach((otherItem) => {
             if (otherItem !== item) {
               otherItem.classList.remove("active");
             }
           });
-
-          // Toggle current item
           item.classList.toggle("active");
         });
       });

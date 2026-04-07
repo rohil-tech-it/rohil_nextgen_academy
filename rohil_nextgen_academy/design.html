@@ -31,6 +31,9 @@
         --medium-gray: #666666;
         --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         --transition: all 0.3s ease;
+        --text-black: #333;
+        --text-grey: #666;
+        --light-grey: #f5f5f5;
     }
 
     * {
@@ -44,6 +47,7 @@
         line-height: 1.6;
         color: var(--dark-gray);
         background-color: var(--white);
+        overflow-x: hidden;
     }
 
     .container {
@@ -272,7 +276,6 @@
         margin-bottom: 30px;
         opacity: 0.9;
         color: var(--white);
-
     }
 
     .slide-image {
@@ -305,12 +308,10 @@
         transform: translateY(-2px);
     }
 
-
     /* Main Carousel Controls */
     .main-carousel-controls {
         position: absolute;
         bottom: 20px;
-        /* Adjusted position for smaller height */
         left: 50%;
         transform: translateX(-50%);
         display: flex;
@@ -320,7 +321,6 @@
 
     .main-carousel-dot {
         width: 10px;
-        /* Slightly smaller dots */
         height: 10px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.5);
@@ -336,26 +336,22 @@
     /* Courses Section */
     .courses-section {
         padding: 60px 0;
-        /* Slightly reduced padding */
         background: var(--white);
     }
 
     .section-title {
         text-align: center;
         margin-bottom: 40px;
-        /* Slightly reduced margin */
     }
 
     .section-title h2 {
         font-size: 2.2rem;
-        /* Slightly reduced font size */
         color: var(--primary-red);
         margin-bottom: 15px;
     }
 
     .section-title p {
         font-size: 1.1rem;
-        /* Slightly reduced font size */
         color: var(--text-grey);
         max-width: 700px;
         margin: 0 auto;
@@ -383,7 +379,6 @@
 
     .course-image {
         height: 180px;
-        /* Slightly reduced height */
         overflow: hidden;
     }
 
@@ -400,12 +395,10 @@
 
     .course-content {
         padding: 20px;
-        /* Slightly reduced padding */
     }
 
     .course-content h3 {
         font-size: 1.3rem;
-        /* Slightly reduced font size */
         margin-bottom: 12px;
         color: var(--text-black);
     }
@@ -420,7 +413,6 @@
         background: var(--primary-red);
         color: var(--white);
         padding: 8px 16px;
-        /* Slightly reduced padding */
         border-radius: 5px;
         text-decoration: none;
         font-weight: 600;
@@ -439,7 +431,6 @@
         background-color: var(--dark-gray);
         color: var(--white);
         padding: 50px 0 20px;
-        /* Slightly reduced padding */
     }
 
     .footer-content {
@@ -453,7 +444,6 @@
 
     .footer-column h3 {
         font-size: 1.2rem;
-        /* Slightly reduced font size */
         margin-bottom: 20px;
         color: var(--white);
         position: relative;
@@ -478,6 +468,7 @@
     .social-links {
         display: flex;
         gap: 15px;
+        flex-wrap: wrap;
     }
 
     .social-links a {
@@ -522,6 +513,7 @@
     .footer-links i {
         font-size: 0.8rem;
         color: var(--primary-red);
+        flex-shrink: 0;
     }
 
     .footer-bottom {
@@ -573,9 +565,32 @@
         background-color: var(--dark-red);
     }
 
-    /* Responsive Styles */
-    /* Mobile Dropdown Fix */
-    @media (max-width: 768px) {
+    /* ======================================== */
+    /* ENHANCED MOBILE RESPONSIVE STYLES */
+    /* ======================================== */
+
+    /* Tablet Devices (768px - 991px) */
+    @media (max-width: 991px) {
+        .container {
+            padding: 0 15px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+        }
+
+        .courses-grid {
+            gap: 20px;
+        }
+
+        .course-card {
+            margin-right: 0;
+        }
+    }
+
+    /* Mobile Devices (576px - 767px) */
+    @media (max-width: 767px) {
+        /* Top Bar */
         .top-bar-container {
             flex-direction: column;
             gap: 10px;
@@ -592,6 +607,19 @@
             gap: 10px;
         }
 
+        .contact-info div {
+            font-size: 13px;
+        }
+
+        .social-icons {
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 20px;
+        }
+
+        /* Navigation */
         .hamburger {
             display: block;
         }
@@ -630,7 +658,7 @@
             width: 100%;
             justify-content: space-between;
             border-bottom: 1px solid #eee;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .dropdown {
@@ -641,15 +669,11 @@
             box-shadow: none;
             display: none;
             background-color: var(--light-grey);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
             width: 100%;
         }
 
         .dropdown.active {
             display: block;
-            max-height: 300px;
         }
 
         .dropdown-item {
@@ -666,44 +690,225 @@
             transform: rotate(180deg);
         }
 
-        .top-bar-container {
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .top-bar {
-            height: 200px;
-        }
-
-        .contact-info {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .course-card {
-            background-position: center;
-            margin-right: 50px;
-        }
-
-        /* Mobile adjustments for minimal carousel */
+        /* Main Carousel */
         .main-carousel-container {
-            height: 250px;
-            /* Even smaller on mobile */
+            height: 300px;
+        }
+
+        .slide-text {
+            padding: 0 20px;
+            text-align: center;
         }
 
         .slide-text h2 {
             font-size: 1.8rem;
-            /* Smaller font on mobile */
+            margin-bottom: 10px;
         }
 
         .slide-text p {
             font-size: 0.9rem;
-            /* Smaller font on mobile */
+            margin-bottom: 20px;
         }
 
         .cta-button {
             padding: 10px 20px;
             font-size: 0.9rem;
+        }
+
+        .main-carousel-controls {
+            bottom: 10px;
+            gap: 10px;
+        }
+
+        .main-carousel-dot {
+            width: 8px;
+            height: 8px;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 1.6rem;
+        }
+
+        .section-title p {
+            font-size: 1rem;
+            padding: 0 15px;
+        }
+
+        .courses-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .course-card {
+            margin-right: 0;
+            max-width: 100%;
+        }
+
+        .course-image {
+            height: 200px;
+        }
+
+        .course-content {
+            padding: 18px;
+        }
+
+        .course-content h3 {
+            font-size: 1.2rem;
+        }
+
+        .course-content p {
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .tech-footer {
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            gap: 25px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.1rem;
+        }
+
+        .footer-column p,
+        .footer-links a {
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    /* Small Mobile Devices (480px and below) */
+    @media (max-width: 480px) {
+        .container {
+            padding: 0 12px;
+        }
+
+        .top-bar-container {
+            gap: 8px;
+        }
+
+        .contact-info {
+            gap: 8px;
+        }
+
+        .contact-info div {
+            font-size: 11px;
+        }
+
+        .main-carousel-container {
+            height: 250px;
+        }
+
+        .slide-text h2 {
+            font-size: 1.4rem;
+        }
+
+        .slide-text p {
+            font-size: 0.8rem;
+        }
+
+        .cta-button {
+            padding: 8px 16px;
+            font-size: 0.8rem;
+        }
+
+        .section-title h2 {
+            font-size: 1.4rem;
+        }
+
+        .section-title p {
+            font-size: 0.9rem;
+        }
+
+        .course-image {
+            height: 180px;
+        }
+
+        .course-content h3 {
+            font-size: 1.1rem;
+        }
+
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    /* Landscape Mode for Mobile */
+    @media (max-width: 767px) and (orientation: landscape) {
+        .nav-menu {
+            overflow-y: auto;
+            padding: 60px 0 20px;
+        }
+
+        .main-carousel-container {
+            height: 220px;
+        }
+
+        .slide-text h2 {
+            font-size: 1.4rem;
+        }
+
+        .slide-text p {
+            font-size: 0.8rem;
+        }
+
+        .courses-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .course-image {
+            height: 150px;
+        }
+    }
+
+    /* Touch Device Optimizations */
+    @media (hover: none) and (pointer: coarse) {
+        .dropdown {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            display: none;
+        }
+
+        .nav-item .dropdown.active {
+            display: block;
+        }
+
+        .course-card:hover,
+        .social-links a:hover,
+        .cta-button:hover {
+            transform: none;
         }
     }
 </style>
@@ -791,7 +996,7 @@
                     <img src="./images/uxui-desing.jpg" alt="C Programming" class="slide-image">
                     <div class="main-slide-content">
                         <div class="slide-text">
-                            <h2>UXUI <span class="language-highlight">Programming</span></h2>
+                            <h2>UXUI <span class="language-highlight">Design</span></h2>
                             <p>UX/UI Design focuses on creating intuitive, engaging, and user-friendly digital
                                 experiences.</p>
                             <a href="./uxui.html" class="cta-button"> Explore More</a>
@@ -1080,7 +1285,7 @@
         let carouselInterval = setInterval(() => {
             let nextIndex = (currentIndex + 1) % carouselItems.length;
             showSlide(nextIndex);
-        }, 5000);
+        }, 3000);
 
         // Pause carousel on hover
         carouselItems.forEach(item => {
@@ -1092,7 +1297,7 @@
                 carouselInterval = setInterval(() => {
                     let nextIndex = (currentIndex + 1) % carouselItems.length;
                     showSlide(nextIndex);
-                }, 5000);
+                }, 3000);
             });
         });
 
