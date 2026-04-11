@@ -4,13 +4,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohil NextGen - Python Programming</title>
+  <!-- SEO Optimized Title -->
+  <title>Frontend Development Course | HTML CSS JavaScript Training | Rohil NextGen</title>
+  <!-- SEO Optimized Meta Description -->
+  <meta name="description"
+    content="Learn Frontend Development with HTML, CSS, JavaScript, and modern frameworks. Hands-on training, real-time projects & placement support at Rohil NextGen in Virudhunagar." />
+  <meta name="keywords"
+    content="Frontend Development Course, Frontend Developer Training, HTML CSS JavaScript Course, Web Development Training, Frontend Course in Virudhunagar, Frontend Course with Placement, best frontend course in Tamil Nadu, UI Development Course, React Training" />
+  <meta name="author" content="Rohil NextGen" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.rohilnextgen.com/frontend.html" />
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="./style.css" rel="stylesheet" />
+
+  <!-- Course Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Frontend Development Course - HTML, CSS, JavaScript & React",
+    "description": "Comprehensive frontend development training covering HTML5, CSS3, JavaScript ES6+, responsive design, Bootstrap, and React basics. Hands-on projects and placement assistance in Virudhunagar.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rohil NextGen",
+      "sameAs": "https://www.rohilnextgen.com"
+    },
+    "courseCode": "RN-FRONTEND-2025",
+    "educationalCredentialAwarded": "Certificate of Completion",
+    "occupationalCredentialAwarded": "Frontend Developer Certification",
+    "teaches": "HTML5, CSS3, JavaScript ES6+, Responsive Design, React Basics, Bootstrap, Git & GitHub",
+    "occupationalCredentialAwarded": "Frontend Developer, Web Developer, UI Developer",
+    "timeRequired": "PT40H",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "In-Person",
+      "location": {
+        "@type": "Place",
+        "name": "Rohil NextGen, Virudhunagar, Tamil Nadu"
+      },
+      "startDate": "2026-04-15"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema Markup for Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the duration of the Frontend Development course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The course duration is 40+ hours, with hands-on project building included."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need prior programming experience to learn Frontend Development?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, this course is designed for beginners and also for those looking to master Frontend Development."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I receive a certificate after completing the Frontend Development course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, upon successful completion of the course and final project, you will receive a certificate from Rohil NextGen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will we learn React.js in this course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we will cover basic React concepts like components, props, and state management to help you build modern applications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What kind of projects will I build?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You will build projects like personal portfolio websites, interactive blogs, simple e-commerce templates, and responsive landing pages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there job assistance after the course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We provide job placement assistance including portfolio building, interview preparation, and connecting you with hiring partners."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --primary-red: #d40404;
@@ -31,10 +129,11 @@
     }
 
     body {
-            font-family: Georgia;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
+      overflow-x: hidden;
     }
 
     .container {
@@ -85,11 +184,11 @@
     }
 
     .social-icons a:hover {
-      color: var(--text-grey);
+      color: var(--dark-gray);
       transform: translateY(-3px) scale(1.1);
     }
 
-    /* Navigation Styles - IMPROVED RESPONSIVE */
+    /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -130,7 +229,7 @@
 
     .nav-link {
       text-decoration: none;
-      color: var(--text-black);
+      color: var(--dark-gray);
       font-weight: 500;
       font-size: 16px;
       transition: color 0.3s;
@@ -168,13 +267,13 @@
       display: block;
       padding: 12px 20px;
       text-decoration: none;
-      color: var(--text-grey);
+      color: var(--dark-gray);
       border-bottom: 1px solid #eee;
       transition: all 0.3s;
     }
 
     .dropdown-item:hover {
-      background-color: var(--light-grey);
+      background-color: var(--light-gray);
       color: var(--primary-red);
       padding-left: 25px;
     }
@@ -185,7 +284,7 @@
       font-size: 24px;
       background: none;
       border: none;
-      color: var(--text-black);
+      color: var(--dark-gray);
       z-index: 1001;
     }
 
@@ -211,14 +310,14 @@
 
     /* Banner Section */
     .banner {
-      background-image: url(./images/frontenddd.jpg);
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./images/frontenddd.jpg);
       background-size: cover;
       background-position: center;
       color: var(--white);
       padding: 100px 0;
       text-align: center;
       position: relative;
-      height: 500px;
+      min-height: 450px;
     }
 
     .banner-content {
@@ -263,7 +362,7 @@
     }
 
     .highlight-box p strong {
-      color: var(--primary-red);
+      color: var(--dark-gray);
     }
 
     .rating {
@@ -271,6 +370,7 @@
       align-items: center;
       gap: 15px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .rating-badge {
@@ -340,14 +440,6 @@
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
-    }
-
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
     }
 
     .certification-info-box {
@@ -452,6 +544,7 @@
     .future-scope i {
       color: var(--primary-red);
       margin-top: 5px;
+      flex-shrink: 0;
     }
 
     /* Syllabus Section */
@@ -530,6 +623,7 @@
       width: 35px;
       text-align: center;
       transition: var(--transition);
+      flex-shrink: 0;
     }
 
     .syllabus-item:hover i {
@@ -537,11 +631,41 @@
       transform: scale(1.2);
     }
 
-    /* FAQ Section */
-    .section-title h2 {
-      color: var(--dark-gray);
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+      padding: 60px 0;
+      text-align: center;
+      color: var(--white);
     }
 
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--white);
+      color: var(--primary-red);
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* FAQ Section */
     .faq-section {
       padding: 80px 0;
       background-color: var(--light-gray);
@@ -588,6 +712,8 @@
       color: var(--primary-red);
       font-size: 1.2rem;
       transition: var(--transition);
+      flex-shrink: 0;
+      margin-left: 15px;
     }
 
     .faq-answer {
@@ -659,6 +785,7 @@
     .social-links {
       display: flex;
       gap: 15px;
+      flex-wrap: wrap;
     }
 
     .social-links a {
@@ -703,6 +830,7 @@
     .footer-links i {
       font-size: 0.8rem;
       color: var(--primary-red);
+      flex-shrink: 0;
     }
 
     .footer-bottom {
@@ -745,7 +873,7 @@
       z-index: 999;
     }
 
-    .back-to-top.active {
+    .back-to-top.show {
       opacity: 1;
       visibility: visible;
     }
@@ -755,16 +883,19 @@
     }
 
     /* Responsive Styles */
-    /* Mobile Dropdown Fix */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
+    @media (max-width: 991px) {
+      .container { padding: 0 15px; }
+      .section-title h1 { font-size: 2rem; }
+      .certification-title { font-size: 1.8rem; }
+      .course-header h2 { font-size: 1.8rem; }
+      .syllabus-content { grid-template-columns: 1fr; max-width: 600px; }
+    }
 
-      .mobile-overlay {
-        display: block;
-      }
-
+    @media (max-width: 767px) {
+      .top-bar { height: auto; padding: 10px 0; }
+      .top-bar-container { flex-direction: column; gap: 10px; }
+      .contact-info { flex-wrap: wrap; justify-content: center; gap: 15px; }
+      .hamburger { display: block; }
       .nav-menu {
         position: fixed;
         top: 0;
@@ -774,172 +905,45 @@
         width: 280px;
         height: 100vh;
         transition: 0.4s ease;
-        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
         padding: 80px 0 20px;
         gap: 0;
-        overflow-y: auto;
         z-index: 999;
       }
-
-      .nav-menu.active {
-        left: 0;
-      }
-
-      .nav-item {
-        margin: 0;
-        width: 100%;
-      }
-
-      .nav-link {
-        padding: 15px 25px;
-        width: 100%;
-        justify-content: space-between;
-        border-bottom: 1px solid #eee;
-        font-size: 16px;
-      }
-
+      .nav-menu.active { left: 0; }
       .dropdown {
         position: static;
         opacity: 1;
         visibility: visible;
-        transform: none;
-        box-shadow: none;
         display: none;
-        background-color: var(--light-grey);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        width: 100%;
       }
-
-      .dropdown.active {
-        display: block;
-        max-height: 300px;
-      }
-
-      .dropdown-item {
-        padding: 12px 40px;
-        border-bottom: 1px solid #ddd;
-        font-size: 14px;
-      }
-
-      .nav-link i.fa-chevron-down {
-        transition: transform 0.3s ease;
-      }
-
-      .nav-link.active i.fa-chevron-down {
-        transform: rotate(180deg);
-      }
-
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .top-bar {
-        height: 120px;
-      }
-
-      .contact-info {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+      .dropdown.active { display: block; }
+      .banner { padding: 60px 0; min-height: 350px; }
+      .overview-section { padding: 40px 0; }
+      .section-title h1 { font-size: 1.6rem; }
+      .course-stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .stat { padding: 15px 10px; }
+      .stat-value { font-size: 1.8rem; }
+      .certification-section { padding: 40px 0; }
+      .certification-title { font-size: 1.5rem; }
+      .certification-content { gap: 20px; }
+      .course-details-section { margin: 30px auto; padding: 20px; }
+      .course-header h2 { font-size: 1.5rem; }
+      .syllabus-container { padding: 40px 15px; }
+      .syllabus-title { font-size: 1.5rem; }
+      .syllabus-item { padding: 15px 18px; font-size: 0.95rem; }
+      .syllabus-item i { font-size: 1.3rem; margin-right: 12px; width: 28px; }
+      .faq-section { padding: 40px 0; }
+      .faq-question { padding: 15px 18px; }
+      .faq-question h3 { font-size: 0.95rem; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+      .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
     }
 
-    @media (max-width: 992px) {
-      .syllabus-content {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .section-title h1 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .banner {
-        padding: 80px 0;
-        height: 230px;
-        background-size: cover;
-      }
-
-      .section-title h1 {
-        font-size: 1.8rem;
-      }
-
-      .section-title p {
-        font-size: 1.1rem;
-      }
-
-      .course-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .syllabus-container {
-        padding: 60px 15px;
-      }
-
-      .syllabus-title {
-        font-size: 2.2rem;
-      }
-
-      .syllabus-item {
-        padding: 18px 20px;
-        font-size: 1rem;
-      }
-
-      .syllabus-item i {
-        font-size: 1.4rem;
-        margin-right: 12px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .contact-info {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .course-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .stat-value {
-        font-size: 2rem;
-      }
-
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-      }
-
-      .syllabus-container {
-        padding: 50px 10px;
-      }
-
-      .syllabus-title {
-        font-size: 2rem;
-      }
-
-      .syllabus-item {
-        padding: 15px 18px;
-        font-size: 0.95rem;
-      }
-
-      .syllabus-item i {
-        font-size: 1.3rem;
-        margin-right: 10px;
-      }
+    @media (max-width: 480px) {
+      .course-stats { grid-template-columns: 1fr; }
+      .certification-content { grid-template-columns: 1fr; }
+      .syllabus-item { padding: 12px 15px; font-size: 0.85rem; }
+      .syllabus-item i { font-size: 1.1rem; margin-right: 10px; width: 24px; }
     }
   </style>
 </head>
@@ -950,19 +954,12 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <!-- Placeholder for logo -->
-        <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
-        </div>
+        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
       </div>
 
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -972,26 +969,18 @@
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-        </li>
+        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
+            <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="techblog.html" class="nav-link">Techblog</a>
-        </li>
-        <li class="nav-item">
-          <a href="scholarship.html" class="nav-link">Scholarship</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="hamburger">
@@ -1000,10 +989,9 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Optimized H1 -->
   <section class="banner">
     <div class="banner-content">
-      <!-- Banner content can be added here if needed -->
     </div>
   </section>
 
@@ -1013,20 +1001,12 @@
       <div class="overview-container">
         <div class="overview-content">
           <div class="section-title">
-            <h1>Frontend Development Overview</h1>
-            <p>
-              Become a Certified Frontend
-              Developer and Launch Your Dream Career!
-            </p>
+            <h1>Introduction to Frontend Development</h1>
+            <p>The Frontend Development Course at Rohil NextGen is designed to help students and aspiring developers master modern web technologies including HTML5, CSS3, JavaScript, and React for building stunning web applications.</p>
           </div>
           <div class="highlight-box">
-            <p>
-              <strong>Rohil NextGen</strong> offers an in-depth Frontend
-              Development training program covering HTML, CSS, JavaScript, and
-              React fundamentals for building stunning web applications.
-            </p>
+            <p><strong>Rohil NextGen</strong> offers an industry-focused <strong>Frontend Development training program</strong> covering <strong>HTML5, CSS3, JavaScript ES6+, Bootstrap, responsive design, and React fundamentals</strong>. Build stunning web applications, work on real-time projects, and get 100% placement assistance. <strong>Best frontend course in Virudhunagar with certification.</strong></p>
           </div>
-          <!--Rating-->
           <div class="rating">
             <span class="rating-badge">BEST INSTITUTE</span>
             <span>4.9 Ratings</span>
@@ -1039,26 +1019,22 @@
   <!-- Course Overview Section -->
   <section class="course-overview">
     <div class="container">
-      <div class="course-content">
-        <div class="course-text">
-          <div class="course-stats">
-            <div class="stat">
-              <div class="stat-value">2025</div>
-              <div class="stat-label">Updated Curriculum</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">40</div>
-              <div class="stat-label">Duration (Hours)</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">15</div>
-              <div class="stat-label">Theory (Hours)</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">25</div>
-              <div class="stat-label">Practical (Hours)</div>
-            </div>
-          </div>
+      <div class="course-stats">
+        <div class="stat">
+          <div class="stat-value">2025</div>
+          <div class="stat-label">Latest Curriculum</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">40+</div>
+          <div class="stat-label">Duration (Hours)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">15</div>
+          <div class="stat-label">Theory (Hours)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">25+</div>
+          <div class="stat-label">Practical (Hours)</div>
         </div>
       </div>
     </div>
@@ -1067,103 +1043,61 @@
   <!-- Certification Section -->
   <section class="certification-section">
     <div class="container">
-      <h2 class="certification-title">
-        Why Choose Frontend Certification Training?
-      </h2>
+      <h2 class="certification-title">Why Choose Frontend Certification Training?</h2>
       <div class="certification-content">
-        <div class="certification-info-box">
-          <i class="fas fa-wallet certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-wallet certification-icon"></i>
           <h4 class="certification-subtitle">Annual Earnings</h4>
           <p class="certification-description">Estimated Salary</p>
-          <h3 class="certification-number">₹ 5 L</h3>
+          <h3 class="certification-number">₹ 5 LPA+</h3>
         </div>
-        <div class="certification-info-box">
-          <i class="fas fa-chart-line certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-chart-line certification-icon"></i>
           <h4 class="certification-subtitle">Career Growth</h4>
-          <p class="certification-description">Growth Rate This Year</p>
-          <h3 class="certification-number">22%</h3>
+          <p class="certification-description">Industry Growth Rate</p>
+          <h3 class="certification-number">22% Yearly</h3>
         </div>
-        <div class="certification-info-box">
-          <i class="fas fa-briefcase certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-briefcase certification-icon"></i>
           <h4 class="certification-subtitle">Job Demand</h4>
           <p class="certification-description">Projected by 2026</p>
-          <h3 class="certification-number">4 L</h3>
+          <h3 class="certification-number">4 Lakh+ Jobs</h3>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Course Details Section -->
+  <!-- Course Details Section with Optimized Content -->
   <section class="course-details-section">
     <div class="container">
       <div class="course-header">
-        <h2>Master Modern Frontend Development</h2>
-        <p class="course-subtitle">
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❝</span>
-          Learn HTML, CSS, JavaScript, React, and Responsive Design Techniques
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❞</span>
-        </p>
+        <h2>Frontend Development Course Curriculum</h2>
+        <p class="course-subtitle">Master Modern Frontend Technologies with Practical Training</p>
       </div>
 
       <div class="course-description">
-        <h3>Course Overview</h3>
-        <p>
-          The Frontend Development course is designed to build strong
-          foundations in creating beautiful and responsive websites. Covering
-          HTML5, CSS3, JavaScript ES6+, Bootstrap, and React.js basics,
-          students will be ready for real-world projects and developer roles.
-        </p>
+        <h3>Frontend Development Fundamentals</h3>
+        <p>Frontend development is one of the most in-demand skills in the IT industry due to the growth of web applications and digital platforms. Benefits of learning Frontend Development include high demand for frontend developers, opportunities in global IT companies, creative and technical career path, essential for full-stack development, and high salary with career growth potential.</p>
       </div>
 
       <div class="course-goals">
-        <h3>Key Learning Outcomes</h3>
+        <h3>Frontend Technologies Covered</h3>
         <ul>
-          <li>
-            <i class="fas fa-code"></i> Build responsive websites using HTML5,
-            CSS3, and Flexbox/Grid.
-          </li>
-          <li>
-            <i class="fas fa-magic"></i> Implement interactive functionality
-            using JavaScript (DOM Manipulation, ES6+).
-          </li>
-          <li>
-            <i class="fas fa-mobile-alt"></i> Create mobile-friendly designs
-            with Bootstrap and media queries.
-          </li>
-          <li>
-            <i class="fas fa-react"></i> Get started with React basics:
-            components, props, and state management.
-          </li>
-          <li>
-            <i class="fas fa-globe"></i> Deploy projects online using GitHub
-            Pages and Netlify.
-          </li>
+          <li><i class="fab fa-html5"></i> HTML5 - Semantic Structure & Elements</li>
+          <li><i class="fab fa-css3-alt"></i> CSS3 - Styling, Flexbox, Grid & Animations</li>
+          <li><i class="fab fa-js"></i> JavaScript ES6+ - Core Concepts & DOM Manipulation</li>
+          <li><i class="fab fa-bootstrap"></i> Bootstrap Framework - Responsive Design</li>
+          <li><i class="fab fa-react"></i> React Basics - Components, Props & State Management</li>
         </ul>
       </div>
+
       <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
+        <h3>Career Opportunities in Frontend Development</h3>
         <ul>
-          <li>
-            <i class="fas fa-laptop-code"></i> Work as a Frontend Developer in
-            startups, tech companies, or freelance markets.
-          </li>
-          <li>
-            <i class="fas fa-mobile"></i> Create beautiful, fast mobile-first
-            websites and progressive web apps.
-          </li>
-          <li>
-            <i class="fas fa-react"></i> Kickstart your career as a React
-            Developer with solid project experience.
-          </li>
-          <li>
-            <i class="fas fa-rocket"></i> Step into UI/UX designing and
-            frontend testing with Cypress and Selenium basics.
-          </li>
-          <li>
-            <i class="fas fa-lightbulb"></i> Build an impressive portfolio
-            that gets noticed by recruiters and companies.
-          </li>
+          <li><i class="fas fa-laptop-code"></i> Frontend Developer</li>
+          <li><i class="fas fa-mobile-alt"></i> UI Developer / Web Designer</li>
+          <li><i class="fab fa-react"></i> React Developer (Entry Level)</li>
+          <li><i class="fas fa-rocket"></i> Freelance Web Developer</li>
+          <li><i class="fas fa-chart-line"></i> Full Stack Developer (Pathway)</li>
         </ul>
+        <p style="margin-top: 15px;">Frontend developers are highly demanded in software companies, digital agencies, startups, and freelance marketplaces.</p>
       </div>
     </div>
   </section>
@@ -1171,43 +1105,18 @@
   <!-- Syllabus Section -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">Syllabus</h2>
+      <h2 class="syllabus-title">Frontend Course Syllabus</h2>
       <div class="syllabus-content">
-        <div class="syllabus-item">
-          <i class="fas fa-play-circle"></i> Introduction to Web Development &
-          HTML5
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-paint-brush"></i> Styling with CSS3 and Responsive
-          Design
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-code"></i> JavaScript Fundamentals & ES6+ Concepts
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-cogs"></i> DOM Manipulation & Event Handling
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-th"></i> CSS Flexbox, Grid, and Advanced Layouts
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-cube"></i> Bootstrap Framework for Fast Designing
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-bootstrap"></i> Introduction to React: Components,
-          Props & State
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-react"></i> Fetching APIs & Working with JSON
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-database"></i> Capstone Projects: Personal
-          Portfolio, Blog Website
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-project-diagram"></i> Hosting Websites on GitHub
-          Pages & Netlify
-        </div>
+        <div class="syllabus-item"><i class="fas fa-play-circle"></i> Introduction to Web Development & HTML5</div>
+        <div class="syllabus-item"><i class="fas fa-paint-brush"></i> Styling with CSS3 & Responsive Design (Flexbox/Grid)</div>
+        <div class="syllabus-item"><i class="fas fa-code"></i> JavaScript Fundamentals & ES6+ Concepts</div>
+        <div class="syllabus-item"><i class="fas fa-cogs"></i> DOM Manipulation & Event Handling</div>
+        <div class="syllabus-item"><i class="fas fa-th"></i> CSS Flexbox, Grid, and Advanced Layouts</div>
+        <div class="syllabus-item"><i class="fas fa-cube"></i> Bootstrap Framework for Fast Designing</div>
+        <div class="syllabus-item"><i class="fas fa-bootstrap"></i> Introduction to React: Components, Props & State</div>
+        <div class="syllabus-item"><i class="fas fa-react"></i> Fetching APIs & Working with JSON</div>
+        <div class="syllabus-item"><i class="fas fa-database"></i> Capstone Projects: Personal Portfolio, Blog Website</div>
+        <div class="syllabus-item"><i class="fas fa-project-diagram"></i> Hosting Websites on GitHub Pages & Netlify + Git</div>
       </div>
     </div>
   </section>
@@ -1218,91 +1127,53 @@
       <div class="section-title">
         <h2>Frequently Asked Questions</h2>
       </div>
-
       <div class="faq-content">
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What is the duration of the Frontend Development course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>What is the duration of the Frontend Development course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              The course duration is 40 hours, with hands-on project building
-              included.
-            </p>
+            <p>The course duration is 40+ hours, with hands-on project building included.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>
-              Do I need prior programming experience to learn Frontend
-              Development?
-            </h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Do I need prior programming experience to learn Frontend Development?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              No, this course is designed for beginners and also for those
-              looking to master Frontend Development.
-            </p>
+            <p>No, this course is designed for beginners and also for those looking to master Frontend Development.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>
-              Will I receive a certificate after completing the Frontend
-              Development course?
-            </h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Will I receive a certificate after completing the Frontend Development course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, upon successful completion of the course and final project,
-              you will receive a certificate from Rohil NextGen.
-            </p>
+            <p>Yes, upon successful completion of the course and final project, you will receive a certificate from Rohil NextGen.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Will we learn React.js in this course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Will we learn React.js in this course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, we will cover basic React concepts like components, props,
-              and state management to help you build modern applications.
-            </p>
+            <p>Yes, we will cover basic React concepts like components, props, and state management to help you build modern applications.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What kind of projects will I build?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>What kind of projects will I build?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              You will build projects like personal portfolio websites,
-              interactive blogs, simple e-commerce templates, and responsive
-              landing pages.
-            </p>
+            <p>You will build projects like personal portfolio websites, interactive blogs, simple e-commerce templates, and responsive landing pages.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Is there job assistance after the course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Is job assistance provided?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              YYes! We provide job placement assistance including portfolio
-              building, interview preparation, and connecting you with hiring
-              partners.
-            </p>
+            <p>Yes! We provide comprehensive job placement assistance including portfolio building, interview preparation, and connecting you with hiring partners.</p>
           </div>
         </div>
       </div>
@@ -1314,16 +1185,13 @@
     <div class="footer-content">
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
-        <p>
-          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.
-        </p>
+        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.</p>
         <div class="social-links">
           <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
-
       <div class="footer-column">
         <h3>Quick Links</h3>
         <ul class="footer-links">
@@ -1335,7 +1203,6 @@
           <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-column">
         <h3>Contact Rohil NextGen</h3>
         <ul class="footer-links">
@@ -1346,7 +1213,6 @@
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div class="copyright">
         <p>&copy; 2025 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
@@ -1374,7 +1240,6 @@
     // Close mobile menu when clicking on a link
     document.querySelectorAll(".nav-link").forEach((n) =>
       n.addEventListener("click", (e) => {
-        // Only close menu if it's not a dropdown trigger
         if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
           navMenu.classList.remove("active");
         }
@@ -1387,24 +1252,15 @@
       const navLink = item.querySelector(".nav-link");
 
       if (dropdown) {
-        // Add click event for mobile dropdowns
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other open dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  otherDropdown.previousElementSibling.classList.remove(
-                    "active"
-                  );
-                }
-              });
-
-            // Toggle current dropdown
+            document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+              if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove("active");
+                otherDropdown.previousElementSibling.classList.remove("active");
+              }
+            });
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -1415,79 +1271,13 @@
     // Close dropdowns when clicking outside
     document.addEventListener("click", (e) => {
       if (window.innerWidth <= 768) {
-        if (
-          !e.target.closest(".nav-item") &&
-          !e.target.closest(".hamburger")
-        ) {
-          document
-            .querySelectorAll(".dropdown.active")
-            .forEach((dropdown) => {
-              dropdown.classList.remove("active");
-              dropdown.previousElementSibling.classList.remove("active");
-            });
-        }
-      }
-    });
-
-    // Carousel Functionality
-    const carouselItems = document.querySelectorAll(".carousel-item");
-    const carouselDots = document.querySelectorAll(".carousel-dot");
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      // Hide all slides
-      carouselItems.forEach((item) => item.classList.remove("active"));
-      carouselDots.forEach((dot) => dot.classList.remove("active"));
-
-      // Show the selected slide
-      carouselItems[index].classList.add("active");
-      carouselDots[index].classList.add("active");
-      currentIndex = index;
-    }
-
-    // Add click event to dots
-    carouselDots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showSlide(index);
-      });
-    });
-
-    // Auto slide change
-    let carouselInterval = setInterval(() => {
-      let nextIndex = (currentIndex + 1) % carouselItems.length;
-      showSlide(nextIndex);
-    }, 5000);
-
-    // Pause carousel on hover
-    carouselItems.forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        clearInterval(carouselInterval);
-      });
-
-      item.addEventListener("mouseleave", () => {
-        carouselInterval = setInterval(() => {
-          let nextIndex = (currentIndex + 1) % carouselItems.length;
-          showSlide(nextIndex);
-        }, 5000);
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        if (targetId === "#") return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
+        if (!e.target.closest(".nav-item") && !e.target.closest(".hamburger")) {
+          document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+            dropdown.classList.remove("active");
+            dropdown.previousElementSibling.classList.remove("active");
           });
         }
-      });
+      }
     });
 
     // Back to Top Button
@@ -1518,6 +1308,7 @@
         });
       }
     });
+
     // FAQ Accordion Functionality
     document.addEventListener("DOMContentLoaded", function () {
       const faqItems = document.querySelectorAll(".faq-item");
@@ -1526,14 +1317,11 @@
         const question = item.querySelector(".faq-question");
 
         question.addEventListener("click", () => {
-          // Close all other items
           faqItems.forEach((otherItem) => {
             if (otherItem !== item) {
               otherItem.classList.remove("active");
             }
           });
-
-          // Toggle current item
           item.classList.toggle("active");
         });
       });
