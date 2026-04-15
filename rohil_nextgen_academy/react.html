@@ -4,13 +4,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohil NextGen - Python Programming</title>
+  <!-- SEO Optimized Title -->
+  <title>React JS Course | React Developer Training & Certification | Rohil NextGen</title>
+  <!-- SEO Optimized Meta Description -->
+  <meta name="description"
+    content="Learn React JS with hands-on projects, components, hooks, and real-world applications. Get certified and start your frontend career with Rohil NextGen." />
+  <meta name="keywords"
+    content="React JS Course, React Developer Training, Learn React JS, React Course in Virudhunagar, Frontend Framework Training, React Course with Placement, Best React training institute in Tamil Nadu" />
+  <meta name="author" content="Rohil NextGen" />
+  <link rel="canonical" href="https://www.rohilnextgen.com/react.html" />
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="./style.css" rel="stylesheet" />
+
+  <!-- Course Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "React JS Course - Frontend Framework Training & Certification",
+    "description": "Learn React JS with hands-on projects, components, hooks, and real-world applications. Get certified and start your frontend career with Rohil NextGen.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rohil NextGen",
+      "sameAs": "https://www.rohilnextgen.com"
+    },
+    "courseCode": "REACT-001",
+    "educationalCredentialAwarded": "React JS Certification",
+    "teaches": ["React Components", "React Hooks", "State Management", "JSX", "React Router", "API Integration"],
+    "occupationalCredentialAwarded": "React Developer, Frontend Developer, UI Developer",
+    "timeRequired": "PT40H",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "In-Person",
+      "location": {
+        "@type": "Place",
+        "name": "Rohil NextGen, Virudhunagar, Tamil Nadu"
+      },
+      "startDate": "2026-04-20"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the duration of the React JS course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The course duration is 40 hours, with hands-on React.js project building included."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need prior JavaScript knowledge to start React JS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Basic JavaScript knowledge is helpful, but we start by covering everything you need for React basics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I get a certificate after completing the React JS course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, upon successful completion, you will receive a certification from Rohil NextGen Academy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will we build real-time projects during the course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You will work on real-world projects like single-page applications, dynamic dashboards, and interactive user interfaces."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there job assistance after the React JS course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! We offer job placement assistance, interview training, and portfolio building support."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Organization Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Rohil NextGen",
+    "url": "https://www.rohilnextgen.com",
+    "logo": "https://www.rohilnextgen.com/images/rohil_nextgen-removebg-preview.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Virudhunagar",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9751867879",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Tamil"]
+    }
+  }
+  </script>
+
   <style>
     :root {
       --primary-red: #d40404;
@@ -22,6 +134,9 @@
       --medium-gray: #666666;
       --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       --transition: all 0.3s ease;
+      --text-black: #333;
+      --text-grey: #666;
+      --light-grey: #f5f5f5;
     }
 
     * {
@@ -31,10 +146,11 @@
     }
 
     body {
-            font-family: Georgia;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
+      overflow-x: hidden;
     }
 
     .container {
@@ -89,7 +205,7 @@
       transform: translateY(-3px) scale(1.1);
     }
 
-    /* Navigation Styles - IMPROVED RESPONSIVE */
+    /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -211,14 +327,14 @@
 
     /* Banner Section */
     .banner {
-      background-image: url(./images/ra.png);
+      background-image: url("./images/ra.png");
       background-size: cover;
       background-position: center;
       color: var(--white);
       padding: 100px 0;
       text-align: center;
       position: relative;
-      height: 500px;
+      min-height: 450px;
     }
 
     .banner-content {
@@ -271,6 +387,7 @@
       align-items: center;
       gap: 15px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .rating-badge {
@@ -340,14 +457,6 @@
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
-    }
-
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
     }
 
     .certification-info-box {
@@ -452,6 +561,7 @@
     .future-scope i {
       color: var(--primary-red);
       margin-top: 5px;
+      flex-shrink: 0;
     }
 
     /* Syllabus Section */
@@ -506,10 +616,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg,
-          transparent,
-          rgba(212, 4, 4, 0.1),
-          transparent);
+      background: linear-gradient(90deg, transparent, rgba(212, 4, 4, 0.1), transparent);
       transition: var(--transition);
     }
 
@@ -530,6 +637,7 @@
       width: 35px;
       text-align: center;
       transition: var(--transition);
+      flex-shrink: 0;
     }
 
     .syllabus-item:hover i {
@@ -537,11 +645,61 @@
       transform: scale(1.2);
     }
 
-    /* FAQ Section */
-    .section-title h2 {
-      color: var(--dark-gray);
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+      padding: 60px 0;
+      text-align: center;
+      color: var(--white);
     }
 
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--white);
+      color: var(--primary-red);
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .cta-button-outline {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--white);
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      border: 2px solid var(--white);
+    }
+
+    .cta-button:hover,
+    .cta-button-outline:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* FAQ Section */
     .faq-section {
       padding: 80px 0;
       background-color: var(--light-gray);
@@ -588,6 +746,8 @@
       color: var(--primary-red);
       font-size: 1.2rem;
       transition: var(--transition);
+      flex-shrink: 0;
+      margin-left: 15px;
     }
 
     .faq-answer {
@@ -659,6 +819,7 @@
     .social-links {
       display: flex;
       gap: 15px;
+      flex-wrap: wrap;
     }
 
     .social-links a {
@@ -703,6 +864,7 @@
     .footer-links i {
       font-size: 0.8rem;
       color: var(--primary-red);
+      flex-shrink: 0;
     }
 
     .footer-bottom {
@@ -755,8 +917,30 @@
     }
 
     /* Responsive Styles */
-    /* Mobile Dropdown Fix */
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .section-title h1 {
+        font-size: 2rem;
+      }
+
+      .certification-title {
+        font-size: 1.8rem;
+      }
+
+      .course-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .syllabus-content {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+    }
+
+    @media (max-width: 767px) {
       .hamburger {
         display: block;
       }
@@ -795,7 +979,7 @@
         width: 100%;
         justify-content: space-between;
         border-bottom: 1px solid #eee;
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .dropdown {
@@ -806,131 +990,96 @@
         box-shadow: none;
         display: none;
         background-color: var(--light-grey);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
         width: 100%;
       }
 
       .dropdown.active {
         display: block;
-        max-height: 300px;
       }
 
       .dropdown-item {
         padding: 12px 40px;
-        border-bottom: 1px solid #ddd;
         font-size: 14px;
       }
 
-      .nav-link i.fa-chevron-down {
-        transition: transform 0.3s ease;
-      }
-
-      .nav-link.active i.fa-chevron-down {
-        transform: rotate(180deg);
-      }
-    }
-
-    @media (max-width: 768px) {
       .top-bar-container {
         flex-direction: column;
         gap: 10px;
       }
 
       .top-bar {
-        height: 120px;
+        height: auto;
+        padding: 10px 0;
       }
 
       .contact-info {
         flex-wrap: wrap;
         justify-content: center;
       }
-    }
 
-    @media (max-width: 992px) {
-      .syllabus-content {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .section-title h1 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 768px) {
       .banner {
-        padding: 80px 0;
-        height: 300px;
-        background-size: cover;
+        padding: 60px 0;
+        min-height: 350px;
       }
 
       .section-title h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .section-title p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+      }
+
+      .highlight-box {
+        padding: 20px;
+      }
+
+      .course-overview {
+        padding: 30px 0 40px;
       }
 
       .course-stats {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
       }
 
-      .syllabus-container {
-        padding: 60px 15px;
-      }
-
-      .syllabus-title {
-        font-size: 2.2rem;
-      }
-
-      .syllabus-item {
-        padding: 18px 20px;
-        font-size: 1rem;
-      }
-
-      .syllabus-item i {
-        font-size: 1.4rem;
-        margin-right: 12px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .contact-info {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .course-stats {
-        grid-template-columns: 1fr;
+      .stat {
+        padding: 15px 12px;
       }
 
       .stat-value {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
+      .certification-section {
+        padding: 40px 0;
+      }
+
+      .certification-title {
+        font-size: 1.5rem;
+      }
+
+      .course-details-section {
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .course-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.3rem;
       }
 
       .syllabus-container {
-        padding: 50px 10px;
+        padding: 40px 15px;
       }
 
       .syllabus-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       .syllabus-item {
@@ -940,7 +1089,96 @@
 
       .syllabus-item i {
         font-size: 1.3rem;
-        margin-right: 10px;
+        margin-right: 12px;
+        width: 28px;
+      }
+
+      .faq-section {
+        padding: 40px 0;
+      }
+
+      .faq-question {
+        padding: 15px 18px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.95rem;
+      }
+
+      .tech-footer {
+        padding: 40px 0 20px;
+      }
+
+      .footer-content {
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
+      }
+
+      .course-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .certification-content {
+        grid-template-columns: 1fr;
+      }
+
+      .syllabus-item {
+        padding: 12px 15px;
+        font-size: 0.85rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767px) and (orientation: landscape) {
+      .nav-menu {
+        overflow-y: auto;
+        padding: 60px 0 20px;
+      }
+
+      .banner {
+        min-height: 250px;
+        padding: 40px 0;
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+      }
+
+      .nav-item .dropdown.active {
+        display: block;
+      }
+
+      .stat:hover,
+      .certification-info-box:hover,
+      .syllabus-item:hover {
+        transform: none;
       }
     }
   </style>
@@ -952,19 +1190,14 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <!-- Placeholder for logo -->
         <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
+          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
         </div>
       </div>
 
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -974,26 +1207,18 @@
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-        </li>
+        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
+            <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="techblog.html" class="nav-link">Techblog</a>
-        </li>
-        <li class="nav-item">
-          <a href="scholarship.html" class="nav-link">Scholarship</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="hamburger">
@@ -1002,11 +1227,12 @@
     </div>
   </nav>
 
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with H1 -->
   <section class="banner">
     <div class="banner-content">
-      <!-- Banner content can be added here if needed -->
     </div>
   </section>
 
@@ -1016,22 +1242,17 @@
       <div class="overview-container">
         <div class="overview-content">
           <div class="section-title">
-            <h1>React.js / Angular Basics Overview</h1>
-            <p>
-              Learn the foundations of modern JavaScript frameworks: Get
-              skilled in React.js and Angular Basics to build dynamic and
-              powerful web applications.
-            </p>
+            <h1>Introduction to React JS</h1>
+            <p>The React JS Course at Rohil NextGen is a job-oriented training program designed for students, beginners,
+              and developers who want to build modern, fast, and scalable web applications. This course focuses on React
+              fundamentals, component-based architecture, hooks, state management, and real-time project development,
+              making students industry-ready.</p>
           </div>
           <div class="highlight-box">
-            <p>
-              <strong>Rohil NextGen</strong> our React.js / Angular Basics
-              course covers core concepts like Components, State Management,
-              Props, Directives, Services, and Routing — equipping you for
-              real-world projects.
-            </p>
+            <p><strong>Rohil NextGen</strong> offers a comprehensive React JS training program covering core concepts
+              like Components, State Management, Props, Hooks, Routing, and API Integration — equipping you for
+              real-world projects and frontend developer roles.</p>
           </div>
-          <!--Rating-->
           <div class="rating">
             <span class="rating-badge">BEST INSTITUTE</span>
             <span>4.9 Ratings</span>
@@ -1041,29 +1262,28 @@
     </div>
   </section>
 
-  <!-- Course Overview Section -->
-  <section class="course-overview">
+  <!-- Why Learn React Section -->
+  <section class="certification-section">
     <div class="container">
-      <div class="course-content">
-        <div class="course-text">
-          <div class="course-stats">
-            <div class="stat">
-              <div class="stat-value">2025</div>
-              <div class="stat-label">Update Curriculum</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">100%</div>
-              <div class="stat-label">Placement Assistance</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">10+</div>
-              <div class="stat-label">Real-Time Projects</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">24/7</div>
-              <div class="stat-label">Lab Support</div>
-            </div>
-          </div>
+      <h2 class="certification-title">Why Learn React JS? High Demand in IT Industry</h2>
+      <div class="certification-content">
+        <div class="certification-info-box">
+          <i class="fas fa-wallet certification-icon"></i>
+          <h4 class="certification-subtitle">Average Salary</h4>
+          <p class="certification-description">React Developer Salary</p>
+          <h3 class="certification-number">₹ 5.5 LPA</h3>
+        </div>
+        <div class="certification-info-box">
+          <i class="fas fa-chart-line certification-icon"></i>
+          <h4 class="certification-subtitle">Job Growth</h4>
+          <p class="certification-description">Year Over Year</p>
+          <h3 class="certification-number">28%</h3>
+        </div>
+        <div class="certification-info-box">
+          <i class="fas fa-building certification-icon"></i>
+          <h4 class="certification-subtitle">Top Companies</h4>
+          <p class="certification-description">Facebook, Netflix, Uber</p>
+          <h3 class="certification-number">100+</h3>
         </div>
       </div>
     </div>
@@ -1073,74 +1293,41 @@
   <section class="course-details-section">
     <div class="container">
       <div class="course-header">
-        <h2>Learn React</h2>
-        <p class="course-subtitle">
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❝</span>
-          Learn React.js / Angular, Components, State Management & Routing
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❞</span>
-        </p>
+        <h2>React Course Curriculum – Learn Modern Frontend Development</h2>
+        <p class="course-subtitle">Master React Components, Hooks, State Management & Real-Time Projects</p>
       </div>
 
       <div class="course-description">
-        <h3>Course Overview</h3>
-        <p>
-          This course covers the fundamentals of React.js and Angular. You’ll
-          learn how to build dynamic single-page applications (SPAs) using
-          React and Angular frameworks, including components, routing, state
-          management, and more. You'll gain real-world project experience and
-          the necessary skills for entry-level developer roles.
-        </p>
+        <h3>React Fundamentals</h3>
+        <p>This comprehensive React JS course covers everything from basic to advanced concepts. You'll learn JSX,
+          components, props, state management, React Hooks (useState, useEffect), React Router for navigation, API
+          integration, and build complete frontend applications. React is one of the most popular JavaScript libraries
+          used for building dynamic user interfaces by top companies like Facebook, Netflix, and Uber.</p>
       </div>
 
       <div class="course-goals">
-        <h3>Key Learning Outcomes</h3>
+        <h3>React Tools & Technologies You'll Learn</h3>
         <ul>
-          <li>
-            <i class="fas fa-code"></i> Build dynamic, single-page
-            applications with React.js or Angular.
-          </li>
-          <li>
-            <i class="fas fa-cogs"></i> Understand the core concepts of
-            components, props, and state management.
-          </li>
-          <li>
-            <i class="fas fa-arrow-circle-right"></i> Implement routing and
-            navigation in React.js or Angular apps.
-          </li>
-          <li>
-            <i class="fas fa-sync-alt"></i> Manage app states with hooks
-            (React) or services (Angular).
-          </li>
-          <li>
-            <i class="fas fa-cloud-upload-alt"></i> Deploy your React.js /
-            Angular applications on popular platforms like Netlify or Heroku.
-          </li>
+          <li><i class="fab fa-react"></i> React JS Library</li>
+          <li><i class="fab fa-js"></i> JavaScript (ES6+)</li>
+          <li><i class="fab fa-html5"></i> HTML5 & CSS3</li>
+          <li><i class="fab fa-bootstrap"></i> Bootstrap / Tailwind CSS</li>
+          <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+          <li><i class="fas fa-cloud-upload-alt"></i> REST API Integration</li>
         </ul>
       </div>
+
       <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
+        <h3>Career Opportunities After React Course</h3>
         <ul>
-          <li>
-            <i class="fas fa-laptop-code"></i> Work as a React.js or Angular
-            Developer for startups, agencies, or tech companies.
-          </li>
-          <li>
-            <i class="fas fa-mobile-alt"></i> Develop responsive and
-            high-performance single-page applications.
-          </li>
-          <li>
-            <i class="fas fa-react"></i> Kickstart your career as a Frontend
-            Developer using React.js or Angular frameworks.
-          </li>
-          <li>
-            <i class="fas fa-cogs"></i> Collaborate on large-scale projects
-            with modern tools like Git, CI/CD, and Agile methodologies.
-          </li>
-          <li>
-            <i class="fas fa-lightbulb"></i> Build a portfolio of live
-            projects that stand out in the competitive job market.
-          </li>
+          <li><i class="fas fa-laptop-code"></i> React Developer</li>
+          <li><i class="fas fa-code"></i> Frontend Developer</li>
+          <li><i class="fas fa-paint-brush"></i> UI Developer</li>
+          <li><i class="fas fa-globe"></i> Web Application Developer</li>
+          <li><i class="fas fa-briefcase"></i> Freelance React Developer</li>
         </ul>
+        <p style="margin-top: 15px;">React developers are highly demanded in IT companies, startups, product-based
+          companies, and freelancing platforms.</p>
       </div>
     </div>
   </section>
@@ -1148,47 +1335,18 @@
   <!-- Syllabus Section -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">Syllabus</h2>
+      <h2 class="syllabus-title">React JS Syllabus – Detailed Curriculum</h2>
       <div class="syllabus-content">
-        <div class="syllabus-item">
-          <i class="fas fa-play-circle"></i> Introduction to React.js /
-          Angular & Project Setup
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-sync-alt"></i> Styling with CSS & Responsive
-          Layouts in React / Angular
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-code"></i> Core React.js / Angular Concepts:
-          Components, Props & State
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-cogs"></i> DOM Manipulation & Event Handling in
-          React.js / Angular
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-th-list"></i> React.js: Hooks (useState, useEffect)
-          / Angular Services & Dependency Injection
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-cube"></i> Routing & Navigation with React Router /
-          Angular Router
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-users"></i> Working with APIs: Fetching Data in
-          React.js / Angular
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-lock"></i> Managing State in React.js with useState
-          & Context API / Angular with Services
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-database"></i> Capstone Projects: Building a React
-          / Angular To-Do App & Blog
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-project-diagram"></i> Deploying React.js / Angular
-          Apps on Netlify / Heroku
+        <div class="syllabus-item"><i class="fab fa-react"></i> Introduction to React JS & Project Setup</div>
+        <div class="syllabus-item"><i class="fab fa-css3-alt"></i> Styling with CSS & Responsive Layouts</div>
+        <div class="syllabus-item"><i class="fas fa-cube"></i> React Components: Functional vs Class</div>
+        <div class="syllabus-item"><i class="fas fa-arrow-right"></i> Props and State Management</div>
+        <div class="syllabus-item"><i class="fas fa-bolt"></i> React Hooks (useState, useEffect)</div>
+        <div class="syllabus-item"><i class="fas fa-route"></i> Routing & Navigation with React Router</div>
+        <div class="syllabus-item"><i class="fas fa-plug"></i> Working with APIs: Fetching Data</div>
+        <div class="syllabus-item"><i class="fas fa-database"></i> Context API for State Management</div>
+        <div class="syllabus-item"><i class="fas fa-project-diagram"></i> Real-Time Projects: To-Do App, Blog App</div>
+        <div class="syllabus-item"><i class="fas fa-cloud-upload-alt"></i> Deploying React Apps on Netlify / Vercel
         </div>
       </div>
     </div>
@@ -1198,97 +1356,53 @@
   <section class="faq-section">
     <div class="container">
       <div class="section-title">
-        <h2>Frequently Asked Questions</h2>
+        <h2>Frequently Asked Questions – React JS Course</h2>
       </div>
-
       <div class="faq-content">
         <div class="faq-item">
           <div class="faq-question">
-            <h3>
-              What is the duration of the React.js / Angular Basics course?
-            </h3>
+            <h3>What is the duration of the React JS course?</h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              The course duration is 40 hours, with hands-on React.js and
-              Angular project building included.
-            </p>
+            <p>The course duration is 40 hours, with hands-on React.js project building included.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>
-              Do I need prior JavaScript knowledge to start React.js / Angular
-              Basics?
-            </h3>
+            <h3>Do I need prior JavaScript knowledge to start React JS?</h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Basic JavaScript knowledge is helpful, but we start by covering
-              everything you need for React and Angular basics.
-            </p>
+            <p>Basic JavaScript knowledge is helpful, but we start by covering everything you need for React basics.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>
-              Will I get a certificate after completing the React.js / Angular
-              Basics course?
-            </h3>
+            <h3>Will I get a certificate after completing the React JS course?</h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, upon successful completion, you will receive a
-              certification from Rohil NextGen Academy.
-            </p>
+            <p>Yes, upon successful completion, you will receive a certification from Rohil NextGen Academy.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
             <h3>Will we build real-time projects during the course?</h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes! You will work on real-world projects like single-page
-              applications, dynamic dashboards, and interactive user
-              interfaces.
-            </p>
+            <p>Yes! You will work on real-world projects like single-page applications, dynamic dashboards, and
+              interactive user interfaces.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What topics are covered in React.js / Angular Basics?</h3>
+            <h3>Is there job assistance after the React JS course?</h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Topics include Components, Props, State Management, Hooks,
-              Routing, Services, Dependency Injection, and more.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>
-              Is there job assistance after the React.js / Angular Basics
-              course?
-            </h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>
-              Absolutely! We offer job placement assistance, interview
-              training, and portfolio building support.
-            </p>
+            <p>Absolutely! We offer job placement assistance, interview training, and portfolio building support.</p>
           </div>
         </div>
       </div>
@@ -1300,16 +1414,17 @@
     <div class="footer-content">
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
-        <p>
-          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.
-        </p>
+        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
+          development, data science, cybersecurity, and IT training with placement support. Get the best software
+          training in Virudhunagar with industry experts.</p>
         <div class="social-links">
-          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
+              class="fab fa-youtube"></i></a>
         </div>
       </div>
-
       <div class="footer-column">
         <h3>Quick Links</h3>
         <ul class="footer-links">
@@ -1321,21 +1436,20 @@
           <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-column">
         <h3>Contact Rohil NextGen</h3>
         <ul class="footer-links">
           <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
           <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
+              admin@rohiltechnologies.com</a></li>
           <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div class="copyright">
-        <p>&copy; 2025 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
+        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
       </div>
       <div class="footer-bottom-links">
         <p>Designed By Rohil Technologies</p>
@@ -1352,20 +1466,17 @@
     // Mobile Menu Toggle
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
 
     hamburger.addEventListener("click", () => {
       navMenu.classList.toggle("active");
+      mobileOverlay.classList.toggle("active");
     });
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll(".nav-link").forEach((n) =>
-      n.addEventListener("click", (e) => {
-        // Only close menu if it's not a dropdown trigger
-        if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
-          navMenu.classList.remove("active");
-        }
-      })
-    );
+    mobileOverlay.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      mobileOverlay.classList.remove("active");
+    });
 
     // Mobile Dropdown Functionality
     document.querySelectorAll(".nav-item").forEach((item) => {
@@ -1373,24 +1484,15 @@
       const navLink = item.querySelector(".nav-link");
 
       if (dropdown) {
-        // Add click event for mobile dropdowns
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other open dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  otherDropdown.previousElementSibling.classList.remove(
-                    "active"
-                  );
-                }
-              });
-
-            // Toggle current dropdown
+            document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+              if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove("active");
+                otherDropdown.previousElementSibling?.classList.remove("active");
+              }
+            });
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -1398,128 +1500,30 @@
       }
     });
 
-    // Close dropdowns when clicking outside
-    document.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        if (
-          !e.target.closest(".nav-item") &&
-          !e.target.closest(".hamburger")
-        ) {
-          document
-            .querySelectorAll(".dropdown.active")
-            .forEach((dropdown) => {
-              dropdown.classList.remove("active");
-              dropdown.previousElementSibling.classList.remove("active");
-            });
-        }
-      }
-    });
-
-    // Carousel Functionality
-    const carouselItems = document.querySelectorAll(".carousel-item");
-    const carouselDots = document.querySelectorAll(".carousel-dot");
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      // Hide all slides
-      carouselItems.forEach((item) => item.classList.remove("active"));
-      carouselDots.forEach((dot) => dot.classList.remove("active"));
-
-      // Show the selected slide
-      carouselItems[index].classList.add("active");
-      carouselDots[index].classList.add("active");
-      currentIndex = index;
-    }
-
-    // Add click event to dots
-    carouselDots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showSlide(index);
-      });
-    });
-
-    // Auto slide change
-    let carouselInterval = setInterval(() => {
-      let nextIndex = (currentIndex + 1) % carouselItems.length;
-      showSlide(nextIndex);
-    }, 5000);
-
-    // Pause carousel on hover
-    carouselItems.forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        clearInterval(carouselInterval);
-      });
-
-      item.addEventListener("mouseleave", () => {
-        carouselInterval = setInterval(() => {
-          let nextIndex = (currentIndex + 1) % carouselItems.length;
-          showSlide(nextIndex);
-        }, 5000);
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        if (targetId === "#") return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
-      });
-    });
-
     // Back to Top Button
     const backToTopButton = document.getElementById("backToTop");
 
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
-        backToTopButton.classList.add("show");
+        backToTopButton.classList.add("active");
       } else {
-        backToTopButton.classList.remove("show");
+        backToTopButton.classList.remove("active");
       }
     });
 
     backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Close mobile menu on resize if window becomes larger
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        navMenu.classList.remove("active");
-        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-          dropdown.classList.remove("active");
-          dropdown.previousElementSibling.classList.remove("active");
-        });
-      }
-    });
-    // FAQ Accordion Functionality
+    // FAQ Accordion
     document.addEventListener("DOMContentLoaded", function () {
       const faqItems = document.querySelectorAll(".faq-item");
-
       faqItems.forEach((item) => {
         const question = item.querySelector(".faq-question");
-
         question.addEventListener("click", () => {
-          // Close all other items
           faqItems.forEach((otherItem) => {
-            if (otherItem !== item) {
-              otherItem.classList.remove("active");
-            }
+            if (otherItem !== item) otherItem.classList.remove("active");
           });
-
-          // Toggle current item
           item.classList.toggle("active");
         });
       });

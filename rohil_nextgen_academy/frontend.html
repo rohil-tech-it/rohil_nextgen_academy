@@ -884,18 +884,49 @@
 
     /* Responsive Styles */
     @media (max-width: 991px) {
-      .container { padding: 0 15px; }
-      .section-title h1 { font-size: 2rem; }
-      .certification-title { font-size: 1.8rem; }
-      .course-header h2 { font-size: 1.8rem; }
-      .syllabus-content { grid-template-columns: 1fr; max-width: 600px; }
+      .container {
+        padding: 0 15px;
+      }
+
+      .section-title h1 {
+        font-size: 2rem;
+      }
+
+      .certification-title {
+        font-size: 1.8rem;
+      }
+
+      .course-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .syllabus-content {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
     }
 
     @media (max-width: 767px) {
-      .top-bar { height: auto; padding: 10px 0; }
-      .top-bar-container { flex-direction: column; gap: 10px; }
-      .contact-info { flex-wrap: wrap; justify-content: center; gap: 15px; }
-      .hamburger { display: block; }
+      .top-bar {
+        height: auto;
+        padding: 10px 0;
+      }
+
+      .top-bar-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .contact-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
       .nav-menu {
         position: fixed;
         top: 0;
@@ -909,41 +940,133 @@
         gap: 0;
         z-index: 999;
       }
-      .nav-menu.active { left: 0; }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
       .dropdown {
         position: static;
         opacity: 1;
         visibility: visible;
         display: none;
       }
-      .dropdown.active { display: block; }
-      .banner { padding: 60px 0; min-height: 350px; }
-      .overview-section { padding: 40px 0; }
-      .section-title h1 { font-size: 1.6rem; }
-      .course-stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .stat { padding: 15px 10px; }
-      .stat-value { font-size: 1.8rem; }
-      .certification-section { padding: 40px 0; }
-      .certification-title { font-size: 1.5rem; }
-      .certification-content { gap: 20px; }
-      .course-details-section { margin: 30px auto; padding: 20px; }
-      .course-header h2 { font-size: 1.5rem; }
-      .syllabus-container { padding: 40px 15px; }
-      .syllabus-title { font-size: 1.5rem; }
-      .syllabus-item { padding: 15px 18px; font-size: 0.95rem; }
-      .syllabus-item i { font-size: 1.3rem; margin-right: 12px; width: 28px; }
-      .faq-section { padding: 40px 0; }
-      .faq-question { padding: 15px 18px; }
-      .faq-question h3 { font-size: 0.95rem; }
-      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-      .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+
+      .dropdown.active {
+        display: block;
+      }
+
+      .banner {
+        padding: 60px 0;
+        min-height: 350px;
+      }
+
+      .overview-section {
+        padding: 40px 0;
+      }
+
+      .section-title h1 {
+        font-size: 1.6rem;
+      }
+
+      .course-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .stat {
+        padding: 15px 10px;
+      }
+
+      .stat-value {
+        font-size: 1.8rem;
+      }
+
+      .certification-section {
+        padding: 40px 0;
+      }
+
+      .certification-title {
+        font-size: 1.5rem;
+      }
+
+      .certification-content {
+        gap: 20px;
+      }
+
+      .course-details-section {
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .course-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .syllabus-container {
+        padding: 40px 15px;
+      }
+
+      .syllabus-title {
+        font-size: 1.5rem;
+      }
+
+      .syllabus-item {
+        padding: 15px 18px;
+        font-size: 0.95rem;
+      }
+
+      .syllabus-item i {
+        font-size: 1.3rem;
+        margin-right: 12px;
+        width: 28px;
+      }
+
+      .faq-section {
+        padding: 40px 0;
+      }
+
+      .faq-question {
+        padding: 15px 18px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.95rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
     }
 
     @media (max-width: 480px) {
-      .course-stats { grid-template-columns: 1fr; }
-      .certification-content { grid-template-columns: 1fr; }
-      .syllabus-item { padding: 12px 15px; font-size: 0.85rem; }
-      .syllabus-item i { font-size: 1.1rem; margin-right: 10px; width: 24px; }
+      .course-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .certification-content {
+        grid-template-columns: 1fr;
+      }
+
+      .syllabus-item {
+        padding: 12px 15px;
+        font-size: 0.85rem;
+      }
+
+      .syllabus-item i {
+        font-size: 1.1rem;
+        margin-right: 10px;
+        width: 24px;
+      }
     }
   </style>
 </head>
@@ -1002,10 +1125,15 @@
         <div class="overview-content">
           <div class="section-title">
             <h1>Introduction to Frontend Development</h1>
-            <p>The Frontend Development Course at Rohil NextGen is designed to help students and aspiring developers master modern web technologies including HTML5, CSS3, JavaScript, and React for building stunning web applications.</p>
+            <p>The Frontend Development Course at Rohil NextGen is designed to help students and aspiring developers
+              master modern web technologies including HTML5, CSS3, JavaScript, and React for building stunning web
+              applications.</p>
           </div>
           <div class="highlight-box">
-            <p><strong>Rohil NextGen</strong> offers an industry-focused <strong>Frontend Development training program</strong> covering <strong>HTML5, CSS3, JavaScript ES6+, Bootstrap, responsive design, and React fundamentals</strong>. Build stunning web applications, work on real-time projects, and get 100% placement assistance. <strong>Best frontend course in Virudhunagar with certification.</strong></p>
+            <p><strong>Rohil NextGen</strong> offers an industry-focused <strong>Frontend Development training
+                program</strong> covering <strong>HTML5, CSS3, JavaScript ES6+, Bootstrap, responsive design, and React
+                fundamentals</strong>. Build stunning web applications, work on real-time projects, and get 100%
+              placement assistance. <strong>Best frontend course in Virudhunagar with certification.</strong></p>
           </div>
           <div class="rating">
             <span class="rating-badge">BEST INSTITUTE</span>
@@ -1074,7 +1202,10 @@
 
       <div class="course-description">
         <h3>Frontend Development Fundamentals</h3>
-        <p>Frontend development is one of the most in-demand skills in the IT industry due to the growth of web applications and digital platforms. Benefits of learning Frontend Development include high demand for frontend developers, opportunities in global IT companies, creative and technical career path, essential for full-stack development, and high salary with career growth potential.</p>
+        <p>Frontend development is one of the most in-demand skills in the IT industry due to the growth of web
+          applications and digital platforms. Benefits of learning Frontend Development include high demand for frontend
+          developers, opportunities in global IT companies, creative and technical career path, essential for full-stack
+          development, and high salary with career growth potential.</p>
       </div>
 
       <div class="course-goals">
@@ -1097,7 +1228,8 @@
           <li><i class="fas fa-rocket"></i> Freelance Web Developer</li>
           <li><i class="fas fa-chart-line"></i> Full Stack Developer (Pathway)</li>
         </ul>
-        <p style="margin-top: 15px;">Frontend developers are highly demanded in software companies, digital agencies, startups, and freelance marketplaces.</p>
+        <p style="margin-top: 15px;">Frontend developers are highly demanded in software companies, digital agencies,
+          startups, and freelance marketplaces.</p>
       </div>
     </div>
   </section>
@@ -1108,15 +1240,19 @@
       <h2 class="syllabus-title">Frontend Course Syllabus</h2>
       <div class="syllabus-content">
         <div class="syllabus-item"><i class="fas fa-play-circle"></i> Introduction to Web Development & HTML5</div>
-        <div class="syllabus-item"><i class="fas fa-paint-brush"></i> Styling with CSS3 & Responsive Design (Flexbox/Grid)</div>
+        <div class="syllabus-item"><i class="fas fa-paint-brush"></i> Styling with CSS3 & Responsive Design
+          (Flexbox/Grid)</div>
         <div class="syllabus-item"><i class="fas fa-code"></i> JavaScript Fundamentals & ES6+ Concepts</div>
         <div class="syllabus-item"><i class="fas fa-cogs"></i> DOM Manipulation & Event Handling</div>
         <div class="syllabus-item"><i class="fas fa-th"></i> CSS Flexbox, Grid, and Advanced Layouts</div>
         <div class="syllabus-item"><i class="fas fa-cube"></i> Bootstrap Framework for Fast Designing</div>
-        <div class="syllabus-item"><i class="fas fa-bootstrap"></i> Introduction to React: Components, Props & State</div>
+        <div class="syllabus-item"><i class="fas fa-bootstrap"></i> Introduction to React: Components, Props & State
+        </div>
         <div class="syllabus-item"><i class="fas fa-react"></i> Fetching APIs & Working with JSON</div>
-        <div class="syllabus-item"><i class="fas fa-database"></i> Capstone Projects: Personal Portfolio, Blog Website</div>
-        <div class="syllabus-item"><i class="fas fa-project-diagram"></i> Hosting Websites on GitHub Pages & Netlify + Git</div>
+        <div class="syllabus-item"><i class="fas fa-database"></i> Capstone Projects: Personal Portfolio, Blog Website
+        </div>
+        <div class="syllabus-item"><i class="fas fa-project-diagram"></i> Hosting Websites on GitHub Pages & Netlify +
+          Git</div>
       </div>
     </div>
   </section>
@@ -1130,7 +1266,8 @@
       <div class="faq-content">
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What is the duration of the Frontend Development course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>What is the duration of the Frontend Development course?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
             <p>The course duration is 40+ hours, with hands-on project building included.</p>
@@ -1138,7 +1275,8 @@
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Do I need prior programming experience to learn Frontend Development?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Do I need prior programming experience to learn Frontend Development?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
             <p>No, this course is designed for beginners and also for those looking to master Frontend Development.</p>
@@ -1146,26 +1284,32 @@
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Will I receive a certificate after completing the Frontend Development course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Will I receive a certificate after completing the Frontend Development course?</h3><span
+              class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>Yes, upon successful completion of the course and final project, you will receive a certificate from Rohil NextGen.</p>
+            <p>Yes, upon successful completion of the course and final project, you will receive a certificate from
+              Rohil NextGen.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Will we learn React.js in this course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Will we learn React.js in this course?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>Yes, we will cover basic React concepts like components, props, and state management to help you build modern applications.</p>
+            <p>Yes, we will cover basic React concepts like components, props, and state management to help you build
+              modern applications.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What kind of projects will I build?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>What kind of projects will I build?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>You will build projects like personal portfolio websites, interactive blogs, simple e-commerce templates, and responsive landing pages.</p>
+            <p>You will build projects like personal portfolio websites, interactive blogs, simple e-commerce templates,
+              and responsive landing pages.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -1173,7 +1317,8 @@
             <h3>Is job assistance provided?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>Yes! We provide comprehensive job placement assistance including portfolio building, interview preparation, and connecting you with hiring partners.</p>
+            <p>Yes! We provide comprehensive job placement assistance including portfolio building, interview
+              preparation, and connecting you with hiring partners.</p>
           </div>
         </div>
       </div>
@@ -1185,11 +1330,15 @@
     <div class="footer-content">
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
-        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.</p>
+        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
+          development, data science, cybersecurity, and IT training with placement support. Get the best software
+          training in Virudhunagar with industry experts.</p>
         <div class="social-links">
-          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
+              class="fab fa-youtube"></i></a>
         </div>
       </div>
       <div class="footer-column">
@@ -1208,7 +1357,8 @@
         <ul class="footer-links">
           <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
           <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
+              admin@rohiltechnologies.com</a></li>
           <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
         </ul>
       </div>
