@@ -1,46 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://www.rohilnextgen.com/</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <!-- Main Pages -->
+  <url><loc>https://www.rohilnextgen.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.rohilnextgen.com/contact.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.rohilnextgen.com/gallery.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.rohilnextgen.com/companies.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.rohilnextgen.com/placement.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.rohilnextgen.com/placement-success.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.rohilnextgen.com/scholarship.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.rohilnextgen.com/techblog.html</loc><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://www.rohilnextgen.com/classic.html</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Course Pages -->
+  <url><loc>https://www.rohilnextgen.com/python.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/python-code.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/java.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/java-code.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/frontend.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/react.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/angular.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/flutter.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/aws.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/devops.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/cloud-devops.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/cloudcompute.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/cybersecurity.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/cybersecure.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/data.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/datascience.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/data-analyse.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/powerbi.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/excel.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/sql.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/sql-data.html</loc></url>
 
-  <url>
-    <loc>https://www.rohilnextgen.com/professional.html</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Development / Tech -->
+  <url><loc>https://www.rohilnextgen.com/web.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/webdesign.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/fullstack-web.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/fullstack-develop.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/app.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/mobileapp.html</loc></url>
 
-  <url>
-    <loc>https://www.rohilnextgen.com/expert.html</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Other Tech -->
+  <url><loc>https://www.rohilnextgen.com/ai-ml.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/ml.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/blockchain.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/hacking.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/network.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/linux.html</loc></url>
 
-  <url>
-    <loc>https://www.rohilnextgen.com/internship.html</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Design / Marketing -->
+  <url><loc>https://www.rohilnextgen.com/design.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/graphic.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/uxui.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/digitalmarket.html</loc></url>
 
-  <url>
-    <loc>https://www.rohilnextgen.com/contact.html</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Programs -->
+  <url><loc>https://www.rohilnextgen.com/classic.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/professional.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/internship.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/browsecourse.html</loc></url>
+
+  <!-- Expert Pages -->
+  <url><loc>https://www.rohilnextgen.com/expert1.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert2.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert3.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert4.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert5.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert6.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert7.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert8.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert9.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert10.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert11.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert12.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert13.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert14.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert15.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert16.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert17.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert18.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert19.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert20.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert21.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert22.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert23.html</loc></url>
+  <url><loc>https://www.rohilnextgen.com/expert24.html</loc></url>
 
 </urlset>
