@@ -4,16 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- SEO Title -->
-  <title>Advanced Excel Course in Virudhunagar | Rohil NextGen</title>
-  <!-- SEO Meta Description -->
+  <!-- SEO Optimized Title -->
+  <title>Advanced Excel Course | Excel Training & Certification | Rohil NextGen</title>
+  <!-- SEO Optimized Meta Description -->
   <meta name="description"
-    content="Learn Advanced Excel with Rohil NextGen in Virudhunagar. Master MS Excel, formulas, pivot tables, data analysis, dashboards, and reporting for high-paying jobs." />
+    content="Master Advanced Excel with formulas, pivot tables, dashboards, and data analysis. Get certified with hands-on training at Rohil NextGen Institute." />
   <!-- SEO Keywords -->
   <meta name="keywords"
-    content="Excel Course in Virudhunagar, Advanced Excel Training, MS Excel Course, Excel for Jobs, Excel Certification, Rohil NextGen Excel, Data Analysis Excel, Pivot Table Training" />
+    content="Advanced Excel Course, Excel Training Institute, Excel Certification Course, Excel Course in Virudhunagar, Excel Training with Placement, Data Analysis Course using Excel, Advanced Excel course for beginners, Learn Excel with real-time projects, Best Excel training institute in Tamil Nadu" />
   <!-- Author -->
   <meta name="author" content="Rohil NextGen" />
+  <link rel="canonical" href="https://www.rohilnextgen.com/excel.html" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="./images/rohil_nextgen-removebg-preview.png" />
   <!-- Font Awesome -->
@@ -23,6 +24,109 @@
     rel="stylesheet" />
   <!-- Main CSS -->
   <link href="./style.css" rel="stylesheet" />
+
+  <!-- Course Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Advanced Excel Course - Excel Training & Certification",
+    "description": "Master Advanced Excel with formulas, pivot tables, dashboards, and data analysis. Get certified with hands-on training at Rohil NextGen Institute.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rohil NextGen",
+      "sameAs": "https://www.rohilnextgen.com"
+    },
+    "courseCode": "EXCEL-001",
+    "educationalCredentialAwarded": "Advanced Excel Certification",
+    "teaches": ["Excel Formulas", "Pivot Tables", "Data Analysis", "Dashboards", "VLOOKUP", "Macros"],
+    "occupationalCredentialAwarded": "Data Analyst, Excel Specialist, Reporting Analyst",
+    "timeRequired": "PT50H",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "In-Person",
+      "location": {
+        "@type": "Place",
+        "name": "Rohil NextGen, Virudhunagar, Tamil Nadu"
+      },
+      "startDate": "2026-04-25"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long is the Excel & Data Analysis course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The course lasts for 50 hours, including hands-on labs and real-world projects."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need any prior Excel experience to join?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No prior experience is needed! We start from basic Excel and build to advanced analytics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I get a certificate after completion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you will receive a professional certification from Rohil NextGen Academy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Power BI and Google Sheets included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We cover Power BI basics and collaborative tools like Google Sheets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer job placement assistance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We help with resume building, mock interviews, and connecting you to hiring companies."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Organization Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Rohil NextGen",
+    "url": "https://www.rohilnextgen.com",
+    "logo": "https://www.rohilnextgen.com/images/rohil_nextgen-removebg-preview.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Virudhunagar",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9751867879",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Tamil"]
+    }
+  }
+  </script>
 
 </head>
 
@@ -37,6 +141,9 @@
     --medium-gray: #666666;
     --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+    --text-black: #333;
+    --text-grey: #666;
+    --light-grey: #f5f5f5;
   }
 
   * {
@@ -46,10 +153,11 @@
   }
 
   body {
-    font-family: Georgia;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--dark-gray);
     background-color: var(--white);
+    overflow-x: hidden;
   }
 
   .container {
@@ -150,6 +258,9 @@
     font-size: 16px;
     transition: color 0.3s;
     padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 
   .nav-link:hover {
@@ -195,18 +306,42 @@
     display: none;
     cursor: pointer;
     font-size: 24px;
+    background: none;
+    border: none;
+    color: var(--text-black);
+    z-index: 1001;
+  }
+
+  /* Mobile Overlay */
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+  }
+
+  .mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
   }
 
   /* Banner Section */
   .banner {
-    background-image: url(./images/excel1.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/excel1.png);
     background-size: cover;
     background-position: center;
     color: var(--white);
     padding: 100px 0;
     text-align: center;
     position: relative;
-    min-height: 500px;
+    min-height: 450px;
   }
 
   .banner-content {
@@ -259,6 +394,7 @@
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
   }
 
   .rating-badge {
@@ -328,14 +464,6 @@
     gap: 30px;
     max-width: 1000px;
     margin: 0 auto;
-  }
-
-  .course-goals h3 {
-    color: var(--primary-red);
-  }
-
-  .future-scope h3 {
-    color: var(--primary-red);
   }
 
   .certification-info-box {
@@ -440,6 +568,7 @@
   .future-scope i {
     color: var(--primary-red);
     margin-top: 5px;
+    flex-shrink: 0;
   }
 
   /* Syllabus Section */
@@ -518,6 +647,7 @@
     width: 35px;
     text-align: center;
     transition: var(--transition);
+    flex-shrink: 0;
   }
 
   .syllabus-item:hover i {
@@ -526,10 +656,6 @@
   }
 
   /* FAQ Section */
-  .section-title h2 {
-    color: var(--dark-gray);
-  }
-
   .faq-section {
     padding: 80px 0;
     background-color: var(--light-gray);
@@ -576,6 +702,8 @@
     color: var(--primary-red);
     font-size: 1.2rem;
     transition: var(--transition);
+    flex-shrink: 0;
+    margin-left: 15px;
   }
 
   .faq-answer {
@@ -647,6 +775,7 @@
   .social-links {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
   }
 
   .social-links a {
@@ -691,6 +820,7 @@
   .footer-links i {
     font-size: 0.8rem;
     color: var(--primary-red);
+    flex-shrink: 0;
   }
 
   .footer-bottom {
@@ -743,14 +873,69 @@
   }
 
   /* Responsive Styles */
+  @media (max-width: 991px) {
+    .container {
+      padding: 0 15px;
+    }
 
-  /* Responsive Styles */
-  /* Mobile Dropdown Fix */
-  @media (max-width: 768px) {
+    .section-title h1 {
+      font-size: 2rem;
+    }
+
+    .certification-title {
+      font-size: 1.8rem;
+    }
+
+    .course-header h2 {
+      font-size: 1.8rem;
+    }
+
+    .syllabus-content {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hamburger {
+      display: block;
+    }
+
+    .mobile-overlay {
+      display: block;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      flex-direction: column;
+      background-color: var(--white);
+      width: 280px;
+      height: 100vh;
+      transition: 0.4s ease;
+      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+      padding: 80px 0 20px;
+      gap: 0;
+      overflow-y: auto;
+      z-index: 999;
+    }
+
+    .nav-menu.active {
+      left: 0;
+    }
+
     .nav-item {
-      position: relative;
-      margin: 15px 0;
-      margin-left: 30px;
+      margin: 0;
+      width: 100%;
+    }
+
+    .nav-link {
+      padding: 15px 25px;
+      width: 100%;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      font-size: 15px;
     }
 
     .dropdown {
@@ -761,60 +946,16 @@
       box-shadow: none;
       display: none;
       background-color: var(--light-grey);
-      margin-top: 10px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
+      width: 100%;
     }
 
     .dropdown.active {
       display: block;
-      max-height: 300px;
     }
 
     .dropdown-item {
-      padding: 12px 20px;
-      border-bottom: 1px solid #eee;
-      display: block;
-    }
-
-    .nav-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-
-    .nav-link i {
-      transition: transform 0.3s ease;
-    }
-
-    .nav-link.active i {
-      transform: rotate(180deg);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hamburger {
-      display: block;
-    }
-
-    .nav-menu {
-      position: fixed;
-      top: 80px;
-      left: -100%;
-      flex-direction: column;
-      background-color: var(--white);
-      width: 100%;
-      text-align: center;
-      transition: 0.3s;
-      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-      padding: 20px 0;
-      gap: 0;
-    }
-
-    .nav-menu.active {
-      left: 0;
+      padding: 12px 40px;
+      font-size: 14px;
     }
 
     .top-bar-container {
@@ -823,97 +964,78 @@
     }
 
     .top-bar {
-      height: 120px;
+      height: auto;
+      padding: 10px 0;
     }
 
     .contact-info {
       flex-wrap: wrap;
       justify-content: center;
     }
-  }
 
-  @media (max-width: 992px) {
-    .syllabus-content {
-      grid-template-columns: 1fr;
-      max-width: 600px;
-    }
-
-    .section-title h1 {
-      font-size: 2rem;
-    }
-  }
-
-  @media (max-width: 768px) {
     .banner {
-      padding: 80px 0;
-      min-height: 250px;
+      padding: 60px 0;
+      min-height: 350px;
     }
 
     .section-title h1 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
 
     .section-title p {
-      font-size: 1.1rem;
+      font-size: 1rem;
+    }
+
+    .highlight-box {
+      padding: 20px;
+    }
+
+    .course-overview {
+      padding: 30px 0 40px;
     }
 
     .course-stats {
       grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
     }
 
-    .syllabus-container {
-      padding: 60px 15px;
-    }
-
-    .syllabus-title {
-      font-size: 2.2rem;
-    }
-
-    .syllabus-item {
-      padding: 18px 20px;
-      font-size: 1rem;
-    }
-
-    .syllabus-item i {
-      font-size: 1.4rem;
-      margin-right: 12px;
-    }
-
-    .footer-bottom {
-      flex-direction: column;
-      gap: 10px;
-      text-align: center;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .contact-info {
-      flex-direction: column;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .course-stats {
-      grid-template-columns: 1fr;
+    .stat {
+      padding: 15px 12px;
     }
 
     .stat-value {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
-    .back-to-top {
-      bottom: 20px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
+    .certification-section {
+      padding: 40px 0;
+    }
+
+    .certification-title {
+      font-size: 1.5rem;
+    }
+
+    .course-details-section {
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .course-header h2 {
+      font-size: 1.5rem;
+    }
+
+    .course-description h3,
+    .course-goals h3,
+    .future-scope h3 {
+      font-size: 1.3rem;
     }
 
     .syllabus-container {
-      padding: 50px 10px;
+      padding: 40px 15px;
     }
 
     .syllabus-title {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
 
     .syllabus-item {
@@ -923,11 +1045,99 @@
 
     .syllabus-item i {
       font-size: 1.3rem;
-      margin-right: 10px;
+      margin-right: 12px;
+      width: 28px;
+    }
+
+    .faq-section {
+      padding: 40px 0;
+    }
+
+    .faq-question {
+      padding: 15px 18px;
+    }
+
+    .faq-question h3 {
+      font-size: 0.95rem;
+    }
+
+    .tech-footer {
+      padding: 40px 0 20px;
+    }
+
+    .footer-content {
+      gap: 30px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .back-to-top {
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 12px;
+    }
+
+    .course-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .certification-content {
+      grid-template-columns: 1fr;
+    }
+
+    .syllabus-item {
+      padding: 12px 15px;
+      font-size: 0.85rem;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 767px) and (orientation: landscape) {
+    .nav-menu {
+      overflow-y: auto;
+      padding: 60px 0 20px;
+    }
+
+    .banner {
+      min-height: 250px;
+      padding: 40px 0;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    .dropdown {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      display: none;
+    }
+
+    .nav-item .dropdown.active {
+      display: block;
+    }
+
+    .stat:hover,
+    .certification-info-box:hover,
+    .syllabus-item:hover {
+      transform: none;
     }
   }
 </style>
-</head>
 
 <body>
 
@@ -935,19 +1145,14 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <!-- Placeholder for logo -->
         <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
+          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
         </div>
       </div>
 
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -957,9 +1162,7 @@
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-        </li>
+        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -968,15 +1171,9 @@
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="techblog.html" class="nav-link">Techblog</a>
-        </li>
-        <li class="nav-item">
-          <a href="scholarship.html" class="nav-link">Scholarship</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="hamburger">
@@ -985,11 +1182,12 @@
     </div>
   </nav>
 
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with H1 -->
   <section class="banner">
     <div class="banner-content">
-      <!-- Banner content can be added here if needed -->
     </div>
   </section>
 
@@ -999,20 +1197,17 @@
       <div class="overview-container">
         <div class="overview-content">
           <div class="section-title">
-            <h1>Excel & Data Analysis Overview</h1>
-            <p>
-              Excel & Data Analysis helps you organize, analyze, and interpret data efficiently
-            </p>
+            <h1>Introduction to Advanced Excel</h1>
+            <p>The Advanced Excel Course at Rohil NextGen is a comprehensive training program designed for students,
+              professionals, and job seekers who want to master data analysis, reporting, and business productivity
+              tools. This course covers Excel formulas, pivot tables, dashboards, and automation techniques, helping
+              learners gain practical skills required in real-world business environments.</p>
           </div>
           <div class="highlight-box">
-            <p>
-              <strong>Rohil NextGen</strong> offers a complete Excel & Data
-              Analysis training program covering Excel Fundamentals, Data
-              Visualization, PivotTables, Advanced Formulas, and Power BI
-              basics.
-            </p>
+            <p><strong>Rohil NextGen</strong> offers a complete Advanced Excel training program covering Excel
+              Fundamentals, Data Visualization, PivotTables, Advanced Formulas (VLOOKUP, INDEX/MATCH, IF Statements),
+              and Dashboard Creation.</p>
           </div>
-          <!--Rating-->
           <div class="rating">
             <span class="rating-badge">BEST INSTITUTE</span>
             <span>4.9 Ratings</span>
@@ -1029,8 +1224,8 @@
         <div class="course-text">
           <div class="course-stats">
             <div class="stat">
-              <div class="stat-value">2025</div>
-              <div class="stat-label">Latest Curriculam</div>
+              <div class="stat-value">2026</div>
+              <div class="stat-label">Latest Curriculum</div>
             </div>
             <div class="stat">
               <div class="stat-value">50</div>
@@ -1053,15 +1248,13 @@
   <!-- Certification Section -->
   <section class="certification-section">
     <div class="container">
-      <h2 class="certification-title">
-        Why Choose Excel & Data Analysis Certification?
-      </h2>
+      <h2 class="certification-title">Why Choose Advanced Excel Certification Training?</h2>
       <div class="certification-content">
         <div class="certification-info-box">
           <i class="fas fa-wallet certification-icon"></i>
           <h4 class="certification-subtitle">Annual Earnings</h4>
           <p class="certification-description">Estimated Salary</p>
-          <h3 class="certification-number">₹ 5 L</h3>
+          <h3 class="certification-number">₹ 2 LPA</h3>
         </div>
         <div class="certification-info-box">
           <i class="fas fa-chart-line certification-icon"></i>
@@ -1073,7 +1266,7 @@
           <i class="fas fa-briefcase certification-icon"></i>
           <h4 class="certification-subtitle">Job Demand</h4>
           <p class="certification-description">Projected by 2026</p>
-          <h3 class="certification-number">4 L</h3>
+          <h3 class="certification-number">2k +</h3>
         </div>
       </div>
     </div>
@@ -1083,73 +1276,40 @@
   <section class="course-details-section">
     <div class="container">
       <div class="course-header">
-        <h2>Become a Professional Data Analyst</h2>
-        <p class="course-subtitle">
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❝</span>
-          Learn Excel, Data Cleaning, Data Visualization, and Dashboard
-          Creation
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❞</span>
-        </p>
+        <h2>Excel Course Curriculum – Master Data Analysis & Reporting</h2>
+        <p class="course-subtitle">Learn Advanced Excel Formulas, Pivot Tables, Dashboards & Real-Time Projects</p>
       </div>
 
       <div class="course-description">
-        <h3>Course Overview</h3>
-        <p>
-          This Excel & Data Analysis course is structured to teach you data
-          management, visualization skills, dashboard building, and analysis
-          techniques using Excel, Power BI, and Google Sheets.
-        </p>
+        <h3>Advanced Excel Tools & Features</h3>
+        <p>This comprehensive Advanced Excel course covers everything from basic to advanced concepts. You'll learn
+          Excel formulas (VLOOKUP, HLOOKUP, IF, INDEX, MATCH), Pivot Tables & Pivot Charts, Data Visualization,
+          Dashboard Creation, Data Cleaning & Analysis, and Automation with Macros. These skills are essential for
+          business, finance, analytics, and data-driven roles.</p>
       </div>
 
       <div class="course-goals">
-        <h3>Key Learning Outcomes</h3>
+        <h3>Excel Formulas & Functions You'll Master</h3>
         <ul>
-          <li>
-            <i class="fas fa-terminal"></i> Master Excel fundamentals:
-            formulas, functions, and data organization.
-          </li>
-          <li>
-            <i class="fas fa-cogs"></i> Create impactful charts, dashboards,
-            and visual reports.
-          </li>
-          <li>
-            <i class="fas fa-code"></i> Analyze datasets with PivotTables,
-            Power Query, and data modeling.
-          </li>
-          <li>
-            <i class="fas fa-network-wired"></i> Perform advanced analytics
-            using Power BI basics.
-          </li>
-          <li>
-            <i class="fas fa-server"></i> Automate tasks with macros and
-            introduce yourself to VBA scripting.
-          </li>
+          <li><i class="fas fa-calculator"></i> Advanced Formulas: VLOOKUP, HLOOKUP, INDEX, MATCH</li>
+          <li><i class="fas fa-chart-pie"></i> Pivot Tables & Pivot Charts for Data Analysis</li>
+          <li><i class="fas fa-chart-line"></i> Data Visualization & Dashboard Creation</li>
+          <li><i class="fas fa-broom"></i> Data Cleaning & Preparation Techniques</li>
+          <li><i class="fas fa-robot"></i> Automation with Macros & VBA Basics</li>
         </ul>
       </div>
+
       <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
+        <h3>Career Opportunities After Excel Course</h3>
         <ul>
-          <li>
-            <i class="fas fa-user-shield"></i> Begin your career as a Data
-            Analyst or Reporting Specialist.
-          </li>
-          <li>
-            <i class="fas fa-cloud"></i> Support businesses with accurate
-            reports and insights.
-          </li>
-          <li>
-            <i class="fas fa-shield-alt"></i> Work as a freelance Excel
-            Consultant creating custom reports and dashboards.
-          </li>
-          <li>
-            <i class="fas fa-network-wired"></i> Dive into data-driven
-            decision-making roles across industries.
-          </li>
-          <li>
-            <i class="fas fa-briefcase"></i> Enhance your career in fields
-            like finance, marketing, sales, and operations.
-          </li>
+          <li><i class="fas fa-chart-line"></i> Data Analyst</li>
+          <li><i class="fas fa-file-alt"></i> Reporting Specialist</li>
+          <li><i class="fas fa-briefcase"></i> Business Analyst</li>
+          <li><i class="fas fa-chart-simple"></i> MIS Executive</li>
+          <li><i class="fas fa-calculator"></i> Financial Analyst</li>
         </ul>
+        <p style="margin-top: 15px;">Excel professionals are in high demand across IT companies, financial institutions,
+          marketing agencies, and operations teams.</p>
       </div>
     </div>
   </section>
@@ -1157,56 +1317,29 @@
   <!-- Syllabus Section -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">Syllabus</h2>
+      <h2 class="syllabus-title">Advanced Excel Syllabus – Complete Curriculum</h2>
       <div class="syllabus-content">
-        <div class="syllabus-item">
-          <i class="fas fa-play-circle"></i> Introduction to Excel & Data
-          Analysis
+        <div class="syllabus-item"><i class="fas fa-play-circle"></i> Introduction to Excel & Data Analysis</div>
+        <div class="syllabus-item"><i class="fas fa-table"></i> Excel Basics: Formulas, Functions & Shortcuts</div>
+        <div class="syllabus-item"><i class="fas fa-filter"></i> Sorting, Filtering & Data Cleaning Techniques</div>
+        <div class="syllabus-item"><i class="fas fa-chart-bar"></i> Data Visualization: Charts and Graphs</div>
+        <div class="syllabus-item"><i class="fas fa-project-diagram"></i> PivotTables and Power Query</div>
+        <div class="syllabus-item"><i class="fas fa-database"></i> Introduction to Power BI for Business Insights</div>
+        <div class="syllabus-item"><i class="fas fa-tasks"></i> Automating Tasks with Macros & VBA Basics</div>
+        <div class="syllabus-item"><i class="fas fa-cogs"></i> Advanced Formulas: VLOOKUP, INDEX/MATCH, IF Statements
         </div>
-        <div class="syllabus-item">
-          <i class="fas fa-table"></i>Excel Basics: Formulas, Functions,
-          Shortcuts
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-filter"></i> Sorting, Filtering, and Data Cleaning
-          Techniques
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-chart-bar"></i>Data Visualization: Charts and
-          Graphs
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-project-diagram"></i> PivotTables and Power Query
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-database"></i> Introduction to Power BI for
-          Business Insights
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-tasks"></i> Automating Tasks with Macros & VBA
-          Basics
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-cogs"></i> Advanced Formulas: VLOOKUP, INDEX/MATCH,
-          IF Statements
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-network-wired"></i> Creating Dashboards &
-          Interactive Reports
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-chart-pie"></i> Cloud Data Collaboration using
-          Google Sheets
+        <div class="syllabus-item"><i class="fas fa-network-wired"></i> Creating Dashboards & Interactive Reports</div>
+        <div class="syllabus-item"><i class="fas fa-cloud-upload-alt"></i> Cloud Data Collaboration using Google Sheets
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
+   <!-- FAQ Section -->
   <section class="faq-section">
     <div class="container">
       <div class="section-title">
-        <h2>Frequently Asked Questions</h2>
+        <h2 style="color: var(--dark-gray);">Frequently Asked Questions</h2>
       </div>
 
       <div class="faq-content">
@@ -1216,10 +1349,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              The course lasts for 50 hours, including hands-on labs and
-              real-world projects.
-            </p>
+            <p>The course lasts for 50 hours, including hands-on labs and real-world projects.</p>
           </div>
         </div>
 
@@ -1229,10 +1359,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              No prior experience is needed! We start from basic Excel and
-              build to advanced analytics.
-            </p>
+            <p>No prior experience is needed! We start from basic Excel and build to advanced analytics.</p>
           </div>
         </div>
 
@@ -1242,10 +1369,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, you will receive a professional certification from Rohil
-              NextGen Academy.
-            </p>
+            <p>Yes, you will receive a professional certification from Rohil NextGen Academy.</p>
           </div>
         </div>
 
@@ -1255,10 +1379,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes! We cover Power BI basics and collaborative tools like
-              Google Sheets.
-            </p>
+            <p>Yes! We cover Power BI basics and collaborative tools like Google Sheets.</p>
           </div>
         </div>
 
@@ -1268,10 +1389,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              You will build dashboards, management reports, data analysis
-              projects, and real-world case studies.
-            </p>
+            <p>You will build dashboards, management reports, data analysis projects, and real-world case studies.</p>
           </div>
         </div>
 
@@ -1281,10 +1399,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes! We help with resume building, mock interviews, and
-              connecting you to hiring companies.
-            </p>
+            <p>Yes! We help with resume building, mock interviews, and connecting you to hiring companies.</p>
           </div>
         </div>
       </div>
@@ -1336,7 +1451,7 @@
 
     <div class="footer-bottom">
       <div class="copyright">
-        <p>&copy; 2025 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
+        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
       </div>
       <div class="footer-bottom-links">
         <p>Designed By Rohil Technologies</p>
@@ -1353,20 +1468,17 @@
     // Mobile Menu Toggle
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
 
     hamburger.addEventListener("click", () => {
       navMenu.classList.toggle("active");
+      mobileOverlay.classList.toggle("active");
     });
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll(".nav-link").forEach((n) =>
-      n.addEventListener("click", (e) => {
-        // Only close menu if it's not a dropdown trigger
-        if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
-          navMenu.classList.remove("active");
-        }
-      })
-    );
+    mobileOverlay.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      mobileOverlay.classList.remove("active");
+    });
 
     // Mobile Dropdown Functionality
     document.querySelectorAll(".nav-item").forEach((item) => {
@@ -1374,24 +1486,15 @@
       const navLink = item.querySelector(".nav-link");
 
       if (dropdown) {
-        // Add click event for mobile dropdowns
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other open dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  otherDropdown.previousElementSibling.classList.remove(
-                    "active"
-                  );
-                }
-              });
-
-            // Toggle current dropdown
+            document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+              if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove("active");
+                otherDropdown.previousElementSibling?.classList.remove("active");
+              }
+            });
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -1399,82 +1502,28 @@
       }
     });
 
-    // Close dropdowns when clicking outside
-    document.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        if (
-          !e.target.closest(".nav-item") &&
-          !e.target.closest(".hamburger")
-        ) {
-          document
-            .querySelectorAll(".dropdown.active")
-            .forEach((dropdown) => {
-              dropdown.classList.remove("active");
-              dropdown.previousElementSibling.classList.remove("active");
-            });
-        }
+    // Close menu when clicking on non-dropdown links
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      if (!link.querySelector(".fa-chevron-down")) {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            navMenu.classList.remove("active");
+            mobileOverlay.classList.remove("active");
+          }
+        });
       }
     });
 
-    // Carousel Functionality
-    const carouselItems = document.querySelectorAll(".carousel-item");
-    const carouselDots = document.querySelectorAll(".carousel-dot");
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      // Hide all slides
-      carouselItems.forEach((item) => item.classList.remove("active"));
-      carouselDots.forEach((dot) => dot.classList.remove("active"));
-
-      // Show the selected slide
-      carouselItems[index].classList.add("active");
-      carouselDots[index].classList.add("active");
-      currentIndex = index;
-    }
-
-    // Add click event to dots
-    carouselDots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showSlide(index);
-      });
-    });
-
-    // Auto slide change
-    let carouselInterval = setInterval(() => {
-      let nextIndex = (currentIndex + 1) % carouselItems.length;
-      showSlide(nextIndex);
-    }, 5000);
-
-    // Pause carousel on hover
-    carouselItems.forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        clearInterval(carouselInterval);
-      });
-
-      item.addEventListener("mouseleave", () => {
-        carouselInterval = setInterval(() => {
-          let nextIndex = (currentIndex + 1) % carouselItems.length;
-          showSlide(nextIndex);
-        }, 5000);
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        if (targetId === "#") return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
-      });
+    // Close menu on resize if window becomes larger
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navMenu.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+          dropdown.classList.remove("active");
+          dropdown.previousElementSibling?.classList.remove("active");
+        });
+      }
     });
 
     // Back to Top Button
@@ -1482,9 +1531,9 @@
 
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
-        backToTopButton.classList.add("show");
+        backToTopButton.classList.add("active");
       } else {
-        backToTopButton.classList.remove("show");
+        backToTopButton.classList.remove("active");
       }
     });
 
@@ -1495,16 +1544,6 @@
       });
     });
 
-    // Close mobile menu on resize if window becomes larger
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        navMenu.classList.remove("active");
-        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-          dropdown.classList.remove("active");
-          dropdown.previousElementSibling.classList.remove("active");
-        });
-      }
-    });
     // FAQ Accordion Functionality
     document.addEventListener("DOMContentLoaded", function () {
       const faqItems = document.querySelectorAll(".faq-item");
@@ -1513,14 +1552,11 @@
         const question = item.querySelector(".faq-question");
 
         question.addEventListener("click", () => {
-          // Close all other items
           faqItems.forEach((otherItem) => {
             if (otherItem !== item) {
               otherItem.classList.remove("active");
             }
           });
-
-          // Toggle current item
           item.classList.toggle("active");
         });
       });
