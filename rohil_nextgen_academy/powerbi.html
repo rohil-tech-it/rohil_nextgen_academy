@@ -4,13 +4,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohil NextGen - Python Programming</title>
+  <!-- SEO Optimized Title -->
+  <title>Power BI Course | Data Analytics Training & Certification | Rohil NextGen</title>
+  <!-- SEO Optimized Meta Description -->
+  <meta name="description"
+    content="Learn Power BI for data analysis, dashboards, and business intelligence. Get hands-on training, certification & placement support at Rohil NextGen." />
+  <meta name="keywords"
+    content="Power BI Course, Power BI Training, Data Analytics Course, Power BI Course in Virudhunagar, Power BI Training Institute, Data Visualization Course, Power BI course for beginners, Learn Power BI with real-time projects, Best Power BI training institute in Tamil Nadu" />
+  <meta name="author" content="Rohil NextGen" />
+  <link rel="canonical" href="https://www.rohilnextgen.com/powerbi.html" />
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="./style.css" rel="stylesheet" />
+
+  <!-- Course Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Power BI Course - Data Analytics & Visualization Training",
+    "description": "Learn Power BI for data analysis, dashboards, and business intelligence. Get hands-on training, certification & placement support at Rohil NextGen.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rohil NextGen",
+      "sameAs": "https://www.rohilnextgen.com"
+    },
+    "courseCode": "PBI-001",
+    "educationalCredentialAwarded": "Power BI Certification",
+    "teaches": ["Data Visualization", "Dashboard Creation", "DAX Formulas", "Power Query", "Data Modeling"],
+    "occupationalCredentialAwarded": "Power BI Developer, Business Intelligence Analyst, Data Analyst",
+    "timeRequired": "PT40H",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "In-Person",
+      "location": {
+        "@type": "Place",
+        "name": "Rohil NextGen, Virudhunagar, Tamil Nadu"
+      },
+      "startDate": "2026-04-25"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long is the Power BI course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The course lasts for 40 hours, including hands-on projects and dashboard-building sessions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need prior knowledge to learn Power BI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, the course is beginner-friendly! Basic knowledge of Excel is an added advantage but not mandatory."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I get a certificate after completion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you will receive a professional certification from Rohil NextGen Academy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I work on real-world projects?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! You will build dashboards for sales analysis, HR reporting, financial analysis, and more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are job placement services provided?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We help with resume building, mock interviews, and placement assistance with our hiring partners."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Organization Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Rohil NextGen",
+    "url": "https://www.rohilnextgen.com",
+    "logo": "https://www.rohilnextgen.com/images/rohil_nextgen-removebg-preview.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Virudhunagar",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9751867879",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Tamil"]
+    }
+  }
+  </script>
+
   <style>
     :root {
       --primary-red: #d40404;
@@ -22,6 +134,9 @@
       --medium-gray: #666666;
       --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       --transition: all 0.3s ease;
+      --text-black: #333;
+      --text-grey: #666;
+      --light-grey: #f5f5f5;
     }
 
     * {
@@ -31,10 +146,11 @@
     }
 
     body {
-            font-family: Georgia;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
+      overflow-x: hidden;
     }
 
     .container {
@@ -89,7 +205,7 @@
       transform: translateY(-3px) scale(1.1);
     }
 
-    /* Navigation Styles - IMPROVED RESPONSIVE */
+    /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -211,14 +327,15 @@
 
     /* Banner Section */
     .banner {
-      background-image: url(./images/powerbi.jpg);
+      background: 
+       url(./images/powerbi.jpg);
       background-size: cover;
       background-position: center;
       color: var(--white);
       padding: 100px 0;
       text-align: center;
       position: relative;
-      min-height: 500px;
+      min-height: 450px;
     }
 
     .banner-content {
@@ -271,6 +388,7 @@
       align-items: center;
       gap: 15px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .rating-badge {
@@ -340,14 +458,6 @@
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
-    }
-
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
     }
 
     .certification-info-box {
@@ -452,6 +562,7 @@
     .future-scope i {
       color: var(--primary-red);
       margin-top: 5px;
+      flex-shrink: 0;
     }
 
     /* Syllabus Section */
@@ -530,18 +641,14 @@
       width: 35px;
       text-align: center;
       transition: var(--transition);
+      flex-shrink: 0;
     }
 
     .syllabus-item:hover i {
       color: var(--dark-red);
       transform: scale(1.2);
     }
-
     /* FAQ Section */
-    .section-title h2 {
-      color: var(--dark-gray);
-    }
-
     .faq-section {
       padding: 80px 0;
       background-color: var(--light-gray);
@@ -588,6 +695,8 @@
       color: var(--primary-red);
       font-size: 1.2rem;
       transition: var(--transition);
+      flex-shrink: 0;
+      margin-left: 15px;
     }
 
     .faq-answer {
@@ -653,12 +762,13 @@
 
     .footer-column p {
       margin-bottom: 20px;
-      color: #ccc;
+      color: var(--white);
     }
 
     .social-links {
       display: flex;
       gap: 15px;
+      flex-wrap: wrap;
     }
 
     .social-links a {
@@ -688,7 +798,7 @@
     }
 
     .footer-links a {
-      color: #ccc;
+      color: var(--white);
       text-decoration: none;
       transition: var(--transition);
       display: flex;
@@ -703,6 +813,7 @@
     .footer-links i {
       font-size: 0.8rem;
       color: var(--primary-red);
+      flex-shrink: 0;
     }
 
     .footer-bottom {
@@ -721,7 +832,7 @@
     }
 
     .footer-bottom p {
-      color: #999;
+      color: var(--white);
       margin: 0;
     }
 
@@ -755,8 +866,30 @@
     }
 
     /* Responsive Styles */
-    /* Mobile Dropdown Fix */
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .section-title h1 {
+        font-size: 2rem;
+      }
+
+      .certification-title {
+        font-size: 1.8rem;
+      }
+
+      .course-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .syllabus-content {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+    }
+
+    @media (max-width: 767px) {
       .hamburger {
         display: block;
       }
@@ -795,7 +928,7 @@
         width: 100%;
         justify-content: space-between;
         border-bottom: 1px solid #eee;
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .dropdown {
@@ -806,119 +939,86 @@
         box-shadow: none;
         display: none;
         background-color: var(--light-grey);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
         width: 100%;
       }
 
       .dropdown.active {
         display: block;
-        max-height: 300px;
       }
 
       .dropdown-item {
         padding: 12px 40px;
-        border-bottom: 1px solid #ddd;
         font-size: 14px;
-      }
-
-      .nav-link i.fa-chevron-down {
-        transition: transform 0.3s ease;
-      }
-
-      .nav-link.active i.fa-chevron-down {
-        transform: rotate(180deg);
       }
 
       .contact-info {
         flex-wrap: wrap;
         justify-content: center;
       }
-    }
 
-    @media (max-width: 992px) {
-      .syllabus-content {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .section-title h1 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 768px) {
       .banner {
-        padding: 80px 0;
-        min-height: 250px;
+        padding: 60px 0;
+        min-height: 350px;
       }
 
       .section-title h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .section-title p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+      }
+
+      .highlight-box {
+        padding: 20px;
+      }
+
+      .course-overview {
+        padding: 30px 0 40px;
       }
 
       .course-stats {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
       }
 
-      .syllabus-container {
-        padding: 60px 15px;
-      }
-
-      .syllabus-title {
-        font-size: 2.2rem;
-      }
-
-      .syllabus-item {
-        padding: 18px 20px;
-        font-size: 1rem;
-      }
-
-      .syllabus-item i {
-        font-size: 1.4rem;
-        margin-right: 12px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .contact-info {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .course-stats {
-        grid-template-columns: 1fr;
+      .stat {
+        padding: 15px 12px;
       }
 
       .stat-value {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
+      .certification-section {
+        padding: 40px 0;
+      }
+
+      .certification-title {
+        font-size: 1.5rem;
+      }
+
+      .course-details-section {
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .course-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.3rem;
       }
 
       .syllabus-container {
-        padding: 50px 10px;
+        padding: 40px 15px;
       }
 
       .syllabus-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       .syllabus-item {
@@ -928,30 +1028,115 @@
 
       .syllabus-item i {
         font-size: 1.3rem;
-        margin-right: 10px;
+        margin-right: 12px;
+        width: 28px;
+      }
+
+      .faq-section {
+        padding: 40px 0;
+      }
+
+      .faq-question {
+        padding: 15px 18px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.95rem;
+      }
+
+      .tech-footer {
+        padding: 40px 0 20px;
+      }
+
+      .footer-content {
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
+      }
+
+      .course-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .certification-content {
+        grid-template-columns: 1fr;
+      }
+
+      .syllabus-item {
+        padding: 12px 15px;
+        font-size: 0.85rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767px) and (orientation: landscape) {
+      .nav-menu {
+        overflow-y: auto;
+        padding: 60px 0 20px;
+      }
+
+      .banner {
+        min-height: 250px;
+        padding: 40px 0;
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+      }
+
+      .nav-item .dropdown.active {
+        display: block;
+      }
+
+      .stat:hover,
+      .certification-info-box:hover,
+      .syllabus-item:hover {
+        transform: none;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <!-- Placeholder for logo -->
         <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Logo" />
+          <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
         </div>
       </div>
 
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -961,26 +1146,18 @@
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-        </li>
+        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="placement.html" class="dropdown-item">Placement Training</a>
-                        <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
+            <a href="companies.html" class="dropdown-item">Tied-up Companies</a>
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="techblog.html" class="nav-link">Techblog</a>
-        </li>
-        <li class="nav-item">
-          <a href="scholarship.html" class="nav-link">Scholarship</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="hamburger">
@@ -989,12 +1166,13 @@
     </div>
   </nav>
 
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with H1 -->
   <section class="banner">
     <div class="banner-content">
-      <!-- Banner content can be added here if needed -->
-    </div>
+     </div>
   </section>
 
   <!-- Overview Section -->
@@ -1003,21 +1181,12 @@
       <div class="overview-container">
         <div class="overview-content">
           <div class="section-title">
-            <h1>Power BI Overview</h1>
-            <p>
-              Master the Art of Business Intelligence: Become a Certified
-              Power BI Professional and Transform Data into Actionable
-              Insights!
-            </p>
+            <h1>Introduction to Power BI</h1>
+            <p>The Power BI Course at Rohil NextGen is a comprehensive training program designed for students, professionals, and business users who want to master data visualization and business intelligence. This course provides hands-on training in Power BI dashboards, data modeling, DAX formulas, and real-time analytics, enabling learners to transform raw data into meaningful insights.</p>
           </div>
           <div class="highlight-box">
-            <p>
-              <strong>Rohil NextGen</strong> offers a complete Power BI
-              training program covering Data Modeling, DAX Formulas, Data
-              Visualization, Power Query, and Dashboard Design best practices.
-            </p>
+            <p><strong>Rohil NextGen</strong> offers a complete Power BI training program covering Data Modeling, DAX Formulas, Data Visualization, Power Query, and Dashboard Design best practices. Power BI is a highly in-demand skill in today's data-driven job market.</p>
           </div>
-          <!--Rating-->
           <div class="rating">
             <span class="rating-badge">BEST INSTITUTE</span>
             <span>4.9 Ratings</span>
@@ -1034,8 +1203,8 @@
         <div class="course-text">
           <div class="course-stats">
             <div class="stat">
-              <div class="stat-value">2025</div>
-              <div class="stat-label">Latest Curriculam</div>
+              <div class="stat-value">2026</div>
+              <div class="stat-label">Latest Curriculum</div>
             </div>
             <div class="stat">
               <div class="stat-value">40</div>
@@ -1058,13 +1227,13 @@
   <!-- Certification Section -->
   <section class="certification-section">
     <div class="container">
-      <h2 class="certification-title">Why Choose Power BI Certification?</h2>
+      <h2 class="certification-title">Why Choose Power BI Certification? High Demand in Data Analytics</h2>
       <div class="certification-content">
         <div class="certification-info-box">
           <i class="fas fa-wallet certification-icon"></i>
           <h4 class="certification-subtitle">Annual Earnings</h4>
           <p class="certification-description">Estimated Salary</p>
-          <h3 class="certification-number">₹ 7.5 L</h3>
+          <h3 class="certification-number">₹ 3 LPA</h3>
         </div>
         <div class="certification-info-box">
           <i class="fas fa-chart-line certification-icon"></i>
@@ -1076,7 +1245,7 @@
           <i class="fas fa-briefcase certification-icon"></i>
           <h4 class="certification-subtitle">Job Demand</h4>
           <p class="certification-description">Projected by 2026</p>
-          <h3 class="certification-number">5 L+</h3>
+          <h3 class="certification-number">5 Lakh+</h3>
         </div>
       </div>
     </div>
@@ -1086,73 +1255,36 @@
   <section class="course-details-section">
     <div class="container">
       <div class="course-header">
-        <h2>Become a Professional Power BI Developer</h2>
-        <p class="course-subtitle">
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❝</span>
-          Learn Data Visualization, DAX, Power Query, and Advanced Dashboard
-          Designing
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❞</span>
-        </p>
+        <h2>Power BI Course Curriculum – Master Business Intelligence</h2>
+        <p class="course-subtitle">Learn Data Visualization, DAX, Power Query, and Advanced Dashboard Designing</p>
       </div>
 
       <div class="course-description">
-        <h3>Course Overview</h3>
-        <p>
-          This Power BI course is designed to teach you real-world skills in
-          building interactive dashboards, mastering DAX formulas, performing
-          data analysis, and connecting multiple data sources with ease.
-        </p>
+        <h3>Power BI Tools & Features</h3>
+        <p>This comprehensive Power BI course covers everything from basic to advanced concepts. You'll learn data visualization and reporting, interactive dashboard creation, Power Query for data transformation, DAX (Data Analysis Expressions) for advanced calculations, and real-time data analytics projects. These skills are essential for business intelligence and data analytics roles.</p>
       </div>
 
       <div class="course-goals">
-        <h3>Key Learning Outcomes</h3>
+        <h3>Data Visualization & Dashboard Creation Techniques</h3>
         <ul>
-          <li>
-            <i class="fas fa-terminal"></i> Build powerful dashboards and
-            interactive reports using Power BI Desktop.
-          </li>
-          <li>
-            <i class="fas fa-cogs"></i> Master DAX (Data Analysis Expressions)
-            for advanced calculations and KPIs.
-          </li>
-          <li>
-            <i class="fas fa-code"></i> Create complex data models and
-            relationships between datasets.
-          </li>
-          <li>
-            <i class="fas fa-network-wired"></i> Use Power Query for efficient
-            data transformation and cleaning.
-          </li>
-          <li>
-            <i class="fas fa-server"></i> Publish reports to Power BI Service
-            and set up automatic data refreshes.
-          </li>
+          <li><i class="fas fa-chart-line"></i> Build powerful dashboards and interactive reports using Power BI Desktop</li>
+          <li><i class="fas fa-calculator"></i> Master DAX (Data Analysis Expressions) for advanced calculations and KPIs</li>
+          <li><i class="fas fa-database"></i> Create complex data models and relationships between datasets</li>
+          <li><i class="fas fa-filter"></i> Use Power Query for efficient data transformation and cleaning</li>
+          <li><i class="fas fa-cloud-upload-alt"></i> Publish reports to Power BI Service and set up automatic data refreshes</li>
         </ul>
       </div>
+
       <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
+        <h3>Career Opportunities After Power BI Course</h3>
         <ul>
-          <li>
-            <i class="fas fa-user-shield"></i>Work as a Power BI Developer,
-            Business Intelligence Analyst, or Data Analyst.
-          </li>
-          <li>
-            <i class="fas fa-cloud"></i> Support corporate decision-making
-            with data-driven insights and visual storytelling.
-          </li>
-          <li>
-            <i class="fas fa-shield-alt"></i> Freelance as a Power BI
-            Consultant helping startups and enterprises.
-          </li>
-          <li>
-            <i class="fas fa-network-wired"></i> Advance to senior roles like
-            BI Manager or Data Architect in major firms.
-          </li>
-          <li>
-            <i class="fas fa-briefcase"></i> Join global companies across
-            sectors like IT, Finance, Healthcare, and Retail.
-          </li>
+          <li><i class="fas fa-chart-line"></i> Power BI Developer</li>
+          <li><i class="fas fa-brain"></i> Business Intelligence Analyst</li>
+          <li><i class="fas fa-chart-pie"></i> Data Analyst</li>
+          <li><i class="fas fa-briefcase"></i> BI Consultant</li>
+          <li><i class="fas fa-building"></i> Reporting Specialist</li>
         </ul>
+        <p style="margin-top: 15px;">Power BI professionals are in high demand across IT companies, financial institutions, healthcare organizations, and retail sectors.</p>
       </div>
     </div>
   </section>
@@ -1160,44 +1292,18 @@
   <!-- Syllabus Section -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">Syllabus</h2>
+      <h2 class="syllabus-title">Power BI Syllabus – Complete Curriculum</h2>
       <div class="syllabus-content">
-        <div class="syllabus-item">
-          <i class="fas fa-play-circle"></i> Introduction to Power BI and Data
-          Analytics
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-table"></i> Power Query: Data Extraction and
-          Transformation
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-filter"></i> Data Modeling Techniques in Power BI
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-chart-bar"></i> DAX Basics and Advanced Formulas
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-project-diagram"></i> Data Visualization and Custom
-          Reports
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-database"></i> Designing Dashboards and KPIs
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-tasks"></i> Connecting to Multiple Data Sources
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-cogs"></i> Power BI Service, Publishing, and
-          Sharing
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-network-wired"></i> Power Automate for Data Refresh
-          and Workflows
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-chart-pie"></i> Power BI Security and Best
-          Practices
-        </div>
+        <div class="syllabus-item"><i class="fas fa-play-circle"></i> Introduction to Power BI and Data Analytics</div>
+        <div class="syllabus-item"><i class="fas fa-table"></i> Power Query: Data Extraction and Transformation</div>
+        <div class="syllabus-item"><i class="fas fa-filter"></i> Data Modeling Techniques in Power BI</div>
+        <div class="syllabus-item"><i class="fas fa-chart-bar"></i> DAX Basics and Advanced Formulas</div>
+        <div class="syllabus-item"><i class="fas fa-project-diagram"></i> Data Visualization and Custom Reports</div>
+        <div class="syllabus-item"><i class="fas fa-database"></i> Designing Dashboards and KPIs</div>
+        <div class="syllabus-item"><i class="fas fa-tasks"></i> Connecting to Multiple Data Sources</div>
+        <div class="syllabus-item"><i class="fas fa-cogs"></i> Power BI Service, Publishing, and Sharing</div>
+        <div class="syllabus-item"><i class="fas fa-network-wired"></i> Power Automate for Data Refresh and Workflows</div>
+        <div class="syllabus-item"><i class="fas fa-chart-pie"></i> Power BI Security and Best Practices</div>
       </div>
     </div>
   </section>
@@ -1206,7 +1312,7 @@
   <section class="faq-section">
     <div class="container">
       <div class="section-title">
-        <h2>Frequently Asked Questions</h2>
+        <h2>Frequently Asked Questions – Power BI Course</h2>
       </div>
 
       <div class="faq-content">
@@ -1216,10 +1322,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              The course lasts for 40 hours, including hands-on projects and
-              dashboard-building sessions.
-            </p>
+            <p>The course lasts for 40 hours, including hands-on projects and dashboard-building sessions.</p>
           </div>
         </div>
 
@@ -1229,10 +1332,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              No, the course is beginner-friendly! Basic knowledge of Excel is
-              an added advantage but not mandatory.
-            </p>
+            <p>No, the course is beginner-friendly! Basic knowledge of Excel is an added advantage but not mandatory.</p>
           </div>
         </div>
 
@@ -1242,10 +1342,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, you will receive a professional certification from Rohil
-              NextGen Academy.
-            </p>
+            <p>Yes, you will receive a professional certification from Rohil NextGen Academy.</p>
           </div>
         </div>
 
@@ -1255,23 +1352,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Absolutely! You will build dashboards for sales analysis, HR
-              reporting, financial analysis, and more.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>What projects will I work on?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>
-              Absolutely! You will build dashboards for sales analysis, HR
-              reporting, financial analysis, and more.
-            </p>
+            <p>Absolutely! You will build dashboards for sales analysis, HR reporting, financial analysis, and more.</p>
           </div>
         </div>
 
@@ -1281,17 +1362,14 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes! We help with resume building, mock interviews, and
-              placement assistance with our hiring partners.
-            </p>
+            <p>Yes! We help with resume building, mock interviews, and placement assistance with our hiring partners.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-    <!-- Footer -->
+  <!-- Footer -->
   <footer class="tech-footer">
     <div class="footer-content">
       <div class="footer-column">
@@ -1331,7 +1409,7 @@
 
     <div class="footer-bottom">
       <div class="copyright">
-        <p>&copy; 2025 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
+        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
       </div>
       <div class="footer-bottom-links">
         <p>Designed By Rohil Technologies</p>
@@ -1348,20 +1426,19 @@
     // Mobile Menu Toggle
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
 
     hamburger.addEventListener("click", () => {
       navMenu.classList.toggle("active");
+      mobileOverlay.classList.toggle("active");
+      document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "";
     });
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll(".nav-link").forEach((n) =>
-      n.addEventListener("click", (e) => {
-        // Only close menu if it's not a dropdown trigger
-        if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
-          navMenu.classList.remove("active");
-        }
-      })
-    );
+    mobileOverlay.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      mobileOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    });
 
     // Mobile Dropdown Functionality
     document.querySelectorAll(".nav-item").forEach((item) => {
@@ -1369,24 +1446,15 @@
       const navLink = item.querySelector(".nav-link");
 
       if (dropdown) {
-        // Add click event for mobile dropdowns
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other open dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  otherDropdown.previousElementSibling.classList.remove(
-                    "active"
-                  );
-                }
-              });
-
-            // Toggle current dropdown
+            document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+              if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove("active");
+                otherDropdown.previousElementSibling?.classList.remove("active");
+              }
+            });
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -1394,82 +1462,30 @@
       }
     });
 
-    // Close dropdowns when clicking outside
-    document.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        if (
-          !e.target.closest(".nav-item") &&
-          !e.target.closest(".hamburger")
-        ) {
-          document
-            .querySelectorAll(".dropdown.active")
-            .forEach((dropdown) => {
-              dropdown.classList.remove("active");
-              dropdown.previousElementSibling.classList.remove("active");
-            });
-        }
+    // Close menu when clicking on non-dropdown links
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      if (!link.querySelector(".fa-chevron-down")) {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            navMenu.classList.remove("active");
+            mobileOverlay.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        });
       }
     });
 
-    // Carousel Functionality
-    const carouselItems = document.querySelectorAll(".carousel-item");
-    const carouselDots = document.querySelectorAll(".carousel-dot");
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      // Hide all slides
-      carouselItems.forEach((item) => item.classList.remove("active"));
-      carouselDots.forEach((dot) => dot.classList.remove("active"));
-
-      // Show the selected slide
-      carouselItems[index].classList.add("active");
-      carouselDots[index].classList.add("active");
-      currentIndex = index;
-    }
-
-    // Add click event to dots
-    carouselDots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showSlide(index);
-      });
-    });
-
-    // Auto slide change
-    let carouselInterval = setInterval(() => {
-      let nextIndex = (currentIndex + 1) % carouselItems.length;
-      showSlide(nextIndex);
-    }, 5000);
-
-    // Pause carousel on hover
-    carouselItems.forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        clearInterval(carouselInterval);
-      });
-
-      item.addEventListener("mouseleave", () => {
-        carouselInterval = setInterval(() => {
-          let nextIndex = (currentIndex + 1) % carouselItems.length;
-          showSlide(nextIndex);
-        }, 5000);
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        if (targetId === "#") return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
-      });
+    // Close menu on resize if window becomes larger
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navMenu.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+          dropdown.classList.remove("active");
+          dropdown.previousElementSibling?.classList.remove("active");
+        });
+      }
     });
 
     // Back to Top Button
@@ -1477,9 +1493,9 @@
 
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
-        backToTopButton.classList.add("show");
+        backToTopButton.classList.add("active");
       } else {
-        backToTopButton.classList.remove("show");
+        backToTopButton.classList.remove("active");
       }
     });
 
@@ -1490,16 +1506,6 @@
       });
     });
 
-    // Close mobile menu on resize if window becomes larger
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        navMenu.classList.remove("active");
-        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-          dropdown.classList.remove("active");
-          dropdown.previousElementSibling.classList.remove("active");
-        });
-      }
-    });
     // FAQ Accordion Functionality
     document.addEventListener("DOMContentLoaded", function () {
       const faqItems = document.querySelectorAll(".faq-item");
@@ -1508,14 +1514,11 @@
         const question = item.querySelector(".faq-question");
 
         question.addEventListener("click", () => {
-          // Close all other items
           faqItems.forEach((otherItem) => {
             if (otherItem !== item) {
               otherItem.classList.remove("active");
             }
           });
-
-          // Toggle current item
           item.classList.toggle("active");
         });
       });
