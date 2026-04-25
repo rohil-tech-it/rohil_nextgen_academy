@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Main styles (your original design, untouched) -->
-<style>
+  <style>
     :root {
       --primary-red: #d40404;
       --dark-red: #a80303;
@@ -74,7 +74,7 @@
       padding: 0 20px;
     }
 
-    /* Navigation */
+    /* Navigation Styles - IMPROVED RESPONSIVE */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -123,10 +123,28 @@
       display: flex;
       align-items: center;
       gap: 5px;
+      position: relative;
     }
 
     .nav-link:hover {
       color: var(--primary-red);
+    }
+
+    /* Active state styles */
+    .nav-link.active {
+      color: var(--primary-red);
+      font-weight: 600;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary-red);
+      border-radius: 2px;
     }
 
     .dropdown {
@@ -162,6 +180,14 @@
       background-color: var(--light-grey);
       color: var(--primary-red);
       padding-left: 25px;
+    }
+
+    /* Active state for dropdown items */
+    .dropdown-item.active {
+      background-color: var(--light-grey);
+      color: var(--primary-red);
+      font-weight: 500;
+      border-left: 3px solid var(--primary-red);
     }
 
     .hamburger {
@@ -860,6 +886,7 @@
 
     /* Mobile Devices (576px - 767px) */
     @media (max-width: 767px) {
+
       /* Navigation */
       .hamburger {
         display: block;
@@ -1317,25 +1344,37 @@
 </head>
 
 <body>
-  <!-- Navigation (unchanged) -->
+
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">
-        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
+      <div class="logo" itemprop="logo">
+        <div class="logo" style="display: flex; align-items: center">
+          <img src="./images/rohil_nextgen-removebg-preview.png"
+            alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120"
+            height="60" />
+        </div>
       </div>
+
       <ul class="nav-menu">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="gallery.html" class="nav-link">Gallery</a>
+        </li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
-            <a href="classic.html" class="dropdown-item">Classic</a>
+            <a href="classic.html" class="dropdown-item active">Classic</a>
             <a href="professional.html" class="dropdown-item">Professional</a>
             <a href="expert.html" class="dropdown-item">Expert</a>
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
+        <li class="nav-item">
+          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
+        </li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -1344,11 +1383,23 @@
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
-        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item">
+          <a href="techblog.html" class="nav-link">Techblog</a>
+        </li>
+        <li class="nav-item">
+          <a href="scholarship.html" class="nav-link">Scholarship</a>
+        </li>
+        <li class="nav-item">
+          <a href="career.html" class="nav-link"> Careers</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </li>
       </ul>
-      <div class="hamburger"><i class="fas fa-bars"></i></div>
+
+      <div class="hamburger" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </div>
     </div>
   </nav>
   <div class="mobile-overlay" id="mobileOverlay"></div>
@@ -1362,7 +1413,7 @@
   <section class="overview-section" id="overview">
     <div class="container">
       <div class="overview-content">
-        <div class="section-title">
+        <div style="text-align: center;" class="section-title">
           <h1>UI/UX Design Course – User Interface & User Experience Training</h1>
           <p>Modern UI/UX Skills: Become a Certified UI/UX Designer and Launch Your Dream Career!</p>
         </div>

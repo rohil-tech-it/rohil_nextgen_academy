@@ -1073,7 +1073,6 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Responsive Styles */
         /* Mobile Dropdown Fix */
         @media (max-width: 768px) {
 
