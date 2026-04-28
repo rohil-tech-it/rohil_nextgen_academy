@@ -4,16 +4,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO Optimized Title -->
+  <title>AI & Machine Learning Course | AI Training & Certification | Rohil NextGen</title>
+  <!-- SEO Optimized Meta Description -->
   <meta name="description"
-    content="Best AI Course in Virudhunagar at Rohil NextGen. Artificial Intelligence, Machine Learning, Python training with placement support. Call +91 97518 67879.">
-
-  <title>Rohil NextGen</title>
+    content="Learn AI & Machine Learning with Python, real-time projects, and hands-on training. Get certified and build your career with Rohil NextGen Institute." />
+  <meta name="keywords"
+    content="AI Course, Machine Learning Course, AI Training Institute, AI Course in Virudhunagar, Machine Learning Training, AI Certification Course, AI and machine learning course for beginners, Learn AI with Python projects, Best AI training institute in Tamil Nadu" />
+  <meta name="author" content="Rohil NextGen" />
+  <link rel="canonical" href="https://www.rohilnextgen.com/ai-ml.html" />
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="./style.css" rel="stylesheet" />
+
+  <!-- Course Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "AI & Machine Learning Course - AI Training & Certification",
+    "description": "Learn AI & Machine Learning with Python, real-time projects, and hands-on training. Get certified and build your career with Rohil NextGen Institute.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rohil NextGen",
+      "sameAs": "https://www.rohilnextgen.com"
+    },
+    "courseCode": "AIML-001",
+    "educationalCredentialAwarded": "AI & Machine Learning Certification",
+    "teaches": ["Python for AI", "Machine Learning Algorithms", "Deep Learning", "Data Preprocessing", "Model Evaluation", "Neural Networks"],
+    "occupationalCredentialAwarded": "AI Engineer, Machine Learning Developer, Data Scientist",
+    "timeRequired": "PT60H",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "In-Person",
+      "location": {
+        "@type": "Place",
+        "name": "Rohil NextGen, Virudhunagar, Tamil Nadu"
+      },
+      "startDate": "2026-05-01"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Artificial Intelligence (AI)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Artificial Intelligence refers to systems or machines that mimic human intelligence to perform tasks and improve themselves based on the information they collect."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the types of AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There are mainly three types: Narrow AI (designed for specific tasks), General AI (human-level intelligence), and Super AI (beyond human intelligence, still theoretical)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What programming languages are best for AI development?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Python is the most popular due to its simplicity and AI libraries. Other languages include Java, C++, and R for specific AI applications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Machine Learning relate to AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Machine Learning is a subset of AI that enables machines to learn from data and improve without being explicitly programmed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What career opportunities are available after AI & ML course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can become an AI Engineer, Machine Learning Developer, Data Scientist, NLP Engineer, or Computer Vision Engineer in top IT companies."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Organization Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Rohil NextGen",
+    "url": "https://www.rohilnextgen.com",
+    "logo": "https://www.rohilnextgen.com/images/rohil_nextgen-removebg-preview.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Virudhunagar",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9751867879",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Tamil"]
+    }
+  }
+  </script>
+
   <style>
     :root {
       --primary-red: #d40404;
@@ -25,6 +134,9 @@
       --medium-gray: #666666;
       --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       --transition: all 0.3s ease;
+      --text-black: #333;
+      --text-grey: #666;
+      --light-grey: #f5f5f5;
     }
 
     * {
@@ -34,10 +146,11 @@
     }
 
     body {
-      font-family: Georgia;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
+      overflow-x: hidden;
     }
 
     .container {
@@ -45,8 +158,148 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
-    }    
-   
+    }
+
+    /* Navigation Styles - IMPROVED RESPONSIVE */
+    .navbar {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 100px;
+      width: 120px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-black);
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-red);
+    }
+
+    .dropdown {
+      position: absolute;
+      background-color: var(--white);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      min-width: 200px;
+      top: 100%;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s;
+      z-index: 100;
+    }
+
+    .nav-item:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-item {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: var(--text-grey);
+      border-bottom: 1px solid #eee;
+      transition: all 0.3s;
+    }
+
+    .dropdown-item:hover {
+      background-color: var(--light-grey);
+      color: var(--primary-red);
+      padding-left: 25px;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: var(--text-black);
+      z-index: 1001;
+    }
+
+    /* Mobile Overlay */
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .mobile-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Banner Section */
+    .banner {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/art-int.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      min-height: 450px;
+    }
+
+    .banner-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
     /* Overview Section */
     .overview-section {
       padding: 60px 0;
@@ -89,6 +342,7 @@
       align-items: center;
       gap: 15px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .rating-badge {
@@ -158,14 +412,6 @@
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
-    }
-
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
     }
 
     .certification-info-box {
@@ -270,6 +516,7 @@
     .future-scope i {
       color: var(--primary-red);
       margin-top: 5px;
+      flex-shrink: 0;
     }
 
     /* Syllabus Section */
@@ -324,10 +571,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg,
-          transparent,
-          rgba(212, 4, 4, 0.1),
-          transparent);
+      background: linear-gradient(90deg, transparent, rgba(212, 4, 4, 0.1), transparent);
       transition: var(--transition);
     }
 
@@ -348,6 +592,7 @@
       width: 35px;
       text-align: center;
       transition: var(--transition);
+      flex-shrink: 0;
     }
 
     .syllabus-item:hover i {
@@ -356,10 +601,6 @@
     }
 
     /* FAQ Section */
-    .section-title h2 {
-      color: var(--dark-gray);
-    }
-
     .faq-section {
       padding: 80px 0;
       background-color: var(--light-gray);
@@ -406,6 +647,8 @@
       color: var(--primary-red);
       font-size: 1.2rem;
       transition: var(--transition);
+      flex-shrink: 0;
+      margin-left: 15px;
     }
 
     .faq-answer {
@@ -433,6 +676,45 @@
     .faq-item.active .faq-answer {
       max-height: 500px;
       padding: 0 25px;
+    }
+
+    /* Tools Section */
+    .tools-section {
+      padding: 60px 0;
+      background-color: var(--light-gray);
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .tool-card {
+      background: var(--white);
+      padding: 25px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-bottom: 3px solid var(--primary-red);
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tool-card i {
+      font-size: 2.5rem;
+      color: var(--primary-red);
+      margin-bottom: 15px;
+    }
+
+    .tool-card h4 {
+      font-size: 1.1rem;
+      color: var(--dark-gray);
+      margin-bottom: 5px;
     }
 
     /* Footer */
@@ -471,12 +753,13 @@
 
     .footer-column p {
       margin-bottom: 20px;
-      color: #ccc;
+      color: var(--white);
     }
 
     .social-links {
       display: flex;
       gap: 15px;
+      flex-wrap: wrap;
     }
 
     .social-links a {
@@ -506,7 +789,7 @@
     }
 
     .footer-links a {
-      color: #ccc;
+      color: var(--white);
       text-decoration: none;
       transition: var(--transition);
       display: flex;
@@ -521,6 +804,7 @@
     .footer-links i {
       font-size: 0.8rem;
       color: var(--primary-red);
+      flex-shrink: 0;
     }
 
     .footer-bottom {
@@ -539,7 +823,7 @@
     }
 
     .footer-bottom p {
-      color: #999;
+      color: var(--white);
       margin: 0;
     }
 
@@ -573,24 +857,37 @@
     }
 
     /* Responsive Styles */
-    /* Mobile Dropdown Fix */
+    @media (max-width: 991px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .section-title h1 {
+        font-size: 2rem;
+      }
+
+      .certification-title {
+        font-size: 1.8rem;
+      }
+
+      .course-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .syllabus-content {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+    }
+
     @media (max-width: 768px) {
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
+      .banner {
+        padding: 80px 0;
+        min-height: 200px;
       }
+    }
 
-      .top-bar {
-        height: auto;
-        padding: 10px 0;
-      }
-
-      .contact-info {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-      }
-
+    @media (max-width: 767px) {
       .hamburger {
         display: block;
       }
@@ -629,7 +926,7 @@
         width: 100%;
         justify-content: space-between;
         border-bottom: 1px solid #eee;
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .dropdown {
@@ -640,130 +937,86 @@
         box-shadow: none;
         display: none;
         background-color: var(--light-grey);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
         width: 100%;
       }
 
       .dropdown.active {
         display: block;
-        max-height: 300px;
       }
 
       .dropdown-item {
         padding: 12px 40px;
-        border-bottom: 1px solid #ddd;
         font-size: 14px;
-      }
-
-      .nav-link i.fa-chevron-down {
-        transition: transform 0.3s ease;
-      }
-
-      .nav-link.active i.fa-chevron-down {
-        transform: rotate(180deg);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .top-bar {
-        height: 120px;
       }
 
       .contact-info {
         flex-wrap: wrap;
         justify-content: center;
       }
-    }
 
-    @media (max-width: 992px) {
-      .syllabus-content {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .section-title h1 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 768px) {
       .banner {
-        padding: 80px 0;
-        height: 300px;
+        padding: 60px 0;
+        min-height: 350px;
       }
 
       .section-title h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .section-title p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+      }
+
+      .highlight-box {
+        padding: 20px;
+      }
+
+      .course-overview {
+        padding: 30px 0 40px;
       }
 
       .course-stats {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
       }
 
-      .syllabus-container {
-        padding: 60px 15px;
-      }
-
-      .syllabus-title {
-        font-size: 2.2rem;
-      }
-
-      .syllabus-item {
-        padding: 18px 20px;
-        font-size: 1rem;
-      }
-
-      .syllabus-item i {
-        font-size: 1.4rem;
-        margin-right: 12px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .contact-info {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .course-stats {
-        grid-template-columns: 1fr;
+      .stat {
+        padding: 15px 12px;
       }
 
       .stat-value {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
+      .certification-section {
+        padding: 40px 0;
+      }
+
+      .certification-title {
+        font-size: 1.5rem;
+      }
+
+      .course-details-section {
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .course-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.3rem;
       }
 
       .syllabus-container {
-        padding: 50px 10px;
+        padding: 40px 15px;
       }
 
       .syllabus-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       .syllabus-item {
@@ -773,7 +1026,109 @@
 
       .syllabus-item i {
         font-size: 1.3rem;
-        margin-right: 10px;
+        margin-right: 12px;
+        width: 28px;
+      }
+
+      .tools-section {
+        padding: 40px 0;
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .faq-section {
+        padding: 40px 0;
+      }
+
+      .faq-question {
+        padding: 15px 18px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.95rem;
+      }
+
+      .tech-footer {
+        padding: 40px 0 20px;
+      }
+
+      .footer-content {
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
+      }
+
+      .course-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .certification-content {
+        grid-template-columns: 1fr;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .syllabus-item {
+        padding: 12px 15px;
+        font-size: 0.85rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767px) and (orientation: landscape) {
+      .nav-menu {
+        overflow-y: auto;
+        padding: 60px 0 20px;
+      }
+
+      .banner {
+        min-height: 250px;
+        padding: 40px 0;
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+      }
+
+      .nav-item .dropdown.active {
+        display: block;
+      }
+
+      .stat:hover,
+      .certification-info-box:hover,
+      .syllabus-item:hover {
+        transform: none;
       }
     }
   </style>
@@ -784,33 +1139,23 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo" itemprop="logo">
-        <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png"
-            alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120"
-            height="60" />
-        </div>
+      <div class="logo">
+        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
       </div>
 
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link active" aria-current="page">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
-            <a href="classic.html" class="dropdown-item">Classic</a>
+            <a href="classic.html" class="dropdown-item active">Classic</a>
             <a href="professional.html" class="dropdown-item">Professional</a>
             <a href="expert.html" class="dropdown-item">Expert</a>
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-        </li>
+        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -819,30 +1164,24 @@
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="techblog.html" class="nav-link">Techblog</a>
-        </li>
-        <li class="nav-item">
-          <a href="scholarship.html" class="nav-link">Scholarship</a>
-        </li>
-        <li class="nav-item">
-          <a href="career.html" class="nav-link"> Careers</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+        <li class="nav-item"><a href="career.html" class="nav-link">Careers</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
-      <div class="hamburger" aria-label="Toggle menu">
+      <div class="hamburger">
         <i class="fas fa-bars"></i>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Hero Section with H1 -->
   <section class="banner">
     <div class="banner-content">
-      <!-- Banner content can be added here if needed -->
     </div>
   </section>
 
@@ -852,21 +1191,18 @@
       <div class="overview-container">
         <div class="overview-content">
           <div class="section-title">
-            <h1>AI & Machine Learning Overview</h1>
-            <p>
-              AI & Machine Learning equips you with skills to build intelligent systems that learn, predict, and
-              automate real-world tasks
-            </p>
+            <h1>Introduction to Artificial Intelligence & Machine Learning</h1>
+            <p>The AI & Machine Learning Course at Rohil NextGen is a comprehensive, job-oriented training program
+              designed for students and professionals who want to build expertise in artificial intelligence and
+              data-driven technologies. This course covers Python programming, machine learning algorithms, data
+              preprocessing, and real-time AI projects, helping learners gain industry-ready skills.</p>
           </div>
           <div class="highlight-box">
-            <p>
-              <strong>Rohil NextGen</strong> offers a comprehensive AI &
-              Machine Learning training program covering Machine Learning,
-              Deep Learning, Natural Language Processing, and practical AI
-              development tools like Python, TensorFlow, and Scikit-learn.
-            </p>
+            <p><strong>Rohil NextGen</strong> offers a comprehensive AI & Machine Learning training program covering
+              Machine Learning, Deep Learning, Natural Language Processing, and practical AI development tools like
+              Python, TensorFlow, and Scikit-learn. AI/ML skills are widely searched by students, engineers, and
+              professionals aiming for high-growth careers.</p>
           </div>
-          <!--Rating-->
           <div class="rating">
             <span class="rating-badge">BEST INSTITUTE</span>
             <span>4.9 Ratings</span>
@@ -883,7 +1219,7 @@
         <div class="course-text">
           <div class="course-stats">
             <div class="stat">
-              <div class="stat-value">2025</div>
+              <div class="stat-value">2026</div>
               <div class="stat-label">Latest Curriculum</div>
             </div>
             <div class="stat">
@@ -907,13 +1243,13 @@
   <!-- Certification Section -->
   <section class="certification-section">
     <div class="container">
-      <h2 class="certification-title">Why Choose AI & ML Certification?</h2>
+      <h2 class="certification-title">Why Choose AI & ML Certification? High Demand Career Path</h2>
       <div class="certification-content">
         <div class="certification-info-box">
           <i class="fas fa-wallet certification-icon"></i>
           <h4 class="certification-subtitle">Annual Earnings</h4>
           <p class="certification-description">Estimated Salary</p>
-          <h3 class="certification-number">₹ 9.5 L</h3>
+          <h3 class="certification-number">₹ 9.5 LPA</h3>
         </div>
         <div class="certification-info-box">
           <i class="fas fa-chart-line certification-icon"></i>
@@ -925,7 +1261,7 @@
           <i class="fas fa-briefcase certification-icon"></i>
           <h4 class="certification-subtitle">Job Demand</h4>
           <p class="certification-description">Projected by 2026</p>
-          <h3 class="certification-number">5 L</h3>
+          <h3 class="certification-number">5 Lakh+</h3>
         </div>
       </div>
     </div>
@@ -935,74 +1271,78 @@
   <section class="course-details-section">
     <div class="container">
       <div class="course-header">
-        <h2>Become an AI & ML Specialist</h2>
-        <p class="course-subtitle">
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❝</span>
-          Learn Machine Learning, Deep Learning, and AI Tools to Solve
-          Real-World Problems
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❞</span>
-        </p>
+        <h2>AI & ML Course Curriculum – Master Machine Learning & Deep Learning</h2>
+        <p class="course-subtitle">Learn Python for AI, Machine Learning Algorithms, and Real-Time Projects</p>
       </div>
 
       <div class="course-description">
-        <h3>Course Overview</h3>
-        <p>
-          This AI & Machine Learning course is structured to teach you
-          fundamental algorithms, advanced neural networks, model deployment
-          techniques, and practical real-time projects using Python,
-          TensorFlow, and AI platforms.
-        </p>
+        <h3>Tools & Technologies Covered</h3>
+        <p>This comprehensive AI & Machine Learning course covers everything from basic to advanced concepts. You'll
+          learn Python programming for AI, machine learning algorithms (regression, classification), data preprocessing
+          and visualization, model training and evaluation, and introduction to deep learning. These skills are
+          essential for AI engineering and data science roles.</p>
       </div>
 
       <div class="course-goals">
-        <h3>Key Learning Outcomes</h3>
+        <h3>Machine Learning Algorithms & Deep Learning Concepts</h3>
         <ul>
-          <li>
-            <i class="fas fa-cube"></i> Build intelligent systems using Python
-            and ML libraries.
+          <li><i class="fab fa-python"></i> Python for AI – NumPy, Pandas, Matplotlib</li>
+          <li><i class="fas fa-chart-line"></i> Machine Learning Algorithms – Regression, Classification, Clustering
           </li>
-          <li>
-            <i class="fas fa-th-list"></i> Master Machine Learning algorithms
-            like Regression, SVM, and Decision Trees.
-          </li>
-          <li>
-            <i class="fas fa-exclamation-triangle"></i>Understand and create
-            Deep Neural Networks using TensorFlow and Keras.
-          </li>
-          <li>
-            <i class="fas fa-database"></i>Explore Natural Language Processing
-            and Computer Vision applications.
-          </li>
-          <li>
-            <i class="fas fa-laptop-code"></i> Deploy machine learning models
-            into production environments.
-          </li>
+          <li><i class="fas fa-database"></i> Data Preprocessing & Visualization Techniques</li>
+          <li><i class="fas fa-brain"></i> Deep Learning & Neural Networks using TensorFlow/Keras</li>
+          <li><i class="fas fa-language"></i> Natural Language Processing (NLP) Basics</li>
+          <li><i class="fas fa-check-circle"></i> Model Training, Evaluation & Deployment</li>
         </ul>
       </div>
+
       <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
+        <h3>Career Opportunities in AI & Machine Learning</h3>
         <ul>
-          <li>
-            <i class="fas fa-code"></i> Start your career as an AI Engineer,
-            ML Developer, or Data Scientist.
-          </li>
-          <li>
-            <i class="fas fa-database"></i>Work on predictive analytics,
-            automation, and intelligent system designs.
-          </li>
-          <li>
-            <i class="fas fa-robot"></i>Join research teams for cutting-edge
-            AI innovation and solutions.
-          </li>
-          <li>
-            <i class="fas fa-chart-line"></i> Develop AI-based apps, chatbots,
-            and recommendation engines.
-          </li>
-          <li>
-            <i class="fas fa-globe"></i> Build your own AI startups or offer
-            freelance AI consultancy services.
-          </li>
+          <li><i class="fas fa-microchip"></i> AI Engineer / Machine Learning Engineer</li>
+          <li><i class="fas fa-chart-line"></i> Data Scientist</li>
+          <li><i class="fas fa-language"></i> NLP Engineer</li>
+          <li><i class="fas fa-eye"></i> Computer Vision Engineer</li>
+          <li><i class="fas fa-robot"></i> AI Research Scientist</li>
         </ul>
+        <p style="margin-top: 15px;">AI and ML professionals are in high demand across IT companies, healthcare,
+          finance, e-commerce, and autonomous systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Section -->
+  <section class="tools-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Tools & Technologies You'll Master</h2>
+        <p>Industry-standard tools used in AI & Machine Learning development</p>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card"><i class="fab fa-python"></i>
+          <h4>Python</h4>
+          <p>Programming Language</p>
+        </div>
+        <div class="tool-card"><i class="fas fa-chart-line"></i>
+          <h4>NumPy & Pandas</h4>
+          <p>Data Manipulation</p>
+        </div>
+        <div class="tool-card"><i class="fas fa-brain"></i>
+          <h4>TensorFlow</h4>
+          <p>Deep Learning</p>
+        </div>
+        <div class="tool-card"><i class="fas fa-chart-bar"></i>
+          <h4>Scikit-learn</h4>
+          <p>Machine Learning</p>
+        </div>
+        <div class="tool-card"><i class="fas fa-chart-pie"></i>
+          <h4>Matplotlib</h4>
+          <p>Data Visualization</p>
+        </div>
+        <div class="tool-card"><i class="fas fa-code-branch"></i>
+          <h4>Jupyter</h4>
+          <p>Interactive Coding</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1010,24 +1350,19 @@
   <!-- Syllabus Section -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">Syllabus</h2>
+      <h2 class="syllabus-title">AI & ML Syllabus – Complete Curriculum</h2>
       <div class="syllabus-content">
-        <div class="syllabus-item">
-          <i class="fas fa-play-circle"></i> Introduction to AI & Machine
-          Learning
+        <div class="syllabus-item"><i class="fas fa-play-circle"></i> Introduction to AI & Machine Learning</div>
+        <div class="syllabus-item"><i class="fas fa-sync-alt"></i> Supervised & Unsupervised Learning</div>
+        <div class="syllabus-item"><i class="fas fa-code"></i> Python Programming for AI</div>
+        <div class="syllabus-item"><i class="fas fa-cogs"></i> Machine Learning Algorithms (Regression, Classification)
         </div>
-        <div class="syllabus-item">
-          <i class="fas fa-sync-alt"></i> Supervised & Unsupervised Learning
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-code"></i> Machine Learning Algorithms
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-cogs"></i> Deep Learning & Neural Networks
-        </div>
-        <div class="syllabus-item">
-          <i class="fas fa-th-list"></i> Natural Language Processing (NLP)
-        </div>
+        <div class="syllabus-item"><i class="fas fa-th-list"></i> Data Preprocessing & Feature Engineering</div>
+        <div class="syllabus-item"><i class="fas fa-chart-line"></i> Model Evaluation & Validation Techniques</div>
+        <div class="syllabus-item"><i class="fas fa-brain"></i> Deep Learning & Neural Networks</div>
+        <div class="syllabus-item"><i class="fas fa-language"></i> Natural Language Processing (NLP) Basics</div>
+        <div class="syllabus-item"><i class="fas fa-eye"></i> Computer Vision Introduction</div>
+        <div class="syllabus-item"><i class="fas fa-cloud-upload-alt"></i> Model Deployment & Real-Time Projects</div>
       </div>
     </div>
   </section>
@@ -1036,7 +1371,7 @@
   <section class="faq-section">
     <div class="container">
       <div class="section-title">
-        <h2>Frequently Asked Questions</h2>
+        <h2 style="color: #333333;">Frequently Asked Question</h2>
       </div>
 
       <div class="faq-content">
@@ -1046,11 +1381,8 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Artificial Intelligence refers to systems or machines that mimic
-              human intelligence to perform tasks and improve themselves based
-              on the information they collect.
-            </p>
+            <p>Artificial Intelligence refers to systems or machines that mimic human intelligence to perform tasks and
+              improve themselves based on the information they collect.</p>
           </div>
         </div>
 
@@ -1060,25 +1392,8 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              There are mainly three types: Narrow AI (designed for specific
-              tasks), General AI (human-level intelligence), and Super AI
-              (beyond human intelligence, still theoretical).
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Where is AI used today?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>
-              AI is used in voice assistants (like Alexa), recommendation
-              systems (Netflix, Amazon), autonomous vehicles, healthcare
-              diagnostics, and financial fraud detection.
-            </p>
+            <p>There are mainly three types: Narrow AI (designed for specific tasks), General AI (human-level
+              intelligence), and Super AI (beyond human intelligence, still theoretical).</p>
           </div>
         </div>
 
@@ -1088,11 +1403,8 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Python is the most popular due to its simplicity and AI
-              libraries. Other languages include Java, C++, and R for specific
-              AI applications.
-            </p>
+            <p>Python is the most popular due to its simplicity and AI libraries. Other languages include Java, C++, and
+              R for specific AI applications.</p>
           </div>
         </div>
 
@@ -1102,24 +1414,30 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Machine Learning is a subset of AI that enables machines to
-              learn from data and improve without being explicitly programmed.
-            </p>
+            <p>Machine Learning is a subset of AI that enables machines to learn from data and improve without being
+              explicitly programmed.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Can AI replace human jobs?</h3>
+            <h3>What career opportunities are available after AI & ML course?</h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              AI can automate certain tasks but also creates new job
-              opportunities in areas like AI development, ethics, maintenance,
-              and AI strategy roles.
-            </p>
+            <p>You can become an AI Engineer, Machine Learning Developer, Data Scientist, NLP Engineer, or Computer
+              Vision Engineer in top IT companies.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is there any placement assistance after the course?</h3>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! We provide 100% placement assistance with resume building, mock interviews, and connections to our
+              hiring partners in top IT companies.</p>
           </div>
         </div>
       </div>
@@ -1131,11 +1449,9 @@
     <div class="footer-content">
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
-        <p>
-          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
+        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
           development, data science, cybersecurity, and IT training with placement support. Get the best software
-          training in Virudhunagar with industry experts.
-        </p>
+          training in Virudhunagar with industry experts.</p>
         <div class="social-links">
           <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
               class="fab fa-facebook-f"></i></a>
@@ -1171,7 +1487,7 @@
 
     <div class="footer-bottom">
       <div class="copyright">
-        <p>&copy; 2025 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
+        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
       </div>
       <div class="footer-bottom-links">
         <p>Designed By Rohil Technologies</p>
@@ -1188,20 +1504,19 @@
     // Mobile Menu Toggle
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
 
     hamburger.addEventListener("click", () => {
       navMenu.classList.toggle("active");
+      mobileOverlay.classList.toggle("active");
+      document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "";
     });
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll(".nav-link").forEach((n) =>
-      n.addEventListener("click", (e) => {
-        // Only close menu if it's not a dropdown trigger
-        if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
-          navMenu.classList.remove("active");
-        }
-      })
-    );
+    mobileOverlay.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      mobileOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    });
 
     // Mobile Dropdown Functionality
     document.querySelectorAll(".nav-item").forEach((item) => {
@@ -1209,24 +1524,15 @@
       const navLink = item.querySelector(".nav-link");
 
       if (dropdown) {
-        // Add click event for mobile dropdowns
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other open dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  otherDropdown.previousElementSibling.classList.remove(
-                    "active"
-                  );
-                }
-              });
-
-            // Toggle current dropdown
+            document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+              if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove("active");
+                otherDropdown.previousElementSibling?.classList.remove("active");
+              }
+            });
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -1234,82 +1540,30 @@
       }
     });
 
-    // Close dropdowns when clicking outside
-    document.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        if (
-          !e.target.closest(".nav-item") &&
-          !e.target.closest(".hamburger")
-        ) {
-          document
-            .querySelectorAll(".dropdown.active")
-            .forEach((dropdown) => {
-              dropdown.classList.remove("active");
-              dropdown.previousElementSibling.classList.remove("active");
-            });
-        }
+    // Close menu when clicking on non-dropdown links
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      if (!link.querySelector(".fa-chevron-down")) {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            navMenu.classList.remove("active");
+            mobileOverlay.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        });
       }
     });
 
-    // Carousel Functionality
-    const carouselItems = document.querySelectorAll(".carousel-item");
-    const carouselDots = document.querySelectorAll(".carousel-dot");
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      // Hide all slides
-      carouselItems.forEach((item) => item.classList.remove("active"));
-      carouselDots.forEach((dot) => dot.classList.remove("active"));
-
-      // Show the selected slide
-      carouselItems[index].classList.add("active");
-      carouselDots[index].classList.add("active");
-      currentIndex = index;
-    }
-
-    // Add click event to dots
-    carouselDots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showSlide(index);
-      });
-    });
-
-    // Auto slide change
-    let carouselInterval = setInterval(() => {
-      let nextIndex = (currentIndex + 1) % carouselItems.length;
-      showSlide(nextIndex);
-    }, 5000);
-
-    // Pause carousel on hover
-    carouselItems.forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        clearInterval(carouselInterval);
-      });
-
-      item.addEventListener("mouseleave", () => {
-        carouselInterval = setInterval(() => {
-          let nextIndex = (currentIndex + 1) % carouselItems.length;
-          showSlide(nextIndex);
-        }, 5000);
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        if (targetId === "#") return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
-      });
+    // Close menu on resize if window becomes larger
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navMenu.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+          dropdown.classList.remove("active");
+          dropdown.previousElementSibling?.classList.remove("active");
+        });
+      }
     });
 
     // Back to Top Button
@@ -1317,45 +1571,26 @@
 
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
-        backToTopButton.classList.add("show");
+        backToTopButton.classList.add("active");
       } else {
-        backToTopButton.classList.remove("show");
+        backToTopButton.classList.remove("active");
       }
     });
 
     backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Close mobile menu on resize if window becomes larger
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        navMenu.classList.remove("active");
-        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-          dropdown.classList.remove("active");
-          dropdown.previousElementSibling.classList.remove("active");
-        });
-      }
-    });
     // FAQ Accordion Functionality
     document.addEventListener("DOMContentLoaded", function () {
       const faqItems = document.querySelectorAll(".faq-item");
 
       faqItems.forEach((item) => {
         const question = item.querySelector(".faq-question");
-
         question.addEventListener("click", () => {
-          // Close all other items
           faqItems.forEach((otherItem) => {
-            if (otherItem !== item) {
-              otherItem.classList.remove("active");
-            }
+            if (otherItem !== item) otherItem.classList.remove("active");
           });
-
-          // Toggle current item
           item.classList.toggle("active");
         });
       });
