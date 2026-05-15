@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <!-- SEO Optimized Title -->
   <title>Frontend Development Course | HTML CSS JavaScript Training | Rohil NextGen</title>
   <!-- SEO Optimized Meta Description -->
@@ -148,8 +148,10 @@
       background-color: var(--primary-red);
       color: var(--white);
       padding: 15px 0;
-      font-size: 15px;
-      height: 60px;
+      font-size: 14px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
     }
 
     .top-bar-container {
@@ -159,11 +161,15 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .contact-info {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .contact-info div {
@@ -174,18 +180,26 @@
 
     .social-icons {
       display: flex;
-      gap: 18px;
+      gap: 15px;
     }
 
     .social-icons a {
       color: var(--white);
-      font-size: 25px;
-      transition: opacity 0.3s;
+      font-size: 18px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .social-icons a:hover {
-      color: var(--dark-gray);
-      transform: translateY(-3px) scale(1.1);
+      background: var(--white);
+      color: var(--primary-red);
+      transform: translateY(-2px);
     }
 
     /* Navigation Styles */
@@ -310,24 +324,25 @@
 
     /* Banner Section */
     .banner {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./images/frontenddd.jpg);
+      background-image: url(./images/frontenddd.jpg);
       background-size: cover;
       background-position: center;
       color: var(--white);
-      padding: 100px 0;
       text-align: center;
       position: relative;
-      min-height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      padding: 80px 20px;
     }
 
     .banner-content {
       max-width: 800px;
       margin: 0 auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 1;
+      padding: 0 15px;
+      width: 100%;
     }
-
     /* Overview Section */
     .overview-section {
       padding: 60px 0;
@@ -368,6 +383,7 @@
     .rating {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 15px;
       margin-bottom: 20px;
       flex-wrap: wrap;
@@ -378,7 +394,7 @@
       color: var(--white);
       padding: 8px 15px;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: bold;
     }
 
@@ -408,14 +424,14 @@
     }
 
     .stat-value {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
       color: var(--primary-red);
       margin-bottom: 10px;
     }
 
     .stat-label {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--dark-gray);
       font-weight: 500;
     }
@@ -428,7 +444,7 @@
     }
 
     .certification-title {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--dark-gray);
       margin-bottom: 40px;
@@ -446,36 +462,36 @@
       background-color: var(--white);
       border-radius: 12px;
       box-shadow: var(--shadow);
-      padding: 30px 20px;
+      padding: 25px 15px;
       transition: var(--transition);
     }
 
     .certification-info-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
     }
 
     .certification-icon {
-      font-size: 48px;
+      font-size: 40px;
       color: var(--primary-red);
-      margin-bottom: 20px;
-    }
-
-    .certification-subtitle {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--dark-gray);
-      margin-bottom: 10px;
-    }
-
-    .certification-description {
-      font-size: 1rem;
-      color: var(--medium-gray);
       margin-bottom: 15px;
     }
 
+    .certification-subtitle {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark-gray);
+      margin-bottom: 8px;
+    }
+
+    .certification-description {
+      font-size: 0.9rem;
+      color: var(--medium-gray);
+      margin-bottom: 10px;
+    }
+
     .certification-number {
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: var(--dark-gray);
     }
@@ -494,13 +510,13 @@
     }
 
     .course-header h2 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: var(--dark-gray);
       margin-bottom: 15px;
     }
 
     .course-subtitle {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--medium-gray);
       font-style: italic;
     }
@@ -508,19 +524,19 @@
     .course-description,
     .course-goals,
     .future-scope {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .course-description h3,
     .course-goals h3,
     .future-scope h3 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: var(--primary-red);
       margin-bottom: 15px;
     }
 
     .course-description p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.7;
       color: var(--medium-gray);
     }
@@ -534,7 +550,7 @@
     .course-goals li,
     .future-scope li {
       padding: 10px 0;
-      font-size: 1.1rem;
+      font-size: 1rem;
       display: flex;
       align-items: flex-start;
       gap: 10px;
@@ -549,7 +565,7 @@
 
     /* Syllabus Section */
     .syllabus-container {
-      padding: 80px 20px;
+      padding: 60px 20px;
       background: linear-gradient(to right, #f7f7f7, #eaeaea);
       text-align: center;
       border-radius: 15px;
@@ -558,18 +574,18 @@
     }
 
     .syllabus-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: var(--dark-gray);
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       position: relative;
       display: inline-block;
     }
 
     .syllabus-content {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
       justify-content: center;
       max-width: 1000px;
       margin: 0 auto;
@@ -578,75 +594,47 @@
     .syllabus-item {
       display: flex;
       align-items: center;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 500;
       color: var(--dark-gray);
       background: var(--white);
-      padding: 20px 25px;
+      padding: 15px 20px;
       border-radius: 12px;
       box-shadow: var(--shadow);
       transition: var(--transition);
       width: 100%;
       border-left: 5px solid var(--primary-red);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .syllabus-item::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg,
-          transparent,
-          rgba(212, 4, 4, 0.1),
-          transparent);
-      transition: var(--transition);
     }
 
     .syllabus-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-      border-left: 5px solid var(--dark-red);
-    }
-
-    .syllabus-item:hover::before {
-      left: 100%;
+      transform: translateY(-5px);
     }
 
     .syllabus-item i {
       color: var(--primary-red);
-      font-size: 1.6rem;
-      margin-right: 15px;
-      width: 35px;
+      font-size: 1.3rem;
+      margin-right: 12px;
+      width: 30px;
       text-align: center;
-      transition: var(--transition);
       flex-shrink: 0;
-    }
-
-    .syllabus-item:hover i {
-      color: var(--dark-red);
-      transform: scale(1.2);
     }
 
     /* CTA Section */
     .cta-section {
       background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
-      padding: 60px 0;
+      padding: 50px 0;
       text-align: center;
       color: var(--white);
     }
 
     .cta-section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
     }
 
     .cta-section p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
+      font-size: 1rem;
+      margin-bottom: 25px;
     }
 
     .cta-button {
@@ -667,7 +655,7 @@
 
     /* FAQ Section */
     .faq-section {
-      padding: 80px 0;
+      padding: 60px 0;
       background-color: var(--light-gray);
     }
 
@@ -689,7 +677,7 @@
     }
 
     .faq-question {
-      padding: 20px 25px;
+      padding: 15px 20px;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -702,7 +690,7 @@
     }
 
     .faq-question h3 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--dark-gray);
       margin: 0;
@@ -710,24 +698,25 @@
 
     .faq-icon {
       color: var(--primary-red);
-      font-size: 1.2rem;
+      font-size: 1rem;
       transition: var(--transition);
       flex-shrink: 0;
       margin-left: 15px;
     }
 
     .faq-answer {
-      padding: 0 25px;
+      padding: 0 20px;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
+      transition: max-height 0.4s ease;
       background-color: var(--light-red);
     }
 
     .faq-answer p {
-      padding: 20px 0;
+      padding: 15px 0;
       color: var(--medium-gray);
       margin: 0;
+      font-size: 0.9rem;
     }
 
     .faq-item.active .faq-question {
@@ -739,29 +728,28 @@
     }
 
     .faq-item.active .faq-answer {
-      max-height: 500px;
-      padding: 0 25px;
+      max-height: 300px;
     }
 
     /* Footer */
     .tech-footer {
       background-color: var(--dark-gray);
       color: var(--white);
-      padding: 60px 0 20px;
+      padding: 50px 0 20px;
     }
 
     .footer-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
+      gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     .footer-column h3 {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
       color: var(--white);
       position: relative;
       padding-bottom: 10px;
@@ -778,13 +766,15 @@
     }
 
     .footer-column p {
-      margin-bottom: 20px;
-      color: #ccc;
+      margin-bottom: 15px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      font-size: 14px;
     }
 
     .social-links {
       display: flex;
-      gap: 15px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
@@ -792,12 +782,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.1);
+      width: 35px;
+      height: 35px;
+      background-color: rgba(255, 255, 255, 0.15);
       border-radius: 50%;
       color: var(--white);
       transition: var(--transition);
+      text-decoration: none;
+      font-size: 1.2rem;
     }
 
     .social-links a:hover {
@@ -811,24 +803,26 @@
     }
 
     .footer-links li {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .footer-links a {
-      color: #ccc;
+      color: rgba(255, 255, 255, 0.7);
       text-decoration: none;
       transition: var(--transition);
       display: flex;
       align-items: center;
       gap: 8px;
+      font-size: 14px;
     }
 
     .footer-links a:hover {
       color: var(--primary-red);
+      transform: translateX(5px);
     }
 
     .footer-links i {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: var(--primary-red);
       flex-shrink: 0;
     }
@@ -836,7 +830,7 @@
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 20px;
-      margin-top: 40px;
+      margin-top: 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -846,20 +840,23 @@
       margin-right: auto;
       padding-left: 20px;
       padding-right: 20px;
+      gap: 10px;
+      text-align: center;
     }
 
     .footer-bottom p {
-      color: #999;
+      color: rgba(255, 255, 255, 0.6);
       margin: 0;
+      font-size: 12px;
     }
 
     /* Back to Top Button */
     .back-to-top {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
       background-color: var(--primary-red);
       color: var(--white);
       border-radius: 50%;
@@ -882,7 +879,11 @@
       background-color: var(--dark-red);
     }
 
-    /* Responsive Styles */
+    /* ======================================== */
+    /* FULLY OPTIMIZED MOBILE RESPONSIVE STYLES */
+    /* ======================================== */
+
+    /* Tablet Devices (768px - 991px) */
     @media (max-width: 991px) {
       .container {
         padding: 0 15px;
@@ -893,20 +894,27 @@
       }
 
       .certification-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .course-header h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .syllabus-content {
         grid-template-columns: 1fr;
         max-width: 600px;
       }
+
+      .syllabus-title {
+        font-size: 1.6rem;
+      }
+
     }
 
+    /* Mobile Devices (576px - 767px) */
     @media (max-width: 767px) {
+      /* Top Bar */
       .top-bar {
         height: auto;
         padding: 10px 0;
@@ -915,14 +923,23 @@
       .top-bar-container {
         flex-direction: column;
         gap: 10px;
+        text-align: center;
       }
 
       .contact-info {
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 12px;
       }
 
+      .contact-info div {
+        font-size: 12px;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+
+      /* Navigation */
       .hamburger {
         display: block;
       }
@@ -935,9 +952,11 @@
         background-color: var(--white);
         width: 280px;
         height: 100vh;
-        transition: 0.4s ease;
+        transition: 0.3s ease;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
         padding: 80px 0 20px;
         gap: 0;
+        overflow-y: auto;
         z-index: 999;
       }
 
@@ -945,28 +964,66 @@
         left: 0;
       }
 
+      .nav-item {
+        width: 100%;
+        margin: 0;
+      }
+
+      .nav-link {
+        padding: 15px 25px;
+        justify-content: space-between;
+        font-size: 14px;
+      }
+
       .dropdown {
         position: static;
         opacity: 1;
         visibility: visible;
+        transform: none;
         display: none;
+        width: 100%;
+        box-shadow: none;
       }
 
       .dropdown.active {
         display: block;
       }
 
-      .banner {
-        padding: 60px 0;
-        min-height: 350px;
+      .dropdown-item {
+        padding: 12px 40px;
+        font-size: 13px;
       }
 
+      /* Banner */
+      .banner {
+        min-height: 320px;
+        padding: 50px 15px;
+      }
+
+      /* Overview Section */
       .overview-section {
         padding: 40px 0;
       }
 
       .section-title h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+      }
+
+      .section-title p {
+        font-size: 0.95rem;
+      }
+
+      .highlight-box {
+        padding: 20px;
+      }
+
+      .highlight-box p {
+        font-size: 0.95rem;
+      }
+
+      /* Course Stats */
+      .course-overview {
+        padding: 30px 0 40px;
       }
 
       .course-stats {
@@ -979,93 +1036,288 @@
       }
 
       .stat-value {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
 
+      .stat-label {
+        font-size: 0.8rem;
+      }
+
+      /* Certification Section */
       .certification-section {
         padding: 40px 0;
       }
 
       .certification-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        margin-bottom: 25px;
       }
 
       .certification-content {
-        gap: 20px;
+        gap: 15px;
       }
 
+      .certification-info-box {
+        padding: 15px;
+      }
+
+      .certification-icon {
+        font-size: 32px;
+      }
+
+      .certification-subtitle {
+        font-size: 1rem;
+      }
+
+      .certification-number {
+        font-size: 1.3rem;
+      }
+
+      /* Course Details */
       .course-details-section {
         margin: 30px auto;
         padding: 20px;
       }
 
       .course-header h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
 
-      .syllabus-container {
-        padding: 40px 15px;
-      }
-
-      .syllabus-title {
-        font-size: 1.5rem;
-      }
-
-      .syllabus-item {
-        padding: 15px 18px;
+      .course-subtitle {
         font-size: 0.95rem;
       }
 
-      .syllabus-item i {
-        font-size: 1.3rem;
-        margin-right: 12px;
-        width: 28px;
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.2rem;
       }
 
+      .course-description p {
+        font-size: 0.95rem;
+      }
+
+      .course-goals li,
+      .future-scope li {
+        font-size: 0.95rem;
+        padding: 8px 0;
+        gap: 8px;
+      }
+
+      /* Syllabus */
+      .syllabus-container {
+        padding: 40px 15px;
+        margin-bottom: 30px;
+      }
+
+      .syllabus-title {
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+      }
+
+      .syllabus-content {
+        gap: 12px;
+      }
+
+      .syllabus-item {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+      }
+
+      .syllabus-item i {
+        font-size: 1.1rem;
+        margin-right: 10px;
+        width: 25px;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 40px 0;
+      }
+
+      .cta-section h2 {
+        font-size: 1.4rem;
+      }
+
+      .cta-section p {
+        font-size: 0.9rem;
+        padding: 0 15px;
+      }
+
+      .cta-button {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+      }
+
+      /* FAQ */
       .faq-section {
         padding: 40px 0;
       }
 
       .faq-question {
-        padding: 15px 18px;
+        padding: 12px 15px;
       }
 
       .faq-question h3 {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+      }
+
+      .faq-answer p {
+        font-size: 0.85rem;
+        padding: 12px 0;
+      }
+
+      /* Footer */
+      .tech-footer {
+        padding: 40px 0 15px;
+      }
+
+      .footer-content {
+        gap: 25px;
+      }
+
+      .footer-column h3 {
+        font-size: 1.1rem;
+      }
+
+      .footer-column p,
+      .footer-links a {
+        font-size: 13px;
       }
 
       .footer-bottom {
         flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        gap: 8px;
       }
 
+      .footer-bottom p {
+        font-size: 11px;
+      }
+
+      /* Back to Top */
       .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
+        bottom: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
       }
     }
-
+@media (max-width: 480px) {
+  .banner {
+    height: 250px;   /* Exact Height */
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+  }
+}
+    /* Small Mobile Devices (480px and below) */
     @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
+      }
+        .section-title h1 {
+        font-size: 1.3rem;
+      }
+
       .course-stats {
         grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .stat {
+        padding: 12px 8px;
+      }
+
+      .stat-value {
+        font-size: 1.3rem;
+      }
+
+      .certification-title {
+        font-size: 1.2rem;
       }
 
       .certification-content {
         grid-template-columns: 1fr;
       }
 
+      .course-header h2 {
+        font-size: 1.2rem;
+      }
+
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.1rem;
+      }
+
+      .syllabus-title {
+        font-size: 1.2rem;
+      }
+
       .syllabus-item {
-        padding: 12px 15px;
+        padding: 10px 12px;
         font-size: 0.85rem;
       }
 
       .syllabus-item i {
-        font-size: 1.1rem;
-        margin-right: 10px;
-        width: 24px;
+        font-size: 1rem;
+        margin-right: 8px;
+        width: 22px;
+      }
+
+      .faq-question {
+        padding: 10px 12px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.85rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    /* Landscape Mode for Mobile */
+    @media (max-width: 767px) and (orientation: landscape) {
+      .nav-menu {
+        overflow-y: auto;
+        padding: 60px 0 20px;
+      }
+
+      .banner {
+        min-height: 220px;
+        padding: 30px 15px;
+      }
+      .course-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .syllabus-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Touch Device Optimizations */
+    @media (hover: none) and (pointer: coarse) {
+      .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+      }
+
+      .nav-item .dropdown.active {
+        display: block;
+      }
+
+      .stat:hover,
+      .certification-info-box:hover,
+      .syllabus-item:hover {
+        transform: none;
       }
     }
   </style>
@@ -1073,36 +1325,42 @@
 
 <body>
 
-   <!-- Navigation -->
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i> Virudhunagar, Tamil Nadu</div>
+        <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
+        <div><i class="fas fa-phone"></i> +91 97518 67879</div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo" itemprop="logo">
-        <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png"
-            alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120"
-            height="60" />
-        </div>
+      <div class="logo">
+        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
       </div>
 
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link" aria-current="page">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
-            <a href="classic.html" class="dropdown-item active">Classic</a>
+            <a href="classic.html" class="dropdown-item">Classic</a>
             <a href="professional.html" class="dropdown-item">Professional</a>
             <a href="expert.html" class="dropdown-item">Expert</a>
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-        </li>
+        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -1111,30 +1369,25 @@
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="techblog.html" class="nav-link">Techblog</a>
-        </li>
-        <li class="nav-item">
-          <a href="scholarship.html" class="nav-link">Scholarship</a>
-        </li>
-        <li class="nav-item">
-          <a href="career.html" class="nav-link"> Careers</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+        <li class="nav-item"><a href="career.html" class="nav-link">Careers</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
-      <div class="hamburger" aria-label="Toggle menu">
+      <div class="hamburger">
         <i class="fas fa-bars"></i>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section with Optimized H1 -->
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Hero Section -->
   <section class="banner">
     <div class="banner-content">
-    </div>
+     </div>
   </section>
 
   <!-- Overview Section -->
@@ -1156,7 +1409,7 @@
           </div>
           <div class="rating">
             <span class="rating-badge">BEST INSTITUTE</span>
-            <span>4.9 Ratings</span>
+            <span>4.9 Ratings ★★★★★</span>
           </div>
         </div>
       </div>
@@ -1167,22 +1420,10 @@
   <section class="course-overview">
     <div class="container">
       <div class="course-stats">
-        <div class="stat">
-          <div class="stat-value">2025</div>
-          <div class="stat-label">Latest Curriculum</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">40+</div>
-          <div class="stat-label">Duration (Hours)</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">15</div>
-          <div class="stat-label">Theory (Hours)</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">25+</div>
-          <div class="stat-label">Practical (Hours)</div>
-        </div>
+        <div class="stat"><div class="stat-value">2026</div><div class="stat-label">Latest Curriculum</div></div>
+        <div class="stat"><div class="stat-value">40+</div><div class="stat-label">Duration (Hours)</div></div>
+        <div class="stat"><div class="stat-value">15</div><div class="stat-label">Theory (Hours)</div></div>
+        <div class="stat"><div class="stat-value">25+</div><div class="stat-label">Practical (Hours)</div></div>
       </div>
     </div>
   </section>
@@ -1192,26 +1433,14 @@
     <div class="container">
       <h2 class="certification-title">Why Choose Frontend Certification Training?</h2>
       <div class="certification-content">
-        <div class="certification-info-box"><i class="fas fa-wallet certification-icon"></i>
-          <h4 class="certification-subtitle">Annual Earnings</h4>
-          <p class="certification-description">Estimated Salary</p>
-          <h3 class="certification-number">₹ 5 LPA+</h3>
-        </div>
-        <div class="certification-info-box"><i class="fas fa-chart-line certification-icon"></i>
-          <h4 class="certification-subtitle">Career Growth</h4>
-          <p class="certification-description">Industry Growth Rate</p>
-          <h3 class="certification-number">22% Yearly</h3>
-        </div>
-        <div class="certification-info-box"><i class="fas fa-briefcase certification-icon"></i>
-          <h4 class="certification-subtitle">Job Demand</h4>
-          <p class="certification-description">Projected by 2026</p>
-          <h3 class="certification-number">4 Lakh+ Jobs</h3>
-        </div>
+        <div class="certification-info-box"><i class="fas fa-wallet certification-icon"></i><h4 class="certification-subtitle">Annual Earnings</h4><p class="certification-description">Estimated Salary</p><h3 class="certification-number">₹ 5 LPA+</h3></div>
+        <div class="certification-info-box"><i class="fas fa-chart-line certification-icon"></i><h4 class="certification-subtitle">Career Growth</h4><p class="certification-description">Industry Growth Rate</p><h3 class="certification-number">22% Yearly</h3></div>
+        <div class="certification-info-box"><i class="fas fa-briefcase certification-icon"></i><h4 class="certification-subtitle">Job Demand</h4><p class="certification-description">Projected by 2026</p><h3 class="certification-number">4 Lakh+ Jobs</h3></div>
       </div>
     </div>
   </section>
 
-  <!-- Course Details Section with Optimized Content -->
+  <!-- Course Details Section -->
   <section class="course-details-section">
     <div class="container">
       <div class="course-header">
@@ -1259,20 +1488,25 @@
       <h2 class="syllabus-title">Frontend Course Syllabus</h2>
       <div class="syllabus-content">
         <div class="syllabus-item"><i class="fas fa-play-circle"></i> Introduction to Web Development & HTML5</div>
-        <div class="syllabus-item"><i class="fas fa-paint-brush"></i> Styling with CSS3 & Responsive Design
-          (Flexbox/Grid)</div>
+        <div class="syllabus-item"><i class="fas fa-paint-brush"></i> Styling with CSS3 & Responsive Design (Flexbox/Grid)</div>
         <div class="syllabus-item"><i class="fas fa-code"></i> JavaScript Fundamentals & ES6+ Concepts</div>
         <div class="syllabus-item"><i class="fas fa-cogs"></i> DOM Manipulation & Event Handling</div>
         <div class="syllabus-item"><i class="fas fa-th"></i> CSS Flexbox, Grid, and Advanced Layouts</div>
         <div class="syllabus-item"><i class="fas fa-cube"></i> Bootstrap Framework for Fast Designing</div>
-        <div class="syllabus-item"><i class="fas fa-bootstrap"></i> Introduction to React: Components, Props & State
-        </div>
+        <div class="syllabus-item"><i class="fas fa-bootstrap"></i> Introduction to React: Components, Props & State</div>
         <div class="syllabus-item"><i class="fas fa-react"></i> Fetching APIs & Working with JSON</div>
-        <div class="syllabus-item"><i class="fas fa-database"></i> Capstone Projects: Personal Portfolio, Blog Website
-        </div>
-        <div class="syllabus-item"><i class="fas fa-project-diagram"></i> Hosting Websites on GitHub Pages & Netlify +
-          Git</div>
+        <div class="syllabus-item"><i class="fas fa-database"></i> Capstone Projects: Personal Portfolio, Blog Website</div>
+        <div class="syllabus-item"><i class="fas fa-project-diagram"></i> Hosting Websites on GitHub Pages & Netlify + Git</div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2>Start Your Frontend Development Career Today</h2>
+      <p>Get Certified & Get Placed | Limited Seats Available</p>
+      <a href="contact.html" class="cta-button">Enroll Now <i class="fas fa-arrow-right"></i></a>
     </div>
   </section>
 
@@ -1283,63 +1517,12 @@
         <h2>Frequently Asked Questions</h2>
       </div>
       <div class="faq-content">
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>What is the duration of the Frontend Development course?</h3><span class="faq-icon"><i
-                class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>The course duration is 40+ hours, with hands-on project building included.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Do I need prior programming experience to learn Frontend Development?</h3><span class="faq-icon"><i
-                class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>No, this course is designed for beginners and also for those looking to master Frontend Development.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Will I receive a certificate after completing the Frontend Development course?</h3><span
-              class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>Yes, upon successful completion of the course and final project, you will receive a certificate from
-              Rohil NextGen.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Will we learn React.js in this course?</h3><span class="faq-icon"><i
-                class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>Yes, we will cover basic React concepts like components, props, and state management to help you build
-              modern applications.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>What kind of projects will I build?</h3><span class="faq-icon"><i
-                class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>You will build projects like personal portfolio websites, interactive blogs, simple e-commerce templates,
-              and responsive landing pages.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Is job assistance provided?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>Yes! We provide comprehensive job placement assistance including portfolio building, interview
-              preparation, and connecting you with hiring partners.</p>
-          </div>
-        </div>
+        <div class="faq-item"><div class="faq-question"><h3>What is the duration of the Frontend Development course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>The course duration is 40+ hours, with hands-on project building included.</p></div></div>
+        <div class="faq-item"><div class="faq-question"><h3>Do I need prior programming experience to learn Frontend Development?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>No, this course is designed for beginners and also for those looking to master Frontend Development.</p></div></div>
+        <div class="faq-item"><div class="faq-question"><h3>Will I receive a certificate after completing the Frontend Development course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>Yes, upon successful completion of the course and final project, you will receive a certificate from Rohil NextGen.</p></div></div>
+        <div class="faq-item"><div class="faq-question"><h3>Will we learn React.js in this course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>Yes, we will cover basic React concepts like components, props, and state management to help you build modern applications.</p></div></div>
+        <div class="faq-item"><div class="faq-question"><h3>What kind of projects will I build?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>You will build projects like personal portfolio websites, interactive blogs, simple e-commerce templates, and responsive landing pages.</p></div></div>
+        <div class="faq-item"><div class="faq-question"><h3>Is job assistance provided?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>Yes! We provide comprehensive job placement assistance including portfolio building, interview preparation, and connecting you with hiring partners.</p></div></div>
       </div>
     </div>
   </section>
@@ -1349,15 +1532,11 @@
     <div class="footer-content">
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
-        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
-          development, data science, cybersecurity, and IT training with placement support. Get the best software
-          training in Virudhunagar with industry experts.</p>
+        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.</p>
         <div class="social-links">
-          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
-              class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
-              class="fab fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
       <div class="footer-column">
@@ -1376,19 +1555,14 @@
         <ul class="footer-links">
           <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
           <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
-              admin@rohiltechnologies.com</a></li>
+          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
           <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="copyright">
-        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
-      </div>
-      <div class="footer-bottom-links">
-        <p>Designed By Rohil Technologies</p>
-      </div>
+      <div class="copyright"><p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p></div>
+      <div class="footer-bottom-links"><p>Designed By Rohil Technologies</p></div>
     </div>
   </footer>
 
@@ -1401,33 +1575,38 @@
     // Mobile Menu Toggle
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
 
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-    });
+    if (hamburger) {
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        if (mobileOverlay) mobileOverlay.classList.toggle("active");
+        document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "";
+      });
+    }
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll(".nav-link").forEach((n) =>
-      n.addEventListener("click", (e) => {
-        if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
-          navMenu.classList.remove("active");
-        }
-      })
-    );
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    }
 
     // Mobile Dropdown Functionality
     document.querySelectorAll(".nav-item").forEach((item) => {
       const dropdown = item.querySelector(".dropdown");
       const navLink = item.querySelector(".nav-link");
 
-      if (dropdown) {
+      if (dropdown && navLink) {
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
             document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
               if (otherDropdown !== dropdown) {
                 otherDropdown.classList.remove("active");
-                otherDropdown.previousElementSibling.classList.remove("active");
+                const otherNavLink = otherDropdown.previousElementSibling;
+                if (otherNavLink) otherNavLink.classList.remove("active");
               }
             });
             dropdown.classList.toggle("active");
@@ -1437,15 +1616,39 @@
       }
     });
 
-    // Close dropdowns when clicking outside
-    document.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        if (!e.target.closest(".nav-item") && !e.target.closest(".hamburger")) {
-          document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-            dropdown.classList.remove("active");
-            dropdown.previousElementSibling.classList.remove("active");
-          });
-        }
+    // Close menu when clicking on non-dropdown links
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      if (!link.querySelector(".fa-chevron-down")) {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            navMenu.classList.remove("active");
+            if (mobileOverlay) mobileOverlay.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        });
+      }
+    });
+
+    // Close menu on resize if window becomes larger
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navMenu.classList.remove("active");
+        if (mobileOverlay) mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+          dropdown.classList.remove("active");
+          const navLink = dropdown.previousElementSibling;
+          if (navLink) navLink.classList.remove("active");
+        });
+      }
+    });
+
+    // Close menu with Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu.classList.contains("active")) {
+        navMenu.classList.remove("active");
+        if (mobileOverlay) mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
       }
     });
 
@@ -1460,23 +1663,11 @@
       }
     });
 
-    backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
+    if (backToTopButton) {
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
-    });
-
-    // Close mobile menu on resize if window becomes larger
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        navMenu.classList.remove("active");
-        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-          dropdown.classList.remove("active");
-          dropdown.previousElementSibling.classList.remove("active");
-        });
-      }
-    });
+    }
 
     // FAQ Accordion Functionality
     document.addEventListener("DOMContentLoaded", function () {
@@ -1484,15 +1675,16 @@
 
       faqItems.forEach((item) => {
         const question = item.querySelector(".faq-question");
-
-        question.addEventListener("click", () => {
-          faqItems.forEach((otherItem) => {
-            if (otherItem !== item) {
-              otherItem.classList.remove("active");
-            }
+        if (question) {
+          question.addEventListener("click", () => {
+            faqItems.forEach((otherItem) => {
+              if (otherItem !== item) {
+                otherItem.classList.remove("active");
+              }
+            });
+            item.classList.toggle("active");
           });
-          item.classList.toggle("active");
-        });
+        }
       });
     });
   </script>

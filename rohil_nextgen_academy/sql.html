@@ -1151,7 +1151,14 @@
         grid-template-columns: 1fr;
       }
     }
-
+@media (max-width: 480px) {
+  .banner {
+    height: 250px;   /* Exact Height */
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+  }
+}
     @media (max-width: 767px) and (orientation: landscape) {
       .nav-menu {
         overflow-y: auto;

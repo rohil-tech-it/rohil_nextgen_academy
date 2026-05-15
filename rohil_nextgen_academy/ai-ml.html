@@ -282,7 +282,7 @@
 
     /* Banner Section */
     .banner {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/art-int.jpg');
+      background-image:  url('./images/AII.avif');
       background-size: cover;
       background-position: center;
       color: var(--white);
@@ -299,7 +299,14 @@
       position: relative;
       z-index: 1;
     }
-
+@media (max-width: 480px) {
+  .banner {
+    height: 250px;   /* Exact Height */
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+  }
+}
     /* Overview Section */
     .overview-section {
       padding: 60px 0;
