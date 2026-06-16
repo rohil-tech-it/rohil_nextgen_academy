@@ -3,13 +3,126 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohil NextGen - Machine Learning Course</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <!-- SEO Optimized Title -->
+  <title>Machine Learning Course | AI & ML Training Institute | Rohil NextGen</title>
+  <!-- SEO Optimized Meta Description -->
+  <meta name="description"
+    content="Master Machine Learning, Artificial Intelligence, Python, Data Science, Predictive Analytics, and real-time projects with expert training at Rohil NextGen Institute." />
+  <meta name="keywords"
+    content="Machine Learning Course, Machine Learning Training, AI & ML Course, Machine Learning Certification, Machine Learning Course in Virudhunagar, Artificial Intelligence Course, Machine Learning Institute, AI Training Institute, Best Machine Learning course for beginners, Learn Machine Learning with Python, Machine Learning course with projects, AI and Machine Learning training in Tamil Nadu, Machine Learning certification course with placement" />
+  <meta name="author" content="Rohil NextGen" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.rohilnextgen.com/ml.html" />
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
+
+  <!-- Course Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Machine Learning Course - AI & Data Science Training",
+    "description": "Master Machine Learning, Artificial Intelligence, Python, Data Science, Predictive Analytics, and real-time projects with expert training at Rohil NextGen Institute.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rohil NextGen",
+      "sameAs": "https://www.rohilnextgen.com"
+    },
+    "courseCode": "ML-001",
+    "educationalCredentialAwarded": "Machine Learning Certification",
+    "teaches": ["Python Programming", "Machine Learning Algorithms", "Supervised Learning", "Unsupervised Learning", "Deep Learning", "Neural Networks", "Data Science", "Predictive Analytics"],
+    "occupationalCredentialAwarded": "Machine Learning Engineer, AI Engineer, Data Scientist, AI Developer",
+    "timeRequired": "PT160H",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "In-Person",
+      "location": {
+        "@type": "Place",
+        "name": "Rohil NextGen, Virudhunagar, Tamil Nadu"
+      },
+      "startDate": "2026-06-01"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema Markup for Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Machine Learning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Machine Learning is a subset of artificial intelligence that enables computers to learn and make decisions from data without being explicitly programmed. It focuses on developing algorithms that can identify patterns and make predictions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need strong math background for Machine Learning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While a math background is helpful, our course covers all necessary mathematical concepts from basics. We teach linear algebra, calculus, and statistics as part of the curriculum, making it accessible to beginners."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What kind of projects will I work on during the course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You'll work on real-world projects including data analysis, predictive modeling, image classification, customer segmentation, and a capstone project that integrates all the skills you've learned."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What career opportunities are available after Machine Learning course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can become a Machine Learning Engineer, AI Engineer, Data Scientist, AI Developer, Research Analyst, or Data Analyst in top IT companies and startups."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is placement support provided?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We provide comprehensive placement support including resume building, interview preparation, and connections with our hiring partners."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Organization Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Rohil NextGen",
+    "url": "https://www.rohilnextgen.com",
+    "logo": "https://www.rohilnextgen.com/images/rohil_nextgen-removebg-preview.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Virudhunagar",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9751867879",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Tamil"]
+    }
+  }
+  </script>
+
   <style>
     :root {
       --primary-red: #d40404;
@@ -21,6 +134,9 @@
       --medium-gray: #666666;
       --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       --transition: all 0.3s ease;
+      --text-black: #333;
+      --text-grey: #666;
+      --light-grey: #f5f5f5;
     }
 
     * {
@@ -30,10 +146,11 @@
     }
 
     body {
-      font-family: Georgia;
+      font-family: 'Georgia';
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
+      overflow-x: hidden;
     }
 
     .container {
@@ -48,8 +165,10 @@
       background-color: var(--primary-red);
       color: var(--white);
       padding: 15px 0;
-      font-size: 15px;
-      height: 60px;
+      font-size: 14px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
     }
 
     .top-bar-container {
@@ -59,11 +178,15 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .contact-info {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .contact-info div {
@@ -74,21 +197,29 @@
 
     .social-icons {
       display: flex;
-      gap: 18px;
+      gap: 15px;
     }
 
     .social-icons a {
       color: var(--white);
-      font-size: 25px;
-      transition: opacity 0.3s;
+      font-size: 18px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .social-icons a:hover {
-      color: var(--text-grey);
-      transform: translateY(-3px) scale(1.1);
+      background: var(--white);
+      color: var(--primary-red);
+      transform: translateY(-2px);
     }
 
-    /* Navigation Styles - IMPROVED RESPONSIVE */
+    /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -132,33 +263,15 @@
       color: var(--text-black);
       font-weight: 500;
       font-size: 16px;
-      transition: color 0.3s;
+      transition: var(--transition);
       padding: 10px 0;
       display: flex;
       align-items: center;
       gap: 5px;
-      position: relative;
     }
 
     .nav-link:hover {
       color: var(--primary-red);
-    }
-
-    /* Active state styles */
-    .nav-link.active {
-      color: var(--primary-red);
-      font-weight: 600;
-    }
-
-    .nav-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: var(--primary-red);
-      border-radius: 2px;
     }
 
     .dropdown {
@@ -196,14 +309,6 @@
       padding-left: 25px;
     }
 
-    /* Active state for dropdown items */
-    .dropdown-item.active {
-      background-color: var(--light-grey);
-      color: var(--primary-red);
-      font-weight: 500;
-      border-left: 3px solid var(--primary-red);
-    }
-
     .hamburger {
       display: none;
       cursor: pointer;
@@ -214,7 +319,6 @@
       z-index: 1001;
     }
 
-    /* Mobile Overlay */
     .mobile-overlay {
       display: none;
       position: fixed;
@@ -234,60 +338,44 @@
       visibility: visible;
     }
 
-    /* Enhanced Banner Section */
+    /* Banner Section - Fully Responsive */
     .banner {
-      background-image: url("./images/ml.png");
+      background-image: url(./images/ml.png);
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       color: var(--white);
-      padding: 120px 0;
       text-align: center;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 500px;
+      min-height: 550px;
+      padding: 80px 20px;
     }
 
     .banner-content {
       max-width: 800px;
       margin: 0 auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 1;
+      padding: 0 15px;
+      width: 100%;
     }
-
-    .banner-title {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .banner-subtitle {
-      font-size: 1.5rem;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background-color: var(--primary-red);
-      color: white;
-      padding: 15px 30px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: var(--transition);
-      margin-top: 20px;
-    }
-
-    .cta-button:hover {
-      background-color: var(--dark-red);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
+    /* Banner Responsive */
+    @media (max-width: 991px) {
+      .banner { min-height: 380px; padding: 60px 20px; }
+        }
+    @media (max-width: 767px) {
+      .banner { min-height: 320px; padding: 50px 15px; background-position: 70% center; }
+          }
+    @media (max-width: 480px) {
+      .banner { min-height: 260px; padding: 40px 12px; background-position: 65% center; }
+          }
+    @media (max-width: 380px) {
+      .banner { min-height: 230px; padding: 30px 10px; background-position: 60% center; }
+         }
+    @media (max-width: 767px) and (orientation: landscape) {
+      .banner { min-height: 220px; padding: 30px 15px; }
+          }
 
     /* Overview Section */
     .overview-section {
@@ -330,8 +418,10 @@
     .rating {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 15px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .rating-badge {
@@ -339,11 +429,49 @@
       color: var(--white);
       padding: 8px 15px;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: bold;
     }
 
-    /* Enhanced Course Overview Section */
+    /* Course Highlights Section */
+    .highlights-section {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .highlight-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-bottom: 3px solid var(--primary-red);
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .highlight-card i {
+      font-size: 2rem;
+      color: var(--primary-red);
+      margin-bottom: 15px;
+    }
+
+    .highlight-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: var(--dark-gray);
+    }
+
+    /* Course Stats */
     .course-overview {
       padding: 40px 0 60px;
     }
@@ -362,37 +490,34 @@
       border-radius: 8px;
       box-shadow: var(--shadow);
       transition: var(--transition);
-      position: relative;
-      overflow: hidden;
     }
 
     .stat:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
     .stat-value {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
       color: var(--primary-red);
       margin-bottom: 10px;
     }
 
     .stat-label {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--dark-gray);
       font-weight: 500;
     }
 
-    /* Enhanced Certification Section */
+    /* Certification Section */
     .certification-section {
-      background-color: #f8f9fa;
+      background-color: #fff;
       padding: 60px 0;
       text-align: center;
     }
 
     .certification-title {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--dark-gray);
       margin-bottom: 40px;
@@ -406,50 +531,39 @@
       margin: 0 auto;
     }
 
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
-    }
-
     .certification-info-box {
-      background-color: var(--white);
+      background-color: var(--light-gray);
       border-radius: 12px;
       box-shadow: var(--shadow);
-      padding: 30px 20px;
+      padding: 25px 15px;
       transition: var(--transition);
-      position: relative;
-      overflow: hidden;
     }
 
     .certification-info-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
     }
 
     .certification-icon {
-      font-size: 48px;
+      font-size: 40px;
       color: var(--primary-red);
-      margin-bottom: 20px;
-    }
-
-    .certification-subtitle {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--dark-gray);
-      margin-bottom: 10px;
-    }
-
-    .certification-description {
-      font-size: 1rem;
-      color: var(--medium-gray);
       margin-bottom: 15px;
     }
 
+    .certification-subtitle {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark-gray);
+      margin-bottom: 8px;
+    }
+
+    .certification-description {
+      font-size: 0.9rem;
+      color: var(--medium-gray);
+      margin-bottom: 10px;
+    }
+
     .certification-number {
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: var(--dark-gray);
     }
@@ -468,13 +582,13 @@
     }
 
     .course-header h2 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: var(--dark-gray);
       margin-bottom: 15px;
     }
 
     .course-subtitle {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--medium-gray);
       font-style: italic;
     }
@@ -482,33 +596,19 @@
     .course-description,
     .course-goals,
     .future-scope {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .course-description h3,
     .course-goals h3,
     .future-scope h3 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: var(--primary-red);
       margin-bottom: 15px;
-      position: relative;
-      padding-bottom: 10px;
-    }
-
-    .course-description h3::after,
-    .course-goals h3::after,
-    .future-scope h3::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: var(--primary-red);
     }
 
     .course-description p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.7;
       color: var(--medium-gray);
     }
@@ -522,7 +622,7 @@
     .course-goals li,
     .future-scope li {
       padding: 10px 0;
-      font-size: 1.1rem;
+      font-size: 1rem;
       display: flex;
       align-items: flex-start;
       gap: 10px;
@@ -532,11 +632,47 @@
     .future-scope i {
       color: var(--primary-red);
       margin-top: 5px;
+      flex-shrink: 0;
     }
 
-    /* Enhanced Syllabus Section */
+    /* Technologies Section */
+    .tech-section {
+      padding: 60px 0;
+      background-color: var(--white);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    .tech-card {
+      background: var(--light-gray);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .tech-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tech-card i {
+      font-size: 2rem;
+      color: var(--primary-red);
+      margin-bottom: 10px;
+    }
+
+    .tech-card h4 {
+      font-size: 1rem;
+      color: var(--dark-gray);
+    }
+
+    /* Syllabus Section */
     .syllabus-container {
-      padding: 80px 20px;
+      padding: 60px 20px;
       background: linear-gradient(to right, #f7f7f7, #eaeaea);
       text-align: center;
       border-radius: 15px;
@@ -545,129 +681,54 @@
     }
 
     .syllabus-title {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
+      font-weight: 700;
       color: var(--dark-gray);
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       position: relative;
       display: inline-block;
     }
 
-    .syllabus-title::after {
-      content: "";
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background-color: var(--primary-red);
-    }
-
     .syllabus-content {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
       justify-content: center;
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    .week-container {
+    .syllabus-item {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--dark-gray);
       background: var(--white);
+      padding: 15px 20px;
       border-radius: 12px;
       box-shadow: var(--shadow);
-      overflow: hidden;
-      margin-bottom: 25px;
       transition: var(--transition);
+      width: 100%;
+      border-left: 5px solid var(--primary-red);
     }
 
-    .week-container:hover {
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    .syllabus-item:hover {
+      transform: translateY(-5px);
     }
 
-    .week-header {
-      background-color: var(--primary-red);
-      color: var(--white);
-      padding: 20px 25px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: var(--transition);
-    }
-
-    .week-header:hover {
-      background-color: var(--dark-red);
-    }
-
-    .week-header h3 {
+    .syllabus-item i {
+      color: var(--primary-red);
       font-size: 1.3rem;
-      font-weight: 600;
-      margin: 0;
+      margin-right: 12px;
+      width: 30px;
+      text-align: center;
+      flex-shrink: 0;
     }
 
-    .week-icon {
-      color: var(--white);
-      font-size: 1.2rem;
-      transition: var(--transition);
-    }
-
-    .week-content {
-      padding: 0 25px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-    }
-
-    .week-container.active .week-content {
-      max-height: 1000px;
-      padding: 25px;
-    }
-
-    .week-container.active .week-icon {
-      transform: rotate(180deg);
-    }
-
-    .week-theory,
-    .week-practical {
-      margin-bottom: 25px;
-    }
-
-    .week-theory h4,
-    .week-practical h4 {
-      color: var(--primary-red);
-      margin-bottom: 15px;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .week-theory ul,
-    .week-practical ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .week-theory li,
-    .week-practical li {
-      padding: 8px 0;
-      font-size: 1rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .week-theory i,
-    .week-practical i {
-      color: var(--primary-red);
-      margin-top: 5px;
-      font-size: 0.9rem;
-    }
-
-    /* Enhanced FAQ Section */
+        /* FAQ Section */
     .faq-section {
-      padding: 80px 0;
+      padding: 60px 0;
       background-color: var(--light-gray);
     }
 
@@ -689,7 +750,7 @@
     }
 
     .faq-question {
-      padding: 20px 25px;
+      padding: 15px 20px;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -702,7 +763,7 @@
     }
 
     .faq-question h3 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--dark-gray);
       margin: 0;
@@ -710,22 +771,25 @@
 
     .faq-icon {
       color: var(--primary-red);
-      font-size: 1.2rem;
+      font-size: 1rem;
       transition: var(--transition);
+      flex-shrink: 0;
+      margin-left: 15px;
     }
 
     .faq-answer {
-      padding: 0 25px;
+      padding: 0 20px;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
+      transition: max-height 0.4s ease;
       background-color: var(--light-red);
     }
 
     .faq-answer p {
-      padding: 20px 0;
+      padding: 15px 0;
       color: var(--medium-gray);
       margin: 0;
+      font-size: 0.9rem;
     }
 
     .faq-item.active .faq-question {
@@ -737,29 +801,28 @@
     }
 
     .faq-item.active .faq-answer {
-      max-height: 500px;
-      padding: 0 25px;
+      max-height: 300px;
     }
 
-    /* Enhanced Footer */
+    /* Footer */
     .tech-footer {
       background-color: #656566;
       color: var(--white);
-      padding: 60px 0 20px;
+      padding: 50px 0 20px;
     }
 
     .footer-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
+      gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     .footer-column h3 {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
       color: var(--white);
       position: relative;
       padding-bottom: 10px;
@@ -776,25 +839,30 @@
     }
 
     .footer-column p {
-      margin-bottom: 20px;
-      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 15px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      font-size: 14px;
     }
 
     .social-links {
       display: flex;
-      gap: 15px;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .social-links a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.2);
+      width: 35px;
+      height: 35px;
+      background-color: rgba(255, 255, 255, 0.15);
       border-radius: 50%;
       color: var(--white);
       transition: var(--transition);
+      text-decoration: none;
+      font-size: 1.2rem;
     }
 
     .social-links a:hover {
@@ -808,16 +876,17 @@
     }
 
     .footer-links li {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.7);
       text-decoration: none;
       transition: var(--transition);
       display: flex;
       align-items: center;
       gap: 8px;
+      font-size: 14px;
     }
 
     .footer-links a:hover {
@@ -826,14 +895,15 @@
     }
 
     .footer-links i {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: var(--primary-red);
+      flex-shrink: 0;
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 20px;
-      margin-top: 40px;
+      margin-top: 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -843,20 +913,23 @@
       margin-right: auto;
       padding-left: 20px;
       padding-right: 20px;
+      gap: 10px;
+      text-align: center;
     }
 
     .footer-bottom p {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.6);
       margin: 0;
+      font-size: 12px;
     }
 
     /* Back to Top Button */
     .back-to-top {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
       background-color: var(--primary-red);
       color: var(--white);
       border-radius: 50%;
@@ -870,7 +943,7 @@
       z-index: 999;
     }
 
-    .back-to-top.active {
+    .back-to-top.show {
       opacity: 1;
       visibility: visible;
     }
@@ -880,205 +953,131 @@
     }
 
     /* Responsive Styles */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
+    @media (max-width: 991px) {
+      .container { padding: 0 15px; }
+      .section-title h1 { font-size: 2rem; }
+      .certification-title { font-size: 1.6rem; }
+      .course-header h2 { font-size: 1.6rem; }
+      .syllabus-content { grid-template-columns: 1fr; max-width: 600px; }
+    }
 
-      .mobile-overlay {
-        display: block;
-      }
-
+    @media (max-width: 767px) {
+      .top-bar { height: auto; padding: 10px 0; }
+      .top-bar-container { flex-direction: column; gap: 10px; text-align: center; }
+      .contact-info { justify-content: center; gap: 12px; }
+      .contact-info div { font-size: 12px; }
+      .social-icons { justify-content: center; }
+      .hamburger { display: block; }
       .nav-menu {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        flex-direction: column;
-        background-color: var(--white);
-        width: 280px;
-        height: 100vh;
-        transition: 0.4s ease;
+        position: fixed; top: 0; left: -100%;
+        flex-direction: column; background-color: var(--white);
+        width: 280px; height: 100vh; transition: 0.3s ease;
         box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
-        padding: 80px 0 20px;
-        gap: 0;
-        overflow-y: auto;
-        z-index: 999;
+        padding: 80px 0 20px; gap: 0; overflow-y: auto; z-index: 999;
       }
-
-      .nav-menu.active {
-        left: 0;
-      }
-
-      .nav-item {
-        margin: 0;
-        width: 100%;
-      }
-
-      .nav-link {
-        padding: 15px 25px;
-        width: 100%;
-        justify-content: space-between;
-        border-bottom: 1px solid #eee;
-        font-size: 16px;
-      }
-
-      .dropdown {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        display: none;
-        background-color: var(--light-grey);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        width: 100%;
-      }
-
-      .dropdown.active {
-        display: block;
-        max-height: 300px;
-      }
-
-      .dropdown-item {
-        padding: 12px 40px;
-        border-bottom: 1px solid #ddd;
-        font-size: 14px;
-      }
-
-      .nav-link i.fa-chevron-down {
-        transition: transform 0.3s ease;
-      }
-
-      .nav-link.active i.fa-chevron-down {
-        transform: rotate(180deg);
-      }
-
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .top-bar {
-        height: 120px;
-      }
-
-      .contact-info {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+      .nav-menu.active { left: 0; }
+      .nav-item { width: 100%; margin: 0; }
+      .nav-link { padding: 15px 25px; justify-content: space-between; font-size: 14px; }
+      .dropdown { position: static; opacity: 1; visibility: visible; transform: none; display: none; width: 100%; box-shadow: none; }
+      .dropdown.active { display: block; }
+      .dropdown-item { padding: 12px 40px; font-size: 13px; }
+      .overview-section { padding: 40px 0; }
+      .section-title h1 { font-size: 1.5rem; }
+      .section-title p { font-size: 0.95rem; }
+      .highlight-box { padding: 20px; }
+      .course-overview { padding: 30px 0 40px; }
+      .course-stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .stat { padding: 15px 10px; }
+      .stat-value { font-size: 1.5rem; }
+      .certification-section, .highlights-section { padding: 40px 0; }
+      .certification-title { font-size: 1.3rem; }
+      .certification-content { gap: 15px; }
+      .course-details-section { margin: 30px auto; padding: 20px; }
+      .course-header h2 { font-size: 1.4rem; }
+      .course-description h3, .course-goals h3, .future-scope h3 { font-size: 1.2rem; }
+      .tech-section { padding: 40px 0; }
+      .syllabus-container { padding: 40px 15px; }
+      .syllabus-title { font-size: 1.4rem; }
+      .syllabus-item { padding: 12px 15px; font-size: 0.9rem; }
+      .syllabus-item i { font-size: 1.1rem; margin-right: 10px; width: 25px; }      
+      .faq-section { padding: 40px 0; }
+      .faq-question { padding: 12px 15px; }
+      .faq-question h3 { font-size: 0.9rem; }
+      .tech-footer { padding: 40px 0 15px; }
+      .footer-content { gap: 25px; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+      .back-to-top { bottom: 15px; right: 15px; width: 35px; height: 35px; }
     }
 
-    @media (max-width: 992px) {
-      .syllabus-content {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .section-title h1 {
-        font-size: 2rem;
-      }
+    @media (max-width: 480px) {
+      .container { padding: 0 12px; }
+      .section-title h1 { font-size: 1.3rem; }
+      .course-stats { grid-template-columns: 1fr; gap: 10px; }
+      .stat { padding: 12px 8px; }
+      .stat-value { font-size: 1.3rem; }
+      .certification-title { font-size: 1.2rem; }
+      .certification-content { grid-template-columns: 1fr; }
+      .course-header h2 { font-size: 1.2rem; }
+      .syllabus-title { font-size: 1.2rem; }
+      .syllabus-item { padding: 10px 12px; font-size: 0.85rem; }
+      .syllabus-item i { font-size: 1rem; margin-right: 8px; width: 22px; }
+      .faq-question { padding: 10px 12px; }
+      .faq-question h3 { font-size: 0.85rem; }
+      .footer-content { grid-template-columns: 1fr; gap: 20px; }
     }
 
-    @media (max-width: 768px) {
-      .banner {
-        padding: 80px 0;
-        min-height: 300px;
-      }
-
-      .section-title h1 {
-        font-size: 1.8rem;
-      }
-
-      .section-title p {
-        font-size: 1.1rem;
-      }
-
-      .course-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .syllabus-container {
-        padding: 60px 15px;
-      }
-
-      .syllabus-title {
-        font-size: 2.2rem;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
+    @media (max-width: 767px) and (orientation: landscape) {
+      .nav-menu { overflow-y: auto; padding: 60px 0 20px; }
+      .course-stats { grid-template-columns: repeat(2, 1fr); }
+      .syllabus-content { grid-template-columns: repeat(2, 1fr); }
     }
 
-    @media (max-width: 576px) {
-      .contact-info {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .course-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .stat-value {
-        font-size: 2rem;
-      }
-
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-      }
-
-      .syllabus-container {
-        padding: 50px 10px;
-      }
-
-      .syllabus-title {
-        font-size: 2rem;
-      }
+    @media (hover: none) and (pointer: coarse) {
+      .dropdown { position: static; opacity: 1; visibility: visible; transform: none; display: none; }
+      .nav-item .dropdown.active { display: block; }
+      .stat:hover, .certification-info-box:hover, .syllabus-item:hover { transform: none; }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i> Virudhunagar, Tamil Nadu</div>
+        <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
+        <div><i class="fas fa-phone"></i> +91 97518 67879</div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo" itemprop="logo">
-        <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png"
-            alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120"
-            height="60" />
-        </div>
+      <div class="logo">
+        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
       </div>
 
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link" aria-current="page">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="classic.html" class="dropdown-item">Classic</a>
-            <a href="professional.html" class="dropdown-item active">Professional</a>
+            <a href="professional.html" class="dropdown-item">Professional</a>
             <a href="expert.html" class="dropdown-item">Expert</a>
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-        </li>
+        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -1087,88 +1086,69 @@
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="techblog.html" class="nav-link">Techblog</a>
-        </li>
-        <li class="nav-item">
-          <a href="scholarship.html" class="nav-link">Scholarship</a>
-        </li>
-        <li class="nav-item">
-          <a href="career.html" class="nav-link"> Careers</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+        <li class="nav-item"><a href="career.html" class="nav-link">Careers</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
-      <div class="hamburger" aria-label="Toggle menu">
+      <div class="hamburger">
         <i class="fas fa-bars"></i>
       </div>
     </div>
   </nav>
 
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- Enhanced Hero Section -->
+  <!-- Hero Section -->
   <section class="banner">
-    <div class="banner-content"></div>
+    <div class="banner-content">
+       </div>
   </section>
 
   <!-- Overview Section -->
   <section class="overview-section" id="overview">
     <div class="container">
-      <div class="overview-container">
-        <div class="overview-content">
-          <div class="section-title">
-            <h1 style="text-align: center">
-              Machine Learning Course Overview
-            </h1>
-            <p style="text-align: center; font-weight: bold">
-              Master Machine Learning concepts, tools, and real-world
-              applications in one comprehensive and hands-on training program!
-            </p>
-          </div>
-          <div class="highlight-box">
-            <p>
-              <strong>Rohil NextGen</strong> offers a complete Machine
-              Learning training covering Python, NumPy, Pandas, Scikit-learn,
-              Matplotlib, TensorFlow, Keras, and model deployment using Flask
-              and Streamlit.
-            </p>
-          </div>
-          <!--Rating-->
-          <div class="rating">
-            <span class="rating-badge">TOP RATED 4.9</span>
-            <span>4.9 Ratings</span>
-          </div>
-        </div>
+      <div class="section-title">
+        <h1>What is Machine Learning?</h1>
+        <p>The Machine Learning Course at Rohil NextGen Institute is designed to help students and professionals build expertise in Artificial Intelligence, Machine Learning, Data Science, and Predictive Analytics.</p>
+      </div>
+      <div class="highlight-box">
+        <p><strong>Rohil NextGen</strong> offers a comprehensive Machine Learning training covering Python, NumPy, Pandas, Scikit-learn, Matplotlib, TensorFlow, Keras, and model deployment using Flask and Streamlit. This industry-oriented program covers Python Programming, Machine Learning Algorithms, Data Analysis, AI Fundamentals, Deep Learning Basics, Real-Time Industry Projects, Predictive Modeling, and Model Deployment.</p>
+      </div>
+      <div class="rating">
+        <span class="rating-badge">TOP RATED 4.9</span>
+        <span>4.9 Ratings</span>
       </div>
     </div>
   </section>
 
-  <!-- Course Overview Section -->
+  <!-- Why Choose Machine Learning Section -->
+  <section class="highlights-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <h2>Why Choose Machine Learning Certification?</h2>
+      </div>
+      <div class="highlights-grid">
+        <div class="highlight-card"><i class="fas fa-robot"></i><h4>High Demand Career</h4><p>AI & ML engineers are highly sought after</p></div>
+        <div class="highlight-card"><i class="fas fa-chart-line"></i><h4>High Salary Potential</h4><p>Avg salary of ₹15 LPA in India</p></div>
+        <div class="highlight-card"><i class="fas fa-brain"></i><h4>Future-Proof Skills</h4><p>ML is the future of technology</p></div>
+        <div class="highlight-card"><i class="fas fa-code"></i><h4>Hands-on Learning</h4><p>Real-time projects & practical sessions</p></div>
+        <div class="highlight-card"><i class="fas fa-briefcase"></i><h4>Placement Support</h4><p>Job assistance after course completion</p></div>
+        <div class="highlight-card"><i class="fas fa-certificate"></i><h4>Certification</h4><p>Industry-recognized certificate</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Stats -->
   <section class="course-overview">
     <div class="container">
-      <div class="course-content">
-        <div class="course-text">
-          <div class="course-stats">
-            <div class="stat">
-              <div class="stat-value">4 Months</div>
-              <div class="stat-label">Course Duration</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">160</div>
-              <div class="stat-label">Total Hours</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">10</div>
-              <div class="stat-label">Live Projects</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">2025</div>
-              <div class="stat-label">Latest Curriculum</div>
-            </div>
-          </div>
-        </div>
+      <div class="course-stats">
+        <div class="stat"><div class="stat-value">4 Months</div><div class="stat-label">Course Duration</div></div>
+        <div class="stat"><div class="stat-value">160</div><div class="stat-label">Total Hours</div></div>
+        <div class="stat"><div class="stat-value">10</div><div class="stat-label">Live Projects</div></div>
+        <div class="stat"><div class="stat-value">2026</div><div class="stat-label">Latest Curriculum</div></div>
       </div>
     </div>
   </section>
@@ -1176,30 +1156,11 @@
   <!-- Certification Section -->
   <section class="certification-section">
     <div class="container">
-      <h2 class="certification-title">Why Choose Machine Learning?</h2>
+      <h2 class="certification-title">Why Choose Machine Learning? High Demand AI Careers</h2>
       <div class="certification-content">
-        <div class="certification-info-box">
-          <i class="fas fa-money-bill-wave certification-icon"></i>
-          <h4 class="certification-subtitle">Annual Income</h4>
-          <p class="certification-description">Avg. Salary in India</p>
-          <h3 class="certification-number">₹ 15 L</h3>
-        </div>
-        <div class="certification-info-box">
-          <i class="fas fa-chart-line certification-icon"></i>
-          <h4 class="certification-subtitle">Career Growth</h4>
-          <p class="certification-description">
-            In AI, Data Science, Robotics
-          </p>
-          <h3 class="certification-number">Explosive</h3>
-        </div>
-        <div class="certification-info-box">
-          <i class="fas fa-code certification-icon"></i>
-          <h4 class="certification-subtitle">Tech Stack</h4>
-          <p class="certification-description">
-            Python, Scikit-learn, TensorFlow, Keras
-          </p>
-          <h3 class="certification-number">Cutting-edge</h3>
-        </div>
+        <div class="certification-info-box"><i class="fas fa-wallet certification-icon"></i><h4 class="certification-subtitle">Annual Income</h4><p class="certification-description">Avg. Salary in India</p><h3 class="certification-number">₹ 15 LPA+</h3></div>
+        <div class="certification-info-box"><i class="fas fa-chart-line certification-icon"></i><h4 class="certification-subtitle">Career Growth</h4><p class="certification-description">In AI, Data Science, Robotics</p><h3 class="certification-number">Explosive</h3></div>
+        <div class="certification-info-box"><i class="fas fa-code certification-icon"></i><h4 class="certification-subtitle">Tech Stack</h4><p class="certification-description">Python, Scikit-learn, TensorFlow</p><h3 class="certification-number">Cutting-edge</h3></div>
       </div>
     </div>
   </section>
@@ -1209,56 +1170,57 @@
     <div class="container">
       <div class="course-header">
         <h2>Become a Machine Learning Engineer</h2>
-        <p class="course-subtitle">
-          <span style="font-size: 30px; font-weight: bold">❝</span>
-          Learn Python, Algorithms, Deep Learning & Model Deployment
-          <span style="font-size: 30px; font-weight: bold">❞</span>
-        </p>
+        <p class="course-subtitle">Learn Python, Algorithms, Deep Learning & Model Deployment</p>
       </div>
 
       <div class="course-description">
-        <h3>Course Overview</h3>
-        <p>
-          This Machine Learning course teaches you how to analyze data, build
-          predictive models, and create intelligent systems using Python,
-          Scikit-learn, Pandas, NumPy, Matplotlib, TensorFlow, and Keras.
-          You'll also learn how to deploy ML models using Flask and Streamlit.
-        </p>
+        <h3>Machine Learning Course Overview</h3>
+        <p>This Machine Learning course teaches you how to analyze data, build predictive models, and create intelligent systems using Python, Scikit-learn, Pandas, NumPy, Matplotlib, TensorFlow, and Keras. You'll also learn how to deploy ML models using Flask and Streamlit. Machine Learning has become a core technology behind Artificial Intelligence, Data Science, Automation, Recommendation Systems, Predictive Analytics, and Intelligent Applications.</p>
+        <p><strong>Types of Machine Learning Covered:</strong> Supervised Learning (Regression, Classification), Unsupervised Learning (Clustering, Pattern Recognition), Reinforcement Learning, and Deep Learning (Neural Networks, TensorFlow, Keras).</p>
       </div>
 
       <div class="course-goals">
         <h3>Key Learning Outcomes</h3>
         <ul>
-          <li>
-            <i class="fas fa-code"></i> Code ML algorithms using Python.
-          </li>
-          <li>
-            <i class="fas fa-chart-bar"></i> Visualize data using Matplotlib
-            and Seaborn.
-          </li>
-          <li>
-            <i class="fas fa-brain"></i> Train & evaluate models with
-            Scikit-learn.
-          </li>
-          <li>
-            <i class="fas fa-network-wired"></i> Build neural networks with
-            TensorFlow & Keras.
-          </li>
-          <li>
-            <i class="fas fa-rocket"></i> Deploy models using Flask &
-            Streamlit.
-          </li>
+          <li><i class="fas fa-code"></i> Master Python programming for Machine Learning</li>
+          <li><i class="fas fa-chart-bar"></i> Visualize data using Matplotlib and Seaborn</li>
+          <li><i class="fas fa-brain"></i> Train & evaluate models with Scikit-learn</li>
+          <li><i class="fas fa-network-wired"></i> Build neural networks with TensorFlow & Keras</li>
+          <li><i class="fas fa-rocket"></i> Deploy models using Flask & Streamlit</li>
+          <li><i class="fas fa-robot"></i> Build real-world AI applications and predictive models</li>
         </ul>
       </div>
+
       <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
+        <h3>Career Opportunities After Machine Learning Course</h3>
         <ul>
           <li><i class="fas fa-robot"></i> Machine Learning Engineer</li>
           <li><i class="fas fa-chart-line"></i> Data Scientist</li>
           <li><i class="fas fa-database"></i> Data Analyst</li>
           <li><i class="fas fa-cogs"></i> AI Engineer</li>
           <li><i class="fas fa-microchip"></i> Deep Learning Specialist</li>
+          <li><i class="fas fa-briefcase"></i> AI Research Analyst</li>
         </ul>
+        <p style="margin-top: 15px;">Machine Learning professionals are highly demanded across IT companies, healthcare, finance, e-commerce, and research organizations worldwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Covered -->
+  <section class="tech-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <h2>Python for Machine Learning - Tools & Technologies</h2>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-card"><i class="fab fa-python"></i><h4>Python Programming</h4></div>
+        <div class="tech-card"><i class="fas fa-calculator"></i><h4>NumPy</h4></div>
+        <div class="tech-card"><i class="fas fa-table"></i><h4>Pandas</h4></div>
+        <div class="tech-card"><i class="fas fa-chart-line"></i><h4>Scikit-learn</h4></div>
+        <div class="tech-card"><i class="fas fa-chart-pie"></i><h4>Matplotlib</h4></div>
+        <div class="tech-card"><i class="fas fa-brain"></i><h4>TensorFlow</h4></div>
+        <div class="tech-card"><i class="fas fa-microchip"></i><h4>Keras</h4></div>
+        <div class="tech-card"><i class="fas fa-rocket"></i><h4>Flask / Streamlit</h4></div>
       </div>
     </div>
   </section>
@@ -1266,474 +1228,18 @@
   <!-- Syllabus Section -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">Course Syllabus</h2>
+      <h2 class="syllabus-title">Machine Learning Course Syllabus</h2>
       <div class="syllabus-content">
-        <!-- Week 1-2 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 1-2: Python & Math Foundations</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Python Basics:
-                  Variables, Loops, Functions, Classes
-                </li>
-                <li><i class="fas fa-check-circle"></i> NumPy, Pandas</li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Math for ML: Linear
-                  Algebra: vectors, matrices, dot product
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Calculus: derivatives,
-                  gradients basics
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Probability &
-                  Statistics: mean, variance, probability basics
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Write math functions
-                  from scratch (mean, std, etc.)
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Work with small datasets
-                  (CSV) using Pandas
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Mini project: Data
-                  profiling report
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 3-4 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 3-4: Data Preprocessing & EDA</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Data cleaning and
-                  preprocessing techniques
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Exploratory Data
-                  Analysis (EDA)
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Feature engineering and
-                  selection
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Handling missing values
-                  and outliers
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Clean and preprocess
-                  real-world datasets
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Perform comprehensive
-                  EDA
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Feature engineering
-                  project
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 5-6 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 5-6: Supervised Learning – Regression</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Linear Regression and
-                  its variants
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Polynomial Regression
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Regularization
-                  techniques (Ridge, Lasso)
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Evaluation metrics for
-                  regression
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement various
-                  regression algorithms
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Build housing price
-                  prediction model
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Compare model
-                  performance
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 7-8 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 7-8: Supervised Learning – Classification</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Logistic Regression
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> K-Nearest Neighbors
-                  (KNN)
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Support Vector Machines
-                  (SVM)
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Decision Trees and
-                  Random Forests
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Build classification
-                  models
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement customer churn
-                  prediction
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create spam detection
-                  system
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 9-10 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 9-10: Model Evaluation & Optimization</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Cross-validation
-                  techniques
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Hyperparameter tuning
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Model evaluation metrics
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Bias-Variance tradeoff
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement
-                  cross-validation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Perform hyperparameter
-                  optimization
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Model comparison project
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 11-12 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 11-12: Unsupervised Learning – Clustering</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> K-Means Clustering
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Hierarchical Clustering
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> DBSCAN and other
-                  clustering algorithms
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Dimensionality Reduction
-                  (PCA)
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement customer
-                  segmentation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Apply dimensionality
-                  reduction
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Clustering analysis
-                  project
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 13-14 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 13-14: Intro to Neural Networks & Deep Learning</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Neural Network
-                  fundamentals
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Activation functions
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Backpropagation
-                  algorithm
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Gradient descent
-                  optimization
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Build basic neural
-                  networks from scratch
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement
-                  backpropagation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Simple classification
-                  with neural networks
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 15-16 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 15-16: Deep Learning with TensorFlow/Keras</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> TensorFlow and Keras
-                  fundamentals
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Building and training
-                  deep learning models
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Model saving and loading
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Callbacks and early
-                  stopping
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Build deep learning
-                  models with TensorFlow
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Image classification
-                  project
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Model optimization
-                  techniques
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 17-18 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 17-18: Advanced Neural Networks & CNNs</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Convolutional Neural
-                  Networks (CNNs)
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> CNN architectures
-                  (LeNet, AlexNet, VGG)
-                </li>
-                <li><i class="fas fa-check-circle"></i> Transfer learning</li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Data augmentation
-                  techniques
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Build CNN for image
-                  recognition
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement transfer
-                  learning
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Advanced image
-                  classification project
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 19-20 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 19-20: Final AI Project & Model Deployment</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Model deployment
-                  strategies
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Flask and Streamlit for
-                  web deployment
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Cloud deployment options
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Model monitoring and
-                  maintenance
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Complete capstone ML
-                  project
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Deploy model using
-                  Flask/Streamlit
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create ML portfolio and
-                  documentation
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="syllabus-item"><i class="fas fa-play-circle"></i> Week 1-2: Python & Math Foundations</div>
+        <div class="syllabus-item"><i class="fas fa-chart-bar"></i> Week 3-4: Data Preprocessing & EDA</div>
+        <div class="syllabus-item"><i class="fas fa-chart-line"></i> Week 5-6: Supervised Learning – Regression</div>
+        <div class="syllabus-item"><i class="fas fa-tasks"></i> Week 7-8: Supervised Learning – Classification</div>
+        <div class="syllabus-item"><i class="fas fa-cogs"></i> Week 9-10: Model Evaluation & Optimization</div>
+        <div class="syllabus-item"><i class="fas fa-database"></i> Week 11-12: Unsupervised Learning – Clustering</div>
+        <div class="syllabus-item"><i class="fas fa-brain"></i> Week 13-14: Intro to Neural Networks & Deep Learning</div>
+        <div class="syllabus-item"><i class="fas fa-microchip"></i> Week 15-16: Deep Learning with TensorFlow/Keras</div>
+        <div class="syllabus-item"><i class="fas fa-eye"></i> Week 17-18: Advanced Neural Networks & CNNs</div>
+        <div class="syllabus-item"><i class="fas fa-rocket"></i> Week 19-20: Final AI Project & Model Deployment</div>
       </div>
     </div>
   </section>
@@ -1742,102 +1248,15 @@
   <section class="faq-section">
     <div class="container">
       <div class="section-title">
-        <h2 style="text-align: center">Frequently Asked Questions</h2>
+        <h1 style="text-align: center;">Frequently Asked Questions</h1>
       </div>
-
       <div class="faq-content">
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>What is Machine Learning?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>
-              Machine Learning is a subset of artificial intelligence that
-              enables computers to learn and make decisions from data without
-              being explicitly programmed. It focuses on developing algorithms
-              that can identify patterns and make predictions.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>Do I need strong math background for Machine Learning?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>
-              While a math background is helpful, our course covers all
-              necessary mathematical concepts from basics. We teach linear
-              algebra, calculus, and statistics as part of the curriculum,
-              making it accessible to beginners.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>
-              Will I receive a certificate after completing the Machine
-              Learning course?
-            </h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>
-              Yes, upon successful completion of the course and final project,
-              you will receive a certificate from Rohil NextGen that validates
-              your Machine Learning skills.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>What kind of projects will I work on during the course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>
-              You'll work on real-world projects including data analysis,
-              predictive modeling, image classification, customer
-              segmentation, and a capstone project that integrates all the
-              skills you've learned.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>What tools and technologies will I learn?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>
-              You'll learn Python, NumPy, Pandas, Scikit-learn, Matplotlib,
-              Seaborn, TensorFlow, Keras, Flask, Streamlit, and various
-              machine learning algorithms and techniques.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h3>
-              What career support do you provide after course completion?
-            </h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            <p>
-              We provide resume building assistance, interview preparation,
-              portfolio development guidance, and connect you with our
-              placement partners for job opportunities in the AI and data
-              science industry.
-            </p>
-          </div>
-        </div>
+        <div class="faq-item"><div class="faq-question"><h3>What is Machine Learning?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>Machine Learning is a subset of artificial intelligence that enables computers to learn and make decisions from data without being explicitly programmed. It focuses on developing algorithms that can identify patterns and make predictions.</p></div></div>
+        <div class="faq-item"><div class="faq-question"><h3>Do I need strong math background for Machine Learning?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>While a math background is helpful, our course covers all necessary mathematical concepts from basics. We teach linear algebra, calculus, and statistics as part of the curriculum, making it accessible to beginners.</p></div></div>
+        <div class="faq-item"><div class="faq-question"><h3>What kind of projects will I work on during the course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>You'll work on real-world projects including data analysis, predictive modeling, image classification, customer segmentation, and a capstone project that integrates all the skills you've learned.</p></div></div>
+        <div class="faq-item"><div class="faq-question"><h3>What career opportunities are available after Machine Learning course?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>You can become a Machine Learning Engineer, AI Engineer, Data Scientist, AI Developer, Research Analyst, or Data Analyst in top IT companies and startups.</p></div></div>
+        <div class="faq-item"><div class="faq-question"><h3>What tools and technologies will I learn?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>You'll learn Python, NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn, TensorFlow, Keras, Flask, Streamlit, and various machine learning algorithms and techniques.</p></div></div>
+        <div class="faq-item"><div class="faq-question"><h3>Is placement support provided?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer"><p>Yes! We provide comprehensive placement support including resume building, interview preparation, portfolio development guidance, and connections with our hiring partners in the AI and data science industry.</p></div></div>
       </div>
     </div>
   </section>
@@ -1845,53 +1264,13 @@
   <!-- Footer -->
   <footer class="tech-footer">
     <div class="footer-content">
-      <div class="footer-column">
-        <h3>About Rohil NextGen Software Training Institute</h3>
-        <p>
-          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
-          development, data science, cybersecurity, and IT training with placement support. Get the best software
-          training in Virudhunagar with industry experts.
-        </p>
-        <div class="social-links">
-          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
-              class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
-              class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-column">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-          <li><a href="classic.html"><i class="fas fa-chevron-right"></i> IT Courses</a></li>
-          <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
-          <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tied-up Companies</a></li>
-          <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li>
-          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3>Contact Rohil NextGen</h3>
-        <ul class="footer-links">
-          <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
-          <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
-              admin@rohiltechnologies.com</a></li>
-          <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
-        </ul>
-      </div>
+      <div class="footer-column"><h3>About Rohil NextGen</h3><p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support.</p><div class="social-links"><a href="https://www.facebook.com/p/Rohilacademy-61574571321905/"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a><a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a></div></div>
+      <div class="footer-column"><h3>Quick Links</h3><ul class="footer-links"><li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="classic.html"><i class="fas fa-chevron-right"></i> IT Courses</a></li><li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li><li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tied-up Companies</a></li><li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li></ul></div>
+      <div class="footer-column"><h3>Contact Rohil NextGen</h3><ul class="footer-links"><li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li><li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li><li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li><li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li></ul></div>
     </div>
-
     <div class="footer-bottom">
-      <div class="copyright">
-        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
-      </div>
-      <div class="footer-bottom-links">
-        <p>Designed By Rohil Technologies</p>
-      </div>
+      <div class="copyright"><p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p></div>
+      <div class="footer-bottom-links"><p>Designed By Rohil Technologies</p></div>
     </div>
   </footer>
 
@@ -1904,45 +1283,39 @@
     // Mobile Menu Toggle
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
 
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-    });
+    if (hamburger) {
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        if (mobileOverlay) mobileOverlay.classList.toggle("active");
+        document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "";
+      });
+    }
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll(".nav-link").forEach((n) =>
-      n.addEventListener("click", (e) => {
-        // Only close menu if it's not a dropdown trigger
-        if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
-          navMenu.classList.remove("active");
-        }
-      })
-    );
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    }
 
-    // Mobile Dropdown Functionality
+    // Mobile Dropdown
     document.querySelectorAll(".nav-item").forEach((item) => {
       const dropdown = item.querySelector(".dropdown");
       const navLink = item.querySelector(".nav-link");
-
-      if (dropdown) {
-        // Add click event for mobile dropdowns
+      if (dropdown && navLink) {
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other open dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  otherDropdown.previousElementSibling.classList.remove(
-                    "active"
-                  );
-                }
-              });
-
-            // Toggle current dropdown
+            document.querySelectorAll(".dropdown.active").forEach((other) => {
+              if (other !== dropdown) {
+                other.classList.remove("active");
+                const prev = other.previousElementSibling;
+                if (prev) prev.classList.remove("active");
+              }
+            });
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -1950,91 +1323,69 @@
       }
     });
 
-    // Close dropdowns when clicking outside
-    document.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        if (
-          !e.target.closest(".nav-item") &&
-          !e.target.closest(".hamburger")
-        ) {
-          document
-            .querySelectorAll(".dropdown.active")
-            .forEach((dropdown) => {
-              dropdown.classList.remove("active");
-              dropdown.previousElementSibling.classList.remove("active");
-            });
-        }
-      }
-    });
-
-    // Week Accordion Functionality
-    document.querySelectorAll(".week-header").forEach((header) => {
-      header.addEventListener("click", () => {
-        const weekContainer = header.parentElement;
-        weekContainer.classList.toggle("active");
-      });
-    });
-
-    // FAQ Accordion Functionality
-    document.querySelectorAll(".faq-question").forEach((question) => {
-      question.addEventListener("click", () => {
-        const faqItem = question.parentElement;
-
-        // Close all other FAQ items
-        document.querySelectorAll(".faq-item").forEach((item) => {
-          if (item !== faqItem) {
-            item.classList.remove("active");
+    // Close menu on non-dropdown links
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      if (!link.querySelector(".fa-chevron-down")) {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            navMenu.classList.remove("active");
+            if (mobileOverlay) mobileOverlay.classList.remove("active");
+            document.body.style.overflow = "";
           }
         });
-
-        // Toggle current FAQ item
-        faqItem.classList.toggle("active");
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        if (targetId === "#") return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
-      });
-    });
-
-    // Back to Top Button
-    const backToTopButton = document.getElementById("backToTop");
-
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add("active");
-      } else {
-        backToTopButton.classList.remove("active");
       }
     });
 
-    backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
-
-    // Close mobile menu on resize if window becomes larger
+    // Close menu on resize
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
         navMenu.classList.remove("active");
+        if (mobileOverlay) mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
         document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
           dropdown.classList.remove("active");
-          dropdown.previousElementSibling.classList.remove("active");
+          const prev = dropdown.previousElementSibling;
+          if (prev) prev.classList.remove("active");
+        });
+      }
+    });
+
+    // Close menu with Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu.classList.contains("active")) {
+        navMenu.classList.remove("active");
+        if (mobileOverlay) mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+
+    // Week Accordion
+    document.querySelectorAll(".week-header").forEach((header) => {
+      header.addEventListener("click", () => {
+        const container = header.parentElement;
+        container.classList.toggle("active");
+      });
+    });
+
+    // Back to Top
+    const backBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) backBtn.classList.add("show");
+      else backBtn.classList.remove("show");
+    });
+    if (backBtn) {
+      backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    }
+
+    // FAQ Accordion
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      const q = item.querySelector(".faq-question");
+      if (q) {
+        q.addEventListener("click", () => {
+          document.querySelectorAll(".faq-item").forEach((other) => {
+            if (other !== item) other.classList.remove("active");
+          });
+          item.classList.toggle("active");
         });
       }
     });
