@@ -43,6 +43,8 @@
       --medium-gray: #666666;
       --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       --transition: all 0.3s ease;
+      --whatsapp-green: #25D366;
+      --whatsapp-dark: #128C7E;
     }
 
     body {
@@ -248,7 +250,6 @@
     }
 
     /* Hero Section */
-
     .career-hero {
       background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
         url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80');
@@ -431,35 +432,37 @@
       transition: var(--transition);
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       margin-top: 10px;
-      border: 2px solid var(--primary-red);
+      border: 2px solid var(--medium-gray);
     }
 
     .apply-btn:hover {
-      background: var(--dark-red);
-      border-color: var(--dark-red);
+      background: var(--dark-gray);
+      border-color: var(--white);
+      transform: scale(1.02);
+      box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
     }
 
-    /* Footer */
+    /* Enhanced Footer */
     .tech-footer {
-      background: linear-gradient(rgba(97, 97, 97, 0.95), rgba(128, 112, 112, 0.98)),
-        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+      background: linear-gradient(rgba(97, 97, 97, 0.95),
+          rgba(128, 112, 112, 0.98));
       color: var(--white);
-      padding: 60px 0 20px;
+      padding: 50px 0 20px;
     }
 
     .footer-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
+      gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     .footer-column h3 {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       margin-bottom: 20px;
       color: var(--white);
       position: relative;
@@ -467,7 +470,7 @@
     }
 
     .footer-column h3::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: 0;
@@ -477,9 +480,11 @@
     }
 
     .footer-column p {
-      font-size: 1rem;
       margin-bottom: 20px;
       color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      font-size: 16px;
+
     }
 
     .social-links {
@@ -497,6 +502,8 @@
       border-radius: 50%;
       color: var(--white);
       transition: var(--transition);
+      text-decoration: none;
+      font-size: 1.5rem;
     }
 
     .social-links a:hover {
@@ -520,6 +527,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      font-size: 16px;
     }
 
     .footer-links a:hover {
@@ -535,7 +543,7 @@
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       padding-top: 20px;
-      margin-top: 40px;
+      margin-top: 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -545,11 +553,13 @@
       margin-right: auto;
       padding-left: 20px;
       padding-right: 20px;
+      gap: 15px;
     }
 
     .footer-bottom p {
       color: rgba(255, 255, 255, 0.8);
       margin: 0;
+      font-size: 14px;
     }
 
     /* Back to Top */
@@ -789,7 +799,240 @@
       color: #777;
     }
 
-    /* Responsive - FIXED */
+    /* Application Modal */
+    #applyModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    #applyModal.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 20px;
+      padding: 35px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #999;
+      transition: all 0.3s;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      color: var(--primary-red);
+      transform: rotate(90deg);
+    }
+
+    .modal-title {
+      color: var(--dark-gray);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+    }
+
+    .modal-title i {
+      color: var(--primary-red);
+      font-size: 2rem;
+    }
+
+    .modal-subtitle {
+      color: #666;
+      margin-bottom: 20px;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .form-group label .required {
+      color: var(--primary-red);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s;
+      background: #fafafa;
+    }
+
+    .form-control:focus {
+      border-color: var(--dark-gray);
+      outline: none;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(84, 85, 85, 0.1);
+    }
+
+    .form-control.error {
+      border-color: #e74c3c;
+    }
+
+    .form-control.error:focus {
+      box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.1);
+    }
+
+    .error-message {
+      color: #e74c3c;
+      font-size: 12px;
+      margin-top: 5px;
+      display: none;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    .submit-btn {
+      background: var(--primary-red);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 30px;
+      font-weight: 700;
+      width: 100%;
+      margin-top: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: var(--dark-gray);
+      transform: scale(1.02);
+      box-shadow: 0 5px 20px rgba(63, 63, 63, 0.3);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .submit-btn .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 0.8s ease-in-out infinite;
+    }
+
+    .submit-btn.loading .spinner {
+      display: inline-block;
+    }
+
+    .submit-btn.loading .btn-text {
+      display: none;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .modal-footer-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .modal-footer-text i {
+      color: var(--primary-red);
+      margin-right: 5px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-weight: 600;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      z-index: 3000;
+      transform: translateX(120%);
+      transition: transform 0.5s ease;
+      max-width: 400px;
+      font-size: 14px;
+      color: white;
+    }
+
+    .toast.show {
+      transform: translateX(0);
+    }
+
+    .toast.success {
+      background: var(--whatsapp-green);
+    }
+
+    .toast.error {
+      background: #e74c3c;
+    }
+
+    .toast.info {
+      background: #3498db;
+    }
+
+    /* Responsive */
     @media screen and (max-width: 768px) {
       .top-bar-container {
         flex-direction: column;
@@ -880,6 +1123,11 @@
         width: 45px;
         height: 45px;
       }
+
+      .modal-content {
+        padding: 25px;
+        width: 95%;
+      }
     }
 
     @media screen and (max-width: 480px) {
@@ -904,6 +1152,58 @@
         right: 15px;
         width: 40px;
         height: 40px;
+      }
+
+      .modal-content {
+        padding: 20px;
+      }
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: var(--whatsapp-green);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 98;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .whatsapp-float {
+        bottom: 80px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
       }
     }
   </style>
@@ -1014,8 +1314,9 @@
           </div>
           <p style="margin-top: 10px;"><strong>Key Responsibilities:</strong> Identify and generate new business
             opportunities, manage client relationships, and drive revenue growth.</p>
-          <button class="apply-btn" onclick="openApplyForm('Business Development Executive')"><i
-              class="fas fa-paper-plane"></i> Apply Now</button>
+          <button class="apply-btn" onclick="openApplyForm('Placement Officer')">
+            <i class="fab fa-whatsapp"></i> Apply via WhatsApp
+          </button>
         </div>
 
         <!-- Job 2: Placement Officer -->
@@ -1049,8 +1350,9 @@
           </div>
           <p style="margin-top: 10px;"><strong>Key Responsibilities:</strong> Coordinate with companies for placement
             drives, maintain placement records, mentor students for interviews.</p>
-          <button class="apply-btn" onclick="openApplyForm('Placement Officer')"><i class="fas fa-paper-plane"></i>
-            Apply Now</button>
+          <button class="apply-btn" onclick="openApplyForm('Placement Officer')">
+            <i class="fab fa-whatsapp"></i> Apply via WhatsApp
+          </button>
         </div>
 
         <!-- Job 3: Pre Sales Officer -->
@@ -1084,38 +1386,69 @@
           </div>
           <p style="margin-top: 10px;"><strong>Key Responsibilities:</strong> Handle student inquiries, explain course
             details, follow up on leads, assist in enrollment process.</p>
-          <button class="apply-btn" onclick="openApplyForm('Pre Sales Officer')"><i class="fas fa-paper-plane"></i>
-            Apply Now</button>
+          <button class="apply-btn" onclick="openApplyForm('Pre Sales Officer')">
+            <i class="fab fa-whatsapp"></i> Apply via WhatsApp
+          </button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Application Modal -->
-  <div
-    style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; z-index:2000;"
-    id="applyModal">
-    <div style="background:white; max-width:500px; width:90%; border-radius:20px; padding:30px; position:relative;">
-      <span style="position:absolute; top:15px; right:20px; font-size:24px; cursor:pointer;"
-        onclick="closeApplyForm()">&times;</span>
-      <h3 style="color:var(--primary-red); margin-bottom:20px;" id="modalJobTitle">Apply for Position</h3>
-      <form id="applyForm" onsubmit="submitApplication(event)">
-        <input type="text" placeholder="Full Name" required
-          style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;"
-          id="applicantName" />
-        <input type="email" placeholder="Email Address" required
-          style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;"
-          id="applicantEmail" />
-        <input type="tel" placeholder="Phone Number" required
-          style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;"
-          id="applicantPhone" />
+  <div id="applyModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeApplyForm()">&times;</button>
+      
+      <div class="modal-title">
+        <i class="fab fa-whatsapp"></i> Apply via WhatsApp
+      </div>
+      <div class="modal-subtitle">
+        Fill in your details and we'll send your application directly to our HR team on WhatsApp
+      </div>
+      
+      <form id="applyForm" onsubmit="submitApplication(event)" novalidate>
+        <div class="form-group">
+          <label for="applicantName">Full Name <span class="required">*</span></label>
+          <input type="text" id="applicantName" class="form-control" placeholder="Enter your full name" required />
+          <div class="error-message" id="nameError">Please enter your name</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="applicantEmail">Email Address <span class="required">*</span></label>
+          <input type="email" id="applicantEmail" class="form-control" placeholder="Enter your email address" required />
+          <div class="error-message" id="emailError">Please enter a valid email address</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="applicantPhone">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="applicantPhone" class="form-control" placeholder="Enter your phone number" required />
+          <div class="error-message" id="phoneError">Please enter a valid phone number (10 digits)</div>
+        </div>
+        
         <input type="hidden" id="jobPosition" />
-        <button type="submit"
-          style="background:var(--primary-red); color:white; border:none; padding:14px; border-radius:30px; font-weight:bold; width:100%; margin-top:10px; cursor:pointer;">Submit
-          Application</button>
+        
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span class="spinner"></span>
+          <span class="btn-text"><i class="fab fa-whatsapp"></i> Send Application via WhatsApp</span>
+        </button>
       </form>
+      
+      <div class="modal-footer-text">
+        <i class="fas fa-lock"></i> Your information is secure and will only be used for recruitment purposes
+      </div>
     </div>
   </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/919751867879?text=Hi%20Rohil%20NextGen%2C%20I%20want%20to%20apply%20for%20a%20job" 
+     target="_blank" 
+     class="whatsapp-float" 
+     aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <!-- Chat Widget -->
   <div class="chat-widget">
@@ -1188,8 +1521,11 @@
     <div class="footer-content">
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
-        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
-          development, data science, cybersecurity, and IT training with placement support.</p>
+        <p>
+          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
+          development, data science, cybersecurity, and IT training with placement support. Get the best software
+          training in Virudhunagar with industry experts.
+        </p>
         <div class="social-links">
           <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
               class="fab fa-facebook-f"></i></a>
@@ -1198,16 +1534,19 @@
               class="fab fa-youtube"></i></a>
         </div>
       </div>
+
       <div class="footer-column">
         <h3>Quick Links</h3>
         <ul class="footer-links">
           <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
           <li><a href="classic.html"><i class="fas fa-chevron-right"></i> IT Courses</a></li>
           <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
-          <li><a href="career.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+          <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tied-up Companies</a></li>
+          <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li>
           <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h3>Contact Rohil NextGen</h3>
         <ul class="footer-links">
@@ -1219,16 +1558,23 @@
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
-      <p>Designed By Rohil Technologies</p>
+      <div class="copyright">
+        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
+      </div>
+      <div class="footer-bottom-links">
+        <p>Designed By Rohil Technologies</p>
+      </div>
     </div>
   </footer>
+
 
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
   <script>
+    // Navigation
     (function () {
       const hamburger = document.getElementById('hamburgerBtn');
       const navMenu = document.getElementById('navMenu');
@@ -1262,24 +1608,151 @@
       });
     })();
 
-    function openApplyForm(jobTitle) {
-      document.getElementById('modalJobTitle').innerText = jobTitle;
-      document.getElementById('jobPosition').value = jobTitle;
-      document.getElementById('applyModal').style.display = 'flex';
-    }
-    function closeApplyForm() { document.getElementById('applyModal').style.display = 'none'; }
-    window.onclick = function (event) { if (event.target === document.getElementById('applyModal')) closeApplyForm(); }
-    function submitApplication(e) {
-      e.preventDefault();
-      alert(`Thank you, ${document.getElementById('applicantName').value}! Your application has been received.`);
-      closeApplyForm();
-      document.getElementById('applyForm').reset();
+    // Toast function
+    function showToast(message, type = 'success') {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.className = 'toast ' + type;
+      setTimeout(() => toast.classList.add('show'), 100);
+      setTimeout(() => toast.classList.remove('show'), 5000);
     }
 
+    // Open Apply Form
+    function openApplyForm(jobTitle) {
+      document.getElementById('jobPosition').value = jobTitle;
+      document.getElementById('applyModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      // Reset form and errors
+      document.getElementById('applyForm').reset();
+      document.querySelectorAll('.error-message').forEach(el => el.classList.remove('show'));
+      document.querySelectorAll('.form-control').forEach(el => el.classList.remove('error'));
+      const btn = document.getElementById('submitBtn');
+      btn.classList.remove('loading');
+      btn.disabled = false;
+    }
+
+    // Close Apply Form
+    function closeApplyForm() {
+      document.getElementById('applyModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on outside click
+    document.getElementById('applyModal').addEventListener('click', function(e) {
+      if (e.target === this) closeApplyForm();
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeApplyForm();
+    });
+
+    // Form validation
+    function validateField(input, errorId, validationFn, errorMsg) {
+      const errorEl = document.getElementById(errorId);
+      if (!validationFn(input.value)) {
+        input.classList.add('error');
+        errorEl.textContent = errorMsg;
+        errorEl.classList.add('show');
+        return false;
+      } else {
+        input.classList.remove('error');
+        errorEl.classList.remove('show');
+        return true;
+      }
+    }
+
+    // Real-time validation
+    document.getElementById('applicantName').addEventListener('blur', function() {
+      validateField(this, 'nameError', 
+        val => val.trim().length >= 2, 
+        'Please enter your full name (at least 2 characters)'
+      );
+    });
+
+    document.getElementById('applicantEmail').addEventListener('blur', function() {
+      validateField(this, 'emailError',
+        val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+        'Please enter a valid email address'
+      );
+    });
+
+    document.getElementById('applicantPhone').addEventListener('blur', function() {
+      validateField(this, 'phoneError',
+        val => /^[0-9]{10}$/.test(val.replace(/\D/g, '')),
+        'Please enter a valid 10-digit phone number'
+      );
+    });
+
+    // Submit Application
+    function submitApplication(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('applicantName').value.trim();
+      const email = document.getElementById('applicantEmail').value.trim();
+      const phone = document.getElementById('applicantPhone').value.trim();
+      const job = document.getElementById('jobPosition').value;
+      const btn = document.getElementById('submitBtn');
+      
+      // Validate all fields
+      const isNameValid = validateField(
+        document.getElementById('applicantName'), 'nameError',
+        val => val.length >= 2, 'Please enter your full name'
+      );
+      
+      const isEmailValid = validateField(
+        document.getElementById('applicantEmail'), 'emailError',
+        val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), 'Please enter a valid email address'
+      );
+      
+      const isPhoneValid = validateField(
+        document.getElementById('applicantPhone'), 'phoneError',
+        val => /^[0-9]{10}$/.test(val.replace(/\D/g, '')), 'Please enter a valid 10-digit phone number'
+      );
+      
+      if (!isNameValid || !isEmailValid || !isPhoneValid) {
+        showToast('Please fix the errors before submitting', 'error');
+        return;
+      }
+      
+      // Show loading state
+      btn.classList.add('loading');
+      btn.disabled = true;
+      
+      // Format WhatsApp message
+      const message = `📌 *New Job Application - Rohil NextGen*\n\n` +
+        `👤 *Name:* ${name}\n` +
+        `📧 *Email:* ${email}\n` +
+        `📱 *Phone:* ${phone}\n` +
+        `💼 *Position:* ${job}\n` +
+        `🏢 *Company:* Rohil NextGen\n` +
+        `📅 *Applied:* ${new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}\n` +
+        `🕐 *Time:* ${new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}\n\n` +
+        `_This application was submitted via the Rohil NextGen Careers page._\n` +
+        `🔗 *Source:* rohilnextgen.com/career.html`;
+      
+      // Encode for URL
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappNumber = '919751867879';
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      
+      // Open WhatsApp
+      setTimeout(() => {
+        window.open(whatsappURL, '_blank');
+        showToast('✅ Application sent successfully via WhatsApp!', 'success');
+        closeApplyForm();
+        document.getElementById('applyForm').reset();
+        btn.classList.remove('loading');
+        btn.disabled = false;
+      }, 800);
+    }
+
+    // Back to Top
     const backToTopBtn = document.getElementById('backToTop');
     window.addEventListener('scroll', () => backToTopBtn.classList.toggle('show', window.pageYOffset > 300));
     backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+    // Chat Widget
     const chatToggle = document.getElementById('chatToggle');
     const chatContainer = document.getElementById('chatContainer');
     const chatClose = document.getElementById('chatClose');
@@ -1309,13 +1782,17 @@
     function getBotResponse(m) {
       const msg = m.toLowerCase();
       if (msg.includes('hi') || msg.includes('hello')) return "Hi there! 👋 Welcome to Rohil NextGen. How can I help you?";
-      if (msg.includes('courses')) { courseList.style.display = 'flex'; return "Here are our trending courses!"; }
+      if (msg.includes('courses')) { 
+        courseList.style.display = 'flex'; 
+        return "Here are our trending courses! Click any course to learn more.";
+      }
       if (msg.includes('java')) return "Java Full Stack covers Core Java, Spring, Hibernate, and frontend.";
       if (msg.includes('python')) return "Python with Data Science includes Pandas, ML, and web frameworks.";
-      if (msg.includes('placement') || msg.includes('job')) return "We provide 100% placement assistance!";
-      if (msg.includes('contact')) return "📞 +91 97518 67879 | admin@rohiltechnologies.com";
+      if (msg.includes('placement') || msg.includes('job')) return "We provide 100% placement assistance! Check our Careers page for job openings.";
+      if (msg.includes('contact')) return "📞 +91 97518 67879 | 📧 admin@rohiltechnologies.com | 💬 WhatsApp: wa.me/919751867879";
       if (msg.includes('thank')) return "You're welcome! 😊";
-      return "Type 'courses' to see our programs!";
+      if (msg.includes('apply')) return "You can apply for jobs on our Careers page! Click the 'Apply via WhatsApp' button on any job card.";
+      return "Type 'courses' to see our programs! Or ask about 'placement', 'contact', or 'apply'.";
     }
 
     function sendMessage() {
@@ -1341,6 +1818,7 @@
         setTimeout(() => { typingIndicator.style.display = 'none'; addMessage(getBotResponse(course), 'bot'); }, 1500);
       });
     });
+
   </script>
 </body>
 
