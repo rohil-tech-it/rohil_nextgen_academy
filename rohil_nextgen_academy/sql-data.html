@@ -3,13 +3,126 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohil NextGen - MySQL Database Course</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <!-- SEO Optimized Title -->
+  <title>SQL Course | Database Management & SQL Training | Rohil NextGen</title>
+  <!-- SEO Optimized Meta Description -->
+  <meta name="description"
+    content="Learn SQL Database Management, Queries, Joins, Stored Procedures, Data Analysis, and real-time projects with expert training at Rohil NextGen Institute." />
+  <meta name="keywords"
+    content="SQL Course, SQL Training, SQL Database Course, Database Management Course, SQL Course in Virudhunagar, Database Training Institute, SQL Certification Course, SQL for Data Analytics, Best SQL course for beginners, Learn SQL with real-time projects, SQL database training institute in Tamil Nadu, SQL course with placement assistance, Database management certification course" />
+  <meta name="author" content="Rohil NextGen" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.rohilnextgen.com/sql-data.html" />
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
+
+  <!-- Course Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "SQL Course - Database Management & SQL Training",
+    "description": "Learn SQL Database Management, Queries, Joins, Stored Procedures, Data Analysis, and real-time projects with expert training at Rohil NextGen Institute.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rohil NextGen",
+      "sameAs": "https://www.rohilnextgen.com"
+    },
+    "courseCode": "SQL-001",
+    "educationalCredentialAwarded": "SQL Certification",
+    "teaches": ["SQL Fundamentals", "Database Design", "SQL Queries", "Joins & Relationships", "Stored Procedures", "Data Analysis"],
+    "occupationalCredentialAwarded": "SQL Developer, Database Administrator, Data Analyst, Business Intelligence Analyst",
+    "timeRequired": "PT120H",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "In-Person",
+      "location": {
+        "@type": "Place",
+        "name": "Rohil NextGen, Virudhunagar, Tamil Nadu"
+      },
+      "startDate": "2026-06-28"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema Markup for Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is SQL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SQL (Structured Query Language) is a programming language used to manage and manipulate relational databases. It is essential for data analysis, database administration, and software development."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is SQL difficult to learn?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SQL is considered one of the easiest programming languages to learn. It uses simple English-like syntax, making it accessible for beginners."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What jobs can I get after learning SQL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After learning SQL, you can work as a SQL Developer, Database Administrator, Data Analyst, Business Intelligence Analyst, Data Engineer, or Reporting Analyst."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is SQL required for Data Science?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, SQL is an essential skill for Data Science. Data scientists use SQL to extract, clean, and prepare data for analysis and machine learning models."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I work on real-time projects?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You will work on real-time projects including student management databases, inventory systems, hospital management systems, and e-commerce databases."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Organization Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Rohil NextGen",
+    "url": "https://www.rohilnextgen.com",
+    "logo": "https://www.rohilnextgen.com/images/rohil_nextgen-removebg-preview.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Virudhunagar",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9751867879",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Tamil"]
+    }
+  }
+  </script>
+
   <style>
     :root {
       --primary-red: #d40404;
@@ -21,6 +134,9 @@
       --medium-gray: #666666;
       --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       --transition: all 0.3s ease;
+      --text-black: #333;
+      --text-grey: #666;
+      --light-grey: #f5f5f5;
     }
 
     * {
@@ -30,10 +146,11 @@
     }
 
     body {
-      font-family: Georgia;
+      font-family: 'Georgia';
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
+      overflow-x: hidden;
     }
 
     .container {
@@ -48,8 +165,10 @@
       background-color: var(--primary-red);
       color: var(--white);
       padding: 15px 0;
-      font-size: 15px;
-      height: 60px;
+      font-size: 14px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
     }
 
     .top-bar-container {
@@ -59,11 +178,15 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .contact-info {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .contact-info div {
@@ -74,21 +197,29 @@
 
     .social-icons {
       display: flex;
-      gap: 18px;
+      gap: 15px;
     }
 
     .social-icons a {
       color: var(--white);
-      font-size: 25px;
-      transition: opacity 0.3s;
+      font-size: 18px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .social-icons a:hover {
-      color: var(--text-grey);
-      transform: translateY(-3px) scale(1.1);
+      background: var(--white);
+      color: var(--primary-red);
+      transform: translateY(-2px);
     }
 
-    /* Navigation Styles - IMPROVED RESPONSIVE */
+    /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -132,33 +263,15 @@
       color: var(--text-black);
       font-weight: 500;
       font-size: 16px;
-      transition: color 0.3s;
+      transition: var(--transition);
       padding: 10px 0;
       display: flex;
       align-items: center;
       gap: 5px;
-      position: relative;
     }
 
     .nav-link:hover {
       color: var(--primary-red);
-    }
-
-    /* Active state styles */
-    .nav-link.active {
-      color: var(--primary-red);
-      font-weight: 600;
-    }
-
-    .nav-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: var(--primary-red);
-      border-radius: 2px;
     }
 
     .dropdown {
@@ -196,14 +309,6 @@
       padding-left: 25px;
     }
 
-    /* Active state for dropdown items */
-    .dropdown-item.active {
-      background-color: var(--light-grey);
-      color: var(--primary-red);
-      font-weight: 500;
-      border-left: 3px solid var(--primary-red);
-    }
-
     .hamburger {
       display: none;
       cursor: pointer;
@@ -214,7 +319,6 @@
       z-index: 1001;
     }
 
-    /* Mobile Overlay */
     .mobile-overlay {
       display: none;
       position: fixed;
@@ -234,46 +338,69 @@
       visibility: visible;
     }
 
-    /* Enhanced Banner Section */
+    /* Banner Section - Fully Responsive */
     .banner {
-      background-image: url("./images/mysql.png");
+      background-image: url(./images/mysql.png);
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       color: var(--white);
-      padding: 120px 0;
       text-align: center;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 500px;
+      min-height: 550px;
+      padding: 80px 20px;
     }
 
     .banner-content {
       max-width: 800px;
       margin: 0 auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 1;
+      padding: 0 15px;
+      width: 100%;
     }
 
-    .cta-button {
-      display: inline-block;
-      background-color: var(--primary-red);
-      color: white;
-      padding: 15px 30px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: var(--transition);
-      margin-top: 20px;
+
+    /* Banner Responsive */
+    @media (max-width: 991px) {
+      .banner {
+        min-height: 380px;
+        padding: 60px 20px;
+      }
+
     }
 
-    .cta-button:hover {
-      background-color: var(--dark-red);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    @media (max-width: 767px) {
+      .banner {
+        min-height: 320px;
+        padding: 50px 15px;
+        background-position: 70% center;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+      .banner {
+        min-height: 260px;
+        padding: 40px 12px;
+        background-position: 65% center;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .banner {
+        min-height: 230px;
+        padding: 30px 10px;
+        background-position: 60% center;
+      }
+    }
+
+    @media (max-width: 767px) and (orientation: landscape) {
+      .banner {
+        min-height: 220px;
+        padding: 30px 15px;
+      }
     }
 
     /* Overview Section */
@@ -289,11 +416,13 @@
       font-size: 2.5rem;
       margin-bottom: 15px;
       color: var(--dark-gray);
+      text-align: center;
     }
 
     .section-title p {
       font-size: 1.2rem;
-      color: var(--medium-gray);
+      color: var(--medium-gray);      text-align: center;
+
     }
 
     .highlight-box {
@@ -317,8 +446,10 @@
     .rating {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 15px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .rating-badge {
@@ -326,11 +457,49 @@
       color: var(--white);
       padding: 8px 15px;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: bold;
     }
 
-    /* Enhanced Course Overview Section */
+    /* Course Highlights Section */
+    .highlights-section {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .highlight-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-bottom: 3px solid var(--primary-red);
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .highlight-card i {
+      font-size: 2rem;
+      color: var(--primary-red);
+      margin-bottom: 15px;
+    }
+
+    .highlight-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: var(--dark-gray);
+    }
+
+    /* Course Stats */
     .course-overview {
       padding: 40px 0 60px;
     }
@@ -349,37 +518,34 @@
       border-radius: 8px;
       box-shadow: var(--shadow);
       transition: var(--transition);
-      position: relative;
-      overflow: hidden;
     }
 
     .stat:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
     .stat-value {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
       color: var(--primary-red);
       margin-bottom: 10px;
     }
 
     .stat-label {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--dark-gray);
       font-weight: 500;
     }
 
-    /* Enhanced Certification Section */
+    /* Certification Section */
     .certification-section {
-      background-color: #f8f9fa;
+      background-color: #fff;
       padding: 60px 0;
       text-align: center;
     }
 
     .certification-title {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--dark-gray);
       margin-bottom: 40px;
@@ -393,50 +559,39 @@
       margin: 0 auto;
     }
 
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
-    }
-
     .certification-info-box {
-      background-color: var(--white);
+      background-color: var(--light-gray);
       border-radius: 12px;
       box-shadow: var(--shadow);
-      padding: 30px 20px;
+      padding: 25px 15px;
       transition: var(--transition);
-      position: relative;
-      overflow: hidden;
     }
 
     .certification-info-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
     }
 
     .certification-icon {
-      font-size: 48px;
+      font-size: 40px;
       color: var(--primary-red);
-      margin-bottom: 20px;
-    }
-
-    .certification-subtitle {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--dark-gray);
-      margin-bottom: 10px;
-    }
-
-    .certification-description {
-      font-size: 1rem;
-      color: var(--medium-gray);
       margin-bottom: 15px;
     }
 
+    .certification-subtitle {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark-gray);
+      margin-bottom: 8px;
+    }
+
+    .certification-description {
+      font-size: 0.9rem;
+      color: var(--medium-gray);
+      margin-bottom: 10px;
+    }
+
     .certification-number {
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: var(--dark-gray);
     }
@@ -455,13 +610,13 @@
     }
 
     .course-header h2 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: var(--dark-gray);
       margin-bottom: 15px;
     }
 
     .course-subtitle {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--medium-gray);
       font-style: italic;
     }
@@ -469,33 +624,19 @@
     .course-description,
     .course-goals,
     .future-scope {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .course-description h3,
     .course-goals h3,
     .future-scope h3 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: var(--primary-red);
       margin-bottom: 15px;
-      position: relative;
-      padding-bottom: 10px;
-    }
-
-    .course-description h3::after,
-    .course-goals h3::after,
-    .future-scope h3::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: var(--primary-red);
     }
 
     .course-description p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.7;
       color: var(--medium-gray);
     }
@@ -509,7 +650,7 @@
     .course-goals li,
     .future-scope li {
       padding: 10px 0;
-      font-size: 1.1rem;
+      font-size: 1rem;
       display: flex;
       align-items: flex-start;
       gap: 10px;
@@ -519,11 +660,47 @@
     .future-scope i {
       color: var(--primary-red);
       margin-top: 5px;
+      flex-shrink: 0;
     }
 
-    /* Enhanced Syllabus Section */
+    /* Technologies Section */
+    .tech-section {
+      padding: 60px 0;
+      background-color: var(--white);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    .tech-card {
+      background: var(--light-gray);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .tech-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tech-card i {
+      font-size: 2rem;
+      color: var(--primary-red);
+      margin-bottom: 10px;
+    }
+
+    .tech-card h4 {
+      font-size: 1rem;
+      color: var(--dark-gray);
+    }
+
+    /* Syllabus Section */
     .syllabus-container {
-      padding: 80px 20px;
+      padding: 60px 20px;
       background: linear-gradient(to right, #f7f7f7, #eaeaea);
       text-align: center;
       border-radius: 15px;
@@ -532,129 +709,55 @@
     }
 
     .syllabus-title {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
+      font-weight: 700;
       color: var(--dark-gray);
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       position: relative;
       display: inline-block;
     }
 
-    .syllabus-title::after {
-      content: "";
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background-color: var(--primary-red);
-    }
-
     .syllabus-content {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
       justify-content: center;
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    .week-container {
+    .syllabus-item {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--dark-gray);
       background: var(--white);
+      padding: 15px 20px;
       border-radius: 12px;
       box-shadow: var(--shadow);
-      overflow: hidden;
-      margin-bottom: 25px;
       transition: var(--transition);
+      width: 100%;
+      border-left: 5px solid var(--primary-red);
     }
 
-    .week-container:hover {
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    .syllabus-item:hover {
+      transform: translateY(-5px);
     }
 
-    .week-header {
-      background-color: var(--primary-red);
-      color: var(--white);
-      padding: 20px 25px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: var(--transition);
-    }
-
-    .week-header:hover {
-      background-color: var(--dark-red);
-    }
-
-    .week-header h3 {
+    .syllabus-item i {
+      color: var(--primary-red);
       font-size: 1.3rem;
-      font-weight: 600;
-      margin: 0;
+      margin-right: 12px;
+      width: 30px;
+      text-align: center;
+      flex-shrink: 0;
     }
 
-    .week-icon {
-      color: var(--white);
-      font-size: 1.2rem;
-      transition: var(--transition);
-    }
 
-    .week-content {
-      padding: 0 25px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-    }
-
-    .week-container.active .week-content {
-      max-height: 1000px;
-      padding: 25px;
-    }
-
-    .week-container.active .week-icon {
-      transform: rotate(180deg);
-    }
-
-    .week-theory,
-    .week-practical {
-      margin-bottom: 25px;
-    }
-
-    .week-theory h4,
-    .week-practical h4 {
-      color: var(--primary-red);
-      margin-bottom: 15px;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .week-theory ul,
-    .week-practical ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .week-theory li,
-    .week-practical li {
-      padding: 8px 0;
-      font-size: 1rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .week-theory i,
-    .week-practical i {
-      color: var(--primary-red);
-      margin-top: 5px;
-      font-size: 0.9rem;
-    }
-
-    /* Enhanced FAQ Section */
+    /* FAQ Section */
     .faq-section {
-      padding: 80px 0;
+      padding: 60px 0;
       background-color: var(--light-gray);
     }
 
@@ -676,7 +779,7 @@
     }
 
     .faq-question {
-      padding: 20px 25px;
+      padding: 15px 20px;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -689,7 +792,7 @@
     }
 
     .faq-question h3 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--dark-gray);
       margin: 0;
@@ -697,22 +800,25 @@
 
     .faq-icon {
       color: var(--primary-red);
-      font-size: 1.2rem;
+      font-size: 1rem;
       transition: var(--transition);
+      flex-shrink: 0;
+      margin-left: 15px;
     }
 
     .faq-answer {
-      padding: 0 25px;
+      padding: 0 20px;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
+      transition: max-height 0.4s ease;
       background-color: var(--light-red);
     }
 
     .faq-answer p {
-      padding: 20px 0;
+      padding: 15px 0;
       color: var(--medium-gray);
       margin: 0;
+      font-size: 0.9rem;
     }
 
     .faq-item.active .faq-question {
@@ -724,28 +830,28 @@
     }
 
     .faq-item.active .faq-answer {
-      max-height: 500px;
-      padding: 0 25px;
+      max-height: 300px;
     }
 
     /* Enhanced Footer */
     .tech-footer {
-      background-color: #656566;
+      background: linear-gradient(rgba(97, 97, 97, 0.95),
+          rgba(128, 112, 112, 0.98));
       color: var(--white);
-      padding: 60px 0 20px;
+      padding: 50px 0 20px;
     }
 
     .footer-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
+      gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     .footer-column h3 {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       margin-bottom: 20px;
       color: var(--white);
       position: relative;
@@ -765,6 +871,9 @@
     .footer-column p {
       margin-bottom: 20px;
       color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      font-size: 16px;
+
     }
 
     .social-links {
@@ -782,6 +891,8 @@
       border-radius: 50%;
       color: var(--white);
       transition: var(--transition);
+      text-decoration: none;
+      font-size: 1.5rem;
     }
 
     .social-links a:hover {
@@ -805,6 +916,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      font-size: 16px;
     }
 
     .footer-links a:hover {
@@ -820,7 +932,7 @@
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       padding-top: 20px;
-      margin-top: 40px;
+      margin-top: 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -830,20 +942,22 @@
       margin-right: auto;
       padding-left: 20px;
       padding-right: 20px;
+      gap: 15px;
     }
 
     .footer-bottom p {
       color: rgba(255, 255, 255, 0.8);
       margin: 0;
+      font-size: 14px;
     }
 
     /* Back to Top Button */
     .back-to-top {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
       background-color: var(--primary-red);
       color: var(--white);
       border-radius: 50%;
@@ -857,7 +971,7 @@
       z-index: 999;
     }
 
-    .back-to-top.active {
+    .back-to-top.show {
       opacity: 1;
       visibility: visible;
     }
@@ -866,55 +980,56 @@
       background-color: var(--dark-red);
     }
 
-    /* Enrollment CTA Section */
-    .enrollment-cta {
-      background-color: var(--primary-red);
-      color: white;
-      padding: 60px 0;
-      text-align: center;
-    }
-
-    .enrollment-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .enrollment-title {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-
-    .enrollment-subtitle {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-
-    .enrollment-button {
-      display: inline-block;
-      background-color: white;
-      color: var(--primary-red);
-      padding: 15px 30px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: var(--transition);
-    }
-
-    .enrollment-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
     /* Responsive Styles */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
+    @media (max-width: 991px) {
+      .container {
+        padding: 0 15px;
       }
 
-      .mobile-overlay {
+      .section-title h1 {
+        font-size: 2rem;
+      }
+
+      .certification-title {
+        font-size: 1.6rem;
+      }
+
+      .course-header h2 {
+        font-size: 1.6rem;
+      }
+
+      .syllabus-content {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .top-bar {
+        height: auto;
+        padding: 10px 0;
+      }
+
+      .top-bar-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .contact-info {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .contact-info div {
+        font-size: 12px;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+
+      .hamburger {
         display: block;
       }
 
@@ -926,7 +1041,7 @@
         background-color: var(--white);
         width: 280px;
         height: 100vh;
-        transition: 0.4s ease;
+        transition: 0.3s ease;
         box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
         padding: 80px 0 20px;
         gap: 0;
@@ -939,16 +1054,14 @@
       }
 
       .nav-item {
-        margin: 0;
         width: 100%;
+        margin: 0;
       }
 
       .nav-link {
         padding: 15px 25px;
-        width: 100%;
         justify-content: space-between;
-        border-bottom: 1px solid #eee;
-        font-size: 16px;
+        font-size: 14px;
       }
 
       .dropdown {
@@ -956,130 +1069,232 @@
         opacity: 1;
         visibility: visible;
         transform: none;
-        box-shadow: none;
         display: none;
-        background-color: var(--light-grey);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
         width: 100%;
+        box-shadow: none;
       }
 
       .dropdown.active {
         display: block;
-        max-height: 300px;
       }
 
       .dropdown-item {
         padding: 12px 40px;
-        border-bottom: 1px solid #ddd;
-        font-size: 14px;
+        font-size: 13px;
       }
 
-      .nav-link i.fa-chevron-down {
-        transition: transform 0.3s ease;
+      .overview-section {
+        padding: 40px 0;
       }
 
-      .nav-link.active i.fa-chevron-down {
-        transform: rotate(180deg);
+      .section-title h1 {
+        font-size: 1.5rem;
+      }
+
+      .section-title p {
+        font-size: 0.95rem;
+      }
+
+      .highlight-box {
+        padding: 20px;
+      }
+
+      .course-overview {
+        padding: 30px 0 40px;
+      }
+
+      .course-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .stat {
+        padding: 15px 10px;
+      }
+
+      .stat-value {
+        font-size: 1.5rem;
+      }
+
+      .certification-section,
+      .highlights-section {
+        padding: 40px 0;
+      }
+
+      .certification-title {
+        font-size: 1.3rem;
+      }
+
+      .certification-content {
+        gap: 15px;
+      }
+
+      .course-details-section {
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .course-header h2 {
+        font-size: 1.4rem;
+      }
+
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.2rem;
+      }
+
+      .tech-section {
+        padding: 40px 0;
+      }
+
+      .syllabus-container {
+        padding: 40px 15px;
+      }
+
+      .syllabus-title {
+        font-size: 1.4rem;
+      }
+
+      .syllabus-item {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+      }
+
+      .syllabus-item i {
+        font-size: 1.1rem;
+        margin-right: 10px;
+        width: 25px;
+      }
+
+      .faq-section {
+        padding: 40px 0;
+      }
+
+      .faq-question {
+        padding: 12px 15px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.9rem;
+      }
+
+      .tech-footer {
+        padding: 40px 0 15px;
+      }
+
+      .footer-content {
+        gap: 25px;
       }
 
       .footer-bottom {
         flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        gap: 8px;
+      }
+
+      .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
       }
     }
 
-    @media (max-width: 768px) {
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
       }
 
-      .top-bar {
-        height: 120px;
+      .section-title h1 {
+        font-size: 1.3rem;
       }
 
-      .contact-info {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 992px) {
-      .syllabus-content {
+      .course-stats {
         grid-template-columns: 1fr;
-        max-width: 600px;
+        gap: 10px;
       }
 
-      .section-title h1 {
-        font-size: 2rem;
+      .stat {
+        padding: 12px 8px;
+      }
+
+      .stat-value {
+        font-size: 1.3rem;
+      }
+
+      .certification-title {
+        font-size: 1.2rem;
+      }
+
+      .certification-content {
+        grid-template-columns: 1fr;
+      }
+
+      .course-header h2 {
+        font-size: 1.2rem;
+      }
+
+      .syllabus-title {
+        font-size: 1.2rem;
+      }
+
+      .syllabus-item {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+      }
+
+      .syllabus-item i {
+        font-size: 1rem;
+        margin-right: 8px;
+        width: 22px;
+      }
+
+      .faq-question {
+        padding: 10px 12px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.85rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
     }
 
-    @media (max-width: 768px) {
-      .banner {
-        padding: 80px 0;
-        min-height: 350px;
-        background-size: cover;
-      }
-
-      .section-title h1 {
-        font-size: 1.8rem;
-      }
-
-      .section-title p {
-        font-size: 1.1rem;
+    @media (max-width: 767px) and (orientation: landscape) {
+      .nav-menu {
+        overflow-y: auto;
+        padding: 60px 0 20px;
       }
 
       .course-stats {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .syllabus-container {
-        padding: 60px 15px;
-      }
-
-      .syllabus-title {
-        font-size: 2.2rem;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+      .syllabus-content {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 576px) {
-      .contact-info {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
+    @media (hover: none) and (pointer: coarse) {
+      .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
       }
 
-      .course-stats {
-        grid-template-columns: 1fr;
+      .nav-item .dropdown.active {
+        display: block;
       }
 
-      .stat-value {
-        font-size: 2rem;
-      }
-
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-      }
-
-      .syllabus-container {
-        padding: 50px 10px;
-      }
-
-      .syllabus-title {
-        font-size: 2rem;
+      .stat:hover,
+      .certification-info-box:hover,
+      .syllabus-item:hover {
+        transform: none;
       }
     }
   </style>
@@ -1087,36 +1302,43 @@
 
 <body>
 
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i> Virudhunagar, Tamil Nadu</div>
+        <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
+        <div><i class="fas fa-phone"></i> +91 97518 67879</div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
+            class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo" itemprop="logo">
-        <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png"
-            alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120"
-            height="60" />
-        </div>
+      <div class="logo">
+        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
       </div>
 
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link" aria-current="page">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="classic.html" class="dropdown-item">Classic</a>
-            <a href="professional.html" class="dropdown-item active">Professional</a>
+            <a href="professional.html" class="dropdown-item">Professional</a>
             <a href="expert.html" class="dropdown-item">Expert</a>
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-        </li>
+        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -1125,87 +1347,102 @@
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="techblog.html" class="nav-link">Techblog</a>
-        </li>
-        <li class="nav-item">
-          <a href="scholarship.html" class="nav-link">Scholarship</a>
-        </li>
-        <li class="nav-item">
-          <a href="career.html" class="nav-link"> Careers</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+        <li class="nav-item"><a href="career.html" class="nav-link">Careers</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
-      <div class="hamburger" aria-label="Toggle menu">
+      <div class="hamburger">
         <i class="fas fa-bars"></i>
       </div>
     </div>
   </nav>
 
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- Enhanced Hero Section -->
+  <!-- Hero Section -->
   <section class="banner">
-    <div class="banner-content"></div>
+    <div class="banner-content">
+    </div>
   </section>
 
   <!-- Overview Section -->
   <section class="overview-section" id="overview">
     <div class="container">
-      <div class="overview-container">
-        <div class="overview-content">
-          <div class="section-title">
-            <h1 style="text-align: center">
-              MySQL Database Master Course Overview
-            </h1>
-            <p style="text-align: center; font-weight: bold">
-              Master MySQL Database — Learn Structured Query Language, Server
-              Management, and Real-time Data Handling with Practical Projects!
-            </p>
-          </div>
-          <div class="highlight-box">
-            <p>
-              <strong>Rohil NextGen</strong> offers a complete MySQL Database
-              Master course covering core SQL, relational database design,
-              stored procedures, triggers, and data optimization using
-              real-world examples and live assignments.
-            </p>
-          </div>
-          <!--Rating-->
-          <div class="rating">
-            <span class="rating-badge">TOP RATED 4.9</span>
-            <span>4.9 Ratings</span>
-          </div>
+      <div class="section-title">
+        <h1>Master SQL & Database Management</h1>
+        <p>Empower your career with industry-relevant SQL skills and gain the expertise needed to manage, analyze, and
+          optimize data effectively.</p>
+      </div>
+      <div class="highlight-box">
+        <p><strong>Rohil NextGen</strong> offers a complete SQL Database Master course covering core SQL, relational
+          database design, stored procedures, triggers, and data optimization using real-world examples and live
+          assignments. SQL remains one of the most searched and demanded technical skills because almost every
+          organization relies on databases for managing business data.</p>
+      </div>
+      <div class="rating">
+        <span class="rating-badge">TOP RATED 4.9</span>
+        <span>4.9 Ratings </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose SQL Section -->
+  <section class="highlights-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <h2>Why Choose SQL Database Certification?</h2>
+      </div>
+      <div class="highlights-grid">
+        <div class="highlight-card"><i class="fas fa-database"></i>
+          <h4>Foundation of Data</h4>
+          <p>SQL is used in every data-driven industry</p>
+        </div>
+        <div class="highlight-card"><i class="fas fa-chart-line"></i>
+          <h4>High Demand Skill</h4>
+          <p>Essential for Data Science & Analytics</p>
+        </div>
+        <div class="highlight-card"><i class="fas fa-code"></i>
+          <h4>Easy to Learn</h4>
+          <p>Beginner-friendly English-like syntax</p>
+        </div>
+        <div class="highlight-card"><i class="fas fa-briefcase"></i>
+          <h4>Career Opportunities</h4>
+          <p>SQL Developer, DBA, Data Analyst</p>
+        </div>
+        <div class="highlight-card"><i class="fas fa-rocket"></i>
+          <h4>Future-Proof</h4>
+          <p>Data skills will always be in demand</p>
+        </div>
+        <div class="highlight-card"><i class="fas fa-certificate"></i>
+          <h4>Certification</h4>
+          <p>Industry-recognized certificate</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Course Overview Section -->
+  <!-- Course Stats -->
   <section class="course-overview">
     <div class="container">
-      <div class="course-content">
-        <div class="course-text">
-          <div class="course-stats">
-            <div class="stat">
-              <div class="stat-value">3 Months</div>
-              <div class="stat-label">Course Duration</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">20 Weeks</div>
-              <div class="stat-label">Structured Program</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">120</div>
-              <div class="stat-label">Total Hours</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">80</div>
-              <div class="stat-label">Practical Hours</div>
-            </div>
-          </div>
+      <div class="course-stats">
+        <div class="stat">
+          <div class="stat-value">3 Months</div>
+          <div class="stat-label">Course Duration</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">120</div>
+          <div class="stat-label">Total Hours</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">80</div>
+          <div class="stat-label">Practical Hours</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">2026</div>
+          <div class="stat-label">Latest Curriculum</div>
         </div>
       </div>
     </div>
@@ -1214,27 +1451,22 @@
   <!-- Certification Section -->
   <section class="certification-section">
     <div class="container">
-      <h2 class="certification-title">
-        Why Choose MySQL Database Certification?
-      </h2>
+      <h2 class="certification-title">Why Choose SQL Certification? High Demand Data Skills</h2>
       <div class="certification-content">
-        <div class="certification-info-box">
-          <i class="fas fa-money-bill-wave certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-wallet certification-icon"></i>
           <h4 class="certification-subtitle">Annual Income</h4>
           <p class="certification-description">Estimated Salary</p>
-          <h3 class="certification-number">₹ 12 L</h3>
+          <h3 class="certification-number">₹ 12 LPA+</h3>
         </div>
-        <div class="certification-info-box">
-          <i class="fas fa-chart-line certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-chart-line certification-icon"></i>
           <h4 class="certification-subtitle">Job Growth</h4>
           <p class="certification-description">Annual Demand Increase</p>
           <h3 class="certification-number">60%</h3>
         </div>
-        <div class="certification-info-box">
-          <i class="fas fa-briefcase certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-briefcase certification-icon"></i>
           <h4 class="certification-subtitle">DBAs Needed</h4>
           <p class="certification-description">By 2026</p>
-          <h3 class="certification-number">3 L</h3>
+          <h3 class="certification-number">3 Lakh+</h3>
         </div>
       </div>
     </div>
@@ -1244,82 +1476,78 @@
   <section class="course-details-section">
     <div class="container">
       <div class="course-header">
-        <h2>Become a MySQL Database Expert</h2>
-        <p class="course-subtitle">
-          <span style="
-                font-size: 30px;
-                color: var(--primary-blue);
-                font-weight: bold;
-              ">❝</span>
-          Design, Query, and Optimize MySQL Databases for Real-World
-          Applications
-          <span style="
-                font-size: 30px;
-                color: var(--primary-blue);
-                font-weight: bold;
-              ">❞</span>
-        </p>
+        <h2>Become a SQL Database Expert</h2>
+        <p class="course-subtitle">Design, Query, and Optimize SQL Databases for Real-World Applications</p>
       </div>
 
       <div class="course-description">
-        <h3>Course Overview</h3>
-        <p>
-          This MySQL Database Master course provides comprehensive training on
-          writing advanced SQL queries, designing normalized schemas, indexing
-          strategies, and managing users and access control for scalable
-          systems.
-        </p>
+        <h3>SQL Course Overview</h3>
+        <p>This SQL Database Master course provides comprehensive training on writing advanced SQL queries, designing
+          normalized schemas, indexing strategies, and managing users and access control for scalable systems. SQL is a
+          foundational skill required across Data Analytics, Data Science, Business Intelligence, Software Development,
+          Machine Learning, and Database Administration careers.</p>
+        <p><strong>SQL Commands Covered:</strong> DDL (CREATE, ALTER, DROP), DML (INSERT, UPDATE, DELETE), DQL (SELECT),
+          DCL (GRANT, REVOKE), TCL (COMMIT, ROLLBACK).</p>
       </div>
 
       <div class="course-goals">
         <h3>Key Learning Outcomes</h3>
         <ul>
-          <li>
-            <i class="fas fa-database"></i> Understand Relational Database
-            Concepts & Normalization.
-          </li>
-          <li>
-            <i class="fas fa-code"></i> Write advanced SQL queries including
-            joins, subqueries, and unions.
-          </li>
-          <li>
-            <i class="fas fa-cogs"></i> Use stored procedures, functions,
-            triggers, and transactions.
-          </li>
-          <li>
-            <i class="fas fa-server"></i> Manage MySQL server, databases,
-            users, and backups.
-          </li>
-          <li>
-            <i class="fas fa-tachometer-alt"></i> Perform query optimization
-            and indexing for performance.
-          </li>
+          <li><i class="fas fa-database"></i> Understand Relational Database Concepts & Normalization</li>
+          <li><i class="fas fa-code"></i> Write advanced SQL queries including joins, subqueries, and unions</li>
+          <li><i class="fas fa-cogs"></i> Use stored procedures, functions, triggers, and transactions</li>
+          <li><i class="fas fa-server"></i> Manage MySQL server, databases, users, and backups</li>
+          <li><i class="fas fa-tachometer-alt"></i> Perform query optimization and indexing for performance</li>
         </ul>
       </div>
+
       <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
+        <h3>Career Opportunities After SQL Course</h3>
         <ul>
-          <li>
-            <i class="fas fa-user-tie"></i> Work as a Database Administrator
-            (DBA) or SQL Developer.
-          </li>
-          <li>
-            <i class="fas fa-archway"></i> Get hired in roles related to
-            backend data architecture.
-          </li>
-          <li>
-            <i class="fas fa-shield-alt"></i> Specialize in data security and
-            compliance roles.
-          </li>
-          <li>
-            <i class="fas fa-chart-line"></i> Freelance as a database
-            optimization specialist.
-          </li>
-          <li>
-            <i class="fas fa-building"></i> Contribute to enterprise-level
-            data systems.
-          </li>
+          <li><i class="fas fa-user-tie"></i> SQL Developer</li>
+          <li><i class="fas fa-server"></i> Database Administrator (DBA)</li>
+          <li><i class="fas fa-chart-line"></i> Data Analyst</li>
+          <li><i class="fas fa-brain"></i> Business Intelligence Analyst</li>
+          <li><i class="fas fa-code"></i> Data Engineer</li>
+          <li><i class="fas fa-file-alt"></i> Reporting Analyst</li>
         </ul>
+        <p style="margin-top: 15px;">SQL professionals are highly demanded across IT companies, financial institutions,
+          healthcare, e-commerce, and data-driven organizations worldwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Covered -->
+  <section class="tech-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <h2>SQL Tools & Technologies Covered</h2>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-card"><i class="fas fa-database"></i>
+          <h4>MySQL Server</h4>
+        </div>
+        <div class="tech-card"><i class="fas fa-code"></i>
+          <h4>SQL Programming</h4>
+        </div>
+        <div class="tech-card"><i class="fas fa-table"></i>
+          <h4>Database Design</h4>
+        </div>
+        <div class="tech-card"><i class="fas fa-cogs"></i>
+          <h4>Stored Procedures</h4>
+        </div>
+        <div class="tech-card"><i class="fas fa-shield-alt"></i>
+          <h4>User Management</h4>
+        </div>
+        <div class="tech-card"><i class="fas fa-chart-line"></i>
+          <h4>Data Analytics</h4>
+        </div>
+        <div class="tech-card"><i class="fas fa-rocket"></i>
+          <h4>Performance Optimization</h4>
+        </div>
+        <div class="tech-card"><i class="fas fa-cloud-upload-alt"></i>
+          <h4>Backup & Restore</h4>
+        </div>
       </div>
     </div>
   </section>
@@ -1327,472 +1555,20 @@
   <!-- Syllabus Section -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">Course Syllabus</h2>
+      <h2 class="syllabus-title">SQL Database Course Syllabus</h2>
       <div class="syllabus-content">
-        <!-- Week 1-2 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 1-2: Introduction to Databases & MySQL Setup</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> What is a Database?
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Types of Databases
-                  (Relational vs NoSQL)
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Introduction to MySQL,
-                  Installation & Tools
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Install MySQL and MySQL
-                  Workbench
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Connect and create your
-                  first database
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div class="syllabus-item"><i class="fas fa-play-circle"></i> Week 1-2: Introduction to Databases & MySQL Setup
         </div>
-
-        <!-- Week 3-4 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 3-4: Data Types, Tables & Basic SQL</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> MySQL Data Types and
-                  Constraints
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Creating and Modifying
-                  Tables
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Basic SQL Operations
-                  (INSERT, UPDATE, DELETE)
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Primary Keys and Foreign
-                  Keys
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create database tables
-                  with proper constraints
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Practice CRUD operations
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Design a simple database
-                  schema
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 5-6 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 5-6: SELECT Queries & Clauses</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> SELECT statement
-                  fundamentals
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> WHERE, ORDER BY, GROUP
-                  BY clauses
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Aggregate functions
-                  (COUNT, SUM, AVG, MAX, MIN)
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> HAVING clause and
-                  filtering grouped data
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Write complex SELECT
-                  queries
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Practice with different
-                  clauses
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Work with sample
-                  databases
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 7-8 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 7-8: Functions, Operators & Joins</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> String, Date, and
-                  Mathematical Functions
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Comparison and Logical
-                  Operators
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> INNER JOIN, LEFT JOIN,
-                  RIGHT JOIN
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Self Joins and Cross
-                  Joins
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement various types
-                  of joins
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Use built-in functions
-                  in queries
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Complex query writing
-                  practice
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 9-10 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 9-10: Subqueries, Views & Transactions</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Subqueries in SELECT,
-                  FROM, WHERE clauses
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Creating and Using Views
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Transaction Control
-                  (COMMIT, ROLLBACK)
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> ACID Properties and
-                  Isolation Levels
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Write complex subqueries
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create and manage views
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement transaction
-                  control
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 11-12 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 11-12: Stored Procedures & Triggers</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Creating and Calling
-                  Stored Procedures
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Parameters and Variables
-                  in Procedures
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Creating and Managing
-                  Triggers
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> BEFORE and AFTER
-                  Triggers
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create stored procedures
-                  with parameters
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement database
-                  triggers
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Automate database
-                  operations
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 13-14 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 13-14: User Management & Security</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Creating and Managing
-                  Users
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Granting and Revoking
-                  Privileges
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Role-based Access
-                  Control
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Database Security Best
-                  Practices
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create users and assign
-                  privileges
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement security
-                  policies
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Practice user management
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 15-16 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 15-16: Backup, Restore & Data Import/Export</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Database Backup
-                  Strategies
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Using mysqldump for
-                  Backups
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Restoring Databases from
-                  Backups
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Importing and Exporting
-                  Data (CSV, JSON)
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Perform database backups
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Restore databases from
-                  backups
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Import/export data
-                  operations
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 17-18 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 17-18: Performance Optimization</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Query Optimization
-                  Techniques
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Indexing Strategies and
-                  Best Practices
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Using EXPLAIN to Analyze
-                  Queries
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Database Performance
-                  Tuning
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create and optimize
-                  indexes
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Use EXPLAIN to analyze
-                  query performance
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Optimize slow-running
-                  queries
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Week 19-20 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Week 19-20: Final Project & Certification Review</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Database Design
-                  Principles
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Real-world Database
-                  Implementation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Documentation and Best
-                  Practices
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Certification Exam
-                  Preparation
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Complete capstone
-                  database project
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Design and implement
-                  full database system
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Prepare for MySQL
-                  certification
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="syllabus-item"><i class="fas fa-table"></i> Week 3-4: Data Types, Tables & Basic SQL</div>
+        <div class="syllabus-item"><i class="fas fa-search"></i> Week 5-6: SELECT Queries & Clauses</div>
+        <div class="syllabus-item"><i class="fas fa-link"></i> Week 7-8: Functions, Operators & Joins</div>
+        <div class="syllabus-item"><i class="fas fa-layer-group"></i> Week 9-10: Subqueries, Views & Transactions</div>
+        <div class="syllabus-item"><i class="fas fa-cogs"></i> Week 11-12: Stored Procedures & Triggers</div>
+        <div class="syllabus-item"><i class="fas fa-user-shield"></i> Week 13-14: User Management & Security</div>
+        <div class="syllabus-item"><i class="fas fa-archive"></i> Week 15-16: Backup, Restore & Data Import/Export</div>
+        <div class="syllabus-item"><i class="fas fa-tachometer-alt"></i> Week 17-18: Performance Optimization</div>
+        <div class="syllabus-item"><i class="fas fa-project-diagram"></i> Week 19-20: Final Project & Certification
+          Review</div>
       </div>
     </div>
   </section>
@@ -1801,104 +1577,68 @@
   <section class="faq-section">
     <div class="container">
       <div class="section-title">
-        <h2 style="text-align: center">Frequently Asked Questions</h2>
+        <h1 style="text-align: center;">Frequently Asked Questions</h1>
       </div>
-
       <div class="faq-content">
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What is MySQL Database?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>What is SQL?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              MySQL is an open-source relational database management system
-              that uses Structured Query Language (SQL) for managing and
-              manipulating databases. It's widely used for web applications
-              and is known for its reliability, performance, and ease of use.
-            </p>
+            <p>SQL (Structured Query Language) is a programming language used to manage and manipulate relational
+              databases. It is essential for data analysis, database administration, and software development.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Do I need programming experience for this course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Is SQL difficult to learn?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              No prior programming experience is required. The course starts
-              with database fundamentals and gradually builds up to advanced
-              SQL concepts and database administration.
-            </p>
+            <p>SQL is considered one of the easiest programming languages to learn. It uses simple English-like syntax,
+              making it accessible for beginners.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>
-              Will I receive a certificate after completing the MySQL course?
-            </h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>What jobs can I get after learning SQL?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, upon successful completion of the course and final project,
-              you will receive a certificate from Rohil NextGen that validates
-              your MySQL database skills.
-            </p>
+            <p>After learning SQL, you can work as a SQL Developer, Database Administrator, Data Analyst, Business
+              Intelligence Analyst, Data Engineer, or Reporting Analyst.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What kind of projects will I work on during the course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Is SQL required for Data Science?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              You'll work on real-world projects including e-commerce database
-              design, customer management systems, inventory tracking systems,
-              and a comprehensive capstone project that integrates all the
-              skills you've learned.
-            </p>
+            <p>Yes, SQL is an essential skill for Data Science. Data scientists use SQL to extract, clean, and prepare
+              data for analysis and machine learning models.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What tools and technologies will I learn?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Will I work on real-time projects?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              You'll learn MySQL Server, MySQL Workbench, SQL programming,
-              database design principles, stored procedures, triggers, user
-              management, backup strategies, and performance optimization
-              techniques.
-            </p>
+            <p>Yes! You will work on real-time projects including student management databases, inventory systems,
+              hospital management systems, and e-commerce databases.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>
-              What career support do you provide after course completion?
-            </h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Is placement support provided?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              We provide resume building assistance, interview preparation,
-              portfolio development guidance, and connect you with our
-              placement partners for job opportunities in database
-              administration and development roles.
-            </p>
+            <p>Yes! We provide comprehensive placement support including resume building, interview preparation,
+              portfolio development, and connections with our hiring partners.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- Footer -->
   <footer class="tech-footer">
@@ -1959,77 +1699,42 @@
   </div>
 
   <script>
-    // IMPROVED MOBILE NAVIGATION
+    // Mobile Menu Toggle
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
     const mobileOverlay = document.getElementById("mobileOverlay");
-    const body = document.body;
 
-    // Toggle mobile menu
-    function toggleMobileMenu() {
-      navMenu.classList.toggle("active");
-      mobileOverlay.classList.toggle("active");
-      body.style.overflow = navMenu.classList.contains("active")
-        ? "hidden"
-        : "";
-
-      // Change hamburger icon
-      const icon = hamburger.querySelector("i");
-      if (navMenu.classList.contains("active")) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-      } else {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
-    }
-
-    // Close mobile menu
-    function closeMobileMenu() {
-      navMenu.classList.remove("active");
-      mobileOverlay.classList.remove("active");
-      body.style.overflow = "";
-
-      // Reset hamburger icon
-      const icon = hamburger.querySelector("i");
-      icon.classList.remove("fa-times");
-      icon.classList.add("fa-bars");
-
-      // Close all dropdowns
-      document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-        dropdown.classList.remove("active");
-        const navLink = dropdown.previousElementSibling;
-        navLink?.classList.remove("active");
+    if (hamburger) {
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        if (mobileOverlay) mobileOverlay.classList.toggle("active");
+        document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "";
       });
     }
 
-    // Event listeners
-    hamburger.addEventListener("click", toggleMobileMenu);
-    mobileOverlay.addEventListener("click", closeMobileMenu);
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    }
 
-    // Mobile Dropdown Functionality
+    // Mobile Dropdown
     document.querySelectorAll(".nav-item").forEach((item) => {
       const dropdown = item.querySelector(".dropdown");
       const navLink = item.querySelector(".nav-link");
-      const chevron = navLink?.querySelector(".fa-chevron-down");
-
       if (dropdown && navLink) {
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  const otherNavLink = otherDropdown.previousElementSibling;
-                  otherNavLink?.classList.remove("active");
-                }
-              });
-
-            // Toggle current dropdown
+            document.querySelectorAll(".dropdown.active").forEach((other) => {
+              if (other !== dropdown) {
+                other.classList.remove("active");
+                const prev = other.previousElementSibling;
+                if (prev) prev.classList.remove("active");
+              }
+            });
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -2037,70 +1742,69 @@
       }
     });
 
-    // Close menu when clicking on non-dropdown links
+    // Close menu on non-dropdown links
     document.querySelectorAll(".nav-link").forEach((link) => {
       if (!link.querySelector(".fa-chevron-down")) {
         link.addEventListener("click", () => {
           if (window.innerWidth <= 768) {
-            closeMobileMenu();
+            navMenu.classList.remove("active");
+            if (mobileOverlay) mobileOverlay.classList.remove("active");
+            document.body.style.overflow = "";
           }
         });
       }
     });
 
-    // Close menu on resize if window becomes larger
+    // Close menu on resize
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
-        closeMobileMenu();
+        navMenu.classList.remove("active");
+        if (mobileOverlay) mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+          dropdown.classList.remove("active");
+          const prev = dropdown.previousElementSibling;
+          if (prev) prev.classList.remove("active");
+        });
       }
-    });
-
-    // Prevent dropdown from closing when clicking inside it
-    document.querySelectorAll(".dropdown").forEach((dropdown) => {
-      dropdown.addEventListener("click", (e) => {
-        e.stopPropagation();
-      });
     });
 
     // Close menu with Escape key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && navMenu.classList.contains("active")) {
-        closeMobileMenu();
+        navMenu.classList.remove("active");
+        if (mobileOverlay) mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
       }
     });
 
-    // Week Accordion Functionality
+    // Week Accordion
     document.querySelectorAll(".week-header").forEach((header) => {
       header.addEventListener("click", () => {
-        const weekContainer = header.parentElement;
-        weekContainer.classList.toggle("active");
+        const container = header.parentElement;
+        container.classList.toggle("active");
       });
     });
-    // Back to Top Button
-    const backToTopButton = document.getElementById("backToTop");
 
+    // Back to Top
+    const backBtn = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add("active");
-      } else {
-        backToTopButton.classList.remove("active");
-      }
+      if (window.pageYOffset > 300) backBtn.classList.add("show");
+      else backBtn.classList.remove("show");
     });
+    if (backBtn) {
+      backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    }
 
-    backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
-
-    // Close mobile menu on resize if window becomes larger
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        navMenu.classList.remove("active");
-        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-          dropdown.classList.remove("active");
-          dropdown.previousElementSibling.classList.remove("active");
+    // FAQ Accordion
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      const q = item.querySelector(".faq-question");
+      if (q) {
+        q.addEventListener("click", () => {
+          document.querySelectorAll(".faq-item").forEach((other) => {
+            if (other !== item) other.classList.remove("active");
+          });
+          item.classList.toggle("active");
         });
       }
     });
