@@ -151,51 +151,7 @@
       margin: 0 auto;
       padding: 0 20px;
     }
-
-    /* Top Bar Styles */
-    .top-bar {
-      background-color: var(--primary-red);
-      color: var(--white);
-      padding: 15px 0;
-      font-size: 15px;
-      height: 60px;
-    }
-
-    .top-bar-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .contact-info {
-      display: flex;
-      gap: 20px;
-    }
-
-    .contact-info div {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 18px;
-    }
-
-    .social-icons a {
-      color: var(--white);
-      font-size: 25px;
-      transition: var(--transition);
-    }
-
-    .social-icons a:hover {
-      color: var(--text-grey);
-      transform: translateY(-3px) scale(1.1);
-    }
+  
 
     /*Navigation*/
     .navbar {
@@ -1004,16 +960,6 @@
         font-size: 14px;
       }
 
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .top-bar {
-        height: auto;
-        padding: 10px 0;
-      }
-
       .contact-info {
         flex-wrap: wrap;
         justify-content: center;
@@ -1151,14 +1097,18 @@
         grid-template-columns: 1fr;
       }
     }
-@media (max-width: 480px) {
-  .banner {
-    height: 250px;   /* Exact Height */
-    padding: 0;
-    background-size: cover;
-    background-position: center;
-  }
-}
+
+    @media (max-width: 480px) {
+      .banner {
+        height: 250px;
+        /* Exact Height */
+        padding: 0;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+
     @media (max-width: 767px) and (orientation: landscape) {
       .nav-menu {
         overflow-y: auto;
@@ -1193,24 +1143,7 @@
   </style>
 </head>
 
-<body>
-
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="top-bar-container">
-      <div class="contact-info">
-        <div><i class="fas fa-map-marker-alt"></i> Virudhunagar, Tamil Nadu</div>
-        <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
-        <div><i class="fas fa-phone"></i> +91 97518 67879</div>
-      </div>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
-            class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </div>
+<body>    
 
   <!-- Navigation -->
   <nav class="navbar">

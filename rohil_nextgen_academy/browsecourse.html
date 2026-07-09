@@ -370,9 +370,9 @@
 
     .steps-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 30px;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -1927,7 +1927,7 @@
         <button class="filter-btn" data-filter="cloud">
           Cloud Computing
         </button>
-        <button class="filter-btn" data-filter="database">Database</button>
+        <button class="filter-btn" data-filter="dataanalysis">Data Analysis</button>
         <button class="filter-btn" data-filter="testing">
           Software Testing
         </button>
@@ -2565,6 +2565,39 @@
         level: "Advanced",
         detailsUrl: "expert19.html",
       },
+      {
+        id: 22,
+        title: "Data Analysis with Python",
+        description:
+          "Master data cleaning, exploration, statistical analysis, and visualization using Python, Pandas, NumPy, and Matplotlib.",
+        image: "./images/DA1.jpg",
+        category: "dataanalysis",
+        duration: "1 Month",
+        level: "Intermediate",
+        detailsUrl: "expert20.html",
+      },
+      {
+        id: 23,
+        title: "Excel & Power BI for Data Analysis",
+        description:
+          "Learn advanced Excel techniques and Power BI to create interactive dashboards, reports, and business insights.",
+        image: "./images/DA2.jfif",
+        category: "dataanalysis",
+        duration: "2 weeks",
+        level: "Beginner",
+        detailsUrl: "expert21.html",
+      },
+      {
+        id: 24,
+        title: "SQL for Data Analytics",
+        description:
+          "Develop expertise in SQL queries, database management, joins, aggregations, and data extraction for analytical reporting.",
+        image: "./images/DA3.jfif",
+        category: "dataanalysis",
+        duration: "1 Month",
+        level: "Intermediate",
+        detailsUrl: "expert22.html",
+      },
     ];
 
     // DOM Elements
@@ -2880,9 +2913,9 @@
 
       if (rect.top < window.innerHeight && rect.bottom >= 0) {
         // Start animations
-        animateNumber(coursesElement, 80);
-        animateNumber(studentsElement, 500);
-        animateNumber(successElement, 300);
+        animateNumber(coursesElement, 40);
+        animateNumber(studentsElement, 350);
+        animateNumber(successElement, 50);
 
         // Remove scroll listener after animation starts
         window.removeEventListener("scroll", initNumberAnimation);

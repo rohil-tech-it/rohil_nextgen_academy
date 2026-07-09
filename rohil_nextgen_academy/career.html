@@ -823,6 +823,7 @@
         opacity: 0;
         transform: scale(0.95);
       }
+
       to {
         opacity: 1;
         transform: scale(1);
@@ -1189,9 +1190,11 @@
       0% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
       }
+
       70% {
         box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
       }
+
       100% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
       }
@@ -1283,54 +1286,17 @@
       </div>
 
       <div class="jobs-grid">
-        <!-- Job 1: Business Development Executive -->
-        <div class="job-card">
-          <div class="job-header">
-            <h3><i class="fas fa-chart-line"></i> Business Development Executive</h3>
-          </div>
-          <div class="job-meta">
-            <span><i class="fas fa-users"></i> Multiple Positions</span>
-            <span><i class="fas fa-briefcase"></i> 4+ Years Experience</span>
-            <span><i class="fas fa-map-marker-alt"></i> Virudhunagar</span>
-          </div>
-          <p style="margin-bottom: 10px;"><strong>Senior Level</strong> • Candidates from Virudhunagar & surrounding
-            areas only.</p>
-          <div class="requirements">
-            <h4><i class="fas fa-check-circle"></i> Requirements</h4>
-            <ul>
-              <li><i class="fas fa-angle-right"></i> Minimum 4+ years experience in business development</li>
-              <li><i class="fas fa-angle-right"></i> Strong communication and negotiation skills</li>
-              <li><i class="fas fa-angle-right"></i> Goal-oriented with proven track record</li>
-              <li><i class="fas fa-angle-right"></i> Experience in IT training or education sector preferred</li>
-              <li><i class="fas fa-angle-right"></i> Ability to lead and mentor junior team members</li>
-            </ul>
-          </div>
-          <div class="benefits">
-            <h4><i class="fas fa-gift"></i> Benefits</h4>
-            <p>Attractive salary package</p>
-            <p>Performance-based bonuses</p>
-            <p>Commission pay</p>
-            <p>Leadership opportunity</p>
-          </div>
-          <p style="margin-top: 10px;"><strong>Key Responsibilities:</strong> Identify and generate new business
-            opportunities, manage client relationships, and drive revenue growth.</p>
-          <button class="apply-btn" onclick="openApplyForm('Placement Officer')">
-            <i class="fab fa-whatsapp"></i> Apply via WhatsApp
-          </button>
-        </div>
-
-        <!-- Job 2: Placement Officer -->
+        <!-- Job 1: Placement Officer -->
         <div class="job-card">
           <div class="job-header">
             <h3><i class="fas fa-handshake"></i> Placement Officer</h3>
           </div>
           <div class="job-meta">
             <span><i class="fas fa-users"></i> 1 Position</span>
-            <span><i class="fas fa-briefcase"></i> 3+ Years Experience</span>
+            <span><i class="fas fa-briefcase"></i> 4+ Years Experience</span>
             <span><i class="fas fa-map-marker-alt"></i> Virudhunagar</span>
           </div>
-          <p style="margin-bottom: 10px;"><strong>Mid-Senior Level</strong> • Candidates from Virudhunagar & surrounding
-            areas only.</p>
+
           <div class="requirements">
             <h4><i class="fas fa-check-circle"></i> Requirements</h4>
             <ul>
@@ -1355,6 +1321,42 @@
           </button>
         </div>
 
+
+        <!-- Job 2: Business Development Executive -->
+
+        <div class="job-card">
+          <div class="job-header">
+            <h3><i class="fas fa-chart-line"></i> Business Development Executive</h3>
+          </div>
+          <div class="job-meta">
+            <span><i class="fas fa-users"></i> Multiple Positions</span>
+            <span><i class="fas fa-briefcase"></i> 4+ Years Experience</span>
+            <span><i class="fas fa-map-marker-alt"></i> Virudhunagar</span>
+          </div>
+          <div class="requirements">
+            <h4><i class="fas fa-check-circle"></i> Requirements</h4>
+            <ul>
+              <li><i class="fas fa-angle-right"></i> Minimum 4+ years experience in business development</li>
+              <li><i class="fas fa-angle-right"></i> Strong communication and negotiation skills</li>
+              <li><i class="fas fa-angle-right"></i> Goal-oriented with proven track record</li>
+              <li><i class="fas fa-angle-right"></i> Experience in IT training or education sector preferred</li>
+              <li><i class="fas fa-angle-right"></i> Ability to lead and mentor junior team members</li>
+            </ul>
+          </div>
+          <div class="benefits">
+            <h4><i class="fas fa-gift"></i> Benefits</h4>
+            <p>Attractive salary package</p>
+            <p>Performance-based bonuses</p>
+            <p>Commission pay</p>
+            <p>Leadership opportunity</p>
+          </div>
+          <p style="margin-top: 10px;"><strong>Key Responsibilities:</strong> Identify and generate new business
+            opportunities, manage client relationships, and drive revenue growth.</p>
+          <button class="apply-btn" onclick="openApplyForm('Placement Officer')">
+            <i class="fab fa-whatsapp"></i> Apply via WhatsApp
+          </button>
+        </div>
+
         <!-- Job 3: Pre Sales Officer -->
         <div class="job-card">
           <div class="job-header">
@@ -1365,8 +1367,7 @@
             <span><i class="fas fa-briefcase"></i> 1 Year Experience</span>
             <span><i class="fas fa-map-marker-alt"></i> Virudhunagar</span>
           </div>
-          <p style="margin-bottom: 10px;"><strong>Entry Level</strong> • Candidates from Virudhunagar & surrounding
-            areas only.</p>
+         
           <div class="requirements">
             <h4><i class="fas fa-check-circle"></i> Requirements</h4>
             <ul>
@@ -1398,41 +1399,42 @@
   <div id="applyModal">
     <div class="modal-content">
       <button class="modal-close" onclick="closeApplyForm()">&times;</button>
-      
+
       <div class="modal-title">
         <i class="fab fa-whatsapp"></i> Apply via WhatsApp
       </div>
       <div class="modal-subtitle">
         Fill in your details and we'll send your application directly to our HR team on WhatsApp
       </div>
-      
+
       <form id="applyForm" onsubmit="submitApplication(event)" novalidate>
         <div class="form-group">
           <label for="applicantName">Full Name <span class="required">*</span></label>
           <input type="text" id="applicantName" class="form-control" placeholder="Enter your full name" required />
           <div class="error-message" id="nameError">Please enter your name</div>
         </div>
-        
+
         <div class="form-group">
           <label for="applicantEmail">Email Address <span class="required">*</span></label>
-          <input type="email" id="applicantEmail" class="form-control" placeholder="Enter your email address" required />
+          <input type="email" id="applicantEmail" class="form-control" placeholder="Enter your email address"
+            required />
           <div class="error-message" id="emailError">Please enter a valid email address</div>
         </div>
-        
+
         <div class="form-group">
           <label for="applicantPhone">Phone Number <span class="required">*</span></label>
           <input type="tel" id="applicantPhone" class="form-control" placeholder="Enter your phone number" required />
           <div class="error-message" id="phoneError">Please enter a valid phone number (10 digits)</div>
         </div>
-        
+
         <input type="hidden" id="jobPosition" />
-        
+
         <button type="submit" class="submit-btn" id="submitBtn">
           <span class="spinner"></span>
           <span class="btn-text"><i class="fab fa-whatsapp"></i> Send Application via WhatsApp</span>
         </button>
       </form>
-      
+
       <div class="modal-footer-text">
         <i class="fas fa-lock"></i> Your information is secure and will only be used for recruitment purposes
       </div>
@@ -1443,10 +1445,8 @@
   <div class="toast" id="toast"></div>
 
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/919751867879?text=Hi%20Rohil%20NextGen%2C%20I%20want%20to%20apply%20for%20a%20job" 
-     target="_blank" 
-     class="whatsapp-float" 
-     aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/919751867879?text=Hi%20Rohil%20NextGen%2C%20I%20want%20to%20apply%20for%20a%20job"
+    target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
@@ -1638,12 +1638,12 @@
     }
 
     // Close modal on outside click
-    document.getElementById('applyModal').addEventListener('click', function(e) {
+    document.getElementById('applyModal').addEventListener('click', function (e) {
       if (e.target === this) closeApplyForm();
     });
 
     // Close modal on Escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeApplyForm();
     });
 
@@ -1663,21 +1663,21 @@
     }
 
     // Real-time validation
-    document.getElementById('applicantName').addEventListener('blur', function() {
-      validateField(this, 'nameError', 
-        val => val.trim().length >= 2, 
+    document.getElementById('applicantName').addEventListener('blur', function () {
+      validateField(this, 'nameError',
+        val => val.trim().length >= 2,
         'Please enter your full name (at least 2 characters)'
       );
     });
 
-    document.getElementById('applicantEmail').addEventListener('blur', function() {
+    document.getElementById('applicantEmail').addEventListener('blur', function () {
       validateField(this, 'emailError',
         val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
         'Please enter a valid email address'
       );
     });
 
-    document.getElementById('applicantPhone').addEventListener('blur', function() {
+    document.getElementById('applicantPhone').addEventListener('blur', function () {
       validateField(this, 'phoneError',
         val => /^[0-9]{10}$/.test(val.replace(/\D/g, '')),
         'Please enter a valid 10-digit phone number'
@@ -1687,38 +1687,38 @@
     // Submit Application
     function submitApplication(e) {
       e.preventDefault();
-      
+
       const name = document.getElementById('applicantName').value.trim();
       const email = document.getElementById('applicantEmail').value.trim();
       const phone = document.getElementById('applicantPhone').value.trim();
       const job = document.getElementById('jobPosition').value;
       const btn = document.getElementById('submitBtn');
-      
+
       // Validate all fields
       const isNameValid = validateField(
         document.getElementById('applicantName'), 'nameError',
         val => val.length >= 2, 'Please enter your full name'
       );
-      
+
       const isEmailValid = validateField(
         document.getElementById('applicantEmail'), 'emailError',
         val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), 'Please enter a valid email address'
       );
-      
+
       const isPhoneValid = validateField(
         document.getElementById('applicantPhone'), 'phoneError',
         val => /^[0-9]{10}$/.test(val.replace(/\D/g, '')), 'Please enter a valid 10-digit phone number'
       );
-      
+
       if (!isNameValid || !isEmailValid || !isPhoneValid) {
         showToast('Please fix the errors before submitting', 'error');
         return;
       }
-      
+
       // Show loading state
       btn.classList.add('loading');
       btn.disabled = true;
-      
+
       // Format WhatsApp message
       const message = `📌 *New Job Application - Rohil NextGen*\n\n` +
         `👤 *Name:* ${name}\n` +
@@ -1730,12 +1730,12 @@
         `🕐 *Time:* ${new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}\n\n` +
         `_This application was submitted via the Rohil NextGen Careers page._\n` +
         `🔗 *Source:* rohilnextgen.com/career.html`;
-      
+
       // Encode for URL
       const encodedMessage = encodeURIComponent(message);
       const whatsappNumber = '919751867879';
       const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-      
+
       // Open WhatsApp
       setTimeout(() => {
         window.open(whatsappURL, '_blank');
@@ -1782,8 +1782,8 @@
     function getBotResponse(m) {
       const msg = m.toLowerCase();
       if (msg.includes('hi') || msg.includes('hello')) return "Hi there! 👋 Welcome to Rohil NextGen. How can I help you?";
-      if (msg.includes('courses')) { 
-        courseList.style.display = 'flex'; 
+      if (msg.includes('courses')) {
+        courseList.style.display = 'flex';
         return "Here are our trending courses! Click any course to learn more.";
       }
       if (msg.includes('java')) return "Java Full Stack covers Core Java, Spring, Hibernate, and frontend.";

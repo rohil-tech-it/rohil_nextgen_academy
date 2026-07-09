@@ -160,51 +160,6 @@
       padding: 0 20px;
     }
 
-    /* Top Bar Styles */
-    .top-bar {
-      background-color: var(--primary-red);
-      color: var(--white);
-      padding: 15px 0;
-      font-size: 15px;
-      height: 60px;
-    }
-
-    .top-bar-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .contact-info {
-      display: flex;
-      gap: 20px;
-    }
-
-    .contact-info div {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 18px;
-    }
-
-    .social-icons a {
-      color: var(--white);
-      font-size: 25px;
-      transition: var(--transition);
-    }
-
-    .social-icons a:hover {
-      color: var(--text-grey);
-      transform: translateY(-3px) scale(1.1);
-    }
-
     /* Navigation Styles */
     .navbar {
       background-color: var(--white);
@@ -344,14 +299,16 @@
       position: relative;
       z-index: 1;
     }
+
     @media (max-width: 480px) {
-  .banner {
-    height: 250px;   /* Exact Height */
-    padding: 0;
-    background-size: cover;
-    background-position: center;
-  }
-}
+      .banner {
+        height: 250px;
+        /* Exact Height */
+        padding: 0;
+        background-size: cover;
+        background-position: center;
+      }
+    }
 
     /* Overview Section */
     .overview-section {
@@ -959,16 +916,6 @@
         font-size: 14px;
       }
 
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .top-bar {
-        height: auto;
-        padding: 10px 0;
-      }
-
       .contact-info {
         flex-wrap: wrap;
         justify-content: center;
@@ -1104,23 +1051,6 @@
 </head>
 
 <body>
-
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="top-bar-container">
-      <div class="contact-info">
-        <div><i class="fas fa-map-marker-alt"></i> Virudhunagar, Tamil Nadu</div>
-        <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
-        <div><i class="fas fa-phone"></i> +91 97518 67879</div>
-      </div>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
-            class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </div>
 
   <!-- Navigation -->
   <nav class="navbar">
@@ -1458,18 +1388,26 @@
     </div>
   </section>
 
+
   <!-- Footer -->
   <footer class="tech-footer">
     <div class="footer-content">
       <div class="footer-column">
-        <h3>About Rohil NextGen</h3>
-        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
-          development, data science, cybersecurity, and IT training with placement support.</p>
-        <div class="social-links"><a href="https://www.facebook.com/p/Rohilacademy-61574571321905/"><i
-              class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/rohil_nextgen/"><i
-              class="fab fa-instagram"></i></a><a href="https://www.youtube.com/@rohiltechdigitalteam"><i
-              class="fab fa-youtube"></i></a></div>
+        <h3>About Rohil NextGen Software Training Institute</h3>
+        <p>
+          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
+          development, data science, cybersecurity, and IT training with placement support. Get the best software
+          training in Virudhunagar with industry experts.
+        </p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
+              class="fab fa-youtube"></i></a>
+        </div>
       </div>
+
       <div class="footer-column">
         <h3>Quick Links</h3>
         <ul class="footer-links">
@@ -1481,6 +1419,7 @@
           <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h3>Contact Rohil NextGen</h3>
         <ul class="footer-links">
@@ -1492,6 +1431,7 @@
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div class="copyright">
         <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
@@ -1501,6 +1441,7 @@
       </div>
     </div>
   </footer>
+
 
   <!-- Back to Top Button -->
   <div class="back-to-top" id="backToTop">

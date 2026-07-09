@@ -160,65 +160,7 @@
       padding: 0 20px;
     }
 
-    /* Top Bar Styles */
-    .top-bar {
-      background-color: var(--primary-red);
-      color: var(--white);
-      padding: 15px 0;
-      font-size: 14px;
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-    }
-
-    .top-bar-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      width: 100%;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .contact-info {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .contact-info div {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 15px;
-    }
-
-    .social-icons a {
-      color: var(--white);
-      font-size: 18px;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .social-icons a:hover {
-      background: var(--white);
-      color: var(--primary-red);
-      transform: translateY(-2px);
-    }
-
+    
     /* Navigation Styles */
     .navbar {
       background-color: var(--white);
@@ -1011,9 +953,7 @@
     }
 
     @media (max-width: 767px) {
-      .top-bar { height: auto; padding: 10px 0; }
-      .top-bar-container { flex-direction: column; gap: 10px; text-align: center; }
-      .contact-info { justify-content: center; gap: 12px; }
+     .contact-info { justify-content: center; gap: 12px; }
       .contact-info div { font-size: 12px; }
       .social-icons { justify-content: center; }
       .hamburger { display: block; }
@@ -1091,22 +1031,6 @@
 </head>
 
 <body>
-
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="top-bar-container">
-      <div class="contact-info">
-        <div><i class="fas fa-map-marker-alt"></i> Virudhunagar, Tamil Nadu</div>
-        <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
-        <div><i class="fas fa-phone"></i> +91 97518 67879</div>
-      </div>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </div>
 
   <!-- Navigation -->
   <nav class="navbar">

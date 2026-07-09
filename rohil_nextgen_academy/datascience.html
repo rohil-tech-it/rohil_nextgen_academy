@@ -164,66 +164,7 @@
       padding: 0 20px;
     }
 
-    /* Top Bar Styles */
-    .top-bar {
-      background-color: var(--primary-red);
-      color: var(--white);
-      padding: 15px 0;
-      font-size: 14px;
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-    }
-
-    .top-bar-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      width: 100%;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .contact-info {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .contact-info div {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 15px;
-    }
-
-    .social-icons a {
-      color: var(--white);
-      font-size: 18px;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .social-icons a:hover {
-      background: var(--white);
-      color: var(--primary-red);
-      transform: translateY(-2px);
-    }
-
-    /* Navigation Styles */
+       /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -869,9 +810,10 @@
       max-height: 300px;
     }
 
-    /* Footer */
+       /* Enhanced Footer */
     .tech-footer {
-      background-color: #656566;
+      background: linear-gradient(rgba(97, 97, 97, 0.95),
+          rgba(128, 112, 112, 0.98));
       color: var(--white);
       padding: 50px 0 20px;
     }
@@ -886,8 +828,8 @@
     }
 
     .footer-column h3 {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
       color: var(--white);
       position: relative;
       padding-bottom: 10px;
@@ -904,30 +846,30 @@
     }
 
     .footer-column p {
-      margin-bottom: 15px;
-      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
       line-height: 1.6;
-      font-size: 14px;
+      font-size: 16px;
+
     }
 
     .social-links {
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .social-links a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 35px;
-      height: 35px;
-      background-color: rgba(255, 255, 255, 0.15);
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
       border-radius: 50%;
       color: var(--white);
       transition: var(--transition);
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
 
     .social-links a:hover {
@@ -941,17 +883,17 @@
     }
 
     .footer-links li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.9);
       text-decoration: none;
       transition: var(--transition);
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .footer-links a:hover {
@@ -960,13 +902,12 @@
     }
 
     .footer-links i {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       color: var(--primary-red);
-      flex-shrink: 0;
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
       padding-top: 20px;
       margin-top: 30px;
       display: flex;
@@ -978,14 +919,13 @@
       margin-right: auto;
       padding-left: 20px;
       padding-right: 20px;
-      gap: 10px;
-      text-align: center;
+      gap: 15px;
     }
 
     .footer-bottom p {
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.8);
       margin: 0;
-      font-size: 12px;
+      font-size: 14px;
     }
 
     /* Back to Top Button */
@@ -1026,9 +966,7 @@
     }
 
     @media (max-width: 767px) {
-      .top-bar { height: auto; padding: 10px 0; }
-      .top-bar-container { flex-direction: column; gap: 10px; text-align: center; }
-      .contact-info { justify-content: center; gap: 12px; }
+            .contact-info { justify-content: center; gap: 12px; }
       .contact-info div { font-size: 12px; }
       .social-icons { justify-content: center; }
       .hamburger { display: block; }
@@ -1107,23 +1045,6 @@
 </head>
 
 <body>
-
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="top-bar-container">
-      <div class="contact-info">
-        <div><i class="fas fa-map-marker-alt"></i> Virudhunagar, Tamil Nadu</div>
-        <div><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</div>
-        <div><i class="fas fa-phone"></i> +91 97518 67879</div>
-      </div>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </div>
-
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
@@ -1362,17 +1283,56 @@ Master Data Science to unlock the future of business and technology.</p>
       </div>
     </div>
   </section>
-
   <!-- Footer -->
   <footer class="tech-footer">
     <div class="footer-content">
-      <div class="footer-column"><h3>About Rohil NextGen</h3><p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support.</p><div class="social-links"><a href="https://www.facebook.com/p/Rohilacademy-61574571321905/"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/rohil_nextgen/"><i class="fab fa-instagram"></i></a><a href="https://www.youtube.com/@rohiltechdigitalteam"><i class="fab fa-youtube"></i></a></div></div>
-      <div class="footer-column"><h3>Quick Links</h3><ul class="footer-links"><li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="classic.html"><i class="fas fa-chevron-right"></i> IT Courses</a></li><li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li><li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tied-up Companies</a></li><li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li></ul></div>
-      <div class="footer-column"><h3>Contact Rohil NextGen</h3><ul class="footer-links"><li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li><li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li><li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li><li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li></ul></div>
+      <div class="footer-column">
+        <h3>About Rohil NextGen Software Training Institute</h3>
+        <p>
+          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
+          development, data science, cybersecurity, and IT training with placement support. Get the best software
+          training in Virudhunagar with industry experts.
+        </p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
+              class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="classic.html"><i class="fas fa-chevron-right"></i> IT Courses</a></li>
+          <li><a href="browsecourse.html"><i class="fas fa-chevron-right"></i> Browse Courses</a></li>
+          <li><a href="companies.html"><i class="fas fa-chevron-right"></i> Tied-up Companies</a></li>
+          <li><a href="placement-success.html"><i class="fas fa-chevron-right"></i> Placements</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Rohil NextGen</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
+          <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
+          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
+              admin@rohiltechnologies.com</a></li>
+          <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+        </ul>
+      </div>
     </div>
+
     <div class="footer-bottom">
-      <div class="copyright"><p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p></div>
-      <div class="footer-bottom-links"><p>Designed By Rohil Technologies</p></div>
+      <div class="copyright">
+        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
+      </div>
+      <div class="footer-bottom-links">
+        <p>Designed By Rohil Technologies</p>
+      </div>
     </div>
   </footer>
 
