@@ -4,12 +4,132 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohil NextGen - Business Intelligence Course</title>
+  <!-- SEO Optimized Title -->
+  <title>Business Intelligence Course | BI Training & Certification | Rohil NextGen</title>
+  <!-- SEO Optimized Meta Description -->
+  <meta name="description"
+    content="Learn Business Intelligence at Rohil NextGen with hands-on training, live projects, expert mentors, Power BI, SQL, Tableau, placement assistance, and industry-recognized certification." />
+  <meta name="keywords"
+    content="Business Intelligence Course, BI Training, Power BI Course, Tableau Training, SQL for BI, Data Analytics Course, Business Intelligence Certification, BI Course in Virudhunagar, Best BI Training Institute in Tamil Nadu" />
+  <meta name="author" content="Rohil NextGen" />
+  <link rel="canonical" href="https://www.rohilnextgen.com/business-intelligence.html" />
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Rohil NextGen",
+    "url": "https://www.rohilnextgen.com",
+    "logo": "https://www.rohilnextgen.com/images/rohil_nextgen-removebg-preview.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Virudhunagar",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9751867879",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Tamil"]
+    }
+  }
+  </script>
+
+  <!-- Course Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Business Intelligence Course - BI Training & Certification",
+    "description": "Learn Business Intelligence at Rohil NextGen with hands-on training, live projects, expert mentors, Power BI, SQL, Tableau, placement assistance, and industry-recognized certification.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rohil NextGen",
+      "sameAs": "https://www.rohilnextgen.com"
+    },
+    "courseCode": "BI-001",
+    "educationalCredentialAwarded": "Business Intelligence Certification",
+    "teaches": ["Power BI", "Tableau", "SQL", "Data Visualization", "Data Warehousing", "ETL Concepts"],
+    "occupationalCredentialAwarded": "Business Intelligence Developer, Data Analyst, Power BI Developer, Reporting Analyst, Tableau Developer",
+    "timeRequired": "PT120H",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "In-Person",
+      "location": {
+        "@type": "Place",
+        "name": "Rohil NextGen, Virudhunagar, Tamil Nadu"
+      },
+      "startDate": "2026-08-05"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Business Intelligence?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Business Intelligence (BI) refers to technologies, applications, and practices for the collection, integration, analysis, and presentation of business information to support better decision-making."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need programming experience for this course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Basic programming knowledge is helpful but not mandatory. The course starts with fundamentals and gradually introduces SQL and Python for data analysis and automation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I receive a certificate after completing the course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, upon successful completion of the course and final project, you will receive a certificate from Rohil NextGen validating your Business Intelligence skills."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What tools will I learn in this course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You will learn Power BI, Tableau, Excel (Power Query, VBA), SQL, Python (Pandas/Matplotlib), SSIS, Azure Synapse, Google Looker Studio, and Git."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What career opportunities are available after this course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Graduates can pursue roles as Business Intelligence Analysts, BI Developers, Data Warehouse Architects, BI Consultants, and various domain-specific BI positions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there placement assistance after course completion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide 100% placement assistance with our extensive network of hiring partners in the Business Intelligence and analytics industry."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --primary-red: #d40404;
@@ -21,6 +141,9 @@
       --medium-gray: #666666;
       --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       --transition: all 0.3s ease;
+      --text-black: #333;
+      --text-grey: #666;
+      --light-grey: #f5f5f5;
     }
 
     * {
@@ -30,10 +153,11 @@
     }
 
     body {
-      font-family: Georgia;
+      font-family: 'Georgia';
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
+      overflow-x: hidden;
     }
 
     .container {
@@ -43,52 +167,7 @@
       padding: 0 20px;
     }
 
-    /* Top Bar Styles */
-    .top-bar {
-      background-color: var(--primary-red);
-      color: var(--white);
-      padding: 15px 0;
-      font-size: 15px;
-      height: 60px;
-    }
-
-    .top-bar-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .contact-info {
-      display: flex;
-      gap: 20px;
-    }
-
-    .contact-info div {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 18px;
-    }
-
-    .social-icons a {
-      color: var(--white);
-      font-size: 25px;
-      transition: opacity 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: var(--text-grey);
-      transform: translateY(-3px) scale(1.1);
-    }
-
-    /* Navigation Styles - IMPROVED RESPONSIVE */
+    /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -132,33 +211,15 @@
       color: var(--text-black);
       font-weight: 500;
       font-size: 16px;
-      transition: color 0.3s;
+      transition: var(--transition);
       padding: 10px 0;
       display: flex;
       align-items: center;
       gap: 5px;
-      position: relative;
     }
 
     .nav-link:hover {
       color: var(--primary-red);
-    }
-
-    /* Active state styles */
-    .nav-link.active {
-      color: var(--primary-red);
-      font-weight: 600;
-    }
-
-    .nav-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: var(--primary-red);
-      border-radius: 2px;
     }
 
     .dropdown {
@@ -196,14 +257,6 @@
       padding-left: 25px;
     }
 
-    /* Active state for dropdown items */
-    .dropdown-item.active {
-      background-color: var(--light-grey);
-      color: var(--primary-red);
-      font-weight: 500;
-      border-left: 3px solid var(--primary-red);
-    }
-
     .hamburger {
       display: none;
       cursor: pointer;
@@ -234,19 +287,19 @@
       visibility: visible;
     }
 
-    /* Enhanced Banner Section */
+    /* Banner Section */
     .banner {
-      background-image: url("./images/bi1.jpg");
-      background-size: 1300px;
+      background: url("./images/bi1.jpg");
+      background-size: cover;
       background-position: center;
       color: var(--white);
-      padding: 120px 0;
+      padding: 100px 0;
       text-align: center;
       position: relative;
+      min-height: 450px;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 500px;
     }
 
     .banner-content {
@@ -257,23 +310,42 @@
       z-index: 1;
     }
 
-    .cta-button {
-      display: inline-block;
-      background-color: var(--primary-red);
-      color: white;
-      padding: 15px 30px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: var(--transition);
-      margin-top: 20px;
+    /* Course Highlights Section */
+    .highlights-section {
+      padding: 60px 0;
+      background-color: #f8f9fa;
     }
 
-    .cta-button:hover {
-      background-color: var(--dark-red);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .highlight-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-bottom: 3px solid var(--primary-red);
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .highlight-card i {
+      font-size: 2rem;
+      color: var(--primary-red);
+      margin-bottom: 15px;
+    }
+
+    .highlight-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: var(--dark-gray);
     }
 
     /* Overview Section */
@@ -302,7 +374,6 @@
       border-radius: 8px;
       margin-bottom: 25px;
       box-shadow: var(--shadow);
-      border-left: 5px solid var(--primary-red);
     }
 
     .highlight-box p {
@@ -319,6 +390,7 @@
       align-items: center;
       gap: 15px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .rating-badge {
@@ -330,7 +402,7 @@
       font-weight: bold;
     }
 
-    /* Enhanced Course Overview Section */
+    /* Course Overview Section */
     .course-overview {
       padding: 40px 0 60px;
     }
@@ -349,13 +421,10 @@
       border-radius: 8px;
       box-shadow: var(--shadow);
       transition: var(--transition);
-      position: relative;
-      overflow: hidden;
     }
 
     .stat:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
     .stat-value {
@@ -371,9 +440,9 @@
       font-weight: 500;
     }
 
-    /* Enhanced Certification Section */
+    /* Certification Section */
     .certification-section {
-      background-color: #f8f9fa;
+      background-color: #fff;
       padding: 60px 0;
       text-align: center;
     }
@@ -393,27 +462,16 @@
       margin: 0 auto;
     }
 
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
-    }
-
     .certification-info-box {
-      background-color: var(--white);
+      background-color: var(--light-gray);
       border-radius: 12px;
       box-shadow: var(--shadow);
       padding: 30px 20px;
       transition: var(--transition);
-      position: relative;
-      overflow: hidden;
     }
 
     .certification-info-box:hover {
       transform: translateY(-10px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     }
 
     .certification-icon {
@@ -478,20 +536,6 @@
       font-size: 1.5rem;
       color: var(--primary-red);
       margin-bottom: 15px;
-      position: relative;
-      padding-bottom: 10px;
-    }
-
-    .course-description h3::after,
-    .course-goals h3::after,
-    .future-scope h3::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: var(--primary-red);
     }
 
     .course-description p {
@@ -519,9 +563,10 @@
     .future-scope i {
       color: var(--primary-red);
       margin-top: 5px;
+      flex-shrink: 0;
     }
 
-    /* Enhanced Syllabus Section */
+    /* Syllabus Section - Reduced Headings */
     .syllabus-container {
       padding: 80px 20px;
       background: linear-gradient(to right, #f7f7f7, #eaeaea);
@@ -532,127 +577,52 @@
     }
 
     .syllabus-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
+      font-weight: 700;
       color: var(--dark-gray);
       margin-bottom: 50px;
       position: relative;
       display: inline-block;
     }
 
-    .syllabus-title::after {
-      content: "";
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background-color: var(--primary-red);
-    }
-
     .syllabus-content {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 25px;
       justify-content: center;
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    .week-container {
+    .syllabus-item {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--dark-gray);
       background: var(--white);
+      padding: 18px 22px;
       border-radius: 12px;
       box-shadow: var(--shadow);
-      overflow: hidden;
-      margin-bottom: 25px;
       transition: var(--transition);
+      width: 100%;
+      border-left: 5px solid var(--primary-red);
     }
 
-    .week-container:hover {
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    .syllabus-item:hover {
+      transform: translateY(-5px);
     }
 
-    .week-header {
-      background-color: var(--primary-red);
-      color: var(--white);
-      padding: 20px 25px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: var(--transition);
-    }
-
-    .week-header:hover {
-      background-color: var(--dark-red);
-    }
-
-    .week-header h3 {
+    .syllabus-item i {
+      color: var(--primary-red);
       font-size: 1.3rem;
-      font-weight: 600;
-      margin: 0;
+      margin-right: 15px;
+      width: 30px;
+      text-align: center;
+      flex-shrink: 0;
     }
 
-    .week-icon {
-      color: var(--white);
-      font-size: 1.2rem;
-      transition: var(--transition);
-    }
-
-    .week-content {
-      padding: 0 25px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-    }
-
-    .week-container.active .week-content {
-      max-height: 1000px;
-      padding: 25px;
-    }
-
-    .week-container.active .week-icon {
-      transform: rotate(180deg);
-    }
-
-    .week-theory,
-    .week-practical {
-      margin-bottom: 25px;
-    }
-
-    .week-theory h4,
-    .week-practical h4 {
-      color: var(--primary-red);
-      margin-bottom: 15px;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .week-theory ul,
-    .week-practical ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .week-theory li,
-    .week-practical li {
-      padding: 8px 0;
-      font-size: 1rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .week-theory i,
-    .week-practical i {
-      color: var(--primary-red);
-      margin-top: 5px;
-      font-size: 0.9rem;
-    }
-
-    /* Enhanced FAQ Section */
+    /* FAQ Section */
     .faq-section {
       padding: 80px 0;
       background-color: var(--light-gray);
@@ -689,7 +659,7 @@
     }
 
     .faq-question h3 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--dark-gray);
       margin: 0;
@@ -697,15 +667,17 @@
 
     .faq-icon {
       color: var(--primary-red);
-      font-size: 1.2rem;
+      font-size: 1rem;
       transition: var(--transition);
+      flex-shrink: 0;
+      margin-left: 15px;
     }
 
     .faq-answer {
       padding: 0 25px;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
+      transition: max-height 0.4s ease;
       background-color: var(--light-red);
     }
 
@@ -730,7 +702,8 @@
 
     /* Enhanced Footer */
     .tech-footer {
-      background-color: #656566;
+      background: linear-gradient(rgba(97, 97, 97, 0.95), rgba(128, 112, 112, 0.98)),
+        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
       color: var(--white);
       padding: 60px 0 20px;
     }
@@ -753,7 +726,7 @@
     }
 
     .footer-column h3::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -763,6 +736,7 @@
     }
 
     .footer-column p {
+      font-size: 1rem;
       margin-bottom: 20px;
       color: rgba(255, 255, 255, 0.9);
     }
@@ -867,23 +841,30 @@
     }
 
     /* Responsive Styles */
-    @media (max-width: 768px) {
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
+    @media (max-width: 991px) {
+      .container {
+        padding: 0 15px;
       }
 
-      .top-bar {
-        height: auto;
-        padding: 10px 0;
+      .section-title h1 {
+        font-size: 2rem;
       }
 
-      .contact-info {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+      .certification-title {
+        font-size: 1.8rem;
       }
 
+      .course-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .syllabus-content {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+    }
+
+    @media (max-width: 767px) {
       .hamburger {
         display: block;
       }
@@ -922,7 +903,7 @@
         width: 100%;
         justify-content: space-between;
         border-bottom: 1px solid #eee;
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .dropdown {
@@ -933,110 +914,114 @@
         box-shadow: none;
         display: none;
         background-color: var(--light-grey);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
         width: 100%;
       }
 
       .dropdown.active {
         display: block;
-        max-height: 300px;
       }
 
       .dropdown-item {
         padding: 12px 40px;
-        border-bottom: 1px solid #ddd;
         font-size: 14px;
-      }
-
-      .nav-link i.fa-chevron-down {
-        transition: transform 0.3s ease;
-      }
-
-      .nav-link.active i.fa-chevron-down {
-        transform: rotate(180deg);
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .top-bar {
-        height: 120px;
       }
 
       .contact-info {
         flex-wrap: wrap;
         justify-content: center;
       }
-    }
 
-    @media (max-width: 992px) {
-      .syllabus-content {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .section-title h1 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 768px) {
       .banner {
-        padding: 80px 0;
-        min-height: 300px;
-        background-size: cover;
+        padding: 60px 0;
+        min-height: 350px;
       }
 
       .section-title h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .section-title p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+      }
+
+      .highlight-box {
+        padding: 20px;
+      }
+
+      .course-overview {
+        padding: 30px 0 40px;
       }
 
       .course-stats {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .stat {
+        padding: 15px 12px;
+      }
+
+      .stat-value {
+        font-size: 1.8rem;
+      }
+
+      .certification-section,
+      .highlights-section {
+        padding: 40px 0;
+      }
+
+      .certification-title {
+        font-size: 1.5rem;
+      }
+
+      .course-details-section {
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .course-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .course-description h3,
+      .course-goals h3,
+      .future-scope h3 {
+        font-size: 1.3rem;
       }
 
       .syllabus-container {
-        padding: 60px 15px;
+        padding: 40px 15px;
       }
 
       .syllabus-title {
-        font-size: 2.2rem;
+        font-size: 1.5rem;
+      }
+
+      .syllabus-item {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+      }
+
+      .faq-section {
+        padding: 40px 0;
+      }
+
+      .faq-question {
+        padding: 15px 18px;
+      }
+
+      .faq-question h3 {
+        font-size: 0.9rem;
+      }
+
+      .tech-footer {
+        padding: 40px 0 20px;
       }
 
       .footer-bottom {
         flex-direction: column;
         gap: 10px;
         text-align: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .contact-info {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .course-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .stat-value {
-        font-size: 2rem;
       }
 
       .back-to-top {
@@ -1045,50 +1030,54 @@
         width: 40px;
         height: 40px;
       }
+    }
 
-      .syllabus-container {
-        padding: 50px 10px;
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
       }
 
-      .syllabus-title {
-        font-size: 2rem;
+      .course-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .certification-content {
+        grid-template-columns: 1fr;
+      }
+
+      .syllabus-item {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 
 <body>
-
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo" itemprop="logo">
-        <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png"
-            alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120"
-            height="60" />
-        </div>
+      <div class="logo">
+        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Logo" />
       </div>
 
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link" aria-current="page">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
             <a href="classic.html" class="dropdown-item">Classic</a>
             <a href="professional.html" class="dropdown-item">Professional</a>
-            <a href="expert.html" class="dropdown-item active">Expert</a>
+            <a href="expert.html" class="dropdown-item">Expert</a>
             <a href="internship.html" class="dropdown-item">Internship</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-        </li>
+        <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
         <li class="nav-item dropdown-parent">
           <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown">
@@ -1097,56 +1086,52 @@
             <a href="placement-success.html" class="dropdown-item">Placement Success</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a href="techblog.html" class="nav-link">Techblog</a>
-        </li>
-        <li class="nav-item">
-          <a href="scholarship.html" class="nav-link">Scholarship</a>
-        </li>
-        <li class="nav-item">
-          <a href="career.html" class="nav-link"> Careers</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+        <li class="nav-item"><a href="career.html" class="nav-link">Careers</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
-      <div class="hamburger" aria-label="Toggle menu">
+      <div class="hamburger">
         <i class="fas fa-bars"></i>
       </div>
     </div>
   </nav>
 
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- Enhanced Hero Section -->
+  <!-- Hero Section with Optimized H1 -->
   <section class="banner">
-    <div class="banner-content"></div>
+    <div class="banner-content">
+    </div>
   </section>
 
-  <!-- Overview Section -->
+  <!-- Overview Section with Optimized Content -->
   <section class="overview-section" id="overview">
     <div class="container">
       <div class="overview-container">
         <div class="overview-content">
           <div class="section-title">
-            <h1 style="text-align: center; font-weight: bold">
-              Business Intelligence Overview
-            </h1>
-            <p style="text-align: center; font-weight: bold">
-              usiness Intelligence transforms raw data into actionable insights for better strategic decision-making!
-            </p>
+            <h1 style="text-align: center;">Business Intelligence Course Overview at Rohil NextGen</h1>
+
+            <p style="text-align: center;"><strong>Start your journey in Business Intelligence with Rohil
+                NextGen.</strong></p>
+
           </div>
           <div class="highlight-box">
-            <p>
-              <strong>Rohil NextGen</strong> offers a comprehensive Business
-              Intelligence training program covering Data Visualization, BI
-              Tools, Data Warehousing, and Reporting Techniques using Advanced
-              BI Tools and Technologies.
-            </p>
+            <p><strong>Rohil NextGen</strong> offers a comprehensive Business Intelligence training program covering
+              Data Visualization, BI Tools, Data Warehousing, and Reporting Techniques using Advanced BI Tools and
+              Technologies. The Business Intelligence Course covers essential technologies including Power BI, Tableau,
+              SQL, Microsoft Excel, Data Visualization, Data Analytics, Data Warehousing, ETL Concepts, Business
+              Reporting, and Dashboard Development.</p>
+            <p style="margin-top: 15px;">At Rohil NextGen, our expert trainers provide comprehensive Business
+              Intelligence Training with an industry-oriented curriculum that focuses on practical learning. Students
+              work on live case studies, business scenarios, and real-world projects to develop analytical thinking,
+              reporting skills, and visualization techniques.</p>
           </div>
-          <!--Rating-->
           <div class="rating">
-            <span class="rating-badge">TOP RATED 4.9</span>
+            <span class="rating-badge">BEST INSTITUTE</span>
             <span>4.9 Ratings</span>
           </div>
         </div>
@@ -1154,29 +1139,61 @@
     </div>
   </section>
 
-  <!-- Course Overview Section -->
+  <!-- Course Highlights -->
+  <section class="highlights-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <h2 style="color: var(--dark-grey); font-size: 1.8rem;">Why Choose Rohil NextGen Business Intelligence Training?
+        </h2>
+      </div>
+      <div class="highlights-grid">
+        <div class="highlight-card"><i class="fas fa-calendar-alt"></i>
+          <h4>Latest 2026 Curriculum</h4>
+          <p>Updated with modern BI tools</p>
+        </div>
+        <div class="highlight-card"><i class="fas fa-chart-line"></i>
+          <h4>Hands-on Practical Training</h4>
+          <p>Learn by building real dashboards</p>
+        </div>
+        <div class="highlight-card"><i class="fas fa-chalkboard-user"></i>
+          <h4>Industry Expert Trainers</h4>
+          <p>Learn from experienced BI professionals</p>
+        </div>
+        <div class="highlight-card"><i class="fas fa-project-diagram"></i>
+          <h4>Real-Time Projects</h4>
+          <p>Work on live BI projects</p>
+        </div>
+        <div class="highlight-card"><i class="fas fa-briefcase"></i>
+          <h4>Placement Assistance</h4>
+          <p>Job support after course completion</p>
+        </div>
+        <div class="highlight-card"><i class="fas fa-certificate"></i>
+          <h4>BI Certification</h4>
+          <p>Get recognized industry certification</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Stats -->
   <section class="course-overview">
     <div class="container">
-      <div class="course-content">
-        <div class="course-text">
-          <div class="course-stats">
-            <div class="stat">
-              <div class="stat-value">2025</div>
-              <div class="stat-label">Latest Curriculum</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">6 Months</div>
-              <div class="stat-label">Course Duration</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">120</div>
-              <div class="stat-label">Total Hours</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">70</div>
-              <div class="stat-label">Theory (Hours)</div>
-            </div>
-          </div>
+      <div class="course-stats">
+        <div class="stat">
+          <div class="stat-value">2026</div>
+          <div class="stat-label">Latest Curriculum</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">120</div>
+          <div class="stat-label">Total Hours</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">50</div>
+          <div class="stat-label">Theory (Hours)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">70</div>
+          <div class="stat-label">Practical (Hours)</div>
         </div>
       </div>
     </div>
@@ -1185,27 +1202,22 @@
   <!-- Certification Section -->
   <section class="certification-section">
     <div class="container">
-      <h2 class="certification-title">
-        Why Choose Business Intelligence Certification?
-      </h2>
+      <h2 class="certification-title">Why Choose Business Intelligence Certification?</h2>
       <div class="certification-content">
-        <div class="certification-info-box">
-          <i class="fas fa-chart-line certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-wallet certification-icon"></i>
           <h4 class="certification-subtitle">Annual Income</h4>
           <p class="certification-description">Estimated Salary</p>
-          <h3 class="certification-number">₹ 20 L</h3>
+          <h3 class="certification-number">₹ 20 LPA</h3>
         </div>
-        <div class="certification-info-box">
-          <i class="fas fa-briefcase certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-chart-line certification-icon"></i>
           <h4 class="certification-subtitle">Career Opportunities</h4>
           <p class="certification-description">Growth Rate This Year</p>
           <h3 class="certification-number">55%</h3>
         </div>
-        <div class="certification-info-box">
-          <i class="fas fa-industry certification-icon"></i>
+        <div class="certification-info-box"><i class="fas fa-briefcase certification-icon"></i>
           <h4 class="certification-subtitle">Industry Demand</h4>
           <p class="certification-description">Projected by 2026</p>
-          <h3 class="certification-number">7 L</h3>
+          <h3 class="certification-number">7 Lakh+</h3>
         </div>
       </div>
     </div>
@@ -1216,415 +1228,64 @@
     <div class="container">
       <div class="course-header">
         <h2>Become a Business Intelligence Expert</h2>
-        <p class="course-subtitle">
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❝</span>
-          Learn Data Visualization, BI Tools, and Data Integration Techniques
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❞</span>
-        </p>
+        <p class="course-subtitle">Learn Data Visualization, BI Tools, and Data Integration Techniques with Real-Time
+          Projects</p>
       </div>
 
       <div class="course-description">
         <h3>Course Overview</h3>
-        <p>
-          This Business Intelligence Advanced course is designed to teach you
-          how to create interactive dashboards, build reports, and integrate
-          data from various sources using BI tools like Tableau, Power BI, and
-          SQL. You will gain a deep understanding of data warehousing, OLAP
-          (Online Analytical Processing), and other BI techniques to drive
-          business insights and improve decision-making.
-        </p>
+        <p>This Business Intelligence Advanced course is designed to teach you how to create interactive dashboards,
+          build reports, and integrate data from various sources using BI tools like Tableau, Power BI, and SQL. Our
+          Business Intelligence Certification Course is suitable for students, fresh graduates, IT professionals,
+          business analysts, and career changers who want to build expertise in business analytics.</p>
+        <p style="margin-top: 15px;">As a trusted software training institute, Rohil NextGen offers modern classroom
+          training, online learning, flexible schedules, and personalized mentorship from experienced professionals.
+          Students learn how to create dynamic dashboards, generate business reports, analyze KPIs, identify trends, and
+          support organizational growth using advanced business intelligence solutions.</p>
       </div>
 
       <div class="course-goals">
         <h3>Key Learning Outcomes</h3>
         <ul>
-          <li>
-            <i class="fas fa-check-circle"></i> Understand the fundamentals of
-            Business Intelligence and Data Warehousing.
+          <li><i class="fas fa-check-circle"></i> Understand the fundamentals of Business Intelligence and Data
+            Warehousing</li>
+          <li><i class="fas fa-check-circle"></i> Learn advanced data visualization techniques using Tableau and Power
+            BI</li>
+          <li><i class="fas fa-check-circle"></i> Master data integration and ETL (Extract, Transform, Load) processes
           </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Learn advanced data
-            visualization techniques using Tableau and Power BI.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Master data integration and
-            ETL (Extract, Transform, Load) processes.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Build and maintain OLAP cubes
-            for complex data analysis.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Use SQL for querying and
-            managing large datasets in a BI environment.
+          <li><i class="fas fa-check-circle"></i> Build and maintain OLAP cubes for complex data analysis</li>
+          <li><i class="fas fa-check-circle"></i> Use SQL for querying and managing large datasets in a BI environment
           </li>
         </ul>
       </div>
+
       <div class="future-scope">
         <h3>Career Prospects with This Course</h3>
         <ul>
-          <li>
-            <i class="fas fa-briefcase"></i> Become a Business Intelligence
-            Analyst or BI Developer in top tech companies.
-          </li>
-          <li>
-            <i class="fas fa-database"></i> Work as a Data Warehouse Architect
-            or BI Consultant in consulting firms.
-          </li>
-          <li>
-            <i class="fas fa-chart-pie"></i> Explore careers in Financial BI,
-            Marketing Analytics, and Operations BI.
-          </li>
-          <li>
-            <i class="fas fa-graduation-cap"></i> Take roles in academic and
-            research fields related to business intelligence and data science.
-          </li>
-          <li>
-            <i class="fas fa-cloud"></i> Work with Big Data platforms,
-            cloud-based analytics, and AI in industries like healthcare,
-            retail, and finance.
-          </li>
+          <li><i class="fas fa-briefcase"></i> Business Intelligence Analyst</li>
+          <li><i class="fas fa-database"></i> BI Developer</li>
+          <li><i class="fas fa-chart-pie"></i> Data Warehouse Architect</li>
+          <li><i class="fas fa-graduation-cap"></i> BI Consultant</li>
+          <li><i class="fas fa-cloud"></i> Data Visualization Specialist</li>
         </ul>
+        <p style="margin-top: 15px;">With the increasing demand for Business Intelligence Professionals, organizations
+          across healthcare, finance, retail, manufacturing, education, and IT sectors are actively hiring skilled BI
+          experts.</p>
       </div>
     </div>
   </section>
 
-  <!-- Syllabus Section -->
+  <!-- Syllabus Section - Reduced Headings -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">
-        Business Intelligence & Reporting – 180 Days (Theory + Practical)
-      </h2>
-      <p style="
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-            color: var(--medium-gray);
-          ">
-        Focus Areas: Data Warehousing, ETL, BI Tools (Power BI, Tableau,
-        Excel), SQL, Dashboards, KPIs, Reporting Automation, and Cloud BI
-        (Azure/AWS/GCP).<br />
-        Tools Used: Power BI, Tableau, Excel (Power Query, VBA), SQL
-        (MySQL/PostgreSQL), Python (Pandas/Matplotlib), SSIS, Azure Synapse,
-        Google Looker Studio, Git
-      </p>
+      <h2 class="syllabus-title">Business Intelligence Syllabus</h2>
       <div class="syllabus-content">
-        <!-- Phase 1 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Phase 1: BI & Data Fundamentals (Weeks 1–4)</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Introduction to Business
-                  Intelligence
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Data Warehousing
-                  Concepts
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> BI Architecture and
-                  Components
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Data Modeling
-                  Fundamentals
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Introduction to BI Tools
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Basic Data Analysis
-                  Techniques
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Case Study: Business
-                  Requirements Analysis
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Phase 2 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Phase 2: Excel, Power Query & VBA (Weeks 5–8)</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Advanced Excel for BI
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Power Query for Data
-                  Transformation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> VBA for Automation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Data Cleaning and
-                  Preparation
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Advanced Excel Functions
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Power Query
-                  Implementation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> VBA Scripting for
-                  Reports
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Phase 3 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Phase 3: Power BI & Tableau (Weeks 9–16)</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Power BI Architecture
-                  and Components
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Tableau Desktop and
-                  Server
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Data Visualization Best
-                  Practices
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Dashboard Design
-                  Principles
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Power BI Dashboard
-                  Creation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Tableau Visualization
-                  Development
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Interactive Report
-                  Building
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Phase 4 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Phase 4: ETL, Data Warehousing & Cloud BI (Weeks 17–22)</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <!-- Week 17-19 -->
-            <div class="week-theory">
-              <h4>
-                <i class="fas fa-book"></i> Week 17-19: ETL & Data Warehousing
-              </h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> ETL vs ELT, batch vs
-                  real-time pipelines
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Dimensional modeling:
-                  star & snowflake schema
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Tools overview: SSIS,
-                  Talend, Informatica
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create a basic data
-                  pipeline using Python or SSIS
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Design a star schema
-                  from raw sales data
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Simulate historical load
-                  for reports
-                </li>
-              </ul>
-            </div>
-
-            <!-- Week 20-22 -->
-            <div class="week-theory">
-              <h4>
-                <i class="fas fa-book"></i> Week 20-22: Cloud BI (Azure, AWS,
-                GCP)
-              </h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Introduction to Cloud BI
-                  Platforms
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Advantages of using
-                  Cloud BI
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Overview of Azure, AWS,
-                  and GCP BI tools
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Set up a Cloud BI
-                  environment
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Design reports on cloud
-                  platforms
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Publish and manage
-                  dashboards in the cloud
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Phase 5 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>Phase 5: Advanced BI & Analytics (Weeks 23–26)</h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Advanced Analytics with
-                  Python
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Machine Learning for BI
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Predictive Analytics and
-                  Forecasting
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Big Data Integration
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Python for Data Analysis
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Advanced Visualization
-                  Techniques
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Predictive Model
-                  Implementation
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Phase 6 -->
-        <div class="week-container">
-          <div class="week-header">
-            <h3>
-              Phase 6: Capstone Project & Industry Readiness (Weeks 27–30)
-            </h3>
-            <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="week-content">
-            <div class="week-theory">
-              <h4><i class="fas fa-book"></i> Theory</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Project Management for
-                  BI
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Industry Best Practices
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> BI Implementation
-                  Strategies
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Career Preparation
-                </li>
-              </ul>
-            </div>
-            <div class="week-practical">
-              <h4><i class="fas fa-laptop-code"></i> Practical</h4>
-              <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> End-to-End BI Project
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Portfolio Development
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Mock Interviews and
-                  Presentations
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="syllabus-item"><i class="fas fa-play-circle"></i> BI & Data Fundamentals</div>
+        <div class="syllabus-item"><i class="fas fa-table"></i> Excel, Power Query & VBA</div>
+        <div class="syllabus-item"><i class="fas fa-chart-pie"></i> Power BI & Tableau</div>
+        <div class="syllabus-item"><i class="fas fa-database"></i> ETL, Data Warehousing & Cloud BI</div>
+        <div class="syllabus-item"><i class="fas fa-code"></i> Advanced BI & Analytics (Python)</div>
+        <div class="syllabus-item"><i class="fas fa-rocket"></i> Capstone Project & Placement Preparation</div>
       </div>
     </div>
   </section>
@@ -1633,94 +1294,66 @@
   <section class="faq-section">
     <div class="container">
       <div class="section-title">
-        <h2 style="text-align: center">Frequently Asked Questions</h2>
+        <h1 style="text-align: center;">Frequently Asked Questions</h1>
       </div>
-
       <div class="faq-content">
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What is Business Intelligence?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>What is Business Intelligence?</h3><span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Business Intelligence (BI) refers to technologies, applications,
-              and practices for the collection, integration, analysis, and
-              presentation of business information to support better
-              decision-making.
-            </p>
+            <p>Business Intelligence (BI) refers to technologies, applications, and practices for the collection,
+              integration, analysis, and presentation of business information to support better decision-making.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Do I need programming experience for this course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Do I need programming experience for this course?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Basic programming knowledge is helpful but not mandatory. The
-              course starts with fundamentals and gradually introduces SQL and
-              Python for data analysis and automation.
-            </p>
+            <p>Basic programming knowledge is helpful but not mandatory. The course starts with fundamentals and
+              gradually introduces SQL and Python for data analysis and automation.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Will I receive a certificate after completing the course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Will I receive a certificate after completing the course?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, upon successful completion of the course and final project,
-              you will receive a certificate from Rohil NextGen validating
-              your Business Intelligence skills.
-            </p>
+            <p>Yes, upon successful completion of the course and final project, you will receive a certificate from
+              Rohil NextGen validating your Business Intelligence skills.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>What tools will I learn in this course?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>What tools will I learn in this course?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              You will learn Power BI, Tableau, Excel (Power Query, VBA), SQL,
-              Python (Pandas/Matplotlib), SSIS, Azure Synapse, Google Looker
-              Studio, and Git.
-            </p>
+            <p>You will learn Power BI, Tableau, Excel (Power Query, VBA), SQL, Python (Pandas/Matplotlib), SSIS, Azure
+              Synapse, Google Looker Studio, and Git.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>
-              What career opportunities are available after this course?
-            </h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>What career opportunities are available after this course?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Graduates can pursue roles as Business Intelligence Analysts, BI
-              Developers, Data Warehouse Architects, BI Consultants, and
-              various domain-specific BI positions.
-            </p>
+            <p>Graduates can pursue roles as Business Intelligence Analysts, BI Developers, Data Warehouse Architects,
+              BI Consultants, and various domain-specific BI positions.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
-            <h3>Is there placement assistance after course completion?</h3>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            <h3>Is there placement assistance after course completion?</h3><span class="faq-icon"><i
+                class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, we provide 100% placement assistance with our extensive
-              network of hiring partners in the Business Intelligence and
-              analytics industry.
-            </p>
+            <p>Yes, we provide 100% placement assistance with our extensive network of hiring partners in the Business
+              Intelligence and analytics industry.</p>
           </div>
         </div>
       </div>
@@ -1789,20 +1422,19 @@
     // Mobile Menu Toggle
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
 
     hamburger.addEventListener("click", () => {
       navMenu.classList.toggle("active");
+      mobileOverlay.classList.toggle("active");
+      document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "";
     });
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll(".nav-link").forEach((n) =>
-      n.addEventListener("click", (e) => {
-        // Only close menu if it's not a dropdown trigger
-        if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
-          navMenu.classList.remove("active");
-        }
-      })
-    );
+    mobileOverlay.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      mobileOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    });
 
     // Mobile Dropdown Functionality
     document.querySelectorAll(".nav-item").forEach((item) => {
@@ -1810,24 +1442,15 @@
       const navLink = item.querySelector(".nav-link");
 
       if (dropdown) {
-        // Add click event for mobile dropdowns
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other open dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  otherDropdown.previousElementSibling.classList.remove(
-                    "active"
-                  );
-                }
-              });
-
-            // Toggle current dropdown
+            document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+              if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove("active");
+                otherDropdown.previousElementSibling?.classList.remove("active");
+              }
+            });
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -1835,64 +1458,30 @@
       }
     });
 
-    // Close dropdowns when clicking outside
-    document.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        if (
-          !e.target.closest(".nav-item") &&
-          !e.target.closest(".hamburger")
-        ) {
-          document
-            .querySelectorAll(".dropdown.active")
-            .forEach((dropdown) => {
-              dropdown.classList.remove("active");
-              dropdown.previousElementSibling.classList.remove("active");
-            });
-        }
+    // Close menu when clicking on non-dropdown links
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      if (!link.querySelector(".fa-chevron-down")) {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            navMenu.classList.remove("active");
+            mobileOverlay.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        });
       }
     });
 
-    // Week Accordion Functionality
-    document.querySelectorAll(".week-header").forEach((header) => {
-      header.addEventListener("click", () => {
-        const weekContainer = header.parentElement;
-        weekContainer.classList.toggle("active");
-      });
-    });
-
-    // FAQ Accordion Functionality
-    document.querySelectorAll(".faq-question").forEach((question) => {
-      question.addEventListener("click", () => {
-        const faqItem = question.parentElement;
-
-        // Close all other FAQ items
-        document.querySelectorAll(".faq-item").forEach((item) => {
-          if (item !== faqItem) {
-            item.classList.remove("active");
-          }
+    // Close menu on resize if window becomes larger
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navMenu.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+          dropdown.classList.remove("active");
+          dropdown.previousElementSibling?.classList.remove("active");
         });
-
-        // Toggle current FAQ item
-        faqItem.classList.toggle("active");
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        if (targetId === "#") return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
-      });
+      }
     });
 
     // Back to Top Button
@@ -1907,21 +1496,18 @@
     });
 
     backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Close mobile menu on resize if window becomes larger
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        navMenu.classList.remove("active");
-        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-          dropdown.classList.remove("active");
-          dropdown.previousElementSibling.classList.remove("active");
+    // FAQ Accordion Functionality
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      const question = item.querySelector(".faq-question");
+      question.addEventListener("click", () => {
+        document.querySelectorAll(".faq-item").forEach((other) => {
+          if (other !== item) other.classList.remove("active");
         });
-      }
+        item.classList.toggle("active");
+      });
     });
   </script>
 </body>
