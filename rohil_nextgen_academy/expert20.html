@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohil NextGen - Lua Programming Course</title>
+    <title>Lua Programming Course - Learn Lua Training at Rohil NextGen</title>
+    <meta name="description"
+        content="Join the best Lua Programming Course at Rohil NextGen. Learn Lua training with hands-on projects, game development, embedded systems, and expert mentorship. Enroll now!" />
+    <link rel="canonical" href="https://rohilnextgen.com/lua-course.html" />
     <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
+    <link rel="apple-touch-icon" href="./images/rohil_nextgen-removebg-preview.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <style>
+        /* ===== CSS Variables ===== */
         :root {
             --primary-red: #d40404;
             --dark-red: #a80303;
@@ -23,6 +27,7 @@
             --transition: all 0.3s ease;
         }
 
+        /* ===== Reset & Base ===== */
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +35,7 @@
         }
 
         body {
-            font-family: Georgia;
+            font-family: Georgia, serif;
             line-height: 1.6;
             color: var(--dark-gray);
             background-color: var(--white);
@@ -43,7 +48,7 @@
             padding: 0 20px;
         }
 
-        /* Top Bar Styles */
+        /* ===== Top Bar ===== */
         .top-bar {
             background-color: var(--primary-red);
             color: var(--white);
@@ -88,7 +93,7 @@
             transform: translateY(-3px) scale(1.1);
         }
 
-        /* Navigation Styles - IMPROVED RESPONSIVE */
+        /* ===== Navigation ===== */
         .navbar {
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -105,11 +110,6 @@
             margin: 0 auto;
             padding: 0 20px;
             height: 80px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
         }
 
         .logo img {
@@ -129,7 +129,7 @@
 
         .nav-link {
             text-decoration: none;
-            color: var(--text-black);
+            color: var(--dark-gray);
             font-weight: 500;
             font-size: 16px;
             transition: color 0.3s;
@@ -144,7 +144,6 @@
             color: var(--primary-red);
         }
 
-        /* Active state styles */
         .nav-link.active {
             color: var(--primary-red);
             font-weight: 600;
@@ -185,20 +184,19 @@
             display: block;
             padding: 12px 20px;
             text-decoration: none;
-            color: var(--text-grey);
+            color: var(--medium-gray);
             border-bottom: 1px solid #eee;
             transition: all 0.3s;
         }
 
         .dropdown-item:hover {
-            background-color: var(--light-grey);
+            background-color: var(--light-gray);
             color: var(--primary-red);
             padding-left: 25px;
         }
 
-        /* Active state for dropdown items */
         .dropdown-item.active {
-            background-color: var(--light-grey);
+            background-color: var(--light-gray);
             color: var(--primary-red);
             font-weight: 500;
             border-left: 3px solid var(--primary-red);
@@ -210,11 +208,10 @@
             font-size: 24px;
             background: none;
             border: none;
-            color: var(--text-black);
+            color: var(--dark-gray);
             z-index: 1001;
         }
 
-        /* Mobile Overlay */
         .mobile-overlay {
             display: none;
             position: fixed;
@@ -234,10 +231,10 @@
             visibility: visible;
         }
 
-        /* Enhanced Banner Section */
+        /* ===== Banner ===== */
         .banner {
             background-image: url("./images/banner-lua.jpg");
-            background-size: 1100px;
+            background-size: cover;
             background-position: center;
             color: var(--white);
             padding: 120px 0;
@@ -247,7 +244,6 @@
             align-items: center;
             justify-content: center;
             min-height: 500px;
-            background-size: cover;
         }
 
         .banner-content {
@@ -258,7 +254,7 @@
             z-index: 1;
         }
 
-        /* Overview Section */
+        /* ===== Overview ===== */
         .overview-section {
             padding: 60px 0;
         }
@@ -312,7 +308,7 @@
             font-weight: bold;
         }
 
-        /* Enhanced Course Overview Section */
+        /* ===== Course Stats ===== */
         .course-overview {
             padding: 40px 0 60px;
         }
@@ -353,7 +349,7 @@
             font-weight: 500;
         }
 
-        /* Enhanced Certification Section */
+        /* ===== Certification ===== */
         .certification-section {
             background-color: #f8f9fa;
             padding: 60px 0;
@@ -373,14 +369,6 @@
             gap: 30px;
             max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .course-goals h3 {
-            color: var(--primary-red);
-        }
-
-        .future-scope h3 {
-            color: var(--primary-red);
         }
 
         .certification-info-box {
@@ -423,7 +411,7 @@
             color: var(--dark-gray);
         }
 
-        /* Course Details Section */
+        /* ===== Course Details ===== */
         .course-details-section {
             max-width: 1000px;
             margin: 50px auto;
@@ -503,7 +491,7 @@
             margin-top: 5px;
         }
 
-        /* Enhanced Syllabus Section */
+        /* ===== Syllabus ===== */
         .syllabus-container {
             padding: 80px 20px;
             background: linear-gradient(to right, #f7f7f7, #eaeaea);
@@ -536,7 +524,6 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 25px;
-            justify-content: center;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -634,7 +621,7 @@
             font-size: 0.9rem;
         }
 
-        /* Enhanced FAQ Section */
+        /* ===== FAQ ===== */
         .faq-section {
             padding: 80px 0;
             background-color: var(--light-gray);
@@ -710,7 +697,7 @@
             padding: 0 25px;
         }
 
-        /* Enhanced Footer */
+        /* ===== Footer ===== */
         .tech-footer {
             background-color: #656566;
             color: var(--white);
@@ -819,7 +806,7 @@
             margin: 0;
         }
 
-        /* Back to Top Button */
+        /* ===== Back to Top ===== */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -848,7 +835,7 @@
             background-color: var(--dark-red);
         }
 
-        /* Responsive Styles */
+        /* ===== Responsive ===== */
         @media (max-width: 768px) {
             .hamburger {
                 display: block;
@@ -898,7 +885,7 @@
                 transform: none;
                 box-shadow: none;
                 display: none;
-                background-color: var(--light-grey);
+                background-color: var(--light-gray);
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease;
@@ -924,14 +911,6 @@
                 transform: rotate(180deg);
             }
 
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 768px) {
             .top-bar-container {
                 flex-direction: column;
                 gap: 10px;
@@ -945,34 +924,20 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-        }
 
-        @media (max-width: 992px) {
-            .syllabus-content {
-                grid-template-columns: 1fr;
-                max-width: 600px;
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
             }
 
-            .section-title h1 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
             .banner {
                 padding: 80px 0;
                 min-height: 300px;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: top center;
             }
 
             .section-title h1 {
                 font-size: 1.8rem;
-            }
-
-            .section-title p {
-                font-size: 1.1rem;
             }
 
             .course-stats {
@@ -985,12 +950,6 @@
 
             .syllabus-title {
                 font-size: 2.2rem;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
             }
         }
 
@@ -1024,29 +983,34 @@
                 font-size: 2rem;
             }
         }
+
+        @media (max-width: 992px) {
+            .syllabus-content {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .section-title h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
+    <!-- ===== NAVIGATION ===== -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo" itemprop="logo">
-                <div class="logo" style="display: flex; align-items: center">
-                    <img src="./images/rohil_nextgen-removebg-preview.png"
-                        alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar"
-                        width="120" height="60" />
-                </div>
+            <div class="logo">
+                <img src="./images/rohil_nextgen-removebg-preview.png"
+                    alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120"
+                    height="60" />
             </div>
 
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link" aria-current="page">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="gallery.html" class="nav-link">Gallery</a>
-                </li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
                 <li class="nav-item dropdown-parent">
                     <a href="#" class="nav-link dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
@@ -1056,9 +1020,7 @@
                         <a href="internship.html" class="dropdown-item">Internship</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="browsecourse.html" class="nav-link">Browse Courses</a>
-                </li>
+                <li class="nav-item"><a href="browsecourse.html" class="nav-link">Browse Courses</a></li>
                 <li class="nav-item dropdown-parent">
                     <a href="#" class="nav-link dropdown-toggle">Support <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown">
@@ -1067,18 +1029,10 @@
                         <a href="placement-success.html" class="dropdown-item">Placement Success</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="techblog.html" class="nav-link">Techblog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="scholarship.html" class="nav-link">Scholarship</a>
-                </li>
-                <li class="nav-item">
-                    <a href="career.html" class="nav-link"> Careers</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="techblog.html" class="nav-link">Techblog</a></li>
+                <li class="nav-item"><a href="scholarship.html" class="nav-link">Scholarship</a></li>
+                <li class="nav-item"><a href="career.html" class="nav-link">Careers</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
 
             <div class="hamburger" aria-label="Toggle menu">
@@ -1087,36 +1041,55 @@
         </div>
     </nav>
 
-
-    <!-- Enhanced Hero Section -->
+    <!-- ===== BANNER ===== -->
     <section class="banner">
-        <div class="banner-content">
-
-        </div>
+        <div class="banner-content"></div>
     </section>
 
-    <!-- Overview Section -->
+    <!-- ===== OVERVIEW ===== -->
     <section class="overview-section" id="overview">
         <div class="container">
             <div class="overview-container">
                 <div class="overview-content">
                     <div class="section-title">
-                        <h1 style="text-align: center">
-                            Lua Programming Course Overview
-                        </h1>
-                        <p style="text-align: center; font-weight: bold">
+                        <h1>Lua Programming Course – Learn Lua Training with Hands-On Projects</h1>
+                        <p style="text-align:center; font-weight:bold;">
                             Become a Lua Programming Expert — Learn Game Scripting, Embedded Systems, and
                             High-Performance Applications!
                         </p>
                     </div>
+
+                    <!-- SEO-Optimized Content Inserted Here -->
                     <div class="highlight-box">
                         <p>
-                            <strong>Rohil NextGen</strong> offers a comprehensive Lua training covering Core Lua
-                            Programming, Game Development with LOVE2D, LuaJIT Optimization, Embedded Systems, and
-                            Scripting for Applications like Redis and Nginx.
+                            <strong>The Lua Programming Course at Rohil NextGen</strong> is designed to help students,
+                            beginners, and aspiring developers build a strong foundation in the Lua programming
+                            language. The course covers essential concepts such as variables, data types, operators,
+                            loops, functions, tables, and object-oriented programming. With a practical learning
+                            approach, students gain the confidence to write clean, efficient, and reusable Lua code.
                         </p>
                     </div>
-                    <!--Rating-->
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p>
+                            Our industry-focused <strong>Lua Training</strong> includes hands-on coding exercises,
+                            real-world projects, and expert guidance to help learners understand how Lua is used in game
+                            development, scripting, automation, embedded systems, and application development. The
+                            curriculum is structured to enhance problem-solving skills while preparing students for
+                            real-world programming challenges.
+                        </p>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p>
+                            At Rohil NextGen, we believe in learning by doing. Our <strong>Lua Programming
+                                Course</strong> provides personalized mentorship, practical assignments, and
+                            project-based training to ensure every learner gains valuable technical skills. Whether you
+                            want to begin your programming journey or expand your software development expertise, our
+                            course will help you build a successful career in the IT industry.
+                        </p>
+                    </div>
+
                     <div class="rating">
                         <span class="rating-badge">TOP RATED 4.8</span>
                         <span>4.8 Ratings</span>
@@ -1126,7 +1099,7 @@
         </div>
     </section>
 
-    <!-- Course Overview Section -->
+    <!-- ===== COURSE STATS ===== -->
     <section class="course-overview">
         <div class="container">
             <div class="course-content">
@@ -1150,12 +1123,10 @@
         </div>
     </section>
 
-    <!-- Certification Section -->
+    <!-- ===== CERTIFICATION ===== -->
     <section class="certification-section">
         <div class="container">
-            <h2 class="certification-title">
-                Why Choose Lua Programming Certification?
-            </h2>
+            <h2 class="certification-title">Why Choose Lua Programming Certification?</h2>
             <div class="certification-content">
                 <div class="certification-info-box">
                     <i class="fas fa-money-bill-wave certification-icon"></i>
@@ -1166,9 +1137,7 @@
                 <div class="certification-info-box">
                     <i class="fas fa-chart-line certification-icon"></i>
                     <h4 class="certification-subtitle">Job Demand</h4>
-                    <p class="certification-description">
-                        Yearly Increase in Opportunities
-                    </p>
+                    <p class="certification-description">Yearly Increase in Opportunities</p>
                     <h3 class="certification-number">75%</h3>
                 </div>
                 <div class="certification-info-box">
@@ -1181,23 +1150,15 @@
         </div>
     </section>
 
-    <!-- Course Details Section -->
+    <!-- ===== COURSE DETAILS ===== -->
     <section class="course-details-section">
         <div class="container">
             <div class="course-header">
                 <h2>Become a Lua Programming Specialist</h2>
                 <p class="course-subtitle">
-                    <span style="
-                font-size: 30px;
-                color: var(--primary-purple);
-                font-weight: bold;
-              ">❝</span>
+                    <span style="font-size:30px; color:var(--primary-red); font-weight:bold;">❝</span>
                     Learn Game Development, Embedded Systems, and High-Performance Scripting
-                    <span style="
-                font-size: 30px;
-                color: var(--primary-purple);
-                font-weight: bold;
-              ">❞</span>
+                    <span style="font-size:30px; color:var(--primary-red); font-weight:bold;">❞</span>
                 </p>
             </div>
 
@@ -1214,84 +1175,53 @@
             <div class="course-goals">
                 <h3>Key Learning Outcomes</h3>
                 <ul>
-                    <li>
-                        <i class="fas fa-gamepad"></i> Master Lua Syntax and Programming Fundamentals
-                    </li>
-                    <li>
-                        <i class="fas fa-cogs"></i> Learn Game Development with LOVE2D Framework
-                    </li>
-                    <li>
-                        <i class="fas fa-microchip"></i> Work with Embedded Systems and IoT Devices
-                    </li>
-                    <li>
-                        <i class="fas fa-bolt"></i> Understand LuaJIT for High-Performance Applications
-                    </li>
-                    <li>
-                        <i class="fas fa-database"></i> Implement Scripting for Redis and Nginx
-                    </li>
+                    <li><i class="fas fa-gamepad"></i> Master Lua Syntax and Programming Fundamentals</li>
+                    <li><i class="fas fa-cogs"></i> Learn Game Development with LOVE2D Framework</li>
+                    <li><i class="fas fa-microchip"></i> Work with Embedded Systems and IoT Devices</li>
+                    <li><i class="fas fa-bolt"></i> Understand LuaJIT for High-Performance Applications</li>
+                    <li><i class="fas fa-database"></i> Implement Scripting for Redis and Nginx</li>
                 </ul>
             </div>
+
             <div class="future-scope">
                 <h3>Career Prospects with This Course</h3>
                 <ul>
-                    <li>
-                        <i class="fas fa-gamepad"></i> Work as a Game Developer (Roblox, LOVE2D)
-                    </li>
-                    <li>
-                        <i class="fas fa-robot"></i> Join as an Embedded Systems Programmer
-                    </li>
-                    <li>
-                        <i class="fas fa-server"></i> Become a Backend Developer with Lua Scripting
-                    </li>
-                    <li>
-                        <i class="fas fa-code"></i> Take roles as a Scripting Engineer
-                    </li>
-                    <li>
-                        <i class="fas fa-project-diagram"></i> Lead Game Development and IoT Projects
-                    </li>
+                    <li><i class="fas fa-gamepad"></i> Work as a Game Developer (Roblox, LOVE2D)</li>
+                    <li><i class="fas fa-robot"></i> Join as an Embedded Systems Programmer</li>
+                    <li><i class="fas fa-server"></i> Become a Backend Developer with Lua Scripting</li>
+                    <li><i class="fas fa-code"></i> Take roles as a Scripting Engineer</li>
+                    <li><i class="fas fa-project-diagram"></i> Lead Game Development and IoT Projects</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Syllabus Section -->
+    <!-- ===== SYLLABUS ===== -->
     <section class="syllabus-container">
         <div class="container">
-            <h2 class="syllabus-title">
-                Lua Programming – 75 Days (Theory + Practical)
-            </h2>
+            <h2 class="syllabus-title">Lua Programming – 75 Days (Theory + Practical)</h2>
             <div class="syllabus-content">
                 <!-- Week 1-2 -->
                 <div class="week-container">
                     <div class="week-header">
-                        <h3>Week 1-2: Lua Fundamentals & Syntax</h3>
+                        <h3>Week 1-2: Lua Fundamentals &amp; Syntax</h3>
                         <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="week-content">
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> What is Lua? History and Features
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Setting up Lua Environment
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Variables, Data Types, and Tables
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Basic I/O and String Operations
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> What is Lua? History and Features</li>
+                                <li><i class="fas fa-check-circle"></i> Setting up Lua Environment</li>
+                                <li><i class="fas fa-check-circle"></i> Variables, Data Types, and Tables</li>
+                                <li><i class="fas fa-check-circle"></i> Basic I/O and String Operations</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
                                 <li><i class="fas fa-check-circle"></i> Simple calculator program</li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> String manipulation exercises
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> String manipulation exercises</li>
                             </ul>
                         </div>
                     </div>
@@ -1300,36 +1230,24 @@
                 <!-- Week 3-4 -->
                 <div class="week-container">
                     <div class="week-header">
-                        <h3>Week 3-4: Control Structures & Functions</h3>
+                        <h3>Week 3-4: Control Structures &amp; Functions</h3>
                         <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="week-content">
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Conditional statements (if, elseif, else)
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Loops (for, while, repeat until)
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Functions and Variable Arguments
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Closures and Anonymous Functions
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Conditional statements (if, elseif, else)</li>
+                                <li><i class="fas fa-check-circle"></i> Loops (for, while, repeat until)</li>
+                                <li><i class="fas fa-check-circle"></i> Functions and Variable Arguments</li>
+                                <li><i class="fas fa-check-circle"></i> Closures and Anonymous Functions</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a number guessing game
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create reusable function libraries
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Build a number guessing game</li>
+                                <li><i class="fas fa-check-circle"></i> Create reusable function libraries</li>
                             </ul>
                         </div>
                     </div>
@@ -1338,36 +1256,24 @@
                 <!-- Week 5-6 -->
                 <div class="week-container">
                     <div class="week-header">
-                        <h3>Week 5-6: Tables & Metatables</h3>
+                        <h3>Week 5-6: Tables &amp; Metatables</h3>
                         <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="week-content">
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Table Creation and Manipulation
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Metatables and Metamethods
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Object-Oriented Programming in Lua
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Iterators and Generators
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Table Creation and Manipulation</li>
+                                <li><i class="fas fa-check-circle"></i> Metatables and Metamethods</li>
+                                <li><i class="fas fa-check-circle"></i> Object-Oriented Programming in Lua</li>
+                                <li><i class="fas fa-check-circle"></i> Iterators and Generators</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create a contact management system
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Implement OOP patterns with metatables
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Create a contact management system</li>
+                                <li><i class="fas fa-check-circle"></i> Implement OOP patterns with metatables</li>
                             </ul>
                         </div>
                     </div>
@@ -1376,36 +1282,24 @@
                 <!-- Week 7-8 -->
                 <div class="week-container">
                     <div class="week-header">
-                        <h3>Week 7-8: File I/O & Error Handling</h3>
+                        <h3>Week 7-8: File I/O &amp; Error Handling</h3>
                         <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="week-content">
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> File Operations (Read, Write, Append)
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Error Handling with pcall and xpcall
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Debugging Techniques
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Working with CSV and JSON Files
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> File Operations (Read, Write, Append)</li>
+                                <li><i class="fas fa-check-circle"></i> Error Handling with pcall and xpcall</li>
+                                <li><i class="fas fa-check-circle"></i> Debugging Techniques</li>
+                                <li><i class="fas fa-check-circle"></i> Working with CSV and JSON Files</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a log file analyzer
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create configuration file parser
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Build a log file analyzer</li>
+                                <li><i class="fas fa-check-circle"></i> Create configuration file parser</li>
                             </ul>
                         </div>
                     </div>
@@ -1414,36 +1308,24 @@
                 <!-- Week 9-10 -->
                 <div class="week-container">
                     <div class="week-header">
-                        <h3>Week 9-10: LuaJIT & Performance Optimization</h3>
+                        <h3>Week 9-10: LuaJIT &amp; Performance Optimization</h3>
                         <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="week-content">
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Introduction to LuaJIT
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> JIT Compilation and Optimization
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> FFI (Foreign Function Interface)
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Memory Management and Garbage Collection
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Introduction to LuaJIT</li>
+                                <li><i class="fas fa-check-circle"></i> JIT Compilation and Optimization</li>
+                                <li><i class="fas fa-check-circle"></i> FFI (Foreign Function Interface)</li>
+                                <li><i class="fas fa-check-circle"></i> Memory Management and Garbage Collection</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Optimize existing Lua code with LuaJIT
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create C bindings using FFI
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Optimize existing Lua code with LuaJIT</li>
+                                <li><i class="fas fa-check-circle"></i> Create C bindings using FFI</li>
                             </ul>
                         </div>
                     </div>
@@ -1459,29 +1341,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> LOVE2D Framework Overview
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Game Loop and Callbacks
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Graphics and Animation
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Physics and Collision Detection
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> LOVE2D Framework Overview</li>
+                                <li><i class="fas fa-check-circle"></i> Game Loop and Callbacks</li>
+                                <li><i class="fas fa-check-circle"></i> Graphics and Animation</li>
+                                <li><i class="fas fa-check-circle"></i> Physics and Collision Detection</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a 2D platformer game
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create simple arcade games
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Build a 2D platformer game</li>
+                                <li><i class="fas fa-check-circle"></i> Create simple arcade games</li>
                             </ul>
                         </div>
                     </div>
@@ -1490,36 +1360,24 @@
                 <!-- Week 13-14 -->
                 <div class="week-container">
                     <div class="week-header">
-                        <h3>Week 13-14: Embedded Systems & IoT</h3>
+                        <h3>Week 13-14: Embedded Systems &amp; IoT</h3>
                         <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="week-content">
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Lua for Embedded Systems
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Microcontrollers and Lua
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> IoT Device Programming
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Network Programming with LuaSocket
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Lua for Embedded Systems</li>
+                                <li><i class="fas fa-check-circle"></i> Microcontrollers and Lua</li>
+                                <li><i class="fas fa-check-circle"></i> IoT Device Programming</li>
+                                <li><i class="fas fa-check-circle"></i> Network Programming with LuaSocket</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Program IoT sensors with Lua
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create network applications
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Program IoT sensors with Lua</li>
+                                <li><i class="fas fa-check-circle"></i> Create network applications</li>
                             </ul>
                         </div>
                     </div>
@@ -1528,36 +1386,24 @@
                 <!-- Week 15-16 -->
                 <div class="week-container">
                     <div class="week-header">
-                        <h3>Week 15-16: Database & Server Scripting</h3>
+                        <h3>Week 15-16: Database &amp; Server Scripting</h3>
                         <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="week-content">
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Redis Lua Scripting
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Nginx Lua Module
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Web Development with Lua
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> REST API Development
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Redis Lua Scripting</li>
+                                <li><i class="fas fa-check-circle"></i> Nginx Lua Module</li>
+                                <li><i class="fas fa-check-circle"></i> Web Development with Lua</li>
+                                <li><i class="fas fa-check-circle"></i> REST API Development</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create Redis Lua scripts
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build Nginx modules with Lua
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Create Redis Lua scripts</li>
+                                <li><i class="fas fa-check-circle"></i> Build Nginx modules with Lua</li>
                             </ul>
                         </div>
                     </div>
@@ -1566,36 +1412,24 @@
                 <!-- Week 17-18 -->
                 <div class="week-container">
                     <div class="week-header">
-                        <h3>Week 17-18: Advanced Topics & Project Development</h3>
+                        <h3>Week 17-18: Advanced Topics &amp; Project Development</h3>
                         <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="week-content">
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Coroutines and Cooperative Multitasking
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> C API and Extending Lua
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Module Creation and Distribution
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Testing and Debugging Best Practices
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Coroutines and Cooperative Multitasking</li>
+                                <li><i class="fas fa-check-circle"></i> C API and Extending Lua</li>
+                                <li><i class="fas fa-check-circle"></i> Module Creation and Distribution</li>
+                                <li><i class="fas fa-check-circle"></i> Testing and Debugging Best Practices</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Develop a complete Lua application
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create and publish a Lua module
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Develop a complete Lua application</li>
+                                <li><i class="fas fa-check-circle"></i> Create and publish a Lua module</li>
                             </ul>
                         </div>
                     </div>
@@ -1604,13 +1438,12 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- ===== FAQ ===== -->
     <section class="faq-section">
         <div class="container">
             <div class="section-title">
-                <h2 style="text-align: center">Frequently Asked Questions</h2>
+                <h1 style="text-align:center;">Frequently Asked Questions</h1>
             </div>
-
             <div class="faq-content">
                 <div class="faq-item">
                     <div class="faq-question">
@@ -1618,101 +1451,78 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Lua is a powerful, efficient, lightweight, embeddable scripting language. It's widely used
-                            in game development (Roblox, LOVE2D), embedded systems, web servers, and as an extension
-                            language for applications like Redis, Nginx, and Wireshark.
-                        </p>
+                        <p>Lua is a powerful, efficient, lightweight, embeddable scripting language. It's widely used in
+                            game development (Roblox, LOVE2D), embedded systems, web servers, and as an extension
+                            language for applications like Redis, Nginx, and Wireshark.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Do I need programming experience for this course?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Basic programming knowledge is helpful but not required. The course starts with Lua
+                        <p>Basic programming knowledge is helpful but not required. The course starts with Lua
                             fundamentals and gradually builds up to advanced concepts with hands-on projects suitable
-                            for beginners.
-                        </p>
+                            for beginners.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>
-                            Will I receive a certificate after completing the Lua Programming course?
-                        </h3>
+                        <h3>Will I receive a certificate after completing the Lua Programming course?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Yes, upon successful completion of the course and final project, you will receive a
+                        <p>Yes, upon successful completion of the course and final project, you will receive a
                             certificate from Rohil NextGen that validates your Lua Programming skills for game
-                            development and embedded systems.
-                        </p>
+                            development and embedded systems.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>What kind of projects will I work on during the course?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            You'll work on real-world projects including 2D games with LOVE2D, IoT device programming,
+                        <p>You'll work on real-world projects including 2D games with LOVE2D, IoT device programming,
                             Redis Lua scripts, Nginx modules, and a capstone project that integrates all the Lua skills
-                            you've learned.
-                        </p>
+                            you've learned.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>What tools and technologies will I learn?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            You'll learn Core Lua, LuaJIT, LOVE2D game framework, Redis Lua scripting, Nginx Lua module,
+                        <p>You'll learn Core Lua, LuaJIT, LOVE2D game framework, Redis Lua scripting, Nginx Lua module,
                             LuaSocket for networking, and various development tools for embedded systems and game
-                            development.
-                        </p>
+                            development.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>
-                            What career support do you provide after course completion?
-                        </h3>
+                        <h3>What career support do you provide after course completion?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            We provide resume building assistance, interview preparation, portfolio development
-                            guidance, and connect you with our placement partners for job opportunities in game
-                            development, embedded systems, and scripting roles.
-                        </p>
+                        <p>We provide resume building assistance, interview preparation, portfolio development guidance,
+                            and connect you with our placement partners for job opportunities in game development,
+                            embedded systems, and scripting roles.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer class="tech-footer">
         <div class="footer-content">
             <div class="footer-column">
                 <h3>About Rohil NextGen Software Training Institute</h3>
-                <p>
-                    We are a premier technology education platform in Virudhunagar offering cutting-edge courses in
+                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in
                     software development, data science, cybersecurity, and IT training with placement support. Get the
-                    best software training in Virudhunagar with industry experts.
-                </p>
+                    best software training in Virudhunagar with industry experts.</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
                             class="fab fa-facebook-f"></i></a>
@@ -1722,7 +1532,6 @@
                             class="fab fa-youtube"></i></a>
                 </div>
             </div>
-
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
@@ -1734,23 +1543,21 @@
                     <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                 </ul>
             </div>
-
             <div class="footer-column">
                 <h3>Contact Rohil NextGen</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Rohil NextGen, Virudhunagar, Tamil Nadu</a>
                     </li>
-                    <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
+                    <li><a href="tel:+919751867879"><i class="fas fa-phone"></i> +91 97518 67879</a></li>
                     <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
                             admin@rohiltechnologies.com</a></li>
-                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 7:00 PM</a></li>
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
             <div class="copyright">
-        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
+                <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
             </div>
             <div class="footer-bottom-links">
                 <p>Designed By Rohil Technologies</p>
@@ -1758,11 +1565,12 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+    <!-- ===== BACK TO TOP ===== -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
 
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
         // Mobile Menu Toggle
         const hamburger = document.querySelector(".hamburger");
@@ -1772,40 +1580,29 @@
             navMenu.classList.toggle("active");
         });
 
-        // Close mobile menu when clicking on a link
         document.querySelectorAll(".nav-link").forEach((n) =>
             n.addEventListener("click", (e) => {
-                // Only close menu if it's not a dropdown trigger
                 if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
                     navMenu.classList.remove("active");
                 }
             })
         );
 
-        // Mobile Dropdown Functionality
+        // Mobile Dropdown
         document.querySelectorAll(".nav-item").forEach((item) => {
             const dropdown = item.querySelector(".dropdown");
             const navLink = item.querySelector(".nav-link");
 
             if (dropdown) {
-                // Add click event for mobile dropdowns
                 navLink.addEventListener("click", (e) => {
                     if (window.innerWidth <= 768) {
                         e.preventDefault();
-
-                        // Close other open dropdowns
-                        document
-                            .querySelectorAll(".dropdown.active")
-                            .forEach((otherDropdown) => {
-                                if (otherDropdown !== dropdown) {
-                                    otherDropdown.classList.remove("active");
-                                    otherDropdown.previousElementSibling.classList.remove(
-                                        "active"
-                                    );
-                                }
-                            });
-
-                        // Toggle current dropdown
+                        document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove("active");
+                                otherDropdown.previousElementSibling.classList.remove("active");
+                            }
+                        });
                         dropdown.classList.toggle("active");
                         navLink.classList.toggle("active");
                     }
@@ -1813,69 +1610,50 @@
             }
         });
 
-        // Close dropdowns when clicking outside
         document.addEventListener("click", (e) => {
             if (window.innerWidth <= 768) {
-                if (
-                    !e.target.closest(".nav-item") &&
-                    !e.target.closest(".hamburger")
-                ) {
-                    document
-                        .querySelectorAll(".dropdown.active")
-                        .forEach((dropdown) => {
-                            dropdown.classList.remove("active");
-                            dropdown.previousElementSibling.classList.remove("active");
-                        });
+                if (!e.target.closest(".nav-item") && !e.target.closest(".hamburger")) {
+                    document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+                        dropdown.classList.remove("active");
+                        dropdown.previousElementSibling.classList.remove("active");
+                    });
                 }
             }
         });
 
-        // Week Accordion Functionality
+        // Week Accordion
         document.querySelectorAll(".week-header").forEach((header) => {
             header.addEventListener("click", () => {
-                const weekContainer = header.parentElement;
-                weekContainer.classList.toggle("active");
+                header.parentElement.classList.toggle("active");
             });
         });
 
-        // FAQ Accordion Functionality
+        // FAQ Accordion
         document.querySelectorAll(".faq-question").forEach((question) => {
             question.addEventListener("click", () => {
                 const faqItem = question.parentElement;
-
-                // Close all other FAQ items
                 document.querySelectorAll(".faq-item").forEach((item) => {
-                    if (item !== faqItem) {
-                        item.classList.remove("active");
-                    }
+                    if (item !== faqItem) item.classList.remove("active");
                 });
-
-                // Toggle current FAQ item
                 faqItem.classList.toggle("active");
             });
         });
 
-        // Smooth scrolling for navigation links
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
             anchor.addEventListener("click", function (e) {
                 e.preventDefault();
-
                 const targetId = this.getAttribute("href");
                 if (targetId === "#") return;
-
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: "smooth",
-                    });
+                    window.scrollTo({ top: targetElement.offsetTop - 80, behavior: "smooth" });
                 }
             });
         });
 
-        // Back to Top Button
+        // Back to Top
         const backToTopButton = document.getElementById("backToTop");
-
         window.addEventListener("scroll", () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add("active");
@@ -1883,15 +1661,11 @@
                 backToTopButton.classList.remove("active");
             }
         });
-
         backToTopButton.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
-        // Close mobile menu on resize if window becomes larger
+        // Close mobile menu on resize
         window.addEventListener("resize", () => {
             if (window.innerWidth > 768) {
                 navMenu.classList.remove("active");
@@ -1902,6 +1676,7 @@
             }
         });
     </script>
+
 </body>
 
 </html>
