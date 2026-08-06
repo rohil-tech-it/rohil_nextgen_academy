@@ -4,12 +4,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohil NextGen - Business Analytics Course</title>
+  <title>Business Analytics Course - Learn Data Analytics at Rohil NextGen</title>
+  <meta name="description" content="Learn Business Analytics with Rohil NextGen. Master Excel, SQL, Power BI, Tableau, Python, and real-world projects with industry experts. Enroll now!" />
+  <link rel="canonical" href="https://rohilnextgen.com/business-analytics-course.html" />
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
+  <link rel="apple-touch-icon" href="./images/rohil_nextgen-removebg-preview.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Business Analytics Course",
+      "description": "Learn Business Analytics with Rohil NextGen. Master Excel, SQL, Power BI, Tableau, Python, and real-world projects with industry experts.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Rohil NextGen",
+        "url": "https://rohilnextgen.com"
+      },
+      "courseMode": "onsite",
+      "educationalCredentialAwarded": "Certificate",
+      "duration": "P6M",
+      "offers": {
+        "@type": "Offer",
+        "category": "Paid",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+  </script>
+
   <style>
     :root {
       --primary-red: #d40404;
@@ -30,7 +57,7 @@
     }
 
     body {
-      font-family: Georgia;
+      font-family: Georgia, serif;
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
@@ -88,7 +115,7 @@
       transform: translateY(-3px) scale(1.1);
     }
 
-    /* Navigation Styles - IMPROVED RESPONSIVE */
+    /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -129,7 +156,7 @@
 
     .nav-link {
       text-decoration: none;
-      color: var(--text-black);
+      color: var(--dark-gray);
       font-weight: 500;
       font-size: 16px;
       transition: color 0.3s;
@@ -144,7 +171,6 @@
       color: var(--primary-red);
     }
 
-    /* Active state styles */
     .nav-link.active {
       color: var(--primary-red);
       font-weight: 600;
@@ -185,20 +211,19 @@
       display: block;
       padding: 12px 20px;
       text-decoration: none;
-      color: var(--text-grey);
+      color: var(--medium-gray);
       border-bottom: 1px solid #eee;
       transition: all 0.3s;
     }
 
     .dropdown-item:hover {
-      background-color: var(--light-grey);
+      background-color: var(--light-gray);
       color: var(--primary-red);
       padding-left: 25px;
     }
 
-    /* Active state for dropdown items */
     .dropdown-item.active {
-      background-color: var(--light-grey);
+      background-color: var(--light-gray);
       color: var(--primary-red);
       font-weight: 500;
       border-left: 3px solid var(--primary-red);
@@ -210,34 +235,14 @@
       font-size: 24px;
       background: none;
       border: none;
-      color: var(--text-black);
+      color: var(--dark-gray);
       z-index: 1001;
     }
 
-    /* Mobile Overlay */
-    .mobile-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 998;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-    }
-
-    .mobile-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* Enhanced Banner Section */
+    /* Banner Section */
     .banner {
       background-image: url("./images/ba.jpg");
-      background-size: 1000px;
+      background-size: cover;
       background-position: center;
       color: var(--white);
       padding: 120px 0;
@@ -330,7 +335,7 @@
       font-weight: bold;
     }
 
-    /* Enhanced Course Overview Section */
+    /* Course Stats */
     .course-overview {
       padding: 40px 0 60px;
     }
@@ -371,7 +376,7 @@
       font-weight: 500;
     }
 
-    /* Enhanced Certification Section */
+    /* Certification Section */
     .certification-section {
       background-color: #f8f9fa;
       padding: 60px 0;
@@ -391,14 +396,6 @@
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
-    }
-
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
     }
 
     .certification-info-box {
@@ -472,9 +469,9 @@
       margin-bottom: 40px;
     }
 
-    .course-description h3,
-    .course-goals h3,
-    .future-scope h3 {
+    .course-description h2,
+    .course-goals h2,
+    .future-scope h2 {
       font-size: 1.5rem;
       color: var(--primary-red);
       margin-bottom: 15px;
@@ -482,9 +479,9 @@
       padding-bottom: 10px;
     }
 
-    .course-description h3::after,
-    .course-goals h3::after,
-    .future-scope h3::after {
+    .course-description h2::after,
+    .course-goals h2::after,
+    .future-scope h2::after {
       content: "";
       position: absolute;
       bottom: 0;
@@ -521,7 +518,7 @@
       margin-top: 5px;
     }
 
-    /* Enhanced Syllabus Section */
+    /* Syllabus Section */
     .syllabus-container {
       padding: 80px 20px;
       background: linear-gradient(to right, #f7f7f7, #eaeaea);
@@ -652,7 +649,7 @@
       font-size: 0.9rem;
     }
 
-    /* Enhanced FAQ Section */
+    /* FAQ Section */
     .faq-section {
       padding: 80px 0;
       background-color: var(--light-gray);
@@ -728,7 +725,7 @@
       padding: 0 25px;
     }
 
-    /* Enhanced Footer */
+    /* Footer */
     .tech-footer {
       background-color: #656566;
       color: var(--white);
@@ -866,7 +863,7 @@
       background-color: var(--dark-red);
     }
 
-    /* Enrollment CTA Section */
+    /* Enrollment CTA */
     .enrollment-cta {
       background-color: var(--primary-red);
       color: white;
@@ -930,10 +927,6 @@
         display: block;
       }
 
-      .mobile-overlay {
-        display: block;
-      }
-
       .nav-menu {
         position: fixed;
         top: 0;
@@ -974,7 +967,7 @@
         transform: none;
         box-shadow: none;
         display: none;
-        background-color: var(--light-grey);
+        background-color: var(--light-gray);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
@@ -1006,33 +999,6 @@
         text-align: center;
       }
 
-      .top-bar-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .top-bar {
-        height: 120px;
-      }
-
-      .contact-info {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 992px) {
-      .syllabus-content {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .section-title h1 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 768px) {
       .banner {
         padding: 80px 0;
         min-height: 300px;
@@ -1057,12 +1023,6 @@
 
       .syllabus-title {
         font-size: 2.2rem;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
       }
     }
 
@@ -1096,6 +1056,17 @@
         font-size: 2rem;
       }
     }
+
+    @media (max-width: 992px) {
+      .syllabus-content {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+
+      .section-title h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 
@@ -1104,17 +1075,13 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo" itemprop="logo">
-        <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png"
-            alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120"
-            height="60" />
-        </div>
+      <div class="logo">
+        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120" height="60" />
       </div>
 
       <ul class="nav-menu">
         <li class="nav-item">
-          <a href="index.html" class="nav-link" aria-current="page">Home</a>
+          <a href="index.html" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
           <a href="gallery.html" class="nav-link">Gallery</a>
@@ -1146,7 +1113,7 @@
           <a href="scholarship.html" class="nav-link">Scholarship</a>
         </li>
         <li class="nav-item">
-          <a href="career.html" class="nav-link"> Careers</a>
+          <a href="career.html" class="nav-link">Careers</a>
         </li>
         <li class="nav-item">
           <a href="contact.html" class="nav-link">Contact</a>
@@ -1159,8 +1126,7 @@
     </div>
   </nav>
 
-
-  <!-- Enhanced Hero Section -->
+  <!-- Banner Section -->
   <section class="banner">
     <div class="banner-content"></div>
   </section>
@@ -1171,22 +1137,75 @@
       <div class="overview-container">
         <div class="overview-content">
           <div class="section-title">
-            <h1 style="text-align: center; font-weight: bold">
-              Business Analytics Overview
-            </h1>
-            <p style="text-align: center; font-weight: bold">
-              Business Analytics helps you use data insights to support smarter decisions and business growth!
+            <h1>Business Analytics Course – Master Data-Driven Decision Making</h1>
+            <p style="text-align:center; font-weight:bold;">
+              Master Business Analytics and Build a Data-Driven Career
             </p>
           </div>
+
+          <!-- SEO-Optimized Content Inserted Here -->
           <div class="highlight-box">
             <p>
-              <strong>Rohil NextGen</strong> offers a comprehensive Business
-              Analytics training program covering Data Analysis, Predictive
-              Modeling, Statistical Inference, and Business Intelligence using
-              Advanced Tools and Techniques.
+              <strong>Business Analytics Course at Rohil NextGen</strong> is designed to help students and professionals gain practical skills in data analysis, reporting, and business intelligence. Learn from industry experts through hands-on training, real-world projects, and interactive sessions that prepare you for today's data-driven job market.
             </p>
           </div>
-          <!--Rating-->
+
+          <div class="highlight-box" style="border-left-color: #d40404;">
+            <p>
+              Our <strong>Business Analytics Training</strong> covers the essential tools and techniques used by leading organizations worldwide. The course includes:
+            </p>
+            <ul style="margin-top:10px; list-style:none; padding-left:0;">
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Microsoft Excel for Data Analysis</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> SQL for Database Management</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Power BI Dashboard Development</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Tableau Data Visualization</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Python for Data Analytics</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Business Intelligence Concepts</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Data Cleaning and Data Transformation</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Reporting and Decision Making</li>
+            </ul>
+            <p style="margin-top:10px;">Each module is designed to provide practical knowledge that can be applied to real business scenarios.</p>
+          </div>
+
+          <div class="highlight-box" style="border-left-color: #d40404;">
+            <p>
+              At <strong>Rohil NextGen</strong>, we focus on practical learning with industry-relevant training. Our <strong>Business Analytics Certification Course</strong> includes live projects, one-to-one mentoring, and expert guidance to help you gain confidence and job-ready skills.
+            </p>
+          </div>
+
+          <div class="highlight-box" style="border-left-color: #d40404;">
+            <p><strong>Course Highlights:</strong></p>
+            <ul style="margin-top:10px; list-style:none; padding-left:0;">
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Industry-Oriented Curriculum</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Live Projects &amp; Case Studies</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Experienced Trainers</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Placement Assistance</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Interview Preparation</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Certification on Course Completion</li>
+              <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Flexible Learning Options</li>
+            </ul>
+          </div>
+
+          <div class="highlight-box" style="border-left-color: #d40404;">
+            <p><strong>Career Opportunities:</strong></p>
+            <p>After completing our <strong>Business Analytics Course</strong>, you can explore exciting career opportunities such as:</p>
+            <ul style="margin-top:10px; list-style:none; padding-left:0;">
+              <li style="padding:5px 0;"><i class="fas fa-briefcase" style="color:#d40404;"></i> Business Analyst</li>
+              <li style="padding:5px 0;"><i class="fas fa-briefcase" style="color:#d40404;"></i> Data Analyst</li>
+              <li style="padding:5px 0;"><i class="fas fa-briefcase" style="color:#d40404;"></i> Power BI Developer</li>
+              <li style="padding:5px 0;"><i class="fas fa-briefcase" style="color:#d40404;"></i> SQL Developer</li>
+              <li style="padding:5px 0;"><i class="fas fa-briefcase" style="color:#d40404;"></i> Reporting Analyst</li>
+              <li style="padding:5px 0;"><i class="fas fa-briefcase" style="color:#d40404;"></i> Business Intelligence Analyst</li>
+              <li style="padding:5px 0;"><i class="fas fa-briefcase" style="color:#d40404;"></i> Data Visualization Specialist</li>
+            </ul>
+            <p style="margin-top:10px;">Business analytics professionals are in demand across industries including IT, banking, healthcare, retail, finance, manufacturing, and e-commerce.</p>
+          </div>
+
+          <div class="highlight-box" style="border-left-color: #d40404;">
+            <p><strong>Start Your Business Analytics Journey</strong></p>
+            <p>Whether you are a student, a working professional, or someone looking to switch careers, the <strong>Business Analytics Course</strong> at Rohil NextGen provides the knowledge and practical experience needed to succeed. Enroll today and build the analytical skills required to make informed business decisions and grow your career in the world of data.</p>
+          </div>
+
           <div class="rating">
             <span class="rating-badge">TOP RATED 4.9</span>
             <span>4.9 Ratings</span>
@@ -1196,14 +1215,14 @@
     </div>
   </section>
 
-  <!-- Course Overview Section -->
+  <!-- Course Stats Section -->
   <section class="course-overview">
     <div class="container">
       <div class="course-content">
         <div class="course-text">
           <div class="course-stats">
             <div class="stat">
-              <div class="stat-value">2025</div>
+              <div class="stat-value">2026</div>
               <div class="stat-label">Latest Curriculum</div>
             </div>
             <div class="stat">
@@ -1227,9 +1246,7 @@
   <!-- Certification Section -->
   <section class="certification-section">
     <div class="container">
-      <h2 class="certification-title">
-        Why Choose Business Analytics Certification?
-      </h2>
+      <h2 class="certification-title">Why Choose Business Analytics Certification?</h2>
       <div class="certification-content">
         <div class="certification-info-box">
           <i class="fas fa-chart-line certification-icon"></i>
@@ -1259,76 +1276,38 @@
       <div class="course-header">
         <h2>Become a Business Analytics Expert</h2>
         <p class="course-subtitle">
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❝</span>
-          Learn Data Analysis, Predictive Modeling, Statistical Inference, and
-          Advanced Analytics Techniques
-          <span style="font-size: 30px; color: #e2062c; font-weight: bold">❞</span>
+          <span style="font-size:30px; color:var(--primary-red); font-weight:bold;">❝</span>
+          Learn Data Analysis, Predictive Modeling, Statistical Inference, and Advanced Analytics Techniques
+          <span style="font-size:30px; color:var(--primary-red); font-weight:bold;">❞</span>
         </p>
       </div>
 
       <div class="course-description">
-        <h3>Course Overview</h3>
+        <h2>Course Overview</h2>
         <p>
-          This Business Analytics Advanced course is designed to teach you how
-          to analyze and interpret complex data, use statistical models and
-          data visualization techniques to solve business problems, and make
-          data-driven decisions using industry-standard tools like R, Python,
-          and Tableau. This course covers essential topics like predictive
-          analytics, big data technologies, and advanced business intelligence
-          methodologies.
+          This Business Analytics Advanced course is designed to teach you how to analyze and interpret complex data, use statistical models and data visualization techniques to solve business problems, and make data-driven decisions using industry-standard tools like R, Python, and Tableau. This course covers essential topics like predictive analytics, big data technologies, and advanced business intelligence methodologies.
         </p>
       </div>
 
       <div class="course-goals">
-        <h3>Key Learning Outcomes</h3>
+        <h2>Key Learning Outcomes</h2>
         <ul>
-          <li>
-            <i class="fas fa-check-circle"></i> Understand the fundamentals of
-            Business Analytics and Data Science.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Learn advanced predictive
-            analytics techniques for forecasting business trends.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Master data visualization
-            using advanced tools like Tableau and Power BI.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Apply statistical inference to
-            make informed business decisions.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Use Python and R for data
-            manipulation, machine learning, and statistical analysis.
-          </li>
+          <li><i class="fas fa-check-circle"></i> Understand the fundamentals of Business Analytics and Data Science.</li>
+          <li><i class="fas fa-check-circle"></i> Learn advanced predictive analytics techniques for forecasting business trends.</li>
+          <li><i class="fas fa-check-circle"></i> Master data visualization using advanced tools like Tableau and Power BI.</li>
+          <li><i class="fas fa-check-circle"></i> Apply statistical inference to make informed business decisions.</li>
+          <li><i class="fas fa-check-circle"></i> Use Python and R for data manipulation, machine learning, and statistical analysis.</li>
         </ul>
       </div>
+
       <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
+        <h2>Career Prospects with This Course</h2>
         <ul>
-          <li>
-            <i class="fas fa-briefcase"></i> Become a Business Analyst or Data
-            Scientist in top tech companies.
-          </li>
-          <li>
-            <i class="fas fa-chart-bar"></i> Work as a Data Analyst or
-            Analytics Consultant in consulting firms.
-          </li>
-          <li>
-            <i class="fas fa-money-bill-wave"></i> Explore careers in
-            Financial Analytics, Marketing Analytics, and Operations
-            Analytics.
-          </li>
-          <li>
-            <i class="fas fa-graduation-cap"></i> Take roles in academic and
-            research fields related to business and economics.
-          </li>
-          <li>
-            <i class="fas fa-cloud"></i> Work with Big Data and cloud-based
-            analytics platforms in industries like healthcare, retail, and
-            finance.
-          </li>
+          <li><i class="fas fa-briefcase"></i> Become a Business Analyst or Data Scientist in top tech companies.</li>
+          <li><i class="fas fa-chart-bar"></i> Work as a Data Analyst or Analytics Consultant in consulting firms.</li>
+          <li><i class="fas fa-money-bill-wave"></i> Explore careers in Financial Analytics, Marketing Analytics, and Operations Analytics.</li>
+          <li><i class="fas fa-graduation-cap"></i> Take roles in academic and research fields related to business and economics.</li>
+          <li><i class="fas fa-cloud"></i> Work with Big Data and cloud-based analytics platforms in industries like healthcare, retail, and finance.</li>
         </ul>
       </div>
     </div>
@@ -1337,17 +1316,9 @@
   <!-- Syllabus Section -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">
-        Business Analytics – 180 Days Syllabus (Theory + Practical)
-      </h2>
-      <p style="
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-            color: var(--medium-gray);
-          ">
-        Stack: Excel, SQL, Power BI/Tableau, Python (basic), Statistics, Case
-        Studies, Business Tools
+      <h2 class="syllabus-title">Business Analytics – 180 Days Syllabus (Theory + Practical)</h2>
+      <p style="text-align:center; margin-bottom:30px; font-size:1.1rem; color:var(--medium-gray);">
+        Stack: Excel, SQL, Power BI/Tableau, Python (basic), Statistics, Case Studies, Business Tools
       </p>
       <div class="syllabus-content">
         <!-- Phase 1 -->
@@ -1360,37 +1331,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Introduction to Business
-                  Analytics
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Data Types and Data
-                  Collection Methods
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Descriptive Statistics
-                  and Data Summarization
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Business Problem Framing
-                </li>
+                <li><i class="fas fa-check-circle"></i> Introduction to Business Analytics</li>
+                <li><i class="fas fa-check-circle"></i> Data Types and Data Collection Methods</li>
+                <li><i class="fas fa-check-circle"></i> Descriptive Statistics and Data Summarization</li>
+                <li><i class="fas fa-check-circle"></i> Business Problem Framing</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Excel for Data Analysis
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Basic Data Visualization
-                  in Excel
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Case Study: Sales Data
-                  Analysis
-                </li>
+                <li><i class="fas fa-check-circle"></i> Excel for Data Analysis</li>
+                <li><i class="fas fa-check-circle"></i> Basic Data Visualization in Excel</li>
+                <li><i class="fas fa-check-circle"></i> Case Study: Sales Data Analysis</li>
               </ul>
             </div>
           </div>
@@ -1399,45 +1351,25 @@
         <!-- Phase 2 -->
         <div class="week-container">
           <div class="week-header">
-            <h3>Phase 2: Statistics & Data Analysis (Weeks 5–8)</h3>
+            <h3>Phase 2: Statistics &amp; Data Analysis (Weeks 5–8)</h3>
             <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="week-content">
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Probability Theory and
-                  Distributions
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Hypothesis Testing and
-                  Confidence Intervals
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Correlation and
-                  Regression Analysis
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Statistical Inference
-                  for Business Decisions
-                </li>
+                <li><i class="fas fa-check-circle"></i> Probability Theory and Distributions</li>
+                <li><i class="fas fa-check-circle"></i> Hypothesis Testing and Confidence Intervals</li>
+                <li><i class="fas fa-check-circle"></i> Correlation and Regression Analysis</li>
+                <li><i class="fas fa-check-circle"></i> Statistical Inference for Business Decisions</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Statistical Analysis
-                  with Python
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Regression Modeling
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Case Study: Market Trend
-                  Analysis
-                </li>
+                <li><i class="fas fa-check-circle"></i> Statistical Analysis with Python</li>
+                <li><i class="fas fa-check-circle"></i> Regression Modeling</li>
+                <li><i class="fas fa-check-circle"></i> Case Study: Market Trend Analysis</li>
               </ul>
             </div>
           </div>
@@ -1453,39 +1385,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Database Fundamentals
-                  and SQL Basics
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Advanced SQL Queries and
-                  Joins
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Data Aggregation and
-                  Window Functions
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Query Optimization
-                  Techniques
-                </li>
+                <li><i class="fas fa-check-circle"></i> Database Fundamentals and SQL Basics</li>
+                <li><i class="fas fa-check-circle"></i> Advanced SQL Queries and Joins</li>
+                <li><i class="fas fa-check-circle"></i> Data Aggregation and Window Functions</li>
+                <li><i class="fas fa-check-circle"></i> Query Optimization Techniques</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> SQL Query Writing and
-                  Optimization
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Database Management and
-                  ETL Processes
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Case Study: Customer
-                  Data Analysis
-                </li>
+                <li><i class="fas fa-check-circle"></i> SQL Query Writing and Optimization</li>
+                <li><i class="fas fa-check-circle"></i> Database Management and ETL Processes</li>
+                <li><i class="fas fa-check-circle"></i> Case Study: Customer Data Analysis</li>
               </ul>
             </div>
           </div>
@@ -1501,38 +1412,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Introduction to Business
-                  Intelligence
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Data Visualization
-                  Principles
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Dashboard Design and
-                  Storytelling
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Advanced BI Concepts
-                </li>
+                <li><i class="fas fa-check-circle"></i> Introduction to Business Intelligence</li>
+                <li><i class="fas fa-check-circle"></i> Data Visualization Principles</li>
+                <li><i class="fas fa-check-circle"></i> Dashboard Design and Storytelling</li>
+                <li><i class="fas fa-check-circle"></i> Advanced BI Concepts</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Tableau/Power BI
-                  Dashboard Creation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Interactive Data
-                  Visualization
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Case Study: Business
-                  Performance Dashboard
-                </li>
+                <li><i class="fas fa-check-circle"></i> Tableau/Power BI Dashboard Creation</li>
+                <li><i class="fas fa-check-circle"></i> Interactive Data Visualization</li>
+                <li><i class="fas fa-check-circle"></i> Case Study: Business Performance Dashboard</li>
               </ul>
             </div>
           </div>
@@ -1548,39 +1439,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Marketing Analytics and
-                  Customer Insights
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Financial Analytics and
-                  Risk Management
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Operations and Supply
-                  Chain Analytics
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> HR Analytics and People
-                  Analytics
-                </li>
+                <li><i class="fas fa-check-circle"></i> Marketing Analytics and Customer Insights</li>
+                <li><i class="fas fa-check-circle"></i> Financial Analytics and Risk Management</li>
+                <li><i class="fas fa-check-circle"></i> Operations and Supply Chain Analytics</li>
+                <li><i class="fas fa-check-circle"></i> HR Analytics and People Analytics</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Domain-specific Case
-                  Studies
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Cross-functional
-                  Analytics Projects
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Industry Best Practices
-                  Implementation
-                </li>
+                <li><i class="fas fa-check-circle"></i> Domain-specific Case Studies</li>
+                <li><i class="fas fa-check-circle"></i> Cross-functional Analytics Projects</li>
+                <li><i class="fas fa-check-circle"></i> Industry Best Practices Implementation</li>
               </ul>
             </div>
           </div>
@@ -1589,63 +1459,36 @@
         <!-- Phase 6 -->
         <div class="week-container">
           <div class="week-header">
-            <h3>Phase 6: Final Project & Case Studies (Weeks 25–30)</h3>
+            <h3>Phase 6: Final Project &amp; Case Studies (Weeks 25–30)</h3>
             <span class="week-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="week-content">
             <div class="week-theory">
-              <h4>
-                <i class="fas fa-book"></i> Week 25–28: Final Project Work
-              </h4>
+              <h4><i class="fas fa-book"></i> Week 25–28: Final Project Work</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Formulate problem
-                  statements
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Collect & clean data
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Build models for
-                  analysis
-                </li>
+                <li><i class="fas fa-check-circle"></i> Formulate problem statements</li>
+                <li><i class="fas fa-check-circle"></i> Collect &amp; clean data</li>
+                <li><i class="fas fa-check-circle"></i> Build models for analysis</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Real-world case study
-                  (choose your domain)
-                </li>
+                <li><i class="fas fa-check-circle"></i> Real-world case study (choose your domain)</li>
               </ul>
             </div>
             <div class="week-theory">
-              <h4>
-                <i class="fas fa-book"></i> Week 29–30: Presentation &
-                Feedback
-              </h4>
+              <h4><i class="fas fa-book"></i> Week 29–30: Presentation &amp; Feedback</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Storytelling &
-                  Visualization
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Mock presentations with
-                  feedback
-                </li>
+                <li><i class="fas fa-check-circle"></i> Storytelling &amp; Visualization</li>
+                <li><i class="fas fa-check-circle"></i> Mock presentations with feedback</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Final presentation to
-                  class
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Feedback from instructor
-                </li>
+                <li><i class="fas fa-check-circle"></i> Final presentation to class</li>
+                <li><i class="fas fa-check-circle"></i> Feedback from instructor</li>
               </ul>
             </div>
           </div>
@@ -1658,7 +1501,7 @@
   <section class="faq-section">
     <div class="container">
       <div class="section-title">
-        <h2 style="text-align: center">Frequently Asked Questions</h2>
+        <h2 style="text-align:center;">Frequently Asked Questions</h2>
       </div>
 
       <div class="faq-content">
@@ -1668,11 +1511,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Business Analytics involves using data, statistical analysis,
-              and predictive modeling to drive business decisions and solve
-              complex business problems.
-            </p>
+            <p>Business Analytics involves using data, statistical analysis, and predictive modeling to drive business decisions and solve complex business problems.</p>
           </div>
         </div>
 
@@ -1682,11 +1521,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              No prior programming experience is required. The course starts
-              with fundamentals and gradually introduces Python and R for data
-              analysis.
-            </p>
+            <p>No prior programming experience is required. The course starts with fundamentals and gradually introduces Python and R for data analysis.</p>
           </div>
         </div>
 
@@ -1696,10 +1531,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, upon successful completion of the course and final project,
-              you will receive a certificate from Rohil NextGen.
-            </p>
+            <p>Yes, upon successful completion of the course and final project, you will receive a certificate from Rohil NextGen.</p>
           </div>
         </div>
 
@@ -1709,26 +1541,17 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              You will learn Excel, SQL, Python, R, Tableau, Power BI, and
-              various statistical tools used in business analytics.
-            </p>
+            <p>You will learn Excel, SQL, Python, R, Tableau, Power BI, and various statistical tools used in business analytics.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <h3>
-              What career opportunities are available after this course?
-            </h3>
+            <h3>What career opportunities are available after this course?</h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Graduates can pursue roles as Business Analysts, Data Analysts,
-              Analytics Consultants, and various domain-specific analytics
-              positions.
-            </p>
+            <p>Graduates can pursue roles as Business Analysts, Data Analysts, Analytics Consultants, and various domain-specific analytics positions.</p>
           </div>
         </div>
 
@@ -1738,10 +1561,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, we provide 100% placement assistance with our extensive
-              network of hiring partners in the analytics industry.
-            </p>
+            <p>Yes, we provide 100% placement assistance with our extensive network of hiring partners in the analytics industry.</p>
           </div>
         </div>
       </div>
@@ -1753,17 +1573,11 @@
     <div class="footer-content">
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
-        <p>
-          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
-          development, data science, cybersecurity, and IT training with placement support. Get the best software
-          training in Virudhunagar with industry experts.
-        </p>
+        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.</p>
         <div class="social-links">
-          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
-              class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
-              class="fab fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
 
@@ -1782,11 +1596,10 @@
       <div class="footer-column">
         <h3>Contact Rohil NextGen</h3>
         <ul class="footer-links">
-          <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
-          <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
-              admin@rohiltechnologies.com</a></li>
-          <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+          <li><a href="#"><i class="fas fa-map-marker-alt"></i> Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
+          <li><a href="tel:+919751867879"><i class="fas fa-phone"></i> +91 97518 67879</a></li>
+          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+          <li><a href="#"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 7:00 PM</a></li>
         </ul>
       </div>
     </div>
@@ -1815,40 +1628,29 @@
       navMenu.classList.toggle("active");
     });
 
-    // Close mobile menu when clicking on a link
     document.querySelectorAll(".nav-link").forEach((n) =>
       n.addEventListener("click", (e) => {
-        // Only close menu if it's not a dropdown trigger
         if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
           navMenu.classList.remove("active");
         }
       })
     );
 
-    // Mobile Dropdown Functionality
+    // Mobile Dropdown
     document.querySelectorAll(".nav-item").forEach((item) => {
       const dropdown = item.querySelector(".dropdown");
       const navLink = item.querySelector(".nav-link");
 
       if (dropdown) {
-        // Add click event for mobile dropdowns
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other open dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  otherDropdown.previousElementSibling.classList.remove(
-                    "active"
-                  );
-                }
-              });
-
-            // Toggle current dropdown
+            document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+              if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove("active");
+                otherDropdown.previousElementSibling.classList.remove("active");
+              }
+            });
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -1856,69 +1658,50 @@
       }
     });
 
-    // Close dropdowns when clicking outside
     document.addEventListener("click", (e) => {
       if (window.innerWidth <= 768) {
-        if (
-          !e.target.closest(".nav-item") &&
-          !e.target.closest(".hamburger")
-        ) {
-          document
-            .querySelectorAll(".dropdown.active")
-            .forEach((dropdown) => {
-              dropdown.classList.remove("active");
-              dropdown.previousElementSibling.classList.remove("active");
-            });
+        if (!e.target.closest(".nav-item") && !e.target.closest(".hamburger")) {
+          document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+            dropdown.classList.remove("active");
+            dropdown.previousElementSibling.classList.remove("active");
+          });
         }
       }
     });
 
-    // Week Accordion Functionality
+    // Week Accordion
     document.querySelectorAll(".week-header").forEach((header) => {
       header.addEventListener("click", () => {
-        const weekContainer = header.parentElement;
-        weekContainer.classList.toggle("active");
+        header.parentElement.classList.toggle("active");
       });
     });
 
-    // FAQ Accordion Functionality
+    // FAQ Accordion
     document.querySelectorAll(".faq-question").forEach((question) => {
       question.addEventListener("click", () => {
         const faqItem = question.parentElement;
-
-        // Close all other FAQ items
         document.querySelectorAll(".faq-item").forEach((item) => {
-          if (item !== faqItem) {
-            item.classList.remove("active");
-          }
+          if (item !== faqItem) item.classList.remove("active");
         });
-
-        // Toggle current FAQ item
         faqItem.classList.toggle("active");
       });
     });
 
-    // Smooth scrolling for navigation links
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+      anchor.addEventListener("click", function(e) {
         e.preventDefault();
-
         const targetId = this.getAttribute("href");
         if (targetId === "#") return;
-
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
-          });
+          window.scrollTo({ top: targetElement.offsetTop - 80, behavior: "smooth" });
         }
       });
     });
 
-    // Back to Top Button
+    // Back to Top
     const backToTopButton = document.getElementById("backToTop");
-
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
         backToTopButton.classList.add("active");
@@ -1926,15 +1709,11 @@
         backToTopButton.classList.remove("active");
       }
     });
-
     backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Close mobile menu on resize if window becomes larger
+    // Close mobile menu on resize
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
         navMenu.classList.remove("active");
@@ -1945,6 +1724,7 @@
       }
     });
   </script>
+
 </body>
 
 </html>
