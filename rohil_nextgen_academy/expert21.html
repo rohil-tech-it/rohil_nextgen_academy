@@ -4,11 +4,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohil NextGen - Vue.js Development Course</title>
+    <title>Vue.js Development Course - Learn Modern Web Development at Rohil NextGen</title>
+    <meta name="description"
+        content="Learn Vue.js development with practical training at Rohil NextGen. Build modern web applications and gain industry-ready Vue.js development skills. Enroll now!" />
+    <link rel="canonical" href="https://rohiltechnologies.com/vuejs-development-course.html" />
     <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
+    <link rel="apple-touch-icon" href="./images/rohil_nextgen-removebg-preview.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "Vue.js Development Course",
+            "description": "Learn Vue.js development with practical training at Rohil NextGen. Build modern web applications and gain industry-ready Vue.js development skills.",
+            "provider": {
+                "@type": "Organization",
+                "name": "Rohil NextGen",
+                "url": "https://rohiltechnologies.com"
+            },
+            "courseMode": "onsite",
+            "educationalCredentialAwarded": "Certificate",
+            "duration": "P6M",
+            "offers": {
+                "@type": "Offer",
+                "category": "Paid",
+                "price": "0",
+                "priceCurrency": "INR"
+            }
+        }
+    </script>
+
     <style>
         :root {
             --primary-red: #d40404;
@@ -29,7 +58,7 @@
         }
 
         body {
-            font-family: Georgia;
+            font-family: Georgia, serif;
             line-height: 1.6;
             color: var(--dark-gray);
             background-color: var(--white);
@@ -87,7 +116,7 @@
             transform: translateY(-3px) scale(1.1);
         }
 
-        /* Navigation Styles - IMPROVED RESPONSIVE */
+        /* Navigation Styles */
         .navbar {
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -128,7 +157,7 @@
 
         .nav-link {
             text-decoration: none;
-            color: var(--text-black);
+            color: var(--dark-gray);
             font-weight: 500;
             font-size: 16px;
             transition: color 0.3s;
@@ -143,7 +172,6 @@
             color: var(--primary-red);
         }
 
-        /* Active state styles */
         .nav-link.active {
             color: var(--primary-red);
             font-weight: 600;
@@ -184,20 +212,19 @@
             display: block;
             padding: 12px 20px;
             text-decoration: none;
-            color: var(--text-grey);
+            color: var(--medium-gray);
             border-bottom: 1px solid #eee;
             transition: all 0.3s;
         }
 
         .dropdown-item:hover {
-            background-color: var(--light-grey);
+            background-color: var(--light-gray);
             color: var(--primary-red);
             padding-left: 25px;
         }
 
-        /* Active state for dropdown items */
         .dropdown-item.active {
-            background-color: var(--light-grey);
+            background-color: var(--light-gray);
             color: var(--primary-red);
             font-weight: 500;
             border-left: 3px solid var(--primary-red);
@@ -209,7 +236,7 @@
             font-size: 24px;
             background: none;
             border: none;
-            color: var(--text-black);
+            color: var(--dark-gray);
             z-index: 1001;
         }
 
@@ -233,10 +260,10 @@
             visibility: visible;
         }
 
-        /* Enhanced Banner Section */
+        /* Banner Section */
         .banner {
             background-image: url("./images/vuejs-banner.png");
-            background-size: 1100px;
+            background-size: cover;
             background-position: center;
             color: var(--white);
             padding: 120px 0;
@@ -245,7 +272,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 500px;
+            min-height: 550px;
         }
 
         .banner-content {
@@ -329,7 +356,7 @@
             font-weight: bold;
         }
 
-        /* Enhanced Course Overview Section */
+        /* Course Stats */
         .course-overview {
             padding: 40px 0 60px;
         }
@@ -370,7 +397,7 @@
             font-weight: 500;
         }
 
-        /* Enhanced Certification Section */
+        /* Certification Section */
         .certification-section {
             background-color: #f8f9fa;
             padding: 60px 0;
@@ -390,14 +417,6 @@
             gap: 30px;
             max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .course-goals h3 {
-            color: var(--primary-red);
-        }
-
-        .future-scope h3 {
-            color: var(--primary-red);
         }
 
         .certification-info-box {
@@ -471,9 +490,9 @@
             margin-bottom: 40px;
         }
 
-        .course-description h3,
-        .course-goals h3,
-        .future-scope h3 {
+        .course-description h2,
+        .course-goals h2,
+        .future-scope h2 {
             font-size: 1.5rem;
             color: var(--primary-red);
             margin-bottom: 15px;
@@ -481,9 +500,9 @@
             padding-bottom: 10px;
         }
 
-        .course-description h3::after,
-        .course-goals h3::after,
-        .future-scope h3::after {
+        .course-description h2::after,
+        .course-goals h2::after,
+        .future-scope h2::after {
             content: "";
             position: absolute;
             bottom: 0;
@@ -520,7 +539,7 @@
             margin-top: 5px;
         }
 
-        /* Enhanced Syllabus Section */
+        /* Syllabus Section */
         .syllabus-container {
             padding: 80px 20px;
             background: linear-gradient(to right, #f7f7f7, #eaeaea);
@@ -651,7 +670,7 @@
             font-size: 0.9rem;
         }
 
-        /* Enhanced FAQ Section */
+        /* FAQ Section */
         .faq-section {
             padding: 80px 0;
             background-color: var(--light-gray);
@@ -727,7 +746,7 @@
             padding: 0 25px;
         }
 
-        /* Enhanced Footer */
+        /* Footer */
         .tech-footer {
             background-color: #656566;
             color: var(--white);
@@ -865,7 +884,6 @@
             background-color: var(--dark-red);
         }
 
-
         /* Responsive Styles */
         @media (max-width: 768px) {
             .hamburger {
@@ -916,7 +934,7 @@
                 transform: none;
                 box-shadow: none;
                 display: none;
-                background-color: var(--light-grey);
+                background-color: var(--light-gray);
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease;
@@ -948,16 +966,6 @@
                 text-align: center;
             }
 
-            .banner-title {
-                font-size: 2.2rem;
-            }
-
-            .banner-subtitle {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
             .top-bar-container {
                 flex-direction: column;
                 gap: 10px;
@@ -971,20 +979,15 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-        }
 
-        @media (max-width: 992px) {
-            .syllabus-content {
-                grid-template-columns: 1fr;
-                max-width: 600px;
+            .banner-title {
+                font-size: 2.2rem;
             }
 
-            .section-title h1 {
-                font-size: 2rem;
+            .banner-subtitle {
+                font-size: 1.2rem;
             }
-        }
 
-        @media (max-width: 768px) {
             .banner {
                 padding: 80px 0;
                 min-height: 300px;
@@ -1009,12 +1012,6 @@
 
             .syllabus-title {
                 font-size: 2.2rem;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
             }
         }
 
@@ -1048,6 +1045,17 @@
                 font-size: 2rem;
             }
         }
+
+        @media (max-width: 992px) {
+            .syllabus-content {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .section-title h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -1056,17 +1064,15 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo" itemprop="logo">
-                <div class="logo" style="display: flex; align-items: center">
-                    <img src="./images/rohil_nextgen-removebg-preview.png"
-                        alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar"
-                        width="120" height="60" />
-                </div>
+            <div class="logo">
+                <img src="./images/rohil_nextgen-removebg-preview.png"
+                    alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120"
+                    height="60" />
             </div>
 
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link" aria-current="page">Home</a>
+                    <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="gallery.html" class="nav-link">Gallery</a>
@@ -1098,7 +1104,7 @@
                     <a href="scholarship.html" class="nav-link">Scholarship</a>
                 </li>
                 <li class="nav-item">
-                    <a href="career.html" class="nav-link"> Careers</a>
+                    <a href="career.html" class="nav-link">Careers</a>
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
@@ -1111,10 +1117,9 @@
         </div>
     </nav>
 
-    <!-- Enhanced Hero Section -->
+    <!-- Banner Section -->
     <section class="banner">
-        <div class="banner-content">
-        </div>
+        <div class="banner-content"></div>
     </section>
 
     <!-- Overview Section -->
@@ -1123,23 +1128,120 @@
             <div class="overview-container">
                 <div class="overview-content">
                     <div class="section-title">
-                        <h1 style="text-align: center">
-                            Vue.js Development Course Overview
-                        </h1>
-                        <p style="text-align: center; font-weight: bold">
+                        <h1>Vue.js Development Course – Learn Modern Web Development</h1>
+                        <p style="text-align:center; font-weight:bold;">
                             Become a Vue.js Expert — Master Modern Frontend Development, State Management, and
                             Full-Stack Applications
                         </p>
                     </div>
+
+                    <!-- SEO-Optimized Content Inserted Here -->
                     <div class="highlight-box">
                         <p>
-                            <strong>Rohil NextGen</strong> offers a comprehensive Vue.js training covering Vue 3
-                            Composition API,
-                            Vuex/Pinia for state management, Vue Router, and full-stack development with Node.js
-                            integration.
+                            <strong>Vue.js Development Course</strong> from Rohil NextGen is designed for students,
+                            developers, and aspiring professionals who want to strengthen their frontend development
+                            skills through practical learning and real-world projects. Build modern, interactive, and
+                            high-performing web applications with Vue.js.
                         </p>
                     </div>
-                    <!--Rating-->
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Course Overview</strong></p>
+                        <p>Vue.js is a flexible JavaScript framework widely used for creating dynamic and responsive web
+                            interfaces. Our <strong>Vue.js training</strong> focuses on both fundamental concepts and
+                            practical application, helping learners understand how modern frontend applications are
+                            designed and developed.</p>
+                        <p style="margin-top:10px;">The course provides a structured learning experience covering Vue.js
+                            concepts, component-based development, application architecture, API integration, and
+                            project development. Learners can apply their knowledge through hands-on exercises and
+                            practical assignments.</p>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>What You Will Learn</strong></p>
+                        <p>The <strong>Vue.js course</strong> covers the essential skills required to develop modern web
+                            applications, including:</p>
+                        <ul style="margin-top:10px; list-style:none; padding-left:0;">
+                            <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Vue.js
+                                fundamentals and application structure</li>
+                            <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i>
+                                Components and reusable UI development</li>
+                            <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Data
+                                binding and event handling</li>
+                            <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i>
+                                Directives and conditional rendering</li>
+                            <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Vue
+                                Router and application navigation</li>
+                            <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> State
+                                management concepts</li>
+                            <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> API
+                                integration and asynchronous data handling</li>
+                            <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i> Form
+                                handling and validation</li>
+                            <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i>
+                                Application optimization and deployment</li>
+                            <li style="padding:5px 0;"><i class="fas fa-check-circle" style="color:#d40404;"></i>
+                                Building practical Vue.js projects</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Practical Vue.js Training</strong></p>
+                        <p>Our <strong>Vue.js development training</strong> emphasizes practical learning rather than
+                            only theoretical concepts. Students work with real development scenarios and projects to
+                            understand how Vue.js is used in professional web development.</p>
+                        <p style="margin-top:10px;">Through hands-on practice, learners gain experience in creating
+                            reusable components, managing application data, connecting applications with APIs, and
+                            developing responsive user interfaces.</p>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Who Can Join This Course?</strong></p>
+                        <p>This course is suitable for:</p>
+                        <ul style="margin-top:10px; list-style:none; padding-left:0;">
+                            <li style="padding:5px 0;"><i class="fas fa-user-graduate" style="color:#d40404;"></i>
+                                Students interested in frontend development</li>
+                            <li style="padding:5px 0;"><i class="fas fa-user-graduate" style="color:#d40404;"></i>
+                                Beginners who want to learn Vue.js</li>
+                            <li style="padding:5px 0;"><i class="fas fa-user-graduate" style="color:#d40404;"></i> Web
+                                developers looking to expand their JavaScript skills</li>
+                            <li style="padding:5px 0;"><i class="fas fa-user-graduate" style="color:#d40404;"></i>
+                                Developers interested in modern frontend frameworks</li>
+                            <li style="padding:5px 0;"><i class="fas fa-user-graduate" style="color:#d40404;"></i>
+                                Professionals planning to strengthen their web development knowledge</li>
+                        </ul>
+                        <p style="margin-top:10px;">Basic knowledge of HTML, CSS, and JavaScript can be helpful for
+                            getting the most out of the training.</p>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Build Real-World Projects</strong></p>
+                        <p>Practical projects are an important part of the learning process. Learners can apply Vue.js
+                            concepts by developing functional web applications and understanding the complete
+                            development workflow.</p>
+                        <p style="margin-top:10px;">Working on projects helps improve problem-solving skills, coding
+                            confidence, and the ability to build user-friendly web applications.</p>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Why Choose Rohil NextGen?</strong></p>
+                        <p>Rohil NextGen focuses on practical and career-oriented technology training. Our learning
+                            approach combines structured concepts, hands-on exercises, project-based learning, and
+                            guidance from experienced trainers.</p>
+                        <p style="margin-top:10px;">The goal is to help learners develop practical frontend development
+                            skills that can be applied to academic projects, professional development, and real-world
+                            applications.</p>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Start Your Vue.js Learning Journey</strong></p>
+                        <p>If you want to build a strong foundation in modern frontend development, the <strong>Vue.js
+                                Development Course</strong> at Rohil NextGen can help you develop the knowledge and
+                            practical skills required to create interactive web applications.</p>
+                        <p style="margin-top:10px;">Start learning Vue.js, work on practical projects, and take the next
+                            step toward building a career in web development.</p>
+                    </div>
+
                     <div class="rating">
                         <span class="rating-badge">TOP RATED 4.9</span>
                         <span>4.9 Ratings</span>
@@ -1149,7 +1251,7 @@
         </div>
     </section>
 
-    <!-- Course Overview Section -->
+    <!-- Course Stats Section -->
     <section class="course-overview">
         <div class="container">
             <div class="course-content">
@@ -1176,9 +1278,7 @@
     <!-- Certification Section -->
     <section class="certification-section">
         <div class="container">
-            <h2 class="certification-title">
-                Why Choose Vue.js Development Certification?
-            </h2>
+            <h2 class="certification-title">Why Choose Vue.js Development Certification?</h2>
             <div class="certification-content">
                 <div class="certification-info-box">
                     <i class="fas fa-money-bill-wave certification-icon"></i>
@@ -1189,9 +1289,7 @@
                 <div class="certification-info-box">
                     <i class="fas fa-chart-line certification-icon"></i>
                     <h4 class="certification-subtitle">Job Demand</h4>
-                    <p class="certification-description">
-                        Yearly Increase in Vue.js Opportunities
-                    </p>
+                    <p class="certification-description">Yearly Increase in Vue.js Opportunities</p>
                     <h3 class="certification-number">75%</h3>
                 </div>
                 <div class="certification-info-box">
@@ -1210,69 +1308,40 @@
             <div class="course-header">
                 <h2>Become a Vue.js Development Specialist</h2>
                 <p class="course-subtitle">
-                    <span style="
-                font-size: 30px;
-                color: var(--primary-blue);
-                font-weight: bold;
-              ">❝</span>
+                    <span style="font-size:30px; color:var(--primary-red); font-weight:bold;">❝</span>
                     Master Modern Frontend Development with Vue 3, State Management, and Full-Stack Applications
-                    <span style="
-                font-size: 30px;
-                color: var(--primary-blue);
-                font-weight: bold;
-              ">❞</span>
+                    <span style="font-size:30px; color:var(--primary-red); font-weight:bold;">❞</span>
                 </p>
             </div>
 
             <div class="course-description">
-                <h3>Course Overview</h3>
+                <h2>Course Overview</h2>
                 <p>
                     This Vue.js Development course equips you with the skills to build modern, reactive web applications
-                    using
-                    Vue.js 3. You'll learn the Composition API, Vue Router, state management with Pinia, and how to
-                    create
-                    full-stack applications with backend integration.
+                    using Vue.js 3. You'll learn the Composition API, Vue Router, state management with Pinia, and how
+                    to create full-stack applications with backend integration.
                 </p>
             </div>
 
             <div class="course-goals">
-                <h3>Key Learning Outcomes</h3>
+                <h2>Key Learning Outcomes</h2>
                 <ul>
-                    <li>
-                        <i class="fab fa-vuejs"></i> Master Vue.js 3 Composition API and Options API.
-                    </li>
-                    <li>
-                        <i class="fas fa-route"></i> Learn Vue Router for Single Page Applications.
-                    </li>
-                    <li>
-                        <i class="fas fa-database"></i> Implement State Management with Pinia/Vuex.
-                    </li>
-                    <li>
-                        <i class="fas fa-mobile-alt"></i> Build Responsive UI with Vue.js and CSS Frameworks.
-                    </li>
-                    <li>
-                        <i class="fas fa-server"></i> Integrate Vue.js with Backend APIs and Node.js.
-                    </li>
+                    <li><i class="fab fa-vuejs"></i> Master Vue.js 3 Composition API and Options API.</li>
+                    <li><i class="fas fa-route"></i> Learn Vue Router for Single Page Applications.</li>
+                    <li><i class="fas fa-database"></i> Implement State Management with Pinia/Vuex.</li>
+                    <li><i class="fas fa-mobile-alt"></i> Build Responsive UI with Vue.js and CSS Frameworks.</li>
+                    <li><i class="fas fa-server"></i> Integrate Vue.js with Backend APIs and Node.js.</li>
                 </ul>
             </div>
+
             <div class="future-scope">
-                <h3>Career Prospects with This Course</h3>
+                <h2>Career Prospects with This Course</h2>
                 <ul>
-                    <li>
-                        <i class="fas fa-code"></i> Work as a Vue.js Developer or Frontend Engineer.
-                    </li>
-                    <li>
-                        <i class="fas fa-laptop-code"></i> Join as a Full-Stack JavaScript Developer.
-                    </li>
-                    <li>
-                        <i class="fas fa-chart-line"></i> Become a Frontend Technical Lead.
-                    </li>
-                    <li>
-                        <i class="fas fa-mobile-alt"></i> Take roles as a UI/UX Developer.
-                    </li>
-                    <li>
-                        <i class="fas fa-project-diagram"></i> Lead Modern Web Application Projects.
-                    </li>
+                    <li><i class="fas fa-code"></i> Work as a Vue.js Developer or Frontend Engineer.</li>
+                    <li><i class="fas fa-laptop-code"></i> Join as a Full-Stack JavaScript Developer.</li>
+                    <li><i class="fas fa-chart-line"></i> Become a Frontend Technical Lead.</li>
+                    <li><i class="fas fa-mobile-alt"></i> Take roles as a UI/UX Developer.</li>
+                    <li><i class="fas fa-project-diagram"></i> Lead Modern Web Application Projects.</li>
                 </ul>
             </div>
         </div>
@@ -1281,9 +1350,7 @@
     <!-- Syllabus Section -->
     <section class="syllabus-container">
         <div class="container">
-            <h2 class="syllabus-title">
-                Vue.js Development – 90 Days (Theory + Practical)
-            </h2>
+            <h2 class="syllabus-title">Vue.js Development – 90 Days (Theory + Practical)</h2>
             <div class="syllabus-content">
                 <!-- Week 1-2 -->
                 <div class="week-container">
@@ -1295,27 +1362,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Introduction to Vue.js and its ecosystem
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Setting up Vue.js development environment
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Vue instance and template syntax
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Directives and data binding
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Introduction to Vue.js and its ecosystem</li>
+                                <li><i class="fas fa-check-circle"></i> Setting up Vue.js development environment</li>
+                                <li><i class="fas fa-check-circle"></i> Vue instance and template syntax</li>
+                                <li><i class="fas fa-check-circle"></i> Directives and data binding</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
                                 <li><i class="fas fa-check-circle"></i> Create your first Vue.js application</li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a simple interactive calculator
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Build a simple interactive calculator</li>
                             </ul>
                         </div>
                     </div>
@@ -1331,29 +1388,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Vue Components - creation and registration
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Props and component communication
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Custom events and emit
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Component lifecycle hooks
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Vue Components - creation and registration</li>
+                                <li><i class="fas fa-check-circle"></i> Props and component communication</li>
+                                <li><i class="fas fa-check-circle"></i> Custom events and emit</li>
+                                <li><i class="fas fa-check-circle"></i> Component lifecycle hooks</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a reusable component library
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create a product catalog with components
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Build a reusable component library</li>
+                                <li><i class="fas fa-check-circle"></i> Create a product catalog with components</li>
                             </ul>
                         </div>
                     </div>
@@ -1369,29 +1414,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Vue 3 Composition API fundamentals
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Reactive references and computed properties
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Watch and watchEffect
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Composition vs Options API comparison
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Vue 3 Composition API fundamentals</li>
+                                <li><i class="fas fa-check-circle"></i> Reactive references and computed properties</li>
+                                <li><i class="fas fa-check-circle"></i> Watch and watchEffect</li>
+                                <li><i class="fas fa-check-circle"></i> Composition vs Options API comparison</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Migrate Options API to Composition API
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a real-time dashboard
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Migrate Options API to Composition API</li>
+                                <li><i class="fas fa-check-circle"></i> Build a real-time dashboard</li>
                             </ul>
                         </div>
                     </div>
@@ -1407,28 +1440,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Vue Router setup and configuration
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Route parameters and navigation guards
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Nested routes and lazy loading
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Dynamic routing and programmatic navigation
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Vue Router setup and configuration</li>
+                                <li><i class="fas fa-check-circle"></i> Route parameters and navigation guards</li>
+                                <li><i class="fas fa-check-circle"></i> Nested routes and lazy loading</li>
+                                <li><i class="fas fa-check-circle"></i> Dynamic routing and programmatic navigation</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a multi-page SPA with Vue Router
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create an authentication flow with route guards
+                                <li><i class="fas fa-check-circle"></i> Build a multi-page SPA with Vue Router</li>
+                                <li><i class="fas fa-check-circle"></i> Create an authentication flow with route guards
                                 </li>
                             </ul>
                         </div>
@@ -1445,29 +1467,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Introduction to state management
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Pinia setup and store creation
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Getters, actions, and state
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Pinia vs Vuex comparison
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Introduction to state management</li>
+                                <li><i class="fas fa-check-circle"></i> Pinia setup and store creation</li>
+                                <li><i class="fas fa-check-circle"></i> Getters, actions, and state</li>
+                                <li><i class="fas fa-check-circle"></i> Pinia vs Vuex comparison</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Implement shopping cart with Pinia
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a user authentication system
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Implement shopping cart with Pinia</li>
+                                <li><i class="fas fa-check-circle"></i> Build a user authentication system</li>
                             </ul>
                         </div>
                     </div>
@@ -1483,29 +1493,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> HTTP requests with Axios
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> REST API integration patterns
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Error handling and loading states
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Authentication and authorization
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> HTTP requests with Axios</li>
+                                <li><i class="fas fa-check-circle"></i> REST API integration patterns</li>
+                                <li><i class="fas fa-check-circle"></i> Error handling and loading states</li>
+                                <li><i class="fas fa-check-circle"></i> Authentication and authorization</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create a CRUD application with API calls
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a weather dashboard with external API
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Create a CRUD application with API calls</li>
+                                <li><i class="fas fa-check-circle"></i> Build a weather dashboard with external API</li>
                             </ul>
                         </div>
                     </div>
@@ -1521,29 +1519,18 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Working with UI frameworks (Vuetify, Quasar)
+                                <li><i class="fas fa-check-circle"></i> Working with UI frameworks (Vuetify, Quasar)
                                 </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> CSS-in-JS with Vue.js
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Responsive design principles
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Animation and transitions
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> CSS-in-JS with Vue.js</li>
+                                <li><i class="fas fa-check-circle"></i> Responsive design principles</li>
+                                <li><i class="fas fa-check-circle"></i> Animation and transitions</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a responsive admin dashboard
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create animated UI components
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Build a responsive admin dashboard</li>
+                                <li><i class="fas fa-check-circle"></i> Create animated UI components</li>
                             </ul>
                         </div>
                     </div>
@@ -1559,29 +1546,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Unit testing with Jest
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Component testing with Vue Test Utils
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> E2E testing with Cypress
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Test-driven development practices
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Unit testing with Jest</li>
+                                <li><i class="fas fa-check-circle"></i> Component testing with Vue Test Utils</li>
+                                <li><i class="fas fa-check-circle"></i> E2E testing with Cypress</li>
+                                <li><i class="fas fa-check-circle"></i> Test-driven development practices</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Write comprehensive test suites
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Implement TDD for new features
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Write comprehensive test suites</li>
+                                <li><i class="fas fa-check-circle"></i> Implement TDD for new features</li>
                             </ul>
                         </div>
                     </div>
@@ -1597,29 +1572,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Vue.js application optimization
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Deployment strategies and platforms
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Performance monitoring and debugging
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Best practices and code organization
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Vue.js application optimization</li>
+                                <li><i class="fas fa-check-circle"></i> Deployment strategies and platforms</li>
+                                <li><i class="fas fa-check-circle"></i> Performance monitoring and debugging</li>
+                                <li><i class="fas fa-check-circle"></i> Best practices and code organization</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Deploy Vue.js application to production
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build and present capstone project
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Deploy Vue.js application to production</li>
+                                <li><i class="fas fa-check-circle"></i> Build and present capstone project</li>
                             </ul>
                         </div>
                     </div>
@@ -1632,7 +1595,7 @@
     <section class="faq-section">
         <div class="container">
             <div class="section-title">
-                <h2 style="text-align: center">Frequently Asked Questions</h2>
+                <h1 style="text-align:center;">Frequently Asked Questions</h1>
             </div>
 
             <div class="faq-content">
@@ -1642,13 +1605,10 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Vue.js is a progressive JavaScript framework for building user interfaces. It's known for
-                            its gentle
-                            learning curve, excellent documentation, and flexibility. Vue.js is widely adopted by
-                            companies like
-                            Alibaba, Xiaomi, and GitLab, making it a valuable skill for frontend developers.
-                        </p>
+                        <p>Vue.js is a progressive JavaScript framework for building user interfaces. It's known for its
+                            gentle learning curve, excellent documentation, and flexibility. Vue.js is widely adopted by
+                            companies like Alibaba, Xiaomi, and GitLab, making it a valuable skill for frontend
+                            developers.</p>
                     </div>
                 </div>
 
@@ -1658,30 +1618,21 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Basic knowledge of HTML, CSS, and JavaScript fundamentals is recommended. However, we cover
-                            essential
-                            JavaScript concepts needed for Vue.js development in the beginning of the course, making it
-                            accessible for
-                            beginners with some web development background.
-                        </p>
+                        <p>Basic knowledge of HTML, CSS, and JavaScript fundamentals is recommended. However, we cover
+                            essential JavaScript concepts needed for Vue.js development in the beginning of the course,
+                            making it accessible for beginners with some web development background.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>
-                            Will I receive a certificate after completing the Vue.js Development course?
-                        </h3>
+                        <h3>Will I receive a certificate after completing the Vue.js Development course?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Yes, upon successful completion of the course and final project, you will receive a
-                            certificate from Rohil
-                            NextGen that validates your Vue.js Development skills, which is recognized by our industry
-                            partners.
-                        </p>
+                        <p>Yes, upon successful completion of the course and final project, you will receive a
+                            certificate from Rohil NextGen that validates your Vue.js Development skills, which is
+                            recognized by our industry partners.</p>
                     </div>
                 </div>
 
@@ -1691,13 +1642,9 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            You'll work on real-world projects including e-commerce applications, admin dashboards,
-                            real-time chat
-                            applications, and a comprehensive capstone project that integrates all Vue.js skills you've
-                            learned,
-                            building a full-featured web application from scratch.
-                        </p>
+                        <p>You'll work on real-world projects including e-commerce applications, admin dashboards,
+                            real-time chat applications, and a comprehensive capstone project that integrates all Vue.js
+                            skills you've learned, building a full-featured web application from scratch.</p>
                     </div>
                 </div>
 
@@ -1707,31 +1654,21 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            You'll learn Vue.js 3 Composition API, Vue Router, Pinia state management, Axios for HTTP
-                            requests,
-                            Vuetify/Quasar UI frameworks, Jest for testing, and deployment tools. You'll also learn to
-                            integrate Vue
-                            with backend APIs and databases.
-                        </p>
+                        <p>You'll learn Vue.js 3 Composition API, Vue Router, Pinia state management, Axios for HTTP
+                            requests, Vuetify/Quasar UI frameworks, Jest for testing, and deployment tools. You'll also
+                            learn to integrate Vue with backend APIs and databases.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>
-                            What career support do you provide after course completion?
-                        </h3>
+                        <h3>What career support do you provide after course completion?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            We provide resume building with Vue.js projects, interview preparation focusing on frontend
-                            development
-                            concepts, portfolio development guidance, and direct connections with our placement partners
-                            specializing
-                            in frontend and full-stack development roles.
-                        </p>
+                        <p>We provide resume building with Vue.js projects, interview preparation focusing on frontend
+                            development concepts, portfolio development guidance, and direct connections with our
+                            placement partners specializing in frontend and full-stack development roles.</p>
                     </div>
                 </div>
             </div>
@@ -1743,11 +1680,9 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h3>About Rohil NextGen Software Training Institute</h3>
-                <p>
-                    We are a premier technology education platform in Virudhunagar offering cutting-edge courses in
+                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in
                     software development, data science, cybersecurity, and IT training with placement support. Get the
-                    best software training in Virudhunagar with industry experts.
-                </p>
+                    best software training in Virudhunagar with industry experts.</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
                             class="fab fa-facebook-f"></i></a>
@@ -1773,19 +1708,19 @@
             <div class="footer-column">
                 <h3>Contact Rohil NextGen</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Rohil NextGen, Virudhunagar, Tamil Nadu</a>
                     </li>
-                    <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
+                    <li><a href="tel:+919751867879"><i class="fas fa-phone"></i> +91 97518 67879</a></li>
                     <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
                             admin@rohiltechnologies.com</a></li>
-                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 7:00 PM</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
             <div class="copyright">
-        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
+                <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
             </div>
             <div class="footer-bottom-links">
                 <p>Designed By Rohil Technologies</p>
@@ -1807,40 +1742,29 @@
             navMenu.classList.toggle("active");
         });
 
-        // Close mobile menu when clicking on a link
         document.querySelectorAll(".nav-link").forEach((n) =>
             n.addEventListener("click", (e) => {
-                // Only close menu if it's not a dropdown trigger
                 if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
                     navMenu.classList.remove("active");
                 }
             })
         );
 
-        // Mobile Dropdown Functionality
+        // Mobile Dropdown
         document.querySelectorAll(".nav-item").forEach((item) => {
             const dropdown = item.querySelector(".dropdown");
             const navLink = item.querySelector(".nav-link");
 
             if (dropdown) {
-                // Add click event for mobile dropdowns
                 navLink.addEventListener("click", (e) => {
                     if (window.innerWidth <= 768) {
                         e.preventDefault();
-
-                        // Close other open dropdowns
-                        document
-                            .querySelectorAll(".dropdown.active")
-                            .forEach((otherDropdown) => {
-                                if (otherDropdown !== dropdown) {
-                                    otherDropdown.classList.remove("active");
-                                    otherDropdown.previousElementSibling.classList.remove(
-                                        "active"
-                                    );
-                                }
-                            });
-
-                        // Toggle current dropdown
+                        document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove("active");
+                                otherDropdown.previousElementSibling.classList.remove("active");
+                            }
+                        });
                         dropdown.classList.toggle("active");
                         navLink.classList.toggle("active");
                     }
@@ -1848,69 +1772,50 @@
             }
         });
 
-        // Close dropdowns when clicking outside
         document.addEventListener("click", (e) => {
             if (window.innerWidth <= 768) {
-                if (
-                    !e.target.closest(".nav-item") &&
-                    !e.target.closest(".hamburger")
-                ) {
-                    document
-                        .querySelectorAll(".dropdown.active")
-                        .forEach((dropdown) => {
-                            dropdown.classList.remove("active");
-                            dropdown.previousElementSibling.classList.remove("active");
-                        });
+                if (!e.target.closest(".nav-item") && !e.target.closest(".hamburger")) {
+                    document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+                        dropdown.classList.remove("active");
+                        dropdown.previousElementSibling.classList.remove("active");
+                    });
                 }
             }
         });
 
-        // Week Accordion Functionality
+        // Week Accordion
         document.querySelectorAll(".week-header").forEach((header) => {
             header.addEventListener("click", () => {
-                const weekContainer = header.parentElement;
-                weekContainer.classList.toggle("active");
+                header.parentElement.classList.toggle("active");
             });
         });
 
-        // FAQ Accordion Functionality
+        // FAQ Accordion
         document.querySelectorAll(".faq-question").forEach((question) => {
             question.addEventListener("click", () => {
                 const faqItem = question.parentElement;
-
-                // Close all other FAQ items
                 document.querySelectorAll(".faq-item").forEach((item) => {
-                    if (item !== faqItem) {
-                        item.classList.remove("active");
-                    }
+                    if (item !== faqItem) item.classList.remove("active");
                 });
-
-                // Toggle current FAQ item
                 faqItem.classList.toggle("active");
             });
         });
 
-        // Smooth scrolling for navigation links
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
             anchor.addEventListener("click", function (e) {
                 e.preventDefault();
-
                 const targetId = this.getAttribute("href");
                 if (targetId === "#") return;
-
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: "smooth",
-                    });
+                    window.scrollTo({ top: targetElement.offsetTop - 80, behavior: "smooth" });
                 }
             });
         });
 
-        // Back to Top Button
+        // Back to Top
         const backToTopButton = document.getElementById("backToTop");
-
         window.addEventListener("scroll", () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add("active");
@@ -1918,15 +1823,11 @@
                 backToTopButton.classList.remove("active");
             }
         });
-
         backToTopButton.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
-        // Close mobile menu on resize if window becomes larger
+        // Close mobile menu on resize
         window.addEventListener("resize", () => {
             if (window.innerWidth > 768) {
                 navMenu.classList.remove("active");
