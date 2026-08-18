@@ -4,12 +4,39 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohil NextGen - Next.js Programming Course</title>
+    <title>Next.js Programming Course - Learn Modern Web Development at Rohil NextGen</title>
+    <meta name="description" content="Learn Next.js programming with practical training in React, routing, APIs, and modern web development. Build real-world applications with Rohil NextGen. Enroll now!" />
+    <link rel="canonical" href="https://rohiltechnologies.com/nextjs-programming-course.html" />
     <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
+    <link rel="apple-touch-icon" href="./images/rohil_nextgen-removebg-preview.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "Next.js Programming Course",
+            "description": "Learn Next.js programming with practical training in React, routing, APIs, and modern web development. Build real-world applications with Rohil NextGen.",
+            "provider": {
+                "@type": "Organization",
+                "name": "Rohil NextGen",
+                "url": "https://rohiltechnologies.com"
+            },
+            "courseMode": "onsite",
+            "educationalCredentialAwarded": "Certificate",
+            "duration": "P3M",
+            "offers": {
+                "@type": "Offer",
+                "category": "Paid",
+                "price": "0",
+                "priceCurrency": "INR"
+            }
+        }
+    </script>
+
     <style>
         :root {
             --primary-red: #d40404;
@@ -30,7 +57,7 @@
         }
 
         body {
-            font-family: Georgia;
+            font-family: Georgia, serif;
             line-height: 1.6;
             color: var(--dark-gray);
             background-color: var(--white);
@@ -88,7 +115,7 @@
             transform: translateY(-3px) scale(1.1);
         }
 
-   /* Navigation Styles - IMPROVED RESPONSIVE */
+        /* Navigation Styles */
         .navbar {
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -129,7 +156,7 @@
 
         .nav-link {
             text-decoration: none;
-            color: var(--text-black);
+            color: var(--dark-gray);
             font-weight: 500;
             font-size: 16px;
             transition: color 0.3s;
@@ -144,7 +171,6 @@
             color: var(--primary-red);
         }
 
-        /* Active state styles */
         .nav-link.active {
             color: var(--primary-red);
             font-weight: 600;
@@ -185,20 +211,19 @@
             display: block;
             padding: 12px 20px;
             text-decoration: none;
-            color: var(--text-grey);
+            color: var(--medium-gray);
             border-bottom: 1px solid #eee;
             transition: all 0.3s;
         }
 
         .dropdown-item:hover {
-            background-color: var(--light-grey);
+            background-color: var(--light-gray);
             color: var(--primary-red);
             padding-left: 25px;
         }
 
-        /* Active state for dropdown items */
         .dropdown-item.active {
-            background-color: var(--light-grey);
+            background-color: var(--light-gray);
             color: var(--primary-red);
             font-weight: 500;
             border-left: 3px solid var(--primary-red);
@@ -210,9 +235,10 @@
             font-size: 24px;
             background: none;
             border: none;
-            color: var(--text-black);
+            color: var(--dark-gray);
             z-index: 1001;
         }
+
         /* Mobile Overlay */
         .mobile-overlay {
             display: none;
@@ -233,10 +259,10 @@
             visibility: visible;
         }
 
-        /* Enhanced Banner Section */
+        /* Banner Section */
         .banner {
             background-image: url("./images/nextjs.jfif");
-            background-size: 1100px;
+            background-size: cover;
             background-position: center;
             color: var(--white);
             padding: 120px 0;
@@ -246,8 +272,6 @@
             align-items: center;
             justify-content: center;
             min-height: 500px;
-            background-size: cover;
-            background-position: center;
         }
 
         .banner-content {
@@ -315,6 +339,24 @@
             color: var(--primary-red);
         }
 
+        .highlight-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+
+        .highlight-box ul li {
+            padding: 5px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .highlight-box ul li i {
+            color: var(--primary-red);
+            margin-top: 5px;
+        }
+
         .rating {
             display: flex;
             align-items: center;
@@ -331,7 +373,7 @@
             font-weight: bold;
         }
 
-        /* Enhanced Course Overview Section */
+        /* Course Stats */
         .course-overview {
             padding: 40px 0 60px;
         }
@@ -372,7 +414,7 @@
             font-weight: 500;
         }
 
-        /* Enhanced Certification Section */
+        /* Certification Section */
         .certification-section {
             background-color: #f8f9fa;
             padding: 60px 0;
@@ -392,14 +434,6 @@
             gap: 30px;
             max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .course-goals h3 {
-            color: var(--primary-red);
-        }
-
-        .future-scope h3 {
-            color: var(--primary-red);
         }
 
         .certification-info-box {
@@ -473,9 +507,9 @@
             margin-bottom: 40px;
         }
 
-        .course-description h3,
-        .course-goals h3,
-        .future-scope h3 {
+        .course-description h2,
+        .course-goals h2,
+        .future-scope h2 {
             font-size: 1.5rem;
             color: var(--primary-red);
             margin-bottom: 15px;
@@ -483,9 +517,9 @@
             padding-bottom: 10px;
         }
 
-        .course-description h3::after,
-        .course-goals h3::after,
-        .future-scope h3::after {
+        .course-description h2::after,
+        .course-goals h2::after,
+        .future-scope h2::after {
             content: "";
             position: absolute;
             bottom: 0;
@@ -522,7 +556,7 @@
             margin-top: 5px;
         }
 
-        /* Enhanced Syllabus Section */
+        /* Syllabus Section */
         .syllabus-container {
             padding: 80px 20px;
             background: linear-gradient(to right, #f7f7f7, #eaeaea);
@@ -653,7 +687,7 @@
             font-size: 0.9rem;
         }
 
-        /* Enhanced FAQ Section */
+        /* FAQ Section */
         .faq-section {
             padding: 80px 0;
             background-color: var(--light-gray);
@@ -729,7 +763,7 @@
             padding: 0 25px;
         }
 
-        /* Enhanced Footer */
+        /* Footer */
         .tech-footer {
             background-color: #656566;
             color: var(--white);
@@ -867,7 +901,6 @@
             background-color: var(--dark-red);
         }
 
-
         /* Responsive Styles */
         @media (max-width: 768px) {
             .hamburger {
@@ -918,7 +951,7 @@
                 transform: none;
                 box-shadow: none;
                 display: none;
-                background-color: var(--light-grey);
+                background-color: var(--light-gray);
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease;
@@ -949,9 +982,7 @@
                 gap: 10px;
                 text-align: center;
             }
-        }
 
-        @media (max-width: 768px) {
             .top-bar-container {
                 flex-direction: column;
                 gap: 10px;
@@ -965,20 +996,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-        }
 
-        @media (max-width: 992px) {
-            .syllabus-content {
-                grid-template-columns: 1fr;
-                max-width: 600px;
-            }
-
-            .section-title h1 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
             .banner {
                 padding: 80px 0;
                 min-height: 300px;
@@ -1004,12 +1022,6 @@
 
             .syllabus-title {
                 font-size: 2.2rem;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
             }
         }
 
@@ -1043,6 +1055,17 @@
                 font-size: 2rem;
             }
         }
+
+        @media (max-width: 992px) {
+            .syllabus-content {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .section-title h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -1051,17 +1074,13 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo" itemprop="logo">
-                <div class="logo" style="display: flex; align-items: center">
-                    <img src="./images/rohil_nextgen-removebg-preview.png"
-                        alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar"
-                        width="120" height="60" />
-                </div>
+            <div class="logo">
+                <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120" height="60" />
             </div>
 
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link" aria-current="page">Home</a>
+                    <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="gallery.html" class="nav-link">Gallery</a>
@@ -1093,7 +1112,7 @@
                     <a href="scholarship.html" class="nav-link">Scholarship</a>
                 </li>
                 <li class="nav-item">
-                    <a href="career.html" class="nav-link"> Careers</a>
+                    <a href="career.html" class="nav-link">Careers</a>
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
@@ -1105,11 +1124,10 @@
             </div>
         </div>
     </nav>
-    <!-- Enhanced Hero Section -->
-    <section class="banner">
-        <div class="banner-content">
 
-        </div>
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content"></div>
     </section>
 
     <!-- Overview Section -->
@@ -1118,22 +1136,71 @@
             <div class="overview-container">
                 <div class="overview-content">
                     <div class="section-title">
-                        <h1 style="text-align: center">
-                            Next.js Programming Course Overview
-                        </h1>
-                        <p style="text-align: center; font-weight: bold">
-                            Become a Full-Stack Next.js Developer — Learn Server Components, API Routes, Authentication,
-                            and Deployment in One Complete Program!
+                        <h1>Next.js Programming Course – Learn Modern Web Development with Rohil NextGen</h1>
+                        <p style="text-align:center; font-weight:bold;">
+                            Become a Full-Stack Next.js Developer — Learn Server Components, API Routes, Authentication, and Deployment in One Complete Program!
                         </p>
                     </div>
+
+                    <!-- SEO-Optimized Content Inserted Here -->
                     <div class="highlight-box">
                         <p>
-                            <strong>Rohil NextGen</strong> offers a comprehensive Next.js training covering React
-                            Fundamentals, Server Components, API Development, Database Integration, and Production
-                            Deployment using industry best practices.
+                            <strong>Next.js Programming Course</strong> at Rohil NextGen is designed to help learners understand modern React-based development and gain the skills required to create production-ready web applications. Build modern, fast, and scalable web applications with practical, hands-on training.
                         </p>
                     </div>
-                    <!--Rating-->
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Next.js Course Overview</strong></p>
+                        <p>Next.js is a popular framework for building modern web applications with React. It provides powerful features such as server-side rendering, routing, API integration, optimized performance, and flexible application development.</p>
+                        <p style="margin-top:10px;">At Rohil NextGen, the course focuses on practical learning so students can understand concepts through hands-on development rather than only studying theory.</p>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>What You Will Learn</strong></p>
+                        <p>The course covers the essential concepts required to work with Next.js and modern frontend development.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Next.js fundamentals and project setup</li>
+                            <li><i class="fas fa-check-circle"></i> React components and application structure</li>
+                            <li><i class="fas fa-check-circle"></i> Pages and modern routing concepts</li>
+                            <li><i class="fas fa-check-circle"></i> Server-side and client-side rendering</li>
+                            <li><i class="fas fa-check-circle"></i> API integration and data handling</li>
+                            <li><i class="fas fa-check-circle"></i> Dynamic routes and layouts</li>
+                            <li><i class="fas fa-check-circle"></i> Forms and user interactions</li>
+                            <li><i class="fas fa-check-circle"></i> Authentication fundamentals</li>
+                            <li><i class="fas fa-check-circle"></i> Database and backend integration</li>
+                            <li><i class="fas fa-check-circle"></i> Website performance optimization</li>
+                            <li><i class="fas fa-check-circle"></i> Deployment and production practices</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Practical Next.js Development</strong></p>
+                        <p>Practical projects are an important part of the learning experience. Students can apply their knowledge by developing real-world applications and understanding how different components work together.</p>
+                        <p style="margin-top:10px;">The training helps learners build responsive interfaces, connect applications with APIs, manage data, and create efficient web solutions using modern development practices.</p>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Who Can Join This Course?</strong></p>
+                        <p>The course is suitable for students, graduates, aspiring developers, and professionals who want to improve their web development skills. Basic knowledge of HTML, CSS, JavaScript, and React can be helpful, but the learning path is structured to support learners as they progress through the concepts.</p>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Why Choose Rohil NextGen?</strong></p>
+                        <p>Rohil NextGen focuses on practical technical education that helps learners develop skills relevant to today's web development environment. The training combines structured lessons, hands-on exercises, project development, and guidance from experienced trainers.</p>
+                        <p style="margin-top:10px;">Students get an opportunity to understand development workflows and improve their ability to build and deploy modern web applications.</p>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Career Opportunities</strong></p>
+                        <p>Learning Next.js can support career paths such as frontend developer, React developer, full stack developer, and web application developer. The skills gained through project-based training can also help learners prepare for internships, entry-level opportunities, and professional development.</p>
+                    </div>
+
+                    <div class="highlight-box" style="border-left-color: #d40404;">
+                        <p><strong>Start Your Web Development Journey</strong></p>
+                        <p>If you want to build modern web applications and strengthen your React development skills, the <strong>Next.js Programming Course</strong> at Rohil NextGen can provide a practical learning path.</p>
+                        <p style="margin-top:10px;">Start learning modern web development, work on real projects, and develop the confidence to create scalable applications with Next.js.</p>
+                    </div>
+
                     <div class="rating">
                         <span class="rating-badge">TOP RATED 4.9</span>
                         <span>4.9 Ratings</span>
@@ -1143,7 +1210,7 @@
         </div>
     </section>
 
-    <!-- Course Overview Section -->
+    <!-- Course Stats Section -->
     <section class="course-overview">
         <div class="container">
             <div class="course-content">
@@ -1162,7 +1229,7 @@
                             <div class="stat-label">Practical Hours</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-value">2025</div>
+                            <div class="stat-value">2026</div>
                             <div class="stat-label">Latest Curriculum</div>
                         </div>
                     </div>
@@ -1174,9 +1241,7 @@
     <!-- Certification Section -->
     <section class="certification-section">
         <div class="container">
-            <h2 class="certification-title">
-                Why Choose Next.js Programming Certification?
-            </h2>
+            <h2 class="certification-title">Why Choose Next.js Programming Certification?</h2>
             <div class="certification-content">
                 <div class="certification-info-box">
                     <i class="fas fa-money-bill-wave certification-icon"></i>
@@ -1187,9 +1252,7 @@
                 <div class="certification-info-box">
                     <i class="fas fa-chart-line certification-icon"></i>
                     <h4 class="certification-subtitle">Job Demand</h4>
-                    <p class="certification-description">
-                        Yearly Increase in Opportunities
-                    </p>
+                    <p class="certification-description">Yearly Increase in Opportunities</p>
                     <h3 class="certification-number">95%</h3>
                 </div>
                 <div class="certification-info-box">
@@ -1208,22 +1271,14 @@
             <div class="course-header">
                 <h2>Become a Next.js Full-Stack Specialist</h2>
                 <p class="course-subtitle">
-                    <span style="
-                font-size: 30px;
-                color: var(--primary-blue);
-                font-weight: bold;
-              ">❝</span>
+                    <span style="font-size:30px; color:var(--primary-red); font-weight:bold;">❝</span>
                     Learn Server Components, API Development, and Production Deployment
-                    <span style="
-                font-size: 30px;
-                color: var(--primary-blue);
-                font-weight: bold;
-              ">❞</span>
+                    <span style="font-size:30px; color:var(--primary-red); font-weight:bold;">❞</span>
                 </p>
             </div>
 
             <div class="course-description">
-                <h3>Course Overview</h3>
+                <h2>Course Overview</h2>
                 <p>
                     This Next.js Programming course equips you with the skills to build modern full-stack applications
                     using React, Next.js, and modern web technologies. You will learn hands-on with TypeScript, Tailwind
@@ -1232,43 +1287,24 @@
             </div>
 
             <div class="course-goals">
-                <h3>Key Learning Outcomes</h3>
+                <h2>Key Learning Outcomes</h2>
                 <ul>
-                    <li>
-                        <i class="fab fa-react"></i> Master React Fundamentals and Hooks
-                    </li>
-                    <li>
-                        <i class="fas fa-server"></i> Learn Server Components and Server Actions
-                    </li>
-                    <li>
-                        <i class="fas fa-database"></i> Work with Databases using Prisma ORM
-                    </li>
-                    <li>
-                        <i class="fas fa-shield-alt"></i> Implement Authentication and Authorization
-                    </li>
-                    <li>
-                        <i class="fas fa-rocket"></i> Deploy Production Applications on Vercel
-                    </li>
+                    <li><i class="fab fa-react"></i> Master React Fundamentals and Hooks</li>
+                    <li><i class="fas fa-server"></i> Learn Server Components and Server Actions</li>
+                    <li><i class="fas fa-database"></i> Work with Databases using Prisma ORM</li>
+                    <li><i class="fas fa-shield-alt"></i> Implement Authentication and Authorization</li>
+                    <li><i class="fas fa-rocket"></i> Deploy Production Applications on Vercel</li>
                 </ul>
             </div>
+
             <div class="future-scope">
-                <h3>Career Prospects with This Course</h3>
+                <h2>Career Prospects with This Course</h2>
                 <ul>
-                    <li>
-                        <i class="fas fa-code"></i> Work as a Full-Stack Developer
-                    </li>
-                    <li>
-                        <i class="fas fa-laptop-code"></i> Join as a Frontend Developer (React/Next.js)
-                    </li>
-                    <li>
-                        <i class="fas fa-cogs"></i> Become a Backend Developer with Node.js
-                    </li>
-                    <li>
-                        <i class="fas fa-cloud"></i> Take roles as a DevOps Engineer
-                    </li>
-                    <li>
-                        <i class="fas fa-project-diagram"></i> Lead Web Development Projects
-                    </li>
+                    <li><i class="fas fa-code"></i> Work as a Full-Stack Developer</li>
+                    <li><i class="fas fa-laptop-code"></i> Join as a Frontend Developer (React/Next.js)</li>
+                    <li><i class="fas fa-cogs"></i> Become a Backend Developer with Node.js</li>
+                    <li><i class="fas fa-cloud"></i> Take roles as a DevOps Engineer</li>
+                    <li><i class="fas fa-project-diagram"></i> Lead Web Development Projects</li>
                 </ul>
             </div>
         </div>
@@ -1277,9 +1313,7 @@
     <!-- Syllabus Section -->
     <section class="syllabus-container">
         <div class="container">
-            <h2 class="syllabus-title">
-                Next.js Programming – 90 Days (Theory + Practical)
-            </h2>
+            <h2 class="syllabus-title">Next.js Programming – 90 Days (Theory + Practical)</h2>
             <div class="syllabus-content">
                 <!-- Week 1-2 -->
                 <div class="week-container">
@@ -1291,27 +1325,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Modern JavaScript (ES6+ features)
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> React Components, Props, and State
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> React Hooks (useState, useEffect)
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Component Lifecycle Methods
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Modern JavaScript (ES6+ features)</li>
+                                <li><i class="fas fa-check-circle"></i> React Components, Props, and State</li>
+                                <li><i class="fas fa-check-circle"></i> React Hooks (useState, useEffect)</li>
+                                <li><i class="fas fa-check-circle"></i> Component Lifecycle Methods</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
                                 <li><i class="fas fa-check-circle"></i> Build a Todo List Application</li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create a React component library
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Create a React component library</li>
                             </ul>
                         </div>
                     </div>
@@ -1327,29 +1351,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Next.js Architecture & File-based Routing
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Pages vs App Router
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Static vs Server-side Rendering
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Image Optimization and Font Loading
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Next.js Architecture & File-based Routing</li>
+                                <li><i class="fas fa-check-circle"></i> Pages vs App Router</li>
+                                <li><i class="fas fa-check-circle"></i> Static vs Server-side Rendering</li>
+                                <li><i class="fas fa-check-circle"></i> Image Optimization and Font Loading</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a multi-page blog application
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Implement dynamic routing
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Build a multi-page blog application</li>
+                                <li><i class="fas fa-check-circle"></i> Implement dynamic routing</li>
                             </ul>
                         </div>
                     </div>
@@ -1365,29 +1377,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> CSS Modules & Styled Components
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Tailwind CSS Fundamentals
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> UI Component Libraries (Shadcn/UI, MUI)
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Responsive Design Principles
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> CSS Modules & Styled Components</li>
+                                <li><i class="fas fa-check-circle"></i> Tailwind CSS Fundamentals</li>
+                                <li><i class="fas fa-check-circle"></i> UI Component Libraries (Shadcn/UI, MUI)</li>
+                                <li><i class="fas fa-check-circle"></i> Responsive Design Principles</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a responsive dashboard
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create reusable UI components
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Build a responsive dashboard</li>
+                                <li><i class="fas fa-check-circle"></i> Create reusable UI components</li>
                             </ul>
                         </div>
                     </div>
@@ -1403,29 +1403,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Server Components vs Client Components
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> API Routes & Server Actions
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Data Fetching Strategies (SSR, ISR, CSR)
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> REST API Development
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Server Components vs Client Components</li>
+                                <li><i class="fas fa-check-circle"></i> API Routes & Server Actions</li>
+                                <li><i class="fas fa-check-circle"></i> Data Fetching Strategies (SSR, ISR, CSR)</li>
+                                <li><i class="fas fa-check-circle"></i> REST API Development</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a product catalog with API integration
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Create custom API endpoints
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Build a product catalog with API integration</li>
+                                <li><i class="fas fa-check-circle"></i> Create custom API endpoints</li>
                             </ul>
                         </div>
                     </div>
@@ -1441,29 +1429,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> PostgreSQL/MySQL Fundamentals
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Prisma ORM Setup & Configuration
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Database Migrations & Seeding
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Relationships & Query Optimization
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> PostgreSQL/MySQL Fundamentals</li>
+                                <li><i class="fas fa-check-circle"></i> Prisma ORM Setup & Configuration</li>
+                                <li><i class="fas fa-check-circle"></i> Database Migrations & Seeding</li>
+                                <li><i class="fas fa-check-circle"></i> Relationships & Query Optimization</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build a user management system
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Implement CRUD operations with Prisma
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Build a user management system</li>
+                                <li><i class="fas fa-check-circle"></i> Implement CRUD operations with Prisma</li>
                             </ul>
                         </div>
                     </div>
@@ -1479,29 +1455,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> JWT Authentication
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> NextAuth.js Configuration
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> OAuth Providers (Google, GitHub)
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Role-based Access Control
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> JWT Authentication</li>
+                                <li><i class="fas fa-check-circle"></i> NextAuth.js Configuration</li>
+                                <li><i class="fas fa-check-circle"></i> OAuth Providers (Google, GitHub)</li>
+                                <li><i class="fas fa-check-circle"></i> Role-based Access Control</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Implement secure login system
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build protected routes and middleware
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Implement secure login system</li>
+                                <li><i class="fas fa-check-circle"></i> Build protected routes and middleware</li>
                             </ul>
                         </div>
                     </div>
@@ -1517,29 +1481,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Zustand & Redux Toolkit
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> React Hook Form Implementation
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Form Validation with Zod
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Server-side Form Handling
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Zustand & Redux Toolkit</li>
+                                <li><i class="fas fa-check-circle"></i> React Hook Form Implementation</li>
+                                <li><i class="fas fa-check-circle"></i> Form Validation with Zod</li>
+                                <li><i class="fas fa-check-circle"></i> Server-side Form Handling</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Build complex forms with validation
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Implement global state management
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Build complex forms with validation</li>
+                                <li><i class="fas fa-check-circle"></i> Implement global state management</li>
                             </ul>
                         </div>
                     </div>
@@ -1555,29 +1507,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Jest & React Testing Library
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Performance Optimization Techniques
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Lighthouse Audits & SEO Optimization
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Caching Strategies
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Jest & React Testing Library</li>
+                                <li><i class="fas fa-check-circle"></i> Performance Optimization Techniques</li>
+                                <li><i class="fas fa-check-circle"></i> Lighthouse Audits & SEO Optimization</li>
+                                <li><i class="fas fa-check-circle"></i> Caching Strategies</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Write unit and integration tests
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Optimize application performance
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Write unit and integration tests</li>
+                                <li><i class="fas fa-check-circle"></i> Optimize application performance</li>
                             </ul>
                         </div>
                     </div>
@@ -1593,29 +1533,17 @@
                         <div class="week-theory">
                             <h4><i class="fas fa-book"></i> Theory</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Vercel Deployment & Configuration
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Docker Containerization
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> CI/CD Pipeline Setup
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Monitoring & Error Tracking
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Vercel Deployment & Configuration</li>
+                                <li><i class="fas fa-check-circle"></i> Docker Containerization</li>
+                                <li><i class="fas fa-check-circle"></i> CI/CD Pipeline Setup</li>
+                                <li><i class="fas fa-check-circle"></i> Monitoring & Error Tracking</li>
                             </ul>
                         </div>
                         <div class="week-practical">
                             <h4><i class="fas fa-laptop-code"></i> Practical</h4>
                             <ul>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Deploy full-stack application
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Set up automated deployment pipeline
-                                </li>
+                                <li><i class="fas fa-check-circle"></i> Deploy full-stack application</li>
+                                <li><i class="fas fa-check-circle"></i> Set up automated deployment pipeline</li>
                             </ul>
                         </div>
                     </div>
@@ -1628,7 +1556,7 @@
     <section class="faq-section">
         <div class="container">
             <div class="section-title">
-                <h2 style="text-align: center">Frequently Asked Questions</h2>
+                <h1 style="text-align:center;">Frequently Asked Questions</h1>
             </div>
 
             <div class="faq-content">
@@ -1638,11 +1566,7 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Next.js is a React framework that enables server-side rendering, static site generation, and
-                            full-stack web development. It provides built-in features like routing, API routes, and
-                            image optimization for building production-ready applications.
-                        </p>
+                        <p>Next.js is a React framework that enables server-side rendering, static site generation, and full-stack web development. It provides built-in features like routing, API routes, and image optimization for building production-ready applications.</p>
                     </div>
                 </div>
 
@@ -1652,26 +1576,17 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Basic knowledge of HTML, CSS, and JavaScript is recommended. However, the course includes
-                            foundational modules that cover essential programming concepts to help beginners get
-                            started.
-                        </p>
+                        <p>Basic knowledge of HTML, CSS, and JavaScript is recommended. However, the course includes foundational modules that cover essential programming concepts to help beginners get started.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>
-                            Will I receive a certificate after completing the Next.js Programming course?
-                        </h3>
+                        <h3>Will I receive a certificate after completing the Next.js Programming course?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            Yes, upon successful completion of the course and final project, you will receive a
-                            certificate from Rohil NextGen that validates your Next.js Full-Stack Development skills.
-                        </p>
+                        <p>Yes, upon successful completion of the course and final project, you will receive a certificate from Rohil NextGen that validates your Next.js Full-Stack Development skills.</p>
                     </div>
                 </div>
 
@@ -1681,11 +1596,7 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            You'll work on real-world projects including e-commerce applications, social media
-                            platforms, dashboard applications, and a capstone project that integrates all the Next.js
-                            skills you've learned.
-                        </p>
+                        <p>You'll work on real-world projects including e-commerce applications, social media platforms, dashboard applications, and a capstone project that integrates all the Next.js skills you've learned.</p>
                     </div>
                 </div>
 
@@ -1695,50 +1606,33 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            You'll learn Next.js, React, TypeScript, Tailwind CSS, Prisma ORM, PostgreSQL, NextAuth.js,
-                            Zustand, Docker, Vercel deployment, and various testing and optimization tools.
-                        </p>
+                        <p>You'll learn Next.js, React, TypeScript, Tailwind CSS, Prisma ORM, PostgreSQL, NextAuth.js, Zustand, Docker, Vercel deployment, and various testing and optimization tools.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>
-                            What career support do you provide after course completion?
-                        </h3>
+                        <h3>What career support do you provide after course completion?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>
-                            We provide resume building assistance, interview preparation, portfolio development
-                            guidance, and connect you with our placement partners for job opportunities in frontend,
-                            full-stack, and Next.js development roles.
-                        </p>
+                        <p>We provide resume building assistance, interview preparation, portfolio development guidance, and connect you with our placement partners for job opportunities in frontend, full-stack, and Next.js development roles.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
     <!-- Footer -->
     <footer class="tech-footer">
         <div class="footer-content">
             <div class="footer-column">
                 <h3>About Rohil NextGen Software Training Institute</h3>
-                <p>
-                    We are a premier technology education platform in Virudhunagar offering cutting-edge courses in
-                    software development, data science, cybersecurity, and IT training with placement support. Get the
-                    best software training in Virudhunagar with industry experts.
-                </p>
+                <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
-                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
 
@@ -1757,19 +1651,17 @@
             <div class="footer-column">
                 <h3>Contact Rohil NextGen</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a>
-                    </li>
-                    <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-                    <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
-                            admin@rohiltechnologies.com</a></li>
-                    <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
+                    <li><a href="tel:+919751867879"><i class="fas fa-phone"></i> +91 97518 67879</a></li>
+                    <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 7:00 PM</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
             <div class="copyright">
-        <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
+                <p>&copy; 2026 Rohil NextGen - Software Training Institute in Virudhunagar. All Rights Reserved.</p>
             </div>
             <div class="footer-bottom-links">
                 <p>Designed By Rohil Technologies</p>
@@ -1791,40 +1683,29 @@
             navMenu.classList.toggle("active");
         });
 
-        // Close mobile menu when clicking on a link
         document.querySelectorAll(".nav-link").forEach((n) =>
             n.addEventListener("click", (e) => {
-                // Only close menu if it's not a dropdown trigger
                 if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
                     navMenu.classList.remove("active");
                 }
             })
         );
 
-        // Mobile Dropdown Functionality
+        // Mobile Dropdown
         document.querySelectorAll(".nav-item").forEach((item) => {
             const dropdown = item.querySelector(".dropdown");
             const navLink = item.querySelector(".nav-link");
 
             if (dropdown) {
-                // Add click event for mobile dropdowns
                 navLink.addEventListener("click", (e) => {
                     if (window.innerWidth <= 768) {
                         e.preventDefault();
-
-                        // Close other open dropdowns
-                        document
-                            .querySelectorAll(".dropdown.active")
-                            .forEach((otherDropdown) => {
-                                if (otherDropdown !== dropdown) {
-                                    otherDropdown.classList.remove("active");
-                                    otherDropdown.previousElementSibling.classList.remove(
-                                        "active"
-                                    );
-                                }
-                            });
-
-                        // Toggle current dropdown
+                        document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove("active");
+                                otherDropdown.previousElementSibling.classList.remove("active");
+                            }
+                        });
                         dropdown.classList.toggle("active");
                         navLink.classList.toggle("active");
                     }
@@ -1832,69 +1713,50 @@
             }
         });
 
-        // Close dropdowns when clicking outside
         document.addEventListener("click", (e) => {
             if (window.innerWidth <= 768) {
-                if (
-                    !e.target.closest(".nav-item") &&
-                    !e.target.closest(".hamburger")
-                ) {
-                    document
-                        .querySelectorAll(".dropdown.active")
-                        .forEach((dropdown) => {
-                            dropdown.classList.remove("active");
-                            dropdown.previousElementSibling.classList.remove("active");
-                        });
+                if (!e.target.closest(".nav-item") && !e.target.closest(".hamburger")) {
+                    document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+                        dropdown.classList.remove("active");
+                        dropdown.previousElementSibling.classList.remove("active");
+                    });
                 }
             }
         });
 
-        // Week Accordion Functionality
+        // Week Accordion
         document.querySelectorAll(".week-header").forEach((header) => {
             header.addEventListener("click", () => {
-                const weekContainer = header.parentElement;
-                weekContainer.classList.toggle("active");
+                header.parentElement.classList.toggle("active");
             });
         });
 
-        // FAQ Accordion Functionality
+        // FAQ Accordion
         document.querySelectorAll(".faq-question").forEach((question) => {
             question.addEventListener("click", () => {
                 const faqItem = question.parentElement;
-
-                // Close all other FAQ items
                 document.querySelectorAll(".faq-item").forEach((item) => {
-                    if (item !== faqItem) {
-                        item.classList.remove("active");
-                    }
+                    if (item !== faqItem) item.classList.remove("active");
                 });
-
-                // Toggle current FAQ item
                 faqItem.classList.toggle("active");
             });
         });
 
-        // Smooth scrolling for navigation links
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener("click", function (e) {
+            anchor.addEventListener("click", function(e) {
                 e.preventDefault();
-
                 const targetId = this.getAttribute("href");
                 if (targetId === "#") return;
-
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: "smooth",
-                    });
+                    window.scrollTo({ top: targetElement.offsetTop - 80, behavior: "smooth" });
                 }
             });
         });
 
-        // Back to Top Button
+        // Back to Top
         const backToTopButton = document.getElementById("backToTop");
-
         window.addEventListener("scroll", () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add("active");
@@ -1902,15 +1764,11 @@
                 backToTopButton.classList.remove("active");
             }
         });
-
         backToTopButton.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
-        // Close mobile menu on resize if window becomes larger
+        // Close mobile menu on resize
         window.addEventListener("resize", () => {
             if (window.innerWidth > 768) {
                 navMenu.classList.remove("active");
