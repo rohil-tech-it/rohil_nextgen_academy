@@ -4,12 +4,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohil NextGen - VBA in Excel Course</title>
+  <title>VBA in Excel Course - Learn Excel Automation at Rohil NextGen</title>
+  <meta name="description" content="Learn VBA in Excel at Rohil NextGen with practical training in automation, macros, reporting, and business solutions. Build skills to automate Excel tasks efficiently." />
+  <link rel="canonical" href="https://rohiltechnologies.com/vba-in-excel-course.html" />
   <link rel="icon" type="images/rohil_nextgen" href="./images/rohil_nextgen-removebg-preview.png" />
+  <link rel="apple-touch-icon" href="./images/rohil_nextgen-removebg-preview.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "VBA in Excel Course",
+      "description": "Learn VBA in Excel at Rohil NextGen with practical training in automation, macros, reporting, and business solutions.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Rohil NextGen",
+        "url": "https://rohiltechnologies.com"
+      },
+      "courseMode": "onsite",
+      "educationalCredentialAwarded": "Certificate",
+      "duration": "P3M",
+      "offers": {
+        "@type": "Offer",
+        "category": "Paid",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+  </script>
+
   <style>
     :root {
       --primary-red: #d40404;
@@ -30,7 +57,7 @@
     }
 
     body {
-      font-family: Georgia;
+      font-family: Georgia, serif;
       line-height: 1.6;
       color: var(--dark-gray);
       background-color: var(--white);
@@ -88,7 +115,7 @@
       transform: translateY(-3px) scale(1.1);
     }
 
-    /* Navigation Styles - IMPROVED RESPONSIVE */
+    /* Navigation Styles */
     .navbar {
       background-color: var(--white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -129,7 +156,7 @@
 
     .nav-link {
       text-decoration: none;
-      color: var(--text-black);
+      color: var(--dark-gray);
       font-weight: 500;
       font-size: 16px;
       transition: color 0.3s;
@@ -144,7 +171,6 @@
       color: var(--primary-red);
     }
 
-    /* Active state styles */
     .nav-link.active {
       color: var(--primary-red);
       font-weight: 600;
@@ -185,20 +211,19 @@
       display: block;
       padding: 12px 20px;
       text-decoration: none;
-      color: var(--text-grey);
+      color: var(--medium-gray);
       border-bottom: 1px solid #eee;
       transition: all 0.3s;
     }
 
     .dropdown-item:hover {
-      background-color: var(--light-grey);
+      background-color: var(--light-gray);
       color: var(--primary-red);
       padding-left: 25px;
     }
 
-    /* Active state for dropdown items */
     .dropdown-item.active {
-      background-color: var(--light-grey);
+      background-color: var(--light-gray);
       color: var(--primary-red);
       font-weight: 500;
       border-left: 3px solid var(--primary-red);
@@ -210,7 +235,7 @@
       font-size: 24px;
       background: none;
       border: none;
-      color: var(--text-black);
+      color: var(--dark-gray);
       z-index: 1001;
     }
 
@@ -234,10 +259,9 @@
       visibility: visible;
     }
 
-    /* Enhanced Banner Section */
+    /* Banner Section */
     .banner {
       background-image: url("./images/vba-excel.png");
-      background-size: 1000px;
       background-position: center;
       color: var(--white);
       padding: 120px 0;
@@ -295,6 +319,24 @@
       color: var(--primary-red);
     }
 
+    .highlight-box ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+
+    .highlight-box ul li {
+      padding: 5px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .highlight-box ul li i {
+      color: var(--primary-red);
+      margin-top: 5px;
+    }
+
     .rating {
       display: flex;
       align-items: center;
@@ -311,7 +353,7 @@
       font-weight: bold;
     }
 
-    /* Enhanced Course Overview Section */
+    /* Course Stats */
     .course-overview {
       padding: 40px 0 60px;
     }
@@ -352,7 +394,7 @@
       font-weight: 500;
     }
 
-    /* Enhanced Certification Section */
+    /* Certification Section */
     .certification-section {
       background-color: #f8f9fa;
       padding: 60px 0;
@@ -372,14 +414,6 @@
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
-    }
-
-    .course-goals h3 {
-      color: var(--primary-red);
-    }
-
-    .future-scope h3 {
-      color: var(--primary-red);
     }
 
     .certification-info-box {
@@ -453,9 +487,9 @@
       margin-bottom: 40px;
     }
 
-    .course-description h3,
-    .course-goals h3,
-    .future-scope h3 {
+    .course-description h2,
+    .course-goals h2,
+    .future-scope h2 {
       font-size: 1.5rem;
       color: var(--primary-red);
       margin-bottom: 15px;
@@ -463,9 +497,9 @@
       padding-bottom: 10px;
     }
 
-    .course-description h3::after,
-    .course-goals h3::after,
-    .future-scope h3::after {
+    .course-description h2::after,
+    .course-goals h2::after,
+    .future-scope h2::after {
       content: "";
       position: absolute;
       bottom: 0;
@@ -502,7 +536,7 @@
       margin-top: 5px;
     }
 
-    /* Enhanced Syllabus Section */
+    /* Syllabus Section */
     .syllabus-container {
       padding: 80px 20px;
       background: linear-gradient(to right, #f7f7f7, #eaeaea);
@@ -633,7 +667,7 @@
       font-size: 0.9rem;
     }
 
-    /* Enhanced FAQ Section */
+    /* FAQ Section */
     .faq-section {
       padding: 80px 0;
       background-color: var(--light-gray);
@@ -709,7 +743,7 @@
       padding: 0 25px;
     }
 
-    /* Enhanced Footer */
+    /* Footer */
     .tech-footer {
       background-color: #656566;
       color: var(--white);
@@ -931,7 +965,7 @@
         transform: none;
         box-shadow: none;
         display: none;
-        background-color: var(--light-grey);
+        background-color: var(--light-gray);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
@@ -967,9 +1001,7 @@
         min-height: 300px;
         background-size: cover;
       }
-    }
 
-    @media (max-width: 768px) {
       .hamburger {
         display: block;
       }
@@ -1070,17 +1102,13 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo" itemprop="logo">
-        <div class="logo" style="display: flex; align-items: center">
-          <img src="./images/rohil_nextgen-removebg-preview.png"
-            alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120"
-            height="60" />
-        </div>
+      <div class="logo">
+        <img src="./images/rohil_nextgen-removebg-preview.png" alt="Rohil NextGen Software Training Institute Logo - Best IT Training in Virudhunagar" width="120" height="60" />
       </div>
 
       <ul class="nav-menu">
         <li class="nav-item">
-          <a href="index.html" class="nav-link " aria-current="page">Home</a>
+          <a href="index.html" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
           <a href="gallery.html" class="nav-link">Gallery</a>
@@ -1112,7 +1140,7 @@
           <a href="scholarship.html" class="nav-link">Scholarship</a>
         </li>
         <li class="nav-item">
-          <a href="career.html" class="nav-link"> Careers</a>
+          <a href="career.html" class="nav-link">Careers</a>
         </li>
         <li class="nav-item">
           <a href="contact.html" class="nav-link">Contact</a>
@@ -1125,7 +1153,7 @@
     </div>
   </nav>
 
-  <!-- Enhanced Hero Section -->
+  <!-- Banner Section -->
   <section class="banner">
     <div class="banner-content"></div>
   </section>
@@ -1136,22 +1164,64 @@
       <div class="overview-container">
         <div class="overview-content">
           <div class="section-title">
-            <h1 style="text-align: center">VBA in Excel Course Overview</h1>
-            <p style="text-align: center; font-weight: bold">
-              Become a VBA Automation Expert — Learn Excel Macros, Data
-              Automation, Report Generation, and Advanced Scripting in One
-              Complete Program!
+            <h1>VBA in Excel Course – Learn Excel Automation with Rohil NextGen</h1>
+            <p style="text-align:center; font-weight:bold;">
+              Become a VBA Automation Expert — Learn Excel Macros, Data Automation, Report Generation, and Advanced Scripting in One Complete Program!
             </p>
           </div>
+
+          <!-- SEO-Optimized Content Inserted Here -->
           <div class="highlight-box">
             <p>
-              <strong>Rohil NextGen</strong> offers a comprehensive VBA
-              training covering Core Excel Automation Techniques, Macro
-              Recording, Scripting with VBA, and Dashboard Reporting using
-              Excel and Visual Basic.
+              Learn how to use <strong>VBA in Excel</strong> to automate repetitive tasks, improve productivity, and create practical business solutions. Rohil NextGen's <strong>VBA course</strong> focuses on hands-on learning, helping learners understand Excel automation and apply it to real-world tasks.
             </p>
           </div>
-          <!--Rating-->
+
+          <div class="highlight-box" style="border-left-color: #d40404;">
+            <p><strong>Learn Excel Automation</strong></p>
+            <p>The course introduces VBA programming concepts and shows how they can be used to simplify everyday Excel work. Learners can work with macros, automate repetitive processes, manage data, and create customized Excel solutions.</p>
+          </div>
+
+          <div class="highlight-box" style="border-left-color: #d40404;">
+            <p><strong>What You Will Learn</strong></p>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> VBA fundamentals and programming concepts</li>
+              <li><i class="fas fa-check-circle"></i> Creating and managing Excel macros</li>
+              <li><i class="fas fa-check-circle"></i> Automating repetitive tasks</li>
+              <li><i class="fas fa-check-circle"></i> Working with worksheets, cells, and ranges</li>
+              <li><i class="fas fa-check-circle"></i> Data handling and validation</li>
+              <li><i class="fas fa-check-circle"></i> Creating user forms</li>
+              <li><i class="fas fa-check-circle"></i> Automating reports and workflows</li>
+              <li><i class="fas fa-check-circle"></i> Practical Excel-based automation</li>
+            </ul>
+          </div>
+
+          <div class="highlight-box" style="border-left-color: #d40404;">
+            <p><strong>Practical Learning</strong></p>
+            <p>The training focuses on practical examples and real-world use cases rather than only theoretical concepts. Learners can build their confidence by applying VBA techniques to common business and data-related tasks.</p>
+          </div>
+
+          <div class="highlight-box" style="border-left-color: #d40404;">
+            <p><strong>Who Can Join?</strong></p>
+            <p>This course is suitable for students, working professionals, Excel users, analysts, and anyone who wants to improve their productivity through automation.</p>
+          </div>
+
+          <div class="highlight-box" style="border-left-color: #d40404;">
+            <p><strong>Why Choose Rohil NextGen?</strong></p>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Practical and application-focused training</li>
+              <li><i class="fas fa-check-circle"></i> Easy-to-understand learning approach</li>
+              <li><i class="fas fa-check-circle"></i> Real-world examples</li>
+              <li><i class="fas fa-check-circle"></i> Suitable for beginners and professionals</li>
+              <li><i class="fas fa-check-circle"></i> Focus on automation and productivity</li>
+              <li><i class="fas fa-check-circle"></i> Guidance for applying skills in business scenarios</li>
+            </ul>
+          </div>
+
+          <div class="highlight-box" style="border-left-color: #d40404;">
+            <p><strong>Start learning VBA in Excel with Rohil NextGen and turn repetitive Excel tasks into smarter, automated workflows.</strong></p>
+          </div>
+
           <div class="rating">
             <span class="rating-badge">TOP RATED 4.9</span>
             <span>4.9 Ratings</span>
@@ -1161,14 +1231,14 @@
     </div>
   </section>
 
-  <!-- Course Overview Section -->
+  <!-- Course Stats Section -->
   <section class="course-overview">
     <div class="container">
       <div class="course-content">
         <div class="course-text">
           <div class="course-stats">
             <div class="stat">
-              <div class="stat-value">2025</div>
+              <div class="stat-value">2026</div>
               <div class="stat-label">Latest Curriculum</div>
             </div>
             <div class="stat">
@@ -1192,9 +1262,7 @@
   <!-- Certification Section -->
   <section class="certification-section">
     <div class="container">
-      <h2 class="certification-title">
-        Why Choose VBA in Excel Certification?
-      </h2>
+      <h2 class="certification-title">Why Choose VBA in Excel Certification?</h2>
       <div class="certification-content">
         <div class="certification-info-box">
           <i class="fas fa-money-bill-wave certification-icon"></i>
@@ -1205,9 +1273,7 @@
         <div class="certification-info-box">
           <i class="fas fa-chart-line certification-icon"></i>
           <h4 class="certification-subtitle">Job Demand</h4>
-          <p class="certification-description">
-            Yearly Increase in Opportunities
-          </p>
+          <p class="certification-description">Yearly Increase in Opportunities</p>
           <h3 class="certification-number">85%</h3>
         </div>
         <div class="certification-info-box">
@@ -1226,78 +1292,38 @@
       <div class="course-header">
         <h2>Become a VBA in Excel Specialist</h2>
         <p class="course-subtitle">
-          <span style="
-                font-size: 30px;
-                color: var(--primary-red);
-                font-weight: bold;
-              ">❝</span>
+          <span style="font-size:30px; color:var(--primary-red); font-weight:bold;">❝</span>
           Automate Tasks, Build Dashboards, and Write Excel Macros
-          <span style="
-                font-size: 30px;
-                color: var(--primary-red);
-                font-weight: bold;
-              ">❞</span>
+          <span style="font-size:30px; color:var(--primary-red); font-weight:bold;">❞</span>
         </p>
       </div>
 
       <div class="course-description">
-        <h3>Course Overview</h3>
+        <h2>Course Overview</h2>
         <p>
-          This VBA in Excel course teaches you how to automate complex Excel
-          tasks, write and debug macros, build interactive dashboards, and
-          work with forms and controls using Visual Basic for Applications
-          (VBA).
+          This VBA in Excel course teaches you how to automate complex Excel tasks, write and debug macros, build interactive dashboards, and work with forms and controls using Visual Basic for Applications (VBA).
         </p>
       </div>
 
       <div class="course-goals">
-        <h3>Key Learning Outcomes</h3>
+        <h2>Key Learning Outcomes</h2>
         <ul>
-          <li>
-            <i class="fas fa-check-circle"></i> Master Excel Automation and
-            Task Scheduling using VBA.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Build Excel-based Applications
-            and Forms with User Controls.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Automate Data Cleaning,
-            Import, and Export between Sheets.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Develop Custom Functions and
-            Use Events in VBA.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Optimize and Debug Excel
-            Macros for Efficiency.
-          </li>
+          <li><i class="fas fa-check-circle"></i> Master Excel Automation and Task Scheduling using VBA.</li>
+          <li><i class="fas fa-check-circle"></i> Build Excel-based Applications and Forms with User Controls.</li>
+          <li><i class="fas fa-check-circle"></i> Automate Data Cleaning, Import, and Export between Sheets.</li>
+          <li><i class="fas fa-check-circle"></i> Develop Custom Functions and Use Events in VBA.</li>
+          <li><i class="fas fa-check-circle"></i> Optimize and Debug Excel Macros for Efficiency.</li>
         </ul>
       </div>
+
       <div class="future-scope">
-        <h3>Career Prospects with This Course</h3>
+        <h2>Career Prospects with This Course</h2>
         <ul>
-          <li>
-            <i class="fas fa-check-circle"></i> Work as a VBA Developer or
-            Excel Automation Analyst.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Become a Data Analyst with
-            Advanced Excel Skills.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Join as a Business
-            Intelligence Executive.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Take on roles in Process
-            Automation using Office Tools.
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i> Support Corporate Reporting,
-            MIS, and Audit Automation.
-          </li>
+          <li><i class="fas fa-check-circle"></i> Work as a VBA Developer or Excel Automation Analyst.</li>
+          <li><i class="fas fa-check-circle"></i> Become a Data Analyst with Advanced Excel Skills.</li>
+          <li><i class="fas fa-check-circle"></i> Join as a Business Intelligence Executive.</li>
+          <li><i class="fas fa-check-circle"></i> Take on roles in Process Automation using Office Tools.</li>
+          <li><i class="fas fa-check-circle"></i> Support Corporate Reporting, MIS, and Audit Automation.</li>
         </ul>
       </div>
     </div>
@@ -1306,16 +1332,9 @@
   <!-- Syllabus Section -->
   <section class="syllabus-container">
     <div class="container">
-      <h2 class="syllabus-title">
-        VBA Excel – 20 Weeks (Theory + Practical)
-      </h2>
-      <p style="
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: var(--medium-gray);
-          ">
-        Focus: Introduction → Macros → Programming → Forms → Automation →
-        Integration → Advanced Techniques
+      <h2 class="syllabus-title">VBA Excel – 20 Weeks (Theory + Practical)</h2>
+      <p style="font-size:1.2rem; margin-bottom:40px; color:var(--medium-gray);">
+        Focus: Introduction → Macros → Programming → Forms → Automation → Integration → Advanced Techniques
       </p>
       <div class="syllabus-content">
         <!-- Week 1-2 -->
@@ -1328,39 +1347,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Introduction to VBA and
-                  its applications
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Excel VBA environment
-                  and interface
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Recording and running
-                  simple macros
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Understanding the VBA
-                  editor
-                </li>
+                <li><i class="fas fa-check-circle"></i> Introduction to VBA and its applications</li>
+                <li><i class="fas fa-check-circle"></i> Excel VBA environment and interface</li>
+                <li><i class="fas fa-check-circle"></i> Recording and running simple macros</li>
+                <li><i class="fas fa-check-circle"></i> Understanding the VBA editor</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Record and run your
-                  first macro
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Navigate the VBA editor
-                  interface
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create simple automation
-                  tasks
-                </li>
+                <li><i class="fas fa-check-circle"></i> Record and run your first macro</li>
+                <li><i class="fas fa-check-circle"></i> Navigate the VBA editor interface</li>
+                <li><i class="fas fa-check-circle"></i> Create simple automation tasks</li>
               </ul>
             </div>
           </div>
@@ -1376,39 +1374,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> VBA syntax and
-                  programming fundamentals
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Variables, data types,
-                  and constants
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Operators and
-                  expressions
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Control structures
-                  (If-Then, Select Case)
-                </li>
+                <li><i class="fas fa-check-circle"></i> VBA syntax and programming fundamentals</li>
+                <li><i class="fas fa-check-circle"></i> Variables, data types, and constants</li>
+                <li><i class="fas fa-check-circle"></i> Operators and expressions</li>
+                <li><i class="fas fa-check-circle"></i> Control structures (If-Then, Select Case)</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Write basic VBA
-                  procedures
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Practice with variables
-                  and data types
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement conditional
-                  logic in macros
-                </li>
+                <li><i class="fas fa-check-circle"></i> Write basic VBA procedures</li>
+                <li><i class="fas fa-check-circle"></i> Practice with variables and data types</li>
+                <li><i class="fas fa-check-circle"></i> Implement conditional logic in macros</li>
               </ul>
             </div>
           </div>
@@ -1424,39 +1401,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Excel object model
-                  overview
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Working with workbooks
-                  and worksheets
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Range objects and cell
-                  manipulation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Properties, methods, and
-                  events
-                </li>
+                <li><i class="fas fa-check-circle"></i> Excel object model overview</li>
+                <li><i class="fas fa-check-circle"></i> Working with workbooks and worksheets</li>
+                <li><i class="fas fa-check-circle"></i> Range objects and cell manipulation</li>
+                <li><i class="fas fa-check-circle"></i> Properties, methods, and events</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create and manipulate
-                  workbooks programmatically
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Work with ranges and
-                  cells using VBA
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Automate worksheet
-                  operations
-                </li>
+                <li><i class="fas fa-check-circle"></i> Create and manipulate workbooks programmatically</li>
+                <li><i class="fas fa-check-circle"></i> Work with ranges and cells using VBA</li>
+                <li><i class="fas fa-check-circle"></i> Automate worksheet operations</li>
               </ul>
             </div>
           </div>
@@ -1472,38 +1428,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> User input and message
-                  boxes
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Creating and using user
-                  forms
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Form controls and their
-                  properties
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Event handling in forms
-                </li>
+                <li><i class="fas fa-check-circle"></i> User input and message boxes</li>
+                <li><i class="fas fa-check-circle"></i> Creating and using user forms</li>
+                <li><i class="fas fa-check-circle"></i> Form controls and their properties</li>
+                <li><i class="fas fa-check-circle"></i> Event handling in forms</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create interactive input
-                  dialogs
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Design and implement
-                  user forms
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Handle form events and
-                  user interactions
-                </li>
+                <li><i class="fas fa-check-circle"></i> Create interactive input dialogs</li>
+                <li><i class="fas fa-check-circle"></i> Design and implement user forms</li>
+                <li><i class="fas fa-check-circle"></i> Handle form events and user interactions</li>
               </ul>
             </div>
           </div>
@@ -1519,39 +1455,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Common VBA errors and
-                  their causes
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Error handling
-                  techniques (On Error statements)
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Debugging tools and
-                  techniques
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Best practices for
-                  robust code
-                </li>
+                <li><i class="fas fa-check-circle"></i> Common VBA errors and their causes</li>
+                <li><i class="fas fa-check-circle"></i> Error handling techniques (On Error statements)</li>
+                <li><i class="fas fa-check-circle"></i> Debugging tools and techniques</li>
+                <li><i class="fas fa-check-circle"></i> Best practices for robust code</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement error handling
-                  in macros
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Use debugging tools to
-                  fix code issues
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create error-resistant
-                  VBA applications
-                </li>
+                <li><i class="fas fa-check-circle"></i> Implement error handling in macros</li>
+                <li><i class="fas fa-check-circle"></i> Use debugging tools to fix code issues</li>
+                <li><i class="fas fa-check-circle"></i> Create error-resistant VBA applications</li>
               </ul>
             </div>
           </div>
@@ -1567,39 +1482,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Importing and exporting
-                  data with VBA
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Working with text files
-                  and CSV files
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Database connectivity
-                  with VBA
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Web data extraction
-                  techniques
-                </li>
+                <li><i class="fas fa-check-circle"></i> Importing and exporting data with VBA</li>
+                <li><i class="fas fa-check-circle"></i> Working with text files and CSV files</li>
+                <li><i class="fas fa-check-circle"></i> Database connectivity with VBA</li>
+                <li><i class="fas fa-check-circle"></i> Web data extraction techniques</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Automate data import
-                  from external sources
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create data export
-                  functionality
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Connect to databases
-                  using VBA
-                </li>
+                <li><i class="fas fa-check-circle"></i> Automate data import from external sources</li>
+                <li><i class="fas fa-check-circle"></i> Create data export functionality</li>
+                <li><i class="fas fa-check-circle"></i> Connect to databases using VBA</li>
               </ul>
             </div>
           </div>
@@ -1615,39 +1509,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Advanced functions and
-                  procedures
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Working with arrays and
-                  collections
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Class modules and
-                  object-oriented programming
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Advanced data
-                  manipulation techniques
-                </li>
+                <li><i class="fas fa-check-circle"></i> Advanced functions and procedures</li>
+                <li><i class="fas fa-check-circle"></i> Working with arrays and collections</li>
+                <li><i class="fas fa-check-circle"></i> Class modules and object-oriented programming</li>
+                <li><i class="fas fa-check-circle"></i> Advanced data manipulation techniques</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create advanced custom
-                  functions
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Work with arrays for
-                  data processing
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Implement
-                  object-oriented concepts in VBA
-                </li>
+                <li><i class="fas fa-check-circle"></i> Create advanced custom functions</li>
+                <li><i class="fas fa-check-circle"></i> Work with arrays for data processing</li>
+                <li><i class="fas fa-check-circle"></i> Implement object-oriented concepts in VBA</li>
               </ul>
             </div>
           </div>
@@ -1663,38 +1536,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Automating repetitive
-                  Excel tasks
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Creating custom Excel
-                  applications
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Working with charts and
-                  graphs programmatically
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Pivot table automation
-                </li>
+                <li><i class="fas fa-check-circle"></i> Automating repetitive Excel tasks</li>
+                <li><i class="fas fa-check-circle"></i> Creating custom Excel applications</li>
+                <li><i class="fas fa-check-circle"></i> Working with charts and graphs programmatically</li>
+                <li><i class="fas fa-check-circle"></i> Pivot table automation</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Automate complex Excel
-                  operations
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create dynamic charts
-                  using VBA
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Build automated
-                  reporting systems
-                </li>
+                <li><i class="fas fa-check-circle"></i> Automate complex Excel operations</li>
+                <li><i class="fas fa-check-circle"></i> Create dynamic charts using VBA</li>
+                <li><i class="fas fa-check-circle"></i> Build automated reporting systems</li>
               </ul>
             </div>
           </div>
@@ -1710,38 +1563,18 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Integrating Excel with
-                  other Office applications
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Working with Outlook,
-                  Word, and PowerPoint
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Automation across
-                  multiple applications
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> API integration with VBA
-                </li>
+                <li><i class="fas fa-check-circle"></i> Integrating Excel with other Office applications</li>
+                <li><i class="fas fa-check-circle"></i> Working with Outlook, Word, and PowerPoint</li>
+                <li><i class="fas fa-check-circle"></i> Automation across multiple applications</li>
+                <li><i class="fas fa-check-circle"></i> API integration with VBA</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Create cross-application
-                  automation
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Automate email
-                  generation and sending
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Integrate Excel with
-                  external APIs
-                </li>
+                <li><i class="fas fa-check-circle"></i> Create cross-application automation</li>
+                <li><i class="fas fa-check-circle"></i> Automate email generation and sending</li>
+                <li><i class="fas fa-check-circle"></i> Integrate Excel with external APIs</li>
               </ul>
             </div>
           </div>
@@ -1757,31 +1590,16 @@
             <div class="week-theory">
               <h4><i class="fas fa-book"></i> Theory</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Project-based learning
-                  and real-life applications
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Automating tasks for
-                  business processes
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Best practices for
-                  writing maintainable VBA code
-                </li>
+                <li><i class="fas fa-check-circle"></i> Project-based learning and real-life applications</li>
+                <li><i class="fas fa-check-circle"></i> Automating tasks for business processes</li>
+                <li><i class="fas fa-check-circle"></i> Best practices for writing maintainable VBA code</li>
               </ul>
             </div>
             <div class="week-practical">
               <h4><i class="fas fa-laptop-code"></i> Practical</h4>
               <ul>
-                <li>
-                  <i class="fas fa-check-circle"></i> Complete a comprehensive
-                  automation project
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Showcase the project to
-                  solve real-world problems using VBA
-                </li>
+                <li><i class="fas fa-check-circle"></i> Complete a comprehensive automation project</li>
+                <li><i class="fas fa-check-circle"></i> Showcase the project to solve real-world problems using VBA</li>
               </ul>
             </div>
           </div>
@@ -1794,7 +1612,7 @@
   <section class="faq-section">
     <div class="container">
       <div class="section-title">
-        <h2 style="text-align: center">Frequently Asked Questions</h2>
+        <h2 style="text-align:center;">Frequently Asked Questions</h2>
       </div>
 
       <div class="faq-content">
@@ -1804,12 +1622,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              VBA (Visual Basic for Applications) is a programming language
-              integrated into Microsoft Excel that allows you to automate
-              tasks, create custom functions, and build interactive
-              applications within Excel.
-            </p>
+            <p>VBA (Visual Basic for Applications) is a programming language integrated into Microsoft Excel that allows you to automate tasks, create custom functions, and build interactive applications within Excel.</p>
           </div>
         </div>
 
@@ -1819,27 +1632,17 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              No prior programming experience is required. The course starts
-              with basic concepts and gradually builds up to advanced VBA
-              programming techniques.
-            </p>
+            <p>No prior programming experience is required. The course starts with basic concepts and gradually builds up to advanced VBA programming techniques.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <h3>
-              Will I receive a certificate after completing the VBA course?
-            </h3>
+            <h3>Will I receive a certificate after completing the VBA course?</h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              Yes, upon successful completion of the course and final project,
-              you will receive a certificate from Rohil NextGen that validates
-              your VBA programming skills.
-            </p>
+            <p>Yes, upon successful completion of the course and final project, you will receive a certificate from Rohil NextGen that validates your VBA programming skills.</p>
           </div>
         </div>
 
@@ -1849,11 +1652,7 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              You'll work on real-world projects including data automation
-              systems, custom Excel applications, automated reporting tools,
-              interactive dashboards, and a comprehensive capstone project.
-            </p>
+            <p>You'll work on real-world projects including data automation systems, custom Excel applications, automated reporting tools, interactive dashboards, and a comprehensive capstone project.</p>
           </div>
         </div>
 
@@ -1863,28 +1662,17 @@
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              The course is compatible with Excel 2010 and later versions. We
-              recommend using Excel 2016 or newer for the best experience with
-              all features covered in the course.
-            </p>
+            <p>The course is compatible with Excel 2010 and later versions. We recommend using Excel 2016 or newer for the best experience with all features covered in the course.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <h3>
-              What career support do you provide after course completion?
-            </h3>
+            <h3>What career support do you provide after course completion?</h3>
             <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="faq-answer">
-            <p>
-              We provide resume building assistance, interview preparation,
-              portfolio development guidance, and connect you with our
-              placement partners for job opportunities in business automation
-              and data analysis roles.
-            </p>
+            <p>We provide resume building assistance, interview preparation, portfolio development guidance, and connect you with our placement partners for job opportunities in business automation and data analysis roles.</p>
           </div>
         </div>
       </div>
@@ -1896,17 +1684,11 @@
     <div class="footer-content">
       <div class="footer-column">
         <h3>About Rohil NextGen Software Training Institute</h3>
-        <p>
-          We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software
-          development, data science, cybersecurity, and IT training with placement support. Get the best software
-          training in Virudhunagar with industry experts.
-        </p>
+        <p>We are a premier technology education platform in Virudhunagar offering cutting-edge courses in software development, data science, cybersecurity, and IT training with placement support. Get the best software training in Virudhunagar with industry experts.</p>
         <div class="social-links">
-          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i
-              class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/p/Rohilacademy-61574571321905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/rohil_nextgen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i
-              class="fab fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@rohiltechdigitalteam" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
 
@@ -1925,11 +1707,10 @@
       <div class="footer-column">
         <h3>Contact Rohil NextGen</h3>
         <ul class="footer-links">
-          <li><a href="#"><i class="fas fa-map-marker-alt"></i>Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
-          <li><a href="tel:+919751867879"><i class="fas fa-phone"></i>+91 97518 67879</a></li>
-          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i>
-              admin@rohiltechnologies.com</a></li>
-          <li><a href="#"><i class="fas fa-clock"></i>Mon - Sat: 9:00 AM - 7:00 PM</a></li>
+          <li><a href="#"><i class="fas fa-map-marker-alt"></i> Rohil NextGen, Virudhunagar, Tamil Nadu</a></li>
+          <li><a href="tel:+919751867879"><i class="fas fa-phone"></i> +91 97518 67879</a></li>
+          <li><a href="mailto:admin@rohiltechnologies.com"><i class="fas fa-envelope"></i> admin@rohiltechnologies.com</a></li>
+          <li><a href="#"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 7:00 PM</a></li>
         </ul>
       </div>
     </div>
@@ -1950,77 +1731,37 @@
   </div>
 
   <script>
-    // IMPROVED MOBILE NAVIGATION
+    // Mobile Menu Toggle
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
-    const mobileOverlay = document.getElementById("mobileOverlay");
-    const body = document.body;
 
-    // Toggle mobile menu
-    function toggleMobileMenu() {
+    hamburger.addEventListener("click", () => {
       navMenu.classList.toggle("active");
-      mobileOverlay.classList.toggle("active");
-      body.style.overflow = navMenu.classList.contains("active")
-        ? "hidden"
-        : "";
+    });
 
-      // Change hamburger icon
-      const icon = hamburger.querySelector("i");
-      if (navMenu.classList.contains("active")) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-      } else {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
-    }
+    document.querySelectorAll(".nav-link").forEach((n) =>
+      n.addEventListener("click", (e) => {
+        if (!e.target.closest(".nav-item").querySelector(".dropdown")) {
+          navMenu.classList.remove("active");
+        }
+      })
+    );
 
-    // Close mobile menu
-    function closeMobileMenu() {
-      navMenu.classList.remove("active");
-      mobileOverlay.classList.remove("active");
-      body.style.overflow = "";
-
-      // Reset hamburger icon
-      const icon = hamburger.querySelector("i");
-      icon.classList.remove("fa-times");
-      icon.classList.add("fa-bars");
-
-      // Close all dropdowns
-      document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-        dropdown.classList.remove("active");
-        const navLink = dropdown.previousElementSibling;
-        navLink?.classList.remove("active");
-      });
-    }
-
-    // Event listeners
-    hamburger.addEventListener("click", toggleMobileMenu);
-    mobileOverlay.addEventListener("click", closeMobileMenu);
-
-    // Mobile Dropdown Functionality
+    // Mobile Dropdown
     document.querySelectorAll(".nav-item").forEach((item) => {
       const dropdown = item.querySelector(".dropdown");
       const navLink = item.querySelector(".nav-link");
-      const chevron = navLink?.querySelector(".fa-chevron-down");
 
-      if (dropdown && navLink) {
+      if (dropdown) {
         navLink.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) {
             e.preventDefault();
-
-            // Close other dropdowns
-            document
-              .querySelectorAll(".dropdown.active")
-              .forEach((otherDropdown) => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.classList.remove("active");
-                  const otherNavLink = otherDropdown.previousElementSibling;
-                  otherNavLink?.classList.remove("active");
-                }
-              });
-
-            // Toggle current dropdown
+            document.querySelectorAll(".dropdown.active").forEach((otherDropdown) => {
+              if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove("active");
+                otherDropdown.previousElementSibling.classList.remove("active");
+              }
+            });
             dropdown.classList.toggle("active");
             navLink.classList.toggle("active");
           }
@@ -2028,58 +1769,50 @@
       }
     });
 
-    // Close menu when clicking on non-dropdown links
-    document.querySelectorAll(".nav-link").forEach((link) => {
-      if (!link.querySelector(".fa-chevron-down")) {
-        link.addEventListener("click", () => {
-          if (window.innerWidth <= 768) {
-            closeMobileMenu();
-          }
-        });
+    document.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        if (!e.target.closest(".nav-item") && !e.target.closest(".hamburger")) {
+          document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+            dropdown.classList.remove("active");
+            dropdown.previousElementSibling.classList.remove("active");
+          });
+        }
       }
     });
 
-    // Close menu on resize if window becomes larger
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        closeMobileMenu();
-      }
-    });
-
-    // Prevent dropdown from closing when clicking inside it
-    document.querySelectorAll(".dropdown").forEach((dropdown) => {
-      dropdown.addEventListener("click", (e) => {
-        e.stopPropagation();
+    // Week Accordion
+    document.querySelectorAll(".week-header").forEach((header) => {
+      header.addEventListener("click", () => {
+        header.parentElement.classList.toggle("active");
       });
     });
 
-    // Close menu with Escape key
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && navMenu.classList.contains("active")) {
-        closeMobileMenu();
-      }
-    });
-
-    // FAQ Accordion Functionality
+    // FAQ Accordion
     document.querySelectorAll(".faq-question").forEach((question) => {
       question.addEventListener("click", () => {
         const faqItem = question.parentElement;
-
-        // Close all other FAQ items
         document.querySelectorAll(".faq-item").forEach((item) => {
-          if (item !== faqItem) {
-            item.classList.remove("active");
-          }
+          if (item !== faqItem) item.classList.remove("active");
         });
-
-        // Toggle current FAQ item
         faqItem.classList.toggle("active");
       });
     });
 
-    // Back to Top Button
-    const backToTopButton = document.getElementById("backToTop");
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href");
+        if (targetId === "#") return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({ top: targetElement.offsetTop - 80, behavior: "smooth" });
+        }
+      });
+    });
 
+    // Back to Top
+    const backToTopButton = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
         backToTopButton.classList.add("active");
@@ -2087,12 +1820,19 @@
         backToTopButton.classList.remove("active");
       }
     });
-
     backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Close mobile menu on resize
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navMenu.classList.remove("active");
+        document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+          dropdown.classList.remove("active");
+          dropdown.previousElementSibling.classList.remove("active");
+        });
+      }
     });
   </script>
 </body>
