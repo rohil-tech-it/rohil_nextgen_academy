@@ -822,6 +822,41 @@
         .back-to-top:hover {
             background-color: var(--dark-red);
         }
+ .course-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 25px 15px;
+      background-color: var(--light-gray);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary-red);
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--dark-gray);
+      font-weight: 500;
+    }
 
         /* Responsive Styles */
         @media (max-width: 991px) {
