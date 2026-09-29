@@ -5,16 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Title -->
-  <title>Best Software Training Institute in Virudhunagar | Rohil NextGen</title>
+  <!-- Title (Optimized - Primary Keyword | Brand) -->
+  <title>Software Training Institute in Virudhunagar | Rohil NextGen</title>
 
   <!-- SEO Meta -->
-  <meta name="description"
-    content="Best software training institute in Virudhunagar. Learn Python, Java & Data Science with real-time projects and placement support.">
+  <meta name="description" content="Best software training institute in Virudhunagar. Learn Python, Java & Data Science with real-time projects and placement support." />
 
-  <!-- ❗ Keywords (Optional – Google ignores mostly) -->
-  <meta name="keywords"
-    content="software training Virudhunagar, python course Virudhunagar, java training, data science course">
+  <!-- Keywords (Optional) -->
+  <meta name="keywords" content="software training Virudhunagar, python course Virudhunagar, java training, data science course" />
 
   <meta name="author" content="Rohil NextGen">
   <meta name="robots" content="index, follow">
@@ -48,8 +46,6 @@
 
   <!-- Icons -->
   <link rel="icon" href="https://www.rohilnextgen.com/images/rohil_nextgen-removebg-preview.png">
-
-  <!-- ✅ FIX: Apple Touch Icon -->
   <link rel="apple-touch-icon" href="https://www.rohilnextgen.com/images/rohil_nextgen-removebg-preview.png">
 
   <!-- Fonts -->
@@ -63,19 +59,29 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Structured Data -->
+  <!-- ✅ FIXED: Structured Data (Corrected for SEMrush validation) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
+    "@id": "https://www.rohilnextgen.com/#organization",
     "name": "Rohil NextGen",
     "url": "https://www.rohilnextgen.com/",
-    "logo": "https://www.rohilnextgen.com/images/rohil_nextgen-removebg-preview.png",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.rohilnextgen.com/images/rohil_nextgen-removebg-preview.png"
+    },
     "description": "Software training institute in Virudhunagar offering Python, Java and Data Science courses.",
     "telephone": "+919751867879",
     "email": "admin@rohiltechnologies.com",
+    "foundingDate": "2018",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": 20
+    },
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Virudhunagar Main Road",
       "addressLocality": "Virudhunagar",
       "addressRegion": "Tamil Nadu",
       "postalCode": "626001",
@@ -90,7 +96,62 @@
       "https://www.facebook.com/profile.php?id=61574571321905",
       "https://www.instagram.com/rohil_nextgen/",
       "https://youtube.com/@rohiltechdigitalteam"
-    ]
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "IT Training Courses",
+      "itemListElement": [
+        {
+          "@type": "Course",
+          "name": "Python Programming Course",
+          "description": "Learn Python programming with practical training and real-time projects.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Rohil NextGen"
+          }
+        },
+        {
+          "@type": "Course",
+          "name": "Java Full Stack Development",
+          "description": "Master Java full stack development with hands-on projects.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Rohil NextGen"
+          }
+        },
+        {
+          "@type": "Course",
+          "name": "Data Science Course",
+          "description": "Learn data science with Python, machine learning and analytics.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Rohil NextGen"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- ✅ WebSite Schema for Sitelinks Searchbox -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.rohilnextgen.com/#website",
+    "url": "https://www.rohilnextgen.com/",
+    "name": "Rohil NextGen",
+    "publisher": {
+      "@id": "https://www.rohilnextgen.com/#organization"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.rohilnextgen.com/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 
@@ -100,6 +161,18 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <style>
+  :root {
+    --primary-red: #d40404;
+    --dark-red: #a80303;
+    --light-red: #ffeded;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333333;
+    --medium-gray: #666666;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
   /* Dropdown Menu Styles */
   .nav-item {
     position: relative;
@@ -1071,6 +1144,377 @@
     line-height: 1.8;
     margin-bottom: 1.5rem;
   }
+
+  /* =====================================================
+   TESTIMONIALS SECTION
+===================================================== */
+
+  .testimonials-section {
+    padding: 90px 20px;
+    background: #f8f9fa;
+    overflow: hidden;
+  }
+
+  .testimonials-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* =====================================================
+   HEADING
+===================================================== */
+
+  .testimonials-heading {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .testimonial-subtitle {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 12px;
+
+    color: var(--primary-red);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .testimonials-heading h2 {
+    display: block;
+    margin: 0 0 15px;
+
+    font-size: 38px;
+    line-height: 1.2;
+    color: #222;
+    font-weight: 700;
+  }
+
+  .testimonials-heading p {
+    max-width: 700px;
+    margin: 0 auto;
+
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* =====================================================
+   SLIDER
+===================================================== */
+
+  .testimonial-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    padding: 15px 60px 30px;
+  }
+
+  .testimonial-track {
+    display: flex;
+    gap: 25px;
+
+    transition: transform 0.6s ease;
+  }
+
+  /* =====================================================
+   TESTIMONIAL CARD
+===================================================== */
+
+  .testimonial-card {
+    flex: 0 0 calc((100% - 50px) / 3);
+
+    background: #fff;
+    padding: 32px 28px;
+
+    border-radius: 18px;
+    border: 1px solid #eeeeee;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+
+    position: relative;
+
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.11);
+  }
+
+  /* =====================================================
+   QUOTE ICON
+===================================================== */
+
+  .quote-icon {
+    width: 48px;
+    height: 48px;
+
+    background: var(--primary-red);
+    color: #fff;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+
+    margin-bottom: 18px;
+  }
+
+  /* =====================================================
+   RATING
+===================================================== */
+
+  .student-rating {
+    margin-bottom: 18px;
+  }
+
+  .student-rating i {
+    color: #f5b301;
+    font-size: 15px;
+    margin-right: 3px;
+  }
+
+  /* =====================================================
+   TESTIMONIAL TEXT
+===================================================== */
+
+  .testimonial-text {
+    color: #555;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    min-height: 135px;
+
+    margin: 0 0 25px;
+  }
+
+  /* =====================================================
+   STUDENT INFO
+===================================================== */
+
+  .student-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    border-top: 1px solid #eeeeee;
+    padding-top: 20px;
+  }
+
+  .student-info h3 {
+    margin: 0 0 5px;
+
+    color: #222;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .student-info span {
+    color: #777;
+    font-size: 12px;
+  }
+
+  /* =====================================================
+   NAVIGATION BUTTONS
+===================================================== */
+
+  .testimonial-btn {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--primary-red);
+    color: #fff;
+
+    font-size: 16px;
+
+    cursor: pointer;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s ease;
+  }
+
+  .testimonial-btn:hover {
+    background: var(--dark-red);
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  .testimonial-prev {
+    left: 1px;
+  }
+
+  .testimonial-next {
+    right: 1px;
+  }
+
+  /* =====================================================
+   DOTS
+===================================================== */
+
+  .testimonial-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+  }
+
+  .testimonial-dot {
+    width: 10px;
+    height: 10px;
+
+    background: #d5d5d5;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+  }
+
+  .testimonial-dot.active {
+    width: 28px;
+
+    border-radius: 10px;
+
+    background: var(--primary-red);
+  }
+
+  /* =====================================================
+   TABLET
+===================================================== */
+
+  @media (max-width: 992px) {
+
+    .testimonial-slider {
+      padding: 15px 50px 30px;
+    }
+
+    .testimonial-card {
+      flex: 0 0 calc((100% - 25px) / 2);
+    }
+
+    .testimonials-heading h2 {
+      font-size: 32px;
+    }
+  }
+
+  /* =====================================================
+   MOBILE
+===================================================== */
+
+  @media (max-width: 768px) {
+
+    .testimonials-section {
+      padding: 65px 15px;
+    }
+
+    .testimonials-heading {
+      margin-bottom: 30px;
+    }
+
+    .testimonial-subtitle {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+    }
+
+    .testimonials-heading h2 {
+      font-size: 28px;
+    }
+
+    .testimonials-heading p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .testimonial-slider {
+      padding: 10px 45px 25px;
+    }
+
+    .testimonial-card {
+      flex: 0 0 100%;
+      padding: 28px 22px;
+    }
+
+    .testimonial-text {
+      min-height: auto;
+      font-size: 14px;
+    }
+
+    .testimonial-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 14px;
+    }
+
+    .testimonial-prev {
+      left: 2px;
+    }
+
+    .testimonial-next {
+      right: 2px;
+    }
+  }
+
+  /* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+  @media (max-width: 480px) {
+
+    .testimonials-section {
+      padding: 50px 10px;
+    }
+
+    .testimonials-heading h2 {
+      font-size: 24px;
+    }
+
+    .testimonial-subtitle {
+      font-size: 11px;
+    }
+
+    .testimonials-heading p {
+      font-size: 13px;
+    }
+
+    .testimonial-slider {
+      padding-left: 38px;
+      padding-right: 38px;
+    }
+
+    .testimonial-card {
+      padding: 25px 20px;
+    }
+
+    .quote-icon {
+      width: 42px;
+      height: 42px;
+      font-size: 16px;
+    }
+  }
 </style>
 </head>
 
@@ -1755,6 +2199,458 @@
         </div>
       </section>
     </div>
+
+    <!-- ================= TESTIMONIALS SECTION ================= -->
+    <section class="testimonials-section" id="testimonials">
+
+      <div class="testimonials-container">
+
+        <div class="testimonials-heading">
+          <span class="testimonial-subtitle">STUDENT TESTIMONIALS</span>
+          <h2>What Our Students Say</h2>
+          <p>
+            Hear from students who experienced our software training,
+            practical learning, and career-focused programs.
+          </p>
+        </div>
+
+        <div class="testimonial-slider">
+
+          <div class="testimonial-track" id="testimonialTrack">
+
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                I had a great experience working with this app development team. They understood my requirements clearly
+                and developed an Android application that exceeded my expectations.
+              </p>
+
+              <div class="student-info">
+
+                <div>
+                  <h3>
+                    Abdul Kalam S</h3>
+                  <span>Android App Development</span>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                Learning frontend development at this institute was a really useful experience. The trainers explained
+                the concepts in a simple and easy-to-understand way, especially HTML, CSS, and JavaScript. The hands-on
+                projects helped me gain practical knowledge and improve my skills. I would definitely recommend this
+                institute, especially for beginners.
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Abraham Durairaj K</h3>
+                  <span>Python Student</span>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                Initially, I found Django a little difficult, but after joining this institute, the concepts became much
+                clearer. The trainers explain everything with real-time examples, which makes the learning experience
+                interesting and easy to understand.</p>
+              <div class="student-info">
+                <div>
+                  <h3>Suresh</h3>
+                  <span>Python Development</span>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                I am very happy to be a part of this Full Stack Development internship. This internship provided me with
+                a great learning experience and helped me improve both my technical knowledge and practical skills.
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Keerthana</h3>
+                  <span>Fullstack Development</span>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Testimonial 5 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                The Data Science sessions were interesting and practical.
+                I learned Python, data analysis, visualization and
+                machine learning concepts with examples.
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Keerthana P</h3>
+                  <span>Data Science Student</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 6 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                I learned web development at Rohil NextGen Virudhunagar, and it’s a good institute I’d recommend—now I’m
+                placed in a well-paying job.
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Abarna S</h3>
+                  <span>Web Development</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 7 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                I completed my 3 months data analytics course at rohil nextgen,where i gained analytical knowledge and
+                strengthened my skills for my carrier and i am currently working on a real-time project.
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Gokul </h3>
+                  <span>Data Analytics</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 8 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                Teaching is good.Hands on session is very useful.Thankyou for the real-time experience
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Jaya Surya J</h3>
+                  <span>Java Development</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 9 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                Very good teaching.
+                Friendly staff
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Veera Maha</h3>
+                  <span>Fullstack Development</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 10 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                I completed a one-month internship at Rohil NextGen, where I gained valuable practical knowledge and
+                strengthened my skills for my career.
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Vishwa Priya V</h3>
+                  <span>Data Analytics</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 11 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                I completed my Full Stack Development course at Rohil NextGen, and it was a highly valuable experience.
+                The training covered both frontend and backend technologies with a strong focus on practical learning
+                and real-time projects.
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Alima Banu</h3>
+                  <span>Fullstack Development Course</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 12 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                Had a good experience and wonderful guidence
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Nivas</h3>
+                  <span>Frontend Development</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 13 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                Today's Mobile App Development workshop in online meet by Rohil Technologies was so interested and very
+                help ful to learn .. Thankyou Rohil Technologies for the worshop and I have learned that how can we
+                develop the app.
+                And I have learned a lot and get more details from the trainer .
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Selva Rani</h3>
+                  <span>Mobile App Development Workshop</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 14 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                I had a great experience to Attend the Mobile Web Development Workshop,This Workshop gained my knowledge
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Vijaya Ragul</h3>
+                  <span>Mobile Web Development Workshop</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 15 -->
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+
+              <div class="student-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                I just completed my 12th standard and joined rohil tech to develop my skills during my summer vacation.
+                Where i learned python and machine learning.They thought me well. The mentor are friendly and the
+                learning experience was so good.
+              </p>
+
+              <div class="student-info">
+                <div>
+                  <h3>Tamil Selvan</h3>
+                  <span>Basic programming (C, C++, Python)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <button class="testimonial-btn testimonial-prev" id="testimonialPrev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <button class="testimonial-btn testimonial-next" id="testimonialNext">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+        </div>
+
+
+        <!-- Dots -->
+        <div class="testimonial-dots" id="testimonialDots"></div>
+
+      </div>
+
+    </section>
 
     <!-- Partnership Section - USING H2 -->
     <div class="partnership-section">
@@ -2577,12 +3473,266 @@
           showSlide(nextIndex);
         }, 2000);
       });
-    }); if (window.location.hostname === "rohilnextgen.com") {
+    });
+
+    // ✅ FIX: Redirect non-www to www (consolidates domain)
+    if (window.location.hostname === "rohilnextgen.com") {
       window.location.href =
         "https://www.rohilnextgen.com" +
         window.location.pathname +
         window.location.search;
     }
+
+    /* =====================================================
+   TESTIMONIAL SLIDER
+===================================================== */
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const testimonialTrack =
+        document.getElementById("testimonialTrack");
+
+      const testimonialCards =
+        document.querySelectorAll(".testimonial-card");
+
+      const testimonialPrev =
+        document.getElementById("testimonialPrev");
+
+      const testimonialNext =
+        document.getElementById("testimonialNext");
+
+      const testimonialDots =
+        document.getElementById("testimonialDots");
+
+
+      if (!testimonialTrack || testimonialCards.length === 0) {
+        return;
+      }
+
+
+      let currentTestimonial = 0;
+      let cardsPerView = 3;
+      let autoSlide;
+
+
+      /* Get cards per view */
+
+      function getCardsPerView() {
+
+        if (window.innerWidth <= 768) {
+          return 1;
+        }
+
+        if (window.innerWidth <= 992) {
+          return 2;
+        }
+
+        return 3;
+      }
+
+
+      /* Total slides */
+
+      function getTotalSlides() {
+
+        cardsPerView = getCardsPerView();
+
+        return Math.ceil(
+          testimonialCards.length / cardsPerView
+        );
+      }
+
+
+      /* Create dots */
+
+      function createTestimonialDots() {
+
+        testimonialDots.innerHTML = "";
+
+        const totalSlides = getTotalSlides();
+
+        for (let i = 0; i < totalSlides; i++) {
+
+          const dot = document.createElement("div");
+
+          dot.classList.add("testimonial-dot");
+
+          if (i === currentTestimonial) {
+            dot.classList.add("active");
+          }
+
+          dot.addEventListener("click", function () {
+
+            currentTestimonial = i;
+
+            updateTestimonialSlider();
+
+            restartAutoSlide();
+
+          });
+
+          testimonialDots.appendChild(dot);
+        }
+      }
+
+
+      /* Update slider */
+
+      function updateTestimonialSlider() {
+
+        cardsPerView = getCardsPerView();
+
+        const cardWidth =
+          testimonialCards[0].offsetWidth;
+
+        const gap = 25;
+
+        const moveAmount =
+          currentTestimonial *
+          (cardWidth + gap) *
+          cardsPerView;
+
+        testimonialTrack.style.transform =
+          `translateX(-${moveAmount}px)`;
+
+
+        /* Update dots */
+
+        const dots =
+          document.querySelectorAll(".testimonial-dot");
+
+        dots.forEach((dot, index) => {
+
+          dot.classList.toggle(
+            "active",
+            index === currentTestimonial
+          );
+
+        });
+      }
+
+
+      /* Next */
+
+      function nextTestimonial() {
+
+        const totalSlides = getTotalSlides();
+
+        currentTestimonial++;
+
+        if (currentTestimonial >= totalSlides) {
+          currentTestimonial = 0;
+        }
+
+        updateTestimonialSlider();
+      }
+
+
+      /* Previous */
+
+      function previousTestimonial() {
+
+        const totalSlides = getTotalSlides();
+
+        currentTestimonial--;
+
+        if (currentTestimonial < 0) {
+          currentTestimonial = totalSlides - 1;
+        }
+
+        updateTestimonialSlider();
+      }
+
+
+      /* Buttons */
+
+      testimonialNext.addEventListener(
+        "click",
+        function () {
+
+          nextTestimonial();
+
+          restartAutoSlide();
+
+        }
+      );
+
+
+      testimonialPrev.addEventListener(
+        "click",
+        function () {
+
+          previousTestimonial();
+
+          restartAutoSlide();
+
+        }
+      );
+
+
+      /* Auto Slide */
+
+      function startAutoSlide() {
+
+        autoSlide = setInterval(
+          nextTestimonial,
+          4000
+        );
+
+      }
+
+
+      function stopAutoSlide() {
+
+        clearInterval(autoSlide);
+
+      }
+
+
+      function restartAutoSlide() {
+
+        stopAutoSlide();
+
+        startAutoSlide();
+
+      }
+
+
+      /* Pause on hover */
+
+      testimonialTrack.addEventListener(
+        "mouseenter",
+        stopAutoSlide
+      );
+
+      testimonialTrack.addEventListener(
+        "mouseleave",
+        startAutoSlide
+      );
+
+
+      /* Resize */
+
+      window.addEventListener("resize", function () {
+
+        currentTestimonial = 0;
+
+        createTestimonialDots();
+
+        updateTestimonialSlider();
+
+      });
+
+
+      /* Initial */
+
+      createTestimonialDots();
+
+      updateTestimonialSlider();
+
+      startAutoSlide();
+
+    });
   </script>
   <script src="./script.js"></script>
 </body>
